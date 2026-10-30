@@ -1,0 +1,83 @@
+//@version=6
+indicator("Smart Scalper synthetic assertions", overlay=true)
+// Pure predicates shared by the engine and the standalone synthetic Pine test harness.
+breakConfirmed(int direction, float trigger, float o, float c) =>
+    direction == 1 ? c > trigger and c > o : c < trigger and c < o
+retestConfirmed(int direction, float lower, float upper, float h, float l, float o, float c) =>
+    h >= lower and l <= upper and (direction == 1 ? c > upper and c > o : c < lower and c < o)
+rangeSweep(int direction, float lower, float upper, float h, float l, float c) =>
+    direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
+pivotSweep(int direction, float level, float h, float l, float c) =>
+    direction == 1 ? l < level and c > level : h > level and c < level
+zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
+    displaced and (direction == 1 ? c > o and previousClose < previousOpen and c > swingLevel and previousClose <= swingLevel : c < o and previousClose > previousOpen and c < swingLevel and previousClose >= swingLevel)
+trendPullback(int direction, bool trend, float fast, float slow, float h, float l, float c, float atrValue, float depth) =>
+    trend and (direction == 1 ? l <= fast and l >= slow - atrValue * depth and c > slow : h >= fast and h <= slow + atrValue * depth and c < slow)
+compressedRange(float upper, float lower, float atrValue, float width) =>
+    upper > lower and upper - lower <= atrValue * width
+qmPattern(int direction, int firstType, float p0, float p1, float p2, float p3, float p4, float c) =>
+    direction == 1 ? firstType == -1 and p2 < p0 and p3 > p1 and p4 > p2 and c > p0 : firstType == 1 and p2 > p0 and p3 < p1 and p4 < p2 and c < p0
+orderedPrices(int direction, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree) =>
+    direction == 1 ? stopPrice < planned and planned < targetOne and targetOne < targetTwo and targetTwo < targetThree : stopPrice > planned and planned > targetOne and targetOne > targetTwo and targetTwo > targetThree
+qualityScore(int structure, int liquidity, bool aligned, bool rr, bool volatility, bool session) =>
+    structure + liquidity + 20 + (aligned ? 15 : 0) + (rr ? 10 : 0) + (volatility ? 10 : 0) + (session ? 5 : 0)
+tightenStop(int direction, float current, float proposed) =>
+    direction == 1 ? math.max(current, proposed) : math.min(current, proposed)
+
+rrFeasible(int direction, float planned, float stopPrice, float targetPrice, float minimum, float tick) =>
+    float riskTicks = tick > 0 ? math.round(direction * (planned - stopPrice) / tick) : na
+    float rewardTicks = tick > 0 ? math.round(direction * (targetPrice - planned) / tick) : na
+    riskTicks > 0 and rewardTicks >= math.ceil(riskTicks * minimum - 0.000000001)
+
+// Artificial unit-test prices only. Run this standalone script manually in TradingView.
+expect(bool result, string message) =>
+    if not result
+        runtime.error('Synthetic assertion failed: ' + message)
+if barstate.isfirst
+    expect(rangeSweep(1, 100, 110, 106, 99, 103), 'B bullish CRT reclaim')
+    expect(rangeSweep(-1, 100, 110, 111, 104, 107), 'B bearish CRT reclaim')
+    expect(not rangeSweep(1, 100, 110, 106, 99, 99.5), 'B no reclaim rejected')
+    expect(not rangeSweep(1, 100, 110, 112, 99, 111), 'B close outside range rejected')
+    expect(pivotSweep(1, 100, 105, 99, 102), 'C bullish pivot false breakout')
+    expect(pivotSweep(-1, 110, 111, 106, 108), 'C bearish pivot false breakout')
+    expect(not pivotSweep(1, 100, 105, 100, 102), 'C must actually sweep')
+    expect(breakConfirmed(1, 105, 104, 106), 'B/C bullish later confirmation')
+    expect(breakConfirmed(-1, 105, 106, 104), 'B/C bearish later confirmation')
+    expect(not breakConfirmed(1, 105, 107, 106), 'B/C counter-direction candle rejected')
+    expect(retestConfirmed(1, 100, 102, 106, 101, 103, 105), 'A/D bullish retest/rejection')
+    expect(retestConfirmed(-1, 100, 102, 101, 96, 99, 97), 'A/D bearish retest/rejection')
+    expect(not retestConfirmed(1, 100, 102, 108, 103, 104, 106), 'A/D no touch rejected')
+    expect(not retestConfirmed(1, 100, 102, 104, 101, 102, 101.5), 'A/D no rejection rejected')
+    expect(zoneDeparture(1, 105, 101, 103, 102, 107, true), 'E bullish departure')
+    expect(zoneDeparture(-1, 100, 104, 102, 103, 98, true), 'E bearish departure')
+    expect(not zoneDeparture(1, 105, 101, 103, 102, 107, false), 'E displacement required')
+    expect(not zoneDeparture(1, 105, 103, 101, 102, 107, true), 'E opposite origin required')
+    expect(trendPullback(1, true, 105, 103, 108, 104, 106, 2, 0.3), 'F bullish pullback')
+    expect(trendPullback(-1, true, 103, 105, 104, 100, 102, 2, 0.3), 'F bearish pullback')
+    expect(not trendPullback(1, false, 105, 103, 108, 104, 106, 2, 0.3), 'F crossover without structure rejected')
+    expect(not trendPullback(1, true, 105, 103, 108, 100, 106, 2, 0.3), 'F deep overshoot rejected')
+    expect(compressedRange(106, 100, 2, 3), 'G compressed range accepted')
+    expect(not compressedRange(107, 100, 2, 3), 'G wide range rejected')
+    expect(not compressedRange(100, 100, 2, 3), 'G zero range rejected')
+    expect(qmPattern(1, -1, 100, 110, 95, 112, 101, 104), 'H bullish five-pivot QM')
+    expect(qmPattern(-1, 1, 110, 100, 115, 98, 109, 106), 'H bearish five-pivot QM')
+    expect(not qmPattern(1, -1, 100, 110, 101, 112, 103, 104), 'H missing head rejected')
+    expect(not qmPattern(1, -1, 100, 110, 95, 109, 101, 104), 'H missing neckline break rejected')
+    expect(orderedPrices(1, 100, 99, 101, 102, 103), 'Long risk ladder')
+    expect(orderedPrices(-1, 100, 101, 99, 98, 97), 'Short risk ladder')
+    expect(not orderedPrices(1, 100, 100, 101, 102, 103), 'Zero risk rejected')
+    expect(not orderedPrices(1, 100, 99, 101, 101, 103), 'Rounded duplicate targets rejected')
+    expect(qualityScore(20, 20, true, true, true, true) == 100, 'Maximum quality')
+    expect(qualityScore(20, 0, true, true, true, true) == 80, 'Trend setup no liquidity credit')
+    expect(tightenStop(1, 99, 98) == 99, 'Long stop never widens')
+    expect(tightenStop(-1, 101, 102) == 101, 'Short stop never widens')
+    expect(tightenStop(1, 99, 100) == 100, 'Long stop tightens')
+    expect(tightenStop(-1, 101, 100) == 100, 'Short stop tightens')
+    expect(rrFeasible(1, 4000.01, 3999.98, 4000.07, 2, 0.01), 'Exact long 2R survives floating error')
+    expect(rrFeasible(-1, 4000.07, 4000.10, 4000.01, 2, 0.01), 'Exact short 2R survives floating error')
+    expect(not rrFeasible(1, 4000.01, 3999.98, 4000.06, 2, 0.01), 'One tick below 2R rejected')
+    expect(not rrFeasible(1, 4000.01, 4000.01, 4000.07, 2, 0.01), 'Zero tick risk rejected')
+    expect(not rrFeasible(1, 100, 99.97, 100.04, 1.5, 0.01), 'Fractional required reward rounds upward')
+var table results = table.new(position.top_right, 1, 1)
+if barstate.islast
+    table.cell(results, 0, 0, '44 synthetic assertions passed in this TradingView run', text_color=color.white, bgcolor=color.green)

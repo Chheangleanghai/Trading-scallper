@@ -1,0 +1,37 @@
+{
+  "save": {
+    "phase": "saved",
+    "layoutId": "1WInggOG",
+    "expectedStudyIds": [
+      "ngWTtJ",
+      "BUHYr9",
+      "G9IyxH"
+    ]
+  },
+  "autosave": true,
+  "studies": [
+    {
+      "id": "ngWTtJ",
+      "present": true,
+      "visible": false,
+      "inputsMatch": true,
+      "stylesMatch": true
+    },
+    {
+      "id": "BUHYr9",
+      "present": true,
+      "visible": false,
+      "inputsMatch": true,
+      "stylesMatch": true
+    },
+    {
+      "id": "G9IyxH",
+      "present": true,
+      "visible": false,
+      "inputsMatch": true,
+      "stylesMatch": true
+    }
+  ],
+  "symbol": "FOREXCOM:XAUUSD",
+  "interval": "5"
+}

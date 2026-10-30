@@ -1,0 +1,9 @@
+{
+  "functions": { "api/webhook.ts": { "maxDuration": 10 } },
+  "rewrites": [
+    {
+      "source": "/api/webhook/:secret",
+      "destination": "/api/webhook?secret=:secret"
+    }
+  ]
+}

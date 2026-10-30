@@ -1,0 +1,23 @@
+{
+  "name": "xauusd-smart-scalper-pro",
+  "version": "0.2.2",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "pine:generate": "python3 scripts/generate_pine.py",
+    "pine:check": "python3 scripts/generate_pine.py --check",
+    "pine:parse": "node scripts/check_pine.mjs",
+    "verify": "npm run typecheck && npm test && npm run pine:check && npm run pine:parse"
+  },
+  "devDependencies": {
+    "@opus-aether-ai/pine-transpiler": "0.4.11",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.5"
+  }
+}

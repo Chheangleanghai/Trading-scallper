@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-30",
+  "symbol": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "samples": 67,
+  "counts": {
+    "SELL_SIGNAL": 7,
+    "ENTRY_TRIGGERED": 15,
+    "TRADE_CLOSED": 15,
+    "SIGNAL_INVALIDATED": 11,
+    "BUY_SIGNAL": 8,
+    "TP1_HIT": 6,
+    "TP2_HIT": 3,
+    "STOP_LOSS_HIT": 1,
+    "TP3_HIT": 1
+  },
+  "canonical_indicator_sha256": "ac3204e808bd98e493413fb8472b0df4bc260dd703c6e497e107615d704facf8",
+  "instrumented_source_sha256": "ac5b318ee21427f488c065a31dece8a487991411e9a76f2156653ac2fb9cdab8",
+  "method": "Historical native Pine logs from the shared JSON serializer, with log.info added and B/Limit selected. No bot credentials, webhook subscriptions or real broker orders.",
+  "delivery_verified": false
+}

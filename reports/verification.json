@@ -1,0 +1,36 @@
+{
+  "tested_date": "2026-10-30",
+  "chart": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "native_compiler": "TradingView Pine Script v6",
+  "scripts": {
+    "indicator.pine": {
+      "sha256": "ac3204e808bd98e493413fb8472b0df4bc260dd703c6e497e107615d704facf8",
+      "compiled": true
+    },
+    "strategy.pine": {
+      "sha256": "5002409ac85bcb40ad15e260f8caa0cf019890eea36ddeab81ca6d4ff32aa037",
+      "compiled": true
+    },
+    "validation.pine": {
+      "sha256": "54f30d7b9cca59e40efe0e88ec8ebd3d27d85e72259ed3069a2d2b1cbf6a381b",
+      "compiled": true
+    }
+  },
+  "native_assertions_passed": 44,
+  "strategy_matrix_cases": 32,
+  "feature_profiles": 16,
+  "native_payload_samples": 67,
+  "backend_delivery_mocked": true,
+  "real_broker_orders_placed": false,
+  "telegram_real_delivery_verified": false,
+  "vercel_deployment_verified": false,
+  "local_automated_tests_passed": 75,
+  "local_test_files": 6,
+  "local_node_versions": [
+    "22.23.4",
+    "24.21.0"
+  ],
+  "loopback_http_delivery_payloads": 67,
+  "loopback_http_only": true
+}
