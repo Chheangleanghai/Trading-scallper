@@ -7,6 +7,18 @@ rangeSweep(int direction, float lower, float upper, float h, float l, float c) =
     direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
 pivotSweep(int direction, float level, float h, float l, float c) =>
     direction == 1 ? l < level and c > level : h > level and c < level
+swingSweep(int direction, float sweptLevel, float oppositeLevel, float h, float l, float c, bool pivotUnused) =>
+    pivotUnused and not na(sweptLevel) and not na(oppositeLevel) and (direction == 1 ? l < sweptLevel and c > sweptLevel and c < oppositeLevel : direction == -1 and h > sweptLevel and c < sweptLevel and c > oppositeLevel)
+referenceUnused(int currentReferenceTime, int usedReferenceTime) =>
+    not na(currentReferenceTime) and (na(usedReferenceTime) or currentReferenceTime != usedReferenceTime)
+pivotAgeAvailable(int currentBar, int pivotBar, int minimumAge, int usedPivotBar) =>
+    not na(pivotBar) and currentBar - pivotBar >= minimumAge and (na(usedPivotBar) or usedPivotBar != pivotBar)
+zoneTestsWithinLimit(int priorTests, bool touched, int maximumTests) =>
+    priorTests + (touched ? 1 : 0) <= maximumTests
+trendStillValid(int direction, bool bullishTrend, bool bearishTrend) =>
+    direction == 1 ? bullishTrend : direction == -1 and bearishTrend
+amdCooldownElapsed(int currentBar, int lastSetupBar, int rangeLength) =>
+    na(lastSetupBar) or currentBar - lastSetupBar > rangeLength
 fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
     direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>

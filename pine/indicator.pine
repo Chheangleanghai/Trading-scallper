@@ -137,6 +137,18 @@ rangeSweep(int direction, float lower, float upper, float h, float l, float c) =
     direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
 pivotSweep(int direction, float level, float h, float l, float c) =>
     direction == 1 ? l < level and c > level : h > level and c < level
+swingSweep(int direction, float sweptLevel, float oppositeLevel, float h, float l, float c, bool pivotUnused) =>
+    pivotUnused and not na(sweptLevel) and not na(oppositeLevel) and (direction == 1 ? l < sweptLevel and c > sweptLevel and c < oppositeLevel : direction == -1 and h > sweptLevel and c < sweptLevel and c > oppositeLevel)
+referenceUnused(int currentReferenceTime, int usedReferenceTime) =>
+    not na(currentReferenceTime) and (na(usedReferenceTime) or currentReferenceTime != usedReferenceTime)
+pivotAgeAvailable(int currentBar, int pivotBar, int minimumAge, int usedPivotBar) =>
+    not na(pivotBar) and currentBar - pivotBar >= minimumAge and (na(usedPivotBar) or usedPivotBar != pivotBar)
+zoneTestsWithinLimit(int priorTests, bool touched, int maximumTests) =>
+    priorTests + (touched ? 1 : 0) <= maximumTests
+trendStillValid(int direction, bool bullishTrend, bool bearishTrend) =>
+    direction == 1 ? bullishTrend : direction == -1 and bearishTrend
+amdCooldownElapsed(int currentBar, int lastSetupBar, int rangeLength) =>
+    na(lastSetupBar) or currentBar - lastSetupBar > rangeLength
 fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
     direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
@@ -478,7 +490,7 @@ updateCandidates() =>
     if idleForSetup
         // B: previous completed reference candle; frozen sweep -> later break of sweep candle.
         candB.confirmBreak(bar_index, time_close, open, close)
-        if enableB and candB.stage == 0 and (na(memory.crtUsed) or memory.crtUsed != crtTime)
+        if enableB and candB.stage == 0 and referenceUnused(crtTime, memory.crtUsed)
             bool bull = rangeSweep(1, crtLow, crtHigh, high, low, close)
             bool bear = rangeSweep(-1, crtLow, crtHigh, high, low, close)
             if bull != bear
@@ -488,8 +500,8 @@ updateCandidates() =>
         // C: confirmed-pivot false breakout, not the original 20-day Turtle Soup variant.
         candC.confirmBreak(bar_index, time_close, open, close)
         if enableC and candC.stage == 0
-            bool bull = not na(slw) and bar_index - slBar >= turtleAge and (na(memory.turtleUsedLow) or memory.turtleUsedLow != slBar) and pivotSweep(1, slw, high, low, close)
-            bool bear = not na(sh) and bar_index - shBar >= turtleAge and (na(memory.turtleUsedHigh) or memory.turtleUsedHigh != shBar) and pivotSweep(-1, sh, high, low, close)
+            bool bull = not na(slw) and pivotAgeAvailable(bar_index, slBar, turtleAge, memory.turtleUsedLow) and pivotSweep(1, slw, high, low, close)
+            bool bear = not na(sh) and pivotAgeAvailable(bar_index, shBar, turtleAge, memory.turtleUsedHigh) and pivotSweep(-1, sh, high, low, close)
             if bull != bear
                 candC.begin(bar_index, time_close, bull ? 1 : -1, bull ? slw : low, bull ? high : sh, bull ? low : high, bull ? high : low, 10, 20, 'Pivot false breakout')
                 if bull
@@ -521,10 +533,11 @@ updateCandidates() =>
         for c in array.from(candDemand, candSupply)
             if c.stage > 0 and bar_index > c.setupBar
                 bool touch = high >= c.lower and low <= c.upper
+                bool withinTestLimit = zoneTestsWithinLimit(c.tests, touch, maxZoneTests)
                 if touch
                     c.tests += 1
                     c.status := c.tests == 1 ? 'FRESH_TEST' : 'TESTED'
-                if c.tests > maxZoneTests
+                if not withinTestLimit
                     c.stage := 0
                     c.status := 'EXPIRED'
                 else
@@ -542,7 +555,7 @@ updateCandidates() =>
         candF.confirmBreak(bar_index, time_close, open, close)
         bool bullTrend = chartStructure == 1 and ema9 > ema21 and (not useEMA50 or ema21 > ema50)
         bool bearTrend = chartStructure == -1 and ema9 < ema21 and (not useEMA50 or ema21 < ema50)
-        if candF.stage > 0 and not (candF.direction == 1 ? bullTrend : bearTrend)
+        if candF.stage > 0 and not trendStillValid(candF.direction, bullTrend, bearTrend)
             candF.stage := 0
             candF.ready := false
             candF.status := 'INVALIDATED'
@@ -556,7 +569,7 @@ updateCandidates() =>
         candG.confirmBreak(bar_index, time_close, open, close)
         if candG.ready and not bodyDisplacement
             candG.ready := false
-        if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and (na(memory.amdUsed) or bar_index - memory.amdUsed > accumulationBars)
+        if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and amdCooldownElapsed(bar_index, memory.amdUsed, accumulationBars)
             bool bull = rangeSweep(1, accLow, accHigh, high, low, close)
             bool bear = rangeSweep(-1, accLow, accHigh, high, low, close)
             if bull != bear
@@ -852,8 +865,8 @@ if barstate.isconfirmed
             if showStructure and visualLayout != 'Reference'
                 structureTag(close, dir == 1 ? 'Bullish MSS' : 'Bearish MSS', dir == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
     // Use only levels known before this bar; pivots are updated below.
-    bool bullSweep = not na(slw) and not na(sh) and low < slw and close > slw and close < sh and (na(usedLow) or slBar != usedLow)
-    bool bearSweep = not na(sh) and not na(slw) and high > sh and close < sh and close > slw and (na(usedHigh) or shBar != usedHigh)
+    bool bullSweep = swingSweep(1, slw, sh, high, low, close, na(usedLow) or slBar != usedLow)
+    bool bearSweep = swingSweep(-1, sh, slw, high, low, close, na(usedHigh) or shBar != usedHigh)
     if enableA and stage == 0 and not active and not pending and not brokerBusy and bullSweep != bearSweep
         if bullSweep or bearSweep
             dir := bullSweep ? 1 : -1

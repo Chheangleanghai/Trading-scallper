@@ -20,7 +20,7 @@ updateCandidates() =>
     if idleForSetup
         // B: previous completed reference candle; frozen sweep -> later break of sweep candle.
         candB.confirmBreak(bar_index, time_close, open, close)
-        if enableB and candB.stage == 0 and (na(memory.crtUsed) or memory.crtUsed != crtTime)
+        if enableB and candB.stage == 0 and referenceUnused(crtTime, memory.crtUsed)
             bool bull = rangeSweep(1, crtLow, crtHigh, high, low, close)
             bool bear = rangeSweep(-1, crtLow, crtHigh, high, low, close)
             if bull != bear
@@ -30,8 +30,8 @@ updateCandidates() =>
         // C: confirmed-pivot false breakout, not the original 20-day Turtle Soup variant.
         candC.confirmBreak(bar_index, time_close, open, close)
         if enableC and candC.stage == 0
-            bool bull = not na(slw) and bar_index - slBar >= turtleAge and (na(memory.turtleUsedLow) or memory.turtleUsedLow != slBar) and pivotSweep(1, slw, high, low, close)
-            bool bear = not na(sh) and bar_index - shBar >= turtleAge and (na(memory.turtleUsedHigh) or memory.turtleUsedHigh != shBar) and pivotSweep(-1, sh, high, low, close)
+            bool bull = not na(slw) and pivotAgeAvailable(bar_index, slBar, turtleAge, memory.turtleUsedLow) and pivotSweep(1, slw, high, low, close)
+            bool bear = not na(sh) and pivotAgeAvailable(bar_index, shBar, turtleAge, memory.turtleUsedHigh) and pivotSweep(-1, sh, high, low, close)
             if bull != bear
                 candC.begin(bar_index, time_close, bull ? 1 : -1, bull ? slw : low, bull ? high : sh, bull ? low : high, bull ? high : low, 10, 20, 'Pivot false breakout')
                 if bull
@@ -63,10 +63,11 @@ updateCandidates() =>
         for c in array.from(candDemand, candSupply)
             if c.stage > 0 and bar_index > c.setupBar
                 bool touch = high >= c.lower and low <= c.upper
+                bool withinTestLimit = zoneTestsWithinLimit(c.tests, touch, maxZoneTests)
                 if touch
                     c.tests += 1
                     c.status := c.tests == 1 ? 'FRESH_TEST' : 'TESTED'
-                if c.tests > maxZoneTests
+                if not withinTestLimit
                     c.stage := 0
                     c.status := 'EXPIRED'
                 else
@@ -84,7 +85,7 @@ updateCandidates() =>
         candF.confirmBreak(bar_index, time_close, open, close)
         bool bullTrend = chartStructure == 1 and ema9 > ema21 and (not useEMA50 or ema21 > ema50)
         bool bearTrend = chartStructure == -1 and ema9 < ema21 and (not useEMA50 or ema21 < ema50)
-        if candF.stage > 0 and not (candF.direction == 1 ? bullTrend : bearTrend)
+        if candF.stage > 0 and not trendStillValid(candF.direction, bullTrend, bearTrend)
             candF.stage := 0
             candF.ready := false
             candF.status := 'INVALIDATED'
@@ -98,7 +99,7 @@ updateCandidates() =>
         candG.confirmBreak(bar_index, time_close, open, close)
         if candG.ready and not bodyDisplacement
             candG.ready := false
-        if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and (na(memory.amdUsed) or bar_index - memory.amdUsed > accumulationBars)
+        if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and amdCooldownElapsed(bar_index, memory.amdUsed, accumulationBars)
             bool bull = rangeSweep(1, accLow, accHigh, high, low, close)
             bool bear = rangeSweep(-1, accLow, accHigh, high, low, close)
             if bull != bear

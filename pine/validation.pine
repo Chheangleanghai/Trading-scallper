@@ -9,6 +9,18 @@ rangeSweep(int direction, float lower, float upper, float h, float l, float c) =
     direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
 pivotSweep(int direction, float level, float h, float l, float c) =>
     direction == 1 ? l < level and c > level : h > level and c < level
+swingSweep(int direction, float sweptLevel, float oppositeLevel, float h, float l, float c, bool pivotUnused) =>
+    pivotUnused and not na(sweptLevel) and not na(oppositeLevel) and (direction == 1 ? l < sweptLevel and c > sweptLevel and c < oppositeLevel : direction == -1 and h > sweptLevel and c < sweptLevel and c > oppositeLevel)
+referenceUnused(int currentReferenceTime, int usedReferenceTime) =>
+    not na(currentReferenceTime) and (na(usedReferenceTime) or currentReferenceTime != usedReferenceTime)
+pivotAgeAvailable(int currentBar, int pivotBar, int minimumAge, int usedPivotBar) =>
+    not na(pivotBar) and currentBar - pivotBar >= minimumAge and (na(usedPivotBar) or usedPivotBar != pivotBar)
+zoneTestsWithinLimit(int priorTests, bool touched, int maximumTests) =>
+    priorTests + (touched ? 1 : 0) <= maximumTests
+trendStillValid(int direction, bool bullishTrend, bool bearishTrend) =>
+    direction == 1 ? bullishTrend : direction == -1 and bearishTrend
+amdCooldownElapsed(int currentBar, int lastSetupBar, int rangeLength) =>
+    na(lastSetupBar) or currentBar - lastSetupBar > rangeLength
 fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
     direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
@@ -150,6 +162,17 @@ method confirmRetest(Candidate c, int currentBar, int currentTime, float current
 expect(bool result, string message) =>
     if not result
         runtime.error('Synthetic assertion failed: ' + message)
+testTerminalLifecycle(string candidateId, int direction, int setupBar) =>
+    float stopInvalidation = direction == 1 ? 99.0 : 101.0
+    Candidate invalidated = Candidate.new(id=candidateId + '_INVALIDATION', enabled=true)
+    invalidated.begin(setupBar, setupBar * 1000, direction, 99, 101, stopInvalidation, direction == 1 ? 101 : 99, 20, 20, 'Terminal-state fixture')
+    invalidated.maintain(setupBar + 1, direction == 1 ? 98.0 : 100.0, direction == -1 ? 102.0 : 100.0, 20)
+    expect(invalidated.stage == 0 and invalidated.status == 'INVALIDATED', candidateId + ' invalidates at its structural boundary')
+    Candidate expired = Candidate.new(id=candidateId + '_EXPIRY', enabled=true)
+    expired.begin(setupBar, setupBar * 1000, direction, 99, 101, stopInvalidation, direction == 1 ? 101 : 99, 20, 20, 'Terminal-state fixture')
+    expired.maintain(setupBar + 21, 100.0, 100.0, 20)
+    expect(expired.stage == 0 and expired.status == 'EXPIRED', candidateId + ' expires after maximum age')
+    0
 if barstate.isfirst
     expect(rangeSweep(1, 100, 110, 106, 99, 103), 'B bullish CRT reclaim')
     expect(rangeSweep(-1, 100, 110, 111, 104, 107), 'B bearish CRT reclaim')
@@ -158,6 +181,18 @@ if barstate.isfirst
     expect(pivotSweep(1, 100, 105, 99, 102), 'C bullish pivot false breakout')
     expect(pivotSweep(-1, 110, 111, 106, 108), 'C bearish pivot false breakout')
     expect(not pivotSweep(1, 100, 105, 100, 102), 'C must actually sweep')
+    expect(swingSweep(1, 100, 110, 105, 99, 103, true), 'A bullish bounded unused-pivot sweep')
+    expect(swingSweep(-1, 110, 100, 111, 105, 107, true), 'A bearish bounded unused-pivot sweep')
+    expect(not swingSweep(1, 100, 110, 105, 99, 103, false), 'A consumed pivot cannot sweep again')
+    expect(not swingSweep(1, 100, 110, 105, 100, 103, true), 'A boundary touch is not a sweep')
+    expect(referenceUnused(1000, na), 'B first completed reference is available')
+    expect(referenceUnused(2000, 1000), 'B later reference candle is available')
+    expect(not referenceUnused(na, na), 'B missing reference candle is unavailable')
+    expect(not referenceUnused(1000, 1000), 'B reference candle can only seed one setup')
+    expect(pivotAgeAvailable(20, 15, 3, na), 'C pivot has aged enough')
+    expect(not pivotAgeAvailable(17, 15, 3, na), 'C too-young pivot rejected')
+    expect(not pivotAgeAvailable(20, 15, 3, 15), 'C consumed pivot rejected')
+    expect(not pivotAgeAvailable(20, na, 3, na), 'C unconfirmed pivot rejected')
     expect(fairValueGap(1, 106, 105, 104, 109), 'A bullish fair value gap')
     expect(fairValueGap(-1, 104, 101, 106, 105), 'A bearish fair value gap')
     expect(not fairValueGap(1, 106, 104, 104, 109), 'A touching boundaries do not form a gap')
@@ -173,13 +208,23 @@ if barstate.isfirst
     expect(zoneDeparture(-1, 100, 104, 102, 103, 98, true), 'E bearish departure')
     expect(not zoneDeparture(1, 105, 101, 103, 102, 107, false), 'E displacement required')
     expect(not zoneDeparture(1, 105, 103, 101, 102, 107, true), 'E opposite origin required')
+    expect(zoneTestsWithinLimit(0, true, 2), 'E first zone test remains fresh')
+    expect(zoneTestsWithinLimit(1, true, 2), 'E last allowed zone test accepted')
+    expect(not zoneTestsWithinLimit(2, true, 2), 'E excess zone test expires candidate')
     expect(trendPullback(1, true, 105, 103, 108, 104, 106, 2, 0.3), 'F bullish pullback')
     expect(trendPullback(-1, true, 103, 105, 104, 100, 102, 2, 0.3), 'F bearish pullback')
     expect(not trendPullback(1, false, 105, 103, 108, 104, 106, 2, 0.3), 'F crossover without structure rejected')
     expect(not trendPullback(1, true, 105, 103, 108, 100, 106, 2, 0.3), 'F deep overshoot rejected')
+    expect(trendStillValid(1, true, false), 'F bullish candidate trend remains valid')
+    expect(trendStillValid(-1, false, true), 'F bearish candidate trend remains valid')
+    expect(not trendStillValid(1, false, true), 'F bullish candidate invalidated by bearish trend')
+    expect(not trendStillValid(0, true, true), 'F neutral candidate direction invalid')
     expect(compressedRange(106, 100, 2, 3), 'G compressed range accepted')
     expect(not compressedRange(107, 100, 2, 3), 'G wide range rejected')
     expect(not compressedRange(100, 100, 2, 3), 'G zero range rejected')
+    expect(amdCooldownElapsed(10, na, 12), 'G first AMD setup has no cooldown')
+    expect(not amdCooldownElapsed(22, 10, 12), 'G cooldown is strict at range boundary')
+    expect(amdCooldownElapsed(23, 10, 12), 'G AMD cooldown expires after range window')
     expect(snrBreakout(1, 100, 1, 2, 100, 100, 102, true), 'D bullish displaced breakout')
     expect(snrBreakout(-1, 100, 1, 2, 100, 100, 98, true), 'D bearish displaced breakout')
     expect(not snrBreakout(1, 100, 1, 1, 99, 99, 102, true), 'D one confirmed pivot is not a level')
@@ -269,38 +314,56 @@ if barstate.isfirst
     expect(readinessState(-1, false, true, true) == 'SELL CONFIRMED', 'Triggered short confirmed')
     expect(readinessState(1, false, false, false) == 'WAIT', 'No active plan remains WAIT')
     expect(readinessState(0, true, false, false) == 'WAIT', 'Unknown direction cannot become ready')
+    testTerminalLifecycle('A_SWEEP_MSS_FVG', 1, 1100)
+    testTerminalLifecycle('B_CRT', -1, 1200)
+    testTerminalLifecycle('C_TURTLE_SOUP', 1, 1300)
+    testTerminalLifecycle('D_SNR', -1, 1400)
+    testTerminalLifecycle('E_DEMAND', 1, 1500)
+    testTerminalLifecycle('E_SUPPLY', -1, 1600)
+    testTerminalLifecycle('F_TREND_PULLBACK', 1, 1700)
+    testTerminalLifecycle('G_AMD', -1, 1800)
+    testTerminalLifecycle('H_QUASIMODO', 1, 1900)
     // Lifecycle cases below instantiate the same Candidate type/methods used by production modules.
     Candidate fixtureA = Candidate.new(id='A_SWEEP_MSS_FVG', enabled=true)
-    bool detectA = pivotSweep(1, 100, 103, 99, 101) and breakConfirmed(1, 102, 102, 103) and fairValueGap(1, 106, 105, 104, 109)
+    bool detectA = swingSweep(1, 100, 110, 103, 99, 101, true) and breakConfirmed(1, 102, 102, 103) and fairValueGap(1, 106, 105, 104, 109)
     expect(detectA, 'A setup fixture has sweep, later MSS, and FVG evidence')
     if detectA
         fixtureA.begin(100, 1000, 1, 100, 102, 95, 102, 20, 20, 'A retest')
     fixtureA.confirmRetest(100, 1000, 103, 101, 102, 103)
     expect(not fixtureA.ready, 'A cannot confirm on its setup bar')
     fixtureA.maintain(101, 101, 103, 20)
-    fixtureA.confirmRetest(101, 2000, 103, 101, 102, 103)
-    expect(fixtureA.ready and fixtureA.readyBar == 101 and fixtureA.confirmationTime == 2000, 'A later retest confirms on knowledge bar')
+    fixtureA.confirmRetest(101, 2000, 103, 101, 103, 102)
+    expect(not fixtureA.ready, 'A opposite-close retest is not confirmed')
+    fixtureA.maintain(102, 101, 103, 20)
+    fixtureA.confirmRetest(102, 3000, 103, 101, 102, 103)
+    expect(fixtureA.ready and fixtureA.readyBar == 102 and fixtureA.confirmationTime == 3000, 'A later retest confirms on knowledge bar')
 
     Candidate fixtureB = Candidate.new(id='B_CRT', enabled=true)
-    bool detectB = rangeSweep(1, 100, 110, 106, 99, 103)
+    bool detectB = referenceUnused(2000, na) and rangeSweep(1, 100, 110, 106, 99, 103)
     expect(detectB, 'B valid reference-candle sweep and reclaim')
     if detectB
         fixtureB.begin(200, 1000, 1, 100, 110, 95, 105, 10, 20, 'B reference sweep')
     fixtureB.confirmBreak(200, 1000, 105, 106)
     expect(not fixtureB.ready, 'B cannot confirm on its setup bar')
     fixtureB.maintain(201, 100, 110, 20)
-    fixtureB.confirmBreak(201, 2000, 105, 106)
-    expect(fixtureB.ready and fixtureB.readyBar == 201, 'B later confirmation bar recorded')
+    fixtureB.confirmBreak(201, 2000, 106, 104)
+    expect(not fixtureB.ready, 'B opposite-direction candle does not confirm')
+    fixtureB.maintain(202, 100, 110, 20)
+    fixtureB.confirmBreak(202, 3000, 105, 106)
+    expect(fixtureB.ready and fixtureB.readyBar == 202, 'B later confirmation bar recorded')
 
     Candidate fixtureC = Candidate.new(id='C_TURTLE_SOUP', enabled=true)
-    bool detectC = pivotSweep(-1, 110, 111, 106, 108)
+    bool detectC = pivotAgeAvailable(30, 20, 3, na) and pivotSweep(-1, 110, 111, 106, 108)
     expect(detectC, 'C valid bearish confirmed-pivot false breakout')
     if detectC
         fixtureC.begin(300, 1000, -1, 100, 110, 115, 105, 10, 20, 'C false breakout')
     fixtureC.confirmBreak(300, 1000, 105, 104)
     expect(not fixtureC.ready, 'C cannot confirm on its setup bar')
     fixtureC.maintain(301, 100, 110, 20)
-    fixtureC.confirmBreak(301, 2000, 105, 104)
+    fixtureC.confirmBreak(301, 2000, 104, 106)
+    expect(not fixtureC.ready, 'C opposite-direction candle does not confirm')
+    fixtureC.maintain(302, 100, 110, 20)
+    fixtureC.confirmBreak(302, 3000, 105, 104)
     expect(fixtureC.ready and fixtureC.direction == -1, 'C later bearish confirmation')
 
     Candidate fixtureD = Candidate.new(id='D_SNR', enabled=true)
@@ -311,8 +374,11 @@ if barstate.isfirst
     fixtureD.confirmBreak(400, 1000, 99, 102)
     expect(not fixtureD.ready, 'D cannot confirm on its setup bar')
     fixtureD.maintain(401, 100, 102, 20)
-    fixtureD.confirmBreak(401, 2000, 99, 102)
-    expect(fixtureD.ready and fixtureD.readyBar == 401, 'D later rejection confirmation')
+    fixtureD.confirmBreak(401, 2000, 102, 98)
+    expect(not fixtureD.ready, 'D failed direction close does not confirm')
+    fixtureD.maintain(402, 100, 102, 20)
+    fixtureD.confirmBreak(402, 3000, 99, 102)
+    expect(fixtureD.ready and fixtureD.readyBar == 402, 'D later rejection confirmation')
 
     Candidate fixtureE = Candidate.new(id='E_DEMAND', enabled=true)
     bool detectE = zoneDeparture(1, 105, 101, 103, 102, 107, true)
@@ -322,29 +388,38 @@ if barstate.isfirst
     fixtureE.confirmRetest(500, 1000, 103, 101, 102, 103)
     expect(not fixtureE.ready, 'E cannot confirm on its zone-departure bar')
     fixtureE.maintain(501, 101, 103, 20)
-    fixtureE.confirmRetest(501, 2000, 103, 101, 102, 103)
+    fixtureE.confirmRetest(501, 2000, 103, 101, 103, 102)
+    expect(not fixtureE.ready, 'E weak opposite-close zone test does not confirm')
+    fixtureE.maintain(502, 101, 103, 20)
+    fixtureE.confirmRetest(502, 3000, 103, 101, 102, 103)
     expect(fixtureE.ready and fixtureE.direction == 1, 'E demand later retest confirmation')
 
     Candidate fixtureF = Candidate.new(id='F_TREND_PULLBACK', enabled=true)
-    bool detectF = trendPullback(1, true, 105, 103, 108, 104, 106, 2, 0.3)
+    bool detectF = trendStillValid(1, true, false) and trendPullback(1, true, 105, 103, 108, 104, 106, 2, 0.3)
     expect(detectF, 'F valid structured trend pullback')
     if detectF
         fixtureF.begin(600, 1000, 1, 100, 102, 95, 105, 20, 0, 'F trend pullback')
     fixtureF.confirmBreak(600, 1000, 105, 106)
     expect(not fixtureF.ready, 'F cannot confirm on its pullback bar')
     fixtureF.maintain(601, 100, 110, 20)
-    fixtureF.confirmBreak(601, 2000, 105, 106)
-    expect(fixtureF.ready and fixtureF.readyBar == 601, 'F later pullback trigger')
+    fixtureF.confirmBreak(601, 2000, 106, 104)
+    expect(not fixtureF.ready, 'F opposite-direction candle does not confirm')
+    fixtureF.maintain(602, 100, 110, 20)
+    fixtureF.confirmBreak(602, 3000, 105, 106)
+    expect(fixtureF.ready and fixtureF.readyBar == 602, 'F later pullback trigger')
 
     Candidate fixtureG = Candidate.new(id='G_AMD', enabled=true)
-    bool detectG = compressedRange(106, 100, 2, 3) and rangeSweep(-1, 100, 106, 107, 99, 105)
+    bool detectG = amdCooldownElapsed(30, na, 12) and compressedRange(106, 100, 2, 3) and rangeSweep(-1, 100, 106, 107, 99, 105)
     expect(detectG, 'G valid compressed-range sweep and reclaim')
     if detectG
         fixtureG.begin(700, 1000, -1, 100, 110, 115, 100, 20, 20, 'G range sweep')
     fixtureG.confirmBreak(700, 1000, 100, 99)
     expect(not fixtureG.ready, 'G cannot continue on its sweep bar')
     fixtureG.maintain(701, 100, 110, 20)
-    fixtureG.confirmBreak(701, 2000, 100, 99)
+    fixtureG.confirmBreak(701, 2000, 99, 101)
+    expect(not fixtureG.ready, 'G opposite-direction candle does not confirm')
+    fixtureG.maintain(702, 100, 110, 20)
+    fixtureG.confirmBreak(702, 3000, 100, 99)
     expect(fixtureG.ready and fixtureG.direction == -1, 'G later bearish continuation confirmation')
 
     Candidate fixtureH = Candidate.new(id='H_QUASIMODO', enabled=true)
@@ -355,8 +430,59 @@ if barstate.isfirst
     fixtureH.confirmRetest(800, 1000, 100, 98, 100, 98)
     expect(not fixtureH.ready, 'H cannot confirm on its pivot bar')
     fixtureH.maintain(801, 98, 100, 20)
-    fixtureH.confirmRetest(801, 2000, 100, 98, 100, 98)
-    expect(fixtureH.ready and fixtureH.readyBar == 801, 'H later retest confirmation')
+    fixtureH.confirmRetest(801, 2000, 100, 98, 98, 100)
+    expect(not fixtureH.ready, 'H opposite-close retest does not confirm')
+    fixtureH.maintain(802, 98, 100, 20)
+    fixtureH.confirmRetest(802, 3000, 100, 98, 100, 98)
+    expect(fixtureH.ready and fixtureH.readyBar == 802, 'H later retest confirmation')
+
+    Candidate rejectedA = Candidate.new(id='A_REJECTED', enabled=true)
+    bool rejectA = swingSweep(1, 100, 110, 103, 100, 101, true) and breakConfirmed(1, 102, 102, 103) and fairValueGap(1, 106, 104, 104, 109)
+    if rejectA
+        rejectedA.begin(850, 1000, 1, 100, 102, 95, 102, 20, 20, 'Invalid A fixture')
+    expect(not rejectA and rejectedA.stage == 0, 'A missing sweep/FVG evidence cannot start candidate')
+
+    Candidate rejectedB = Candidate.new(id='B_REJECTED', enabled=true)
+    bool rejectB = referenceUnused(2000, na) and rangeSweep(1, 100, 110, 106, 99, 99.5)
+    if rejectB
+        rejectedB.begin(851, 1000, 1, 100, 110, 95, 105, 10, 20, 'Invalid B fixture')
+    expect(not rejectB and rejectedB.stage == 0, 'B sweep without reclaim cannot start candidate')
+
+    Candidate rejectedC = Candidate.new(id='C_REJECTED', enabled=true)
+    bool rejectC = pivotAgeAvailable(30, 20, 3, na) and pivotSweep(-1, 110, 110, 106, 108)
+    if rejectC
+        rejectedC.begin(852, 1000, -1, 100, 110, 115, 105, 10, 20, 'Invalid C fixture')
+    expect(not rejectC and rejectedC.stage == 0, 'C non-swept pivot cannot start candidate')
+
+    Candidate rejectedD = Candidate.new(id='D_REJECTED', enabled=true)
+    bool rejectD = snrRejection(1, 100, 1, 1, 102, 99, 100, 102)
+    if rejectD
+        rejectedD.begin(853, 1000, 1, 99, 101, 95, 99, 20, 0, 'Invalid D fixture')
+    expect(not rejectD and rejectedD.stage == 0, 'D one pivot touch cannot qualify confirmed level')
+
+    Candidate rejectedE = Candidate.new(id='E_REJECTED', enabled=true)
+    bool rejectE = zoneDeparture(1, 105, 101, 103, 102, 107, false)
+    if rejectE
+        rejectedE.begin(854, 1000, 1, 100, 102, 98, 102, 20, 0, 'Invalid E fixture')
+    expect(not rejectE and rejectedE.stage == 0, 'E non-displaced candle cannot create zone candidate')
+
+    Candidate rejectedF = Candidate.new(id='F_REJECTED', enabled=true)
+    bool rejectF = trendStillValid(1, false, true) and trendPullback(1, false, 105, 103, 108, 104, 106, 2, 0.3)
+    if rejectF
+        rejectedF.begin(855, 1000, 1, 100, 102, 95, 105, 20, 0, 'Invalid F fixture')
+    expect(not rejectF and rejectedF.stage == 0, 'F pullback without structural trend cannot start candidate')
+
+    Candidate rejectedG = Candidate.new(id='G_REJECTED', enabled=true)
+    bool rejectG = amdCooldownElapsed(30, na, 12) and compressedRange(107, 100, 2, 3) and rangeSweep(-1, 100, 107, 108, 99, 105)
+    if rejectG
+        rejectedG.begin(856, 1000, -1, 100, 107, 115, 100, 20, 20, 'Invalid G fixture')
+    expect(not rejectG and rejectedG.stage == 0, 'G over-wide range cannot create AMD candidate')
+
+    Candidate rejectedH = Candidate.new(id='H_REJECTED', enabled=true)
+    bool rejectH = qmPattern(-1, 1, 110, 100, 109, 98, 108, 106) and qmQualified(true, 15, 10, 20)
+    if rejectH
+        rejectedH.begin(857, 1000, -1, 99, 101, 110, 99, 20, 20, 'Invalid H fixture')
+    expect(not rejectH and rejectedH.stage == 0, 'H invalid pivot geometry cannot create candidate')
 
     Candidate fixtureInvalid = Candidate.new(id='INVALIDATION', enabled=true)
     fixtureInvalid.begin(900, 1000, 1, 100, 102, 98, 102, 20, 20, 'Invalidation fixture')
@@ -369,4 +495,4 @@ if barstate.isfirst
     expect(fixtureExpired.stage == 0 and fixtureExpired.status == 'EXPIRED', 'Candidate expires after configured age')
 var table results = table.new(position.top_right, 1, 1)
 if barstate.islast
-    table.cell(results, 0, 0, '144 synthetic assertions passed in this TradingView run', text_color=color.white, bgcolor=color.green)
+    table.cell(results, 0, 0, '200 synthetic assertions passed in this TradingView run', text_color=color.white, bgcolor=color.green)

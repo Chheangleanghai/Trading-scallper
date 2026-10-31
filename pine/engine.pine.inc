@@ -461,8 +461,8 @@ if barstate.isconfirmed
             if showStructure and visualLayout != 'Reference'
                 structureTag(close, dir == 1 ? 'Bullish MSS' : 'Bearish MSS', dir == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
     // Use only levels known before this bar; pivots are updated below.
-    bool bullSweep = not na(slw) and not na(sh) and low < slw and close > slw and close < sh and (na(usedLow) or slBar != usedLow)
-    bool bearSweep = not na(sh) and not na(slw) and high > sh and close < sh and close > slw and (na(usedHigh) or shBar != usedHigh)
+    bool bullSweep = swingSweep(1, slw, sh, high, low, close, na(usedLow) or slBar != usedLow)
+    bool bearSweep = swingSweep(-1, sh, slw, high, low, close, na(usedHigh) or shBar != usedHigh)
     if enableA and stage == 0 and not active and not pending and not brokerBusy and bullSweep != bearSweep
         if bullSweep or bearSweep
             dir := bullSweep ? 1 : -1

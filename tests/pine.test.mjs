@@ -23,6 +23,15 @@ describe("local Pine structural and pure-predicate checks", () => {
     expect(report.runtimeErrors).toEqual([]);
     expect(report.unimplementedStdCalls).toEqual([]);
   });
+  it("keeps the validation chart's displayed assertion count in sync with its fixtures", () => {
+    const source = read("validation.pine");
+    const assertionStatements = (source.match(/^\s*expect\(/gm) ?? []).length - 1; // exclude the expect() function definition
+    const terminalRuns = (source.match(/^\s{4}testTerminalLifecycle\(/gm) ?? []).length;
+    const assertionCalls = assertionStatements + (terminalRuns - 1) * 2; // two checks run for each terminal lifecycle case
+    const displayedCount = source.match(/'(\d+) synthetic assertions passed in this TradingView run'/)?.[1];
+    expect(assertionCalls).toBe(200);
+    expect(displayedCount).toBe(String(assertionCalls));
+  });
   it("detects a deliberately failed assertion instead of trusting harness pass alone", () => {
     const source = read("validation.pine").replace(
       "== 100, 'Maximum quality'",
@@ -87,5 +96,29 @@ describe("indicator/strategy common-engine parity", () => {
     for (const file of ["indicator.pine", "strategy.pine"]) {
       expect(read(file)).toContain("const string SCRIPT_VERSION = '0.8.0'");
     }
+  });
+});
+
+describe("higher-timeframe and signal confirmation safeguards", () => {
+  it("requests only completed HTF/reference bars when using lookahead", () => {
+    const sources = [
+      read("engine.pine.inc"),
+      read("modules/candidates.pine.inc"),
+      read("modules/context.pine.inc"),
+    ].join("\n");
+    const requests = sources.match(/^.*request\.security\(.*$/gm) ?? [];
+    expect(requests).toHaveLength(5);
+    for (const request of requests) {
+      expect(request).toContain("lookahead=barmerge.lookahead_on");
+      expect(request).toMatch(/\[1\]|\)\[1\]/);
+    }
+    expect(sources).not.toMatch(/request\.security_lower_tf|barmerge\.lookahead_off/);
+  });
+
+  it("keeps entry notifications close-confirmed and analysis inside the confirmed-bar block", () => {
+    const engine = read("engine.pine.inc");
+    expect(engine).toContain("if barstate.isconfirmed\n    validationReason :=");
+    expect(engine).toContain("    updateCandidates()\n");
+    expect(engine).toContain("alert(payload, alert.freq_once_per_bar_close)");
   });
 });
