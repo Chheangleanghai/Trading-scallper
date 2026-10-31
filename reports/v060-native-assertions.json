@@ -1,0 +1,55 @@
+{
+  "status": {
+    "type": 2
+  },
+  "captionInGraphics": true,
+  "graphics": {
+    "indexes": [],
+    "dwgtables": [
+      {
+        "styleId": "tables",
+        "data": [
+          {
+            "id": 1,
+            "pos": "top_right",
+            "rows": 1,
+            "cols": 1,
+            "bgc": null,
+            "frmc": null,
+            "frmw": 0,
+            "brdc": null,
+            "brdw": 0
+          }
+        ]
+      }
+    ],
+    "dwgtablecells": [
+      {
+        "styleId": "tableCells",
+        "data": [
+          {
+            "id": 1,
+            "tid": 1,
+            "row": 0,
+            "col": 0,
+            "w": null,
+            "h": null,
+            "t": "107 synthetic assertions passed in this TradingView run",
+            "tc": 0,
+            "tha": "center",
+            "tva": "center",
+            "ts": "auto",
+            "bgc": 1,
+            "colspan": 1,
+            "rowspan": 1,
+            "tt": "",
+            "tfrm": 0
+          }
+        ]
+      }
+    ]
+  },
+  "observedAt": "2026-10-31T03:12:14.829Z",
+  "assertionsPassed": 107,
+  "sourceSha256": "2e108810e1794578c245ea272b00b45afff68090996e005d0ea40c254debd07e"
+}

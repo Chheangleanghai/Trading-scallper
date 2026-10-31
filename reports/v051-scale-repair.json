@@ -1,0 +1,32 @@
+{
+  "studyId": "ERbdai",
+  "detachedBefore": true,
+  "detachedAfter": false,
+  "sharedMainAxis": true,
+  "coordinates": [
+    {
+      "price": 3831.0991058510253,
+      "candles": 432.1666781350422,
+      "script": 432.1666781350422
+    },
+    {
+      "price": 3857.794262438859,
+      "candles": 288.11111875669536,
+      "script": 288.11111875669536
+    },
+    {
+      "price": 3884.4894190266928,
+      "candles": 144.05555937834606,
+      "script": 144.05555937834606
+    }
+  ],
+  "coordinatesMatch": true,
+  "inputsUnchanged": true,
+  "stylesUnchanged": true,
+  "unrelatedStudiesUnchanged": true,
+  "autoScale": true,
+  "resolution": "5",
+  "observedAt": "2026-10-31T01:17:57.456Z",
+  "save": "saved",
+  "autosave": true
+}

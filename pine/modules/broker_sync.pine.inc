@@ -10,25 +10,25 @@ if openingFill or roundTripFill
     active := true
     entryTriggered := true
     status := 'ENTRY_TRIGGERED'
-    alert(event(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL'), alert.freq_once_per_bar_close)
-    alert(event('ENTRY_TRIGGERED'), alert.freq_all)
+    notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+    notifyLifecycle('ENTRY_TRIGGERED')
 if newlyClosed > 0
     bool stopReported = false
     for trade = strategy.closedtrades - newlyClosed to strategy.closedtrades - 1
         string reason = strategy.closedtrades.exit_comment(trade)
         if reason == 'TP1_HIT' and not hit1
             hit1 := true
-            alert(event('TP1_HIT'), alert.freq_all)
+            notifyLifecycle('TP1_HIT')
         if reason == 'TP2_HIT' and not hit2
             hit2 := true
-            alert(event('TP2_HIT'), alert.freq_all)
+            notifyLifecycle('TP2_HIT')
         if reason == 'TP3_HIT'
-            alert(event('TP3_HIT'), alert.freq_all)
+            notifyLifecycle('TP3_HIT')
         if reason == 'STOP_LOSS_HIT' and not stopReported
             stopReported := true
-            alert(event('STOP_LOSS_HIT'), alert.freq_all)
+            notifyLifecycle('STOP_LOSS_HIT')
     if strategy.position_size == 0
         active := false
         pending := false
         status := 'CLOSED'
-        alert(event('TRADE_CLOSED'), alert.freq_all)
+        notifyLifecycle('TRADE_CLOSED')

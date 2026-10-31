@@ -1,0 +1,143 @@
+{
+  "cases": 32,
+  "negativeCases": 24,
+  "positiveCases": 7,
+  "noTradeCases": 1,
+  "comparedFields": [
+    "pnl_display",
+    "profit_factor_display",
+    "profitable_trades_display",
+    "no_trades"
+  ],
+  "sameDisplayedResultsAsV050": [
+    {
+      "case": "v060_A_SWEEP_MSS_FVG_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_B_CRT_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_C_TURTLE_SOUP_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_D_SNR_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_E_SUPPLY_DEMAND_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_F_TREND_PULLBACK_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_G_AMD_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_H_QUASIMODO_5m",
+      "matches": true
+    },
+    {
+      "case": "v060_A_SWEEP_MSS_FVG_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_B_CRT_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_C_TURTLE_SOUP_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_D_SNR_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_E_SUPPLY_DEMAND_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_F_TREND_PULLBACK_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_G_AMD_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_H_QUASIMODO_1m",
+      "matches": true
+    },
+    {
+      "case": "v060_A_SWEEP_MSS_FVG_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_B_CRT_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_C_TURTLE_SOUP_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_D_SNR_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_E_SUPPLY_DEMAND_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_F_TREND_PULLBACK_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_G_AMD_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_H_QUASIMODO_3m",
+      "matches": true
+    },
+    {
+      "case": "v060_A_SWEEP_MSS_FVG_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_B_CRT_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_C_TURTLE_SOUP_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_D_SNR_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_E_SUPPLY_DEMAND_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_F_TREND_PULLBACK_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_G_AMD_15m",
+      "matches": true
+    },
+    {
+      "case": "v060_H_QUASIMODO_15m",
+      "matches": true
+    }
+  ],
+  "warning": "Case counts are not trade win rates; native exit statistics may split partial exits. This is inspected in-sample history, not untouched OOS."
+}

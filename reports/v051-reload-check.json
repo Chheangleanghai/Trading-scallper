@@ -1,0 +1,88 @@
+{
+  "afterReload": true,
+  "studyId": "ERbdai",
+  "status": {
+    "type": 2
+  },
+  "pane": {
+    "mainSourceId": "_seriesId",
+    "sources": [
+      {
+        "id": "_seriesId",
+        "type": "MainSeries"
+      },
+      {
+        "id": "ngWTtJ",
+        "type": "Study"
+      },
+      {
+        "id": "BUHYr9",
+        "type": "Study"
+      },
+      {
+        "id": "ERbdai",
+        "type": "StudyStrategy"
+      },
+      {
+        "id": "ESD$TV_DIVIDENDS",
+        "type": "study_Dividends"
+      },
+      {
+        "id": "ESD$TV_SPLITS",
+        "type": "study_Splits"
+      },
+      {
+        "id": "ESD$TV_EARNINGS",
+        "type": "study_Earnings"
+      },
+      {
+        "id": "ESD$TV_ROLLDATES",
+        "type": "study_BarSetContinuousRollDates"
+      },
+      {
+        "id": "ChartEventsSource",
+        "type": "ChartEventsSource"
+      }
+    ],
+    "leftAxisesState": [],
+    "rightAxisesState": [
+      {
+        "state": {
+          "id": "QscxaKOS2I78"
+        },
+        "sources": [
+          "_seriesId",
+          "ngWTtJ",
+          "BUHYr9",
+          "ERbdai",
+          "ESD$TV_DIVIDENDS",
+          "ESD$TV_SPLITS",
+          "ESD$TV_EARNINGS",
+          "ESD$TV_ROLLDATES",
+          "ChartEventsSource"
+        ]
+      }
+    ],
+    "overlayPriceScales": {}
+  },
+  "coordinates": [
+    {
+      "price": 3901.796978859462,
+      "candles": 432.1666781350413,
+      "script": 432.1666781350413
+    },
+    {
+      "price": 3953.53563793992,
+      "candles": 288.11111875669496,
+      "script": 288.11111875669496
+    },
+    {
+      "price": 4005.2742970203785,
+      "candles": 144.05555937834743,
+      "script": 144.05555937834743
+    }
+  ],
+  "coordinatesMatch": true,
+  "autoScale": true,
+  "autosave": true
+}

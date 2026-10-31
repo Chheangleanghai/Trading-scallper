@@ -1,0 +1,4 @@
+{
+  "tail": "w,\u00a0'Plans\u00a0/\u00a0size\u00a0skips',\u00a0text_color=panelMuted,\u00a0text_size=panelText,\u00a0bgcolor=panelAlternate)\n\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0table.cell(performance,\u00a05,\u00a0visibleRow,\u00a0str.tostring(totalPlans)\u00a0+\u00a0'\u00a0/\u00a0'\u00a0+\u00a0str.tostring(rejectedSizes),\u00a0text_color=panelValue,\u00a0text_size=panelText,\u00a0bgcolor=panelAlternate)\n10:32:35 AM\t\"Untitled script\" opened\n10:32:39 AM\tCompiling...\nLine 1388, Col 1",
+  "observedAt": "2026-10-31T03:35:27.786Z"
+}

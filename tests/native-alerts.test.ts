@@ -5,6 +5,22 @@ import { events } from "../src/types.js";
 import { validate } from "../src/validation.js";
 import { formatMessage } from "../src/telegram.js";
 
+it("accepts v0.6 native explanations and preserves planned versus filled prices", () => {
+  const rows = readFileSync(resolve("tests/fixtures/v060-native-alerts.jsonl"), "utf8")
+    .trim().split("\n").map(line => validate(JSON.parse(line)));
+  expect(rows.length).toBeGreaterThan(0);
+  expect(rows.some(row => row.filledEntry !== row.entry)).toBe(true);
+  for (const row of rows) {
+    expect(row.scriptVersion).toBe("0.6.0");
+    expect(row.reason).toContain("MSS + FVG");
+    expect(row.setupProgress).toBeTruthy();
+    const message = formatMessage(row);
+    expect(message).toContain("Why: " + row.reason);
+    expect(message).toContain("Setup: " + row.setupProgress);
+    expect(message).toContain("Script: 0.6.0");
+  }
+});
+
 it("validates and formats real native Pine log payloads covering every alert event", () => {
   const rows = readFileSync(
     resolve("tests/fixtures/native-pine-alerts.jsonl"),

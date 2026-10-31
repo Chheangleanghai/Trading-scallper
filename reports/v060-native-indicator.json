@@ -1,0 +1,8 @@
+{
+  "script": "indicator.pine",
+  "sha256": "4ad2951ba94cfaba273378b13454b89d624382a10f65bd414cc503bb5f1eec34",
+  "nativeCompiled": true,
+  "nativeRuntimeStatus": 2,
+  "nativeLog": "11:24:42 Compiling; 11:25:03 Compiled / Updated on chart",
+  "dateCambodia": "2026-10-31"
+}

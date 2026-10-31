@@ -1,0 +1,25 @@
+{
+  "originalStudies": 3,
+  "currentStudies": 3,
+  "studies": [
+    {
+      "id": "ngWTtJ",
+      "present": true,
+      "stateMatches": true
+    },
+    {
+      "id": "BUHYr9",
+      "present": true,
+      "stateMatches": true
+    },
+    {
+      "id": "G9IyxH",
+      "present": true,
+      "stateMatches": true
+    }
+  ],
+  "autosave": true,
+  "savedToServer": false,
+  "testTabOnly": true,
+  "timestamp": "2026-10-30T18:04:38.869Z"
+}

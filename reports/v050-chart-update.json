@@ -1,0 +1,43 @@
+{
+  "unrelatedStudies": [
+    {
+      "id": "ngWTtJ",
+      "stateMatches": true
+    },
+    {
+      "id": "BUHYr9",
+      "stateMatches": true
+    }
+  ],
+  "strategyStatus": {
+    "type": 2
+  },
+  "tradingInputsPreserved": true,
+  "visualInputs": [
+    {
+      "name": "Dashboard text size",
+      "value": "Small"
+    },
+    {
+      "name": "Chart label text size",
+      "value": "Small"
+    },
+    {
+      "name": "Context label background transparency",
+      "value": 82
+    }
+  ],
+  "signalGateInGraphics": true,
+  "outsideSessionGateInGraphics": true,
+  "resolution": "5",
+  "currentStudies": [
+    "XAUUSD SMART SCALPER PRO Backtest",
+    "Logic 18.12 ROTHEA Free",
+    "9 EMA + RSI Signals (SL + 3 TPs) + OB/FVG [15m]"
+  ],
+  "save": {
+    "phase": "saved"
+  },
+  "autosave": true,
+  "observedAt": "2026-10-30T19:30:26.297Z"
+}

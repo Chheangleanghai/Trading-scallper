@@ -48,7 +48,7 @@ Local unit tests do not establish Pine compilation, profitability, deployment or
 
 ## Expanded-module acceptance
 
-Run `pine/validation.pine` in TradingView for 44 synthetic assertions over the same pure predicates used by the engine. Local generation checks verify matching sources. An independent development transpiler also runs the pure-predicate harness, explicitly rejecting unresolved runtime calls; a canary verifies that a deliberately failed assertion is detected. All 44 assertions additionally passed in native TradingView. This does not emulate the complete trading strategy locally. Then run each module alone with its input enabled (disable A when testing B–H):
+Run `pine/validation.pine` in TradingView for the current 107 synthetic assertions over shared pure predicates, safety gates and state labels. The current source hash and native graphics result are recorded in `reports/v060-native-assertions.json`. Local generation checks verify matching sources. An independent development transpiler also runs the pure-predicate harness, explicitly rejecting unresolved runtime calls; a canary verifies that a deliberately failed assertion is detected. Earlier 44- and 82-assertion versions are historical checks, not the current count. Synthetic assertions do not emulate the complete trading state machine. Then run each module alone with its input enabled (disable A when testing B–H):
 
 | Module | Positive sequence to replay | Negative checks |
 |---|---|---|
@@ -82,3 +82,25 @@ Temporary-tab chart state affected the shared layout during cleanup. The three o
 All 67 captured Pine payloads pass through the full webhook handler, authentication, validation, HTML formatting and actual HTTP fetch against a local server. The transport destination alone is redirected to loopback; no request reaches Telegram. Tests verify 429 responses, invalid JSON, Telegram rejection, a stalled response aborted by the 2.2-second deadline, payload/query destination tampering, rejection before network access and twelve concurrent events. These checks passed on Node v22.23.4 and v24.21.0. This is local integration evidence, not Vercel cold-start measurement, real Telegram acceptance or phone delivery.
 
 Pine source is unchanged from the recorded native TradingView compilation and 48 historical runs. No parameters were optimized against those negative results. Out-of-sample, walk-forward and demo forward testing remain required before live evaluation.
+
+## v0.3.0 native regression
+
+The v0.3.0 harness contained 58 assertions, including 14 new checks for inclusive start/exclusive end, bars straddling the start, inverted windows, long/short selection, occupied plan slots and cancellation blocking. The TradingView chart capture is [validation-58-native.png](reports/validation-58-native.png). These pure-function assertions complement the native historical runs; they do not establish complete state-machine coverage. Exact current source hashes, native run records and remaining gaps are in [V030_RESULTS.md](reports/V030_RESULTS.md).
+
+The user supplied a Telegram screenshot showing a manually identified test message and reports deployment. This is evidence of test-message receipt, not proof that the upgraded native Pine alert has reached the phone. Existing alerts must be recreated to pick up new source; no real messages or running-alert changes were made during this upgrade.
+
+## v0.5.0 audit
+
+The current standalone harness contains 82 assertions (24 added for unique closing structure breaks, ambiguity, neckline chronology and identity lookup). The native study returned active status and generated the actual 82-assertion success caption; see [native graphics evidence](reports/v050-native-assertions.json). The local Node22 suite passes 75 tests. Native Strategy Tester covers all eight isolated modules on M1/M3/M5/M15 again. Small/light, Dashboard and Tiny/light controls were checked. Exact source provenance, results and limitations are in [V050_AUDIT.md](reports/V050_AUDIT.md). These are functional and limited historical checks, not proof that all discretionary pattern interpretations are correct.
+
+## v0.5.1 layout regression
+
+81 tests pass in seven files on Node22, including six new layout cases. Native verification compares three price coordinates, checks shared main-axis mapping, saves the chart, reloads it and repeats the checks. The offline validator also accepts the actual sanitized reloaded pane. No Pine source or trading rule changed. See [V051_SCALE_REPAIR.md](reports/V051_SCALE_REPAIR.md).
+
+## v0.6.0
+
+86 local tests pass on Node22, including actual new native explanation payloads; the native shared-predicate harness passed 107 assertions. Final indicator/strategy compilation succeeded. The 32-case native matrix matches the prior displayed results; 24 cases lost, seven gained and one had no trade. The saved chart passed original-input/strategy-property preservation, unrelated-study checks and shared-price coordinates after reload. A single authorized manual relay TEST received HTTP200 and user-confirmed Telegram receipt. Native live-alert origination and profitability are not established. See [V060_VALIDATION.md](reports/V060_VALIDATION.md).
+
+## v0.6.1 backend guard
+
+89 tests passed on Node22. Contradictory entry-event/status combinations are rejected before Telegram network access, while legacy and actual native fixtures remain compatible. Pine source is unchanged from v0.6.0 native evidence; no new native run or real message was claimed. See [V061_CODE_REVIEW.md](reports/V061_CODE_REVIEW.md).

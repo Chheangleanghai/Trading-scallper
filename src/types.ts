@@ -28,6 +28,10 @@ export interface Signal extends SignalMetadata {
 
 export type ExecutionModel = "INDICATOR_ESTIMATE" | "STRATEGY_EMULATOR";
 export interface SignalMetadata {
+  reason?: string;
+  setupProgress?: string;
+  alignment?: "ALIGNED" | "COUNTER_TREND" | "NEUTRAL";
+  scriptVersion?: string;
   targetSource?: string;
   setupTimestamp?: number;
   eventTimestamp?: number;

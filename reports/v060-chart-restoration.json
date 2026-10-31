@@ -1,0 +1,50 @@
+{
+  "versionOnChart": "0.5.1 retained; final v0.6 native compilation not completed",
+  "status": {
+    "type": 2
+  },
+  "studies": [
+    {
+      "id": "ERbdai",
+      "name": "XAUUSD SMART SCALPER PRO Backtest"
+    },
+    {
+      "id": "BUHYr9",
+      "name": "Logic 18.12 ROTHEA Free"
+    },
+    {
+      "id": "ngWTtJ",
+      "name": "9 EMA + RSI Signals (SL + 3 TPs) + OB/FVG [15m]"
+    }
+  ],
+  "inputMismatchNames": [],
+  "mainId": "_seriesId",
+  "axisMembers": [
+    "_seriesId",
+    "ngWTtJ",
+    "BUHYr9",
+    "ESD$TV_DIVIDENDS",
+    "ESD$TV_SPLITS",
+    "ESD$TV_EARNINGS",
+    "ESD$TV_ROLLDATES",
+    "ChartEventsSource",
+    "ERbdai"
+  ],
+  "ownOverlay": false,
+  "coordinates": [
+    {
+      "price": 3870,
+      "y": 389.9819775707168
+    },
+    {
+      "price": 3880,
+      "y": 325.50110154068193
+    },
+    {
+      "price": 3890,
+      "y": 261.0202255106469
+    }
+  ],
+  "autosave": true,
+  "observedAt": "2026-10-31T03:35:10.316Z"
+}

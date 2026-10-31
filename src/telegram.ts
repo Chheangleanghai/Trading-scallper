@@ -17,6 +17,10 @@ export function formatMessage(s: Signal): string {
       ? "Strategy emulator"
       : "Indicator estimate";
   const details = [
+    s.scriptVersion ? `Script: ${escapeHtml(s.scriptVersion)}` : "",
+    s.reason ? `Why: ${escapeHtml(s.reason)}` : "",
+    s.setupProgress ? `Setup: ${escapeHtml(s.setupProgress)}` : "",
+    s.alignment ? `Alignment: ${escapeHtml(s.alignment)}` : "",
     s.entryMode ? `Entry mode: ${escapeHtml(s.entryMode)}` : "",
     s.status ? `Status: ${escapeHtml(s.status)}` : "",
     s.signalPrice !== undefined ? `Signal close: ${s.signalPrice}` : "",

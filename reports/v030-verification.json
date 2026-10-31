@@ -1,0 +1,43 @@
+{
+  "tested_date": "2026-10-30",
+  "chart": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "native_compiler": "TradingView Pine Script v6",
+  "scripts": {
+    "indicator.pine": {
+      "sha256": "cdbe1ab6376a1846acba1afec39b0e0cc8aa92c3b656982ad1269cfb18a58977",
+      "compiled": true
+    },
+    "strategy.pine": {
+      "sha256": "3b51541fbc34049c69792432556f86590bf5f6e832b5aab860334155f0b54b2e",
+      "compiled": true
+    },
+    "validation.pine": {
+      "sha256": "e797b64cc03bb0d5846c53551366187c321e72c00fc9e7dea77ceec42cb7dda5",
+      "compiled": true
+    }
+  },
+  "native_assertions_passed": 58,
+  "strategy_matrix_cases": 32,
+  "feature_profiles": 11,
+  "native_payload_samples": 67,
+  "backend_delivery_mocked": true,
+  "real_broker_orders_placed": false,
+  "telegram_real_delivery_verified": false,
+  "vercel_deployment_verified": false,
+  "local_automated_tests_passed": 75,
+  "local_test_files": 6,
+  "local_node_versions": [
+    "22.23.4"
+  ],
+  "loopback_http_delivery_payloads": 67,
+  "loopback_http_only": true,
+  "version": "0.3.0",
+  "tested_on_cambodia_date": "2026-10-31",
+  "native_runtime_guards_verified": 1,
+  "deployment_user_reported": true,
+  "telegram_test_receipt_user_screenshot": true,
+  "upgraded_native_live_alert_delivery_verified": false,
+  "reports": "V030_RESULTS.md",
+  "prior_reports": "TRADINGVIEW_RESULTS.md"
+}

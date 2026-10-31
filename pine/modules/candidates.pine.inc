@@ -26,6 +26,7 @@ type Candidate
     float target2 = na
     float target3 = na
     int quality = 0
+    string rejectionReason = 'Waiting for entry confirmation'
 
 method begin(Candidate c, int direction, float lower, float upper, float invalidation, float trigger, int structurePoints, int liquidityPoints, string mode) =>
     c.stage := 1
@@ -51,6 +52,7 @@ method begin(Candidate c, int direction, float lower, float upper, float invalid
     c.target2 := na
     c.target3 := na
     c.quality := 0
+    c.rejectionReason := 'Waiting for entry confirmation'
 
 method maintain(Candidate c) =>
     c.ready := false

@@ -113,5 +113,23 @@ export function validate(input: unknown): Signal {
     ].includes(s.status)
   )
     throw new Error("Invalid status");
+  // Legacy producers may omit status. When present, it must agree with an
+  // entry notification: a detected/pending/cancelled plan is not an entry.
+  if (s.status !== undefined) {
+    if (
+      ["BUY_SIGNAL", "SELL_SIGNAL"].includes(s.eventType) &&
+      !["CONFIRMED", "ENTRY_TRIGGERED"].includes(s.status)
+    )
+      throw new Error("Signal is not confirmed");
+    if (s.eventType === "ENTRY_TRIGGERED" && s.status !== "ENTRY_TRIGGERED")
+      throw new Error("Entry event/status mismatch");
+  }
+  for (const [key, limit] of [["reason", 600], ["setupProgress", 300], ["scriptVersion", 32]] as const) {
+    const value = s[key];
+    if (value !== undefined && (typeof value !== "string" || !value.trim() || value.length > limit || /[\x00-\x1f]/.test(value)))
+      throw new Error(`Invalid ${key}`);
+  }
+  if (s.alignment !== undefined && !["ALIGNED", "COUNTER_TREND", "NEUTRAL"].includes(s.alignment))
+    throw new Error("Invalid alignment");
   return s;
 }

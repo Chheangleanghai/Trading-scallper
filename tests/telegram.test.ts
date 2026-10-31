@@ -137,3 +137,16 @@ describe("multi-strategy event compatibility", () => {
     });
   }
 });
+
+describe("explainable v0.6 signals", () => {
+  it("escapes the qualified signal reason and displays the script version", () => {
+    const text = formatMessage(validate({ ...sample, reason: '<retest> & risk passed', setupProgress: 'Setup confirmed; fill triggered', alignment: 'ALIGNED', scriptVersion: '0.6.0' }));
+    expect(text).toContain('Why: &lt;retest&gt; &amp; risk passed');
+    expect(text).toContain('Script: 0.6.0');
+    expect(text).toContain('Alignment: ALIGNED');
+  });
+  it("rejects malformed explanation fields", () => {
+    for (const change of [{ reason: 42 }, { reason: 'x'.repeat(601) }, { setupProgress: '\n' }, { alignment: '100_PERCENT_WIN' }, { scriptVersion: 'x'.repeat(33) }])
+      expect(() => validate({ ...sample, ...change })).toThrow();
+  });
+});

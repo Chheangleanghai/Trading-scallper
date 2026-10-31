@@ -42,3 +42,26 @@ describe("local Pine structural and pure-predicate checks", () => {
     ).toBe(true);
   });
 });
+
+describe("indicator/strategy common-engine parity", () => {
+  const normalize = (file, source = read(file)) => {
+    let body = source.slice(source.indexOf("// Shared source:"));
+    if (file === "strategy.pine") {
+      const broker = read("modules/broker_sync.pine.inc").split("\n").map(line => line ? "    " + line : "").join("\n").trimEnd();
+      body = body.replace(broker, "    // BROKER_SYNC");
+      body = body.replace(read("modules/orders.pine.inc"), "// STRATEGY_ORDER_ADAPTER");
+      const performance = read("modules/performance.pine.inc");
+      expect(body.endsWith(performance)).toBe(true);
+      body = body.slice(0, -performance.length);
+    }
+    return body.trimEnd();
+  };
+  it("keeps the full analysis/confirmation engine identical after removing the broker adapter", () => {
+    expect(normalize("strategy.pine")).toBe(normalize("indicator.pine"));
+  });
+  it("detects an injected strategy-only entry calculation drift", () => {
+    const altered = read("strategy.pine").replace("float anchor = (c.upper + c.lower) / 2", "float anchor = c.upper");
+    expect(altered).not.toBe(read("strategy.pine"));
+    expect(normalize("strategy.pine", altered)).not.toBe(normalize("indicator.pine"));
+  });
+});

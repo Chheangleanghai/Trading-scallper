@@ -1,0 +1,25 @@
+{
+  "case": "inverted_research_window",
+  "expected_error_observed": true,
+  "status": {
+    "type": 3,
+    "errorDescription": {
+      "ctx": {
+        "bar_index": 0,
+        "code": "RE10142"
+      },
+      "error": "Error on bar {bar_index}: Research window end must be later than start",
+      "is_user_defined": true,
+      "stack_trace": [
+        {
+          "n": "#main",
+          "p": 504
+        }
+      ],
+      "title": "User-defined error",
+      "showReportItButton": false,
+      "studyAccessBlocked": false
+    }
+  },
+  "strategy_sha256": "3b51541fbc34049c69792432556f86590bf5f6e832b5aab860334155f0b54b2e"
+}

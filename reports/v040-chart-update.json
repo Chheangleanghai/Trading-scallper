@@ -1,0 +1,28 @@
+{
+  "unrelatedStudies": [
+    {
+      "id": "ngWTtJ",
+      "stateMatches": true
+    },
+    {
+      "id": "BUHYr9",
+      "stateMatches": true
+    }
+  ],
+  "strategyStatus": {
+    "type": 2
+  },
+  "preservedInputs": true,
+  "layout": "Reference",
+  "resolution": "5",
+  "currentStudies": [
+    "XAUUSD SMART SCALPER PRO Backtest",
+    "Logic 18.12 ROTHEA Free",
+    "9 EMA + RSI Signals (SL + 3 TPs) + OB/FVG [15m]"
+  ],
+  "save": {
+    "phase": "saved"
+  },
+  "autosave": true,
+  "timestamp": "2026-10-30T18:47:26.898Z"
+}

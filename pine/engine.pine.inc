@@ -24,6 +24,11 @@ thresholdE = input.int(75, 'E quality threshold', minval=0, maxval=100, group='Q
 thresholdF = input.int(75, 'F quality threshold', minval=0, maxval=100, group='Quality')
 thresholdG = input.int(75, 'G quality threshold', minval=0, maxval=100, group='Quality')
 thresholdH = input.int(75, 'H quality threshold', minval=0, maxval=100, group='Quality')
+useResearchWindow = input.bool(false, 'Restrict new plans to date window', group='Research')
+researchStart = input.time(timestamp('01 Jan 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
+researchEnd = input.time(timestamp('01 Jan 2027 00:00 +0000'), 'Window end (exclusive)', group='Research')
+tradeSide = input.string('Both', 'Allowed direction', options=['Both', 'BUY only', 'SELL only'], group='Research')
+auditLog = input.bool(false, 'Log qualified plans and lifecycle events (research only)', group='Research')
 swing = input.int(3, 'Confirmed pivot strength', minval=2, maxval=20)
 expiry = input.int(20, 'Setup expiry bars', minval=3)
 threshold = input.int(75, 'Minimum heuristic quality', minval=0, maxval=100)
@@ -69,6 +74,34 @@ showPremiumDiscount = input.bool(false, 'Show confirmed swing midpoint', group='
 showBreakers = input.bool(false, 'Show breaker-level heuristics', group='Context visuals')
 showWyckoff = input.bool(false, 'Show spring/upthrust candidates', group='Context visuals')
 partial = input.bool(true, 'Partial TP: 33% / 33% / 34% (strategy)')
+visualLayout = input.string('Reference', 'Chart layout', options=['Reference', 'Dashboard'], group='Chart style')
+showConceptPanel = input.bool(true, 'Show compact analysis context', group='Chart style')
+showSwingLevels = input.bool(true, 'Show confirmed swing levels and right labels', group='Chart style')
+showSupportResistance = input.bool(true, 'Show confirmed support/resistance zones', group='Chart style')
+showCRTSweeps = input.bool(false, 'Show completed-reference CRT sweeps (context only)', group='Chart style')
+showContextSweeps = input.bool(true, 'Show confirmed-pivot liquidity sweeps (context only)', group='Chart style')
+showEMA55 = input.bool(true, 'Show visual EMA 55 (does not change strategy EMA 50)', group='Chart style')
+contextHistory = input.string('Latest only', 'Context annotation history', options=['Latest only', 'Recent history'], group='Chart style')
+contextZoneBars = input.int(60, 'Maximum context zone age bars', minval=5, maxval=500, group='Chart style')
+contextZoneDistance = input.float(8, 'Maximum context zone distance ATR', minval=1, group='Chart style')
+contextLabelGap = input.int(8, 'Minimum bars between same-side sweep labels', minval=1, maxval=50, group='Chart style')
+zoneExtension = input.int(12, 'Zone / right-label extension bars', minval=3, maxval=50, group='Chart style')
+dashboardSize = input.string('Small', 'Dashboard text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
+chartLabelSize = input.string('Small', 'Chart label text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
+showDashboard = input.bool(true, 'Show signal dashboard', group='Readability')
+showPerformance = input.bool(true, 'Show backtest results table', group='Readability')
+showUnusedModules = input.bool(false, 'Show strategies with no completed trades', group='Readability')
+showSwingLabels = input.bool(false, 'Show detailed swing labels', group='Readability')
+maxStructureLabels = input.int(15, 'Maximum recent structure labels', minval=5, maxval=100, group='Readability')
+showLastPlan = input.bool(false, 'Show previous trade prices when no current plan', group='Readability')
+contextTransparency = input.int(82, 'Context label background transparency', minval=0, maxval=95, group='Readability')
+panelText = dashboardSize == 'Tiny' ? size.tiny : dashboardSize == 'Large' ? size.large : dashboardSize == 'Small' ? size.small : size.normal
+chartText = chartLabelSize == 'Tiny' ? size.tiny : chartLabelSize == 'Large' ? size.large : chartLabelSize == 'Small' ? size.small : size.normal
+panelBackground = color.rgb(250, 252, 255)
+panelAlternate = color.rgb(241, 245, 249)
+panelHeader = color.rgb(226, 232, 240)
+panelMuted = color.rgb(71, 85, 105)
+panelValue = color.rgb(15, 23, 42)
 showEMA = input.bool(true, 'Show EMAs')
 showZones = input.bool(true, 'Show latest FVG')
 showTrade = input.bool(true, 'Show latest trade levels and boxes')
@@ -87,20 +120,32 @@ atrMean = ta.sma(atr, 50)
 ema9 = ta.ema(close, 9)
 ema21 = ta.ema(close, 21)
 [hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)
+// INCLUDE_PREDICATES
 structureContext() =>
     float pHigh = ta.pivothigh(high, swing, swing)
     float pLow = ta.pivotlow(low, swing, swing)
     var float lastHigh = na
     var float lastLow = na
     var int trend = 0
-    if not na(lastHigh) and close > lastHigh
-        trend := 1
-    if not na(lastLow) and close < lastLow
-        trend := -1
+    var int highId = na
+    var int lowId = na
+    var int consumedHigh = na
+    var int consumedLow = na
+    bool up = freshStructureBreak(1, lastHigh, highId, consumedHigh, close[1], close)
+    bool down = freshStructureBreak(-1, lastLow, lowId, consumedLow, close[1], close)
+    int next = uniqueStructureDirection(up, down)
+    if next != 0
+        trend := next
+        if next == 1
+            consumedHigh := highId
+        else
+            consumedLow := lowId
     if not na(pHigh)
         lastHigh := pHigh
+        highId := bar_index
     if not na(pLow)
         lastLow := pLow
+        lowId := bar_index
     trend
 mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)
 hTrend = na(hClose) or na(hEMA) ? 0 : hClose > hEMA ? 1 : -1
@@ -150,26 +195,77 @@ var int sessionTrades = 0
 var int totalPlans = 0
 var int rejectedSizes = 0
 var int chartStructure = 0
+var int brokenHighPivot = na
+var int brokenLowPivot = na
+var array<int> bullBreakPivots = array.new<int>()
+var array<int> bullBreakBars = array.new<int>()
+var array<int> bearBreakPivots = array.new<int>()
+var array<int> bearBreakBars = array.new<int>()
+var string contextStructureCaption = 'No confirmed break yet'
+var string signalReason = ''
+var string signalAlignment = 'NEUTRAL'
+var string validationReason = 'Waiting for a qualified setup'
+var string decisionState = 'WAIT'
+var string decisionReason = 'Waiting for a qualified setup'
+var string decisionProgress = 'Sweep … → MSS + FVG … → Retest … → Checks …'
 var box obBox = na
 var box fvgBox = na
 var box riskBox = na
 var box rewardBox = na
 var array<line> levels = array.new<line>()
 var array<label> tags = array.new<label>()
-// INCLUDE_PREDICATES
 // INCLUDE_MODULE_CANDIDATES
 // INCLUDE_CONTEXT_DEFINITIONS
 // INCLUDE_MODULE_FUNCTIONS
+strategyName(string id) =>
+    str.startswith(id, 'A_') ? 'A · Sweep + reversal + gap' : str.startswith(id, 'B_') ? 'B · Candle range reversal' : str.startswith(id, 'C_') ? 'C · False breakout reversal' : str.startswith(id, 'D_') ? 'D · Support / resistance' : str.startswith(id, 'E_') ? 'E · Supply / demand' : str.startswith(id, 'F_') ? 'F · Trend pullback' : str.startswith(id, 'G_') ? 'G · Range sweep continuation' : str.startswith(id, 'H_') ? 'H · Quasimodo retest' : 'No strategy selected'
+setupExplanation(string id) =>
+    str.startswith(id, 'A_') ? 'Sweep reclaimed; MSS + FVG; later retest confirmed' : str.startswith(id, 'B_') ? 'Completed range reclaimed; later reversal close' : str.startswith(id, 'C_') ? 'Confirmed-pivot false breakout; reversal close' : str.startswith(id, 'D_') ? 'Confirmed SNR level; retest/rejection trigger' : str.startswith(id, 'E_') ? 'Impulsive departure; zone retest confirmed' : str.startswith(id, 'F_') ? 'Structure + EMA pullback; later trigger close' : str.startswith(id, 'G_') ? 'Compressed range swept; later displacement' : 'Five confirmed pivots; closing neckline break; later retest'
+statusName(string raw) =>
+    raw == 'IDLE' ? 'Waiting for a setup' : raw == 'DETECTED' ? 'Setup found · not an entry' : raw == 'WAITING_CONFIRMATION' ? 'Waiting for confirmation' : raw == 'CONFIRMED' ? 'Setup confirmed' : raw == 'ENTRY_PENDING' ? 'Order pending · not filled' : raw == 'ENTRY_TRIGGERED' ? 'Entry triggered (simulated)' : raw == 'CLOSED' ? 'Previous trade closed' : raw == 'EXPIRED' ? 'Setup expired' : raw == 'INVALIDATED' ? 'Setup no longer valid' : raw == 'EXPIRED / INVALIDATED' ? 'Setup expired / invalid' : raw == 'INVALIDATED FVG' ? 'Price gap invalidated' : str.startswith(raw, 'REJECTED') ? 'Rejected: ' + str.lower(str.replace_all(raw, 'REJECTED: ', '')) : str.replace_all(raw, '_', ' ')
+priceText(float value) => na(value) ? '—' : str.tostring(value, format.mintick)
+var array<label> structureTags = array.new<label>()
+var array<string> structureKinds = array.new<string>()
+structureTag(float price, string caption, color background) =>
+    string kind = str.contains(caption, 'SWEEP') ? (str.contains(caption, 'HIGH') ? 'sweep-high' : 'sweep-low') : (str.contains(caption, 'BOS') or str.contains(caption, 'CHoCH') or str.contains(caption, 'MSS') ? 'structure' : 'swing')
+    if contextHistory == 'Latest only' and array.size(structureTags) > 0
+        for i = array.size(structureTags) - 1 to 0
+            if array.get(structureKinds, i) == kind
+                label.delete(array.remove(structureTags, i))
+                array.remove(structureKinds, i)
+    bool above = str.contains(caption, 'Bullish') ? false : str.contains(caption, 'Bearish') ? true : price >= close
+    float offset = atr * (0.5 + 0.35 * (bar_index % 3))
+    float labelPrice = above ? math.max(price, high) + offset : math.min(price, low) - offset
+    label tag = label.new(bar_index, labelPrice, caption, style=above ? label.style_label_down : label.style_label_up, color=color.new(background, contextTransparency), textcolor=panelValue, size=chartText)
+    array.push(structureTags, tag)
+    array.push(structureKinds, kind)
+    if array.size(structureTags) > maxStructureLabels
+        label.delete(array.shift(structureTags))
+        array.shift(structureKinds)
+    tag
 roundPrice(float p) => math.round_to_mintick(p)
 jsonEscape(string s) => str.replace_all(str.replace_all(str.replace_all(s, '\\', '\\\\'), '"', '\\"'), '\n', ' ')
 event(string kind) =>
     string id = syminfo.tickerid + ':' + timeframe.period + ':' + str.tostring(signalTime) + ':' + str.tostring(dir) + ':' + selectedStrategy + ':' + kind
-    '{"eventId":"' + jsonEscape(id) + '","eventType":"' + kind + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","direction":"' + (dir == 1 ? 'BUY' : 'SELL') + '","strategy":"' + selectedStrategy + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"quality":' + str.tostring(quality) + ',"timestamp":' + str.tostring(signalTime) + ',"h1Trend":"' + signalTrend + '","targetSource":"' + targetSource + '","setupTimestamp":' + str.tostring(signalSetupTime) + ',"invalidation":' + str.tostring(signalInvalidation, format.mintick) + ',"eventTimestamp":' + str.tostring(time_close) + ',"status":"' + status + '","entryMode":"' + entryMode + '","managedSl":' + str.tostring(managedStop, format.mintick) + ',"signalPrice":' + str.tostring(signalPrice, format.mintick) + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '","filledEntry":' + (na(filledEntry) ? 'null' : str.tostring(filledEntry, format.mintick)) + '}'
+    '{"eventId":"' + jsonEscape(id) + '","eventType":"' + kind + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","direction":"' + (dir == 1 ? 'BUY' : 'SELL') + '","strategy":"' + selectedStrategy + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"reason":"' + jsonEscape(signalReason) + '","setupProgress":"' + jsonEscape(statusName(status)) + '","alignment":"' + signalAlignment + '","scriptVersion":"0.6.0","quality":' + str.tostring(quality) + ',"timestamp":' + str.tostring(signalTime) + ',"h1Trend":"' + signalTrend + '","targetSource":"' + targetSource + '","setupTimestamp":' + str.tostring(signalSetupTime) + ',"invalidation":' + str.tostring(signalInvalidation, format.mintick) + ',"eventTimestamp":' + str.tostring(time_close) + ',"status":"' + status + '","entryMode":"' + entryMode + '","managedSl":' + str.tostring(managedStop, format.mintick) + ',"signalPrice":' + str.tostring(signalPrice, format.mintick) + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '","filledEntry":' + (na(filledEntry) ? 'null' : str.tostring(filledEntry, format.mintick)) + '}'
+notifyEntry(string kind) =>
+    string payload = event(kind)
+    if auditLog
+        log.info(payload)
+    alert(payload, alert.freq_once_per_bar_close)
+notifyLifecycle(string kind) =>
+    string payload = event(kind)
+    if auditLog
+        log.info(payload)
+    alert(payload, alert.freq_all)
 // Flags consumed by both the visual indicator and strategy adapter.
 bool newSignal = false
 bool entryTriggered = false
 bool cancelOrder = false
+if barstate.isfirst and useResearchWindow and researchEnd <= researchStart
+    runtime.error('Research window end must be later than start')
 if barstate.isconfirmed
+    validationReason := 'Waiting for entry confirmation'
     // INCLUDE_CONTEXT_UPDATE
     // BROKER_SYNC
     if newSession
@@ -179,11 +275,11 @@ if barstate.isconfirmed
         bool invalid = dir == 1 ? low <= stop : high >= stop
         bool expired = bar_index - signalBar > pendingBars
         bool touched = not useBroker and (entryMode == 'Limit' ? (dir == 1 ? low <= entry : high >= entry) : (dir == 1 ? high >= entry : low <= entry))
-        if invalid or expired or pause or (useSession and not inSession)
+        if invalid or expired or pause or (useSession and not inSession) or not researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close)
             pending := false
             cancelOrder := true
             status := expired ? 'EXPIRED' : 'INVALIDATED'
-            alert(event('SIGNAL_INVALIDATED'), alert.freq_all)
+            notifyLifecycle('SIGNAL_INVALIDATED')
         else if touched
             pending := false
             active := true
@@ -192,8 +288,8 @@ if barstate.isconfirmed
             filledEntry := entryMode == 'Limit' ? (dir == 1 ? math.min(open, entry) : math.max(open, entry)) : (dir == 1 ? math.max(open, entry) : math.min(open, entry))
             entryTriggered := true
             status := 'ENTRY_TRIGGERED'
-            alert(event(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL'), alert.freq_once_per_bar_close)
-            alert(event('ENTRY_TRIGGERED'), alert.freq_all)
+            notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+            notifyLifecycle('ENTRY_TRIGGERED')
     if active and not entryTriggered and bar_index > fillBar
         bool stopped = dir == 1 ? low <= managedStop : high >= managedStop
         bool third = dir == 1 ? high >= tp3 : low <= tp3
@@ -203,19 +299,19 @@ if barstate.isconfirmed
             if stopped or third or timed
                 status := 'CLOSED'
             if stopped
-                alert(event('STOP_LOSS_HIT'), alert.freq_all)
+                notifyLifecycle('STOP_LOSS_HIT')
             else
                 if not hit1 and (dir == 1 ? high >= tp1 : low <= tp1)
                     hit1 := true
-                    alert(event('TP1_HIT'), alert.freq_all)
+                    notifyLifecycle('TP1_HIT')
                 if not hit2 and (dir == 1 ? high >= tp2 : low <= tp2)
                     hit2 := true
-                    alert(event('TP2_HIT'), alert.freq_all)
+                    notifyLifecycle('TP2_HIT')
                 if third
-                    alert(event('TP3_HIT'), alert.freq_all)
+                    notifyLifecycle('TP3_HIT')
             if stopped or third or timed
                 active := false
-                alert(event('TRADE_CLOSED'), alert.freq_all)
+                notifyLifecycle('TRADE_CLOSED')
         if active
             float originalRisk = math.abs(filledEntry - stop)
             float favorableR = originalRisk > 0 ? dir * (close - filledEntry) / originalRisk : 0
@@ -244,7 +340,8 @@ if barstate.isconfirmed
     float best2 = na
     float best3 = na
     string bestTargetSource = ''
-    if not active and not pending and not brokerBusy
+    // A cancellation belongs to the old order ID. Do not replace it on this bar.
+    if planSlotAvailable(active, pending, brokerBusy, cancelOrder)
         for c in candidates
             if c.enabled and c.ready
                 int direction = c.direction
@@ -266,7 +363,11 @@ if barstate.isconfirmed
                 float retracement = swingRange > 0 ? (direction == 1 ? (sh - planned) / swingRange : (planned - slw) / swingRange) : na
                 bool fibOK = not confluenceFib or (retracement >= 0.5 and retracement <= 0.618)
                 bool pdOK = not confluencePD or (swingRange > 0 and (direction == 1 ? planned <= (sh + slw) / 2 : planned >= (sh + slw) / 2))
-                bool safe = not na(c.invalidation) and c.invalidation > 0 and targetsAvailable and fibOK and pdOK and volOK and not pause and (not useSession or inSession) and (not trendFilter or aligned) and (not emaFilter or emaOK) and riskTicks >= 2 and risk <= atr * maxStop and math.abs(planned - anchor) <= atr * maxDistance and rrOK and validTargets and math.min(proposedStop, t3) > 0 and sessionTrades < maxTrades and (na(lastSignal) or bar_index - lastSignal >= cooldown)
+                string blocked = candidateRejection(researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close), directionAllowed(tradeSide, direction), not na(c.invalidation) and c.invalidation > 0, targetsAvailable, fibOK, pdOK, volOK, pause, not useSession or inSession, not trendFilter or aligned, not emaFilter or emaOK, riskTicks >= 2 and risk <= atr * maxStop, math.abs(planned - anchor) <= atr * maxDistance, rrOK, validTargets and math.min(proposedStop, t3) > 0, sessionTrades < maxTrades, na(lastSignal) or bar_index - lastSignal >= cooldown, score, strategyThresholds ? moduleThreshold : threshold)
+                bool safe = blocked == ''
+                c.rejectionReason := blocked
+                if blocked != ''
+                    validationReason := strategyName(c.id) + ': ' + blocked
                 c.targetSource := source
                 c.entryMode := entryMode
                 c.plannedEntry := planned
@@ -292,6 +393,7 @@ if barstate.isconfirmed
                         bestTargetSource := source
         if conflict
             status := 'REJECTED: OPPOSING CANDIDATES'
+            validationReason := 'Opposing qualified directions; no trade'
         else if not na(best)
             dir := best.direction
             selectedStrategy := best.id
@@ -302,6 +404,8 @@ if barstate.isconfirmed
             tp2 := best2
             tp3 := best3
             quality := bestScore
+            signalAlignment := hTrend == 0 ? 'NEUTRAL' : hTrend == dir ? 'ALIGNED' : 'COUNTER_TREND'
+            signalReason := setupExplanation(selectedStrategy) + ' | H1 ' + (signalAlignment == 'ALIGNED' ? 'aligned' : signalAlignment == 'COUNTER_TREND' ? 'counter-trend' : 'neutral') + ' | TP2 ' + str.tostring(math.abs(best2 - bestEntry) / math.abs(bestEntry - bestStop), '#.##') + 'R | Quality ' + str.tostring(bestScore) + '/100'
             managedStop := bestStop
             targetSource := bestTargetSource
             signalTrend := hTrend == 1 ? 'Bullish' : hTrend == -1 ? 'Bearish' : 'Neutral'
@@ -329,8 +433,8 @@ if barstate.isconfirmed
                 c.ready := false
                 c.status := c.id == selectedStrategy ? status : 'IDLE'
             if active
-                alert(event(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL'), alert.freq_once_per_bar_close)
-                alert(event('ENTRY_TRIGGERED'), alert.freq_all)
+                notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+                notifyLifecycle('ENTRY_TRIGGERED')
     if enableA and stage == 1 and bar_index > setupBar
         bool mss = dir == 1 ? close > breakLevel and close > open : close < breakLevel and close < open
         bool fvg = dir == 1 ? low > high[2] : high < low[2]
@@ -340,18 +444,18 @@ if barstate.isconfirmed
             gapBar := bar_index
             stage := 2
             status := 'WAITING_CONFIRMATION'
-            if showZones
+            if showZones and visualLayout != 'Reference'
                 box.delete(fvgBox)
-                fvgBox := box.new(bar_index, gapTop, bar_index + expiry, gapBottom, bgcolor=color.new(color.orange, 85), border_color=color.orange, text='FVG / MSS')
-            if showOB
+                fvgBox := box.new(bar_index, gapTop, bar_index + expiry, gapBottom, bgcolor=color.new(color.orange, 85), border_color=color.orange, text='Price gap · reversal', text_color=color.rgb(124, 45, 18), text_size=chartText)
+            if showOB and visualLayout != 'Reference'
                 for offset = 1 to 5
                     bool opposite = dir == 1 ? close[offset] < open[offset] : close[offset] > open[offset]
                     if opposite
                         box.delete(obBox)
-                        obBox := box.new(bar_index, high[offset], bar_index + expiry, low[offset], bgcolor=color.new(color.purple, 88), border_color=color.purple, text='OB heuristic')
+                        obBox := box.new(bar_index, high[offset], bar_index + expiry, low[offset], bgcolor=color.new(color.purple, 88), border_color=color.purple, text='Order block (estimated)', text_color=color.rgb(107, 33, 168), text_size=chartText)
                         break
-            if showStructure
-                label.new(bar_index, close, 'MSS', color=color.new(color.blue, 60), textcolor=color.white, size=size.tiny)
+            if showStructure and visualLayout != 'Reference'
+                structureTag(close, dir == 1 ? 'Bullish MSS' : 'Bearish MSS', dir == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
     // Use only levels known before this bar; pivots are updated below.
     bool bullSweep = not na(slw) and not na(sh) and low < slw and close > slw and close < sh and (na(usedLow) or slBar != usedLow)
     bool bearSweep = not na(sh) and not na(slw) and high > sh and close < sh and close > slw and (na(usedHigh) or shBar != usedHigh)
@@ -368,27 +472,44 @@ if barstate.isconfirmed
                 usedLow := slBar
             else
                 usedHigh := shBar
-            if showStructure
-                label.new(bar_index, extreme, 'Sweep', color=color.new(color.purple, 50), textcolor=color.white, size=size.tiny)
-    bool upBreak = not na(sh) and close > sh and close[1] <= sh
-    bool downBreak = not na(slw) and close < slw and close[1] >= slw
-    if upBreak or downBreak
-        int nextStructure = upBreak ? 1 : -1
+            if showStructure and visualLayout != 'Reference'
+                structureTag(extreme, dir == 1 ? 'LOW LIQUIDITY SWEEP' : 'HIGH LIQUIDITY SWEEP', color.rgb(130, 135, 142))
+    bool upBreak = freshStructureBreak(1, sh, shBar, brokenHighPivot, close[1], close)
+    bool downBreak = freshStructureBreak(-1, slw, slBar, brokenLowPivot, close[1], close)
+    int nextStructure = uniqueStructureDirection(upBreak, downBreak)
+    if nextStructure != 0
+        if nextStructure == 1
+            brokenHighPivot := shBar
+            array.push(bullBreakPivots, shBar)
+            array.push(bullBreakBars, bar_index)
+            if array.size(bullBreakPivots) > 6
+                array.shift(bullBreakPivots)
+                array.shift(bullBreakBars)
+        else
+            brokenLowPivot := slBar
+            array.push(bearBreakPivots, slBar)
+            array.push(bearBreakBars, bar_index)
+            if array.size(bearBreakPivots) > 6
+                array.shift(bearBreakPivots)
+                array.shift(bearBreakBars)
+        contextStructureCaption := (nextStructure == 1 ? 'Bullish ' : 'Bearish ') + (chartStructure != 0 and chartStructure != nextStructure ? 'CHoCH' : 'BOS')
         if showStructure
-            label.new(bar_index, close, chartStructure != 0 and chartStructure != nextStructure ? 'CHoCH' : 'BOS', color=color.new(color.blue, 70), textcolor=color.white, size=size.tiny)
+            string annotation = contextStructureCaption + (hTrend != 0 and hTrend != nextStructure ? ' · Counter H1' : '')
+            structureTag(close, annotation, nextStructure == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
         chartStructure := nextStructure
     // INCLUDE_PIVOT_CONTEXT
     if not na(ph)
-        if showStructure and not na(sh)
-            label.new(bar_index, ph, math.abs(ph - sh) <= atr * 0.1 ? 'EQH' : ph > sh ? 'HH' : 'LH', color=color.new(color.gray, 80), textcolor=color.white, size=size.tiny)
+        if showStructure and showSwingLabels and not na(sh)
+            structureTag(ph, math.abs(ph - sh) <= atr * 0.1 ? 'Equal highs' : ph > sh ? 'Higher high' : 'Lower high', color.rgb(71, 85, 105))
         sh := ph
         shBar := bar_index
     if not na(pl)
-        if showStructure and not na(slw)
-            label.new(bar_index, pl, math.abs(pl - slw) <= atr * 0.1 ? 'EQL' : pl > slw ? 'HL' : 'LL', color=color.new(color.gray, 80), textcolor=color.white, size=size.tiny)
+        if showStructure and showSwingLabels and not na(slw)
+            structureTag(pl, math.abs(pl - slw) <= atr * 0.1 ? 'Equal lows' : pl > slw ? 'Higher low' : 'Lower low', color.rgb(71, 85, 105))
         slw := pl
         slBar := bar_index
-if newSignal and showTrade
+// STRATEGY_ORDER_ADAPTER
+if newSignal and showTrade and (active or pending or not useBroker)
     for ln in levels
         line.delete(ln)
     for tag in tags
@@ -398,17 +519,27 @@ if newSignal and showTrade
     box.delete(riskBox)
     box.delete(rewardBox)
     if showRiskReward
-        riskBox := box.new(bar_index, math.max(entry, stop), bar_index + 20, math.min(entry, stop), bgcolor=color.new(color.red, 88), border_color=color.new(color.red, 60))
-        rewardBox := box.new(bar_index, math.max(entry, tp3), bar_index + 20, math.min(entry, tp3), bgcolor=color.new(color.green, 88), border_color=color.new(color.green, 60))
+        riskBox := box.new(bar_index, math.max(entry, stop), bar_index + 20, math.min(entry, stop), bgcolor=color.new(color.red, 94), border_color=color.new(color.red, 75))
+        rewardBox := box.new(bar_index, math.max(entry, tp3), bar_index + 20, math.min(entry, tp3), bgcolor=color.new(color.green, 94), border_color=color.new(color.green, 75))
     prices = array.from(entry, stop, tp1, tp2, tp3)
-    names = array.from(dir == 1 ? 'BUY plan / Entry ' : 'SELL plan / Entry ', 'SL ', 'TP1 ', 'TP2 ', 'TP3 ')
+    names = array.from(dir == 1 ? 'BUY · Planned entry ' : 'SELL · Planned entry ', 'Stop loss ', 'Target 1 ', 'Target 2 ', 'Target 3 ')
     for i = 0 to 4
         float price = array.get(prices, i)
-        color c = i == 0 ? color.gray : i == 1 ? color.red : color.green
+        color c = i == 0 ? color.rgb(51, 65, 85) : i == 1 ? color.rgb(185, 28, 28) : color.rgb(21, 128, 61)
         bool visible = i == 0 ? showEntryLine : i == 1 ? showSLLine : i == 2 ? showTP1Line : i == 3 ? showTP2Line : showTP3Line
         if visible
             array.push(levels, line.new(bar_index, price, bar_index + 20, price, color=c))
-            array.push(tags, label.new(bar_index + 20, price, array.get(names, i) + str.tostring(price, format.mintick), style=label.style_label_left, color=c, textcolor=color.white))
+            array.push(tags, label.new(bar_index + 20, price, array.get(names, i) + str.tostring(price, format.mintick), style=label.style_label_left, color=color.new(c, contextTransparency), textcolor=panelValue, size=chartText))
+// Remove old drawings when the plan ends; historical entry markers remain at their true bars.
+if not active and not pending and (not newSignal or useBroker) and not showLastPlan
+    for ln in levels
+        line.delete(ln)
+    for tag in tags
+        label.delete(tag)
+    array.clear(levels)
+    array.clear(tags)
+    box.delete(riskBox)
+    box.delete(rewardBox)
 if showTrade and (active or pending)
     if showRiskReward and not na(riskBox)
         box.set_right(riskBox, bar_index + 20)
@@ -417,11 +548,11 @@ if showTrade and (active or pending)
         line.set_x2(ln, bar_index + 20)
     for tag in tags
         label.set_x(tag, bar_index + 20)
-plot(showEMA ? ema9 : na, 'EMA9', color=color.aqua)
-plot(showEMA ? ema21 : na, 'EMA21', color=color.orange)
-plot(showEMA and useEMA50 ? ema50 : na, 'EMA50', color=color.blue)
-plotshape(entryTriggered and dir == 1, 'BUY confirmed', shape.labelup, location.belowbar, color.green, text='BUY', textcolor=color.white)
-plotshape(entryTriggered and dir == -1, 'SELL confirmed', shape.labeldown, location.abovebar, color.red, text='SELL', textcolor=color.white)
+plot(showEMA and visualLayout == 'Dashboard' ? ema9 : na, 'EMA 9', color=color.aqua)
+plot(showEMA ? ema21 : na, 'EMA 21', color=color.rgb(228, 163, 46), linewidth=1)
+plot(showEMA and useEMA50 and visualLayout == 'Dashboard' ? ema50 : na, 'Strategy EMA 50', color=color.blue)
+plotshape(entryTriggered and dir == 1, 'BUY confirmed', shape.labelup, location.belowbar, color.rgb(21, 128, 61), text='BUY', textcolor=color.white, size=size.small)
+plotshape(entryTriggered and dir == -1, 'SELL confirmed', shape.labeldown, location.abovebar, color.rgb(185, 28, 28), text='SELL', textcolor=color.white, size=size.small)
 plot(showDaily ? pdh : na, 'Previous day high', color=color.new(color.green, 35), style=plot.style_stepline)
 plot(showDaily ? pdl : na, 'Previous day low', color=color.new(color.red, 35), style=plot.style_stepline)
 plot(showDaily ? pwh : na, 'Previous week high', color=color.new(color.green, 65), style=plot.style_stepline)
@@ -436,38 +567,55 @@ plot(showBreakers ? bearBreaker : na, 'Bearish breaker level', color=color.new(c
 plotshape(showWyckoff and barstate.isconfirmed and bullSpring, 'Spring candidate', shape.triangleup, location.belowbar, color.purple, size=size.tiny)
 plotshape(showWyckoff and barstate.isconfirmed and bearUpthrust, 'Upthrust candidate', shape.triangledown, location.abovebar, color.purple, size=size.tiny)
 plot(active ? managedStop : na, 'Managed SL (next bar)', color=color.red, style=plot.style_linebr)
-var table dash = table.new(position.top_right, 2, 19, bgcolor=color.new(color.black, 15))
+// INCLUDE_DECISION_VIEW
+// INCLUDE_REFERENCE_VISUALS
+var table dash = table.new(position.top_right, 2, 19, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
 if barstate.islast or barstate.islastconfirmedhistory
-    string displayStrategy = selectedStrategy
-    string displayStatus = status
-    string displayQuality = str.tostring(quality)
-    int displayDirection = dir
-    float displayEntry = entry
-    float displaySL = stop
-    float display1 = tp1
-    float display2 = tp2
-    float display3 = tp3
-    float displayFill = filledEntry
-    float displayManaged = managedStop
-    string displaySource = targetSource
-    if not active and not pending and not brokerBusy and not newSignal and not str.startswith(status, 'REJECTED')
+    table.clear(dash, 0, 0, 1, 18)
+    bool currentPlan = active or pending or brokerBusy
+    string displayStrategy = currentPlan or showLastPlan ? strategyName(selectedStrategy) : 'Waiting for a setup'
+    string displayStatus = statusName(status)
+    string displayQuality = currentPlan or showLastPlan ? str.tostring(quality) + ' / 100' : 'Not scored yet'
+    int displayDirection = currentPlan or showLastPlan ? dir : 0
+    float displayEntry = currentPlan or showLastPlan ? entry : na
+    float displaySL = currentPlan or showLastPlan ? stop : na
+    float display1 = currentPlan or showLastPlan ? tp1 : na
+    float display2 = currentPlan or showLastPlan ? tp2 : na
+    float display3 = currentPlan or showLastPlan ? tp3 : na
+    float displayFill = currentPlan or showLastPlan ? filledEntry : na
+    float displayManaged = currentPlan or showLastPlan ? managedStop : na
+    string displaySource = currentPlan or showLastPlan ? targetSource : 'No current trade plan'
+    if not currentPlan and not str.startswith(status, 'REJECTED')
         for c in candidates
             if c.enabled and c.stage > 0
-                displayStrategy := c.id
-                displayStatus := c.status
-                displayQuality := c.ready ? str.tostring(c.quality) : '—'
+                displayStrategy := strategyName(c.id)
+                displayStatus := statusName(c.status)
+                displayQuality := c.ready ? str.tostring(c.quality) + ' / 100' : 'Not scored yet'
                 displayDirection := c.direction
-                displayEntry := c.plannedEntry
-                displaySL := c.suggestedStop
-                display1 := c.target1
-                display2 := c.target2
-                display3 := c.target3
+                displayEntry := na
+                displaySL := na
+                display1 := na
+                display2 := na
+                display3 := na
                 displayFill := na
                 displayManaged := na
-                displaySource := c.targetSource == '' ? 'Not planned' : c.targetSource
+                displaySource := c.ready and c.confirmationTime == time_close and c.targetSource != '' ? c.targetSource : 'Targets not calculated yet'
                 break
-    keys = array.from('SMART SCALPER PRO', 'Chart / execution', 'H1 confirmed trend', 'M15 structure', 'Setup TF', 'Strategy', 'Status', 'Direction', 'Quality (heuristic)', 'Session / ATR', 'Entry planned', 'SL', 'TP1', 'TP2', 'TP3', 'TP2 R / risk %', 'Targets', 'Filled entry (model)', 'Managed SL')
-    vals = array.from(syminfo.ticker, timeframe.period, hTrend == 1 ? 'Bullish' : hTrend == -1 ? 'Bearish' : 'Neutral', mTrend == 1 ? 'Bullish' : mTrend == -1 ? 'Bearish' : 'Neutral', timeframe.period, displayStrategy, displayStatus, displayDirection == 1 ? 'BUY' : displayDirection == -1 ? 'SELL' : '—', displayQuality, (inSession ? sessionPreset : 'Outside') + (volOK ? ' / Normal' : ' / Filtered'), str.tostring(displayEntry, format.mintick), str.tostring(displaySL, format.mintick), str.tostring(display1, format.mintick), str.tostring(display2, format.mintick), str.tostring(display3, format.mintick), str.tostring(math.abs(display2 - displayEntry) / math.abs(displayEntry - displaySL), '#.##') + ' / ' + str.tostring(riskPct), displaySource, str.tostring(displayFill, format.mintick), str.tostring(displayManaged, format.mintick))
-    for i = 0 to 18
-        table.cell(dash, 0, i, array.get(keys, i), text_color=color.silver, text_size=size.small)
-        table.cell(dash, 1, i, array.get(vals, i), text_color=color.white, text_size=size.small)
+    if not currentPlan and displayStrategy == 'Waiting for a setup' and enableA and stage > 0
+        displayStrategy := strategyName('A_')
+        displayStatus := stage == 1 ? 'Sweep found · waiting for reversal' : 'Reversal found · waiting for entry'
+        displayDirection := dir
+    string planCaption = currentPlan ? (pending ? 'CURRENT · ORDER PENDING' : 'CURRENT · SIMULATED TRADE') : showLastPlan ? 'PREVIOUS PLAN / NEW SETUP' : 'NO CURRENT TRADE'
+    float displayRisk = math.abs(displayEntry - displaySL)
+    string rrText = not na(displayRisk) and displayRisk > 0 ? str.tostring(math.abs(display2 - displayEntry) / displayRisk, '#.##') + 'R  |  ' + str.tostring(riskPct) + '% risk' : '—'
+    keys = array.from('SMART SCALPER PRO', 'Chart / execution', '1-hour trend', '15-minute structure', 'Plan information', 'Strategy', 'Setup status', 'Direction', 'Setup score · not win %', 'Session / volatility', 'Planned entry', 'Initial stop loss', 'Take profit 1', 'Take profit 2', 'Take profit 3', 'Target 2 / planned risk', 'Target method', 'Simulated fill price', 'Current stop loss')
+    vals = array.from(syminfo.ticker, timeframe.period + ' min', hTrend == 1 ? 'UPTREND' : hTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', mTrend == 1 ? 'UPTREND' : mTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', planCaption, displayStrategy, displayStatus, displayDirection == 1 ? (currentPlan ? 'BUY' : 'Potential BUY · not an entry') : displayDirection == -1 ? (currentPlan ? 'SELL' : 'Potential SELL · not an entry') : 'No entry', displayQuality, (inSession ? sessionPreset : 'Outside trading hours') + (volOK ? ' / Normal' : ' / Filtered'), priceText(displayEntry), priceText(displaySL), priceText(display1), priceText(display2), priceText(display3), rrText, displaySource, priceText(displayFill), priceText(displayManaged))
+    if showDashboard and visualLayout == 'Dashboard'
+        for i = 0 to 18
+            color rowBackground = i == 0 ? panelHeader : i % 2 == 0 ? panelAlternate : panelBackground
+            color valueColor = i == 7 and displayDirection != 0 ? (displayDirection == 1 ? color.rgb(21, 128, 61) : color.rgb(185, 28, 28)) : i == 4 ? color.rgb(146, 64, 14) : panelValue
+            table.cell(dash, 0, i, array.get(keys, i), text_color=panelMuted, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+            table.cell(dash, 1, i, array.get(vals, i), text_color=valueColor, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+
+if auditLog and newSignal
+    log.info('PLAN_AUDIT ' + '{"strategy":"' + selectedStrategy + '","timestamp":' + str.tostring(signalTime) + ',"setupTimestamp":' + str.tostring(signalSetupTime) + ',"direction":' + str.tostring(dir) + ',"entryMode":"' + entryMode + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"quality":' + str.tostring(quality) + ',"executionAccepted":' + (active or pending ? 'true' : 'false') + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '"}')

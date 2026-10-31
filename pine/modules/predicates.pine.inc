@@ -26,3 +26,33 @@ rrFeasible(int direction, float planned, float stopPrice, float targetPrice, flo
     float riskTicks = tick > 0 ? math.round(direction * (planned - stopPrice) / tick) : na
     float rewardTicks = tick > 0 ? math.round(direction * (targetPrice - planned) / tick) : na
     riskTicks > 0 and rewardTicks >= math.ceil(riskTicks * minimum - 0.000000001)
+
+// Time inputs are absolute timestamps. Require the whole signal bar inside the window.
+researchBarAllowed(bool enabled, int startTime, int endTime, int barOpen, int barClose) =>
+    not enabled or (endTime > startTime and barOpen >= startTime and barClose < endTime)
+directionAllowed(string selection, int direction) =>
+    (direction == 1 or direction == -1) and (selection == 'Both' or (selection == 'BUY only' and direction == 1) or (selection == 'SELL only' and direction == -1))
+planSlotAvailable(bool isActive, bool isPending, bool brokerOccupied, bool cancelling) =>
+    not isActive and not isPending and not brokerOccupied and not cancelling
+
+// Consume a confirmed swing only once. Wick touches and repeated recrosses are not new BOS.
+freshStructureBreak(int direction, float level, int pivotId, int consumedId, float previousClose, float currentClose) =>
+    bool known = not na(level) and not na(pivotId) and (na(consumedId) or pivotId != consumedId)
+    known and (direction == 1 ? previousClose <= level and currentClose > level : direction == -1 ? previousClose >= level and currentClose < level : false)
+uniqueStructureDirection(bool upward, bool downward) =>
+    upward == downward ? 0 : upward ? 1 : -1
+structureBreakTime(array<int> pivotIds, array<int> breakBars, int targetId) =>
+    int found = na
+    if array.size(pivotIds) == array.size(breakBars) and array.size(pivotIds) > 0 and not na(targetId)
+        for i = 0 to array.size(pivotIds) - 1
+            if array.get(pivotIds, i) == targetId
+                found := array.get(breakBars, i)
+    found
+qmQualified(bool geometry, int necklineBreakBar, int headConfirmedBar, int shoulderConfirmedBar) =>
+    geometry and not na(necklineBreakBar) and necklineBreakBar > headConfirmedBar and necklineBreakBar <= shoulderConfirmedBar
+
+// Same mandatory filter conjunction as earlier versions, with an explicit first-failure reason.
+candidateRejection(bool windowOK, bool sideOK, bool invalidationOK, bool targetsOK, bool fibOK, bool discountOK, bool volatilityOK, bool paused, bool sessionOK, bool trendOK, bool emaOK, bool stopOK, bool distanceOK, bool rrOK, bool pricesOK, bool quotaOK, bool cooldownOK, int score, int requiredScore) =>
+    not windowOK ? 'Outside research date window' : not sideOK ? 'Direction disabled' : not invalidationOK ? 'Missing structural invalidation' : not targetsOK ? 'Insufficient structure targets' : not fibOK ? 'Fibonacci location filter' : not discountOK ? 'Premium/discount filter' : not volatilityOK ? 'ATR volatility filter' : paused ? 'Manual news pause' : not sessionOK ? 'Outside selected session' : not trendOK ? 'Setup opposes H1 trend' : not emaOK ? 'EMA alignment filter' : not stopOK ? 'Stop distance invalid' : not distanceOK ? 'Entry too far from setup' : not rrOK ? 'Minimum reward/risk not met' : not pricesOK ? 'Invalid Entry/SL/TP order' : not quotaOK ? 'Session plan limit' : not cooldownOK ? 'Signal cooldown' : score < requiredScore ? 'Quality below threshold' : ''
+readinessState(int direction, bool pendingOrder, bool activeTrade, bool triggered) =>
+    direction != 1 and direction != -1 ? 'WAIT' : pendingOrder ? (direction == 1 ? 'BUY READY' : 'SELL READY') : activeTrade ? (direction == 1 ? (triggered ? 'BUY CONFIRMED' : 'BUY ACTIVE (sim.)') : (triggered ? 'SELL CONFIRMED' : 'SELL ACTIVE (sim.)')) : 'WAIT'

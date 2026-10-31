@@ -1,0 +1,207 @@
+{
+  "client_date": "2026-10-31",
+  "symbol": "FOREXCOM:XAUUSD",
+  "sources": {
+    "indicator.pine": "939bb3c42446e259242f21e643e1b94b039a3334e995748dca73041d2f5b4030",
+    "strategy.pine": "e321254d18657d900b652512e189c162457a765bb64550762994cb453d495025"
+  },
+  "checks": [
+    {
+      "case": "reference_5m",
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ]
+    },
+    {
+      "case": "reference_1m",
+      "resolution": "1",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ]
+    },
+    {
+      "case": "reference_3m",
+      "resolution": "3",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ]
+    },
+    {
+      "case": "reference_15m",
+      "resolution": "15",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ]
+    },
+    {
+      "case": "dashboard",
+      "changes": {
+        "Chart layout": "Dashboard"
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Dashboard"
+        }
+      ]
+    },
+    {
+      "case": "reference_large",
+      "changes": {
+        "Chart layout": "Reference",
+        "Chart label text size": "Large"
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Reference"
+        },
+        {
+          "id": "in_84",
+          "value": "Large"
+        }
+      ]
+    },
+    {
+      "case": "reference_overlays_hidden",
+      "changes": {
+        "Chart layout": "Reference",
+        "Show EMAs": false,
+        "Show latest FVG": false,
+        "Show latest displacement order block heuristic": false,
+        "Show confirmed support/resistance zones": false,
+        "Show confirmed swing levels and right labels": false
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Reference"
+        },
+        {
+          "id": "in_76",
+          "value": false
+        },
+        {
+          "id": "in_77",
+          "value": false
+        },
+        {
+          "id": "in_91",
+          "value": false
+        },
+        {
+          "id": "in_92",
+          "value": false
+        },
+        {
+          "id": "in_100",
+          "value": false
+        }
+      ]
+    }
+  ]
+}

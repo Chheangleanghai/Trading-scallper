@@ -1,0 +1,137 @@
+{
+  "client_date": "2026-10-31",
+  "symbol": "FOREXCOM:XAUUSD",
+  "sources": {
+    "indicator.pine": "9915858ecbef482db59763502134321b1c259822a8108f889027f3e229ccd4d0",
+    "strategy.pine": "2030f6c8aef8fe4448eec5de9d404e11997f5f7f3954e96ea2e530b618dfd4a9"
+  },
+  "checks": [
+    {
+      "case": "reference_small_light",
+      "changes": {
+        "Chart layout": "Reference",
+        "Chart label text size": "Small",
+        "Dashboard text size": "Small",
+        "Context label background transparency": 82
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Reference"
+        },
+        {
+          "id": "in_83",
+          "value": "Small"
+        },
+        {
+          "id": "in_84",
+          "value": "Small"
+        },
+        {
+          "id": "in_91",
+          "value": 82
+        }
+      ]
+    },
+    {
+      "case": "dashboard_small_light",
+      "changes": {
+        "Chart layout": "Dashboard",
+        "Dashboard text size": "Small",
+        "Context label background transparency": 82
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Dashboard"
+        },
+        {
+          "id": "in_83",
+          "value": "Small"
+        },
+        {
+          "id": "in_91",
+          "value": 82
+        }
+      ]
+    },
+    {
+      "case": "reference_tiny_light",
+      "changes": {
+        "Chart layout": "Reference",
+        "Chart label text size": "Tiny",
+        "Dashboard text size": "Tiny",
+        "Context label background transparency": 95
+      },
+      "resolution": "5",
+      "studies": [
+        {
+          "name": "XAUUSD SMART SCALPER PRO Backtest",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        },
+        {
+          "name": "XAUUSD SMART SCALPER PRO",
+          "status": {
+            "type": 2
+          },
+          "newSource": true
+        }
+      ],
+      "applied": [
+        {
+          "id": "in_74",
+          "value": "Reference"
+        },
+        {
+          "id": "in_83",
+          "value": "Tiny"
+        },
+        {
+          "id": "in_84",
+          "value": "Tiny"
+        },
+        {
+          "id": "in_91",
+          "value": 95
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "version": "0.6.0",
+  "afterReload": true,
+  "id": "FrcF9f",
+  "status": {
+    "type": 2
+  },
+  "symbol": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "rightOffset": 42.78166900000002,
+  "defaultRightOffset": 28,
+  "inputMismatchNames": [],
+  "originalStrategyPropertiesPreserved": true,
+  "unrelatedStudies": [
+    {
+      "id": "ngWTtJ",
+      "statePreserved": true
+    },
+    {
+      "id": "BUHYr9",
+      "statePreserved": true
+    }
+  ],
+  "studies": [
+    {
+      "id": "BUHYr9",
+      "name": "Logic 18.12 ROTHEA Free"
+    },
+    {
+      "id": "ngWTtJ",
+      "name": "9 EMA + RSI Signals (SL + 3 TPs) + OB/FVG [15m]"
+    },
+    {
+      "id": "FrcF9f",
+      "name": "XAUUSD SMART SCALPER PRO Backtest"
+    }
+  ],
+  "pane": {
+    "mainSourceId": "_seriesId",
+    "sources": [
+      {
+        "id": "_seriesId",
+        "type": "MainSeries"
+      },
+      {
+        "id": "ngWTtJ",
+        "type": "Study"
+      },
+      {
+        "id": "BUHYr9",
+        "type": "Study"
+      },
+      {
+        "id": "FrcF9f",
+        "type": "StudyStrategy"
+      },
+      {
+        "id": "ESD$TV_DIVIDENDS",
+        "type": "study_Dividends"
+      },
+      {
+        "id": "ESD$TV_SPLITS",
+        "type": "study_Splits"
+      },
+      {
+        "id": "ESD$TV_EARNINGS",
+        "type": "study_Earnings"
+      },
+      {
+        "id": "ESD$TV_ROLLDATES",
+        "type": "study_BarSetContinuousRollDates"
+      },
+      {
+        "id": "ChartEventsSource",
+        "type": "ChartEventsSource"
+      }
+    ],
+    "leftAxisesState": [],
+    "rightAxisesState": [
+      {
+        "sources": [
+          "_seriesId",
+          "ngWTtJ",
+          "BUHYr9",
+          "FrcF9f",
+          "ESD$TV_DIVIDENDS",
+          "ESD$TV_SPLITS",
+          "ESD$TV_EARNINGS",
+          "ESD$TV_ROLLDATES",
+          "ChartEventsSource"
+        ]
+      }
+    ],
+    "overlayPriceScales": {}
+  },
+  "coordinates": [
+    {
+      "price": 3894.2989807302765,
+      "candles": 476.3333459717273,
+      "script": 476.3333459717273
+    },
+    {
+      "price": 3933.331249027227,
+      "candles": 317.555563981151,
+      "script": 317.555563981151
+    },
+    {
+      "price": 3972.3635173241773,
+      "candles": 158.77778199057468,
+      "script": 158.77778199057468
+    }
+  ],
+  "coordinatesMatch": true,
+  "autosave": true,
+  "panelTexts": [
+    "GOLD EMPIRE \u00b7 ANALYSIS",
+    "CONTEXT \u2260 BUY / SELL",
+    "Decision \u00b7 last closed bar",
+    "WAIT",
+    "Why WAIT / READY",
+    "Outside selected session",
+    "Setup progress",
+    "Sweep \u2713 \u2192 MSS \u2026 + FVG \u2026 \u2192 Retest \u2026 \u2192 Risk \u2026",
+    "H1 / M15 direction",
+    "Bearish / Bearish",
+    "Chart structure",
+    "Bullish CHoCH",
+    "Alignment context",
+    "Chart counter H1 \u00b7 not an entry",
+    "Context zones (display)",
+    "OB FVG",
+    "Price levels",
+    "Hidden until a plan passes all checks"
+  ],
+  "observedAt": "2026-10-31T04:39:17.370Z"
+}

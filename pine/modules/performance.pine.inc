@@ -37,24 +37,34 @@ if strategy.position_size == 0 and not na(groupedEntryTime)
     groupedLastExit := na
     groupedEntryTime := na
     groupedId := ''
-var table performance = table.new(position.bottom_right, 6, 10, bgcolor=color.new(color.black, 15))
+var table performance = table.new(position.bottom_right, 6, 10, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
 if barstate.islast or barstate.islastconfirmedhistory
-    array<string> headers = array.from('Module', 'Positions', 'Win %', 'PF', 'Avg P&L', 'Avg min')
-    for col = 0 to 5
-        table.cell(performance, col, 0, array.get(headers, col), text_color=color.silver, text_size=size.tiny)
-    for index = 0 to 7
-        int count = array.get(moduleTrades, index)
-        float losses = array.get(moduleGrossLoss, index)
-        table.cell(performance, 0, index + 1, str.substring('ABCDEFGH', index, index + 1), text_color=color.white, text_size=size.tiny)
-        table.cell(performance, 1, index + 1, str.tostring(count), text_color=color.white, text_size=size.tiny)
-        table.cell(performance, 2, index + 1, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') : '—', text_color=color.white, text_size=size.tiny)
-        table.cell(performance, 3, index + 1, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=color.white, text_size=size.tiny)
-        table.cell(performance, 4, index + 1, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=color.white, text_size=size.tiny)
-        table.cell(performance, 5, index + 1, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.##') : '—', text_color=color.white, text_size=size.tiny)
-    table.cell(performance, 0, 9, 'Max DD', text_color=color.silver, text_size=size.tiny)
-    table.cell(performance, 1, 9, str.tostring(strategy.max_drawdown, '#.##'), text_color=color.white, text_size=size.tiny)
-    table.cell(performance, 2, 9, 'Net P&L', text_color=color.silver, text_size=size.tiny)
-    table.cell(performance, 3, 9, str.tostring(strategy.netprofit, '#.##'), text_color=color.white, text_size=size.tiny)
-
-    table.cell(performance, 4, 9, 'Plans / size skips', text_color=color.silver, text_size=size.tiny)
-    table.cell(performance, 5, 9, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=color.white, text_size=size.tiny)
+    table.clear(performance, 0, 0, 5, 9)
+    if showPerformance and visualLayout == 'Dashboard'
+        array<string> headers = array.from('Strategy', 'Closed trades', 'Win rate', 'Profit factor', 'Avg net P&L (' + strategy.account_currency + ')', 'Avg hold')
+        for col = 0 to 5
+            table.cell(performance, col, 0, array.get(headers, col), text_color=panelValue, text_size=panelText, bgcolor=panelHeader)
+        int visibleRow = 1
+        for index = 0 to 7
+            int count = array.get(moduleTrades, index)
+            float losses = array.get(moduleGrossLoss, index)
+            if showUnusedModules or count > 0
+                color rowBackground = visibleRow % 2 == 0 ? panelAlternate : panelBackground
+                table.cell(performance, 0, visibleRow, strategyName(str.substring('ABCDEFGH', index, index + 1) + '_'), text_color=panelValue, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+                table.cell(performance, 1, visibleRow, str.tostring(count), text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 2, visibleRow, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') + '%' : 'No trades', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 3, visibleRow, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 4, visibleRow, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 5, visibleRow, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.#') + ' min' : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                visibleRow += 1
+        if visibleRow == 1
+            table.cell(performance, 0, visibleRow, 'No closed trades yet', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            for col = 1 to 5
+                table.cell(performance, col, visibleRow, col == 1 ? '0' : '—', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            visibleRow += 1
+        table.cell(performance, 0, visibleRow, 'Max drawdown', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 1, visibleRow, str.tostring(strategy.max_drawdown, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 2, visibleRow, 'Total net P&L', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 3, visibleRow, str.tostring(strategy.netprofit, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 4, visibleRow, 'Plans / size skips', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 5, visibleRow, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)

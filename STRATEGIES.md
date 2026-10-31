@@ -65,7 +65,7 @@ Maintain only confirmed, alternating pivot types. Consecutive same-side pivots r
 - Bullish: low L0, high H1, lower low L2 < L0, higher high H3 > H1, low L4 > L2, with current close above L0.
 - Bearish: high H0, low L1, higher high H2 > H0, lower low L3 < L1, high H4 < H2, with current close below H0.
 
-Freeze first shoulder L0/H0 with tolerance band and head L2/H2 as invalidation. A **later** retest with directional close beyond the band confirms. One setup per final pivot confirmation key. Structure20 for neckline break and confirmed alternating sequence, liquidity20 for head extending past shoulder. Pivot labels and entries are never backdated. This is one specified approximation, not comprehensive discretionary RTM.
+A recorded closing break of the matching neckline pivot must follow head confirmation and occur no later than right-shoulder confirmation; a wick-only higher high/lower low is insufficient. Freeze first shoulder L0/H0 with tolerance band and head L2/H2 as invalidation. A **later** retest with directional close beyond the band confirms. One setup per final pivot confirmation key. Structure20 for neckline break and confirmed alternating sequence, liquidity20 for head extending past shoulder. Pivot labels and entries are never backdated. This is one specified approximation, not comprehensive discretionary RTM.
 
 ## Optional context
 
@@ -90,3 +90,9 @@ Indicator estimates skip exit tests on the modeled fill bar and use stop-first o
 Risk-based units are capped by `Maximum simulated notional / equity %`, default90%, then rounded down to feed minimum units. The default avoids submitting positions requiring leverage under the emulator's default 1× margin setting; it is not a broker contract or leverage assumption. Actual planned risk can therefore be below the risk-percent ceiling. Align any higher notional cap with Strategy Properties and actual contract/account details before interpreting a levered simulation. Gaps, costs and conversion can still exceed planned risk.
 
 Minimum risk distance and TP2 R use rounded **tick counts**. For example, decimal subtraction can turn an exact 2R ladder into 1.99999999998; the corrected filter compares integer reward ticks to the rounded-up required tick count. A one-tick shortfall still fails. Regression cases cover both directions, zero risk and fractional required rewards. Candidates with missing structural invalidation are rejected even when another stop mode is selected, preventing invalid optional JSON metadata.
+
+## v0.5.0 structure and QM corrections
+
+Chart and M15 structure require a fresh confirmed close across a known swing, and consume that pivot identity once. A later recross of the same consumed pivot does not emit another BOS/CHoCH. A newly confirmed pivot at the same price has a new identity and can break. Simultaneous upward/downward qualifications are ignored as ambiguous. Structure direction is the last unique closing break; it does not flip simply because price revisits an old consumed level.
+
+Module H additionally looks up a recorded closing break of the specific neckline pivot (the second of its five pivots). The break must be later than head confirmation and no later than right-shoulder confirmation. Wick-only geometry is insufficient. Break records are bounded to the six most recent identities per direction; fast pre-confirmation breaks and older records can therefore be omitted. The pivot pattern and a later retest/entry confirmation remain mandatory. This is a deliberately conservative operational variant, not a universal definition of Quasimodo.

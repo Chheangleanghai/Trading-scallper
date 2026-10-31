@@ -56,6 +56,23 @@ it("rejects GET", async () => {
 it("rejects wrong content type", async () => {
   expect((await call({ headers: {} })).status).toHaveBeenCalledWith(415);
 });
+it("rejects contradictory pending entry notifications before network access", async () => {
+  const fetcher = vi.fn();
+  vi.stubGlobal("fetch", fetcher);
+  for (const status of ["DETECTED", "WAITING_CONFIRMATION", "ENTRY_PENDING", "INVALIDATED", "EXPIRED", "CLOSED"]) {
+    expect((await call({ body: { ...sample, status } })).status).toHaveBeenCalledWith(400);
+    expect(() => validate({ ...sample, eventType: "SELL_SIGNAL", direction: "SELL", sl: 101, tp1: 99, tp2: 98, tp3: 97, status })).toThrow("not confirmed");
+  }
+  expect(fetcher).not.toHaveBeenCalled();
+});
+it("preserves confirmed and legacy entry payload compatibility", () => {
+  for (const status of [undefined, "CONFIRMED", "ENTRY_TRIGGERED"])
+    expect(validate({ ...sample, status }).eventType).toBe("BUY_SIGNAL");
+});
+it("requires a provided entry-triggered status to match its event", () => {
+  expect(() => validate({ ...sample, eventType: "ENTRY_TRIGGERED", status: "CONFIRMED" })).toThrow("mismatch");
+  expect(validate({ ...sample, eventType: "ENTRY_TRIGGERED", status: "ENTRY_TRIGGERED" }).status).toBe("ENTRY_TRIGGERED");
+});
 it("rejects malformed and oversized bodies", async () => {
   expect((await call({ body: "{" })).status).toHaveBeenCalledWith(400);
   expect((await call({ body: "x".repeat(9000) })).status).toHaveBeenCalledWith(

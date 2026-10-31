@@ -1,0 +1,9 @@
+{
+  "script": "strategy.pine",
+  "sha256": "05f2f447f40fe91a9facec83478e85dc8dc9c5a45779d300266d30afc345fb94",
+  "nativeCompiled": true,
+  "nativeRuntimeStatus": 2,
+  "studyId": "FrcF9f",
+  "nativeLog": "11:23:48 Compiling; 11:24:10 Compiled / Added to chart",
+  "dateCambodia": "2026-10-31"
+}

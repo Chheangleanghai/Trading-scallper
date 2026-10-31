@@ -1,0 +1,51 @@
+{
+  "version": "0.6.0",
+  "acceptanceStatus": "Native compile, historical smoke and chart checks completed; profitability and live native-alert acceptance not established",
+  "tested_on_cambodia_date": "2026-10-31",
+  "scripts": {
+    "indicator.pine": {
+      "sha256": "4ad2951ba94cfaba273378b13454b89d624382a10f65bd414cc503bb5f1eec34",
+      "nativeCompilationVerified": true
+    },
+    "validation.pine": {
+      "sha256": "2e108810e1794578c245ea272b00b45afff68090996e005d0ea40c254debd07e",
+      "nativeCompilationVerified": true
+    },
+    "strategy.pine": {
+      "sha256": "05f2f447f40fe91a9facec83478e85dc8dc9c5a45779d300266d30afc345fb94",
+      "nativeCompilationVerified": true
+    }
+  },
+  "local_automated_tests_passed": 86,
+  "local_test_files": 7,
+  "local_node_versions": [
+    "22.23.4"
+  ],
+  "native_assertions_passed": 107,
+  "native_live_alert_delivery_verified": false,
+  "manual_live_test_post_count": 1,
+  "manual_live_test_http_status": 200,
+  "phone_receipt_independently_verified": false,
+  "backend_redeployed_this_release": false,
+  "input_mismatch_count": 0,
+  "genuine_oos_completed": false,
+  "walk_forward_completed": false,
+  "live_profitability_established": false,
+  "native_plan_parity_completed": false,
+  "reports": "V060_VALIDATION.md",
+  "telegram_test_receipt_user_confirmed": true,
+  "telegram_test_receipt_confirmation_date_cambodia": "2026-10-31",
+  "native_strategy_matrix_cases": 32,
+  "native_matrix_negative_cases": 24,
+  "native_matrix_positive_cases": 7,
+  "native_matrix_no_trade_cases": 1,
+  "native_default_a_plan_sample_matches": true,
+  "native_new_payload_samples": 6,
+  "native_scale_repair_verified": true,
+  "chart_save_reload_verified": true,
+  "chart_version_installed": "0.6.0",
+  "prior_85_test_node_versions": [
+    "22.23.4",
+    "24.21.0"
+  ]
+}

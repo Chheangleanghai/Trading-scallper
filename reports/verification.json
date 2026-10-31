@@ -1,36 +1,53 @@
 {
-  "tested_date": "2026-10-30",
-  "chart": "FOREXCOM:XAUUSD",
-  "timeframe": "5",
-  "native_compiler": "TradingView Pine Script v6",
+  "version": "0.6.1",
+  "acceptanceStatus": "Native compile, historical smoke and chart checks completed; profitability and live native-alert acceptance not established",
+  "tested_on_cambodia_date": "2026-10-31",
   "scripts": {
     "indicator.pine": {
-      "sha256": "ac3204e808bd98e493413fb8472b0df4bc260dd703c6e497e107615d704facf8",
-      "compiled": true
-    },
-    "strategy.pine": {
-      "sha256": "5002409ac85bcb40ad15e260f8caa0cf019890eea36ddeab81ca6d4ff32aa037",
-      "compiled": true
+      "sha256": "4ad2951ba94cfaba273378b13454b89d624382a10f65bd414cc503bb5f1eec34",
+      "nativeCompilationVerified": true
     },
     "validation.pine": {
-      "sha256": "54f30d7b9cca59e40efe0e88ec8ebd3d27d85e72259ed3069a2d2b1cbf6a381b",
-      "compiled": true
+      "sha256": "2e108810e1794578c245ea272b00b45afff68090996e005d0ea40c254debd07e",
+      "nativeCompilationVerified": true
+    },
+    "strategy.pine": {
+      "sha256": "05f2f447f40fe91a9facec83478e85dc8dc9c5a45779d300266d30afc345fb94",
+      "nativeCompilationVerified": true
     }
   },
-  "native_assertions_passed": 44,
-  "strategy_matrix_cases": 32,
-  "feature_profiles": 16,
-  "native_payload_samples": 67,
-  "backend_delivery_mocked": true,
-  "real_broker_orders_placed": false,
-  "telegram_real_delivery_verified": false,
-  "vercel_deployment_verified": false,
-  "local_automated_tests_passed": 75,
-  "local_test_files": 6,
+  "local_automated_tests_passed": 89,
+  "local_test_files": 7,
   "local_node_versions": [
+    "22.23.4"
+  ],
+  "native_assertions_passed": 107,
+  "native_live_alert_delivery_verified": false,
+  "manual_live_test_post_count": 1,
+  "manual_live_test_http_status": 200,
+  "phone_receipt_independently_verified": false,
+  "backend_redeployed_this_release": false,
+  "input_mismatch_count": 0,
+  "genuine_oos_completed": false,
+  "walk_forward_completed": false,
+  "live_profitability_established": false,
+  "native_plan_parity_completed": false,
+  "reports": "V061_CODE_REVIEW.md",
+  "telegram_test_receipt_user_confirmed": true,
+  "telegram_test_receipt_confirmation_date_cambodia": "2026-10-31",
+  "native_strategy_matrix_cases": 32,
+  "native_matrix_negative_cases": 24,
+  "native_matrix_positive_cases": 7,
+  "native_matrix_no_trade_cases": 1,
+  "native_default_a_plan_sample_matches": true,
+  "native_new_payload_samples": 6,
+  "native_scale_repair_verified": true,
+  "chart_save_reload_verified": true,
+  "chart_version_installed": "0.6.0",
+  "prior_85_test_node_versions": [
     "22.23.4",
     "24.21.0"
   ],
-  "loopback_http_delivery_payloads": 67,
-  "loopback_http_only": true
+  "changeScope": "Backend validation only; Pine remains native-verified v0.6.0",
+  "native_tests_rerun_this_patch": false
 }
