@@ -48,7 +48,7 @@ Local unit tests do not establish Pine compilation, profitability, deployment or
 
 ## Expanded-module acceptance
 
-Run `pine/validation.pine` in TradingView for the current 107 synthetic assertions over shared pure predicates, safety gates and state labels. The current source hash and native graphics result are recorded in `reports/v060-native-assertions.json`. Local generation checks verify matching sources. An independent development transpiler also runs the pure-predicate harness, explicitly rejecting unresolved runtime calls; a canary verifies that a deliberately failed assertion is detected. Earlier 44- and 82-assertion versions are historical checks, not the current count. Synthetic assertions do not emulate the complete trading state machine. Then run each module alone with its input enabled (disable A when testing B–H):
+Run `pine/validation.pine` in TradingView for the current **206 synthetic assertions** over shared predicates, module setup gates and candidate state methods. Local generation checks verify matching generated sources; an independent development transpiler runs the harness, but neither verifies native TradingView compilation. The 107-assertion native screenshot in `reports/v060-native-assertions.json` belongs to an earlier source revision. Synthetic assertions do not emulate the complete trading state machine or historical performance. Then run each module alone with its input enabled (disable A when testing B–H):
 
 | Module | Positive sequence to replay | Negative checks |
 |---|---|---|
