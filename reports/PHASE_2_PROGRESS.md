@@ -107,3 +107,21 @@ No Pine rule was loosened to increase signals. The heuristic setup score is not 
 - Recomputed Pine hashes; all three still match the values listed above. Only README/testing/setup documentation was corrected to identify 206 as the current synthetic count and 107 as historical v0.6.0 evidence. Pine logic and project version were not changed.
 - Read-only TradingView inspection found the XAUUSD chart and prior compile-log messages, but the Pine editor was not available as a readable full source buffer in the active browser view. The visible chart includes both the indicator and a study named “XAUUSD SMART SCALPER PRO Backtest”; its exact source revision cannot be inferred from the name. No chart study, script, or alert was changed. Therefore no new native compile or current-source Strategy Tester result is claimed.
 - The current local TradingView source hashes remain unverified natively; paired live-source PLAN_AUDIT logs, replay evidence, cost-aware current-source timeframe matrix, OOS/walk-forward and native alert delivery remain **NOT VERIFIED**. No Telegram alert, deployment, push, or trade was made.
+
+## Browser follow-up (2026-10-31)
+
+The TradingView Pine Editor panel was opened without modifying the draft. Its tab is named “Untitled script”; the accessible editor text begins with the current indicator declaration and `SCRIPT_VERSION = '0.8.0'`, and the visible tail around lines 1297–1334 matches the local indicator. The editor's “Update on chart” control is disabled, while its log contains only the earlier 8:08 PM and 9:22 PM compile/update entries. This suggests the visible draft has no pending edits, but it does not reveal the complete editor model or prove a compile against the current local SHA-256. The chart still lists a study named “XAUUSD SMART SCALPER PRO Backtest”; its revision and current Strategy Tester run remain unknown. No source was pasted, saved, replaced, or recompiled; no chart state or alerts were changed.
+
+## Additional follow-up (2026-10-31)
+
+- Re-ran local checks once more: 99/99 tests, TypeScript, generation consistency, independent Pine parsing, zero production dependency advisories, and whitespace check passed.
+- Searched the project for newly supplied TradingView audit exports, raw trade exports and logs. No current-source PLAN_AUDIT pair or new trade export was present; only the archived summary CSV and synthetic comparator tests were found.
+- Rechecked the open TradingView page. The Pine Editor shows the previous compile log; the page does not expose a Strategy Tester panel or result export. The editor's visible current indicator source remains unmodified. No TradingView compile or backtest result was fabricated from the old log or the study name.
+- Therefore the prior blocked items remain **NOT VERIFIED**: exact-hash native compiles for both current Pine files; current-source Strategy Tester across M1/M3/M5/M15 with costs; paired candle-level audit comparison; Bar Replay/reload; OOS/walk-forward; and native TradingView-origin Telegram alert delivery. No alert, publish, save, deploy, push, or trade was performed.
+
+## User ZIP review follow-up (2026-10-31)
+
+- Re-ran `npm run verify`: **99/99 tests passed**, with TypeScript, generated-source consistency, and independent parsing of all three Pine files passing. `npm audit --omit=dev` found zero vulnerabilities and `git diff --check` passed.
+- Checked local secret handling without reading `.env`: `.gitignore` ignores `.env*`, and `.env` is not tracked by Git. This verifies only the local working tree; it does not inspect or certify any separately uploaded ZIP archive.
+- Switched to the already-open TradingView chart and opened Pine Editor. It exposes an “Untitled script” draft whose first lines identify the current v0.8.0 indicator; the visible editor tail matches local lines. “Update on chart” is disabled and its log has no new compile entry, so there was no new native compile. Strategy Tester is not open in the current view. No script or chart was overwritten or saved.
+- The uploaded ZIP itself was not available as a local workspace file in this run. The project remains v0.8.0; native Strategy Tester, current-source parity, replay, OOS/walk-forward, and TradingView-origin Telegram delivery remain **NOT VERIFIED**.
