@@ -7,12 +7,18 @@ rangeSweep(int direction, float lower, float upper, float h, float l, float c) =
     direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
 pivotSweep(int direction, float level, float h, float l, float c) =>
     direction == 1 ? l < level and c > level : h > level and c < level
+fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
+    direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
     displaced and (direction == 1 ? c > o and previousClose < previousOpen and c > swingLevel and previousClose <= swingLevel : c < o and previousClose > previousOpen and c < swingLevel and previousClose >= swingLevel)
 trendPullback(int direction, bool trend, float fast, float slow, float h, float l, float c, float atrValue, float depth) =>
     trend and (direction == 1 ? l <= fast and l >= slow - atrValue * depth and c > slow : h >= fast and h <= slow + atrValue * depth and c < slow)
 compressedRange(float upper, float lower, float atrValue, float width) =>
     upper > lower and upper - lower <= atrValue * width
+snrBreakout(int direction, float level, float tolerance, int confirmedTouches, float previousClose, float o, float c, bool displaced) =>
+    confirmedTouches >= 2 and displaced and (direction == 1 ? c > level + tolerance and previousClose <= level and c > o : direction == -1 and c < level - tolerance and previousClose >= level and c < o)
+snrRejection(int direction, float level, float tolerance, int confirmedTouches, float h, float l, float o, float c) =>
+    confirmedTouches >= 2 and (direction == 1 ? l <= level + tolerance and c > level + tolerance and c > o : direction == -1 and h >= level - tolerance and c < level - tolerance and c < o)
 qmPattern(int direction, int firstType, float p0, float p1, float p2, float p3, float p4, float c) =>
     direction == 1 ? firstType == -1 and p2 < p0 and p3 > p1 and p4 > p2 and c > p0 : firstType == 1 and p2 > p0 and p3 < p1 and p4 < p2 and c < p0
 orderedPrices(int direction, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree) =>

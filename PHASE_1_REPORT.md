@@ -77,14 +77,16 @@ Results:
 
 The independent Pine parser is not TradingView’s compiler. Passing Node/backend tests does not validate TradingView execution or market profitability.
 
-## TradingView compilation evidence
+## TradingView compilation evidence (at Phase 1 completion)
 
-The existing v0.8.0 verification record reports that the exact generated indicator and strategy compiled in TradingView. Their current SHA-256 hashes still match that record:
+The existing v0.8.0 verification record reports that the exact generated indicator and strategy compiled in TradingView. At Phase 1 completion, their SHA-256 hashes matched that record:
 
 - Indicator: `270bfb2954da4ef3cc9f2e5429f45646635ea96811a540aed708991da3d11828`
 - Strategy: `0eb73deec4a14d1a0dcac0de406b140ad0b2e7a70468296cc3b0cfd5fc5d320c`
 
-Compilation is therefore supported by the recorded native compile evidence. I could not open or operate the user’s TradingView chart in this Phase 1 session to repeat compilation or inspect its current live chart state. The existing v0.8.0 report states the strategy could not be added beside the indicator because of the TradingView Basic study limit, the script could not be cloud-saved under that account limit, and the chart’s installed strategy remained v0.6.0. Current chart parity and persistence are not verified here.
+Compilation at Phase 1 completion is supported by the recorded native compile evidence. I could not open or operate the user’s TradingView chart in that session to repeat compilation or inspect its current live chart state. The existing v0.8.0 report states the strategy could not be added beside the indicator because of the TradingView Basic study limit, the script could not be cloud-saved under that account limit, and the chart’s installed strategy remained v0.6.0. Current chart parity and persistence were not verified.
+
+The subsequent Phase 2 working-tree predicate refactor changed these hashes. The TradingView compile evidence above does **not** apply to the modified hashes now in the worktree; native compilation must be repeated before treating those files as chart-ready.
 
 ## Missing historical verification
 

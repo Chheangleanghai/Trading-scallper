@@ -137,12 +137,18 @@ rangeSweep(int direction, float lower, float upper, float h, float l, float c) =
     direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
 pivotSweep(int direction, float level, float h, float l, float c) =>
     direction == 1 ? l < level and c > level : h > level and c < level
+fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
+    direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
     displaced and (direction == 1 ? c > o and previousClose < previousOpen and c > swingLevel and previousClose <= swingLevel : c < o and previousClose > previousOpen and c < swingLevel and previousClose >= swingLevel)
 trendPullback(int direction, bool trend, float fast, float slow, float h, float l, float c, float atrValue, float depth) =>
     trend and (direction == 1 ? l <= fast and l >= slow - atrValue * depth and c > slow : h >= fast and h <= slow + atrValue * depth and c < slow)
 compressedRange(float upper, float lower, float atrValue, float width) =>
     upper > lower and upper - lower <= atrValue * width
+snrBreakout(int direction, float level, float tolerance, int confirmedTouches, float previousClose, float o, float c, bool displaced) =>
+    confirmedTouches >= 2 and displaced and (direction == 1 ? c > level + tolerance and previousClose <= level and c > o : direction == -1 and c < level - tolerance and previousClose >= level and c < o)
+snrRejection(int direction, float level, float tolerance, int confirmedTouches, float h, float l, float o, float c) =>
+    confirmedTouches >= 2 and (direction == 1 ? l <= level + tolerance and c > level + tolerance and c > o : direction == -1 and h >= level - tolerance and c < level - tolerance and c < o)
 qmPattern(int direction, int firstType, float p0, float p1, float p2, float p3, float p4, float c) =>
     direction == 1 ? firstType == -1 and p2 < p0 and p3 > p1 and p4 > p2 and c > p0 : firstType == 1 and p2 > p0 and p3 < p1 and p4 < p2 and c < p0
 orderedPrices(int direction, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree) =>
@@ -279,7 +285,7 @@ var box riskBox = na
 var box rewardBox = na
 var array<line> levels = array.new<line>()
 var array<label> tags = array.new<label>()
-// Independent, persistent candidates. All mutation happens inside confirmed-bar scope.
+// Shared candidate lifecycle. Inputs are explicit so fixtures can exercise this exact production code.
 type Candidate
     string id = ''
     bool enabled = false
@@ -309,11 +315,11 @@ type Candidate
     int quality = 0
     string rejectionReason = 'Waiting for entry confirmation'
 
-method begin(Candidate c, int direction, float lower, float upper, float invalidation, float trigger, int structurePoints, int liquidityPoints, string mode) =>
+method begin(Candidate c, int currentBar, int currentTime, int direction, float lower, float upper, float invalidation, float trigger, int structurePoints, int liquidityPoints, string mode) =>
     c.stage := 1
     c.direction := direction
-    c.setupBar := bar_index
-    c.setupTime := time_close
+    c.setupBar := currentBar
+    c.setupTime := currentTime
     c.confirmationTime := na
     c.readyBar := na
     c.lower := lower
@@ -335,31 +341,32 @@ method begin(Candidate c, int direction, float lower, float upper, float invalid
     c.quality := 0
     c.rejectionReason := 'Waiting for entry confirmation'
 
-method maintain(Candidate c) =>
+method maintain(Candidate c, int currentBar, float currentLow, float currentHigh, int maxAge) =>
     c.ready := false
     if c.stage > 0
-        bool invalid = c.direction == 1 ? low < c.invalidation : high > c.invalidation
-        if invalid or bar_index - c.setupBar > expiry or not c.enabled
+        bool invalid = c.direction == 1 ? currentLow < c.invalidation : currentHigh > c.invalidation
+        if invalid or currentBar - c.setupBar > maxAge or not c.enabled
             c.stage := 0
             c.status := invalid ? 'INVALIDATED' : 'EXPIRED'
 
-method confirmBreak(Candidate c) =>
-    if c.stage > 0 and bar_index > c.setupBar
-        bool confirmed = breakConfirmed(c.direction, c.trigger, open, close)
+method confirmBreak(Candidate c, int currentBar, int currentTime, float currentOpen, float currentClose) =>
+    if c.stage > 0 and currentBar > c.setupBar
+        bool confirmed = breakConfirmed(c.direction, c.trigger, currentOpen, currentClose)
         if confirmed
             c.ready := true
-            c.readyBar := bar_index
-            c.confirmationTime := time_close
+            c.readyBar := currentBar
+            c.confirmationTime := currentTime
             c.status := 'WAITING_CONFIRMATION'
 
-method confirmRetest(Candidate c) =>
-    if c.stage > 0 and bar_index > c.setupBar
-        if retestConfirmed(c.direction, c.lower, c.upper, high, low, open, close)
+method confirmRetest(Candidate c, int currentBar, int currentTime, float currentHigh, float currentLow, float currentOpen, float currentClose) =>
+    if c.stage > 0 and currentBar > c.setupBar
+        if retestConfirmed(c.direction, c.lower, c.upper, currentHigh, currentLow, currentOpen, currentClose)
             c.ready := true
-            c.readyBar := bar_index
-            c.confirmationTime := time_close
+            c.readyBar := currentBar
+            c.confirmationTime := currentTime
             c.status := 'WAITING_CONFIRMATION'
 
+// Independent, persistent candidates. All mutation happens inside confirmed-bar scope.
 var Candidate candA = Candidate.new(id='A_SWEEP_MSS_FVG', enabled=enableA)
 var Candidate candB = Candidate.new(id='B_CRT', enabled=enableB)
 var Candidate candC = Candidate.new(id='C_TURTLE_SOUP', enabled=enableC)
@@ -452,7 +459,7 @@ optionalLiquidity(int direction) =>
 updateCandidates() =>
     // Called once at chart close. This file is inlined inside the confirmed-bar block.
     for c in candidates
-        c.maintain()
+        c.maintain(bar_index, low, high, expiry)
 
     // A exposes the existing sweep/MSS/FVG state without changing its sequence.
     candA.stage := stage
@@ -470,21 +477,21 @@ updateCandidates() =>
     bool idleForSetup = not active and not pending and not brokerBusy
     if idleForSetup
         // B: previous completed reference candle; frozen sweep -> later break of sweep candle.
-        candB.confirmBreak()
+        candB.confirmBreak(bar_index, time_close, open, close)
         if enableB and candB.stage == 0 and (na(memory.crtUsed) or memory.crtUsed != crtTime)
             bool bull = rangeSweep(1, crtLow, crtHigh, high, low, close)
             bool bear = rangeSweep(-1, crtLow, crtHigh, high, low, close)
             if bull != bear
-                candB.begin(bull ? 1 : -1, crtLow, crtHigh, bull ? low : high, bull ? high : low, 10, 20, 'Reference sweep')
+                candB.begin(bar_index, time_close, bull ? 1 : -1, crtLow, crtHigh, bull ? low : high, bull ? high : low, 10, 20, 'Reference sweep')
                 memory.crtUsed := crtTime
 
         // C: confirmed-pivot false breakout, not the original 20-day Turtle Soup variant.
-        candC.confirmBreak()
+        candC.confirmBreak(bar_index, time_close, open, close)
         if enableC and candC.stage == 0
             bool bull = not na(slw) and bar_index - slBar >= turtleAge and (na(memory.turtleUsedLow) or memory.turtleUsedLow != slBar) and pivotSweep(1, slw, high, low, close)
             bool bear = not na(sh) and bar_index - shBar >= turtleAge and (na(memory.turtleUsedHigh) or memory.turtleUsedHigh != shBar) and pivotSweep(-1, sh, high, low, close)
             if bull != bear
-                candC.begin(bull ? 1 : -1, bull ? slw : low, bull ? high : sh, bull ? low : high, bull ? high : low, 10, 20, 'Pivot false breakout')
+                candC.begin(bar_index, time_close, bull ? 1 : -1, bull ? slw : low, bull ? high : sh, bull ? low : high, bull ? high : low, 10, 20, 'Pivot false breakout')
                 if bull
                     memory.turtleUsedLow := slBar
                 else
@@ -492,22 +499,22 @@ updateCandidates() =>
 
         // D: repeated confirmed horizontal pivots; displaced breakout/retest or failed breakout/rejection.
         if candD.mode == 'Breakout retest'
-            candD.confirmRetest()
+            candD.confirmRetest(bar_index, time_close, high, low, open, close)
         else
-            candD.confirmBreak()
+            candD.confirmBreak(bar_index, time_close, open, close)
         if enableD and candD.stage == 0
             float tolerance = atr * levelTolerance
-            bool up = srHighTouches >= 2 and close > srHigh + tolerance and close[1] <= srHigh and close > open and bodyDisplacement
-            bool down = srLowTouches >= 2 and close < srLow - tolerance and close[1] >= srLow and close < open and bodyDisplacement
-            bool rejectLow = srLowTouches >= 2 and low <= srLow + tolerance and close > srLow + tolerance and close > open
-            bool rejectHigh = srHighTouches >= 2 and high >= srHigh - tolerance and close < srHigh - tolerance and close < open
+            bool up = snrBreakout(1, srHigh, tolerance, srHighTouches, close[1], open, close, bodyDisplacement)
+            bool down = snrBreakout(-1, srLow, tolerance, srLowTouches, close[1], open, close, bodyDisplacement)
+            bool rejectLow = snrRejection(1, srLow, tolerance, srLowTouches, high, low, open, close)
+            bool rejectHigh = snrRejection(-1, srHigh, tolerance, srHighTouches, high, low, open, close)
             if up != down and (up or down)
                 float level = up ? srHigh : srLow
-                candD.begin(up ? 1 : -1, level - tolerance, level + tolerance, up ? math.min(low, level - tolerance) : math.max(high, level + tolerance), level, 20, 0, 'Breakout retest')
+                candD.begin(bar_index, time_close, up ? 1 : -1, level - tolerance, level + tolerance, up ? math.min(low, level - tolerance) : math.max(high, level + tolerance), level, 20, 0, 'Breakout retest')
             else if rejectLow != rejectHigh
                 float level = rejectLow ? srLow : srHigh
                 bool swept = rejectLow ? low < srLow - tolerance : high > srHigh + tolerance
-                candD.begin(rejectLow ? 1 : -1, level - tolerance, level + tolerance, rejectLow ? low : high, rejectLow ? high : low, 20, swept ? 20 : 0, swept ? 'Failed breakout' : 'Rejection')
+                candD.begin(bar_index, time_close, rejectLow ? 1 : -1, level - tolerance, level + tolerance, rejectLow ? low : high, rejectLow ? high : low, 20, swept ? 20 : 0, swept ? 'Failed breakout' : 'Rejection')
 
         // E: opposite-candle zone followed by impulsive break of a known confirmed swing.
         // Existing zones are processed before creating replacements; tested bars are counted explicitly.
@@ -521,18 +528,18 @@ updateCandidates() =>
                     c.stage := 0
                     c.status := 'EXPIRED'
                 else
-                    c.confirmRetest()
+                    c.confirmRetest(bar_index, time_close, high, low, open, close)
         bool demandDeparture = not na(sh) and zoneDeparture(1, sh, close[1], open[1], open, close, bodyDisplacement)
         bool supplyDeparture = not na(slw) and zoneDeparture(-1, slw, close[1], open[1], open, close, bodyDisplacement)
         if enableE and candDemand.stage == 0 and demandDeparture and (na(memory.demandUsed) or memory.demandUsed != time[1])
-            candDemand.begin(1, low[1], high[1], low[1], high[1], 20, 0, 'Demand departure')
+            candDemand.begin(bar_index, time_close, 1, low[1], high[1], low[1], high[1], 20, 0, 'Demand departure')
             memory.demandUsed := time[1]
         if enableE and candSupply.stage == 0 and supplyDeparture and (na(memory.supplyUsed) or memory.supplyUsed != time[1])
-            candSupply.begin(-1, low[1], high[1], high[1], low[1], 20, 0, 'Supply departure')
+            candSupply.begin(bar_index, time_close, -1, low[1], high[1], high[1], low[1], 20, 0, 'Supply departure')
             memory.supplyUsed := time[1]
 
         // F: structural trend + pullback into EMA9/21 band, then later rejection of frozen pullback high/low.
-        candF.confirmBreak()
+        candF.confirmBreak(bar_index, time_close, open, close)
         bool bullTrend = chartStructure == 1 and ema9 > ema21 and (not useEMA50 or ema21 > ema50)
         bool bearTrend = chartStructure == -1 and ema9 < ema21 and (not useEMA50 or ema21 < ema50)
         if candF.stage > 0 and not (candF.direction == 1 ? bullTrend : bearTrend)
@@ -543,21 +550,21 @@ updateCandidates() =>
             bool bull = trendPullback(1, bullTrend, ema9, ema21, high, low, close, atr, pullbackDepth)
             bool bear = trendPullback(-1, bearTrend, ema9, ema21, high, low, close, atr, pullbackDepth)
             if bull != bear
-                candF.begin(bull ? 1 : -1, math.min(ema9, ema21), math.max(ema9, ema21), bull ? math.min(low, slw) : math.max(high, sh), bull ? high : low, 20, 0, 'EMA structural pullback')
+                candF.begin(bar_index, time_close, bull ? 1 : -1, math.min(ema9, ema21), math.max(ema9, ema21), bull ? math.min(low, slw) : math.max(high, sh), bull ? high : low, 20, 0, 'EMA structural pullback')
 
         // G: compressed prior rolling range -> sweep/reclaim -> later displacement out of frozen range.
-        candG.confirmBreak()
+        candG.confirmBreak(bar_index, time_close, open, close)
         if candG.ready and not bodyDisplacement
             candG.ready := false
         if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and (na(memory.amdUsed) or bar_index - memory.amdUsed > accumulationBars)
             bool bull = rangeSweep(1, accLow, accHigh, high, low, close)
             bool bear = rangeSweep(-1, accLow, accHigh, high, low, close)
             if bull != bear
-                candG.begin(bull ? 1 : -1, accLow, accHigh, bull ? low : high, bull ? accHigh : accLow, 20, 20, 'Compression sweep')
+                candG.begin(bar_index, time_close, bull ? 1 : -1, accLow, accHigh, bull ? low : high, bull ? accHigh : accLow, 20, 20, 'Compression sweep')
                 memory.amdUsed := bar_index
 
         // H: five alternating confirmed pivots form shoulder/head/neckline break, then level retest.
-        candH.confirmRetest()
+        candH.confirmRetest(bar_index, time_close, high, low, open, close)
         if enableH and candH.stage == 0 and array.size(pivotPrices) == 5
             float p0 = array.get(pivotPrices, 0)
             float p1 = array.get(pivotPrices, 1)
@@ -574,7 +581,7 @@ updateCandidates() =>
             bool bear = qmQualified(qmPattern(-1, array.get(pivotDirs, 0), p0, p1, p2, p3, p4, close), bearNecklineBar, headConfirmed, shoulderConfirmed)
             if (bull != bear) and (na(memory.qmUsed) or memory.qmUsed != patternKey)
                 float tolerance = atr * levelTolerance
-                candH.begin(bull ? 1 : -1, p0 - tolerance, p0 + tolerance, p2, p0, 20, 20, 'Confirmed 5-pivot QM')
+                candH.begin(bar_index, time_close, bull ? 1 : -1, p0 - tolerance, p0 + tolerance, p2, p0, 20, 20, 'Confirmed 5-pivot QM')
                 memory.qmUsed := patternKey
     0
 strategyName(string id) =>
@@ -825,7 +832,7 @@ if barstate.isconfirmed
                 notifyLifecycle('ENTRY_TRIGGERED')
     if enableA and stage == 1 and bar_index > setupBar
         bool mss = dir == 1 ? close > breakLevel and close > open : close < breakLevel and close < open
-        bool fvg = dir == 1 ? low > high[2] : high < low[2]
+        bool fvg = fairValueGap(dir, high, low, high[2], low[2])
         if mss and fvg and math.abs(close - open) >= atr * minDisp
             gapTop := dir == 1 ? low : low[2]
             gapBottom := dir == 1 ? high[2] : high

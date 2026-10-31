@@ -2,6 +2,7 @@ from pathlib import Path
 import sys
 root = Path(__file__).resolve().parents[1]
 engine = (root/'pine/engine.pine.inc').read_text()
+candidate_state = (root/'pine/modules/candidate_state.pine.inc').read_text()
 for token, file, indent in [
     ('// INCLUDE_PREDICATES', 'predicates.pine.inc', ''),
     ('// INCLUDE_MODULE_CANDIDATES', 'candidates.pine.inc', ''),
@@ -13,6 +14,10 @@ for token, file, indent in [
     ('    // INCLUDE_PIVOT_CONTEXT', 'pivots.pine.inc', '    '),
 ]:
     source = (root/'pine/modules'/file).read_text()
+    if file == 'candidates.pine.inc':
+        if source.count('// INCLUDE_CANDIDATE_STATE') != 1:
+            raise SystemExit('Expected exactly one // INCLUDE_CANDIDATE_STATE')
+        source = source.replace('// INCLUDE_CANDIDATE_STATE', candidate_state)
     included = '\n'.join(indent + line if line else '' for line in source.splitlines())
     if engine.count(token) != 1:
         raise SystemExit(f'Expected exactly one {token}')
@@ -22,7 +27,7 @@ broker_sync = (root/'pine/modules/broker_sync.pine.inc').read_text()
 indented_sync = '\n'.join('    ' + line if line else '' for line in broker_sync.splitlines())
 orders = (root/'pine/modules/orders.pine.inc').read_text()
 strategy = '//@version=6\nstrategy("XAUUSD SMART SCALPER PRO Backtest", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=100, max_boxes_count=20)\n' + 'bool brokerBusy = strategy.position_size != 0\nbool useBroker = true\n' + engine.replace('    // BROKER_SYNC', indented_sync).replace('// STRATEGY_ORDER_ADAPTER', orders) + '\n' + (root/'pine/modules/performance.pine.inc').read_text()
-fixtures = '//@version=6\nindicator("Smart Scalper synthetic assertions", overlay=true)\n' + (root/'pine/modules/predicates.pine.inc').read_text() + '\n' + (root/'pine/fixtures.pine.inc').read_text()
+fixtures = '//@version=6\nindicator("Smart Scalper synthetic assertions", overlay=true)\n' + (root/'pine/modules/predicates.pine.inc').read_text() + '\n' + candidate_state + '\n' + (root/'pine/fixtures.pine.inc').read_text()
 for name, content in [('indicator.pine', indicator), ('strategy.pine', strategy), ('validation.pine', fixtures)]:
     target = root/'pine'/name
     if '--check' in sys.argv:

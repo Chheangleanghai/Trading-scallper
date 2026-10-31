@@ -441,7 +441,7 @@ if barstate.isconfirmed
                 notifyLifecycle('ENTRY_TRIGGERED')
     if enableA and stage == 1 and bar_index > setupBar
         bool mss = dir == 1 ? close > breakLevel and close > open : close < breakLevel and close < open
-        bool fvg = dir == 1 ? low > high[2] : high < low[2]
+        bool fvg = fairValueGap(dir, high, low, high[2], low[2])
         if mss and fvg and math.abs(close - open) >= atr * minDisp
             gapTop := dir == 1 ? low : low[2]
             gapBottom := dir == 1 ? high[2] : high
