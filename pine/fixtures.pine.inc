@@ -37,6 +37,10 @@ if barstate.isfirst
     expect(fairValueGap(-1, 104, 101, 106, 105), 'A bearish fair value gap')
     expect(not fairValueGap(1, 106, 104, 104, 109), 'A touching boundaries do not form a gap')
     expect(not fairValueGap(-1, 106, 101, 104, 106), 'A touching boundaries do not form a bearish gap')
+    expect(mssFvgConfirmed(1, 110, 114, 112, 111, 115, 110, 113, 1, 1), 'A bullish MSS, FVG, and displacement')
+    expect(mssFvgConfirmed(-1, 100, 98, 96, 101, 99, 100, 97, 1, 1), 'A bearish MSS, FVG, and displacement')
+    expect(not mssFvgConfirmed(1, 110, 114, 112, 111, 115, 110, 113, 4, 1), 'A weak displacement rejected')
+    expect(not mssFvgConfirmed(1, 113, 114, 112, 111, 115, 110, 113, 1, 1), 'A equal-level close is not MSS')
     expect(breakConfirmed(1, 105, 104, 106), 'B/C bullish later confirmation')
     expect(breakConfirmed(-1, 105, 106, 104), 'B/C bearish later confirmation')
     expect(not breakConfirmed(1, 105, 107, 106), 'B/C counter-direction candle rejected')
@@ -165,18 +169,39 @@ if barstate.isfirst
     testTerminalLifecycle('H_QUASIMODO', 1, 1900)
     // Lifecycle cases below instantiate the same Candidate type/methods used by production modules.
     Candidate fixtureA = Candidate.new(id='A_SWEEP_MSS_FVG', enabled=true)
-    bool detectA = swingSweep(1, 100, 110, 103, 99, 101, true) and breakConfirmed(1, 102, 102, 103) and fairValueGap(1, 106, 105, 104, 109)
-    expect(detectA, 'A setup fixture has sweep, later MSS, and FVG evidence')
-    if detectA
-        fixtureA.begin(100, 1000, 1, 100, 102, 95, 102, 20, 20, 'A retest')
-    fixtureA.confirmRetest(100, 1000, 103, 101, 102, 103)
-    expect(not fixtureA.ready, 'A cannot confirm on its setup bar')
-    fixtureA.maintain(101, 101, 103, 20)
-    fixtureA.confirmRetest(101, 2000, 103, 101, 103, 102)
-    expect(not fixtureA.ready, 'A opposite-close retest is not confirmed')
-    fixtureA.maintain(102, 101, 103, 20)
-    fixtureA.confirmRetest(102, 3000, 103, 101, 102, 103)
-    expect(fixtureA.ready and fixtureA.readyBar == 102 and fixtureA.confirmationTime == 3000, 'A later retest confirms on knowledge bar')
+    int stageA = 0
+    int sweepBarA = 100
+    int gapBarA = na
+    float sweepExtremeA = na
+    float gapBottomA = na
+    float gapTopA = na
+    bool sweepA = swingSweep(1, 100, 110, 103, 99, 101, true)
+    if sweepA
+        stageA := 1
+        sweepExtremeA := 99
+        fixtureA.begin(sweepBarA, 1000, 1, na, na, sweepExtremeA, 110, 20, 20, 'A sweep → MSS/FVG → retest')
+    expect(stageA == 1 and not na(sweepExtremeA), 'A sweep starts a waiting setup, not an entry')
+    bool sameBarMssA = mssFvgConfirmed(1, 110, 103, 99, 100, 102, 100, 101, 1, 1)
+    expect(not sameBarMssA and stageA == 1, 'A cannot confirm MSS/FVG on its sweep bar')
+    bool mssFvgA = stageA == 1 and 101 > sweepBarA and mssFvgConfirmed(1, 110, 114, 112, 111, 115, 110, 113, 1, 1)
+    if mssFvgA
+        stageA := 2
+        gapBarA := 101
+        gapTopA := 112
+        gapBottomA := 111
+        fixtureA.lower := gapBottomA
+        fixtureA.upper := gapTopA
+    expect(mssFvgA and stageA == 2 and gapBarA == 101, 'A MSS + displaced FVG advances only on the later bar')
+    fixtureA.maintain(101, 111.5, 114, 20)
+    if 101 > gapBarA
+        fixtureA.confirmRetest(101, 2000, 114, 111.5, 110, 113)
+    expect(not fixtureA.ready, 'A cannot enter on the FVG creation bar')
+    fixtureA.maintain(102, 111.5, 112.5, 20)
+    fixtureA.confirmRetest(102, 3000, 112.5, 111.5, 112.5, 112)
+    expect(not fixtureA.ready, 'A wrong-direction retest candle is rejected')
+    fixtureA.maintain(103, 111.5, 113, 20)
+    fixtureA.confirmRetest(103, 4000, 113, 111.5, 111.5, 112.5)
+    expect(fixtureA.ready and fixtureA.readyBar == 103 and fixtureA.confirmationTime == 4000, 'A retest confirms on the later knowledge bar')
 
     Candidate fixtureB = Candidate.new(id='B_CRT', enabled=true)
     bool detectB = referenceUnused(2000, na) and rangeSweep(1, 100, 110, 106, 99, 103)
@@ -335,4 +360,4 @@ if barstate.isfirst
     expect(fixtureExpired.stage == 0 and fixtureExpired.status == 'EXPIRED', 'Candidate expires after configured age')
 var table results = table.new(position.top_right, 1, 1)
 if barstate.islast
-    table.cell(results, 0, 0, '200 synthetic assertions passed in this TradingView run', text_color=color.white, bgcolor=color.green)
+    table.cell(results, 0, 0, '206 synthetic assertions passed in this TradingView run', text_color=color.white, bgcolor=color.green)

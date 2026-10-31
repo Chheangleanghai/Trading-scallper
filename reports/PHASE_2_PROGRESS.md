@@ -19,8 +19,9 @@
 - Extracted additional inline module gates into shared predicates used by both production detection and fixtures: A bounded/unused-pivot sweep, B reference-candle reuse, C pivot age/reuse, E zone-test limit, F continuing trend validity, and G AMD cooldown.
 - Added 22 synthetic cases for those gates, including boundary and reused-identity negatives. Conditions were moved without changing valid-state behavior.
 - Added terminal lifecycle fixtures for all nine module candidates (A, B, C, D, E demand, E supply, F, G, H), each checking structural invalidation and maximum-age expiry through the production `Candidate.maintain` method. These add 18 synthetic checks.
-- The Pine validation harness now executes **200 synthetic assertion checks**: predicate/module gate cases, valid/invalid setup fixtures, wrong-direction/weak-confirmation bars, candidate confirmation timing, and candidate invalidation/expiry. It uses artificial OHLC and shared production predicates/state methods; it still does not run the complete production module loop over full synthetic bar series and is not real-market lifecycle evidence.
-- Corrected the validation chart's status text, which previously claimed 160 assertions despite the harness containing more. The validation script now displays 200, and a regression test derives the runtime count including the repeated terminal lifecycle cases.
+- Extracted Strategy A's exact bullish/bearish MSS + three-bar FVG + ATR displacement conjunction into a shared pure predicate used by the production engine and fixtures. Replaced A's aggregate setup example with a sequential sweep → later MSS/FVG → later retest simulation, including same-bar and wrong-direction rejection cases. Trading conditions are unchanged.
+- The Pine validation harness now executes **206 synthetic assertion checks**: predicate/module gate cases, valid/invalid setup fixtures, wrong-direction/weak-confirmation bars, A's staged lifecycle, candidate confirmation timing, and candidate invalidation/expiry. It uses artificial OHLC and shared production predicates/state methods; it still does not run the complete production module loop over full synthetic bar series and is not real-market lifecycle evidence.
+- Corrected the validation chart's status text, which previously claimed 160 assertions despite the harness containing more. The validation script now displays 206, and a regression test derives the runtime count including repeated terminal lifecycle cases.
 - Added a regression test that derives the fixture assertion count and fails if the displayed count drifts again.
 
 ## Verification run after these edits
@@ -36,9 +37,9 @@
 
 The 99 Vitest tests include the Pine runtime harness, static HTF/confirmation safeguards, and a regression check that keeps the displayed assertion count synchronized with its fixtures. The harness evaluates the synthetic assertions in the local third-party transpiler; this is not a TradingView compiler or market simulator. The updated Pine hashes are:
 
-- `pine/indicator.pine`: `efe7d8ffab10210df8eb1e42714a8bf11a3e7c09b21e0f8ffc4bdf7ebcda5f8b`
-- `pine/strategy.pine`: `281245aa3aa8e76f0f3d8767f713d03f060d88692cf075c37786c3969235b93a`
-- `pine/validation.pine`: `eb37fd80019e1e676f34792c2e93406d01a0edd5c041ab32671c01975430b647`
+- `pine/indicator.pine`: `54d545acede6c9541afa60d805330caf09f08f517d162bc5f4cfacd4e37cd161`
+- `pine/strategy.pine`: `3d6a13c4e0aefc7a37f905cc103062069af42b2c6674ff17aa09b94b5e2138b4`
+- `pine/validation.pine`: `c62c3f792af5cb0567a2481017bb19dc809760b38b812bc2c4ccb7190a553d43`
 
 ## Existing TradingView Strategy Tester evidence found
 

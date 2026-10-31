@@ -21,6 +21,9 @@ amdCooldownElapsed(int currentBar, int lastSetupBar, int rangeLength) =>
     na(lastSetupBar) or currentBar - lastSetupBar > rangeLength
 fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
     direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
+mssFvgConfirmed(int direction, float breakLevel, float h, float l, float highTwoBarsAgo, float lowTwoBarsAgo, float o, float c, float atrValue, float minimumDisplacement) =>
+    bool mss = direction == 1 ? c > breakLevel and c > o : direction == -1 and c < breakLevel and c < o
+    mss and fairValueGap(direction, h, l, highTwoBarsAgo, lowTwoBarsAgo) and math.abs(c - o) >= atrValue * minimumDisplacement
 zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
     displaced and (direction == 1 ? c > o and previousClose < previousOpen and c > swingLevel and previousClose <= swingLevel : c < o and previousClose > previousOpen and c < swingLevel and previousClose >= swingLevel)
 trendPullback(int direction, bool trend, float fast, float slow, float h, float l, float c, float atrValue, float depth) =>

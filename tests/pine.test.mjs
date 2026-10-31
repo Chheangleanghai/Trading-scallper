@@ -29,7 +29,7 @@ describe("local Pine structural and pure-predicate checks", () => {
     const terminalRuns = (source.match(/^\s{4}testTerminalLifecycle\(/gm) ?? []).length;
     const assertionCalls = assertionStatements + (terminalRuns - 1) * 2; // two checks run for each terminal lifecycle case
     const displayedCount = source.match(/'(\d+) synthetic assertions passed in this TradingView run'/)?.[1];
-    expect(assertionCalls).toBe(200);
+    expect(assertionCalls).toBe(206);
     expect(displayedCount).toBe(String(assertionCalls));
   });
   it("detects a deliberately failed assertion instead of trusting harness pass alone", () => {

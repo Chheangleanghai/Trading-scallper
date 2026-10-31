@@ -440,9 +440,8 @@ if barstate.isconfirmed
                 notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
                 notifyLifecycle('ENTRY_TRIGGERED')
     if enableA and stage == 1 and bar_index > setupBar
-        bool mss = dir == 1 ? close > breakLevel and close > open : close < breakLevel and close < open
-        bool fvg = fairValueGap(dir, high, low, high[2], low[2])
-        if mss and fvg and math.abs(close - open) >= atr * minDisp
+        bool mssFvg = mssFvgConfirmed(dir, breakLevel, high, low, high[2], low[2], open, close, atr, minDisp)
+        if mssFvg
             gapTop := dir == 1 ? low : low[2]
             gapBottom := dir == 1 ? high[2] : high
             gapBar := bar_index
