@@ -99,3 +99,11 @@ In the latest TradingView view supplied and inspected, Pine Editor is titled “
 - Native TradingView alert → Vercel → Telegram verification of realtime-only alerts and duplicate limitations. An earlier authenticated manual webhook test returned HTTP 200 and the user confirmed receipt of a TEST ONLY message (`reports/v060-live-relay-test.json`); this validates the relay path at that time, not delivery from a TradingView-generated alert or the present deployment configuration.
 
 No Pine rule was loosened to increase signals. The heuristic setup score is not a win probability. Do not interpret this progress as evidence of profitable or live-ready trading.
+
+## Follow-up verification pass (2026-10-31)
+
+- Re-ran `npm run verify`: TypeScript passed, **99 tests passed in 8 files**, generated Pine consistency passed, and the independent parser passed for indicator, strategy, and validation.
+- Re-ran `npm audit --omit=dev`: **0 vulnerabilities**. `git diff --check` passed.
+- Recomputed Pine hashes; all three still match the values listed above. Only README/testing/setup documentation was corrected to identify 206 as the current synthetic count and 107 as historical v0.6.0 evidence. Pine logic and project version were not changed.
+- Read-only TradingView inspection found the XAUUSD chart and prior compile-log messages, but the Pine editor was not available as a readable full source buffer in the active browser view. The visible chart includes both the indicator and a study named “XAUUSD SMART SCALPER PRO Backtest”; its exact source revision cannot be inferred from the name. No chart study, script, or alert was changed. Therefore no new native compile or current-source Strategy Tester result is claimed.
+- The current local TradingView source hashes remain unverified natively; paired live-source PLAN_AUDIT logs, replay evidence, cost-aware current-source timeframe matrix, OOS/walk-forward and native alert delivery remain **NOT VERIFIED**. No Telegram alert, deployment, push, or trade was made.
