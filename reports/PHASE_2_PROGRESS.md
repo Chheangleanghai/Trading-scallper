@@ -3,6 +3,38 @@
 **Date:** 2026-10-31 (Asia/Phnom_Penh)  
 **Status:** Local validation work in progress. No release, push, deployment, or market-performance claim.
 
+## Verification status requested for v0.9.0 (2026-10-31)
+
+This section separates local checks from tests that require a full native TradingView run. The project remains **v0.8.0**.
+
+| Check | Status | Evidence / limitation |
+| --- | --- | --- |
+| Local automated suite | **PASSED** | Re-run in this workspace: `npm run verify`; TypeScript passed and Vitest reported 99 tests in 8 files. |
+| Generated Pine source consistency | **PASSED** | `npm run pine:check` passed. |
+| Independent Pine parser | **PASSED (limited)** | Indicator, strategy, and validation parsed. This is not TradingView's compiler or strategy emulator. |
+| Dependency audit | **PASSED** | `npm audit --omit=dev`: 0 vulnerabilities. |
+| Whitespace / patch check | **PASSED** | `git diff --check` passed. |
+| Synthetic Pine assertions | **PASSED (synthetic only)** | 206 checks are in the fixture harness; they use generated/artificial inputs and do not establish historical signal accuracy. |
+| Indicator native TradingView compile | **PARTIAL / NOT VERIFIED against full local hash** | User screenshot shows “Compiled. Updated on chart”, the indicator legend, and a visible source tail matching local `pine/indicator.pine`. The full editor buffer was not captured or hashed. A fresh read-only check of the currently accessible browser tab found no open Monaco editor, so the compile cannot be repeated from this session. |
+| Strategy native TradingView compile | **NOT VERIFIED** | No evidence that the current complete `pine/strategy.pine` was submitted and compiled in TradingView. |
+| Current-source Strategy Tester, M1/M3/M5/M15 with costs | **NOT VERIFIED** | No current-revision results captured. The archived 32-row matrix has another source hash and cannot stand in for this run. |
+| Indicator/strategy event parity | **NOT VERIFIED** | No paired current-source `PLAN_AUDIT` exports for identical symbol, timeframe, dates, and settings. |
+| Bar Replay / repaint timing | **NOT VERIFIED** | No controlled replay/reload observations or event log captured. Confirmed-pivot logic and prior-bar HTF requests reduce known repaint risks but do not replace this verification. |
+| Out-of-sample / walk-forward | **NOT VERIFIED** | No current-source, separated test-period fills or report. |
+| Native TradingView → Vercel → Telegram alert | **NOT VERIFIED; not attempted** | Current instruction requires approval before sending an alert. The earlier user-confirmed manual webhook receipt was not a TradingView-generated event and does not verify this path. No alert was sent in this verification pass. |
+| Push, deploy, real trades | **NOT PERFORMED** | Explicitly excluded from the requested scope. |
+
+Current local SHA-256 values were recomputed during this verification and still match the hashes recorded below. No source code, version, configuration, deployment, or TradingView chart state was changed in this pass. The browser tab presently accessible is the XAUUSD chart page with Pine Editor closed; prior screenshot evidence is therefore recorded as user-provided evidence, not a fresh compilation by this run.
+
+### Exact TradingView evidence needed to close blocked checks
+
+1. In Pine Editor, open the full current `pine/indicator.pine`, compile it, and save it. Capture the Pine Editor compile result and the complete source identity (copy/export the exact saved editor source or compare its SHA-256 outside TradingView with the local file).
+2. Open the complete current `pine/strategy.pine` in Pine Editor and compile it. Add that strategy to Strategy Tester. If the Basic plan's script/chart limits block adding it alongside the indicator, use a duplicate chart or temporarily remove only a study you explicitly choose; do not overwrite or delete any script.
+3. Export indicator and strategy `PLAN_AUDIT` logs using matching symbol/feed, timeframe, date window, and inputs. Include enough rows to compare each event's bar timestamp, direction, module, planned entry, stop, and three targets.
+4. Use Bar Replay around representative confirmed and rejected setups; record the bar at which each event first appears and whether any confirmed event changes after replay/reload.
+5. Run current-source Strategy Tester on M1, M3, M5, and M15, record commission/slippage settings and report exports, then define separate development and out-of-sample windows before assessing results.
+6. Native alert delivery remains untested until explicitly approved. Do not create a live/public alert during this pass.
+
 ## Completed in this progress step
 
 - Extracted the Support/Resistance breakout and rejection expressions into shared pure Pine predicates and wired the existing Strategy/Indicator engine to call those same predicates. The expressions were moved without changing their conditions.
