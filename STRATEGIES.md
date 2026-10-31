@@ -1,5 +1,7 @@
 # Operational strategy definitions
 
+The alert payload identifies the source as script version 0.8.0. Historical payloads from older versions retain their original version; do not relabel old fixtures as current.
+
 These are explicit price-action approximations, not evidence of institutional orders or reliable prediction. A is enabled by default; B–H are independently selectable and default off. All use confirmed active-chart candles and previously confirmed pivots. Enable one module at a time for isolated evaluation, then evaluate combinations. H1 trend and all common safety filters still apply unless their inputs explicitly disable an optional filter.
 
 ## Shared candidate lifecycle

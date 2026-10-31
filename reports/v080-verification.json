@@ -1,0 +1,73 @@
+{
+  "version": "0.8.0",
+  "date_cambodia": "2026-10-31",
+  "scope": [
+    "correct stale Pine alert scriptVersion from 0.6.0 to 0.8.0",
+    "add PLAN_AUDIT log comparator for later matched historical captures"
+  ],
+  "node_version_tested": "22.23.4",
+  "automated_tests_passed": 96,
+  "test_files_passed": 8,
+  "typescript": "passed",
+  "generated_pine_check": "passed",
+  "independent_pine_parser": "passed (not a TradingView compiler)",
+  "npm_audit_vulnerabilities": 0,
+  "pine_source_version_regression_test": "passed",
+  "plan_audit_comparator_tests": "passed (synthetic only)",
+  "plan_audit_cli_smoke": {
+    "matching_synthetic_logs": "passed",
+    "different_synthetic_entry": "nonzero mismatch exit verified",
+    "real_historical_logs": "not supplied"
+  },
+  "native_tradingview_compile": {
+    "indicator_v080": true,
+    "strategy_v080": true,
+    "compiler_errors": false,
+    "strategy_added_to_chart": false,
+    "strategy_add_block": "TradingView Basic study limit"
+  },
+  "current_chart": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "indicator": "v0.8.0 compiled and added; Pine script unsaved",
+    "backtest_strategy": "v0.6.0 restored from pre-test chart snapshot",
+    "original_studies_restored": true,
+    "indicator_and_strategy_both_visible": true,
+    "note": "Duplicate context drawings may overlap."
+  },
+  "tradingview_saved_script": {
+    "saved": false,
+    "reason": "Basic plan one-saved-script limit"
+  },
+  "source_sha256": {
+    "indicator.pine": "270bfb2954da4ef3cc9f2e5429f45646635ea96811a540aed708991da3d11828",
+    "strategy.pine": "0eb73deec4a14d1a0dcac0de406b140ad0b2e7a70468296cc3b0cfd5fc5d320c",
+    "validation.pine": "2e108810e1794578c245ea272b00b45afff68090996e005d0ea40c254debd07e"
+  },
+  "pattern_coverage": {
+    "synthetic_assertions": 107,
+    "A_to_H_predicate_families": true,
+    "full_lifecycle_ohlc_fixtures": false,
+    "native_logs": {
+      "A_SWEEP_MSS_FVG_legacy": 6,
+      "B_CRT": 67,
+      "C_TURTLE_SOUP": 0,
+      "D_SNR": 0,
+      "E_DEMAND": 0,
+      "E_SUPPLY": 0,
+      "F_TREND_PULLBACK": 0,
+      "G_AMD": 0,
+      "H_QUASIMODO": 0
+    }
+  },
+  "indicator_strategy_source_parity": "shared analysis/confirmation source test passed",
+  "indicator_strategy_historical_event_parity": "not run; matched PLAN_AUDIT logs unavailable and current strategy remains v0.6.0",
+  "out_of_sample": false,
+  "walk_forward": false,
+  "bar_replay_repaint_test": false,
+  "cost_aware_matrix_m1_m3_m5_m15": false,
+  "native_tradingview_vercel_telegram_delivery": false,
+  "production_deployed": false,
+  "token_rotation_required": true,
+  "committed": false
+}

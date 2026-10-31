@@ -1,7 +1,7 @@
 # TradingView setup
 
 1. Open your broker's XAUUSD symbol on a standard M1 or M5 candle chart. M3/M15 also supported. Synthetic charts are rejected. Prices, pip values and broker lots are never hardcoded.
-2. First paste `pine/validation.pine` into Pine Editor, save and Add to chart. It contains 44 synthetic assertions using the same pure predicates as the real engine. It raises a runtime error if one fails and displays a success table only after execution. **All 44 assertions passed in a native TradingView run on 2026-10-30; a chart capture is in reports/.** The harness does not replace full chart replay or prove profitability.
+2. First paste `pine/validation.pine` into Pine Editor, save and Add to chart. It currently contains 107 synthetic assertions over shared pure predicates, safety gates, and state labels. It raises a runtime error if an assertion fails and displays a success table only after execution. These assertions do not replay the complete candidate engine or prove profitability.
 3. Separately compile/save/add `pine/indicator.pine` and `pine/strategy.pine`. No published library is required. **The project scripts have been compiled in the connected TradingView session.** Recompile after local edits; the local parser is not a replacement for TradingView. Review compiler warnings too.
 4. Start with Strategy A enabled alone. B–H default off. Exact definitions, score allocations, competing-candidate rules and stops/targets are in STRATEGIES.md. For isolated evaluation, turn A off and enable one other module. Each still passes common safety/risk filters; lack of qualifying signals is valid.
 5. Setup and execution timeframes equal the active chart. H1 is completed-candle EMA context; M15 is completed-pivot structure. Requests use expression offsets with lookahead_on. CRT's selectable reference TF must be >= chart TF. An M5 chart does not reconstruct M1 entries.
@@ -23,7 +23,7 @@ The connected Basic account reported limits of one saved script and two applied 
 
 ## Updating to v0.3.0
 
-Use the regenerated `pine/indicator.pine` and `pine/strategy.pine` files. Research filters default to disabled/Both, preserving the previous selection defaults. Run `pine/validation.pine`; the current harness shows **58 synthetic assertions** when it passes. Keep the research window disabled for ongoing demo alerts unless deliberately restricting dates.
+Use the regenerated `pine/indicator.pine` and `pine/strategy.pine` files. Research filters default to disabled/Both, preserving the previous selection defaults. Run `pine/validation.pine`; the current harness shows **107 synthetic assertions** when they pass. Keep the research window disabled for ongoing demo alerts unless deliberately restricting dates.
 
 TradingView stores an independent snapshot when creating a script alert. Updating chart source or inputs does not update an existing running alert. After reviewing this release, recreate the indicator alert using **Any alert() function call**, your existing private webhook URL and the chosen inputs. Do not include the Telegram bot token in that URL or Pine. Avoid leaving the old and new alerts running together. See [TradingView's alert snapshot documentation](https://www.tradingview.com/pine-script-docs/faq/alerts/). Existing webhook payload fields and event names are unchanged; no backend upgrade is required for these Pine changes.
 

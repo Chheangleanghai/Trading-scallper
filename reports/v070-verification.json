@@ -90,5 +90,6 @@
     "indicator_strategy_common_engine_source_parity_test": true,
     "historical_output_parity_on_identical_bars": false,
     "reason_historical_parity_not_run": "TradingView Basic study limit prevented adding the current strategy version beside the indicator; matched historical Strategy Tester/log runs were not collected."
-  }
+  },
+  "superseded_by": "0.8.0"
 }

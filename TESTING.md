@@ -108,3 +108,9 @@ The current standalone harness contains 82 assertions (24 added for unique closi
 ## v0.7.0 bounded historical plans
 
 The optional plan-history renderer draws five price levels from the confirmed plan bar, prunes over the configured cap, and is isolated in the visual module. Node22 `npm ci && npm run verify` passed 90 tests. Final indicator and strategy sources compiled in TradingView. A temporary synthetic chart probe exercised the renderer before the final spacing adjustment; a positive-signal image of the exact final layout and a full A–H state-machine fixture suite remain outstanding. The installed saved-chart strategy remains v0.6.0. See [v0.7.0 validation and limits](reports/V070_VALIDATION.md).
+
+## v0.8.0 plan audit and source version
+
+The shared Pine alert payload now reports `scriptVersion: 0.8.0` rather than the stale 0.6.0 literal. `npm run audit:compare -- indicator.log strategy.log --tolerance 0.005` compares PLAN_AUDIT records by symbol, timeframe and confirmed signal-bar timestamp, then checks setup timestamp, direction, module, entry mode, quality and Entry/SL/TP prices. Select a tolerance appropriate to the feed's `syminfo.mintick`; the command does not fetch TradingView data. It reports simulator/fill acceptance differences separately because broker-emulator fills are not expected to match indicator estimates exactly.
+
+Synthetic tests cover parser errors, reordered records, missing/duplicate plans, module/direction/price mismatches and explicit tolerance handling. They validate the comparison tool, not trading outputs. Captured fixture coverage remains A and B only; full A–H historical lifecycle coverage, matched Indicator/Strategy logs, Bar Replay repaint checks, OOS/walk-forward, and live webhook delivery remain unverified. See [v0.8.0 validation](reports/V080_VALIDATION.md).

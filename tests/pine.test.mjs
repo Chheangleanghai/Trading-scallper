@@ -79,4 +79,13 @@ describe("indicator/strategy common-engine parity", () => {
     expect(visuals).not.toMatch(/\bstrategy\.(entry|exit|close)\s*\(/);
     expect(visuals).not.toMatch(/\balert\s*\(/);
   });
+  it("embeds the release version in generated Pine alert payloads", () => {
+    const engine = read("engine.pine.inc");
+    expect(engine).toContain("const string SCRIPT_VERSION = '0.8.0'");
+    expect(engine).toContain('"scriptVersion":"\' + SCRIPT_VERSION + \'"');
+    expect(engine).not.toContain('"scriptVersion":"0.6.0"');
+    for (const file of ["indicator.pine", "strategy.pine"]) {
+      expect(read(file)).toContain("const string SCRIPT_VERSION = '0.8.0'");
+    }
+  });
 });

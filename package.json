@@ -1,6 +1,6 @@
 {
   "name": "xauusd-smart-scalper-pro",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -12,6 +12,7 @@
     "pine:generate": "python3 scripts/generate_pine.py",
     "pine:check": "python3 scripts/generate_pine.py --check",
     "pine:parse": "node scripts/check_pine.mjs",
+    "audit:compare": "node scripts/compare-plan-audit.mjs",
     "verify": "npm run typecheck && npm test && npm run pine:check && npm run pine:parse"
   },
   "devDependencies": {

@@ -2,7 +2,7 @@
 
 Pine Script v6 market analysis and backtesting, with a lightweight Node22/TypeScript Vercel → Telegram relay. All trading calculations stay in Pine. No database, trade execution service, frontend or background polling process is required.
 
-**v0.7.0 adds bounded historical trade-plan drawings.** This is an optional chart overlay; entries, exits, alerts and strategy rules are unchanged. Local checks and native TradingView compilation passed. Positive-signal rendering and full pattern-state validation remain outstanding; see [v0.7.0 validation](reports/V070_VALIDATION.md).
+**v0.8.0 adds plan-audit parity tooling and corrects the script version in alert payloads.** The parity utility compares confirmed plan records captured from the indicator and strategy on the same symbol/timeframe/history. A real matched A–H historical comparison has not yet been collected. See [v0.8.0 validation](reports/V080_VALIDATION.md).
 
 **Pine v0.6.0 compiled and ran in native TradingView.** The updated strategy is installed on the saved FOREX.com XAUUSD M5 chart; main-scale coordinates, original trading settings, strategy properties and unrelated indicators were checked after reload. The v0.6.0 verification passed 86 tests; its native shared-predicate harness passed 107 assertions. See [current evidence and limits](reports/V060_VALIDATION.md).
 
