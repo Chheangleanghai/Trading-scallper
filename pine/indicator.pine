@@ -79,6 +79,9 @@ showBreakers = input.bool(false, 'Show breaker-level heuristics', group='Context
 showWyckoff = input.bool(false, 'Show spring/upthrust candidates', group='Context visuals')
 partial = input.bool(true, 'Partial TP: 33% / 33% / 34% (strategy)')
 visualLayout = input.string('Reference', 'Chart layout', options=['Reference', 'Dashboard'], group='Chart style')
+historyMode = input.string('Off', 'Historical plan drawings', options=['Off', 'Recent plans', 'Full bounded'], group='Historical view')
+historyPlanLimit = input.int(8, 'Maximum historical plans', minval=1, maxval=10, group='Historical view')
+historyLookback = input.int(3000, 'Full history lookback bars', minval=100, maxval=20000, group='Historical view')
 showConceptPanel = input.bool(true, 'Show compact analysis context', group='Chart style')
 showSwingLevels = input.bool(true, 'Show confirmed swing levels and right labels', group='Chart style')
 showSupportResistance = input.bool(true, 'Show confirmed support/resistance zones', group='Chart style')
@@ -1010,6 +1013,56 @@ if barstate.isconfirmed
     if newSignal and useBroker and not pending and not active and status == 'REJECTED: INVALID UNIT SIZE'
         decisionProgress := 'Setup ✓ → Confirmation ✓ → Execution quantity rejected'
 // Presentation-only context. None of these objects or flags feed the trading candidates.
+type HistoricalPlan
+    array<line> priceLines
+    array<label> priceLabels
+    bool isOpen
+var array<HistoricalPlan> historicalPlans = array.new<HistoricalPlan>()
+
+createHistoricalPlan(int direction, string strategyId, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree, int keepPlans) =>
+    array<line> planLines = array.new<line>()
+    array<label> planLabels = array.new<label>()
+    array<float> planPrices = array.from(planned, stopPrice, targetOne, targetTwo, targetThree)
+    array<string> planNames = array.from((direction == 1 ? 'BUY ' : 'SELL ') + str.substring(strategyId, 0, 1) + ' ', 'SL ', 'T1 ', 'T2 ', 'T3 ')
+    array<color> planColors = array.from(color.rgb(71, 85, 105), color.rgb(185, 28, 28), color.rgb(21, 128, 61), color.rgb(21, 128, 61), color.rgb(21, 128, 61))
+    for i = 0 to 4
+        float level = array.get(planPrices, i)
+        color levelColor = array.get(planColors, i)
+        int labelBar = bar_index + 2 + i * 12
+        array.push(planLines, line.new(bar_index, level, labelBar, level, color=color.new(levelColor, 15), width=i == 0 ? 2 : 1))
+        array.push(planLabels, label.new(labelBar, level, array.get(planNames, i) + priceText(level), style=label.style_label_left, color=color.new(levelColor, contextTransparency), textcolor=panelValue, size=size.tiny))
+    array.push(historicalPlans, HistoricalPlan.new(planLines, planLabels, true))
+    if array.size(historicalPlans) > keepPlans
+        HistoricalPlan oldest = array.shift(historicalPlans)
+        for oldLine in oldest.priceLines
+            line.delete(oldLine)
+        for oldLabel in oldest.priceLabels
+            label.delete(oldLabel)
+    0
+
+updateHistoricalPlans(bool planActive) =>
+    if array.size(historicalPlans) > 0
+        for index = 0 to array.size(historicalPlans) - 1
+            HistoricalPlan view = array.get(historicalPlans, index)
+            if view.isOpen
+                bool latest = index == array.size(historicalPlans) - 1
+                bool stillActive = latest and planActive
+                int endBar = stillActive ? bar_index + 1 : bar_index
+                for lineIndex = 0 to array.size(view.priceLines) - 1
+                    line planLine = array.get(view.priceLines, lineIndex)
+                    int labelBar = endBar + 2 + lineIndex * 12
+                    line.set_x2(planLine, labelBar)
+                for labelIndex = 0 to array.size(view.priceLabels) - 1
+                    label planLabel = array.get(view.priceLabels, labelIndex)
+                    if labelIndex < 5
+                        label.set_x(planLabel, endBar + 2 + labelIndex * 12)
+                if not stillActive
+                    label entryTag = array.get(view.priceLabels, 0)
+                    string terminal = status == 'CLOSED' ? 'CLOSED' : status == 'EXPIRED' ? 'EXPIRED' : str.startswith(status, 'INVALIDATED') ? 'INVALID' : statusName(status)
+                    label.set_text(entryTag, label.get_text(entryTag) + ' · ' + terminal)
+                    view.isOpen := false
+                    array.set(historicalPlans, index, view)
+
 bool referenceView = visualLayout == 'Reference'
 color bullColor = color.rgb(44, 153, 124)
 color bearColor = color.rgb(220, 73, 83)
@@ -1198,6 +1251,13 @@ if barstate.islast or barstate.islastconfirmedhistory
             color rowColor = row == 0 ? color.rgb(235, 240, 244) : color.new(color.white, 8)
             table.cell(conceptPanel, 0, row, array.get(captions, row), text_color=color.rgb(71, 85, 105), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
             table.cell(conceptPanel, 1, row, array.get(descriptions, row), text_color=color.rgb(30, 41, 59), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
+
+// Plan history is a read-only overlay. It starts at the confirmed plan bar and never submits orders or alerts.
+bool inHistoryWindow = historyMode != 'Full bounded' or bar_index >= last_bar_index - historyLookback
+if barstate.isconfirmed and newSignal and historyMode != 'Off' and inHistoryWindow and (active or pending or not useBroker)
+    createHistoricalPlan(dir, selectedStrategy, entry, stop, tp1, tp2, tp3, historyPlanLimit)
+if barstate.isconfirmed and array.size(historicalPlans) > 0
+    updateHistoricalPlans(active or pending or brokerBusy)
 var table dash = table.new(position.top_right, 2, 19, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
 if barstate.islast or barstate.islastconfirmedhistory
     table.clear(dash, 0, 0, 1, 18)

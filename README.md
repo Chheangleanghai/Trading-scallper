@@ -2,7 +2,7 @@
 
 Pine Script v6 market analysis and backtesting, with a lightweight Node22/TypeScript Vercel → Telegram relay. All trading calculations stay in Pine. No database, trade execution service, frontend or background polling process is required.
 
-**v0.6.1 adds a backend entry-status validation guard; 89 local tests pass.** Production has not been redeployed. See [code review and remaining acceptance work](reports/V061_CODE_REVIEW.md).
+**v0.7.0 adds bounded historical trade-plan drawings.** This is an optional chart overlay; entries, exits, alerts and strategy rules are unchanged. Local checks and native TradingView compilation passed. Positive-signal rendering and full pattern-state validation remain outstanding; see [v0.7.0 validation](reports/V070_VALIDATION.md).
 
 **Pine v0.6.0 compiled and ran in native TradingView.** The updated strategy is installed on the saved FOREX.com XAUUSD M5 chart; main-scale coordinates, original trading settings, strategy properties and unrelated indicators were checked after reload. The v0.6.0 verification passed 86 tests; its native shared-predicate harness passed 107 assertions. See [current evidence and limits](reports/V060_VALIDATION.md).
 
@@ -48,6 +48,10 @@ Signal price is the confirmation close. Planned entry is close, zone midpoint or
 Events cover BUY/SELL, entry, three targets, SL, invalidation and closure. All notifications are evaluated at chart close. BUY/SELL use `alert.freq_once_per_bar_close`; multiple management events use `freq_all` inside the confirmed-close guard. Payloads retain initial plan prices and add current managed SL, simulated fill, status, target source, setup/confirmation/event timestamps and execution model. Event IDs include symbol/feed, chart TF, plan time, direction, strategy and event type.
 
 The indicator uses conservative OHLC estimates; the strategy uses actual emulator records for fill notifications. Neither confirms real broker execution. Feed changes, data revisions, different history/settings, OHLC ambiguity, gaps, account conversion and platform limits remain material. No claim of durable deduplication, exactly-once delivery or reliable retries is made.
+
+## Historical chart view
+
+In **Settings → Inputs → Historical view**, `Historical plan drawings` offers `Off`, `Recent plans` or `Full bounded`. Accepted plans draw Entry, initial SL and TP1–TP3 levels starting on the confirmation bar. `Recent plans` keeps up to the configured plan count; `Full bounded` also limits eligible bars by `Full history lookback bars`. The drawing cap is ten plans. End labels show the last confirmed plan status; indicator OHLC outcomes are estimates, and strategy fills come from the TradingView emulator. This view draws qualified trade plans only; setup/context labels remain controlled separately by `Context annotation history`. Historical drawings do not generate alerts or backdated entries.
 
 ## Readiness
 

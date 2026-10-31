@@ -64,4 +64,19 @@ describe("indicator/strategy common-engine parity", () => {
     expect(altered).not.toBe(read("strategy.pine"));
     expect(normalize("strategy.pine", altered)).not.toBe(normalize("indicator.pine"));
   });
+  it("keeps historical plan drawings isolated from signal and order logic", () => {
+    const engine = read("engine.pine.inc");
+    const visuals = read("modules/reference_visuals.pine.inc");
+    expect(engine.match(/historyMode/g)).toHaveLength(1);
+    expect(engine.match(/historyPlanLimit/g)).toHaveLength(1);
+    expect(engine.match(/historyLookback/g)).toHaveLength(1);
+    expect(visuals).toContain("barstate.isconfirmed and newSignal");
+    expect(visuals).toContain("bar_index >= last_bar_index - historyLookback");
+    expect(visuals).toContain("array.size(historicalPlans) > keepPlans");
+    expect(visuals).toContain("i * 12");
+    expect(visuals).toContain("line.set_x2(planLine, labelBar)");
+    expect(visuals).toContain("size=size.tiny");
+    expect(visuals).not.toMatch(/\bstrategy\.(entry|exit|close)\s*\(/);
+    expect(visuals).not.toMatch(/\balert\s*\(/);
+  });
 });

@@ -104,3 +104,7 @@ The current standalone harness contains 82 assertions (24 added for unique closi
 ## v0.6.1 backend guard
 
 89 tests passed on Node22. Contradictory entry-event/status combinations are rejected before Telegram network access, while legacy and actual native fixtures remain compatible. Pine source is unchanged from v0.6.0 native evidence; no new native run or real message was claimed. See [V061_CODE_REVIEW.md](reports/V061_CODE_REVIEW.md).
+
+## v0.7.0 bounded historical plans
+
+The optional plan-history renderer draws five price levels from the confirmed plan bar, prunes over the configured cap, and is isolated in the visual module. Node22 `npm ci && npm run verify` passed 90 tests. Final indicator and strategy sources compiled in TradingView. A temporary synthetic chart probe exercised the renderer before the final spacing adjustment; a positive-signal image of the exact final layout and a full A–H state-machine fixture suite remain outstanding. The installed saved-chart strategy remains v0.6.0. See [v0.7.0 validation and limits](reports/V070_VALIDATION.md).

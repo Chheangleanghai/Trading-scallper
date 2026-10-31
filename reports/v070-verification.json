@@ -1,0 +1,94 @@
+{
+  "version": "0.7.0",
+  "date_cambodia": "2026-10-31",
+  "scope": "Presentation-only bounded historical trade-plan drawings; trading and backend logic unchanged",
+  "node_version_tested": "22.23.4",
+  "clean_install": "passed",
+  "npm_audit_vulnerabilities": 0,
+  "automated_tests_passed": 90,
+  "test_files_passed": 7,
+  "typescript": "passed",
+  "generated_pine_check": "passed",
+  "independent_pine_parser": "passed (not a TradingView compiler)",
+  "native_tradingview_compile": {
+    "indicator": true,
+    "strategy": true,
+    "validation_unchanged": true,
+    "indicator_added_to_chart": true,
+    "strategy_added_to_chart": false,
+    "strategy_compile_note": "Compiled successfully in Pine Editor; TradingView Basic plan refused adding it because study limit was reached. Existing saved strategy was preserved."
+  },
+  "source_sha256": {
+    "indicator.pine": "2cd3bae529007fbe3df7f76346e8ace9fed9dc2c367fa17c45c05fa9d35cdc61",
+    "strategy.pine": "b6589977668cfceb7017dcd10a3af48a58eb25063d8299a1207175b3e57e6f5b",
+    "validation.pine": "2e108810e1794578c245ea272b00b45afff68090996e005d0ea40c254debd07e"
+  },
+  "historical_renderer_synthetic_probe": {
+    "compiled": true,
+    "rendered_positive_plan": true,
+    "created_price_lines": 5,
+    "created_price_labels": 5,
+    "final_tag_spacing_bars": 12,
+    "synthetic_only": true,
+    "not_a_market_signal": true
+  },
+  "saved_chart": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "installed_strategy_version": "0.6.0",
+    "original_studies_preserved": true,
+    "temporary_studies_removed": true,
+    "shared_main_price_axis": true,
+    "v070_indicator_currently_added": true,
+    "v070_cloud_script_saved": false
+  },
+  "positive_signal_render_on_final_source": false,
+  "A_to_H_full_state_fixtures": false,
+  "new_historical_strategy_matrix": false,
+  "out_of_sample": false,
+  "walk_forward": false,
+  "demo_forward": false,
+  "vercel_deployed": false,
+  "native_tradingview_telegram_delivery": false,
+  "telegram_credential_rotation_required": true,
+  "remote_main_sha_before_worktree_changes": "e8745936eafe94f7d4bdd94249f3c43c5e3e2ea7",
+  "worktree_committed": false,
+  "tradingview_account_save": {
+    "indicator_script_saved": false,
+    "reason": "TradingView Basic plan displayed a one-saved-script limit when Save was attempted",
+    "current_editor_title": "Untitled script",
+    "current_chart_has_compiled_v070_indicator": true,
+    "current_chart_strategy_version": "0.6.0",
+    "strategy_v070_added": false
+  },
+  "strategy_validation_coverage": {
+    "operational_definitions_reviewed": [
+      "A_SWEEP_MSS_FVG",
+      "B_CRT",
+      "C_TURTLE_SOUP",
+      "D_SNR",
+      "E_DEMAND",
+      "E_SUPPLY",
+      "F_TREND_PULLBACK",
+      "G_AMD",
+      "H_QUASIMODO"
+    ],
+    "synthetic_pine_assertion_calls": 107,
+    "assertions_exercise_all_A_to_H_predicate_families": true,
+    "full_candidate_lifecycle_ohlc_fixtures": false,
+    "native_event_fixture_strategy_counts": {
+      "A_SWEEP_MSS_FVG_v060": 6,
+      "B_CRT": 67,
+      "C_TURTLE_SOUP": 0,
+      "D_SNR": 0,
+      "E_DEMAND": 0,
+      "E_SUPPLY": 0,
+      "F_TREND_PULLBACK": 0,
+      "G_AMD": 0,
+      "H_QUASIMODO": 0
+    },
+    "indicator_strategy_common_engine_source_parity_test": true,
+    "historical_output_parity_on_identical_bars": false,
+    "reason_historical_parity_not_run": "TradingView Basic study limit prevented adding the current strategy version beside the indicator; matched historical Strategy Tester/log runs were not collected."
+  }
+}
