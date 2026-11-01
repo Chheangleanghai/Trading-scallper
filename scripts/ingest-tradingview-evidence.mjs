@@ -89,11 +89,12 @@ try {
       assert(typeof item.dateRange === "string" && item.dateRange.trim(), `${item.path}: dateRange is required`);
       assert(item.costSettings && ["commissionPct", "slippageTicks", "spreadPrice"].every((key) => Number.isFinite(item.costSettings[key]) && item.costSettings[key] >= 0), `${item.path}: non-negative commission, slippage and spread are required`);
       const text = bytes.toString("utf8");
-      assert(extname(item.path).toLowerCase() === ".csv" && text.includes("\n"), `${item.path}: expected a CSV export`);
+      assert(extname(item.path).toLowerCase() === ".csv", `${item.path}: expected a CSV export`);
+      const csv = parseCsv(text, item.path);
       const key = String(item.timeframe);
       assert(!backtests.has(key), `duplicate Strategy Tester export for timeframe M${key}`);
       backtests.set(key, receipt);
-      Object.assign(receipt, { symbol: item.symbol, timeframe: key, dateRange: item.dateRange, costSettings: item.costSettings, attribution: "SOURCE_HASH_AND_SETTINGS_MANIFEST_ASSERTED" });
+      Object.assign(receipt, { symbol: item.symbol, timeframe: key, dateRange: item.dateRange, costSettings: item.costSettings, rowCount: csv.length - 1, attribution: "SOURCE_HASH_AND_SETTINGS_MANIFEST_ASSERTED" });
     } else if (item.kind === "replay-pair") {
       assert(item.symbol === "FOREXCOM:XAUUSD" && requiredTimeframes.includes(String(item.timeframe)), `${item.path}: replay chart context required`);
       assert(item.script === "indicator" || item.script === "strategy", `${item.path}: replay script is required`);
@@ -175,6 +176,48 @@ function validateImage(path, bytes) {
     || [".jpg", ".jpeg"].includes(extname(path).toLowerCase()) && signature[0] === 0xff && signature[1] === 0xd8
     || extname(path).toLowerCase() === ".webp" && signature.toString("ascii", 0, 4) === "RIFF" && signature.toString("ascii", 8, 12) === "WEBP";
   assert(valid, `${path}: file does not match a supported screenshot image format`);
+}
+function parseCsv(text, path) {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let quoted = false;
+  let closedQuote = false;
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    if (quoted) {
+      if (char === '"') {
+        if (text[index + 1] === '"') { field += '"'; index += 1; }
+        else { quoted = false; closedQuote = true; }
+      } else field += char;
+      continue;
+    }
+    if (closedQuote && char !== "," && char !== "\r" && char !== "\n") {
+      throw new Error(`${path}: malformed CSV; unexpected character after quoted field`);
+    }
+    if (char === '"') {
+      if (field.length !== 0 || closedQuote) throw new Error(`${path}: malformed CSV; quote inside unquoted field`);
+      quoted = true;
+    } else if (char === ",") {
+      row.push(field); field = ""; closedQuote = false;
+    } else if (char === "\n" || char === "\r") {
+      if (char === "\r" && text[index + 1] === "\n") index += 1;
+      row.push(field); field = ""; closedQuote = false;
+      if (row.some((cell) => cell.length > 0)) rows.push(row);
+      row = [];
+    } else field += char;
+  }
+  if (quoted) throw new Error(`${path}: malformed CSV; unterminated quoted field`);
+  if (field.length || row.length || closedQuote) {
+    row.push(field);
+    if (row.some((cell) => cell.length > 0)) rows.push(row);
+  }
+  assert(rows.length > 0, `${path}: CSV must contain a header row`);
+  const header = rows[0];
+  assert(header.length >= 2 && header.every((cell) => cell.trim()), `${path}: CSV header must contain at least two named columns`);
+  assert(new Set(header).size === header.length, `${path}: CSV header contains duplicate columns`);
+  assert(rows.slice(1).every((record) => record.length === header.length), `${path}: CSV rows have inconsistent column counts`);
+  return rows;
 }
 async function resolveEvidencePath(base, relativePath, label) {
   assert(typeof relativePath === "string" && relativePath.trim(), `${label} is required`);

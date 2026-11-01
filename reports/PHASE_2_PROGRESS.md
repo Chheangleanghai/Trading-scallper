@@ -13,9 +13,9 @@ This snapshot is authoritative for the current worktree. Later/earlier dated sec
 | Local Strategy | PASSED | SHA-256 `42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0`; v0.8.0. |
 | Indicator copy-back file equality | PASSED (file-level only) | Existing 1,333-line copies byte-match local Indicator. This does not prove editor provenance or compile status. |
 | Strategy copy-back file equality | PASSED (CRLF normalized) | Preserved 1,470-line copy normalizes byte-for-byte to local Strategy; normalized SHA-256 matches `42b4e168…1ea3f5c0`. File-level equality does not independently authenticate the editor/draft. |
-| Indicator native compile tied to copy-back | NOT VERIFIED (compile visible, hash link missing) | New inline image shows `11:06:44 AM Compiled.` and `Added to chart` for a truncated `XAUUSD SMART …` draft. Draft continuity to the copy-back is unproven; see `reports/native-v080/compile-context.md`. |
-| Strategy current-hash native compile | NOT VERIFIED | New inline image shows `Untitled script`, but its compile messages have the same timestamp as the Indicator image and do not establish a distinct Strategy compile. See `compile-context.md`. |
-| Local tests | PASSED (2026-11-01) | `npm run verify`: 131 tests / 11 files; typecheck, Pine generation check, independent parser pass. |
+| Indicator current-hash native compile | NOT VERIFIED | Earlier inline screenshot was reported to show `11:06:44 AM Compiled.` / `Added to chart`, but neither saved workspace image shows a compiler result, and draft continuity to the copy-back is unproven. See `reports/native-v080/compile-context.md`. |
+| Strategy native compile + source attribution | PASSED | `strategy-compile-133702.png` shows `1:37:02 PM Compiled.` / `Updated on chart`; fresh 1,470-line copy-back normalizes to the local hash, and user confirmed the buffer was unchanged between compile and copy-back. |
+| Local tests | PASSED (2026-11-01) | Latest `npm run verify`: TypeScript, 146 tests / 12 files, Pine generation consistency, and independent parser passed. `npm audit --omit=dev`: 0 vulnerabilities; `git diff --check`: passed. |
 | Raw plan comparator | PASSED (one plan) | Tolerance 0; one plan per copied user-provided log; zero mismatches. Not authenticated to current sources. |
 | Multi-plan parity / Replay-reload | NOT VERIFIED | Need fresh same-input current-source logs and controlled replay records. |
 | Current-hash backtest / OOS / profitability | NOT VERIFIED / NOT ESTABLISHED | No reproducible current-hash exports or adequate OOS sample. |
@@ -25,6 +25,14 @@ This snapshot is authoritative for the current worktree. Later/earlier dated sec
 | v0.9.0 | BLOCKED | Keep package/source at v0.8.0 pending native and research gates. |
 
 The last recorded Chrome/macOS Apple Events error was `-1723`; no denied call was repeated. No browser/computer UI control tool is available in this session. TradingView source/compile evidence must be captured in the user-controlled UI. The current native evidence checklist is at the top of `V090_RELEASE_READINESS.md`.
+
+## Current session: targeted worker fix and TradingView evidence intake (2026-11-01)
+
+- **Worker defects fixed:** `finishClaim()` now requires `send_started=1` and a currently valid lease. The full suite initially exposed simultaneous SQLite connections racing during startup because WAL mode was enabled before the busy timeout; the timeout is now configured first. The independent-connection claim test and full suite passed after the fix.
+- **Evidence intake hardened:** `scripts/ingest-tradingview-evidence.mjs` validates CSV quoting/header/column consistency and keeps compilation at `HUMAN_REVIEW_REQUIRED`, regardless of manifest claims. Ten integration tests cover invalid paths/hashes, missing pairs, wrong source/context, duplicate plans, screenshot metadata, replay mismatch, malformed CSV, and attempted fabricated compile status. Fixtures are synthetic and do not authenticate screenshots or draft provenance.
+- **Stateless production delivery:** `api/webhook.ts` remains a direct TradingView-to-Telegram path, with no database, durable queue, or worker requirement. It checks declared length before body parsing and caps streamed or serialized JSON at 8 KB; authentication, schema validation, Telegram timeout, and failure response remain. Duplicates and delivery outcomes after network timeouts are not durably deduplicated/retried.
+- **TradingView access:** no browser/computer UI tool is available in this session. The existing `-1723` Apple Events denial was not retried. Strategy exact-hash compilation remains passed with user-attested draft continuity; Indicator source-attributed compile, fresh logs, multi-plan parity, replay/reload, and current-source M1/M3/M5/M15 research remain unverified.
+- Pine source and trading logic were not changed; expected hashes remain Indicator `c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4` and Strategy `42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0`. Production `api/webhook.ts` remains untouched. No current-source TradingView backtest export is available. Project version remains v0.8.0.
 
 ## Local export and durable delivery engineering (2026-11-01)
 

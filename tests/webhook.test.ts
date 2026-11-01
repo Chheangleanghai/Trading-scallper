@@ -79,6 +79,80 @@ it("rejects malformed and oversized bodies", async () => {
     413,
   );
 });
+it("enforces the original request byte limit when the platform has parsed JSON", async () => {
+  const fetcher = vi.fn();
+  vi.stubGlobal("fetch", fetcher);
+  expect(
+    (
+      await call({
+        headers: {
+          "content-type": "application/json",
+          "content-length": "8193",
+        },
+        body: sample,
+      })
+    ).status,
+  ).toHaveBeenCalledWith(413);
+  expect(fetcher).not.toHaveBeenCalled();
+});
+it("rejects malformed and repeated content-length headers", async () => {
+  for (const contentLength of ["-1", "8kb", "9007199254740992", ["10", "10"]])
+    expect(
+      (
+        await call({
+          headers: { "content-type": "application/json", "content-length": contentLength },
+        })
+      ).status,
+    ).toHaveBeenCalledWith(400);
+});
+it("bounds streamed JSON before reading a parsed body", async () => {
+  const fetcher = vi.fn();
+  vi.stubGlobal("fetch", fetcher);
+  const res = {
+    status: vi.fn().mockReturnThis(),
+    json: vi.fn(),
+    setHeader: vi.fn(),
+  };
+  await webhook(
+    {
+      method: "POST",
+      query: { secret },
+      headers: { "content-type": "application/json" },
+      get body() {
+        throw new Error("the parsed body must not be accessed");
+      },
+      async *[Symbol.asyncIterator]() {
+        yield Buffer.alloc(8193, 32);
+      },
+    },
+    res,
+  );
+  expect(res.status).toHaveBeenCalledWith(413);
+  expect(fetcher).not.toHaveBeenCalled();
+});
+it("parses valid streamed JSON without a database or parsed-body helper", async () => {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn().mockResolvedValue(new Response('{"ok":true}')),
+  );
+  const res = {
+    status: vi.fn().mockReturnThis(),
+    json: vi.fn(),
+    setHeader: vi.fn(),
+  };
+  await webhook(
+    {
+      method: "POST",
+      query: { secret },
+      headers: { "content-type": "application/json" },
+      async *[Symbol.asyncIterator]() {
+        yield Buffer.from(JSON.stringify(sample));
+      },
+    },
+    res,
+  );
+  expect(res.status).toHaveBeenCalledWith(200);
+});
 it("rejects reversed prices, nonfinite values, wrong direction, score and timestamp", () => {
   for (const change of [
     { sl: 101 },

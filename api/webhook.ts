@@ -6,6 +6,7 @@ interface Request {
   query: Record<string, string | string[] | undefined>;
   body?: unknown;
   headers: Record<string, string | string[] | undefined>;
+  [Symbol.asyncIterator]?: () => AsyncIterator<Uint8Array>;
 }
 interface Response {
   status(code: number): Response;
@@ -33,6 +34,18 @@ export default async function webhook(req: Request, res: Response) {
     !timingSafeEqual(hash(supplied), hash(secret))
   )
     return res.status(401).json({ error: "Unauthorized" });
+  // Check the declared size before touching Vercel's lazy parsed-body helper.
+  const contentLength = req.headers["content-length"];
+  if (contentLength !== undefined) {
+    if (
+      typeof contentLength !== "string" ||
+      !/^\d+$/.test(contentLength) ||
+      !Number.isSafeInteger(Number(contentLength))
+    )
+      return res.status(400).json({ error: "Invalid content length" });
+    if (Number(contentLength) > 8192)
+      return res.status(413).json({ error: "Payload too large" });
+  }
   const contentType = req.headers["content-type"];
   if (
     typeof contentType !== "string" ||
@@ -41,15 +54,10 @@ export default async function webhook(req: Request, res: Response) {
     return res.status(415).json({ error: "JSON required" });
   let signal;
   try {
-    const raw =
-      typeof req.body === "string" ? req.body : JSON.stringify(req.body);
-    if (!raw) return res.status(400).json({ error: "Invalid signal" });
-    if (Buffer.byteLength(raw) > 8192)
+    signal = validate(await readJsonBody(req));
+  } catch (error) {
+    if (error instanceof PayloadTooLargeError)
       return res.status(413).json({ error: "Payload too large" });
-    signal = validate(
-      typeof req.body === "string" ? JSON.parse(req.body) : req.body,
-    );
-  } catch {
     return res.status(400).json({ error: "Invalid signal" });
   }
   try {
@@ -60,4 +68,31 @@ export default async function webhook(req: Request, res: Response) {
       .status(502)
       .json({ error: "Telegram delivery failed; outcome may be unknown" });
   }
+}
+
+class PayloadTooLargeError extends Error {}
+
+async function readJsonBody(req: Request): Promise<unknown> {
+  if (req[Symbol.asyncIterator]) {
+    const chunks: Buffer[] = [];
+    let byteLength = 0;
+    for await (const chunk of req as Request & AsyncIterable<Uint8Array>) {
+      const buffer = Buffer.from(chunk);
+      byteLength += buffer.byteLength;
+      if (byteLength > 8192) throw new PayloadTooLargeError();
+      chunks.push(buffer);
+    }
+    const source = new TextDecoder("utf-8", { fatal: true }).decode(
+      Buffer.concat(chunks),
+    );
+    if (!source) throw new Error("Empty body");
+    return JSON.parse(source) as unknown;
+  }
+
+  // Plain objects support local handler tests and runtimes that pre-parse JSON.
+  const source =
+    typeof req.body === "string" ? req.body : JSON.stringify(req.body);
+  if (!source) throw new Error("Empty body");
+  if (Buffer.byteLength(source) > 8192) throw new PayloadTooLargeError();
+  return typeof req.body === "string" ? JSON.parse(source) as unknown : req.body;
 }

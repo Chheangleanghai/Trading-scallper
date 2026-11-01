@@ -44,8 +44,8 @@ export class LocalSqliteOutbox implements WorkerOutboxRepository {
       throw new Error("busyTimeoutMs must be an integer from 0 to 60000");
     this.db = new DatabaseSync(path);
     this.db.exec(`
-      PRAGMA journal_mode = WAL;
       PRAGMA busy_timeout = ${busyTimeoutMs};
+      PRAGMA journal_mode = WAL;
       CREATE TABLE IF NOT EXISTS outbox (
         source TEXT NOT NULL,
         event_id TEXT NOT NULL,
