@@ -27,12 +27,18 @@ export function parsePlanAudit(text, sourceName = "input") {
     if (!trimmed) continue;
     const marker = trimmed.indexOf("PLAN_AUDIT ");
     const jsonText = marker >= 0 ? trimmed.slice(marker + "PLAN_AUDIT ".length) : trimmed;
-    if (!jsonText.startsWith("{")) continue;
+    if (!jsonText.startsWith("{")) {
+      if (marker >= 0) throw new Error(`${sourceName}:${index + 1}: PLAN_AUDIT must be a JSON object`);
+      continue;
+    }
     let value;
     try {
       value = JSON.parse(jsonText);
     } catch {
       throw new Error(`${sourceName}:${index + 1}: malformed JSON record`);
+    }
+    if (!value || typeof value !== "object" || Array.isArray(value)) {
+      throw new Error(`${sourceName}:${index + 1}: PLAN_AUDIT must be a JSON object`);
     }
     // Lifecycle alert JSON shares several PLAN_AUDIT fields. Only explicit audit
     // markers or marker-free plan records belong in the parity input.
@@ -55,6 +61,21 @@ export function parsePlanAudit(text, sourceName = "input") {
       priceFields.some((key) => typeof value[key] !== "number" || !Number.isFinite(value[key]))
     ) {
       throw new Error(`${sourceName}:${index + 1}: invalid PLAN_AUDIT field type`);
+    }
+    if (
+      !value.symbol.trim() || !value.timeframe.trim() || !value.strategy.trim() ||
+      value.timestamp <= 0 || value.timestamp > 4_102_444_800_000 ||
+      value.setupTimestamp <= 0 || value.setupTimestamp > value.timestamp ||
+      value.quality < 0 || value.quality > 100 ||
+      !["Close", "Limit", "Breakout"].includes(value.entryMode) ||
+      priceFields.some((key) => value[key] <= 0) ||
+      (value.direction === 1
+        ? !(value.sl < value.entry && value.entry < value.tp1 && value.tp1 < value.tp2 && value.tp2 < value.tp3)
+        : !(value.sl > value.entry && value.entry > value.tp1 && value.tp1 > value.tp2 && value.tp2 > value.tp3)) ||
+      ("executionAccepted" in value && typeof value.executionAccepted !== "boolean") ||
+      ("executionModel" in value && !["INDICATOR_ESTIMATE", "STRATEGY_EMULATOR"].includes(value.executionModel))
+    ) {
+      throw new Error(`${sourceName}:${index + 1}: PLAN_AUDIT value is outside the signal contract`);
     }
     rows.push(value);
   }

@@ -1,5 +1,15 @@
 # Native compile evidence context — v0.8.0
 
+## Current compile gate decisions — updated 2026-11-01
+
+The current local source hashes remain Indicator `c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4` and Strategy `42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0`.
+
+- **Indicator exact-hash native compile: PASSED — user-attested.** The preserved `indicator-editor-verified-new.pine` copy-back is 1,333 lines; CRLF/CR-to-LF normalization produces the exact current Indicator SHA-256. Its raw file SHA-256 is `762f5f3cd2c80e93bb0277511b87dd62400d82a4712015a97c435ac672644406`. The user reports that the unchanged editor buffer compiled on FOREXCOM:XAUUSD M5 at `5:22:07 PM Compiling…`, `5:22:09 PM Compiled.`, and `5:22:09 PM Added to chart.` The screenshot binary is not present in the workspace, so those visible UI details are user-reported rather than independently re-inspected here. The earlier `indicator-editor-after-170828.pine` is preserved as a non-matching intermediate copy-back (normalized SHA-256 `83c9f6c65262c2dea6331fcdaac755a7d1f4afefe0bbc3180de7ff4227c8589f`); it does not supersede the later verified copy.
+- **Strategy exact-hash native compile: PASSED.** The saved `strategy-compile-133702.png`, matching 1,470-line copy-back, and user-confirmed unchanged draft continuity are recorded below.
+- The compile gate status is now accepted for both current sources. Keep the screenshot binary for the Indicator as a follow-up evidence preservation item; do not repeat compile or copy-back while its draft remains unchanged.
+
+The historical sections below preserve earlier assessments and are superseded where they conflict with these current gate decisions.
+
 ## Current-session access note (2026-11-01)
 
 This Codex session has no TradingView browser/computer UI control tool. No TradingView UI action was attempted and the previously denied macOS Apple Events path was not retried. Use [`TRADINGVIEW_EVIDENCE_CHECKLIST.md`](TRADINGVIEW_EVIDENCE_CHECKLIST.md) to capture only the still-missing source-attributed evidence. Existing inline screenshots remain observations, not newly authenticated files.

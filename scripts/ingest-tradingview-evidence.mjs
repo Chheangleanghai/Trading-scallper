@@ -15,6 +15,22 @@ const copybackPaths = {
   strategy: "reports/native-v080/strategy-tradingview-normalized.pine",
 };
 const requiredTimeframes = ["1", "3", "5", "15"];
+const requiredInputSettings = [
+  "enableA", "enableB", "enableC", "enableD", "enableE", "enableF", "enableG", "enableH",
+  "crtTF", "turtleAge", "levelTolerance", "maxZoneTests", "useEMA50", "pullbackDepth", "accumulationBars", "accumulationWidth",
+  "strategyThresholds", "thresholdA", "thresholdB", "thresholdC", "thresholdD", "thresholdE", "thresholdF", "thresholdG", "thresholdH",
+  "useResearchWindow", "researchStart", "researchEnd", "tradeSide", "swing", "expiry", "threshold", "cooldown", "maxTrades",
+  "maxExposurePct", "riskPct", "buffer", "maxStop", "maxDistance", "minRR", "r1", "r2", "r3", "minDisp", "trendFilter", "emaFilter",
+  "useSession", "sessionPreset", "sessionHours", "sessionZone", "manualPause", "newsStart", "newsEnd", "entryMode", "pendingBars", "timeExit",
+  "targetMode", "stopMode", "atrStop", "breakEven", "breakEvenR", "trailing", "trailingStartR", "trailingATR",
+  "confluenceLiquidity", "confluenceFib", "confluencePD", "partial",
+];
+const booleanInputSettings = new Set([
+  "enableA", "enableB", "enableC", "enableD", "enableE", "enableF", "enableG", "enableH", "useEMA50",
+  "strategyThresholds", "useResearchWindow", "trendFilter", "emaFilter", "useSession", "manualPause", "breakEven", "trailing",
+  "confluenceLiquidity", "confluenceFib", "confluencePD", "partial",
+]);
+const stringInputSettings = new Set(["crtTF", "tradeSide", "sessionPreset", "sessionHours", "sessionZone", "entryMode", "targetMode", "stopMode"]);
 const manifestPath = process.argv[2];
 const outputFlag = process.argv.indexOf("--output");
 const outputPath = outputFlag >= 0 ? process.argv[outputFlag + 1] : undefined;
@@ -76,25 +92,33 @@ try {
     } else if (item.kind === "plan-audit-log") {
       assert(typeof item.pairId === "string" && item.pairId.trim(), `${item.path}: pairId is required`);
       assert(item.symbol === "FOREXCOM:XAUUSD" && requiredTimeframes.includes(String(item.timeframe)), `${item.path}: symbol/timeframe context required`);
+      const runContext = validateRunContext(item.runContext, item.path);
       const rows = parsePlanAudit(bytes.toString("utf8"), item.path);
       assert(rows.length > 0, `${item.path}: no PLAN_AUDIT rows found`);
       assert(rows.every((row) => row.symbol === item.symbol && row.timeframe === String(item.timeframe)), `${item.path}: embedded log context disagrees with manifest`);
       assert(!logs.has(item.pairId + ":" + item.script), `duplicate audit log for pairId/script ${item.pairId}/${item.script}`);
-      logs.set(item.pairId + ":" + item.script, { item, rows });
-      Object.assign(receipt, { pairId: item.pairId, symbol: item.symbol, timeframe: String(item.timeframe), planCount: rows.length });
+      logs.set(item.pairId + ":" + item.script, { item, rows, runContextHash: runContext.hash });
+      Object.assign(receipt, { pairId: item.pairId, symbol: item.symbol, timeframe: String(item.timeframe), planCount: rows.length, runContext: runContext.value, runContextSha256: runContext.hash, runContextAttribution: "SUBMITTER_ASSERTED" });
     } else if (item.kind === "backtest-export") {
       assert(item.script === "strategy", `${item.path}: backtest exports must identify the strategy`);
       assert(requiredTimeframes.includes(String(item.timeframe)), `${item.path}: timeframe must be M1/M3/M5/M15`);
       assert(item.symbol === "FOREXCOM:XAUUSD", `${item.path}: symbol must be FOREXCOM:XAUUSD`);
       assert(typeof item.dateRange === "string" && item.dateRange.trim(), `${item.path}: dateRange is required`);
+      const runContext = validateRunContext(item.runContext, item.path);
+      assert(item.positionSizing && typeof item.positionSizing === "object" &&
+        typeof item.positionSizing.mode === "string" && item.positionSizing.mode.trim() &&
+        typeof item.positionSizing.currency === "string" && item.positionSizing.currency.trim() &&
+        ["initialCapital", "riskPct", "maxExposurePct"].every((key) => Number.isFinite(item.positionSizing[key]) && item.positionSizing[key] > 0),
+      `${item.path}: positionSizing must record mode, currency, initialCapital, riskPct and maxExposurePct`);
       assert(item.costSettings && ["commissionPct", "slippageTicks", "spreadPrice"].every((key) => Number.isFinite(item.costSettings[key]) && item.costSettings[key] >= 0), `${item.path}: non-negative commission, slippage and spread are required`);
+      assert(typeof item.costSettings.spreadAssumption === "string" && item.costSettings.spreadAssumption.trim(), `${item.path}: describe how spreadPrice was obtained`);
       const text = bytes.toString("utf8");
       assert(extname(item.path).toLowerCase() === ".csv", `${item.path}: expected a CSV export`);
       const csv = parseCsv(text, item.path);
       const key = String(item.timeframe);
       assert(!backtests.has(key), `duplicate Strategy Tester export for timeframe M${key}`);
       backtests.set(key, receipt);
-      Object.assign(receipt, { symbol: item.symbol, timeframe: key, dateRange: item.dateRange, costSettings: item.costSettings, rowCount: csv.length - 1, attribution: "SOURCE_HASH_AND_SETTINGS_MANIFEST_ASSERTED" });
+      Object.assign(receipt, { symbol: item.symbol, timeframe: key, dateRange: item.dateRange, runContext: runContext.value, runContextSha256: runContext.hash, positionSizing: item.positionSizing, costSettings: item.costSettings, rowCount: csv.length - 1, attribution: "SOURCE_HASH_AND_SETTINGS_MANIFEST_ASSERTED" });
     } else if (item.kind === "replay-pair") {
       assert(item.symbol === "FOREXCOM:XAUUSD" && requiredTimeframes.includes(String(item.timeframe)), `${item.path}: replay chart context required`);
       assert(item.script === "indicator" || item.script === "strategy", `${item.path}: replay script is required`);
@@ -126,6 +150,10 @@ try {
       continue;
     }
     assert(indicator.item.symbol === strategy.item.symbol && String(indicator.item.timeframe) === String(strategy.item.timeframe), `${pairId}: audit log chart contexts differ`);
+    if (indicator.runContextHash !== strategy.runContextHash) {
+      parityResults.push({ pairId, status: "RUN_CONTEXT_MISMATCH", indicatorContextSha256: indicator.runContextHash, strategyContextSha256: strategy.runContextHash });
+      continue;
+    }
     const result = comparePlanAudits(indicator.rows, strategy.rows, 0);
     parityResults.push({ pairId, ...result, status: !result.parity ? "MISMATCH" : result.indicatorPlans >= 2 ? "LIMITED_MULTI_PLAN_MATCH" : "SINGLE_PLAN_ONLY" });
   }
@@ -170,6 +198,28 @@ try {
 function sha256(bytes) { return createHash("sha256").update(bytes).digest("hex"); }
 function assert(condition, message) { if (!condition) throw new Error(message); }
 function hasTimezone(value) { return typeof value === "string" && /(?:Z|[+-]\d{2}:?\d{2})$/.test(value) && Number.isFinite(Date.parse(value)); }
+function validateRunContext(context, path) {
+  assert(context && typeof context === "object" && !Array.isArray(context), `${path}: runContext is required`);
+  assert(hasTimezone(context.dateRangeStart) && hasTimezone(context.dateRangeEnd) && Date.parse(context.dateRangeStart) < Date.parse(context.dateRangeEnd), `${path}: runContext requires an ordered timezone-qualified date range`);
+  assert(Array.isArray(context.enabledModules) && context.enabledModules.every((module) => /^[A-H]$/.test(module)) && new Set(context.enabledModules).size === context.enabledModules.length, `${path}: runContext.enabledModules must be unique module letters A-H`);
+  assert(context.inputSettings && typeof context.inputSettings === "object" && !Array.isArray(context.inputSettings), `${path}: runContext.inputSettings is required`);
+  const missing = requiredInputSettings.filter((key) => !Object.hasOwn(context.inputSettings, key));
+  assert(missing.length === 0, `${path}: runContext.inputSettings missing ${missing.join(", ")}`);
+  const invalidTypes = requiredInputSettings.filter((key) => {
+    const expected = booleanInputSettings.has(key) ? "boolean" : stringInputSettings.has(key) ? "string" : "number";
+    return typeof context.inputSettings[key] !== expected || (expected === "number" && !Number.isFinite(context.inputSettings[key]));
+  });
+  assert(invalidTypes.length === 0, `${path}: runContext.inputSettings has invalid types for ${invalidTypes.join(", ")}`);
+  assert(Object.values(context.inputSettings).every((value) => value === null || ["string", "number", "boolean"].includes(typeof value) && (typeof value !== "number" || Number.isFinite(value))), `${path}: runContext.inputSettings values must be finite JSON primitives`);
+  const configuredModules = "ABCDEFGH".split("").filter((letter) => context.inputSettings[`enable${letter}`]);
+  assert(stableJson(configuredModules) === stableJson([...context.enabledModules].sort()), `${path}: enabledModules disagrees with enableA–enableH settings`);
+  return { value: context, hash: sha256(Buffer.from(stableJson(context))) };
+}
+function stableJson(value) {
+  if (Array.isArray(value)) return `[${value.map(stableJson).join(",")}]`;
+  if (value && typeof value === "object") return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableJson(value[key])}`).join(",")}}`;
+  return JSON.stringify(value);
+}
 function validateImage(path, bytes) {
   const signature = bytes.subarray(0, 12);
   const valid = extname(path).toLowerCase() === ".png" && signature.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]))

@@ -96,4 +96,20 @@ describe("TradingView plan-audit parity tool", () => {
     expect(() => parsePlanAudit("PLAN_AUDIT {bad", "strategy.log")).toThrow("strategy.log:1");
     expect(() => parsePlanAudit('PLAN_AUDIT {"direction":1}', "strategy.log")).toThrow("missing");
   });
+
+  it("rejects audit records outside the Pine signal contract", () => {
+    for (const change of [
+      { quality: 101 },
+      { setupTimestamp: base.timestamp + 1 },
+      { entryMode: "Market" },
+      { executionAccepted: "true" },
+      { executionModel: "BROKER" },
+      { sl: base.entry + 1 },
+      { entry: 0 },
+    ]) {
+      expect(() => parsePlanAudit(`PLAN_AUDIT ${JSON.stringify({ ...base, ...change })}`, "invalid.log"))
+        .toThrow("value is outside the signal contract");
+    }
+    expect(() => parsePlanAudit("PLAN_AUDIT null", "null.log")).toThrow("must be a JSON object");
+  });
 });
