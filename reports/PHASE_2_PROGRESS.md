@@ -15,13 +15,13 @@ This snapshot is authoritative for the current worktree. Later/earlier dated sec
 | Strategy copy-back file equality | PASSED (CRLF normalized) | Preserved 1,470-line copy normalizes byte-for-byte to local Strategy; normalized SHA-256 matches `42b4e168…1ea3f5c0`. File-level equality does not independently authenticate the editor/draft. |
 | Indicator native compile tied to copy-back | NOT VERIFIED (compile visible, hash link missing) | New inline image shows `11:06:44 AM Compiled.` and `Added to chart` for a truncated `XAUUSD SMART …` draft. Draft continuity to the copy-back is unproven; see `reports/native-v080/compile-context.md`. |
 | Strategy current-hash native compile | NOT VERIFIED | New inline image shows `Untitled script`, but its compile messages have the same timestamp as the Indicator image and do not establish a distinct Strategy compile. See `compile-context.md`. |
-| Local tests | PASSED (2026-11-01) | `npm run verify`: 122 tests / 11 files; typecheck, Pine generation check, independent parser pass. |
+| Local tests | PASSED (2026-11-01) | `npm run verify`: 131 tests / 11 files; typecheck, Pine generation check, independent parser pass. |
 | Raw plan comparator | PASSED (one plan) | Tolerance 0; one plan per copied user-provided log; zero mismatches. Not authenticated to current sources. |
 | Multi-plan parity / Replay-reload | NOT VERIFIED | Need fresh same-input current-source logs and controlled replay records. |
 | Current-hash backtest / OOS / profitability | NOT VERIFIED / NOT ESTABLISHED | No reproducible current-hash exports or adequate OOS sample. |
-| Local durable outbox / worker | PASSED (local adapter only) | `src/local-outbox.ts` uses SQLite transactions, unique `(source,eventId)`, collision quarantine, worker leases, retry scheduling and restart recovery; verified locally. It is not wired to the production webhook and is not a serverless production store. |
+| Local durable outbox / worker | PASSED (local adapter only) | SQLite transactions enforce unique `(source,eventId)`, collision quarantine, max-attempt recovery, one-time send-start, leases, retry scheduling, and stale/late worker protection. It is not wired to the production webhook or suitable as serverless storage. |
 | Webhook dedupe/retry | NOT IMPLEMENTED IN PRODUCTION | `api/webhook.ts` remains unchanged and continues direct delivery; local SQLite code is an isolated research adapter. Telegram delivery is at-least-once/ambiguous around network failure, never exactly-once. |
-| Safe project export | IMPLEMENTED; production ZIP not generated | `npm run package:share` writes outside the project and excludes `.env`, `.git`, dependencies, caches, local databases and private keys; automated archive inspection passed using a temporary fixture. The repository's real `.env` was not read or included. |
+| Safe project export | PASSED; sanitized ZIP generated | `npm run package:share` produced `../xauusd-smart-scalper-share.zip` (142 members). Script verification and independent checks found `.env.example`, zero forbidden members, and zero checked token-pattern hits. |
 | v0.9.0 | BLOCKED | Keep package/source at v0.8.0 pending native and research gates. |
 
 The last recorded Chrome/macOS Apple Events error was `-1723`; no denied call was repeated. No browser/computer UI control tool is available in this session. TradingView source/compile evidence must be captured in the user-controlled UI. The current native evidence checklist is at the top of `V090_RELEASE_READINESS.md`.
@@ -418,3 +418,10 @@ This snapshot predates the Strategy CRLF copy-back files recorded above. Its cla
 - Indicator and Strategy native compile gates remain **NOT VERIFIED**. File equality proves source-byte matching, not that TradingView compiled the corresponding draft. No chart overlay, old compile artifact, title, or audit payload was treated as compile proof.
 - Next required artifacts: both compile screenshots (or unambiguous raw compile logs) plus `compile-context.md` tying each to its unchanged source-matched draft and recording symbol/timeframe and evidence time. Do not repeat copy-back while a draft is unchanged; if it changed, hash the new copy-back first.
 - Multi-plan audit parity and Bar Replay/reload remain **NOT VERIFIED**. No TradingView permission call was repeated; no Pine source, tests, studies, alerts, or deployment were changed in this report-only pass. Keep v0.8.0.
+
+## Worker and export hardening follow-up (2026-11-01)
+
+- Worker claims now enforce the configured maximum attempt count during lease recovery, including repeated crashes before send. Send-start can transition once only; start and completion updates require current lease ownership and an unexpired lease. `deliverNext` uses response-time clock values and validates retry policy before claiming or sending.
+- `WorkerOutboxRepository` is a portable async contract; only the local SQLite adapter is implemented. Two real Node worker threads using independent SQLite connections raced to claim one event: exactly one claimed it. Tests also cover process restart idempotency, late response/lease expiry, stale ownership, SQLite lock timeout, insertion/quarantine failures, and dead-letter recovery.
+- The ZIP verifier scans common credential/token patterns in text files and fails without revealing matched contents. The generated 142-member archive passed its internal and independent member/path/content-pattern checks.
+- Latest local validation: 131 tests / 11 files passed; zero production dependency vulnerabilities; Pine source hashes unchanged.

@@ -3,6 +3,7 @@ import { DatabaseSync } from "node:sqlite";
 import type { Signal } from "./types.js";
 import {
   decideDelivery,
+  validateRetryPolicy,
   type AtomicAcceptResult,
   type DeliveryState,
   type DeliveryDecision,
@@ -19,20 +20,32 @@ export interface ClaimedOutboxRecord extends OutboxRecord {
   leaseUntil: number;
 }
 
+type MaybePromise<T> = T | Promise<T>;
+
+/** Portable worker contract. A remote production adapter can implement these
+ * transitions asynchronously while the local SQLite adapter stays synchronous. */
+export interface WorkerOutboxRepository extends OutboxRepository {
+  claimNext(now: number, leaseMs: number | undefined, maxAttempts: number): MaybePromise<ClaimedOutboxRecord | undefined>;
+  markSendStarted(claim: ClaimedOutboxRecord, now: number): MaybePromise<boolean>;
+  finishClaim(claim: ClaimedOutboxRecord, decision: DeliveryDecision, now: number): MaybePromise<boolean>;
+}
+
 /**
  * Local SQLite outbox for development/research. Its atomic uniqueness and
  * state transitions survive process restarts, but local disk is not a
  * production serverless store and this adapter is intentionally not wired to
  * api/webhook.ts.
  */
-export class LocalSqliteOutbox implements OutboxRepository {
+export class LocalSqliteOutbox implements WorkerOutboxRepository {
   private readonly db: DatabaseSync;
 
-  constructor(path: string) {
+  constructor(path: string, busyTimeoutMs = 5_000) {
+    if (!Number.isSafeInteger(busyTimeoutMs) || busyTimeoutMs < 0 || busyTimeoutMs > 60_000)
+      throw new Error("busyTimeoutMs must be an integer from 0 to 60000");
     this.db = new DatabaseSync(path);
     this.db.exec(`
       PRAGMA journal_mode = WAL;
-      PRAGMA busy_timeout = 5000;
+      PRAGMA busy_timeout = ${busyTimeoutMs};
       CREATE TABLE IF NOT EXISTS outbox (
         source TEXT NOT NULL,
         event_id TEXT NOT NULL,
@@ -102,7 +115,7 @@ export class LocalSqliteOutbox implements OutboxRepository {
         },
       };
     } catch (error) {
-      this.db.exec("ROLLBACK");
+      this.rollbackQuietly();
       throw error;
     }
   }
@@ -110,10 +123,12 @@ export class LocalSqliteOutbox implements OutboxRepository {
   /** Claim one ready item under an immediate write transaction. Expired work
    * before request start is safe to queue again; after request start it is
    * ambiguous and is quarantined from automatic retries to avoid duplicates. */
-  claimNext(now: number, leaseMs = 30_000): ClaimedOutboxRecord | undefined {
+  claimNext(now: number, leaseMs = 30_000, maxAttempts = 5): ClaimedOutboxRecord | undefined {
     validateClock(now);
     if (!Number.isSafeInteger(leaseMs) || leaseMs < 1 || !Number.isSafeInteger(now + leaseMs))
       throw new Error("leaseMs must produce a positive safe lease timestamp");
+    if (!Number.isSafeInteger(maxAttempts) || maxAttempts < 1)
+      throw new Error("maxAttempts must be a positive safe integer");
     this.db.exec("BEGIN IMMEDIATE");
     try {
       this.db.prepare(`UPDATE outbox SET
@@ -121,41 +136,50 @@ export class LocalSqliteOutbox implements OutboxRepository {
         last_error = CASE WHEN send_started = 1 THEN 'worker lease expired after request start; outcome unknown' ELSE last_error END,
         lease_token = NULL, lease_until = NULL, send_started = 0, updated_at = ?
         WHERE state = 'processing' AND lease_until <= ?`).run(now, now);
+      this.db.prepare(`UPDATE outbox SET state='dead_lettered', updated_at=?,
+        last_error='retry limit exhausted during claim recovery', next_attempt_at=NULL
+        WHERE state IN ('queued','retry_scheduled') AND attempt_count >= ?`).run(now, maxAttempts);
       const row = this.db.prepare(`SELECT * FROM outbox
         WHERE state IN ('queued','retry_scheduled')
-          AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
-        ORDER BY first_seen_at, source, event_id LIMIT 1`).get(now) as DbRow | undefined;
+          AND attempt_count < ? AND (next_attempt_at IS NULL OR next_attempt_at <= ?)
+        ORDER BY first_seen_at, source, event_id LIMIT 1`).get(maxAttempts, now) as DbRow | undefined;
       if (!row) { this.db.exec("COMMIT"); return undefined; }
       const token = randomUUID();
       const until = now + leaseMs;
-      this.db.prepare(`UPDATE outbox SET state='processing', attempt_count=attempt_count+1,
+      const updated = this.db.prepare(`UPDATE outbox SET state='processing', attempt_count=attempt_count+1,
         updated_at=?, lease_token=?, lease_until=?, send_started=0
-        WHERE source=? AND event_id=?`).run(now, token, until, row.source, row.event_id);
+        WHERE source=? AND event_id=? AND state IN ('queued','retry_scheduled') AND attempt_count < ?`)
+        .run(now, token, until, row.source, row.event_id, maxAttempts);
+      if (Number(updated.changes) !== 1) throw new Error("outbox claim lost its atomic row transition");
       const claimed = this.db.prepare("SELECT * FROM outbox WHERE source=? AND event_id=?")
         .get(row.source, row.event_id) as DbRow;
       this.db.exec("COMMIT");
       return { ...toOutboxRecord(claimed), state: "processing", attemptCount: Number(claimed.attempt_count), leaseToken: token, leaseUntil: until };
-    } catch (error) { this.db.exec("ROLLBACK"); throw error; }
+    } catch (error) { this.rollbackQuietly(); throw error; }
   }
 
   markSendStarted(claim: ClaimedOutboxRecord, now: number): boolean {
     validateClock(now);
+    if (now < claim.updatedAt) throw new Error("send start clock precedes claim time");
     const result = this.db.prepare(`UPDATE outbox SET send_started=1, updated_at=?
-      WHERE source=? AND event_id=? AND state='processing' AND lease_token=? AND lease_until>?`)
-      .run(now, claim.source, claim.eventId, claim.leaseToken, now);
+      WHERE source=? AND event_id=? AND state='processing' AND send_started=0
+        AND lease_token=? AND updated_at<=? AND lease_until>?`)
+      .run(now, claim.source, claim.eventId, claim.leaseToken, now, now);
     return Number(result.changes) === 1;
   }
 
   finishClaim(claim: ClaimedOutboxRecord, decision: DeliveryDecision, now: number): boolean {
     validateClock(now);
+    if (now < claim.updatedAt) throw new Error("completion clock precedes claim time");
     const state = decision.state;
     const retryAt = decision.state === "retry_scheduled" ? decision.retryAt : null;
     const messageId = decision.state === "sent" && decision.messageId !== undefined ? String(decision.messageId) : null;
     const detail = decision.state === "sent" ? null : decision.state === "retry_scheduled" ? null : decision.reason;
     const result = this.db.prepare(`UPDATE outbox SET state=?, updated_at=?, next_attempt_at=?,
       lease_token=NULL, lease_until=NULL, send_started=0, message_id=?, last_error=?
-      WHERE source=? AND event_id=? AND state='processing' AND lease_token=?`)
-      .run(state, now, retryAt, messageId, detail, claim.source, claim.eventId, claim.leaseToken);
+      WHERE source=? AND event_id=? AND state='processing' AND send_started=1
+        AND lease_token=? AND updated_at<=? AND lease_until>?`)
+      .run(state, now, retryAt, messageId, detail, claim.source, claim.eventId, claim.leaseToken, now, now);
     return Number(result.changes) === 1;
   }
 
@@ -172,22 +196,29 @@ export class LocalSqliteOutbox implements OutboxRepository {
   quarantineCount(): number {
     return Number((this.db.prepare("SELECT COUNT(*) AS count FROM collision_quarantine").get() as { count: number }).count);
   }
+
+  private rollbackQuietly(): void {
+    try { this.db.exec("ROLLBACK"); } catch { /* Preserve the original storage failure. */ }
+  }
 }
 
 export async function deliverNext(
-  repository: LocalSqliteOutbox,
+  repository: WorkerOutboxRepository,
   send: (payload: Signal) => Promise<TelegramOutcome>,
   now: number,
-  options: { leaseMs?: number; policy?: RetryPolicy; random?: () => number } = {},
+  options: { leaseMs?: number; policy?: RetryPolicy; random?: () => number; clock?: () => number } = {},
 ): Promise<{ kind: "idle" } | { kind: "lease_lost" } | { kind: "processed"; decision: DeliveryDecision }> {
-  const claim = repository.claimNext(now, options.leaseMs);
+  if (options.policy) validateRetryPolicy(options.policy);
+  const maxAttempts = options.policy?.maxAttempts ?? 5;
+  const claim = await repository.claimNext(now, options.leaseMs, maxAttempts);
   if (!claim) return { kind: "idle" };
-  if (!repository.markSendStarted(claim, now)) return { kind: "lease_lost" };
+  if (!await repository.markSendStarted(claim, now)) return { kind: "lease_lost" };
   let outcome: TelegramOutcome;
   try { outcome = await send(claim.payload); }
   catch { outcome = { kind: "transport_error", requestMayHaveReachedTelegram: true }; }
-  const decision = decideDelivery(outcome, claim.attemptCount, now, options);
-  if (!repository.finishClaim(claim, decision, now)) return { kind: "lease_lost" };
+  const completedAt = (options.clock ?? Date.now)();
+  const decision = decideDelivery(outcome, claim.attemptCount, completedAt, options);
+  if (!await repository.finishClaim(claim, decision, completedAt)) return { kind: "lease_lost" };
   return { kind: "processed", decision };
 }
 

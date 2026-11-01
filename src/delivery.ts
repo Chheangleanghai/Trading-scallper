@@ -156,7 +156,7 @@ const defaultRetryPolicy: RetryPolicy = {
   jitterRatio: 0.2,
 };
 
-function validateRetryPolicy(policy: RetryPolicy): void {
+export function validateRetryPolicy(policy: RetryPolicy): void {
   if (!Number.isSafeInteger(policy.maxAttempts) || policy.maxAttempts < 1)
     throw new Error("maxAttempts must be a positive integer");
   if (!Number.isSafeInteger(policy.baseDelayMs) || policy.baseDelayMs < 1)
