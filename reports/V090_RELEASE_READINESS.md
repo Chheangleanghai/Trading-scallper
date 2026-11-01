@@ -26,8 +26,11 @@ The statuses in this table are current. Historical sections below preserve older
 | Bar Replay / reload repaint check | NOT VERIFIED | No controlled current-source replay and before/after reload comparison is recorded. |
 | Out-of-sample / walk-forward | NOT VERIFIED | Adequate current-source trade sample and chronological exports are unavailable. |
 | Profitability | NOT ESTABLISHED | No conclusion is supported by the available small, unauthenticated sample. |
-| Webhook deduplication / retry | CONTRACT + POLICY IMPLEMENTED; durable delivery NOT IMPLEMENTED | Added a storage adapter contract, canonical payload hashing, duplicate/collision outcomes, and tested retry/ambiguous-send policy in `src/delivery.ts`. No durable database/queue adapter is configured and the live webhook is unchanged. |
-| v0.9.0 release | BLOCKED | Current-hash native compile, multiple-plan parity, replay/reload, reproducible performance evidence, and OOS gates remain open. Keep v0.8.0. |
+| Local verification | PASSED | `npm run verify`: TypeScript, 122 tests across 11 files, Pine generation check, and independent Pine parser. `npm audit --omit=dev`: 0 vulnerabilities. `git diff --check`: passed. |
+| Local durable outbox / worker | IMPLEMENTED AND LOCALLY TESTED | `src/local-outbox.ts` uses SQLite transactional uniqueness, quarantine, leases, retries, and conservative crash recovery. Local adapter only; it is not suitable/configured for Vercel serverless production. |
+| Production webhook deduplication / retry | NOT IMPLEMENTED | `api/webhook.ts` remains unchanged and calls Telegram directly. No persistent production database, queue, worker, or operational retry/dead-letter process is configured. |
+| Share archive hygiene | IMPLEMENTED AND TESTED | `npm run package:share` excludes local secrets, `.git`, dependencies, caches, databases, and private keys; archive policy test passed. No archive was generated from this credential-bearing worktree. |
+| v0.9.0 release | BLOCKED | Current-hash native compile, multiple-plan parity, replay/reload, reproducible performance evidence, OOS gates, and production webhook durability remain open. Keep v0.8.0. |
 
 ## Next native evidence needed
 

@@ -112,8 +112,9 @@ describe("durable outbox acceptance contract", () => {
   it("does not accept invalid source or clock values", async () => {
     const repository = new TestRepository();
     await expect(enqueueSignal(repository, "  ", sample, 1000)).rejects.toThrow("source");
-    await expect(enqueueSignal(repository, "tradingview", { ...sample, eventId: " " }, 1000)).rejects.toThrow("eventId");
+    await expect(enqueueSignal(repository, "tradingview", { ...sample, eventId: " " }, 1000)).rejects.toThrow("webhook payload contract");
     await expect(enqueueSignal(repository, "tradingview", sample, -1)).rejects.toThrow("timestamp");
+    await expect(enqueueSignal(repository, "tradingview", { ...sample, tp1: 98 }, 1000)).rejects.toThrow("webhook payload contract");
   });
 });
 
@@ -127,7 +128,7 @@ describe("delivery outcome and retry policy", () => {
     });
   });
 
-  it("honors Telegram retry_after for 429 and caps excessive delays", () => {
+  it("honors Telegram retry_after even when it exceeds the local backoff cap", () => {
     expect(decideDelivery({ kind: "http_error", status: 429, retryAfterSeconds: 3 }, 1, 100, { policy })).toEqual({
       state: "retry_scheduled",
       retryAt: 3100,
@@ -135,9 +136,18 @@ describe("delivery outcome and retry policy", () => {
     });
     expect(decideDelivery({ kind: "http_error", status: 429, retryAfterSeconds: 60 }, 1, 100, { policy })).toMatchObject({
       state: "retry_scheduled",
-      retryAt: 5100,
-      delayMs: 5000,
+      retryAt: 60100,
+      delayMs: 60000,
     });
+  });
+
+  it("accepts a zero server delay but rejects unsafe retry timestamps", () => {
+    expect(decideDelivery({ kind: "http_error", status: 429, retryAfterSeconds: 0 }, 1, 100, { policy }))
+      .toMatchObject({ state: "retry_scheduled", retryAt: 100, delayMs: 0 });
+    expect(() => decideDelivery({ kind: "http_error", status: 429, retryAfterSeconds: 1 }, 1, Number.MAX_SAFE_INTEGER, { policy }))
+      .toThrow("safe integer");
+    expect(() => decideDelivery({ kind: "http_error", status: 429, retryAfterSeconds: Number.MAX_VALUE }, 1, 1, { policy }))
+      .toThrow("retryAfterSeconds");
   });
 
   it("uses bounded exponential backoff with deterministic jitter for 5xx", () => {
@@ -169,5 +179,8 @@ describe("delivery outcome and retry policy", () => {
   it("rejects invalid attempt counts and retry policies", () => {
     expect(() => decideDelivery({ kind: "http_error", status: 503 }, 0, 100, { policy })).toThrow("attemptCount");
     expect(() => decideDelivery({ kind: "http_error", status: 503 }, 1, 100, { policy: { ...policy, jitterRatio: 2 } })).toThrow("jitterRatio");
+    expect(() => decideDelivery({ kind: "http_error", status: 503 }, Number.MAX_SAFE_INTEGER + 1, 100, { policy })).toThrow("attemptCount");
+    expect(() => decideDelivery({ kind: "http_error", status: 503 }, 1, 100, { policy: { ...policy, baseDelayMs: 0 } })).toThrow("baseDelayMs");
+    expect(() => decideDelivery({ kind: "http_error", status: 503 }, 1, 100, { policy: { ...policy, maxDelayMs: Number.MAX_VALUE } })).toThrow("maxDelayMs");
   });
 });

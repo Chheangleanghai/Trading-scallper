@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import type { Signal } from "./types.js";
+import { validate } from "./validation.js";
 
 export type DeliveryState =
   | "queued"
@@ -15,8 +16,8 @@ export interface OutboxRecord {
   eventId: string;
   payloadSha256: string;
   payload: Signal;
-  state: "queued";
-  attemptCount: 0;
+  state: DeliveryState;
+  attemptCount: number;
   firstSeenAt: number;
   updatedAt: number;
 }
@@ -88,16 +89,26 @@ export async function enqueueSignal(
   signal: Signal,
   now = Date.now(),
 ): Promise<EnqueueResult> {
-  if (!source.trim()) throw new Error("source is required");
-  if (!signal.eventId.trim()) throw new Error("eventId is required");
+  if (typeof source !== "string" || !source.trim() || source.trim().length > 120 || /[\x00-\x1f]/.test(source))
+    throw new Error("source is required and must be a valid short identifier");
   if (!Number.isSafeInteger(now) || now < 0)
     throw new Error("now must be a non-negative integer timestamp");
 
+  let serialized: string;
+  let acceptedSignal: Signal;
+  try {
+    serialized = JSON.stringify(signal);
+    if (Buffer.byteLength(serialized) > 8192) throw new Error("payload too large");
+    acceptedSignal = validate(JSON.parse(serialized) as unknown);
+  } catch {
+    throw new Error("signal does not satisfy the webhook payload contract");
+  }
+
   const proposed: OutboxRecord = {
     source: source.trim(),
-    eventId: signal.eventId,
-    payloadSha256: payloadSha256(signal),
-    payload: structuredClone(signal),
+    eventId: acceptedSignal.eventId,
+    payloadSha256: payloadSha256(acceptedSignal),
+    payload: acceptedSignal,
     state: "queued",
     attemptCount: 0,
     firstSeenAt: now,
@@ -146,11 +157,11 @@ const defaultRetryPolicy: RetryPolicy = {
 };
 
 function validateRetryPolicy(policy: RetryPolicy): void {
-  if (!Number.isInteger(policy.maxAttempts) || policy.maxAttempts < 1)
+  if (!Number.isSafeInteger(policy.maxAttempts) || policy.maxAttempts < 1)
     throw new Error("maxAttempts must be a positive integer");
-  if (!Number.isFinite(policy.baseDelayMs) || policy.baseDelayMs < 1)
-    throw new Error("baseDelayMs must be positive");
-  if (!Number.isFinite(policy.maxDelayMs) || policy.maxDelayMs < policy.baseDelayMs)
+  if (!Number.isSafeInteger(policy.baseDelayMs) || policy.baseDelayMs < 1)
+    throw new Error("baseDelayMs must be a positive safe integer");
+  if (!Number.isSafeInteger(policy.maxDelayMs) || policy.maxDelayMs < policy.baseDelayMs)
     throw new Error("maxDelayMs must be at least baseDelayMs");
   if (!Number.isFinite(policy.jitterRatio) || policy.jitterRatio < 0 || policy.jitterRatio > 1)
     throw new Error("jitterRatio must be between 0 and 1");
@@ -167,19 +178,24 @@ function retryDecision(
     return { state: "dead_lettered", reason: "retry limit exhausted" };
   let delayMs: number;
   if (explicitDelayMs !== undefined) {
-    delayMs = Math.min(policy.maxDelayMs, Math.max(0, explicitDelayMs));
+    // Telegram's retry_after is a server instruction. Local backoff caps must
+    // never shorten it, even when it exceeds our ordinary exponential cap.
+    if (!Number.isSafeInteger(explicitDelayMs) || explicitDelayMs < 0)
+      throw new Error("explicit retry delay must be a non-negative safe integer");
+    delayMs = explicitDelayMs;
   } else {
-    const exponential = Math.min(
-      policy.maxDelayMs,
-      policy.baseDelayMs * 2 ** Math.min(attemptCount - 1, 30),
-    );
+    let exponential = policy.baseDelayMs;
+    for (let n = 1; n < attemptCount && exponential < policy.maxDelayMs; n++)
+      exponential = Math.min(policy.maxDelayMs, exponential * 2);
     const sample = random();
     if (!Number.isFinite(sample) || sample < 0 || sample > 1)
       throw new Error("random must return a number between 0 and 1");
     const jitter = exponential * policy.jitterRatio * (sample * 2 - 1);
     delayMs = Math.min(policy.maxDelayMs, Math.max(0, Math.round(exponential + jitter)));
   }
-  return { state: "retry_scheduled", retryAt: now + delayMs, delayMs };
+  const retryAt = now + delayMs;
+  if (!Number.isSafeInteger(retryAt)) throw new Error("retry timestamp exceeds safe integer range");
+  return { state: "retry_scheduled", retryAt, delayMs };
 }
 
 /** Pure decision policy for an outbox worker; never sends or retries by itself. */
@@ -191,7 +207,7 @@ export function decideDelivery(
 ): DeliveryDecision {
   const policy = options.policy ?? defaultRetryPolicy;
   validateRetryPolicy(policy);
-  if (!Number.isInteger(attemptCount) || attemptCount < 1)
+  if (!Number.isSafeInteger(attemptCount) || attemptCount < 1)
     throw new Error("attemptCount must be a positive integer");
   if (!Number.isSafeInteger(now) || now < 0)
     throw new Error("now must be a non-negative integer timestamp");
@@ -206,7 +222,7 @@ export function decideDelivery(
       throw new Error("invalid HTTP status");
     if (outcome.status === 429) {
       const seconds = outcome.retryAfterSeconds;
-      if (seconds !== undefined && (!Number.isFinite(seconds) || seconds < 0))
+      if (seconds !== undefined && (!Number.isFinite(seconds) || seconds < 0 || !Number.isSafeInteger(seconds * 1000)))
         throw new Error("retryAfterSeconds must be non-negative");
       return retryDecision(attemptCount, now, policy, options.random ?? Math.random,
         seconds === undefined ? undefined : seconds * 1000);

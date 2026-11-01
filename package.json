@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "22.x"
+    "node": ">=22.5.0"
   },
   "scripts": {
     "test": "vitest run",
@@ -13,6 +13,7 @@
     "pine:check": "python3 scripts/generate_pine.py --check",
     "pine:parse": "node scripts/check_pine.mjs",
     "audit:compare": "node scripts/compare-plan-audit.mjs",
+    "package:share": "python3 scripts/package_share.py --output ../xauusd-smart-scalper-share.zip",
     "verify": "npm run typecheck && npm test && npm run pine:check && npm run pine:parse"
   },
   "devDependencies": {
