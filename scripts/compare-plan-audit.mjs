@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const required = [
+  "scriptVersion",
   "symbol",
   "timeframe",
   "timestamp",
@@ -33,6 +34,9 @@ export function parsePlanAudit(text, sourceName = "input") {
     } catch {
       throw new Error(`${sourceName}:${index + 1}: malformed JSON record`);
     }
+    // Lifecycle alert JSON shares several PLAN_AUDIT fields. Only explicit audit
+    // markers or marker-free plan records belong in the parity input.
+    if (marker < 0 && "eventType" in value) continue;
     if (marker < 0 && !("setupTimestamp" in value) && !("strategy" in value)) continue;
     const missing = required.filter((key) => !(key in value));
     if (missing.length) {
@@ -40,6 +44,7 @@ export function parsePlanAudit(text, sourceName = "input") {
     }
     if (
       typeof value.symbol !== "string" ||
+      typeof value.scriptVersion !== "string" ||
       typeof value.timeframe !== "string" ||
       !Number.isSafeInteger(value.timestamp) ||
       !Number.isSafeInteger(value.setupTimestamp) ||
@@ -86,7 +91,7 @@ export function comparePlanAudits(indicatorRows, strategyRows, tolerance) {
       mismatches.push({ key, field: "missing-plan", missingFrom: left ? "strategy" : "indicator" });
       continue;
     }
-    for (const field of ["setupTimestamp", "direction", "strategy", "entryMode", "quality"]) {
+    for (const field of ["scriptVersion", "setupTimestamp", "direction", "strategy", "entryMode", "quality"]) {
       if (left[field] !== right[field]) {
         mismatches.push({ key, field, indicator: left[field], strategy: right[field] });
       }

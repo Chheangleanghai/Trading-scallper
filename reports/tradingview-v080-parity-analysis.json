@@ -1,0 +1,113 @@
+{
+  "assessmentDate": "2026-11-01",
+  "projectVersion": "0.8.0",
+  "evidenceStatus": "user-provided copied Pine log text; not independently authenticated",
+  "files": {
+    "indicator": {
+      "path": "reports/tradingview-v080-indicator-logs.txt",
+      "sha256": "0dddd3879c19f7246cc0f598b0fea0c939c969ec0a069d6f082ad336030c50e2",
+      "records": 4,
+      "allJsonParsed": true
+    },
+    "strategy": {
+      "path": "reports/tradingview-v080-strategy-logs.txt",
+      "sha256": "88b7456fea582e454b55e6f6ad51a381ee9ebdc373eb53080eee5011c5e61bef",
+      "records": 4,
+      "allJsonParsed": true,
+      "preservedUnchanged": true
+    }
+  },
+  "versions": {
+    "indicator": "0.8.0",
+    "strategy": "0.8.0",
+    "payloadVersionMatch": true,
+    "sourceHashAttribution": "NOT VERIFIED"
+  },
+  "rawAuditSchema": {
+    "indicatorMissingFields": [],
+    "strategyMissingFields": ["symbol", "timeframe"],
+    "strategyLifecycleCarriesSymbolAndTimeframe": true,
+    "originalEvidenceWasModifiedOrBackfilled": false
+  },
+  "rawComparator": {
+    "status": "FAILED_SCHEMA_VALIDATION",
+    "exitCode": 2,
+    "message": "reports/tradingview-v080-strategy-logs.txt:1: missing symbol, timeframe"
+  },
+  "offlinePlanComparison": {
+    "status": "PASS_LIMITED_TO_ONE_USER_PROVIDED_PLAN",
+    "method": "Existing comparator function applied to the original audit plans in memory; symbol/timeframe for the strategy plan were sourced from that same evidence file's ENTRY_TRIGGERED lifecycle record. Original log file was not changed.",
+    "tolerance": 0,
+    "matchingFields": [
+      "scriptVersion",
+      "symbol (strategy value sourced from lifecycle)",
+      "timeframe (strategy value sourced from lifecycle)",
+      "strategy/module",
+      "direction (normalized +1 to BUY)",
+      "timestamp",
+      "setupTimestamp",
+      "entryMode",
+      "entry",
+      "sl",
+      "tp1",
+      "tp2",
+      "tp3",
+      "quality"
+    ],
+    "mismatches": [],
+    "executionDifferences": [
+      {
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR",
+        "expected": true
+      }
+    ]
+  },
+  "lifecycle": {
+    "eventIdsMatchAcrossSources": {
+      "BUY_SIGNAL": true,
+      "ENTRY_TRIGGERED": true,
+      "TRADE_CLOSED": true
+    },
+    "plannedEntry": {
+      "indicator": 4177.48,
+      "strategy": 4177.48
+    },
+    "filledEntry": {
+      "indicator": 4177.48,
+      "strategy": 4177.5,
+      "difference": 0.02,
+      "reason": "Consistent with distinct execution models and reported two-tick slippage if mintick is 0.01; exact cause is not established by these records."
+    },
+    "eventTimesUtc": {
+      "BUY_SIGNAL": {
+        "indicator": "2026-10-12T10:55:00Z",
+        "strategy": "2026-10-12T11:00:00Z",
+        "differenceMinutes": 5
+      },
+      "ENTRY_TRIGGERED": {
+        "indicator": "2026-10-12T10:55:00Z",
+        "strategy": "2026-10-12T11:00:00Z",
+        "differenceMinutes": 5
+      },
+      "TRADE_CLOSED": {
+        "indicator": "2026-10-12T11:10:00Z",
+        "strategy": "2026-10-12T11:15:00Z",
+        "differenceMinutes": 5
+      }
+    },
+    "prefixSemantics": "Historical Pine log prefixes display bar-open time; JSON eventTimestamp is emitted from time_close. Prefixes are one M5 bar earlier and should not be confused with JSON event time.",
+    "entryTimingAssessment": "Explained by the different execution models in source: the indicator marks a Close-mode estimate on the confirmed plan bar; the strategy uses process_orders_on_close=false and calc_on_every_tick=false, and reports broker-emulator fill when its next historical calculation observes the fill. The fill may occur at the next bar open while the log is emitted at that bar's close. Actual fill time is not present in the supplied event payload.",
+    "closeTimingAssessment": "Likely consistent with the strategy's deferred broker-emulator close and next calculation reporting: the indicator closes its estimate at 11:10; strategy source calls strategy.close(... immediately=false), and closed-trade lifecycle logging occurs when the script observes closedtrades. However the supplied TRADE_CLOSED record omits actual exit time, exit reason, exit price, and PnL, and the chart inputs/OHLC are unavailable; the exact cause and execution parity are NOT VERIFIED.",
+    "fullLifecycleParity": "NOT VERIFIED"
+  },
+  "currentLocalSource": {
+    "indicatorSha256": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "strategySha256": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "nativeCompileOfTheseHashes": "NOT VERIFIED"
+  },
+  "nativeTradingViewAttribution": "NOT VERIFIED",
+  "barReplayAndReload": "NOT VERIFIED",
+  "profitability": "NOT ESTABLISHED"
+}

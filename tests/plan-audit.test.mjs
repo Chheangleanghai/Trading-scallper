@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { comparePlanAudits, parsePlanAudit } from "../scripts/compare-plan-audit.mjs";
 
 const base = {
+  scriptVersion: "0.8.0",
   symbol: "FOREXCOM:XAUUSD",
   timeframe: "5",
   timestamp: 1_800_000_300_000,
@@ -26,6 +27,25 @@ describe("TradingView plan-audit parity tool", () => {
       "indicator.log",
     );
     expect(rows).toHaveLength(2);
+  });
+
+  it("ignores lifecycle records mixed into Pine Logs", () => {
+    const lifecycle = {
+      ...base,
+      eventId: "FOREXCOM:XAUUSD:5:1800000300000:1:A_SWEEP_MSS_FVG:ENTRY_TRIGGERED",
+      eventType: "ENTRY_TRIGGERED",
+    };
+    const rows = parsePlanAudit(
+      `PLAN_AUDIT ${JSON.stringify(base)}\n${JSON.stringify(lifecycle)}`,
+      "mixed.log",
+    );
+    expect(rows).toEqual([base]);
+  });
+
+  it("rejects an audit record missing symbol or timeframe", () => {
+    const { symbol: _symbol, timeframe: _timeframe, ...incomplete } = base;
+    expect(() => parsePlanAudit(`PLAN_AUDIT ${JSON.stringify(incomplete)}`, "incomplete.log"))
+      .toThrow("missing symbol, timeframe");
   });
 
   it("matches records independent of log order and ignores execution-adapter differences", () => {
@@ -55,6 +75,13 @@ describe("TradingView plan-audit parity tool", () => {
     expect(result.mismatches.map((item) => item.field)).toEqual(
       expect.arrayContaining(["duplicate", "direction", "strategy", "entry", "missing-plan"]),
     );
+  });
+
+  it("rejects missing audit versions and reports a version mismatch", () => {
+    expect(() => parsePlanAudit('PLAN_AUDIT {"symbol":"X"}', "old.log")).toThrow("missing scriptVersion");
+    const result = comparePlanAudits([base], [{ ...base, scriptVersion: "0.6.0" }], 0.005);
+    expect(result.parity).toBe(false);
+    expect(result.mismatches).toContainEqual(expect.objectContaining({ field: "scriptVersion" }));
   });
 
   it("uses an explicit price tolerance and rejects invalid tolerances", () => {

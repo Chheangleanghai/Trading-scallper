@@ -95,6 +95,8 @@ describe("indicator/strategy common-engine parity", () => {
     expect(engine).not.toContain('"scriptVersion":"0.6.0"');
     for (const file of ["indicator.pine", "strategy.pine"]) {
       expect(read(file)).toContain("const string SCRIPT_VERSION = '0.8.0'");
+      expect(read(file)).toContain('log.info(\'PLAN_AUDIT \' + \'{"scriptVersion":"\' + SCRIPT_VERSION + \'"');
+      expect(read(file)).toContain('"symbol":"\' + jsonEscape(syminfo.tickerid) + \'","timeframe":"\' + timeframe.period + \'"');
     }
   });
 });

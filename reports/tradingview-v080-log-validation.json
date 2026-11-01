@@ -1,0 +1,79 @@
+{
+  "evidenceFile": "reports/tradingview-v080-strategy-logs.txt",
+  "sha256": "88b7456fea582e454b55e6f6ad51a381ee9ebdc373eb53080eee5011c5e61bef",
+  "lineCount": 4,
+  "allJsonParsed": true,
+  "allScriptVersions08": true,
+  "eventTypes": [
+    "PLAN_AUDIT",
+    "BUY_SIGNAL",
+    "ENTRY_TRIGGERED",
+    "TRADE_CLOSED"
+  ],
+  "timestampsUtc": [
+    {
+      "prefix": "2026-10-12T10:50:00+00:00",
+      "timestamp": "2026-10-12T10:55:00+00:00",
+      "eventTimestamp": null,
+      "prefixToRelevantJsonMinutes": 5
+    },
+    {
+      "prefix": "2026-10-12T10:55:00+00:00",
+      "timestamp": "2026-10-12T10:55:00+00:00",
+      "eventTimestamp": "2026-10-12T11:00:00+00:00",
+      "prefixToRelevantJsonMinutes": 5
+    },
+    {
+      "prefix": "2026-10-12T10:55:00+00:00",
+      "timestamp": "2026-10-12T10:55:00+00:00",
+      "eventTimestamp": "2026-10-12T11:00:00+00:00",
+      "prefixToRelevantJsonMinutes": 5
+    },
+    {
+      "prefix": "2026-10-12T11:10:00+00:00",
+      "timestamp": "2026-10-12T10:55:00+00:00",
+      "eventTimestamp": "2026-10-12T11:15:00+00:00",
+      "prefixToRelevantJsonMinutes": 5
+    }
+  ],
+  "planMissingFieldsForCurrentComparator": [
+    "symbol",
+    "timeframe"
+  ],
+  "lifecycleSharedPlanFieldsConsistent": true,
+  "eventIdsMatchTypesAndPlanKey": true,
+  "plannedPricesAcrossLifecycleIdentical": true,
+  "filledEntryValues": [
+    4177.5,
+    4177.5,
+    4177.5
+  ],
+  "plannedEntry": 4177.48,
+  "fillMinusPlan": 0.02,
+  "tradeClosedMissing": [
+    "exitPrice",
+    "realizedPnl",
+    "closeReason"
+  ],
+  "sourceAttribution": "NOT VERIFIED: user-provided records do not include a verified active TradingView instance/source hash.",
+  "historicalPrefixSemantics": "PASS: TradingView historical Pine Log prefix is bar-open time; source JSON uses time_close/bar-close.",
+  "directionNormalizationConsistent": true,
+  "planComparatorCompatibility": "FAIL for captured row: symbol and timeframe absent; current local audit emitter was updated to include them.",
+  "lifecycleFields": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "direction": "BUY",
+    "status": [
+      "ENTRY_TRIGGERED",
+      "ENTRY_TRIGGERED",
+      "CLOSED"
+    ]
+  },
+  "lifecyclePlannedPriceFieldsConsistent": true,
+  "currentLocalSourceHashesAfterInstrumentation": {
+    "indicator": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "strategy": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0"
+  },
+  "currentLocalVersion": "0.8.0",
+  "nativeCompileOfCurrentPostFixHashes": "NOT VERIFIED"
+}
