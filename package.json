@@ -13,6 +13,7 @@
     "pine:check": "python3 scripts/generate_pine.py --check",
     "pine:parse": "node scripts/check_pine.mjs",
     "audit:compare": "node scripts/compare-plan-audit.mjs",
+    "audit:exits": "node scripts/analyze-strategy-exits.mjs",
     "package:share": "python3 scripts/package_share.py --output ../xauusd-smart-scalper-share.zip",
     "verify": "npm run typecheck && npm test && npm run pine:check && npm run pine:parse"
   },

@@ -10,6 +10,8 @@ Current-source Indicator and Strategy compile gates are accepted as passed. Pres
 
 3. In **Strategy Tester**, select the verified current-source Strategy and export the report/trade list separately for M1, M3, M5, and M15 as CSV. For every export, record date range, all Pine input values, initial capital/currency, position sizing, commission, slippage, and how spread was estimated. Preserve the raw exports; report trade counts, profit factor, drawdown, and OOS results only when those fields and runs are actually present.
 
+4. To diagnose the recorded M5 loss and partial exits, capture the current-hash Strategy's M5 **Trades** CSV and Properties/Data range view. Its archived `-$13.66` summary has a different recorded source hash and no trade-level exit details. For the optional diagnostic candidate, use a separate unsaved Strategy draft with `pine/experiments/strategy_exit_audit.pine`; copy the complete buffer back and require SHA-256 `ea1b065fc6a987caaf61dfed7ede9622fc11d3d4e07c2c6c3405f34d4e920123`, capture native compile success, then enable `auditLog` and save raw `TRADE_EXIT_AUDIT` / `TRADE_GROUP_AUDIT` lines. Analyze a single run's untouched export with `npm run audit:exits -- reports/native-v080/strategy-exits.log`. Do not create an alert or combine logs from different chart instances/settings.
+
 Put these genuine files in this directory. Copy `evidence-manifest.example.json` to `evidence-manifest.json`, add artifact entries with the current source hashes, and include the complete asserted `runContext` plus cost/position settings. Then run:
 
 ```bash

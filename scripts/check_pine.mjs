@@ -1,7 +1,12 @@
 import { readFileSync } from "node:fs";
 import { canTranspilePineScript } from "@opus-aether-ai/pine-transpiler";
 let failed = false;
-for (const name of ["indicator.pine", "strategy.pine", "validation.pine"]) {
+for (const name of [
+  "indicator.pine",
+  "strategy.pine",
+  "validation.pine",
+  "experiments/strategy_exit_audit.pine",
+]) {
   const result = canTranspilePineScript(
     readFileSync(new URL(`../pine/${name}`, import.meta.url), "utf8"),
   );
