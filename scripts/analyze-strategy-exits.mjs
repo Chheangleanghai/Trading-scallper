@@ -17,7 +17,8 @@ const groupStringFields = ["scriptVersion", "symbol", "timeframe", "module", "ac
 const groupNumberFields = [
   "planTimestamp", "setupTimestamp", "direction", "entryTime", "exitTime", "holdMinutes",
   "plannedEntry", "actualEntry", "initialStop", "initialQty", "riskPctInput",
-  "maxExposurePctInput", "minContract", "minTick", "pointValue", "netProfitDelta",
+  "maxExposurePctInput", "sizingEquity", "accountRiskPerUnit", "unitNotional", "riskQty",
+  "exposureQty", "rawQty", "sizedQty", "minContract", "minTick", "pointValue", "netProfitDelta",
 ];
 
 function requireRecord(value, label) {
@@ -105,6 +106,32 @@ function breakdown(rows, field) {
   }, {});
 }
 
+function reconciliation(rows, group) {
+  const rowProfitSum = rows.reduce((sum, row) => sum + row.profit, 0);
+  const rowCommissionSum = rows.reduce((sum, row) => sum + row.commission, 0);
+  const groupNetProfitDelta = group?.netProfitDelta ?? null;
+  const pointValue = group?.pointValue;
+  const priceMovePnlAtPointValue = Number.isFinite(pointValue)
+    ? rows.reduce((sum, row) => sum + row.direction *
+      (row.actualExit - row.actualEntry) * Math.abs(row.size) * pointValue, 0)
+    : null;
+  const profitPlusCommission = rowProfitSum + rowCommissionSum;
+  const rowProfitMatchesGroupNetDelta = groupNetProfitDelta === null
+    ? null
+    : Math.abs(rowProfitSum - groupNetProfitDelta) <= 1e-8;
+
+  return {
+    rowProfitSum,
+    rowCommissionSum,
+    profitPlusCommission,
+    groupNetProfitDelta,
+    rowProfitMatchesGroupNetDelta,
+    priceMovePnlAtPointValue,
+    priceMovePnlUnits: priceMovePnlAtPointValue === null ? null : "chart-currency units",
+    currencyComparisonNote: "Price movement uses chart prices and syminfo.pointvalue without account-currency conversion; compare it with account-currency fields only when both currencies match.",
+  };
+}
+
 export function analyzeStrategyExitLogs(parsed) {
   const byKey = new Map();
   const duplicateRows = [];
@@ -160,6 +187,7 @@ export function analyzeStrategyExitLogs(parsed) {
       closedTradeRows: sortedRows.length,
       rowProfitSum: sortedRows.reduce((sum, row) => sum + row.profit, 0),
       rowCommissionSum: sortedRows.reduce((sum, row) => sum + row.commission, 0),
+      reconciliation: reconciliation(sortedRows, aggregate),
       exitComments: breakdown(sortedRows, "exitComment"),
       exitIds: breakdown(sortedRows, "exitId"),
       exitRows: sortedRows,
@@ -168,6 +196,13 @@ export function analyzeStrategyExitLogs(parsed) {
       groupHoldMinutes: aggregate?.holdMinutes ?? null,
       sizingContext: aggregate ? {
         initialQty: aggregate.initialQty,
+        sizingEquity: aggregate.sizingEquity,
+        accountRiskPerUnit: aggregate.accountRiskPerUnit,
+        unitNotional: aggregate.unitNotional,
+        riskQty: aggregate.riskQty,
+        exposureQty: aggregate.exposureQty,
+        rawQty: aggregate.rawQty,
+        sizedQty: aggregate.sizedQty,
         riskPctInput: aggregate.riskPctInput,
         maxExposurePctInput: aggregate.maxExposurePctInput,
         partialInput: aggregate.partialInput,

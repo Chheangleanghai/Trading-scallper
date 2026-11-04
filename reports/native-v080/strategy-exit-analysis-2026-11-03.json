@@ -1,0 +1,122 @@
+{
+  "schema": "strategy-exit-audit-analysis/v1",
+  "evidenceStatus": "Parsed user-supplied Pine Logs; this tool does not authenticate TradingView, source hash, settings, or run context.",
+  "inputCounts": {
+    "exitRows": 1,
+    "groupRecords": 1
+  },
+  "resultCounts": {
+    "positionGroups": 1,
+    "groupsWithNetResult": 1,
+    "groupsMissingNetResult": 0,
+    "exactDuplicateExitRows": 0,
+    "duplicateGroupRecords": 0,
+    "groupRecordsWithoutExitRows": 0
+  },
+  "realizedGroups": {
+    "winners": 0,
+    "losers": 1,
+    "breakeven": 0,
+    "netProfitDeltaSum": -13.6603593,
+    "accountCurrency": "USD"
+  },
+  "caveats": [
+    "Export one chart instance, settings set, and date range per input file; the payload has no run ID or source hash.",
+    "Closed-row profit and commission are reported separately; do not assume they reconcile by subtraction without checking TradingView's definitions.",
+    "priceRMultiple is a price-distance ratio against the initial planned stop, not fee-adjusted cash R.",
+    "Unmatched or missing group records mean the position result is incomplete; they are not silently filled in."
+  ],
+  "trades": [
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "scriptVersion": "0.8.0",
+      "module": "A_SWEEP_MSS_FVG",
+      "direction": 1,
+      "planTimestamp": 1791802500000,
+      "setupTimestamp": 1791799200000,
+      "entryTime": 1791802500000,
+      "plannedEntry": 4177.48,
+      "actualEntry": 4177.5,
+      "initialStop": 4170.88,
+      "closedTradeRows": 1,
+      "rowProfitSum": -13.6603593,
+      "rowCommissionSum": 1.7533593,
+      "reconciliation": {
+        "rowProfitSum": -13.6603593,
+        "rowCommissionSum": 1.7533593,
+        "profitPlusCommission": -11.907,
+        "groupNetProfitDelta": -13.6603593,
+        "rowProfitMatchesGroupNetDelta": true,
+        "priceMovePnlAtPointValue": -11.907000000000153,
+        "priceMovePnlUnits": "chart-currency units",
+        "currencyComparisonNote": "Price movement uses chart prices and syminfo.pointvalue without account-currency conversion; compare it with account-currency fields only when both currencies match."
+      },
+      "exitComments": {
+        "TRADE_CLOSED": 1
+      },
+      "exitIds": {
+        "Close entry(s) order A_SWEEP_MSS_FVG": 1
+      },
+      "exitRows": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "planTimestamp": 1791802500000,
+          "setupTimestamp": 1791799200000,
+          "direction": 1,
+          "module": "A_SWEEP_MSS_FVG",
+          "closedTradeIndex": 0,
+          "entryId": "A_SWEEP_MSS_FVG",
+          "entryTime": 1791802500000,
+          "entryBar": 1535,
+          "actualEntry": 4177.5,
+          "exitId": "Close entry(s) order A_SWEEP_MSS_FVG",
+          "exitComment": "TRADE_CLOSED",
+          "exitTime": 1791803400000,
+          "exitBar": 1538,
+          "actualExit": 4171.83,
+          "size": 2.1,
+          "profit": -13.6603593,
+          "commission": 1.7533593,
+          "profitPercent": -0.155697967,
+          "maxRunup": 0.508725,
+          "maxDrawdown": 13.561275,
+          "plannedEntry": 4177.48,
+          "initialStop": 4170.88,
+          "managedStopAtObservation": 4170.88,
+          "tp1": 4184.08,
+          "tp2": 4190.68,
+          "tp3": 4197.28,
+          "initialQty": 2.1,
+          "accountCurrency": "USD",
+          "priceRMultiple": -0.85649547
+        }
+      ],
+      "groupNetProfitDelta": -13.6603593,
+      "groupExitTime": 1791803400000,
+      "groupHoldMinutes": 15,
+      "sizingContext": {
+        "initialQty": 2.1,
+        "sizingEquity": 10000,
+        "accountRiskPerUnit": 6.6,
+        "unitNotional": 4177.48,
+        "riskQty": 7.5757575758,
+        "exposureQty": 2.1544088781,
+        "rawQty": 2.1544088781,
+        "sizedQty": 2.1,
+        "riskPctInput": 0.5,
+        "maxExposurePctInput": 90,
+        "partialInput": true,
+        "minContract": 0.1,
+        "minTick": 0.01,
+        "pointValue": 1,
+        "accountCurrency": "USD"
+      }
+    }
+  ],
+  "unmatchedGroupRecords": [],
+  "duplicateRows": [],
+  "duplicateGroupRecords": []
+}

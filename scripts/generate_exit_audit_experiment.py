@@ -10,6 +10,7 @@ EXPECTED_BASELINE_SHA256 = "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d13
 ROW_ANCHOR = "            string reason = strategy.closedtrades.exit_comment(trade)\n"
 GROUP_ANCHOR = "    float net = strategy.netprofit - previousClosedNet\n"
 STATE_ANCHOR = "var float signalPrice = na\n"
+SIZING_ANCHOR = "    float qty = syminfo.mincontract > 0 ? math.floor(rawQty / syminfo.mincontract) * syminfo.mincontract : na\n"
 TITLE_OLD = 'strategy("XAUUSD SMART SCALPER PRO Backtest",'
 TITLE_NEW = 'strategy("XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment",'
 
@@ -36,7 +37,7 @@ ROW_AUDIT = r'''            // EXIT_AUDIT_ROW_BEGIN — logging only; this block
 
 GROUP_AUDIT = r'''    // EXIT_AUDIT_GROUP_BEGIN — realized group delta is the Strategy's netprofit change for this flat position.
     if auditLog
-        log.info('TRADE_GROUP_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(auditGroupPlanTimestamp) + ',"setupTimestamp":' + str.tostring(auditGroupSetupTimestamp) + ',"module":"' + jsonEscape(auditGroupModule) + '","direction":' + str.tostring(auditGroupDirection) + ',"entryTime":' + str.tostring(auditGroupEntryTime) + ',"exitTime":' + str.tostring(groupedLastExit) + ',"holdMinutes":' + str.tostring((groupedLastExit - auditGroupEntryTime) / 60000.0) + ',"plannedEntry":' + str.tostring(auditGroupPlannedEntry, format.mintick) + ',"actualEntry":' + str.tostring(auditGroupActualEntry, format.mintick) + ',"initialStop":' + str.tostring(auditGroupInitialStop, format.mintick) + ',"initialQty":' + str.tostring(auditGroupInitialQty) + ',"riskPctInput":' + str.tostring(riskPct) + ',"maxExposurePctInput":' + str.tostring(maxExposurePct) + ',"partialInput":' + (partial ? 'true' : 'false') + ',"minContract":' + str.tostring(syminfo.mincontract) + ',"minTick":' + str.tostring(syminfo.mintick, format.mintick) + ',"pointValue":' + str.tostring(syminfo.pointvalue) + ',"netProfitDelta":' + str.tostring(net) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '"}')
+        log.info('TRADE_GROUP_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(auditGroupPlanTimestamp) + ',"setupTimestamp":' + str.tostring(auditGroupSetupTimestamp) + ',"module":"' + jsonEscape(auditGroupModule) + '","direction":' + str.tostring(auditGroupDirection) + ',"entryTime":' + str.tostring(auditGroupEntryTime) + ',"exitTime":' + str.tostring(groupedLastExit) + ',"holdMinutes":' + str.tostring((groupedLastExit - auditGroupEntryTime) / 60000.0) + ',"plannedEntry":' + str.tostring(auditGroupPlannedEntry, format.mintick) + ',"actualEntry":' + str.tostring(auditGroupActualEntry, format.mintick) + ',"initialStop":' + str.tostring(auditGroupInitialStop, format.mintick) + ',"initialQty":' + str.tostring(auditGroupInitialQty) + ',"sizingEquity":' + str.tostring(auditSizingEquity) + ',"accountRiskPerUnit":' + str.tostring(auditAccountRiskPerUnit) + ',"unitNotional":' + str.tostring(auditUnitNotional) + ',"riskQty":' + str.tostring(auditRiskQty) + ',"exposureQty":' + str.tostring(auditExposureQty) + ',"rawQty":' + str.tostring(auditRawQty) + ',"sizedQty":' + str.tostring(auditSizedQty) + ',"riskPctInput":' + str.tostring(riskPct) + ',"maxExposurePctInput":' + str.tostring(maxExposurePct) + ',"partialInput":' + (partial ? 'true' : 'false') + ',"minContract":' + str.tostring(syminfo.mincontract) + ',"minTick":' + str.tostring(syminfo.mintick, format.mintick) + ',"pointValue":' + str.tostring(syminfo.pointvalue) + ',"netProfitDelta":' + str.tostring(net) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '"}')
     auditGroupPlanTimestamp := na
     auditGroupSetupTimestamp := na
     auditGroupDirection := 0
@@ -46,6 +47,13 @@ GROUP_AUDIT = r'''    // EXIT_AUDIT_GROUP_BEGIN — realized group delta is the 
     auditGroupActualEntry := na
     auditGroupInitialStop := na
     auditGroupInitialQty := na
+    auditSizingEquity := na
+    auditAccountRiskPerUnit := na
+    auditUnitNotional := na
+    auditRiskQty := na
+    auditExposureQty := na
+    auditRawQty := na
+    auditSizedQty := na
     // EXIT_AUDIT_GROUP_END
 '''
 
@@ -78,11 +86,30 @@ var float auditGroupPlannedEntry = na
 var float auditGroupActualEntry = na
 var float auditGroupInitialStop = na
 var float auditGroupInitialQty = na
+var float auditSizingEquity = na
+var float auditAccountRiskPerUnit = na
+var float auditUnitNotional = na
+var float auditRiskQty = na
+var float auditExposureQty = na
+var float auditRawQty = na
+var float auditSizedQty = na
 // EXIT_AUDIT_STATE_END
 '''
     source = replace_once(source, STATE_ANCHOR, state, "audit group state anchor")
     source = replace_once(source, ROW_ANCHOR, ROW_ANCHOR + ROW_AUDIT, "closed-trade row anchor")
     source = replace_once(source, GROUP_ANCHOR, GROUP_ANCHOR + GROUP_AUDIT, "closed-position aggregate anchor")
+    sizing_audit = r'''    // EXIT_AUDIT_SIZING_BEGIN — records the inputs and intermediate quantities without changing orders.
+    if auditLog
+        auditSizingEquity := strategy.equity
+        auditAccountRiskPerUnit := accountRisk
+        auditUnitNotional := unitNotional
+        auditRiskQty := riskQty
+        auditExposureQty := exposureQty
+        auditRawQty := rawQty
+        auditSizedQty := qty
+    // EXIT_AUDIT_SIZING_END
+'''
+    source = replace_once(source, SIZING_ANCHOR, SIZING_ANCHOR + sizing_audit, "sizing audit anchor")
     return source
 
 

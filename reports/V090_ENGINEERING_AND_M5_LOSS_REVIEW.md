@@ -75,26 +75,19 @@ For the latest archived matrix, `reports/tradingview-matrix.jsonl` (file SHA-256
 
 Each total above combines eight **separate single-module runs**, not one strategy or portfolio. The date windows differ by timeframe, and the source hash differs from the current baseline. Small positive samples such as M15 E and H do not establish an edge. This archive supplies historical context and helps prioritize future capture; it cannot validate current-source performance, costs, parity, or profitability.
 
-## Isolated exit-audit experiment
+## Isolated exit-audit experiment — current follow-up below supersedes the original hash/status
 
 `pine/experiments/strategy_exit_audit.pine` is generated from the exact frozen Strategy hash by `scripts/generate_exit_audit_experiment.py`. Its distinct title identifies it in TradingView. The only source differences are that title plus log-only blocks in the Strategy closed-trade path and closed-position aggregation. The added logs are gated by the existing research-only `auditLog` input. They record each partial closed row's index, entry/exit identity, times, bars, prices, size, exit comment, P&L, commission, excursions, plan prices, initial size, and price-only R multiple; a group row records the full position's netprofit delta and symbol sizing metadata. The group context is pinned on the first closed row, so a later same-bar plan cannot overwrite the finished trade's identity.
 
-The per-row `priceRMultiple` is a price-distance ratio relative to the planned initial stop; it excludes quantity and fees and is **not** labeled realized cash R. Group `netProfitDelta` is the Strategy's realized account-currency netprofit change for the position, not a sum inferred from planned prices. The candidate introduces no order-placement, cancellation, or alert calls. Its generated hash is `ea1b065fc6a987caaf61dfed7ede9622fc11d3d4e07c2c6c3405f34d4e920123`. It has not been natively compiled in TradingView, replay-tested, or backtested; independent parsing is not native verification.
+The per-row `priceRMultiple` is a price-distance ratio relative to the planned initial stop; it excludes quantity and fees and is **not** labeled realized cash R. Group `netProfitDelta` is the Strategy's realized account-currency netprofit change for the position, not a sum inferred from planned prices. The candidate introduces no order-placement, cancellation, or alert calls. The original experiment hash `ea1b065f…` in this dated review was superseded by the current generated experiment hash `a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623`. The current experiment has exact normalized copy-back, an observed native compile, and one captured exit-audit run; see [trade exit reconciliation](native-v080/trade-exit-reconciliation-2026-11-03.md). This verifies the isolated experiment only.
 
 After capture, analyze the untouched raw log file with `npm run audit:exits -- reports/native-v080/strategy-exits.log`. The analyzer groups partial rows by symbol, timeframe, plan timestamp, module/entry ID, and actual entry time; it reports row P&L and commission separately from the position-level net result. It flags missing and duplicate records and does not authenticate source identity or infer that row profit minus commission equals netprofit delta.
 
-## Evidence needed to finish the loss diagnosis
+## Remaining limits after the captured exit-audit run
 
-Smallest useful user capture from the **same current-hash Strategy run**: Strategy Tester → **Trades** → download CSV with Date and time, Signal, Price, Size, Return, Favorable excursion, Adverse excursion, and Duration; plus the Properties/Data range view showing source identity, symbol tick/point/minimum-contract metadata, inputs, initial capital/currency, order size, leverage/margin, commission, slippage, and order delay. If using the experiment, also preserve raw `TRADE_EXIT_AUDIT` and `TRADE_GROUP_AUDIT` Pine Log lines. Keep existing evidence unchanged.
+The experiment's selected-row evidence confirms one run's time-exit path, full-size closure, no TP/SL partial rows, sizing intermediates, and P&L arithmetic. Its raw capture is a selected set of Pine Log rows, not a full Strategy Tester export. TradingView's Basic-plan upgrade gate prevented downloading a Trades CSV.
 
-Until those records are available, the loss's exact trade identity and cause remain **UNRESOLVED**. Current-source multi-plan parity, Bar Replay/reload, reproducible current-source M1/M3/M5/M15 research, and OOS remain open. Keep the project release version at v0.8.0.
-
-### Minimal manual capture for the isolated experiment
-
-1. In TradingView create a separate, unsaved Strategy draft titled **XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment**. Paste `pine/experiments/strategy_exit_audit.pine`, copy the complete editor buffer back to a new file, and require SHA-256 `ea1b065fc6a987caaf61dfed7ede9622fc11d3d4e07c2c6c3405f34d4e920123` before using its results.
-2. Compile that draft and preserve the native success message. Use the same chart, M5 range, inputs, and Strategy Properties used for the comparison; enable the research `auditLog` input. Do not create an alert.
-3. Save raw Pine Logs, the Strategy Tester Trades CSV, and the Properties view. Keep the baseline compile artifacts and baseline results separate from this experimental draft.
-4. Run the exit-log analyzer on one raw export at a time; archive its JSON output with the untouched raw log and file hash.
+The baseline's general exit behavior is not proven by this single isolated run. Multi-plan parity, Bar Replay/reload, reproducible baseline M1/M3/M5/M15 research, cost sensitivity, and OOS remain open. Keep the project version at v0.8.0.
 
 ## References
 

@@ -55,8 +55,15 @@ const baseGroup = (overrides = {}) => ({
   actualEntry: 4177.5,
   initialStop: 4170.88,
   initialQty: 1,
+  sizingEquity: 10000,
+  accountRiskPerUnit: 6.6,
+  unitNotional: 4177.48,
+  riskQty: 7.5757575758,
+  exposureQty: 1.0053917827,
+  rawQty: 1.0053917827,
+  sizedQty: 1,
   riskPctInput: 0.5,
-  maxExposurePctInput: 90,
+  maxExposurePctInput: 42,
   partialInput: true,
   minContract: 0.01,
   minTick: 0.01,
@@ -97,6 +104,15 @@ describe("Strategy exit audit ingestion", () => {
       closedTradeRows: 2,
       groupNetProfitDelta: -1.9,
       exitComments: { TP1_HIT: 1, STOP_LOSS_HIT: 1 },
+      sizingContext: {
+        sizingEquity: 10000,
+        accountRiskPerUnit: 6.6,
+        unitNotional: 4177.48,
+        riskQty: 7.5757575758,
+        exposureQty: 1.0053917827,
+        rawQty: 1.0053917827,
+        sizedQty: 1,
+      },
     });
     expect(result.trades[0].rowProfitSum).toBeCloseTo(-1.9086, 10);
     expect(result.trades[0].rowCommissionSum).toBeCloseTo(0.0836, 10);
@@ -116,6 +132,61 @@ describe("Strategy exit audit ingestion", () => {
       logLine("TRADE_EXIT_AUDIT", row),
       logLine("TRADE_EXIT_AUDIT", conflict),
     ].join("\n")))).toThrow(/Conflicting duplicate/);
+  });
+
+  it("reconciles a captured full-size XAUUSD close against point-value price movement and fees", () => {
+    const row = baseRow({
+      entryTime: 1791802500000,
+      entryBar: 1535,
+      actualEntry: 4177.5,
+      exitId: "Close entry(s) order A_SWEEP_MSS_FVG",
+      exitComment: "TRADE_CLOSED",
+      exitTime: 1791803400000,
+      exitBar: 1538,
+      actualExit: 4171.83,
+      size: 2.1,
+      profit: -13.6603593,
+      commission: 1.7533593,
+      profitPercent: -0.155697967,
+      plannedEntry: 4177.48,
+      initialStop: 4170.88,
+      tp1: 4184.08,
+      tp2: 4190.68,
+      tp3: 4197.28,
+      initialQty: 2.1,
+    });
+    const group = baseGroup({
+      entryTime: 1791802500000,
+      exitTime: 1791803400000,
+      holdMinutes: 15,
+      initialQty: 2.1,
+      sizingEquity: 10000,
+      exposureQty: 2.1544088781,
+      rawQty: 2.1544088781,
+      sizedQty: 2.1,
+      riskPctInput: 0.5,
+      maxExposurePctInput: 90,
+      minContract: 0.1,
+      minTick: 0.01,
+      pointValue: 1,
+      netProfitDelta: -13.6603593,
+    });
+    const result = analyzeStrategyExitLogs(parseStrategyExitLogs([
+      logLine("TRADE_EXIT_AUDIT", row),
+      logLine("TRADE_GROUP_AUDIT", group),
+    ].join("\n")));
+
+    expect(result.trades[0].exitComments).toEqual({ TRADE_CLOSED: 1 });
+    expect(result.trades[0].closedTradeRows).toBe(1);
+    expect(result.trades[0].reconciliation).toMatchObject({
+      rowProfitSum: -13.6603593,
+      rowCommissionSum: 1.7533593,
+      profitPlusCommission: -11.907,
+      groupNetProfitDelta: -13.6603593,
+      rowProfitMatchesGroupNetDelta: true,
+      priceMovePnlUnits: "chart-currency units",
+    });
+    expect(result.trades[0].reconciliation.priceMovePnlAtPointValue).toBeCloseTo(-11.907, 8);
   });
 
   it("rejects malformed values and exposes an aggregate with no matching rows as unmatched", () => {

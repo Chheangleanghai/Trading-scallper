@@ -33,6 +33,10 @@ describe("isolated closed-trade audit experiment", () => {
         "",
       )
       .replace(
+        /    \/\/ EXIT_AUDIT_SIZING_BEGIN[^\n]*\n[\s\S]*?    \/\/ EXIT_AUDIT_SIZING_END\n/,
+        "",
+      )
+      .replace(
         /\/\/ EXIT_AUDIT_STATE_BEGIN[^\n]*\n[\s\S]*?\/\/ EXIT_AUDIT_STATE_END\n/,
         "",
       );
@@ -56,15 +60,22 @@ describe("isolated closed-trade audit experiment", () => {
     expect(source).toContain("auditGroupPlanTimestamp := signalTime");
     expect(source).toContain('"planTimestamp":\' + str.tostring(auditGroupPlanTimestamp)');
     expect(source).toContain('"netProfitDelta":\' + str.tostring(net)');
+    expect(source).toContain('"sizingEquity":\' + str.tostring(auditSizingEquity)');
+    expect(source).toContain('"riskQty":\' + str.tostring(auditRiskQty)');
+    expect(source).toContain('"exposureQty":\' + str.tostring(auditExposureQty)');
     const rowBlock = source.match(
       /            \/\/ EXIT_AUDIT_ROW_BEGIN[^\n]*\n([\s\S]*?)            \/\/ EXIT_AUDIT_ROW_END/,
     )?.[1];
     const groupBlock = source.match(
       /    \/\/ EXIT_AUDIT_GROUP_BEGIN[^\n]*\n([\s\S]*?)    \/\/ EXIT_AUDIT_GROUP_END/,
     )?.[1];
+    const sizingBlock = source.match(
+      /    \/\/ EXIT_AUDIT_SIZING_BEGIN[^\n]*\n([\s\S]*?)    \/\/ EXIT_AUDIT_SIZING_END/,
+    )?.[1];
     expect(rowBlock).toBeTruthy();
     expect(groupBlock).toBeTruthy();
-    for (const block of [rowBlock, groupBlock]) {
+    expect(sizingBlock).toBeTruthy();
+    for (const block of [rowBlock, groupBlock, sizingBlock]) {
       expect(block).not.toMatch(/\b(?:strategy\.(?:entry|exit|close|cancel)|alert)\s*\(/);
     }
   });

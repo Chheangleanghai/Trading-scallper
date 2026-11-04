@@ -452,6 +452,13 @@ var float auditGroupPlannedEntry = na
 var float auditGroupActualEntry = na
 var float auditGroupInitialStop = na
 var float auditGroupInitialQty = na
+var float auditSizingEquity = na
+var float auditAccountRiskPerUnit = na
+var float auditUnitNotional = na
+var float auditRiskQty = na
+var float auditExposureQty = na
+var float auditRawQty = na
+var float auditSizedQty = na
 // EXIT_AUDIT_STATE_END
 
 getTargets(int direction, float planned, float risk) =>
@@ -1023,6 +1030,16 @@ if newSignal and strategy.position_size == 0
     float exposureQty = unitNotional > 0 ? strategy.equity * maxExposurePct / 100 / unitNotional : na
     float rawQty = math.min(riskQty, exposureQty)
     float qty = syminfo.mincontract > 0 ? math.floor(rawQty / syminfo.mincontract) * syminfo.mincontract : na
+    // EXIT_AUDIT_SIZING_BEGIN — records the inputs and intermediate quantities without changing orders.
+    if auditLog
+        auditSizingEquity := strategy.equity
+        auditAccountRiskPerUnit := accountRisk
+        auditUnitNotional := unitNotional
+        auditRiskQty := riskQty
+        auditExposureQty := exposureQty
+        auditRawQty := rawQty
+        auditSizedQty := qty
+    // EXIT_AUDIT_SIZING_END
     if not na(qty) and qty > 0
         initialQty := qty
         strategy.entry(selectedStrategy, dir == 1 ? strategy.long : strategy.short, qty=qty, limit=entryMode == 'Limit' ? entry : na, stop=entryMode == 'Breakout' ? entry : na)
@@ -1459,7 +1476,7 @@ if strategy.position_size == 0 and not na(groupedEntryTime)
     float net = strategy.netprofit - previousClosedNet
     // EXIT_AUDIT_GROUP_BEGIN — realized group delta is the Strategy's netprofit change for this flat position.
     if auditLog
-        log.info('TRADE_GROUP_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(auditGroupPlanTimestamp) + ',"setupTimestamp":' + str.tostring(auditGroupSetupTimestamp) + ',"module":"' + jsonEscape(auditGroupModule) + '","direction":' + str.tostring(auditGroupDirection) + ',"entryTime":' + str.tostring(auditGroupEntryTime) + ',"exitTime":' + str.tostring(groupedLastExit) + ',"holdMinutes":' + str.tostring((groupedLastExit - auditGroupEntryTime) / 60000.0) + ',"plannedEntry":' + str.tostring(auditGroupPlannedEntry, format.mintick) + ',"actualEntry":' + str.tostring(auditGroupActualEntry, format.mintick) + ',"initialStop":' + str.tostring(auditGroupInitialStop, format.mintick) + ',"initialQty":' + str.tostring(auditGroupInitialQty) + ',"riskPctInput":' + str.tostring(riskPct) + ',"maxExposurePctInput":' + str.tostring(maxExposurePct) + ',"partialInput":' + (partial ? 'true' : 'false') + ',"minContract":' + str.tostring(syminfo.mincontract) + ',"minTick":' + str.tostring(syminfo.mintick, format.mintick) + ',"pointValue":' + str.tostring(syminfo.pointvalue) + ',"netProfitDelta":' + str.tostring(net) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '"}')
+        log.info('TRADE_GROUP_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(auditGroupPlanTimestamp) + ',"setupTimestamp":' + str.tostring(auditGroupSetupTimestamp) + ',"module":"' + jsonEscape(auditGroupModule) + '","direction":' + str.tostring(auditGroupDirection) + ',"entryTime":' + str.tostring(auditGroupEntryTime) + ',"exitTime":' + str.tostring(groupedLastExit) + ',"holdMinutes":' + str.tostring((groupedLastExit - auditGroupEntryTime) / 60000.0) + ',"plannedEntry":' + str.tostring(auditGroupPlannedEntry, format.mintick) + ',"actualEntry":' + str.tostring(auditGroupActualEntry, format.mintick) + ',"initialStop":' + str.tostring(auditGroupInitialStop, format.mintick) + ',"initialQty":' + str.tostring(auditGroupInitialQty) + ',"sizingEquity":' + str.tostring(auditSizingEquity) + ',"accountRiskPerUnit":' + str.tostring(auditAccountRiskPerUnit) + ',"unitNotional":' + str.tostring(auditUnitNotional) + ',"riskQty":' + str.tostring(auditRiskQty) + ',"exposureQty":' + str.tostring(auditExposureQty) + ',"rawQty":' + str.tostring(auditRawQty) + ',"sizedQty":' + str.tostring(auditSizedQty) + ',"riskPctInput":' + str.tostring(riskPct) + ',"maxExposurePctInput":' + str.tostring(maxExposurePct) + ',"partialInput":' + (partial ? 'true' : 'false') + ',"minContract":' + str.tostring(syminfo.mincontract) + ',"minTick":' + str.tostring(syminfo.mintick, format.mintick) + ',"pointValue":' + str.tostring(syminfo.pointvalue) + ',"netProfitDelta":' + str.tostring(net) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '"}')
     auditGroupPlanTimestamp := na
     auditGroupSetupTimestamp := na
     auditGroupDirection := 0
@@ -1469,6 +1486,13 @@ if strategy.position_size == 0 and not na(groupedEntryTime)
     auditGroupActualEntry := na
     auditGroupInitialStop := na
     auditGroupInitialQty := na
+    auditSizingEquity := na
+    auditAccountRiskPerUnit := na
+    auditUnitNotional := na
+    auditRiskQty := na
+    auditExposureQty := na
+    auditRawQty := na
+    auditSizedQty := na
     // EXIT_AUDIT_GROUP_END
     previousClosedNet := strategy.netprofit
     array.set(moduleTrades, index, array.get(moduleTrades, index) + 1)
