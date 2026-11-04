@@ -1,0 +1,34 @@
+
+> xauusd-smart-scalper-pro@0.8.0 verify
+> npm run typecheck && npm test && npm run pine:check && npm run pine:parse
+
+
+> xauusd-smart-scalper-pro@0.8.0 typecheck
+> tsc --noEmit
+
+
+> xauusd-smart-scalper-pro@0.8.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+
+ Test Files  14 passed (14)
+      Tests  160 passed (160)
+   Start at  14:57:17
+   Duration  2.60s (tests 94%, import 3%, transform 2%, worker 1%)
+
+
+> xauusd-smart-scalper-pro@0.8.0 pine:check
+> python3 scripts/generate_pine.py --check
+
+
+> xauusd-smart-scalper-pro@0.8.0 pine:parse
+> node scripts/check_pine.mjs
+
+indicator.pine: independent parse passed
+strategy.pine: independent parse passed
+validation.pine: independent parse passed
+experiments/strategy_exit_audit.pine: independent parse passed
+This independent parser does not certify TradingView compilation or broker-emulator behavior.

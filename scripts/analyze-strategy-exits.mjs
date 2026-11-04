@@ -132,6 +132,35 @@ function reconciliation(rows, group) {
   };
 }
 
+function bracketCoverage(rows, group) {
+  const ids = ["TP1", "TP2", "TP3"];
+  const brackets = rows.filter((row) => ids.includes(row.exitId));
+  const allBracketIdsObserved = ids.every((id) => brackets.some((row) => row.exitId === id));
+  const initialQty = group?.initialQty ?? rows[0].initialQty;
+  const tolerance = Math.max(Math.abs(initialQty) * Number.EPSILON * 16,
+    (group?.minContract ?? 0) * 1e-6);
+  const lastBracketExitTime = brackets.length ? Math.max(...brackets.map((row) => row.exitTime)) : null;
+  const quantityClosedThroughBrackets = brackets.reduce((sum, row) => sum + Math.abs(row.size), 0);
+  const remainingQuantity = Math.max(0, initialQty - quantityClosedThroughBrackets);
+  const laterCloses = allBracketIdsObserved
+    ? rows.filter((row) => row.exitComment === "TRADE_CLOSED" && row.exitTime > lastBracketExitTime)
+    : [];
+  const laterCloseQuantity = laterCloses.reduce((sum, row) => sum + Math.abs(row.size), 0);
+  const residualObserved = allBracketIdsObserved && remainingQuantity > tolerance && laterCloseQuantity > tolerance;
+  return {
+    status: residualObserved ? "RESIDUAL_AFTER_ALL_BRACKET_EXITS" : "NOT_OBSERVED",
+    allBracketIdsObserved,
+    initialQty,
+    quantityClosedThroughBrackets,
+    remainingQuantity: allBracketIdsObserved ? remainingQuantity : null,
+    laterCloseQuantity,
+    allBracketExitsWereStops: allBracketIdsObserved && brackets.every((row) => row.exitComment === "STOP_LOSS_HIT"),
+    lastBracketExitTime,
+    laterCloseTime: laterCloses.length ? Math.max(...laterCloses.map((row) => row.exitTime)) : null,
+    note: "An observed remaining quantity does not identify the broker order reservation or rounding cause; requested order quantities are not in these logs.",
+  };
+}
+
 export function analyzeStrategyExitLogs(parsed) {
   const byKey = new Map();
   const duplicateRows = [];
@@ -188,6 +217,7 @@ export function analyzeStrategyExitLogs(parsed) {
       rowProfitSum: sortedRows.reduce((sum, row) => sum + row.profit, 0),
       rowCommissionSum: sortedRows.reduce((sum, row) => sum + row.commission, 0),
       reconciliation: reconciliation(sortedRows, aggregate),
+      bracketCoverage: bracketCoverage(sortedRows, aggregate),
       exitComments: breakdown(sortedRows, "exitComment"),
       exitIds: breakdown(sortedRows, "exitId"),
       exitRows: sortedRows,
@@ -226,6 +256,7 @@ export function analyzeStrategyExitLogs(parsed) {
       exactDuplicateExitRows: duplicateRows.length,
       duplicateGroupRecords: duplicateGroupRecords.length,
       groupRecordsWithoutExitRows: unmatchedGroupRecords.length,
+      groupsWithBracketResidual: trades.filter((trade) => trade.bracketCoverage.status === "RESIDUAL_AFTER_ALL_BRACKET_EXITS").length,
     },
     realizedGroups: completed.length > 0 ? {
       winners: completed.filter((trade) => trade.groupNetProfitDelta > 0).length,
@@ -239,6 +270,7 @@ export function analyzeStrategyExitLogs(parsed) {
       "Closed-row profit and commission are reported separately; do not assume they reconcile by subtraction without checking TradingView's definitions.",
       "priceRMultiple is a price-distance ratio against the initial planned stop, not fee-adjusted cash R.",
       "Unmatched or missing group records mean the position result is incomplete; they are not silently filled in.",
+      "A residual after all TP1/TP2/TP3 bracket exits is flagged only when a later TRADE_CLOSED row confirms remaining size; this does not establish the rounding or reservation cause.",
     ],
     trades,
     unmatchedGroupRecords,

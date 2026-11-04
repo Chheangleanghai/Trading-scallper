@@ -6,6 +6,9 @@ for (const name of [
   "strategy.pine",
   "validation.pine",
   "experiments/strategy_exit_audit.pine",
+  "experiments/quantity_rounding_probe.pine",
+  "experiments/strategy_quantity_units.pine",
+  "experiments/quantity_units_matrix.pine",
 ]) {
   const result = canTranspilePineScript(
     readFileSync(new URL(`../pine/${name}`, import.meta.url), "utf8"),

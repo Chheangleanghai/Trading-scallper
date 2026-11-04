@@ -198,4 +198,54 @@ describe("Strategy exit audit ingestion", () => {
     expect(result.resultCounts).toMatchObject({ positionGroups: 0, groupRecordsWithoutExitRows: 1 });
     expect(result.unmatchedGroupRecords).toHaveLength(1);
   });
+
+  it.each([1, -1])("flags the captured 0.1 residual after three stop fills for direction %s", (direction) => {
+    const rows = [0.6, 0.6, 0.8].map((qty, index) => baseRow({
+      direction, initialQty: 2.1, closedTradeIndex: index,
+      exitId: `TP${index + 1}`, exitComment: "STOP_LOSS_HIT", size: direction * qty,
+    }));
+    rows.push(baseRow({
+      direction, initialQty: 2.1, closedTradeIndex: 3,
+      exitId: "Close entry(s) order A_SWEEP_MSS_FVG", exitComment: "TRADE_CLOSED",
+      exitTime: 1791803700000, size: direction * 0.1,
+    }));
+    const result = analyzeStrategyExitLogs({ rows, groups: [baseGroup({
+      direction, initialQty: 2.1, minContract: 0.1,
+    })] });
+
+    expect(result.resultCounts.groupsWithBracketResidual).toBe(1);
+    expect(result.trades[0].bracketCoverage).toMatchObject({
+      status: "RESIDUAL_AFTER_ALL_BRACKET_EXITS", allBracketIdsObserved: true,
+      allBracketExitsWereStops: true, quantityClosedThroughBrackets: 2,
+      laterCloseQuantity: 0.1, laterCloseTime: 1791803700000,
+    });
+    expect(result.trades[0].bracketCoverage.remainingQuantity).toBeCloseTo(0.1, 12);
+  });
+
+  it("does not flag an ordinary partial TP followed by a time close", () => {
+    const rows = [baseRow({ initialQty: 2.1, size: 0.6 }), baseRow({
+      initialQty: 2.1, closedTradeIndex: 1, exitId: "Close entry(s) order A_SWEEP_MSS_FVG",
+      exitComment: "TRADE_CLOSED", exitTime: 1791803700000, size: 1.5,
+    })];
+    const result = analyzeStrategyExitLogs({ rows, groups: [baseGroup({ initialQty: 2.1 })] });
+    expect(result.resultCounts.groupsWithBracketResidual).toBe(0);
+    expect(result.trades[0].bracketCoverage).toMatchObject({
+      status: "NOT_OBSERVED", allBracketIdsObserved: false, remainingQuantity: null,
+    });
+  });
+
+  it("ignores floating point noise when bracket fills cover the entry quantity", () => {
+    const noise = Number.EPSILON * 4;
+    const rows = [0.6, 0.6, 0.9 - noise].map((qty, index) => baseRow({
+      initialQty: 2.1, closedTradeIndex: index, exitId: `TP${index + 1}`,
+      exitComment: "STOP_LOSS_HIT", size: qty,
+    }));
+    rows.push(baseRow({
+      initialQty: 2.1, closedTradeIndex: 3, exitId: "Close entry(s) order A_SWEEP_MSS_FVG",
+      exitComment: "TRADE_CLOSED", exitTime: 1791803700000, size: noise,
+    }));
+    const result = analyzeStrategyExitLogs({ rows, groups: [baseGroup({ initialQty: 2.1, minContract: 0.1 })] });
+    expect(result.resultCounts.groupsWithBracketResidual).toBe(0);
+    expect(result.trades[0].bracketCoverage.allBracketIdsObserved).toBe(true);
+  });
 });

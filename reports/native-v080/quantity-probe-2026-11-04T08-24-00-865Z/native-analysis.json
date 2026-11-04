@@ -1,0 +1,243 @@
+{
+  "status": "NATIVE_FLOAT_RESIDUAL_REPRODUCED_INTEGER_CONTROLS_ZERO",
+  "projectVersion": "0.8.0",
+  "evidenceKind": "synthetic historical broker-emulator mechanics; not signal or performance evidence",
+  "csv": "quantity-probe-native.csv",
+  "csvSha256": "f85ac33d67066bf693196e397d69262923445c7c8a3c7d42fdb60f92c54eff3c",
+  "probeSha256": "8cd566e4cfa29fd19e7418faa15061ea6183ace2ab06fe95b0720f679d3eb1db",
+  "nativeCompileDisplay": "2026-11-04 19:49:46 Asia/Phnom_Penh",
+  "historicalLogPrefixRange": [
+    "2026-10-06T07:00:00.000-00:00",
+    "2026-10-06T09:15:00.000-00:00"
+  ],
+  "recordCount": 53,
+  "eventCounts": {
+    "QTY_PROBE_REQUEST": 8,
+    "QTY_PROBE_FILLED": 8,
+    "QTY_PROBE_EXIT": 28,
+    "QTY_PROBE_AFTER": 8,
+    "QTY_PROBE_COMPLETE": 1
+  },
+  "checks": {
+    "eightCasesComplete": true,
+    "entryQuantityMatches": 8,
+    "bracketPlusResidualReconciles": 8,
+    "totalExitsReconcile": 8,
+    "legacyResidualCases": 4,
+    "integerZeroResidualCases": 4,
+    "cleanupExits": 4,
+    "probeFailures": 0
+  },
+  "cases": [
+    {
+      "case": 0,
+      "entryId": "PROBE_0",
+      "direction": "LONG",
+      "allocation": "legacy float",
+      "entryQty": "2.1000000000000000",
+      "requestedQ1": "0.6000000000000001",
+      "requestedQ2": "0.6000000000000001",
+      "requestedQ3": "0.8999999999999999",
+      "requestedQ3Units": "8.9999999999999980",
+      "actualBracketSizes": [
+        "0.6000000000000000",
+        "0.6000000000000000",
+        "0.8000000000000000"
+      ],
+      "remainingAfterBrackets": "0.1000000000000000",
+      "cleanupSize": "0.1000000000000000",
+      "csvRequestLine": 2,
+      "csvExitLines": [
+        4,
+        5,
+        6,
+        8
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 1,
+      "entryId": "PROBE_1",
+      "direction": "LONG",
+      "allocation": "integer units",
+      "entryQty": "2.1000000000000000",
+      "requestedQ1": "0.6000000000000001",
+      "requestedQ2": "0.6000000000000001",
+      "requestedQ3": "0.9000000000000000",
+      "requestedQ3Units": "9.0000000000000000",
+      "actualBracketSizes": [
+        "0.6000000000000000",
+        "0.6000000000000000",
+        "0.9000000000000000"
+      ],
+      "remainingAfterBrackets": "0E-16",
+      "cleanupSize": "0",
+      "csvRequestLine": 9,
+      "csvExitLines": [
+        11,
+        12,
+        13
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 2,
+      "entryId": "PROBE_2",
+      "direction": "LONG",
+      "allocation": "legacy float",
+      "entryQty": "2.2000000000000000",
+      "requestedQ1": "0.7000000000000001",
+      "requestedQ2": "0.7000000000000001",
+      "requestedQ3": "0.7999999999999999",
+      "requestedQ3Units": "7.9999999999999990",
+      "actualBracketSizes": [
+        "0.7000000000000001",
+        "0.7000000000000001",
+        "0.7000000000000001"
+      ],
+      "remainingAfterBrackets": "0.1000000000000000",
+      "cleanupSize": "0.1000000000000000",
+      "csvRequestLine": 15,
+      "csvExitLines": [
+        17,
+        18,
+        19,
+        21
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 3,
+      "entryId": "PROBE_3",
+      "direction": "LONG",
+      "allocation": "integer units",
+      "entryQty": "2.2000000000000000",
+      "requestedQ1": "0.7000000000000001",
+      "requestedQ2": "0.7000000000000001",
+      "requestedQ3": "0.8000000000000000",
+      "requestedQ3Units": "8.0000000000000000",
+      "actualBracketSizes": [
+        "0.7000000000000001",
+        "0.7000000000000001",
+        "0.8000000000000000"
+      ],
+      "remainingAfterBrackets": "0E-16",
+      "cleanupSize": "0",
+      "csvRequestLine": 22,
+      "csvExitLines": [
+        24,
+        25,
+        26
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 4,
+      "entryId": "PROBE_4",
+      "direction": "SHORT",
+      "allocation": "legacy float",
+      "entryQty": "2.1000000000000000",
+      "requestedQ1": "0.6000000000000001",
+      "requestedQ2": "0.6000000000000001",
+      "requestedQ3": "0.8999999999999999",
+      "requestedQ3Units": "8.9999999999999980",
+      "actualBracketSizes": [
+        "0.6000000000000000",
+        "0.6000000000000000",
+        "0.8000000000000000"
+      ],
+      "remainingAfterBrackets": "0.1000000000000000",
+      "cleanupSize": "0.1000000000000000",
+      "csvRequestLine": 28,
+      "csvExitLines": [
+        30,
+        31,
+        32,
+        34
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 5,
+      "entryId": "PROBE_5",
+      "direction": "SHORT",
+      "allocation": "integer units",
+      "entryQty": "2.1000000000000000",
+      "requestedQ1": "0.6000000000000001",
+      "requestedQ2": "0.6000000000000001",
+      "requestedQ3": "0.9000000000000000",
+      "requestedQ3Units": "9.0000000000000000",
+      "actualBracketSizes": [
+        "0.6000000000000000",
+        "0.6000000000000000",
+        "0.9000000000000000"
+      ],
+      "remainingAfterBrackets": "0E-16",
+      "cleanupSize": "0",
+      "csvRequestLine": 35,
+      "csvExitLines": [
+        37,
+        38,
+        39
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 6,
+      "entryId": "PROBE_6",
+      "direction": "SHORT",
+      "allocation": "legacy float",
+      "entryQty": "2.2000000000000000",
+      "requestedQ1": "0.7000000000000001",
+      "requestedQ2": "0.7000000000000001",
+      "requestedQ3": "0.7999999999999999",
+      "requestedQ3Units": "7.9999999999999990",
+      "actualBracketSizes": [
+        "0.7000000000000001",
+        "0.7000000000000001",
+        "0.7000000000000001"
+      ],
+      "remainingAfterBrackets": "0.1000000000000000",
+      "cleanupSize": "0.1000000000000000",
+      "csvRequestLine": 41,
+      "csvExitLines": [
+        43,
+        44,
+        45,
+        47
+      ],
+      "reconciliation": "PASS"
+    },
+    {
+      "case": 7,
+      "entryId": "PROBE_7",
+      "direction": "SHORT",
+      "allocation": "integer units",
+      "entryQty": "2.2000000000000000",
+      "requestedQ1": "0.7000000000000001",
+      "requestedQ2": "0.7000000000000001",
+      "requestedQ3": "0.8000000000000000",
+      "requestedQ3Units": "8.0000000000000000",
+      "actualBracketSizes": [
+        "0.7000000000000001",
+        "0.7000000000000001",
+        "0.8000000000000000"
+      ],
+      "remainingAfterBrackets": "0E-16",
+      "cleanupSize": "0",
+      "csvRequestLine": 48,
+      "csvExitLines": [
+        50,
+        51,
+        52
+      ],
+      "reconciliation": "PASS"
+    }
+  ],
+  "limitations": [
+    "Only entry sizes 2.1 and 2.2, minimum contract 0.1, long and short, FOREXCOM:XAUUSD M5 tested.",
+    "Forced stop placements and zero costs isolate quantity mechanics; no performance conclusion.",
+    "Does not prove arbitrary quantity sizes, mixed target/stop sequencing, repeated bracket updates, replay stability, or complete corrected-strategy behavior.",
+    "No frozen baseline trading source or production webhook was changed."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "scope": "Native TradingView Free account research; existing Indicator versus separate Exit audit experiment.",
+  "symbol": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "chartTimezoneEvidence": "Pine Logs exported Date fields contain -00:00. No timezone dialog capture.",
+  "testerWindowObserved": [
+    "2026-10-05",
+    "2026-11-04"
+  ],
+  "researchWindowEnabled": false,
+  "allModulesEnabled": true,
+  "auditLoggingEnabledDuringCapture": true,
+  "inputViewMatches": {
+    "top": true,
+    "middle": true,
+    "bottom": true
+  },
+  "localSourceHashes": {
+    "indicator": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "baselineStrategy": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "strategyExperiment": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623"
+  },
+  "runtimeSourceAttribution": {
+    "freshEditorCopyBackThisCapture": false,
+    "experimentPreviouslyVerifiedArtifact": "../strategy-exit-audit-editor-copy-2026-11-03.normalized.pine",
+    "limits": "Active study titles and prior compile/copy-back evidence were preserved; this capture does not independently authenticate the current full editor buffers. The frozen baseline Strategy was not the active Strategy report source."
+  },
+  "derivedTextMethod": "CSV Date and Message columns decoded with Python csv; one [Date]: Message line per record. Original downloaded CSV bytes preserved.",
+  "comparison": {
+    "tolerance": 0,
+    "indicatorPlans": 84,
+    "strategyExperimentPlans": 87,
+    "commonTimestamps": 79,
+    "fullyMatchingCommonPlans": 76,
+    "indicatorOnlyPlans": 5,
+    "strategyOnlyPlans": 8,
+    "mismatchRecords": 16,
+    "status": "MULTI_PLAN_MISMATCH_EXPERIMENT"
+  },
+  "releaseVersion": "0.8.0",
+  "notPerformed": [
+    "Bar Replay",
+    "baseline Strategy Tester CSV export",
+    "out-of-sample validation",
+    "trades",
+    "live alerts",
+    "Telegram messages",
+    "deployment"
+  ],
+  "finalChartState": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "replay": false,
+    "indicatorVisible": false,
+    "strategyExperimentVisible": true,
+    "researchAuditLogging": true
+  }
+}

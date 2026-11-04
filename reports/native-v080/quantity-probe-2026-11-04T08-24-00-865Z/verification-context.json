@@ -1,0 +1,78 @@
+{
+  "projectVersion": "0.8.0",
+  "localVerification": {
+    "command": "npm run verify",
+    "result": "PASSED",
+    "tests": 160,
+    "testFiles": 14,
+    "typecheck": "PASSED",
+    "generation": "PASSED",
+    "independentParsing": "PASSED including the new quantity probe",
+    "scope": "Preceding local run; suite not repeated for this evidence-only native continuation."
+  },
+  "nativeProbe": {
+    "status": "COMPLETED_NATIVE_FLOAT_RESIDUAL_REPRODUCED",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "probeVersion": "1",
+    "historicalOnly": true,
+    "sourceCopyBack": "quantity-probe-editor-copy.pine",
+    "sourceExactMatch": true,
+    "sourceLines": 97,
+    "compileMessages": [
+      "7:49:44 PM Compiling...",
+      "7:49:46 PM Compiled.",
+      "7:49:46 PM Added to chart."
+    ],
+    "compileDate": "2026-11-04",
+    "compileDisplayTimezone": "Asia/Phnom_Penh",
+    "downloadedCsv": "quantity-probe-native.csv",
+    "csvSha256": "f85ac33d67066bf693196e397d69262923445c7c8a3c7d42fdb60f92c54eff3c",
+    "records": 53,
+    "cases": 8,
+    "legacyResidualCases": 4,
+    "integerZeroResidualCases": 4,
+    "sizeReconciliationToleranceUnits": 1e-09,
+    "analysis": "native-analysis.json",
+    "limitations": [
+      "Only entry sizes 2.1 and 2.2, minimum contract 0.1, long and short, FOREXCOM:XAUUSD M5 tested.",
+      "Forced stop placements and zero costs isolate quantity mechanics; no performance conclusion.",
+      "Does not prove arbitrary quantity sizes, mixed target/stop sequencing, repeated bracket updates, replay stability, or complete corrected-strategy behavior.",
+      "No frozen baseline trading source or production webhook was changed."
+    ]
+  },
+  "sourceHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/strategy_exit_audit.pine": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+    "pine/experiments/quantity_rounding_probe.pine": "8cd566e4cfa29fd19e7418faa15061ea6183ace2ab06fe95b0720f679d3eb1db"
+  },
+  "authorization": {
+    "userApproval": "Yes, run temporarily and restore the chart",
+    "scope": "Temporarily disable Autosave, apply quantity probe, capture results, reload original saved chart, restore Autosave."
+  },
+  "chartRestoration": {
+    "status": "VERIFIED",
+    "chart": "https://www.tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD",
+    "timeframe": "5",
+    "autosaveBefore": "ON",
+    "autosaveDuringProbe": "OFF",
+    "autosaveAfter": "ON",
+    "probeAbsentAfterReload": true,
+    "originalIndicator": "XAUUSD SMART SCALPER PRO; hidden",
+    "originalStrategy": "XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment; visible",
+    "editorRestored": "Original exit-audit source reopened from chart Source code action",
+    "temporaryPineLogsPanelClosed": true,
+    "saveStatus": "All changes saved",
+    "strategyScaleObserved": "Pin to scale (now right); shared right axis visible",
+    "evidence": [
+      "autosave-confirmed-before.png",
+      "autosave-off.png",
+      "restored-autosave-on.png",
+      "chart-restored-panels.png"
+    ]
+  },
+  "unchangedBaselineHashesVerifiedAfterRun": true,
+  "productionArchitecture": "Database-free; unchanged",
+  "releaseDecision": "Keep v0.8.0; broader release gates remain open"
+}

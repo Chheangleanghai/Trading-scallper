@@ -1,0 +1,61 @@
+{
+  "captureDate": "2026-11-04",
+  "evidenceKind": "Genuine TradingView export of synthetic historical broker-emulator mechanics",
+  "artifacts": [
+    {
+      "path": "quantity-probe-native.csv",
+      "bytes": 12471,
+      "sha256": "f85ac33d67066bf693196e397d69262923445c7c8a3c7d42fdb60f92c54eff3c"
+    },
+    {
+      "path": "quantity-probe-editor-copy.pine",
+      "bytes": 6646,
+      "sha256": "8cd566e4cfa29fd19e7418faa15061ea6183ace2ab06fe95b0720f679d3eb1db"
+    },
+    {
+      "path": "probe-copyback.ax.txt",
+      "bytes": 14184,
+      "sha256": "d66e78923823fd6fae314ed18bc6208a8ccdf7c2d5a74cc4b20aac07b1391654"
+    },
+    {
+      "path": "probe-native-compiled.ax.txt",
+      "bytes": 22877,
+      "sha256": "06bd94f34fb66143736161c7186624175e928e7dbacf6cd8c4b657ed1ac82213"
+    },
+    {
+      "path": "probe-native-compiled.png",
+      "bytes": 1231065,
+      "sha256": "205449eb158c1f60dd333d690c405026252ca0c9ccbadb9327bed4409f55e45f"
+    },
+    {
+      "path": "autosave-confirmed-before.png",
+      "bytes": 1423415,
+      "sha256": "3834fc5810c94e774571d5d155993e2c3a3feb91c35765dd01c1dba401728001"
+    },
+    {
+      "path": "autosave-off.png",
+      "bytes": 1416011,
+      "sha256": "f5e911f50aba8902e3c3a92573263897238b66a6d0239ab65abfd3fcfbdee52b"
+    },
+    {
+      "path": "restored-autosave-on.png",
+      "bytes": 1649127,
+      "sha256": "bbade6c78ab08934b11f5513b22b02a87f7b80403a4c67c5e1b68b781bab1d3c"
+    },
+    {
+      "path": "chart-restored-panels.png",
+      "bytes": 1464695,
+      "sha256": "c38a1e599c7a9a3ff8e3e4876a170c722bdbeed14b1db4086f54065c6e53a94b"
+    },
+    {
+      "path": "native-analysis.json",
+      "bytes": 6961,
+      "sha256": "fb3f805f21c356d35685073447d84575aac35b402756c445db7c6dd765be797c"
+    },
+    {
+      "path": "verification-context.json",
+      "bytes": 3400,
+      "sha256": "62932db09293182357b4908e3c1b39484d39062adad1cceac8c061943ce54eac"
+    }
+  ]
+}

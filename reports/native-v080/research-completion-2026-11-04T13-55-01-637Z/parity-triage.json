@@ -1,0 +1,296 @@
+{
+  "status": "PARITY_MISMATCHES_TRIAGED_NOT_CLEARED",
+  "sourceComparison": "plan-comparison.json",
+  "zeroToleranceResultUnchanged": true,
+  "counts": {
+    "CANDIDATE_SELECTION_HISTORY_REQUIRES_NATIVE_TRACE": 3,
+    "OBSERVED_EXECUTION_OR_ENTRY_GATING": 6,
+    "CANDIDATE_HISTORY_UNRESOLVED": 7
+  },
+  "mismatches": [
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791444900000",
+      "field": "strategy",
+      "indicator": "C_TURTLE_SOUP",
+      "strategy": "B_CRT",
+      "timeUTC": "2026-10-08T07:35:00+00:00",
+      "status": "CANDIDATE_SELECTION_HISTORY_REQUIRES_NATIVE_TRACE"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791533100000",
+      "field": "missing-plan",
+      "missingFrom": "strategy",
+      "timeUTC": "2026-10-09T08:05:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [
+          {
+            "planTimestamp": 1791532200000,
+            "module": "B_CRT",
+            "closeObserved": 1791533400000
+          }
+        ],
+        "priorPlansOnLondonDate": 2,
+        "lastPlanTimestamp": 1791532200000,
+        "minutesSinceLastPlan": 15.0,
+        "busyAtDecision": true,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": true,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_OCCUPIED",
+        "OTHER_ENGINE_COOLDOWN"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791545400000",
+      "field": "missing-plan",
+      "missingFrom": "strategy",
+      "timeUTC": "2026-10-09T11:30:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 5,
+        "lastPlanTimestamp": 1791543300000,
+        "minutesSinceLastPlan": 35.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": true,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_SESSION_QUOTA"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791549000000",
+      "field": "missing-plan",
+      "missingFrom": "strategy",
+      "timeUTC": "2026-10-09T12:30:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 5,
+        "lastPlanTimestamp": 1791543300000,
+        "minutesSinceLastPlan": 95.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": true,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_SESSION_QUOTA"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792406100000",
+      "field": "missing-plan",
+      "missingFrom": "strategy",
+      "timeUTC": "2026-10-19T10:35:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 4,
+        "lastPlanTimestamp": 1792404300000,
+        "minutesSinceLastPlan": 30.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792576500000",
+      "field": "missing-plan",
+      "missingFrom": "strategy",
+      "timeUTC": "2026-10-21T09:55:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 4,
+        "lastPlanTimestamp": 1792574700000,
+        "minutesSinceLastPlan": 30.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792683600000",
+      "field": "setupTimestamp",
+      "indicator": 1792682700000,
+      "strategy": 1792683000000,
+      "timeUTC": "2026-10-22T15:40:00+00:00",
+      "status": "CANDIDATE_SELECTION_HISTORY_REQUIRES_NATIVE_TRACE"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1793695200000",
+      "field": "setupTimestamp",
+      "indicator": 1793694000000,
+      "strategy": 1793694300000,
+      "timeUTC": "2026-11-03T08:40:00+00:00",
+      "status": "CANDIDATE_SELECTION_HISTORY_REQUIRES_NATIVE_TRACE"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791448500000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-08T08:35:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 2,
+        "lastPlanTimestamp": 1791444900000,
+        "minutesSinceLastPlan": 60.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791450900000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-08T09:15:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 2,
+        "lastPlanTimestamp": 1791444900000,
+        "minutesSinceLastPlan": 100.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791532200000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-09T07:50:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 1,
+        "lastPlanTimestamp": 1791529500000,
+        "minutesSinceLastPlan": 45.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791533700000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-09T08:15:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [
+          {
+            "planTimestamp": 1791533100000,
+            "module": "F_TREND_PULLBACK",
+            "closeObserved": 1791534000000
+          }
+        ],
+        "priorPlansOnLondonDate": 2,
+        "lastPlanTimestamp": 1791533100000,
+        "minutesSinceLastPlan": 10.0,
+        "busyAtDecision": true,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": true,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_OCCUPIED",
+        "OTHER_ENGINE_COOLDOWN"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1791539700000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-09T09:55:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 2,
+        "lastPlanTimestamp": 1791533100000,
+        "minutesSinceLastPlan": 110.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792407900000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-19T11:05:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 5,
+        "lastPlanTimestamp": 1792406100000,
+        "minutesSinceLastPlan": 30.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": true,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_SESSION_QUOTA"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792587300000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-21T12:55:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 5,
+        "lastPlanTimestamp": 1792576500000,
+        "minutesSinceLastPlan": 180.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": true,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [
+        "OTHER_ENGINE_SESSION_QUOTA"
+      ],
+      "status": "OBSERVED_EXECUTION_OR_ENTRY_GATING"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1792658100000",
+      "field": "missing-plan",
+      "missingFrom": "indicator",
+      "timeUTC": "2026-10-22T08:35:00+00:00",
+      "absentEngineEvidence": {
+        "openPlanIntervalsAtDecision": [],
+        "priorPlansOnLondonDate": 1,
+        "lastPlanTimestamp": 1792656600000,
+        "minutesSinceLastPlan": 25.0,
+        "busyAtDecision": false,
+        "sessionQuotaReached": false,
+        "withinFiveM5BarsCooldown": false,
+        "limits": "Busy reconstructed from PLAN_AUDIT and embedded TRADE_CLOSED observation timestamps. The cooldown flag uses elapsed time as a sufficient lower-bound check; candidate readiness is not logged."
+      },
+      "supportedBlockingConditions": [],
+      "status": "CANDIDATE_HISTORY_UNRESOLVED"
+    }
+  ]
+}

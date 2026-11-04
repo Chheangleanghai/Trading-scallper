@@ -1,0 +1,19 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,033.65 ▲ +2.63% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~0 standard window XAUUSD 4,033.64 ▲ +2.63% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/1WInggOG/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,033.64 ▲ +2.63% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/1WInggOG/?symbol=FOREXCOM%3AXAUUSD
+~					343 tab (selected, settable, boolean) XAUUSD 4,033.64 ▲ +2.63% Unnamed - Memory usage - 386 MB, Value: on
+Selected text: ```
+//@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=100, max_boxes_count=20)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run pine:generate.
+const string SCRIPT_VERSION = '0.8.0'
+enableA = input.bool(true, 'A: Sweep + MSS + FVG', group='Strategies')
+enableB = input.bool(false, 'B: CRT', group='Strategies')
+enableC = input.bool(false, 'C: Confirmed-pivot Turtle Soup', group='Strategies')
+enableD = input.bool(false, 'D: Confirmed support/resistance', group='Strategies')
+…
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

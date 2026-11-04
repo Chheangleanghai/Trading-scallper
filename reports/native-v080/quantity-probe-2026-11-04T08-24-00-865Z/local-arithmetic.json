@@ -1,0 +1,35 @@
+{
+  "scope": "Local JavaScript IEEE-754 arithmetic, not native Pine or broker-emulator evidence.",
+  "rows": [
+    {
+      "entryQty": 2.1,
+      "step": 0.1,
+      "legacy": {
+        "q1": "0.60000000000000009",
+        "q3": "0.89999999999999991",
+        "q3Units": "8.9999999999999982",
+        "floorQ3Units": 8
+      },
+      "integerUnits": {
+        "q3": "0.90000000000000002",
+        "q3Units": "9.0000000000000000",
+        "floorQ3Units": 9
+      }
+    },
+    {
+      "entryQty": 2.2,
+      "step": 0.1,
+      "legacy": {
+        "q1": "0.70000000000000007",
+        "q3": "0.79999999999999993",
+        "q3Units": "7.9999999999999991",
+        "floorQ3Units": 7
+      },
+      "integerUnits": {
+        "q3": "0.80000000000000004",
+        "q3Units": "8.0000000000000000",
+        "floorQ3Units": 8
+      }
+    }
+  ]
+}

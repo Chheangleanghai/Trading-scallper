@@ -1,0 +1,97 @@
+//@version=6
+strategy("RESEARCH ONLY · Exit quantity rounding probe", overlay=false, pyramiding=0, initial_capital=100000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0, slippage=0, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, margin_long=100, margin_short=100)
+// Artificial broker-emulator cases only. No production signal rules or alert calls.
+// Run on a separate temporary chart. Never interpret these forced exits as performance.
+const string PROBE_VERSION = '1'
+startTime = input.time(timestamp('06 Oct 2026 07:00 +0000'), 'First historical test bar (UTC)')
+if barstate.isfirst and (syminfo.tickerid != 'FOREXCOM:XAUUSD' or math.abs(syminfo.mincontract - 0.1) > 0.000000001)
+    runtime.error('This probe requires FOREXCOM:XAUUSD with minimum contract 0.1.')
+
+precise(float value) => str.tostring(value, '0.0000000000000000')
+var int caseNumber = 0
+var int phase = 0
+var int requestBar = na
+var int exitRequestBar = na
+var int countedExits = 0
+var float requestedQty = na
+var float q1 = na
+var float q2 = na
+var float q3 = na
+var bool normalized = false
+var int direction = 0
+var string entryId = ''
+var bool completed = false
+var array<float> remainingByCase = array.new<float>(8, na)
+var array<float> requestedThirdByCase = array.new<float>(8, na)
+
+// All order calls are restricted to historical confirmed bars. Realtime bars cannot start cases.
+if barstate.isconfirmed and barstate.ishistory
+    if strategy.closedtrades > countedExits
+        for row = countedExits to strategy.closedtrades - 1
+            log.info('QTY_PROBE_EXIT ' + '{"probeVersion":"' + PROBE_VERSION + '","entryId":"' + strategy.closedtrades.entry_id(row) + '","exitId":"' + strategy.closedtrades.exit_id(row) + '","comment":"' + strategy.closedtrades.exit_comment(row) + '","size":' + precise(strategy.closedtrades.size(row)) + ',"entryTime":' + str.tostring(strategy.closedtrades.entry_time(row)) + ',"exitTime":' + str.tostring(strategy.closedtrades.exit_time(row)) + '}')
+        countedExits := strategy.closedtrades
+    if phase == 0 and caseNumber < 8 and time >= startTime and strategy.position_size == 0
+        normalized := caseNumber % 2 == 1
+        requestedQty := caseNumber % 4 < 2 ? 2.1 : 2.2
+        direction := caseNumber < 4 ? 1 : -1
+        entryId := 'PROBE_' + str.tostring(caseNumber)
+        float step = syminfo.mincontract
+        // Legacy expressions are exactly the frozen Strategy's allocation expressions.
+        float legacyOne = math.floor(requestedQty * 0.33 / step) * step
+        float legacyThree = requestedQty - legacyOne - legacyOne
+        // Candidate control: split integer minimum-contract units before multiplying once.
+        int totalUnits = int(math.round(requestedQty / step))
+        int firstUnits = int(math.floor(totalUnits * 33.0 / 100.0))
+        int thirdUnits = totalUnits - firstUnits - firstUnits
+        q1 := normalized ? firstUnits * step : legacyOne
+        q2 := q1
+        q3 := normalized ? thirdUnits * step : legacyThree
+        array.set(requestedThirdByCase, caseNumber, q3)
+        log.info('QTY_PROBE_REQUEST ' + '{"probeVersion":"' + PROBE_VERSION + '","case":' + str.tostring(caseNumber) + ',"entryId":"' + entryId + '","symbol":"' + syminfo.tickerid + '","timeframe":"' + timeframe.period + '","normalized":' + (normalized ? 'true' : 'false') + ',"direction":' + str.tostring(direction) + ',"entryQty":' + precise(requestedQty) + ',"step":' + precise(step) + ',"q1":' + precise(q1) + ',"q2":' + precise(q2) + ',"q3":' + precise(q3) + ',"q3Units":' + precise(q3 / step) + ',"requestTime":' + str.tostring(time_close) + '}')
+        strategy.entry(entryId, direction == 1 ? strategy.long : strategy.short, qty=requestedQty)
+        requestBar := bar_index
+        phase := 1
+    else if phase == 1 and bar_index > requestBar
+        if strategy.position_size != 0
+            log.info('QTY_PROBE_FILLED ' + '{"case":' + str.tostring(caseNumber) + ',"entryId":"' + entryId + '","actualQty":' + precise(math.abs(strategy.position_size)) + '}')
+            // Deliberately already-triggered stops force all three brackets to execute.
+            // They are a quantity test, not valid trading stop placements.
+            float forcedStop = direction == 1 ? high * 2 : syminfo.mintick
+            strategy.exit('Q1', entryId, stop=forcedStop, qty=q1, comment_loss='PROBE_BRACKET')
+            strategy.exit('Q2', entryId, stop=forcedStop, qty=q2, comment_loss='PROBE_BRACKET')
+            strategy.exit('Q3', entryId, stop=forcedStop, qty=q3, comment_loss='PROBE_BRACKET')
+            exitRequestBar := bar_index
+            phase := 2
+        else if bar_index - requestBar > 3
+            log.error('QTY_PROBE_FAILURE entry did not fill: ' + entryId)
+            phase := 4
+    else if phase == 2 and bar_index > exitRequestBar
+        float remaining = math.abs(strategy.position_size)
+        array.set(remainingByCase, caseNumber, remaining)
+        log.info('QTY_PROBE_AFTER ' + '{"case":' + str.tostring(caseNumber) + ',"entryId":"' + entryId + '","normalized":' + (normalized ? 'true' : 'false') + ',"direction":' + str.tostring(direction) + ',"entryQty":' + precise(requestedQty) + ',"remaining":' + precise(remaining) + ',"observationTime":' + str.tostring(time_close) + '}')
+        if strategy.position_size != 0
+            strategy.close(entryId, comment='PROBE_CLEANUP', immediately=false)
+            phase := 3
+        else
+            caseNumber += 1
+            phase := 0
+    else if phase == 3 and strategy.position_size == 0
+        caseNumber += 1
+        phase := 0
+    if caseNumber == 8 and not completed
+        completed := true
+        log.info('QTY_PROBE_COMPLETE {"cases":8,"probeVersion":"' + PROBE_VERSION + '"}')
+
+plot(strategy.position_size, 'Emulated quantity — research only', display=display.data_window)
+var table result = table.new(position.top_right, 4, 10)
+if barstate.islastconfirmedhistory or barstate.islast
+    table.cell(result, 0, 0, 'RESEARCH ONLY')
+    table.cell(result, 1, 0, 'Side / size')
+    table.cell(result, 2, 0, 'Requested Q3')
+    table.cell(result, 3, 0, 'Remaining')
+    for index = 0 to 7
+        table.cell(result, 0, index + 1, index % 2 == 1 ? 'Integer units' : 'Legacy float')
+        table.cell(result, 1, index + 1, (index < 4 ? 'Long ' : 'Short ') + (index % 4 < 2 ? '2.1' : '2.2'))
+        table.cell(result, 2, index + 1, precise(array.get(requestedThirdByCase, index)))
+        table.cell(result, 3, index + 1, precise(array.get(remainingByCase, index)))
+    table.cell(result, 0, 9, completed ? '8 cases complete' : 'INCOMPLETE')

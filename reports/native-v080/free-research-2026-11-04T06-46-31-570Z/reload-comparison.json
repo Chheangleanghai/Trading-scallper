@@ -1,0 +1,25 @@
+{
+  "scope": "Historical exported records before and after a normal browser reload; no Bar Replay and no realtime intrabar observation.",
+  "results": {
+    "indicator": {
+      "beforeRecords": 372,
+      "afterRecords": 372,
+      "csvBytesEqual": true,
+      "recordsEqual": true,
+      "beforeSHA256": "2ceadf7bffdb7ea2f1d1fbb3492ab7da7d81c3dcbbf208ceea65048f31e0f594",
+      "afterSHA256": "2ceadf7bffdb7ea2f1d1fbb3492ab7da7d81c3dcbbf208ceea65048f31e0f594",
+      "planRecordsBefore": 84,
+      "planRecordsAfter": 84
+    },
+    "strategy-experiment": {
+      "beforeRecords": 622,
+      "afterRecords": 622,
+      "csvBytesEqual": true,
+      "recordsEqual": true,
+      "beforeSHA256": "2460ccd1665826892adabd1b2373779dcb72b5a1f56f84877aa07b16bac3d6ae",
+      "afterSHA256": "2460ccd1665826892adabd1b2373779dcb72b5a1f56f84877aa07b16bac3d6ae",
+      "planRecordsBefore": 87,
+      "planRecordsAfter": 87
+    }
+  }
+}

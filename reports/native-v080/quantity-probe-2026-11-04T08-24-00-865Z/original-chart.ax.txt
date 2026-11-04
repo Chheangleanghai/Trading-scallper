@@ -1,0 +1,1708 @@
+Window: "ICT SMC Trading Concepts", App: Google Chrome.
+0 standard window ICT SMC Trading Concepts - Google Chrome - Chheang, URL: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901, Secondary Actions: Raise
+	1 container ICT SMC Trading Concepts - Google Chrome - Chheang, URL: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content ICT SMC Trading Concepts, URL: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901
+						6 container
+							7 container
+								8 link Skip to content, Value: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901#_R_5bdjbqkpdbjmm68n9kldlb5_
+								9 container
+									10 container
+										11 pop up button Switch mode, current mode: ChatGPT
+										12 pop up button Search
+										13 button Hide sidebar
+										14 container Chat history
+											15 button New chat
+											16 container
+												17 button Scheduled
+												18 button Library
+												19 button Plugins
+												20 pop up button Explore
+												21 container
+													22 sortable Projects
+													23 pop up button Project sidebar options
+													24 button Add new project
+												25 content list
+													26 text No projects
+												27 container
+													28 sortable Recents
+													29 pop up button Chat sidebar options
+													30 toggle button Filter chats and work, Value: 0
+														31 image
+													32 button New chat
+												33 content list
+													34 container ពន្យល់បញ្ហា Secure Boot
+														35 link ពន្យល់បញ្ហា Secure Boot, Value: chatgpt.com/c/6aeac255-3cc4-83ec-9d64-7c23e010c3a3
+														36 container
+															37 pop up button Chat actions
+															38 button Pin chat
+													39 container ICT SMC Trading Concepts
+														40 link ICT SMC Trading Concepts, Value: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901
+														41 container
+															42 pop up button Chat actions
+															43 button Pin chat
+													44 container Explain C Sharp Error
+														45 link Explain C Sharp Error, Value: chatgpt.com/c/6ae84540-0acc-83ec-b47f-9b6c145c8fc4
+														46 container
+															47 pop up button Chat actions
+															48 button Pin chat
+													49 container ការប្រើ Break Continue
+														50 link ការប្រើ Break Continue, Value: chatgpt.com/c/6ae83fbb-da54-83ec-8dd1-d9b275d76ffb
+														51 container
+															52 pop up button Chat actions
+															53 button Pin chat
+													54 container React Props Example
+														55 link React Props Example, Value: chatgpt.com/c/6adc06e5-fc1c-83ec-bac0-dd799fd052b1
+														56 container
+															57 pop up button Chat actions
+															58 button Pin chat
+													59 container CSharp List Options and Sorting
+														60 link CSharp List Options and Sorting, Value: chatgpt.com/c/6adf0c4c-0880-83ec-8a95-dfd2c754bccc
+														61 container
+															62 pop up button Chat actions
+															63 button Pin chat
+													64 container ពិនិត្យវេបសាយ CBC
+														65 link ពិនិត្យវេបសាយ CBC, Value: chatgpt.com/c/6adb989b-6fe0-83ec-920f-a72fd2ca4c6b
+														66 container
+															67 pop up button Chat actions
+															68 button Pin chat
+													69 container Khmer translation
+														70 link Khmer translation, Value: chatgpt.com/c/6ad9ee68-d214-83ec-b39c-e29e6fb2f247
+														71 container
+															72 pop up button Chat actions
+															73 button Pin chat
+													74 container Greeting response
+														75 link Greeting response, Value: chatgpt.com/c/6ad9d35b-ae70-83ec-8e34-1830c6c3512e
+														76 container
+															77 pop up button Chat actions
+															78 button Pin chat
+													79 container Composer package troubleshooting
+														80 link Composer package troubleshooting, Value: chatgpt.com/c/6ad8be8d-8394-83ec-8163-a838633c2f12
+														81 container
+															82 pop up button Chat actions
+															83 button Pin chat
+													84 container Image hover animation
+														85 link Image hover animation, Value: chatgpt.com/c/6ad84c85-ce54-83ec-9817-75f8835f37a0
+														86 container
+															87 pop up button Chat actions
+															88 button Pin chat
+													89 container ពន្យល់ Parent Child
+														90 link ពន្យល់ Parent Child, Value: chatgpt.com/c/6ac610e7-bd7c-83ec-bb88-8c1d3222a895
+														91 container
+															92 pop up button Chat actions
+															93 button Pin chat
+													94 container សាកល្បងចុះឈ្មោះដោយ k6
+														95 link សាកល្បងចុះឈ្មោះដោយ k6, Value: chatgpt.com/c/6a8d4228-142c-83ec-9d93-e2d033a50aff
+														96 container
+															97 pop up button Chat actions
+															98 button Pin chat
+													99 container Fix Docker Engine Error
+														100 link Fix Docker Engine Error, Value: chatgpt.com/c/6a8c3aeb-29b4-83ec-a1ab-f3a872125c6d
+														101 container
+															102 pop up button Chat actions
+															103 button Pin chat
+													104 container Fix Laravel Composer Error
+														105 link Fix Laravel Composer Error, Value: chatgpt.com/c/6a86bf26-bc0c-83ec-b89e-8f8dcd177d09
+														106 container
+															107 pop up button Chat actions
+															108 button Pin chat
+													109 container ពន្យល់មុខងារ Verify OTP
+														110 link ពន្យល់មុខងារ Verify OTP, Value: chatgpt.com/c/6a866f31-503c-83ec-97ac-c3ad23d864e5
+														111 container
+															112 pop up button Chat actions
+															113 button Pin chat
+													114 container ពន្យល់កូដ Laravel Khmer
+														115 link ពន្យល់កូដ Laravel Khmer, Value: chatgpt.com/c/6a847bea-8cc4-83ec-871c-043c0e877fb9
+														116 container
+															117 pop up button Chat actions
+															118 button Pin chat
+													119 container Prepare Word File
+														120 link Prepare Word File, Value: chatgpt.com/c/6a83fb84-679c-83ec-96d4-51446d253e83
+														121 container
+															122 pop up button Chat actions
+															123 button Pin chat
+													124 container Code Review Suggestion
+														125 link Code Review Suggestion, Value: chatgpt.com/c/6a83332c-712c-83ec-bf02-0d16fe65b954
+														126 container
+															127 pop up button Chat actions
+															128 button Pin chat
+													129 container Laravel Migration Explanation
+														130 link Laravel Migration Explanation, Value: chatgpt.com/c/6a82dc68-6f48-83ec-9fc7-6bde0d44aa62
+														131 container
+															132 pop up button Chat actions
+															133 button Pin chat
+										134 container
+											135 pop up button Open profile menu
+											136 container
+												137 text Leang Hai Plus
+									138 splitter
+									139 container
+										140 pop up button Chat actions
+										141 button Share
+										142 toggle button Toggle pinned summary, Value: 0
+											143 image
+									144 container
+										145 container Conversation
+											146 container
+												147 text Loading older messages…
+												148 splitter Yesterday 6:18 AM
+												149 heading You said:, Value: 4
+													150 text You said:
+												151 button 1 selection
+												152 text why you dont enable it?
+												153 button Copy message
+												154 button Edit message
+												155 heading ChatGPT said:, Value: 4
+													156 text ChatGPT said:
+												157 container
+													158 text មូលហេតុដែល  Module B–H ត្រូវបានបិទ (OFF)  គឺដោយសារ Project v0.8.0 របស់អ្នកបានកំណត់ Default ឱ្យប្រើតែ  Module A: Liquidity Sweep + MSS + FVG + Retest ។ ខ្ញុំមិនមែនជាអ្នកបិទ Modules ទាំងនោះទេ។ វាជា Settings ដែលមានស្រាប់ក្នុង TradingView របស់អ្នក។
+													159 heading ហេតុអ្វីបានជាទុកតែ A បើក?, Value: 3
+														160 text ហេតុអ្វីបានជាទុកតែ A បើក?
+													161 content list
+														162 container
+															163 AXListMarker 1. 
+															164 text ងាយស្រួល Backtest  — ដឹងថា Signal មកពី Module ណា។
+														165 container
+															166 AXListMarker 2. 
+															167 text ងាយស្រួលរក Bug  — អាចប្រៀបធៀប Indicator និង Strategy ឱ្យត្រឹមត្រូវ។
+														168 container
+															169 AXListMarker 3. 
+															170 text ការពារ Conflicting Signals  — ឧទាហរណ៍ A ចង់ BUY ប៉ុន្តែ B ចង់ SELL។
+														171 container
+															172 AXListMarker 4. 
+															173 text មិនទាន់មាន Backtest គ្រប់គ្រាន់  — យើងមិនទាន់ដឹងថា Modules B–H ផ្តល់លទ្ធផលល្អឬអត់ទេ។
+													174 heading តើអាច Enable ទាំង 8 បានទេ?, Value: 2
+														175 text តើអាច Enable ទាំង 8 បានទេ?
+													176 text បាន!  Modules A–H អាចបើកជាមួយគ្នាបាន ប៉ុន្តែវាមិនមានន័យថា Signals នឹងត្រឹមត្រូវជាងមុនទេ។ Module Settings — Demo Simulation សាកល្បងបើក/បិទ Modules នៅទីនេះ។ វាមិនកែ Settings ក្នុង TradingView ពិតទេ។
+													177 checkbox A — Sweep + MSS + FVG, Value: 1
+													178 container
+														179 text A  —  Sweep + MSS + FVG
+													180 checkbox B — CRT, Value: 0
+													181 container
+														182 text B  —  CRT
+													183 checkbox C — Turtle Soup, Value: 0
+													184 container
+														185 text C  —  Turtle Soup
+													186 checkbox D — Support / Resistance, Value: 0
+													187 container
+														188 text D  —  Support / Resistance
+													189 checkbox E — Supply & Demand, Value: 0
+													190 container
+														191 text E  —  Supply & Demand
+													192 checkbox F — Trend Pullback, Value: 0
+													193 container
+														194 text F  —  Trend Pullback
+													195 checkbox G — AMD / PO3, Value: 0
+													196 container
+														197 text G  —  AMD / PO3
+													198 checkbox H — Quasimodo, Value: 0
+													199 container
+														200 text H  —  Quasimodo
+													201 text Enabled Modules:  1 /8
+													202 button Enable All
+													203 button Copy research configuration
+													204 heading ខ្ញុំណែនាំឱ្យអ្នកធ្វើបែបនេះ, Value: 2
+														205 text ខ្ញុំណែនាំឱ្យអ្នកធ្វើបែបនេះ
+													206 text កុំទាន់ Enable All សម្រាប់ Live Trading។  សូមឱ្យ Codex Backtest Module A, B, C, D, E, F, G, H ដាច់ដោយឡែកជាមុន រួចសាកល្បង Enable All ក្នុង Research Configuration មួយទៀត។ បើអ្នកចង់បើកវាក្នុង TradingView៖ ចុច Settings របស់ Indicator → Inputs → Strategies → ធីក B–H។ ហើយកំណត់ Settings ដូចគ្នានៅ Strategy Backtest ផងដែរ។ ចំណុចសំខាន់៖  បើអ្នក Enable All នោះ  មិនតម្រូវឱ្យ Patterns ទាំង 8 បំពេញលក្ខខណ្ឌព្រមគ្នាទេ ។ Module ណាមួយអាចបង្កើត Qualified Plan បាន បើវាឆ្លងកាត់ Filters និងការជ្រើសរើស Plan របស់ Engine។ ខ្ញុំណែនាំឱ្យរក្សា  A-only ជា Baseline  ហើយ Test A–H និង All-enabled ដាច់ដោយឡែក មុនសម្រេចថាគួរប្រើ Configuration ណាមួយ។
+												207 button Copy
+												208 pop up button Rate response
+												209 toggle button Read aloud, Value: 0
+												210 button Share
+												211 pop up button Regenerate response
+												212 pop up button More actions
+												213 heading You said:, Value: 4
+													214 text You said:
+												215 text but បើធ្វើមួួយៗវាយូ?​យូហើយមិនទាន់តេស​A ហើយផង
+												216 button Copy message
+												217 button Edit message
+												218 heading ChatGPT said:, Value: 4
+													219 text ChatGPT said:
+												220 container
+													221 text ត្រូវហើយ! 😄 ខ្ញុំយល់ថាអ្នកចង់ឱ្យ  XAUUSD SMART SCALPER PRO រួចរាល់លឿន ហើយប្រើ Patterns ទាំង 8  មិនមែនចំណាយពេលធ្វើ Test មួយៗរហូតទេ។ យើងមិនចាំបាច់ធ្វើ Test ទាំងអស់ដោយដៃម្តងមួយ Module ទេ។ អាចប្រើវិធី  Batch Testing  ដើម្បីកាត់បន្ថយការងារ។
+													222 heading វិធីដែលខ្ញុំណែនាំ, Value: 2
+														223 text វិធីដែលខ្ញុំណែនាំ
+													224 text Fast Research Workflow Recommended A-only Baseline រក្សាលទ្ធផលចាស់សម្រាប់ប្រៀបធៀប
+													225 image
+													226 text Enable A + B + C + D + E + F + G + H សាកល្បង Combined Research Configuration
+													227 image
+													228 text Run Combined Backtest + Collect Signals M1 / M3 / M5 / M15
+													229 image
+													230 text Analyze Results by Module រកមើល Module ដែលមាន Trades, Errors ឬ Losses ហើយសាកល្បងវាដាច់ដោយឡែកតាមតម្រូវការ វិធីនេះអនុញ្ញាតឱ្យអ្នក  សាកល្បង Modules ទាំង 8 ជាមួយគ្នាមុន ។ ប៉ុន្តែ Combined Backtest មួយមិនអាចបញ្ជាក់ថា Module នីមួយៗចំណេញឬអត់ទេ ព្រោះ Modules អាចប្រកួតគ្នាក្នុងការជ្រើស Plan ឬត្រូវរារាំងដោយ Cooldown និង Active Trade។
+													231 heading តើបើក All Modules ឥឡូវបានទេ?, Value: 2
+														232 text តើបើក All Modules ឥឡូវបានទេ?
+													233 text បាន សម្រាប់ Research/Backtest។  ចូល TradingView → Indicator Settings → Inputs → Strategies → Enable A–H ហើយធ្វើដូចគ្នានៅ Strategy Backtest។ រក្សា Settings ផ្សេងៗដដែល។ កុំប្រើ All-enabled Configuration សម្រាប់ Live Trading មុនមានការផ្ទៀងផ្ទាត់។
+													234 heading Prompt ខ្លីសម្រាប់ Codex ធ្វើការងារច្រើនជំហាន, Value: 2
+														235 text Prompt ខ្លីសម្រាប់ Codex ធ្វើការងារច្រើនជំហាន
+													236 container
+														237 text Writing
+														238 button Copy
+														239 button Open editor
+														240 text entry area (settable) Start writing, Value: Continue XAUUSD SMART SCALPER PRO v0.8.0.
+I do not want to spend weeks manually testing one module at a time.
+Implement the fastest safe and reproducible BATCH RESEARCH workflow for modules A–H.
+1. Preserve the original A-only baseline and unchanged Pine sources.
+2. Prepare an isolated ALL-MODULES-ENABLED research configuration.
+3. Build or improve automated tooling to import genuine TradingView Strategy Tester results and PLAN_AUDIT logs for M1, M3, M5 and M15.
+4. Compare the A-only baseline with the all-enabled configuration under documented matching market data, costs, dates, and shared settings.
+5. Attribute actual qualified plans and trades to their modules. Track conflicts, rejection reasons, cooldown blocking, and active-trade blocking when genuine data supports it.
+6. Identify which modules need isolated follow-up tests based on actual results.
+7. Add focused local tests for shared signal, state, risk, and data-analysis logic.
+8. Do not fabricate TradingView backtests, automate an unavailable UI, or substitute synthetic signals for historical performance.
+9. If native TradingView control is unavailable, prepare a concise manual batch-capture procedure and analyze genuine exports as they arrive.
+10. Preserve the database-free production architecture. Do not deploy, send alerts, trade live, or modify baseline trading behavior.
+Report what was actually executed, module-level signal counts where available, P&L, drawdown, profit factor, conflicts, and remaining native verification gaps.
+Keep v0.8.0 unchanged until the release evidence supports an upgrade.
+															241 text Continue XAUUSD SMART SCALPER PRO v0.8.0.
+															242 text I do not want to spend weeks manually testing one module at a time.
+															243 text Implement the fastest safe and reproducible BATCH RESEARCH workflow for modules A–H.
+															244 content list
+																245 container
+																	246 AXListMarker 1. 
+																	247 text Preserve the original A-only baseline and unchanged Pine sources.
+																248 container
+																	249 AXListMarker 2. 
+																	250 text Prepare an isolated ALL-MODULES-ENABLED research configuration.
+																251 container
+																	252 AXListMarker 3. 
+																	253 text Build or improve automated tooling to import genuine TradingView Strategy Tester results and PLAN_AUDIT logs for M1, M3, M5 and M15.
+																254 container
+																	255 AXListMarker 4. 
+																	256 text Compare the A-only baseline with the all-enabled configuration under documented matching market data, costs, dates, and shared settings.
+																257 container
+																	258 AXListMarker 5. 
+																	259 text Attribute actual qualified plans and trades to their modules. Track conflicts, rejection reasons, cooldown blocking, and active-trade blocking when genuine data supports it.
+																260 container
+																	261 AXListMarker 6. 
+																	262 text Identify which modules need isolated follow-up tests based on actual results.
+																263 container
+																	264 AXListMarker 7. 
+																	265 text Add focused local tests for shared signal, state, risk, and data-analysis logic.
+																266 container
+																	267 AXListMarker 8. 
+																	268 text Do not fabricate TradingView backtests, automate an unavailable UI, or substitute synthetic signals for historical performance.
+																269 container
+																	270 AXListMarker 9. 
+																	271 text If native TradingView control is unavailable, prepare a concise manual batch-capture procedure and analyze genuine exports as they arrive.
+																272 container
+																	273 AXListMarker 10. 
+																	274 text Preserve the database-free production architecture. Do not deploy, send alerts, trade live, or modify baseline trading behavior.
+															275 text Report what was actually executed, module-level signal counts where available, P&L, drawdown, profit factor, conflicts, and remaining native verification gaps.
+															276 text Keep v0.8.0 unchanged until the release evidence supports an upgrade.
+													277 text ខ្ញុំណែនាំ៖  ជំហានបន្ទាប់សាកល្បង  A–H ទាំងអស់លើ M5 ម្តងសិន  ដើម្បីមើលថាតើមាន Signals ច្រើនជាង A-only ឬអត់។ បន្ទាប់មកយើងសម្រេចថាត្រូវសាកល្បង Module ណាឱ្យជ្រៅជាងមុន។ ការធ្វើបែបនេះកាត់បន្ថយការសាកល្បងដោយដៃ ប៉ុន្តែមិនលុបចោលការផ្ទៀងផ្ទាត់ភាពត្រឹមត្រូវ និង Backtest ពិតប្រាកដទេ។
+												278 button Copy
+												279 pop up button Rate response
+												280 toggle button Read aloud, Value: 0
+												281 button Share
+												282 pop up button Regenerate response
+												283 pop up button More actions
+												284 heading You said:, Value: 4
+													285 text You said:
+												286 text តើមានបញ្ហាអត់បើបើកទាំងអស់?​ ហើយតើវាតេសល្អទេ?
+												287 button Copy message
+												288 button Edit message
+												289 heading ChatGPT said:, Value: 4
+													290 text ChatGPT said:
+												291 container
+													292 text បើក  Modules A–H ទាំង 8 ជាមួយគ្នាបាន  ✅ ប៉ុន្តែខ្ញុំមិនទាន់អាចនិយាយថា វាផ្តល់ Signals ល្អជាង A-only បានទេ ព្រោះយើងមិនទាន់មាន Backtest លទ្ធផល All-enabled ពិតប្រាកដ។ សម្រាប់ XAUUSD SMART SCALPER PRO របស់អ្នក ខ្ញុំណែនាំឱ្យ  សាកល្បងបើកទាំង 8 ក្នុង Research/Backtest ជាមុន  ដោយរក្សា A-only Baseline ដដែល។
+													293 heading 1. តើបើកទាំងអស់មានបញ្ហាអ្វីខ្លះ?, Value: 2
+														294 text 1. តើបើកទាំងអស់មានបញ្ហាអ្វីខ្លះ?
+													295 table
+														296 row
+															297 column header
+																298 text ចំណុច
+															299 column header
+																300 text អ្វីអាចកើតឡើង
+														301 row
+															302 cell
+																303 text ចំនួន Signals
+															304 cell
+																305 text អាចកើនឡើង ប៉ុន្តែមិនធានា
+														306 row
+															307 cell
+																308 text BUY/SELL Conflict
+															309 cell
+																310 text A ចង់ BUY ខណៈ B ចង់ SELL
+														311 row
+															312 cell
+																313 text Quality
+															314 cell
+																315 text Signals ច្រើនមិនប្រាកដថាល្អជាង
+														316 row
+															317 cell
+																318 text Cooldown / Active Trade
+															319 cell
+																320 text Module មួយអាចរារាំង Module ផ្សេង
+														321 row
+															322 cell
+																323 text Win Rate
+															324 cell
+																325 text អាចកើន ឬថយ
+														326 row
+															327 cell
+																328 text Drawdown
+															329 cell
+																330 text អាចកើន បើ Trades ខាតច្រើន
+													331 text ឧទាហរណ៍ Module A រកឃើញ BUY ហើយ Module C រកឃើញ SELL នៅ Candle ដូចគ្នា។ Engine របស់អ្នកមាន Logic សម្រាប់គ្រប់គ្រង Conflicting Plans ប៉ុន្តែយើងត្រូវ Test ថាវាធ្វើការត្រឹមត្រូវនៅពេលបើក Modules ទាំងអស់។
+													332 heading 2. តើ All-enabled តេសល្អហើយឬនៅ?, Value: 2
+														333 text 2. តើ All-enabled តេសល្អហើយឬនៅ?
+													334 text មិនទាន់ទេ។  លទ្ធផលដែលយើងមានបច្ចុប្បន្នគឺ៖
+													335 table
+														336 row
+															337 cell
+																338 text Configuration
+															339 cell
+																340 text Backtest Evidence
+														341 row
+															342 cell
+																343 text Module A only
+															344 cell
+																345 text មាន M5 UI run: 1 trade, −$13.66
+														346 row
+															347 cell
+																348 text Modules B–H separately
+															349 cell
+																350 text មិនទាន់មានលទ្ធផលពិត
+														351 row
+															352 cell
+																353 text All A–H enabled
+															354 cell
+																355 text Not tested
+													356 text ចំនួន Automated Tests 155 PASS ដែល Codex រាយការណ៍ បញ្ជាក់តែផ្នែក Software មួយចំនួនប៉ុណ្ណោះ។ វា  មិនបញ្ជាក់ថា Trading Strategy ទាំង 8 ចំណេញ  ទេ។
+													357 heading 3. វិធី Test លឿន ដោយមិនចាំបាច់ធ្វើម្តងមួយ, Value: 2
+														358 text 3. វិធី Test លឿន ដោយមិនចាំបាច់ធ្វើម្តងមួយ
+													359 text ខ្ញុំណែនាំធ្វើការប្រៀបធៀប M5 តែពីរដងមុន៖ Test 1 — Baseline
+													360 heading A only, Value: 1
+														361 text A only
+													362 text រក្សាលទ្ធផលសម្រាប់ប្រៀបធៀប Test 2 — Experiment
+													363 heading A–H, Value: 1
+														364 text A–H
+													365 text បើក 8 Modules ទាំងអស់
+													366 image
+													367 text ប្រៀបធៀប Trade Count, Win Rate, Profit Factor, Drawdown និង Net Profit  ដោយប្រើ Date Range, Timeframe, Costs និង Settings ផ្សេងទៀតដូចគ្នា។ ប្រសិនបើ All-enabled មាន Trades ច្រើន យើងអាចស្រាវជ្រាវថា Module ណាបង្កើត Trades ទាំងនោះ។ ប៉ុន្តែបើ Backtest មាន Trade តិចពេក យើងនៅតែមិនអាចជ្រើសរើស Configuration ល្អបំផុតដោយទំនុកចិត្តបានទេ។
+													368 heading 4. តើខ្ញុំណែនាំឱ្យបើកទាំង 8 ទេ?, Value: 2
+														369 text 4. តើខ្ញុំណែនាំឱ្យបើកទាំង 8 ទេ?
+													370 text បាទ សម្រាប់ Testing — មិនមែន Live Trading។ សូមបង្កើត Configuration សាកល្បងមួយដោយបើក A–H ក្នុង  Strategy Backtest → Settings → Inputs  ហើយរក្សា Settings ផ្សេងទៀតដូចដើម។ កុំសរសេរជាន់លើ Baseline ដែលបាន Verify រួច។ បន្ទាប់មកថត Screenshot នៃ  Strategy Report → Metrics និង Trades  ដូចរូបដែលអ្នកបានផ្ញើមុន។ សរុប៖  បើកទាំង 8 មិនមែនមានបញ្ហាជានិច្ចទេ ហើយអាចធ្វើឱ្យមានឱកាស Signal ច្រើនជាងមុន។ ប៉ុន្តែវាក៏អាចបង្កើន False Signals និង Losses ផងដែរ។ យើងត្រូវការលទ្ធផល All-enabled ពិតមួយសិន ទើបអាចវាយតម្លៃថាវាល្អជាង A-only ឬអត់។
+												371 button Copy
+												372 pop up button Rate response
+												373 toggle button Read aloud, Value: 0
+												374 button Share
+												375 pop up button Regenerate response
+												376 pop up button More actions
+												377 heading You said:, Value: 4
+													378 text You said:
+												379 text ចង់ឲអ្នកជួួយពិនិត្ត concept នីមួួយៗតើត្រូវហើយអស់ឬនៅ??​ ហើយ concept នោះមានអ្នកច្រើនទេ ឬ Winrate យ៉ាងមិចដែរ ?​ហើយអ្នកបានដាក់ ​condition or anything​ លើ concept នីមួួយៗនឹងហើយឬនៅ?
+												380 button Copy message
+												381 button Edit message
+												382 button Worked for 3m 10s
+												383 heading ChatGPT said:, Value: 4
+													384 text ChatGPT said:
+												385 container
+													386 text ខ្ញុំបានពិនិត្យ Source Code របស់  XAUUSD SMART SCALPER PRO v0.8.0  ពី Project ZIP ដែលអ្នកបានផ្ញើ ជាពិសេស 
+													387 text pine/engine.pine.inc
+													388 text , 
+													389 text pine/modules/update.pine.inc
+													390 text , 
+													391 text predicates.pine.inc
+													392 text , 
+													393 text candidate_state.pine.inc
+													394 text  និង 
+													395 text STRATEGIES.md
+													396 text ។ ខ្ញុំក៏បានរកឃើញ  Backtest ចាស់ដែលធ្លាប់សាកល្បង Modules A–H ដាច់ដោយឡែកទាំង 8 លើ M5  ផងដែរ។ ដូច្នេះខ្ញុំអាចបង្ហាញ Win Rate ដែលមានក្នុង Project ពិតៗបាន ប៉ុន្តែវាមិនមែនជា Win Rate ដែលបានបញ្ជាក់សម្រាប់ Code ចុងក្រោយទេ។
+													397 heading 1. តើ Concepts A–H សរសេរត្រឹមត្រូវហើយឬនៅ?, Value: 2
+														398 text 1. តើ Concepts A–H សរសេរត្រឹមត្រូវហើយឬនៅ?
+													399 text ចម្លើយ៖ Modules ទាំង 8 មាន Setup Detection, Confirmation និង Conditions ក្នុង Code រួចហើយ។ ប៉ុន្តែវាមិនទាន់អាចចាត់ទុកថា Verified 100% ទេ។
+													400 table
+														401 row
+															402 column header
+																403 text Module
+															404 column header
+																405 text Conditions ដែលមានក្នុង Code
+															406 column header
+																407 text ការវាយតម្លៃ
+														408 row
+															409 cell
+																410 text A — ICT/SMC
+															411 cell
+																412 text Liquidity Sweep → MSS + Displacement + FVG → Later Retest
+															413 cell
+																414 text មាន Logic ជាក់លាក់ ស្របនឹង Variant ដែលបានកំណត់
+														415 row
+															416 cell
+																417 text B — CRT
+															418 cell
+																419 text Sweep Previous Completed Candle Range → Close Back Inside → Later Confirmation
+															420 cell
+																421 text មាន Logic រួច ប៉ុន្តែជា CRT Variant មួយ
+														422 row
+															423 cell
+																424 text C — Turtle Soup
+															425 cell
+																426 text Sweep Confirmed Pivot → Reclaim → Later Reversal Confirmation
+															427 cell
+																428 text មាន Logic រួច មិនមែន Original Multi-day Turtle Soup
+														429 row
+															430 cell
+																431 text D — Support/Resistance
+															432 cell
+																433 text Confirmed Pivot Touches → Breakout/Retest ឬ Rejection Confirmation
+															434 cell
+																435 text មាន Logic រួច
+														436 row
+															437 cell
+																438 text E — Supply & Demand
+															439 cell
+																440 text Opposite Candle Zone → Displacement/BOS → Zone Retest
+															441 cell
+																442 text មាន Logic រួច ជា Simplified Zone Model
+														443 row
+															444 cell
+																445 text F — Trend Pullback
+															446 cell
+																447 text Chart Structure + EMA 9/21/50 → Pullback → Later Break Confirmation
+															448 cell
+																449 text មាន Logic រួច
+														450 row
+															451 cell
+																452 text G — AMD / PO3
+															453 cell
+																454 text Compressed Range → Sweep/Reclaim → Later Opposite Boundary Displacement
+															455 cell
+																456 text មាន Logic រួច ជា Approximation
+														457 row
+															458 cell
+																459 text H — Quasimodo / RTM
+															460 cell
+																461 text Five Confirmed Pivots → Neckline Break → Later Retest
+															462 cell
+																463 text មាន Logic រួច ជា QM Approximation
+													464 text ចំណុចសំខាន់គឺ  Concept ដែលគេគូរដោយភ្នែក និង Algorithm ដែលគេបម្លែងទៅជាកូដ មិនចាំបាច់ដូចគ្នាគ្រប់ករណីទេ ។ ជាពិសេស CRT, Turtle Soup, AMD និង Quasimodo មានការបកស្រាយខុសៗគ្នាក្នុងសហគមន៍ Trading។ ខ្ញុំមិនបានរកឃើញកំហុសច្បាស់លាស់ថា Logic ទាំង 8 សរសេរបញ្ច្រាស BUY/SELL ឬគ្មាន Confirmation ទេ ក្នុងផ្នែក Source ដែលបានពិនិត្យ។ ប៉ុន្តែការពិនិត្យ Code មិនអាចជំនួស Bar Replay, Native TradingView Execution និង Historical Backtesting បានឡើយ។
+													465 heading 2. តើ Concepts នីមួយៗមាន Conditions ផ្ទាល់ខ្លួនហើយឬនៅ?, Value: 2
+														466 text 2. តើ Concepts នីមួយៗមាន Conditions ផ្ទាល់ខ្លួនហើយឬនៅ?
+													467 text មានហើយ។  ក្រៅពី Pattern-specific Conditions ខាងលើ វាក៏មាន Shared Filters សម្រាប់ Qualified Plans ផងដែរ៖ Enabled Module A ឬ B ឬ C ... ឬ H Module នីមួយៗរក Setup តាម Logic របស់ខ្លួន
+													468 image
+													469 text Pattern Confirmation Confirmed Candle, Retest/Break និង Invalidation
+													470 image
+													471 text Shared Safety Filters H1 Alignment · Session · ATR · Quality · SL · RR · Distance · Cooldown
+													472 image
+													473 text Choose Qualified Plan បដិសេធ BUY/SELL ផ្ទុយគ្នា ហើយជ្រើស Plan ដែលមាន Heuristic Score ខ្ពស់ជាង
+													474 image
+													475 image
+													476 text BUY / SELL Signal + Entry / SL / TP តាម Default Settings របស់ Code៖ Quality យ៉ាងតិច 75/100, H1 Alignment, ATR Volatility, London Session, Stop Distance អតិបរមា 3 ATR, Entry Distance អតិបរមា 1.5 ATR និង TP2 Reward/Risk យ៉ាងតិច 2R។ មានការកែតម្រូវសំខាន់ពីការពន្យល់មុន៖  FVG មិនមែនជាលក្ខខណ្ឌបង្ខំសម្រាប់ Modules ទាំង 8 ទេ ។ វាជាផ្នែកសំខាន់របស់ Module A។ ហើយ  M15 Structure ត្រូវបានប្រើជាបរិបទ និងក្នុង Logic ខ្លះ ប៉ុន្តែមិនមែនជា Mandatory Filter ដាច់ខាតសម្រាប់គ្រប់ Module នោះទេ ។
+													477 heading 3. Win Rate ពិតៗដែលរកឃើញក្នុង Backtest ចាស់, Value: 2
+														478 text 3. Win Rate ពិតៗដែលរកឃើញក្នុង Backtest ចាស់
+													479 text ខ្ញុំបានអាន 
+													480 text reports/tradingview-matrix.jsonl
+													481 text  ពី Project ZIP របស់អ្នក។ វាមាន 32 Historical Test Runs សម្រាប់ 8 Modules × 4 Timeframes។ នេះជាលទ្ធផល  XAUUSD M5 ថ្ងៃទី 5–30 តុលា 2026  ដែលបានកត់ត្រាក្នុង Archive៖ សំខាន់៖ នេះជាលទ្ធផលពី Strategy Source Hash ចាស់ 
+													482 text 5002409a…aa037
+													483 text  មិនមែន Current v0.8.0 Hash 
+													484 text 42b4e168…3f5c0
+													485 text  ទេ។ តារាងនេះសម្រាប់ Research Reference ប៉ុណ្ណោះ។
+													486 table
+														487 row
+															488 column header
+																489 text Module
+															490 column header
+																491 text Wins / Trades
+															492 column header
+																493 text Win Rate
+															494 column header
+																495 text Net P&L
+														496 row
+															497 cell
+																498 text A — Sweep/MSS/FVG
+															499 cell
+																500 text 0/1
+															501 cell
+																502 text 0%
+															503 cell
+																504 text −$13.66
+														505 row
+															506 cell
+																507 text B — CRT
+															508 cell
+																509 text 29/85
+															510 cell
+																511 text 34.12%
+															512 cell
+																513 text −$111.13
+														514 row
+															515 cell
+																516 text C — Turtle Soup
+															517 cell
+																518 text 22/52
+															519 cell
+																520 text 42.31%
+															521 cell
+																522 text +$1.47
+														523 row
+															524 cell
+																525 text D — Support/Resistance
+															526 cell
+																527 text 3/12
+															528 cell
+																529 text 25.00%
+															530 cell
+																531 text −$15.47
+														532 row
+															533 cell
+																534 text E — Supply & Demand
+															535 cell
+																536 text 2/16
+															537 cell
+																538 text 12.50%
+															539 cell
+																540 text −$34.32
+														541 row
+															542 cell
+																543 text F — Trend Pullback
+															544 cell
+																545 text 3/7
+															546 cell
+																547 text 42.86%
+															548 cell
+																549 text −$2.67
+														550 row
+															551 cell
+																552 text G — AMD / PO3
+															553 cell
+																554 text 0/1
+															555 cell
+																556 text 0%
+															557 cell
+																558 text −$12.66
+														559 row
+															560 cell
+																561 text H — Quasimodo
+															562 cell
+																563 text 3/8
+															564 cell
+																565 text 37.50%
+															566 cell
+																567 text −$5.98
+													568 heading ប្រៀបធៀប Historical Win Rates លើ M5, Value: 3
+														569 text ប្រៀបធៀប Historical Win Rates លើ M5
+													570 container Chart chart
+														571 container
+															572 image Chart chart
+															573 content list
+																574 text A: Historical win rate 0%
+																575 text B: Historical win rate 34.1%
+																576 text C: Historical win rate 42.3%
+																577 text D: Historical win rate 25%
+																578 text E: Historical win rate 12.5%
+																579 text F: Historical win rate 42.9%
+																580 text G: Historical win rate 0%
+																581 text H: Historical win rate 37.5%
+															582 text Archived single-module tests only; old strategy source, not validated current performance.
+													583 container
+														584 button Share
+														585 pop up button Chart options
+													586 heading តើលទ្ធផលនេះប្រាប់អ្វីខ្លះ?, Value: 3
+														587 text តើលទ្ធផលនេះប្រាប់អ្វីខ្លះ?
+													588 content list
+														589 container
+															590 AXListMarker • 
+															591 text 7 ក្នុងចំណោម 8 Module Runs ខាតប្រាក់  ក្នុង Archive M5 នេះ។
+														592 container
+															593 AXListMarker • 
+															594 text Module C មាន Net Profit +$1.47 ប៉ុន្តែ Profit Factor ត្រឹម 1.015 ដែលស្ទើរតែ Breakeven។
+														595 container
+															596 AXListMarker • 
+															597 text Module F មាន Win Rate 42.86% ប៉ុន្តែខាតប្រាក់។
+														598 container
+															599 AXListMarker • 
+															600 text Module A និង G មានតែ 1 Trade ដូច្នេះ 0% Win Rate មិនមានន័យថា Pattern នោះគ្មានប្រសិទ្ធភាពជាទូទៅទេ។
+													601 text នេះជាហេតុផលដែលខ្ញុំមិនណែនាំឱ្យបើក A–H ទាំងអស់សម្រាប់ Live Trading ទាន់ពេលនេះ។ Win Rate ខ្ពស់មិនប្រាកដថាចំណេញទេ។  ត្រូវគិត Average Win, Average Loss, Commission, Spread, Slippage និង Drawdown ផងដែរ។
+													602 heading 4. តើ Concepts ទាំង 8 មានអ្នកប្រើច្រើនទេ?, Value: 2
+														603 text 4. តើ Concepts ទាំង 8 មានអ្នកប្រើច្រើនទេ?
+													604 text ជាទូទៅ Concepts ដូចជា Support/Resistance, Supply & Demand, Trend Pullback និង ICT/SMC ត្រូវបានប្រើ និងពិភាក្សាច្រើនក្នុងសហគមន៍ Technical Trading។ CRT, Turtle Soup, AMD និង Quasimodo ក៏មានសហគមន៍អ្នកសិក្សារបស់ខ្លួនដែរ ប៉ុន្តែខ្ញុំមិនមានទិន្នន័យគួរឱ្យទុកចិត្តសម្រាប់ប្រៀបធៀបចំនួនអ្នកប្រើ Concept នីមួយៗជាក់លាក់នោះទេ។ ការស្រាវជ្រាវអំពី Technical Analysis បង្ហាញថាវាត្រូវបានប្រើប្រាស់យ៉ាងទូលំទូលាយក្នុងទីផ្សារ Forex និង Futures ប៉ុន្តែភស្តុតាងអំពី Profitability មានលទ្ធផលចម្រុះ និងមានបញ្ហា Data Snooping, Transaction Costs និង Overfitting។ 
+													605 pop up button Wiley Online Library +1
+													606 text មិនមាន Win Rate ស្តង់ដារសកលដូចជា ICT = 80%, CRT = 70%, Turtle Soup = 90% ដែលអាចយកមកអនុវត្តលើគ្រប់ XAUUSD Strategy បានទេ។  លទ្ធផលអាស្រ័យលើ Definition, Timeframe, Data Feed, Entry/Exit Rules និង Costs។
+													607 heading 5. ចំណុចដែលខ្ញុំចង់ឱ្យ Codex កែលម្អ, Value: 2
+														608 text 5. ចំណុចដែលខ្ញុំចង់ឱ្យ Codex កែលម្អ
+													609 text ពីការពិនិត្យ Code ខ្ញុំឃើញចំណុចដែលគួរឱ្យ Codex ស្រាវជ្រាវជាពិសេស៖
+													610 content list
+														611 container
+															612 AXListMarker • 
+															613 text Concept fidelity:  ពិនិត្យថា Module B, C, G, H ជា Algorithmic Approximation តាមគោលការណ៍ដែលអ្នកចង់ប្រើ មិនមែនគ្រាន់តែមានឈ្មោះ Concept ដូចគ្នា។
+														614 container
+															615 AXListMarker • 
+															616 text Quality scoring:  Score 75 ឬ 100 គឺ Heuristic មិនមែន Probability នៃការឈ្នះ។ ត្រូវពិនិត្យថាវាចាត់ថ្នាក់ Signals មានប្រយោជន៍ពិតឬអត់។
+														617 container
+															618 AXListMarker • 
+															619 text Entry Distance label:  Code គណនាចម្ងាយពី Midpoint នៃ Candidate Zone សម្រាប់គ្រប់ Module ទោះ Input ដាក់ឈ្មោះថា 
+															620 text Maximum entry distance from FVG
+															621 text  ក៏ដោយ។ នេះគួរកែឈ្មោះឱ្យត្រឹមត្រូវ។
+														622 container
+															623 AXListMarker • 
+															624 text Maximum entries per session:  Code រាប់ Qualified Plans មិនមែនរាប់ Filled Trades សុទ្ធទេ។ វាអាចធ្វើឱ្យអ្នកយល់ច្រឡំថាហេតុអ្វី Signal ត្រូវបានរារាំង។
+													625 text ចំណុចទាំងនេះមិនទាន់ជាភស្តុតាងថា Trading Rules ខុសទេ ប៉ុន្តែជាចំណុចសម្រាប់ Improve Accuracy, Transparency និង Research Quality។
+													626 heading 6. អ្វីដែលខ្ញុំណែនាំឱ្យធ្វើឥឡូវនេះ, Value: 2
+														627 text 6. អ្វីដែលខ្ញុំណែនាំឱ្យធ្វើឥឡូវនេះ
+													628 heading Research Priority, Value: 2
+														629 text Research Priority
+													630 text កុំទាន់បន្ថែម Patterns ថ្មី ឬ Enable All សម្រាប់ Trading ពិត។ ប្រើ Data និង Source ដែលមានស្រាប់ ដើម្បីធ្វើ Automated Concept Audit សម្រាប់ A–H ជាកញ្ចប់តែមួយ រួចធ្វើ Real TradingView Backtest លើ Current Source និង Compare ជាមួយ Archive ចាស់។ អាចផ្ញើ Prompt នេះទៅ ChatGPT Work ឬ Codex ដើម្បីផ្តោតលើការងារនេះជាក់លាក់៖
+													631 container
+														632 text Writing
+														633 button Copy
+														634 button Open editor
+														635 text entry area (settable) Start writing, Value: Audit all eight XAUUSD SMART SCALPER PRO trading modules A–H in the local repository.
+Your objective is to verify concept fidelity, implemented conditions, safety filters, state transitions, and testing coverage. Do not claim universal win rates or guaranteed profitability.
+1. Inspect the actual Pine engine, module predicates, candidate state machine, and Strategy implementation.
+2. For every module A–H, list exact detection, confirmation, invalidation, expiration, entry, stop, and target rules with source locations.
+3. Identify where each implementation is a simplified approximation of the named trading concept.
+4. Verify BUY/SELL symmetry, confirmed-candle sequencing, repaint risks, duplicate handling, conflicting candidates, and shared risk filters.
+5. Analyze existing historical single-module test matrices, identifying their exact source hashes and limitations. Do not attribute old results to current source.
+6. Inspect quality scoring for double counting and unsupported claims of predictive accuracy.
+7. Review zone-midpoint entry distance and session-qualified-plan counting semantics.
+8. Add focused regression tests for any confirmed implementation defects.
+9. Preserve the v0.8.0 baseline. Place any trading-rule improvements in separate experimental variants.
+10. Prepare a reproducible current-source batch testing plan for A–H on M1, M3, M5, and M15.
+11. Compare actual historical win rate, trade counts, profit factor, drawdown, expectancy, and costs only where genuine evidence exists.
+12. Never fabricate TradingView outcomes. Do not make live trades, send alerts, or deploy.
+Deliver one concise module-by-module audit table marking each condition as implemented, tested, incomplete, or unverified. Identify exact bugs and propose only evidence-supported improvements.
+															636 text Audit all eight XAUUSD SMART SCALPER PRO trading modules A–H in the local repository.
+															637 text Your objective is to verify concept fidelity, implemented conditions, safety filters, state transitions, and testing coverage. Do not claim universal win rates or guaranteed profitability.
+															638 content list
+																639 container
+																	640 AXListMarker 1. 
+																	641 text Inspect the actual Pine engine, module predicates, candidate state machine, and Strategy implementation.
+																642 container
+																	643 AXListMarker 2. 
+																	644 text For every module A–H, list exact detection, confirmation, invalidation, expiration, entry, stop, and target rules with source locations.
+																645 container
+																	646 AXListMarker 3. 
+																	647 text Identify where each implementation is a simplified approximation of the named trading concept.
+																648 container
+																	649 AXListMarker 4. 
+																	650 text Verify BUY/SELL symmetry, confirmed-candle sequencing, repaint risks, duplicate handling, conflicting candidates, and shared risk filters.
+																651 container
+																	652 AXListMarker 5. 
+																	653 text Analyze existing historical single-module test matrices, identifying their exact source hashes and limitations. Do not attribute old results to current source.
+																654 container
+																	655 AXListMarker 6. 
+																	656 text Inspect quality scoring for double counting and unsupported claims of predictive accuracy.
+																657 container
+																	658 AXListMarker 7. 
+																	659 text Review zone-midpoint entry distance and session-qualified-plan counting semantics.
+																660 container
+																	661 AXListMarker 8. 
+																	662 text Add focused regression tests for any confirmed implementation defects.
+																663 container
+																	664 AXListMarker 9. 
+																	665 text Preserve the v0.8.0 baseline. Place any trading-rule improvements in separate experimental variants.
+																666 container
+																	667 AXListMarker 10. 
+																	668 text Prepare a reproducible current-source batch testing plan for A–H on M1, M3, M5, and M15.
+																669 container
+																	670 AXListMarker 11. 
+																	671 text Compare actual historical win rate, trade counts, profit factor, drawdown, expectancy, and costs only where genuine evidence exists.
+																672 container
+																	673 AXListMarker 12. 
+																	674 text Never fabricate TradingView outcomes. Do not make live trades, send alerts, or deploy.
+															675 text Deliver one concise module-by-module audit table marking each condition as implemented, tested, incomplete, or unverified. Identify exact bugs and propose only evidence-supported improvements.
+													676 text សេចក្តីសន្និដ្ឋាន៖  Concept A–H មាន Conditions ក្នុង Code រួចហើយ ប៉ុន្តែ  មិនទាន់មានភស្តុតាងគ្រប់គ្រាន់ថា Concepts ទាំង 8 ត្រឹមត្រូវល្អសម្រាប់ Live Trading ឬមាន Win Rate ខ្ពស់ទេ ។ លទ្ធផល Archive M5 មិនសូវល្អ ដូច្នេះការកែលម្អគួរផ្តោតលើការរកមូលហេតុ Loss និងការវាស់ Performance ជាមួយទិន្នន័យថ្មី មិនមែនបន្ថែម Patterns ឱ្យច្រើនតែប៉ុណ្ណោះ។
+												677 button Copy
+												678 pop up button Rate response
+												679 toggle button Read aloud, Value: 0
+												680 button Share
+												681 pop up button Regenerate response
+												682 pop up button More actions
+												683 splitter Yesterday 7:42 AM
+												684 heading You said:, Value: 4
+													685 text You said:
+												686 button xauusd-smart-scalper 2(1).zip
+												687 image
+												688 text xauusd-smart-scalper 2(1).zip
+												689 text File
+												690 text i want you to check all file in this, and to make clearly for check and i want you to give full propm for upgrade all partern, concept,strategy... or anything all and test it already with tradingview also to get professional indicator that have win a lot signal, please check all and give full propm for where do you want to upgrade it all for me
+												691 button Copy message
+												692 button Edit message
+												693 button Worked for 6m 5s
+												694 heading ChatGPT said:, Value: 4
+													695 text ChatGPT said:
+												696 container
+													697 text ខ្ញុំបានពិនិត្យ ZIP ថ្មីរបស់អ្នក 
+													698 text xauusd-smart-scalper 2(1).zip
+													699 text  រួចហើយ ដោយផ្តោតលើ Pine Script, Modules A–H, Strategy Execution, Risk Management, Telegram Backend, Automated Tests និង Backtest Reports។ ការវាយតម្លៃរបស់ខ្ញុំ៖ Project នេះមានគ្រឹះ Coding ល្អសម្រាប់បន្តអភិវឌ្ឍ ប៉ុន្តែមិនទាន់ជា Professional Trading Indicator ដែលបានបញ្ជាក់ថា Win Rate ខ្ពស់ និងអាចប្រើ Live Trading ដោយទំនុកចិត្តបានទេ។ ខ្ញុំបានរៀបចំរបាយការណ៍ពិនិត្យ Source និង Evidence សម្រាប់អ្នក៖
+													700 image
+													701 text XAUUSD Code Audit — 3 November 2026 Module conditions · Bugs and gaps · Backtest evidence · Testing results · Upgrade priorities
+													702 link Open បើករបាយការណ៍ពិនិត្យ Project
+														703 text បើករបាយការណ៍ពិនិត្យ 
+														704 container
+															705 text Project
+															706 image
+													707 heading 1. អ្វីដែលខ្ញុំរកឃើញ, Value: 2
+														708 text 1. អ្វីដែលខ្ញុំរកឃើញ
+													709 text TRADING MODULES
+													710 heading 8 / 8, Value: 1
+														711 text 8 / 8
+													712 text មាន Logic ក្នុង Code CURRENT VERSION
+													713 heading v0.8.0, Value: 1
+														714 text v0.8.0
+													715 text Baseline hashes verified
+													716 table
+														717 row
+															718 cell
+																719 text Indicator + Strategy Source Hashes
+															720 cell
+																721 text MATCH
+														722 row
+															723 cell
+																724 text Pine Generation Checks
+															725 cell
+																726 text PASS
+														727 row
+															728 cell
+																729 text Existing PLAN_AUDIT Sample
+															730 cell
+																731 text 1 match, 0 mismatches
+														732 row
+															733 cell
+																734 text Module A–H Logic
+															735 cell
+																736 text Implemented; requires more native validation
+														737 row
+															738 cell
+																739 text Full Automated Suite
+															740 cell
+																741 text 155 tests reported previously; not rerun here
+														742 row
+															743 cell
+																744 text Current-source Profitability
+															745 cell
+																746 text Unverified
+														747 row
+															748 cell
+																749 text TradingView Replay / OOS
+															750 cell
+																751 text Unverified
+													752 text ខ្ញុំបានសាកល្បងរត់ Automated Suite ពេញលេញក្នុងបរិស្ថាននេះ ប៉ុន្តែ 
+													753 text npm ci --offline
+													754 text  មិនអាចដំឡើង Dependencies ទាំងអស់ពី Cache បាន។ ដូច្នេះខ្ញុំមិនអះអាងថា Tests 155 ត្រូវបានរត់ឡើងវិញដោយខ្ញុំទេ។ ការតេស Pine Generation, Experiment Generation, JavaScript/Python Syntax និង Existing Audit Comparator បានដំណើរការ។
+													755 heading 2. ចំណុចដែលគួរ Upgrade មុនគេ, Value: 2
+														756 text 2. ចំណុចដែលគួរ Upgrade មុនគេ
+													757 table
+														758 row
+															759 column header
+																760 text អាទិភាព
+															761 column header
+																762 text អ្វីត្រូវកែលម្អ
+															763 column header
+																764 text មូលហេតុ
+														765 row
+															766 cell
+																767 text 1
+															768 cell
+																769 text Signal Quality និង Rejection Diagnostics
+															770 cell
+																771 text ឱ្យដឹងថាហេតុអ្វី BUY/SELL ចេញ ឬមិនចេញ
+														772 row
+															773 cell
+																774 text 2
+															775 cell
+																776 text Module A–H Concept Fidelity
+															777 cell
+																778 text ធានាថា Pattern នីមួយៗមាន Detection, Confirmation និង Invalidation ត្រឹមត្រូវតាម Definition ដែលបានជ្រើស
+														779 row
+															780 cell
+																781 text 3
+															782 cell
+																783 text Exit / Risk / Partial TP
+															784 cell
+																785 text ដឹង Actual Fill, Exit Reason, Costs និង Realized R
+														786 row
+															787 cell
+																788 text 4
+															789 cell
+																790 text Combined Multi-module Testing
+															791 cell
+																792 text រក Conflicts និងវាស់លទ្ធផល A-only ទល់នឹង A–H
+														793 row
+															794 cell
+																795 text 5
+															796 cell
+																797 text Backtesting + OOS
+															798 cell
+																799 text បំបែក Signal Frequency, Win Rate និង Profitability ពិត
+														800 row
+															801 cell
+																802 text 6
+															803 cell
+																804 text Dashboard + Telegram
+															805 cell
+																806 text បង្ហាញ Signal ច្បាស់, Entry/SL/TP និងស្ថានភាព Confirmation
+													807 text ខ្ញុំក៏រកឃើញចំណុចជាក់លាក់មួយ៖ 
+													808 text reports/V090_RELEASE_READINESS.md
+													809 text  និង Evidence Checklist នៅយោងទៅ  Exit-Audit Experiment Hash ចាស់  (
+													810 text ea1b065f…
+													811 text )។ ប៉ុន្តែ Experiment Source ក្នុង ZIP ថ្មីមាន Hash៖
+													812 text a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623
+													813 text Codex ត្រូវកែឯកសារយោងឱ្យស្របនឹង Source ថ្មី មុន Compile Experimental Strategy។ មានបញ្ហាសុវត្ថិភាពមួយទៀត៖ ZIP ដែលអ្នកផ្ញើមាន 
+													814 text .env
+													815 text , Git History និង 
+													816 text node_modules
+													817 text ។  កុំចែករំលែក ZIP នេះជាសាធារណៈ ។ បើ Credentials ក្នុងនោះជាអ្វីដែលកំពុងប្រើ សូមប្តូរវា ហើយប្រើ Safe Share Export សម្រាប់ការផ្ញើបន្ទាប់។
+													818 heading 3. Full Master Prompt សម្រាប់ Codex / ChatGPT Work, Value: 2
+														819 text 3. Full Master Prompt សម្រាប់ Codex / ChatGPT Work
+													820 text នេះជា Prompt ដែលខ្ញុំរៀបចំផ្អែកលើ  Source Code និង Reports ក្នុង ZIP ថ្មីរបស់អ្នក ។ វាផ្តោតលើការកែលម្អ Concepts ទាំង 8, Signal Accuracy, Risk, Backtesting, Non-repainting និងការធ្វើតេសក្នុង TradingView ពិត។ ខ្ញុំណែនាំឱ្យផ្ញើវាទៅ  ChatGPT Desktop → Work locally  ឬ  VS Code → Codex (High/Extra High)  ដែលអាចបើក Project Folder ដោយផ្ទាល់។
+													821 container
+														822 text Writing
+														823 button Copy
+														824 button Open editor
+														825 text entry area (settable) Start writing, Value: COMPLETE PROFESSIONAL UPGRADE MISSION
+XAUUSD SMART SCALPER PRO — ALL MODULES, SIGNAL ENGINE, BACKTESTING AND TRADINGVIEW VALIDATION
+You are my lead quantitative research engineer, senior Pine Script v6 developer, algorithmic trading engineer, TypeScript engineer, trading systems QA engineer, and technical release manager.
+Your mission is to make my XAUUSD SMART SCALPER PRO project substantially more correct, robust, explainable, testable, and professionally engineered.
+I want you to ACTUALLY IMPLEMENT justified improvements, fix demonstrated defects, test all eight trading modules, investigate losses, strengthen risk management, and validate genuine TradingView behavior whenever authorized browser/computer interaction is available.
+Do not merely generate recommendations, repeat reports, or count more tests without improving the system.
+PROJECT
+Repository:
+/Users/macbook/Documents/Trading2/xauusd-smart-scalper
+Current baseline release: v0.8.0
+Target: A genuinely validated v0.9.0 research release candidate, followed by an optional v1.0 experimental roadmap.
+Trading symbol: FOREXCOM:XAUUSD
+Execution timeframes:
+• M1
+• M3
+• M5
+• M15
+Technical architecture:
+• TradingView Pine Script v6 Indicator
+• Pine Script v6 Strategy
+• Shared Pine engine and modules
+• Node.js and TypeScript
+• Vercel stateless webhook
+• Telegram alerts
+• No required production database
+• Optional local SQLite research adapter
+The final goal is a professional trading research system that produces clear, confirmed BUY/SELL signals with Entry, SL, TP1, TP2, TP3, risk/reward information, meaningful confidence diagnostics, and accurate strategy testing.
+Optimize for demonstrated out-of-sample risk-adjusted expectancy and signal correctness, not an arbitrary win-rate claim. Aim for useful signal frequency without lowering quality indiscriminately.
+No trading system can guarantee a high win rate or profits.
+
+SECTION 1 — READ THE COMPLETE EXISTING PROJECT FIRST
+Before editing anything, inspect the repository and establish actual source identity.
+Read and trace at least:
+• README.md
+• STRATEGIES.md
+• BACKTESTING.md
+• TESTING.md
+• TRADINGVIEW_SETUP.md
+• TELEGRAM_SETUP.md
+• pine/indicator.pine
+• pine/strategy.pine
+• pine/engine.pine.inc
+• Every file in pine/modules/
+• pine/experiments/strategy_exit_audit.pine
+• scripts/generate_pine.py
+• scripts/generate_exit_audit_experiment.py
+• scripts/compare-plan-audit.mjs
+• scripts/ingest-tradingview-evidence.mjs
+• scripts/analyze-strategy-exits.mjs
+• scripts/package_share.py
+• api/webhook.ts
+• Every source file in src/
+• Every relevant test file in tests/
+• reports/V090_RELEASE_READINESS.md
+• reports/V090_ENGINEERING_AND_M5_LOSS_REVIEW.md
+• reports/native-v080/trade-exit-reconciliation-2026-11-03.md
+• Existing genuine TradingView evidence and historical module matrices
+Inspect other relevant files as needed.
+Create a concise architecture map showing how market data becomes a setup, confirmation, qualified plan, simulated execution, exit, dashboard state, and Telegram event.
+Do not blindly trust old reports. Verify conclusions against current source.
+VERIFIED BASELINE HASHES
+Indicator:
+c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4
+Strategy:
+42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0
+Both belong to the frozen v0.8.0 baseline.
+The current experimental exit-audit file in the uploaded archive hashes to:
+a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623
+Some documentation still references an older experiment hash beginning ea1b065f. Verify the actual on-disk experiment, its generator, and referenced documentation before native testing. Correct stale references without erasing historical records.
+Do not overwrite or modify baseline trading rules in place.
+Create isolated experimental sources and configurations.
+
+SECTION 2 — AUDIT AND UPGRADE ALL EIGHT CONCEPT MODULES
+The current code includes:
+A. Liquidity Sweep + MSS + FVG + Retest
+B. Candle Range Theory (CRT)
+C. Confirmed-Pivot Turtle Soup
+D. Support/Resistance Breakout, Retest and Rejection
+E. Supply and Demand Zones
+F. Structural Trend Pullback
+G. AMD / Power of Three Approximation
+H. Quasimodo / RTM-Inspired Approximation
+For EACH module, independently analyze:
+1. Exact concept definition.
+2. How the existing code represents that definition.
+3. Any difference between discretionary textbook interpretation and implemented deterministic approximation.
+4. Bullish setup rules.
+5. Bearish setup rules.
+6. Market structure context.
+7. Liquidity requirements.
+8. Detection timestamp.
+9. Confirmation requirements.
+10. Whether confirmation requires a later candle.
+11. Invalidation rules.
+12. Candidate expiration.
+13. Trigger price.
+14. Planned entry.
+15. Initial stop-loss placement.
+16. TP1, TP2 and TP3 calculation.
+17. Actual risk/reward feasibility.
+18. Quality-score components.
+19. Optional and mandatory filters.
+20. Historical vs realtime behavior.
+21. Potential false positives.
+22. Signal frequency constraints.
+23. Duplicate/conflicting signal handling.
+24. Chart display accuracy.
+25. Existing test coverage.
+26. Missing native verification.
+Produce a structured audit table for all modules.
+For every rule, classify it as:
+• IMPLEMENTED AND VERIFIED LOCALLY
+• IMPLEMENTED BUT NOT NATIVELY VERIFIED
+• INCOMPLETE
+• CONFIRMED BUG
+• OPTIONAL EXPERIMENT
+• NOT APPLICABLE
+Do not classify a concept as universally correct simply because its code compiles.
+
+SECTION 3 — CONCEPT-SPECIFIC IMPROVEMENT RESEARCH
+Module A — ICT/SMC Sweep + MSS + FVG
+Inspect:
+• Confirmed external/internal swing selection.
+• Sweep and reclaim requirements.
+• Whether the swept liquidity is meaningful rather than ordinary candle noise.
+• MSS structural break definition.
+• Minimum displacement relative to ATR.
+• FVG existence on the correct candle.
+• FVG size and quality.
+• FVG invalidation.
+• Freshness and retest rules.
+• Whether the entry occurs too late.
+• Whether structural SL is appropriate.
+• H1 directional agreement.
+• Nearby opposing structure/liquidity.
+Investigate why the current A-only configuration produces very few qualified entries.
+Add research-only rejection-stage counters for:
+SWEEP_FOUND
+MSS_PENDING
+MSS_REJECTED
+FVG_PENDING
+FVG_INVALID
+RETEST_PENDING
+SESSION_BLOCKED
+TREND_BLOCKED
+QUALITY_BLOCKED
+RISK_BLOCKED
+SIGNAL_CONFIRMED
+Do not loosen filters until evidence supports an experiment.
+Module B — CRT
+Verify that the implementation uses the previous COMPLETED reference candle.
+Investigate:
+• Reference timeframe compatibility.
+• Range high/low freezing.
+• One-sided sweep and reclaim.
+• Later reversal confirmation.
+• Candidate expiration.
+• Reference reuse prevention.
+• Trading-session dependence.
+• False breaks in trending markets.
+• Whether an alternative, separately documented CRT interpretation merits an experimental variant.
+Do not falsely claim that one implementation represents every definition of CRT.
+Module C — Turtle Soup
+Clearly identify the implemented confirmed-pivot intraday variant.
+Check:
+• Confirmed pivot age.
+• False breakout requirements.
+• Reclaim.
+• Later reversal confirmation.
+• One-time pivot use.
+• Setup invalidation.
+• Liquidity quality.
+• Confirmation delay.
+If exploring the original longer-lookback Turtle Soup formulation, build a separate named experimental variant. Do not silently redefine the existing module.
+Module D — Support and Resistance
+Review:
+• Confirmed pivot touch counting.
+• Zone clustering tolerance.
+• Repeated support/resistance validity.
+• Breakout displacement.
+• Breakout retest.
+• Ordinary rejection versus failed breakout.
+• Role reversal.
+• Zone expiration.
+• False breakout handling.
+• Duplicate level detection.
+Research whether ATR-based tolerance is stable across different gold volatility regimes.
+Module E — Supply and Demand
+Review:
+• Opposite-candle origin identification.
+• Displacement and known-structure break.
+• Fresh versus tested zones.
+• Zone invalidation.
+• Maximum test count.
+• Entry after retest.
+• Stop beyond zone invalidation.
+• Excessively wide zones.
+• Nearby opposing zones.
+• Zone freshness and impulse quality.
+Avoid treating every opposite candle as strong institutional supply/demand.
+Module F — Structural Trend Pullback
+Review:
+• BOS/CHoCH interpretation.
+• EMA 9, 21 and optional EMA 50 roles.
+• Pullback depth.
+• Trigger candle.
+• Strong trend versus ranging market.
+• EMA lag.
+• Trend invalidation.
+• Late entry.
+• ATR-based filter feasibility.
+• Structural stop and reversal risk.
+Evaluate whether additional trend-strength diagnostics are useful, without turning them into arbitrary mandatory filters.
+Module G — AMD / PO3
+Audit the rolling-range approximation.
+Investigate:
+• Accumulation width and duration.
+• Range compression.
+• Sweep/manipulation proxy.
+• Reclaim.
+• Distribution displacement.
+• Confirmation direction.
+• Session and volatility interactions.
+• False range breakouts.
+• Repeated range reuse.
+• Invalidation and expiry.
+Never present inferred institutional manipulation as a verified fact.
+Module H — Quasimodo / RTM
+Review:
+• Alternating pivot structure.
+• Five-pivot geometry.
+• Shoulder/head relationships.
+• Confirmed neckline break timing.
+• Retest.
+• Structural invalidation.
+• Ambiguous or overlapping pivot formations.
+• Simultaneously confirmed pivots.
+• Repeated pattern identity.
+• Trend context.
+• Confirmation lag.
+Preserve the distinction between the code's Quasimodo approximation and every discretionary RTM setup.
+
+SECTION 4 — SHARED SIGNAL ENGINE CORRECTNESS
+Inspect the shared candidate selection engine in:
+• pine/engine.pine.inc
+• pine/modules/candidates.pine.inc
+• pine/modules/candidate_state.pine.inc
+• pine/modules/update.pine.inc
+• pine/modules/predicates.pine.inc
+Verify these invariants:
+1. A detected candidate is not immediately a confirmed signal.
+2. Required confirmation occurs only after its proper setup.
+3. Expired or invalidated candidates cannot trigger.
+4. BUY/SELL plans have correct directional price ordering.
+5. Opposite eligible BUY/SELL directions cannot silently produce simultaneous orders.
+6. Same-direction plans are selected deterministically.
+7. Ties have documented, stable behavior.
+8. An invalid candidate cannot veto a valid opposite candidate.
+9. Pending/active orders block unwanted overlapping plans.
+10. Closed or canceled orders do not leave stale candidate state.
+11. Session quota and cooldown are applied as documented.
+12. An entry cannot occur before confirmation.
+13. Indicator and Strategy share the same planned levels.
+14. Execution-model differences are reported rather than hidden.
+15. There are no duplicate alerts for one confirmed event.
+16. Recalculation does not use future market information.
+Identify any demonstrated bug with exact file, line, reproduction and expected behavior.
+Correct confirmed bugs in isolated experimental sources where they alter baseline trading behavior.
+
+SECTION 5 — PROFESSIONAL QUALITY SCORE AND SIGNAL SELECTOR
+The existing 0–100 quality score is a HEURISTIC.
+Do not call it a percentage probability of success.
+Audit:
+• Structure points.
+• Liquidity points.
+• Entry confirmation points.
+• H1 alignment.
+• RR feasibility.
+• Volatility.
+• Session scoring.
+• Correlated or duplicated factors.
+• Differences in scoring opportunities between modules.
+• Module-specific thresholds.
+Research whether scores actually predict better realized outcomes.
+Where sufficient real trade data exists:
+• Group trades by score buckets.
+• Compare actual win rate, payoff, expectancy, drawdown and costs.
+• Analyze score reliability by module.
+• Check confidence intervals and sample-size limitations.
+• Separate development and untouched out-of-sample results.
+If there is insufficient data, report SCORE CALIBRATION INCONCLUSIVE.
+Create experimental selector alternatives if justified:
+• Highest heuristic score.
+• Risk-adjusted score with independently measurable features.
+• Conflict-aware module selection.
+• Optional directional confluence rule.
+All alternatives must be tested against the frozen baseline.
+Never claim a higher-scoring plan is more likely to win without supporting data.
+
+SECTION 6 — MAKE SIGNALS CLEAR AND EXPLAINABLE
+Improve the experimental Indicator's user experience.
+When no signal is emitted, the dashboard should show the actual blocking reason.
+Design a research/debug view such as:
+MODULE A: WAITING FOR FVG RETEST
+MODULE B: CRT CANDIDATE EXPIRED
+MODULE C: NO VALID PIVOT SWEEP
+MODULE D: S/R TOUCH COUNT INSUFFICIENT
+MODULE E: DEMAND ZONE INVALIDATED
+MODULE F: TREND MISALIGNED
+MODULE G: RANGE NOT COMPRESSED
+MODULE H: QUASIMODO GEOMETRY INVALID
+Also show shared filters when applicable:
+SESSION: PASS / BLOCKED
+H1 TREND: ALIGNED / OPPOSED
+VOLATILITY: PASS / BLOCKED
+QUALITY: CURRENT SCORE / REQUIRED SCORE
+STOP DISTANCE: PASS / BLOCKED
+RR: PASS / BLOCKED
+COOLDOWN: ACTIVE / CLEAR
+QUOTA: AVAILABLE / EXHAUSTED
+Avoid misleading historical statuses.
+Distinguish:
+• NO SETUP
+• SETUP DETECTED
+• WAITING FOR CONFIRMATION
+• CANDIDATE INVALIDATED
+• CANDIDATE EXPIRED
+• QUALIFIED PLAN
+• ENTRY PENDING
+• ENTRY TRIGGERED
+• ACTIVE TRADE
+• TRADE CLOSED
+Provide optional display modes:
+MINIMAL
+STANDARD
+RESEARCH DEBUG
+The chart should show:
+• Confirmed BUY/SELL
+• Module identity
+• Planned entry
+• Actual or estimated fill label
+• SL
+• TP1
+• TP2
+• TP3
+• R multiples
+• Heuristic quality score
+• H1/M15 context
+• Session
+• Plan status
+• Clear invalidation/expiry state
+Do not overwhelm the chart with every candidate when research mode is off.
+Keep performance within TradingView drawing and execution limits.
+
+SECTION 7 — RISK MANAGEMENT, ORDERS AND EXITS
+Investigate the current explicit position-sizing formula.
+Review:
+• Account-currency conversion.
+• syminfo.pointvalue.
+• syminfo.mintick.
+• syminfo.mincontract.
+• Risk-percent sizing.
+• Notional exposure cap.
+• Actual planned risk.
+• Commission.
+• Slippage.
+• Spread assumptions.
+• Quantity rounding.
+• Long/short symmetry.
+• Pyramiding restrictions.
+• Pending order expiration.
+• Filled quantity versus planned quantity.
+Test:
+• Minimum allowable size.
+• Zero or near-zero stop distance.
+• Very wide stops.
+• Large gaps.
+• Invalid tick rounding.
+• Insufficient buying power.
+• Unexpected point-value behavior.
+• Partial quantities that round to zero.
+• Positions smaller than expected.
+• Stop and TP touched within the same historical bar.
+Review all stop modes and target modes.
+Review:
+• TP1/TP2/TP3 partial exits.
+• Stop-loss preservation.
+• Break-even.
+• Trailing stop.
+• Time-based exit.
+• Opposing trade handling.
+• Order cancellation.
+• Broker emulator synchronization.
+• Closed-position detection.
+Never widen an existing stop accidentally.
+Never imply the strategy's actual fill equals the Indicator's planned entry.
+
+SECTION 8 — INVESTIGATE THE ACTUAL M5 LOSS
+Existing observed evidence includes a losing M5 trade:
+• Planned BUY entry: 4177.48
+• Strategy reported fill: 4177.50
+• Exit shown in TradingView: 4171.83
+• Displayed quantity: 2.1
+• Entry time: 10:55
+• Exit time: 11:10
+• Net P&L: -$13.66
+• Planned SL: 4170.88
+• Planned TP1: 4184.08
+• Configured time exit: 15 minutes
+• Commission: 0.01% per side
+• Slippage: 2 ticks
+A conditional arithmetic reconciliation exists in:
+reports/native-v080/trade-exit-reconciliation-2026-11-03.md
+Inspect this report and the actual source code.
+The 15-minute time exit is a plausible cause but is NOT confirmed by a source-attributed exit ID/comment.
+Use the existing experimental exit-audit Strategy to investigate:
+• Actual entry ID.
+• Actual entry time.
+• Actual entry price.
+• Actual exit ID.
+• Actual exit comment.
+• Exit timestamp.
+• Exit price.
+• Closed quantity.
+• Partial exits.
+• Commission.
+• Gross and net profit.
+• Point-value metadata.
+• Tick size.
+• Minimum contract size.
+• Risk quantity.
+• Exposure-limited quantity.
+• Effective final quantity.
+• Realized R.
+The experiment must remain separate from the frozen baseline.
+If a true defect is found, implement an isolated correction and regression test.
+Do not assume a losing trade proves a bug.
+Do not infer exit cause from elapsed time alone.
+
+SECTION 9 — PROFESSIONAL NON-REPAINTING CHECKS
+Inspect all:
+• request.security calls.
+• HTF offsets and lookahead_on.
+• H1, M15, D1 and W1 data.
+• Confirmed pivots.
+• BOS/CHoCH confirmation.
+• Candidate state changes.
+• Historical/realtime divergence.
+• barstate.isconfirmed.
+• Chart labels.
+• Alert generation.
+• Entry/exit timing.
+• Source timeframe compatibility.
+The current code uses prior completed HTF values in important paths.
+Preserve correct implementations.
+Add focused tests for demonstrated timing hazards.
+If authorized TradingView UI access exists:
+1. Compile an exact source-matched experimental script in a separate draft.
+2. Record its source hash.
+3. Run Bar Replay starting before the setup.
+4. Advance one candle at a time.
+5. Record first setup appearance.
+6. Record confirmation.
+7. Record signal visibility.
+8. Record plan prices.
+9. Record broker-emulator order/fill timing.
+10. Reload/recalculate the chart.
+11. Compare confirmed historical signals.
+12. Report disappearing, moving, early or changed signals.
+A static code review does not prove non-repainting.
+Do not claim a replay PASS unless the actual native replay was performed.
+
+SECTION 10 — BATCH TEST ALL MODULES WITHOUT WASTING TIME
+I do not want an endless manual process that tests one module and stops.
+Use a staged batch-testing workflow.
+Stage 1 — Frozen baseline
+Record the existing A-only configuration.
+Do not alter it.
+Stage 2 — All modules experiment
+Create a separate research configuration where A–H are enabled.
+Keep all other inputs the same.
+Test the combined system first on M5, then M1/M3/M15 if possible.
+Record:
+• Total qualified plans.
+• Actual filled trades.
+• Trades attributed to each module.
+• Rejected candidates.
+• Opposing-signal conflicts.
+• Cooldown blocks.
+• Session blocks.
+• No-fill or canceled pending plans.
+• Net P&L.
+• Win rate.
+• Profit factor.
+• Maximum drawdown.
+• Average win.
+• Average loss.
+• Expectancy.
+• Commission and slippage.
+• Available adverse/favorable excursions.
+Stage 3 — Targeted module isolation
+Use the combined run and archived evidence to prioritize which modules need isolated analysis.
+Avoid blindly testing every parameter combination.
+Use the existing archived 32-run matrices for historical reference only.
+Those matrices belong to an older Strategy source hash and cannot certify the current version.
+Stage 4 — Actual current-source testing
+For every real run require:
+• Source SHA-256.
+• Chart symbol/feed.
+• Timeframe.
+• Effective date range.
+• Enabled modules.
+• Full actual inputs.
+• Strategy Properties.
+• Commission.
+• Slippage.
+• Spread assumption or limitation.
+• Initial capital.
+• Position sizing.
+• Trade records or explicitly stated UI limitations.
+Do not treat separate module runs as a combined portfolio.
+If TradingView cannot be controlled, prepare the smallest manual capture sequence and process genuine exported data.
+
+SECTION 11 — IMPROVE PERFORMANCE WITHOUT OVERFITTING
+The user's goal is more reliable winning opportunities, but no accuracy target is guaranteed.
+Evaluate distinct experimental hypotheses such as:
+• Better liquidity sweep significance.
+• Cleaner MSS displacement.
+• FVG size/freshness.
+• Zone retest quality.
+• Late-entry rejection.
+• Volatility-regime selection.
+• Session selection.
+• Nearby opposing liquidity.
+• Risk/reward after trading costs.
+• Time-exit alternatives.
+• Structure-based exit alternatives.
+• Module-aware confidence scoring.
+• Better multi-module conflict arbitration.
+Each hypothesis must be separately defined.
+For each experiment document:
+HYPOTHESIS
+CODE CHANGE
+EXPECTED BENEFIT
+POSSIBLE FAILURE MODE
+TEST CONFIGURATION
+ACTUAL EVIDENCE
+RESULT
+DECISION
+Use chronological development and untouched evaluation periods.
+Evaluate sensitivity to:
+• Spread.
+• Slippage.
+• Commission.
+• London vs New York sessions.
+• Bullish vs bearish volatility regimes.
+• M1/M3/M5/M15.
+• Trend vs range conditions.
+• Market data history availability.
+Where sufficient trades exist, calculate uncertainty, confidence intervals and parameter robustness.
+Prefer positive expectancy, manageable drawdown and consistency over simply maximizing win rate.
+Do not optimize on the same data used to claim out-of-sample performance.
+Reject inconclusive improvements.
+
+SECTION 12 — INDICATOR / STRATEGY PARITY
+Inspect the shared engine and generated standalone scripts.
+Keep the same confirmed plan data for Indicator and Strategy.
+Validate:
+• Timestamp.
+• Setup timestamp.
+• Module.
+• Direction.
+• Entry mode.
+• Planned Entry.
+• SL.
+• TP1.
+• TP2.
+• TP3.
+• Quality.
+• Execution acceptance.
+Run the existing comparator at zero tolerance where appropriate.
+Separate planned-signal parity from actual broker-emulator fills.
+The historical evidence currently contains one matching plan at zero tolerance.
+Do not call this multi-plan parity.
+Collect fresh same-input current-source audit records if available.
+Report actual plan counts rather than inventing signals.
+
+SECTION 13 — WEBHOOK, ALERTS AND TELEGRAM
+Preserve the existing stateless architecture:
+TradingView → Vercel TypeScript Webhook → Telegram.
+Do not require MySQL, PostgreSQL, SQLite or a queue for the production release.
+Keep local SQLite work optional and isolated.
+Review:
+• Webhook authentication.
+• JSON schema validation.
+• Existing 8 KB size enforcement.
+• Secret handling.
+• Timeout behavior.
+• Telegram HTTP/API errors.
+• Rate limiting.
+• Message escaping.
+• Duplicate event warnings.
+• Alert event IDs.
+• Signal timestamps.
+• Planned vs filled prices.
+• Stop/target updates.
+Keep all delivery tests synthetic or local-loopback.
+Do not send live Telegram messages, deploy or create TradingView alerts without approval.
+Stateless delivery cannot guarantee durable deduplication or exactly-once delivery.
+
+SECTION 14 — PROJECT SECURITY AND REPRODUCIBILITY
+The ZIP supplied for this review contained .env, .git, node_modules and macOS resource-fork files.
+Review the existing safe package workflow.
+Ensure the public/shareable archive excludes:
+• .env
+• Real secrets
+• Private keys
+• Git history
+• node_modules
+• Local databases
+• Credentials in reports
+• Build caches
+• macOS resource forks
+Use placeholder environment examples only.
+Do not print credentials.
+Recommend owner-driven rotation for any exposed credentials.
+Do not rotate or access accounts automatically.
+Also reconcile the stale experiment hashes in the release checklist and readiness report with the actual current generated experiment.
+
+SECTION 15 — ACTUAL AUTOMATED TESTING
+Add meaningful tests only.
+Focus on:
+1. BUY/SELL symmetry.
+2. Candidate lifecycle and expiration.
+3. Module-specific positive/negative sequences.
+4. Later-bar confirmation.
+5. Duplicate setup identity.
+6. Opposing signals.
+7. Quality score calculations.
+8. Entry/SL/TP ordering.
+9. Invalid stop and size rejection.
+10. Position sizing metadata.
+11. Partial exits.
+12. Time exit and closed-position recording.
+13. Session timezone/DST.
+14. HTF timing and confirmed pivots.
+15. Repaint-risk static guards.
+16. Indicator/Strategy source consistency.
+17. PLAN_AUDIT validation.
+18. Trade export analysis.
+19. Telegram authentication and error behavior.
+20. Safe ZIP creation.
+After actual modifications run:
+npm run verify
+npm audit --omit=dev
+npm ls --omit=dev --depth=0
+git diff --check
+python3 scripts/generate_pine.py --check
+python3 scripts/generate_exit_audit_experiment.py --check
+Use focused tests for changes to evidence ingestion and exit analysis.
+Report exact passing/failed test numbers.
+If dependencies or tooling are unavailable, report the failure. Do not fabricate a PASS.
+
+SECTION 16 — GENUINE TRADINGVIEW UI TESTING
+Check whether authorized Chrome or Computer Use tooling is ACTUALLY working in this session.
+If browser/desktop access succeeds:
+• Open the existing FOREXCOM TradingView chart.
+• Preserve saved scripts and the existing chart layout.
+• Use separate drafts for experiments.
+• Confirm source identity using copy-back SHA-256.
+• Compile Indicator and Strategy natively.
+• Capture compiler results.
+• Record actual active inputs and Strategy Properties.
+• Run real Strategy Tester evaluations.
+• Collect genuine PLAN_AUDIT and lifecycle logs.
+• Inspect genuine trades and exit comments.
+• Run available Bar Replay/reload tests.
+• Capture genuine evidence files.
+If browser access fails:
+• Do not repeatedly use the previously denied Apple Events / osascript click path.
+• Do not claim TradingView tests passed.
+• Do all useful local engineering work.
+• Provide one concise manual evidence-capture instruction instead of repeating access troubleshooting.
+You must not invent TradingView UI actions or browser results.
+Do not overwrite saved TradingView studies, create alerts, make trades, or deploy.
+
+SECTION 17 — REQUIRED DELIVERABLES
+Your work must produce practical engineering outputs, not just a large report.
+Deliver:
+1. Audited module-by-module concept definitions A–H.
+2. Confirmed defect list with source references.
+3. Safe code fixes for confirmed issues.
+4. Isolated experimental Indicator and Strategy versions when justified.
+5. Better signal rejection/explanation diagnostics.
+6. Clear Entry/SL/TP and status presentation.
+7. Better experimental risk/exit research telemetry.
+8. Automated tests for changed logic.
+9. A–H batch research capability using genuine imported results.
+10. A baseline-vs-experiment comparison framework.
+11. TradingView-native test evidence where access permits.
+12. Accurate backtest results and limitations.
+13. Current source hashes.
+14. Reproducible setup and capture instructions.
+15. Safe packaging verification.
+16. Updated release readiness based only on new evidence.
+Avoid redundant report-only edits.
+Preserve every existing user change and the verified baseline.
+
+SECTION 18 — RELEASE GATES
+Do NOT call the system professional, profitable, production-safe, non-repainting or fully verified merely because the local tests pass.
+Separate:
+• Source correctness.
+• Pine generation consistency.
+• Native Indicator compilation.
+• Native Strategy compilation.
+• Concept/condition coverage.
+• Planned-signal parity.
+• Execution/lifecycle correctness.
+• Replay/non-repainting validation.
+• Backtest data integrity.
+• Transaction-cost sensitivity.
+• Out-of-sample evaluation.
+• Signal-frequency analysis.
+• Profitability evidence.
+• Webhook security.
+• Real Telegram delivery validation.
+• Deployment approval.
+Keep v0.8.0 unchanged as the established baseline.
+Do not publish v0.9.0 or v1.0 without the necessary supporting evidence and approval.
+An experimental candidate may be completed and tested locally without being declared release-ready.
+
+FINAL RESPONSE FORMAT
+When finished, return:
+1. PROJECT AUDIT
+Files, architecture and source identity reviewed.
+2. MODULE A–H VERIFICATION
+Table showing each concept, implemented rules, defects, missing checks and actual test status.
+3. CONFIRMED BUGS FIXED
+Exact files, source lines, changes and regression results.
+4. INDICATOR IMPROVEMENTS
+Actual implemented signal, scoring, dashboard and pattern improvements.
+5. STRATEGY AND RISK IMPROVEMENTS
+Actual position sizing, fills, partial exits and time-exit findings.
+6. BACKTEST RESULTS
+Current-source versus historical-source results, trade counts, win rates, expectancy, costs, profit factor and drawdowns. Clearly label missing data.
+7. NON-REPAINTING VERIFICATION
+What was tested natively, what passed, and what remains unverified.
+8. AUTOMATED TEST RESULTS
+Exact commands, counts, failures and fixes.
+9. EXPERIMENTAL FILES
+New files, changed files, current SHA-256 hashes and preserved baseline identity.
+10. REMAINING BLOCKERS
+Only real blockers and the smallest next user action.
+11. RELEASE DECISION
+Ready, blocked or inconclusive, with supporting evidence.
+12. ONE NEXT HIGH-VALUE ACTION
+Exactly one grounded recommendation.
+START NOW
+Inspect actual code first.
+Prioritize shared candidate correctness, A–H concept fidelity, risk/exit diagnostics, signal explainability, and reproducible batch research.
+Implement independently achievable improvements in this session.
+Do not waste time repeatedly documenting unavailable TradingView access.
+Do not silently modify verified trading behavior.
+Do not invent winning results.
+Build the strongest evidence-supported experimental upgrade possible, then test it rigorously and report its real limitations.
+													826 heading 4. តើ Prompt នេះនឹងធ្វើឱ្យ Win Rate កើនទេ?, Value: 2
+														827 text 4. តើ Prompt នេះនឹងធ្វើឱ្យ Win Rate កើនទេ?
+													828 text វាអាចជួយរក Bug, កាត់បន្ថយ False Signals, ធ្វើឱ្យ Signal Explanation ច្បាស់ និងធ្វើការស្រាវជ្រាវ Performance បានប្រសើរជាងមុន។ ប៉ុន្តែ  ការកើន Win Rate ឬប្រាក់ចំណេញត្រូវបញ្ជាក់ដោយ Backtest និង Out-of-sample ពិតប្រាកដ ។ សម្រាប់ Project របស់អ្នក ខ្ញុំចង់ឃើញភាពប្រសើរឡើងបីផ្នែកនេះ៖
+													829 image
+													830 text Signal Accuracy Entry ត្រូវបានបញ្ជាក់នៅ Candle ត្រឹមត្រូវ, SL/TP គណនាត្រឹមត្រូវ និងមិនមាន Future-data Leakage។
+													831 image
+													832 text Useful Signal Frequency Modules A–H អាចផ្តល់ឱកាសច្រើនជាង A-only ប៉ុន្តែមិនត្រូវបង្កើន Signals ដោយកាត់បន្ថយលក្ខខណ្ឌគុណភាពដោយគ្មានការវាស់វែងទេ។
+													833 image
+													834 text Positive Risk-adjusted Performance វាស់ Net Expectancy, Profit Factor, Drawdown, Stability និង Trading Costs ជាមួយទិន្នន័យដែលមិនបានប្រើសម្រាប់ជ្រើស Parameters។ TradingView បញ្ជាក់ថា 
+													835 text request.security()
+													836 text  ត្រូវប្រើ Confirmed Higher-timeframe Data យ៉ាងប្រុងប្រយ័ត្នដើម្បីជៀសវាង Repainting។ ហើយ Strategy Broker Emulator អាចផ្តល់ Fill ដែលខុសពី Planned Entry ដោយសារ Order Timing, Slippage និង Intrabar Assumptions។ ទាំងនេះជាមូលហេតុដែល Prompt ទាមទារ Native Verification មិនមែនត្រឹម Local Tests ប៉ុណ្ណោះ។ 
+													837 pop up button TradingView +2
+													838 text ការនាំចេញ  List of Trades ជា CSV  គឺជាវិធីសមស្របសម្រាប់ផ្ទៀងផ្ទាត់លទ្ធផលពិតនៅក្នុង TradingView ប្រសិនបើគណនី និង UI អនុញ្ញាត។ 
+													839 pop up button TradingView
+													840 text អ្វីដែលត្រូវធ្វើឥឡូវនេះ៖  បើក  ChatGPT Desktop → Work locally , ជ្រើស Project Folder 
+													841 text /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+													842 text  ហើយ Paste Master Prompt ខាងលើ។ វានឹងមានបញ្ជីច្បាស់ថាត្រូវអាន Code ណា, Upgrade អ្វី, Test អ្វី, និងត្រូវផ្តល់ភស្តុតាងអ្វីមុននឹងប្រកាសថា Indicator ល្អជាងមុន។ ចំណាំថា ខ្ញុំមិនបានគ្រប់គ្រង TradingView Live Session របស់អ្នកក្នុងការពិនិត្យនេះទេ។ ដូច្នេះ  មិនទាន់មាន New Native TradingView Test ឬការបញ្ជាក់ Win Rate សម្រាប់ Upgrade ថ្មី ។ Project គួរនៅជា  v0.8.0 — Research Only  រហូតដល់ការផ្ទៀងផ្ទាត់បានគ្រប់គ្រាន់។
+												843 container
+													844 button Open preview of XAUUSD_CODE_AUDIT_2026-11-03.md
+													845 text XAUUSD_CODE_AUDIT_2026-11-03.md Document
+													846 button Download file
+												847 button Copy
+												848 pop up button Rate response
+												849 toggle button Read aloud, Value: 0
+												850 button Share
+												851 pop up button Regenerate response
+												852 button Sources
+												853 pop up button More actions
+											854 container
+												855 text ChatGPT can make mistakes. Check important info.
+											856 container
+												857 heading Latest response, Value: 4
+													858 text Latest response
+												859 container
+													860 container
+														861 button Add files and more
+														862 text entry area (settable) Ask ChatGPT, Value: Ask ChatGPT
+
+															863 text Ask ChatGPT
+														864 pop up button Select ChatGPT model
+															865 text High
+														866 button Dictate
+														867 button Start Voice
+							868 button ⋮⋮
+							869 button ⋮⋮
+							870 button ⋮⋮
+							871 button ⋮⋮
+							872 button ⋮⋮
+							873 button ⋮⋮
+		874 container
+			875 container
+				876 toolbar
+					877 button Back
+					878 button (disabled) Forward
+					879 button Reload
+					880 container
+						881 pop up button View site information
+						882 text field (settable) Address and search bar, Value: chatgpt.com/c/6ae44445-777c-83ec-a991-9ee2ad1f8901, Placeholder: Ask Google or type a URL
+						883 button To open this link, choose an app
+						884 button Bookmark this tab
+					885 container
+						886 pop up button Activate mobile view on this tab
+Has access to this site
+						887 pop up button Extensions
+					888 button Chheang
+					889 pop up button Chrome
+			890 container
+				891 pop up button Tab search
+				892 tab group
+					893 tab (selected, settable, boolean) ICT SMC Trading Concepts - Memory usage - 408 MB, Value: on
+						894 button Close
+				895 button New Tab
+				896 button Open Gemini in Chrome
+	897 container
+		898 close button
+		899 zoom button
+900 menu bar
+	901 Chrome
+	902 File
+	903 Edit
+	904 View
+	905 History
+	906 Bookmarks
+	907 Profiles
+	908 Tab
+	909 Window
+	910 Help
+
+The focused UI element is 862 text entry area (settable) Ask ChatGPT, Value: Ask ChatGPT
