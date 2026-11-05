@@ -1,0 +1,21 @@
+{
+  "originalControls": 115,
+  "newControls": 117,
+  "tradingInputsUnchanged": true,
+  "presentationDifferences": [
+    {
+      "controlIndex": 96,
+      "original": "combo box (settable) Small",
+      "clearVariant": "combo box (settable) Normal"
+    },
+    {
+      "controlIndex": 102,
+      "original": "checkbox Show previous trade prices when no current plan, Value: 0",
+      "clearVariant": "checkbox Show previous trade prices when no current plan, Value: 1"
+    }
+  ],
+  "additionalDisplayControls": [
+    "combo box (settable) Clear levels",
+    "text field (settable) 16"
+  ]
+}

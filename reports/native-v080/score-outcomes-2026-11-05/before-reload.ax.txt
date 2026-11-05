@@ -1,0 +1,11 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,133.99 ▲ +1.78% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+~0 standard window XAUUSD 4,133.99 ▲ +1.78% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,133.99 ▲ +1.78% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,133.99 ▲ +1.78% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~											96 text O 4,134.97 H 4,135.02 L 4,133.50 C 4,134.01 −0.96 (−0.02%)
+~										98 text 4,133.65 SELL
+~										99 text 64
+~										100 text 4,134.29 BUY
+~				432 tab (selected, settable, boolean) XAUUSD 4,133.99 ▲ +1.78% Unnamed - Memory usage - 384 MB, Value: on
+~				448 checkbox Downloads, Value: 0
+The focused UI element is 5 HTML content XAUUSD 4,133.99 ▲ +1.78% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

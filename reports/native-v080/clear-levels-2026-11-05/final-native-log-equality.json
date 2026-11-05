@@ -1,0 +1,8 @@
+{
+  "scope": "Original Indicator versus final presentation-only Indicator, not Strategy parity",
+  "sourceSha256": "4ab564ff12404f5a40318eee2a43468b1345ffcdc01a112732c8a2bbb2c9df24",
+  "rawCsvByteIdentical": true,
+  "records": 300,
+  "plans": 69,
+  "rawCsvSha256": "4ab2b4546fe1351d300d1895c07cf41917d2c26d2b7804029d903d431c5c8eed"
+}

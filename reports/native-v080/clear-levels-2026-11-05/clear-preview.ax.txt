@@ -1,0 +1,409 @@
+Window: "XAUUSD 4,141.18 ▲ +1.96% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,141.18 ▲ +1.96% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,141.18 ▲ +1.96% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,141.18 ▲ +1.96% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 2
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+											23 text Replay
+										24 button Undo hide XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment (15, 3, 0.15, 2, 0.3, 12, 3, 75, 75, 75, 75, 75, 75, 75, 75, Both, 3, 20, 75, 5, 5, 90, 0.5, 0.15, 3, 1.5, 2, 1, 2, 3, 0.7, London, 0800-1700, Europe/London, Close, 3, 15, Fixed R, Structure, 1.5, 1, 2, 1.5, Reference, Off, 8, 3,000, Latest only, 60, 8, 8, 12, Small, Small, 15, 82)
+										25 pop up button Layout setup
+										26 button Save all charts for all symbols and intervals on your layout
+										27 pop up button Manage layouts
+										28 button Quick search
+										29 button Settings
+										30 button Fullscreen mode
+										31 pop up button Take a snapshot
+									32 pop up button Share your idea with the trade community
+									33 container
+										34 button Trade
+									35 container
+										36 button Upgrade
+								37 toolbar
+									38 container
+										39 container
+											40 button Cross
+											41 toggle button Cursors, Value: 1
+										42 container
+											43 button Trendline
+											44 toggle button Trend tools, Value: 0
+										45 container
+											46 button Fib retracement
+											47 toggle button Gann and Fibonacci tools, Value: 0
+										48 container
+											49 button XABCD pattern
+											50 toggle button Patterns, Value: 0
+										51 container
+											52 button Long position
+											53 toggle button Forecasting and measurement tools, Value: 0
+										54 container
+											55 button Brush
+											56 toggle button Geometric shapes, Value: 0
+										57 container
+											58 button Text
+											59 toggle button Annotation tools, Value: 0
+										60 container
+											61 button Icon
+											62 toggle button Icons, Value: 0
+										63 button Measure
+										64 button Zoom in
+										65 container
+											66 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											67 toggle button Magnets, Value: 0
+										68 toggle button Keep drawing, Value: 0
+										69 container
+											70 toggle button Lock drawings and indicators, Value: 0
+											71 toggle button Lock options, Value: 0
+										72 container
+											73 toggle button Hide all drawings, Value: 0
+											74 toggle button Hide options, Value: 0
+										75 container
+											76 button Remove objects
+											77 button Remove options
+								78 container Chart #1
+									79 container
+										80 toolbar
+											81 container
+												82 container Change symbol
+													83 container
+														84 Unlabeled image To get missing image descriptions, open the context menu.
+														85 text X
+													86 button Change symbol
+												87 container Change interval
+													88 text ·
+													89 button Change interval
+												90 text ·
+												91 text FOREX.com
+											92 container
+												93 button Unflag symbol
+													94 image
+												95 button More
+											96 button Market open · Data updates once per second
+											97 container
+												98 text O 4,138.91 H 4,142.34 L 4,138.91 C 4,141.18 +2.28 (+0.05%)
+										99 container
+											100 text 4,140.87 SELL
+											101 text 62
+											102 text 4,141.49 BUY
+										103 container
+											104 button Hide indicators legend
+											105 toolbar
+												106 container
+													107 text XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment
+													108 text 15
+													109 text 3
+													110 text 0.15
+													111 text 2
+													112 text 0.3
+													113 text 12
+													114 text 3
+													115 text 75
+													116 text 75
+													117 text 75
+													118 text 75
+													119 text 75
+													120 text 75
+													121 text 75
+													122 text 75
+													123 text Both
+													124 text 3
+													125 text 20
+													126 text 75
+													127 text 5
+													128 text 5
+													129 text 90
+													130 text 0.5
+													131 text 0.15
+													132 text 3
+													133 text 1.5
+													134 text 2
+													135 text 1
+													136 text 2
+													137 text 3
+													138 text 0.7
+													139 text London
+													140 text 0800-1700
+													141 text Europe/London
+													142 text Close
+													143 text 3
+													144 text 15
+													145 text Fixed R
+													146 text Structure
+													147 text 1.5
+													148 text 1
+													149 text 2
+													150 text 1.5
+													151 text Reference
+													152 text Off
+													153 text 8
+													154 text 3,000
+													155 text Latest only
+													156 text 60
+													157 text 8
+													158 text 8
+													159 text 12
+													160 text Small
+													161 text Small
+													162 text 15
+													163 text 82
+												164 container
+													165 button Show
+													166 button Settings
+													167 image
+													168 button Remove
+													169 button More
+											170 toolbar
+												171 container
+													172 text XAUUSD SMART SCALPER PRO
+													173 text 15
+													174 text 3
+													175 text 0.15
+													176 text 2
+													177 text 0.3
+													178 text 12
+													179 text 3
+													180 text 75
+													181 text 75
+													182 text 75
+													183 text 75
+													184 text 75
+													185 text 75
+													186 text 75
+													187 text 75
+													188 text Both
+													189 text 3
+													190 text 20
+													191 text 75
+													192 text 5
+													193 text 5
+													194 text 90
+													195 text 0.5
+													196 text 0.15
+													197 text 3
+													198 text 1.5
+													199 text 2
+													200 text 1
+													201 text 2
+													202 text 3
+													203 text 0.7
+													204 text London
+													205 text 0800-1700
+													206 text Europe/London
+													207 text Close
+													208 text 3
+													209 text 15
+													210 text Fixed R
+													211 text Structure
+													212 text 1.5
+													213 text 1
+													214 text 2
+													215 text 1.5
+													216 text Reference
+													217 text Off
+													218 text 8
+													219 text 3,000
+													220 text Latest only
+													221 text 60
+													222 text 8
+													223 text 8
+													224 text 12
+													225 text Small
+													226 text Small
+													227 text 15
+													228 text 82
+												229 container
+													230 button Show
+													231 button Settings
+													232 image
+													233 button Remove
+													234 button More
+											235 toolbar
+												236 container
+													237 text XAUUSD SMART SCALPER PRO · Clear levels experiment
+													238 text Clear levels
+													239 text 16
+													240 text 15
+													241 text 3
+													242 text 0.15
+													243 text 2
+													244 text 0.3
+													245 text 12
+													246 text 3
+													247 text 75
+													248 text 75
+													249 text 75
+													250 text 75
+													251 text 75
+													252 text 75
+													253 text 75
+													254 text 75
+													255 text Both
+													256 text 3
+													257 text 20
+													258 text 75
+													259 text 5
+													260 text 5
+													261 text 90
+													262 text 0.5
+													263 text 0.15
+													264 text 3
+													265 text 1.5
+													266 text 2
+													267 text 1
+													268 text 2
+													269 text 3
+													270 text 0.7
+													271 text London
+													272 text 0800-1700
+													273 text Europe/London
+													274 text Close
+													275 text 3
+													276 text 15
+													277 text Fixed R
+													278 text Structure
+													279 text 1.5
+													280 text 1
+													281 text 2
+													282 text 1.5
+													283 text Reference
+													284 text Off
+													285 text 8
+													286 text 3,000
+													287 text Latest only
+													288 text 60
+													289 text 8
+													290 text 8
+													291 text 12
+													292 text Small
+													293 text Normal
+													294 text 15
+													295 text 82
+												296 container
+													297 button Hide
+													298 button Settings
+													299 image
+													300 button Remove
+													301 button More
+												302 container
+													303 text ∅
+													304 text 4,137.33
+													305 text ∅
+													306 text 0.00
+													307 text 0.00
+													308 text ∅
+													309 text ∅
+													310 text ∅
+													311 text ∅
+													312 text ∅
+													313 text ∅
+													314 text ∅
+													315 text ∅
+													316 text ∅
+													317 text ∅
+													318 text ∅
+													319 text 0.00
+													320 text 0.00
+													321 text ∅
+													322 text ∅
+													323 text ∅
+													324 text ∅
+										325 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									326 container
+								327 toolbar
+									328 container
+										329 button 1 day in 1 minute intervals
+										330 button 5 days in 5 minutes intervals
+										331 button 1 month in 30 minutes intervals
+										332 button 3 months in 1 hour intervals
+										333 button 6 months in 2 hours intervals
+										334 button Year to day in 1 day intervals
+										335 button 1 year in 1 day intervals
+										336 button 5 years in 1 week intervals
+										337 button All data in 1 month intervals
+										338 button Go to
+									339 button Timezone
+								340 container
+									341 container
+										342 toolbar
+											343 toggle button Watchlist, details, and news, Value: 0
+											344 toggle button Alerts, Value: 0
+											345 toggle button Object tree and data window, Value: 0
+											346 toggle button AI Copilot, Value: 0
+											347 toggle button Screeners, Value: 0
+											348 toggle button Pine Editor, Value: 0
+											349 toggle button Calendars, Value: 0
+											350 toggle button Community, Value: 0
+											351 toggle button Notifications, Value: 0
+											352 toggle button Chats, Value: 0
+											353 pop up button Products
+											354 toggle button Help Center, Value: 0
+								355 container Trading panel
+							356 container
+								357 content list
+									358 container
+										359 button Close ad
+										360 container Advertisement, Help: 3rd party ad content
+											361 HTML content SafeFrame Container, URL: 1cb48f4c8d345f15870fc9da71f59ae4.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+												362 container
+													363 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													364 link Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													365 link Remember, the more tools and data you have, the easier it is to make better market decisions., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													366 text AD
+													367 link Explore our plans, Value: …
+													368 link …
+		369 container
+			370 pop up button Tab search
+			371 tab group
+				372 tab (selected, settable, boolean) XAUUSD 4,141.18 ▲ +1.96% Unnamed - Memory usage - 528 MB, Value: on
+					373 button Close
+			374 button New Tab
+			375 button Open Gemini in Chrome
+		376 container
+			377 toolbar
+				378 button Back
+				379 button (disabled) Forward
+				380 button Reload
+				381 container
+					382 pop up button View site information
+					383 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					384 button Bookmark this tab
+				385 container
+					386 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					387 pop up button Extensions
+				388 checkbox Downloads, Value: 0
+				389 button Chheang
+				390 pop up button Chrome
+	391 container
+		392 close button
+		393 zoom button
+394 menu bar
+	395 Chrome
+	396 File
+	397 Edit
+	398 View
+	399 History
+	400 Bookmarks
+	401 Profiles
+	402 Tab
+	403 Window
+	404 Help
+
+The focused UI element is 5 HTML content XAUUSD 4,141.18 ▲ +1.96% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

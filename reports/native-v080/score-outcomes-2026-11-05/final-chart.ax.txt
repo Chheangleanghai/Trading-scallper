@@ -1,0 +1,47 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,134.30 ▲ +1.79% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 474-496, 499-500
+~0 standard window XAUUSD 4,134.30 ▲ +1.79% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,134.30 ▲ +1.79% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,134.30 ▲ +1.79% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~											96 text O 4,134.97 H 4,135.02 L 4,132.85 C 4,133.50 −1.47 (−0.04%)
+~										98 text 4,133.03 SELL
+~										99 text 57
+~										100 text 4,133.60 BUY
++											516 container
++												517 text ∅
++												518 text 4,115.44
++												519 text ∅
++												520 text 0.00
++												521 text 0.00
++												522 text ∅
++												523 text ∅
++												524 text ∅
++												525 text ∅
++												526 text ∅
++												527 text ∅
++												528 text ∅
++												529 text ∅
++												530 text ∅
++												531 text ∅
++												532 text ∅
++												533 text 0.00
++												534 text 0.00
++												535 text ∅
++												536 text 4,082.36
++												537 text ∅
++												538 text 4,057.99
++						539 container
++							540 content list
++								541 container
++									542 button Close ad
++									543 container Advertisement, Help: 3rd party ad content
++										544 HTML content SafeFrame Container, URL: 1cb48f4c8d345f15870fc9da71f59ae4.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
++											545 container
++												546 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
++												547 link Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
++												548 link Remember, the more tools and data you have, the easier it is to make better market decisions., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsvYVVg-ybcb241e5TYa_JlCdu8yU96kbsr_aQgTCMfHrGPCz45uRG9hR5J18_OTyvijaaWFvhAE-MjSmJQsGQk8hocEx2lveIIkLas4LYkVCjCMt2jZijcDc1ENJu0g9aEYo11fjCe6epJ_g0WzSjnxPMXKe7Vk0gDVSOG7kremTXza8hC8FrWsARqmaUjB7FqqjoBqfPhrEC4urEpD0lrCdShFrsgz7iG49DVdaU8-021gUP-MRWISl-gs9rGhuqZ6vwqtMr-F9W2XKjRMgXBTuuSV8ndsABhbIdEDITNxzIcbv-VsTNuCjaWhXv-vguJkmV45nq9vGHHMTwOtR-7bE1hu_MNpqt5NxnFspedpFXpwFX1M1pDG7qFEO66KbZMforr3IlWngTHpmcrChcrLpJhCvYGIV_E_KtqCRegx_nMEoWetBio&sai=AMfl-YRQDKklonSr9CFgGsbR9DBBvYoWSpeWwDanrSDGMLs42bkUPipoh_-J3LRMhNi4xT2ee9_27G_U0FjpCcfKba4Ol4lZ6lVB9q2JH74ngTFcs83xM4iS2_POKo5Klg8TsM8f-T78byex7Lwyednvas7vGhSG3rmm7UsAD8LXg6V__PUVh4Cm9325Dc2MHQRYfTVxo5tmjSlBFTbyvbkgLbwarvNQz_RhP8NAFhUFpXY9etMNJMMxFKGq6L_XKUzF5igcRtL7OtDopjajyUEq1c0kCprB2DDxtV7P2AAaRrCQKe7HuNH4hLgfjU4pb3vLtn8QuIR1elyjsDQaIZz8kD7-8g45n-3leCMqHthSjQ9hOROb2WLbK468&sig=Cg0ArKJSzIzbiovp7kX_EAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
++												549 text AD
++												550 link Explore our plans, Value: …
++												551 link …
+~				430 tab (selected, settable, boolean) XAUUSD 4,134.30 ▲ +1.79% Unnamed - Memory usage - 399 MB, Value: on
+The focused UI element is 5 HTML content XAUUSD 4,134.30 ▲ +1.79% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

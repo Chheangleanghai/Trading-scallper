@@ -1,0 +1,445 @@
+Window: "XAUUSD 4,121.95 ▲ +1.49% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,121.95 ▲ +1.49% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,121.95 ▲ +1.49% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,123.23 ▲ +1.52% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+							8 text 2
+							9 toolbar
+								10 container
+									11 button XAUUSD, Help: Symbol search
+									12 button Switch data type
+									13 pop up button Compare symbols
+									14 pop up button 15 minutes
+										15 container
+											16 text 15 m
+									17 pop up button Candles
+									18 button Indicators, metrics, and strategies
+									19 pop up button Favorite indicators and indicators templates
+									20 button Create alert
+									21 toggle button Bar replay
+										22 text Replay
+									23 pop up button Layout setup
+									24 button (disabled) All changes saved
+									25 pop up button Manage layouts
+									26 button Quick search
+									27 button Settings
+									28 button Fullscreen mode
+									29 pop up button Take a snapshot
+								30 pop up button Share your idea with the trade community
+								31 container
+									32 button Trade
+								33 container
+									34 button Upgrade
+							35 toolbar
+								36 container
+									37 container
+										38 button Cross
+										39 toggle button Cursors
+									40 container
+										41 button Trendline
+										42 toggle button Trend tools
+									43 container
+										44 button Fib retracement
+										45 toggle button Gann and Fibonacci tools
+									46 container
+										47 button XABCD pattern
+										48 toggle button Patterns
+									49 container
+										50 button Long position
+										51 toggle button Forecasting and measurement tools
+									52 container
+										53 button Brush
+										54 toggle button Geometric shapes
+									55 container
+										56 button Text
+										57 toggle button Annotation tools
+									58 container
+										59 button Icon
+										60 toggle button Icons
+									61 button Measure
+									62 button Zoom in
+									63 container
+										64 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value
+										65 toggle button Magnets
+									66 toggle button Keep drawing
+									67 container
+										68 toggle button Lock drawings and indicators
+										69 toggle button Lock options
+									70 container
+										71 toggle button Hide all drawings
+										72 toggle button Hide options
+									73 container
+										74 button Remove objects
+										75 button Remove options
+							76 container Chart #1
+								77 container
+									78 toolbar
+										79 container
+											80 container Change symbol
+												81 container
+													82 Unlabeled image To get missing image descriptions, open the context menu.
+													83 text X
+												84 button Change symbol
+											85 container Change interval
+												86 text ·
+												87 button Change interval
+											88 text ·
+											89 text FOREX.com
+										90 container
+											91 button Unflag symbol
+											92 button More
+										93 button Market open · Data updates once per second
+										94 container
+											95 text O 4,104.87 H 4,125.85 L 4,100.27 C 4,123.23 +18.36 (+0.45%)
+									96 container
+										97 text 4,122.70 SELL
+										98 text 94
+										99 text 4,123.64 BUY
+									100 container
+										101 button Hide indicators legend
+										102 toolbar
+											103 container
+												104 text XAUUSD SMART SCALPER PRO Backtest · Exit audit experiment
+												105 text 15
+												106 text 3
+												107 text 0.15
+												108 text 2
+												109 text 0.3
+												110 text 12
+												111 text 3
+												112 text 75
+												113 text 75
+												114 text 75
+												115 text 75
+												116 text 75
+												117 text 75
+												118 text 75
+												119 text 75
+												120 text Both
+												121 text 3
+												122 text 20
+												123 text 75
+												124 text 5
+												125 text 5
+												126 text 90
+												127 text 0.5
+												128 text 0.15
+												129 text 3
+												130 text 1.5
+												131 text 2
+												132 text 1
+												133 text 2
+												134 text 3
+												135 text 0.7
+												136 text London
+												137 text 0800-1700
+												138 text Europe/London
+												139 text Close
+												140 text 3
+												141 text 15
+												142 text Fixed R
+												143 text Structure
+												144 text 1.5
+												145 text 1
+												146 text 2
+												147 text 1.5
+												148 text Reference
+												149 text Off
+												150 text 8
+												151 text 3,000
+												152 text Latest only
+												153 text 60
+												154 text 8
+												155 text 8
+												156 text 12
+												157 text Small
+												158 text Small
+												159 text 15
+												160 text 82
+											161 container
+												162 button Hide
+												163 button Settings
+												164 button Remove
+												165 button More
+											166 button Active strategy
+											167 container
+												168 text ∅
+												169 text 4,074.75
+												170 text ∅
+												171 text 0.00
+												172 text 0.00
+												173 text ∅
+												174 text ∅
+												175 text ∅
+												176 text ∅
+												177 text ∅
+												178 text ∅
+												179 text ∅
+												180 text ∅
+												181 text ∅
+												182 text ∅
+												183 text ∅
+												184 text 0.00
+												185 text 0.00
+												186 text ∅
+												187 text 4,054.34
+												188 text ∅
+												189 text 4,057.99
+										190 toolbar
+											191 container
+												192 text XAUUSD SMART SCALPER PRO
+												193 text 15
+												194 text 3
+												195 text 0.15
+												196 text 2
+												197 text 0.3
+												198 text 12
+												199 text 3
+												200 text 75
+												201 text 75
+												202 text 75
+												203 text 75
+												204 text 75
+												205 text 75
+												206 text 75
+												207 text 75
+												208 text Both
+												209 text 3
+												210 text 20
+												211 text 75
+												212 text 5
+												213 text 5
+												214 text 90
+												215 text 0.5
+												216 text 0.15
+												217 text 3
+												218 text 1.5
+												219 text 2
+												220 text 1
+												221 text 2
+												222 text 3
+												223 text 0.7
+												224 text London
+												225 text 0800-1700
+												226 text Europe/London
+												227 text Close
+												228 text 3
+												229 text 15
+												230 text Fixed R
+												231 text Structure
+												232 text 1.5
+												233 text 1
+												234 text 2
+												235 text 1.5
+												236 text Reference
+												237 text Off
+												238 text 8
+												239 text 3,000
+												240 text Latest only
+												241 text 60
+												242 text 8
+												243 text 8
+												244 text 12
+												245 text Small
+												246 text Small
+												247 text 15
+												248 text 82
+											249 container
+												250 button Show
+												251 button Settings
+												252 button Remove
+												253 button More
+									254 image Chart for FOREXCOM:XAUUSD, 15 minutes
+							255 toolbar
+								256 container
+									257 button 1 day in 1 minute intervals
+									258 button 5 days in 5 minutes intervals
+									259 button 1 month in 30 minutes intervals
+									260 button 3 months in 1 hour intervals
+									261 button 6 months in 2 hours intervals
+									262 button Year to day in 1 day intervals
+									263 button 1 year in 1 day intervals
+									264 button 5 years in 1 week intervals
+									265 button All data in 1 month intervals
+									266 button Go to
+								267 button Timezone
+							268 container
+								269 toolbar
+									270 toggle button Watchlist, details, and news
+									271 toggle button Alerts
+									272 toggle button Object tree and data window
+									273 toggle button AI Copilot
+									274 toggle button Screeners
+									275 toggle button Pine Editor
+									276 toggle button Calendars
+									277 toggle button Community
+									278 toggle button Notifications
+									279 toggle button Chats
+									280 pop up button Products
+									281 toggle button Help Center
+							282 toolbar
+								283 container
+									284 button Collapse strategy report
+									285 pop up button Manage strategy
+								286 button Collapse panel
+								287 button Maximize panel
+							288 container
+								289 container
+									290 tab group
+										291 tab (selected) 1
+										292 tab (settable, integer) 0
+									293 button Aug 3, 2026 — Nov 5, 2026
+									294 button 10 K
+									295 button Default detalization
+									296 button Script execution
+									297 button Settings
+									298 button Add alert
+									299 container
+										300 text Key stats
+										301 text Total PnL
+										302 container
+											303 text −196.60 USD −1.97%
+										304 text Max drawdown
+										305 container
+											306 text 228.66 USD 2.28%
+										307 text Profitable trades
+										308 container
+											309 text 45.38% 54/119
+										310 text Profit factor
+										311 text 0.651
+										312 text Performance
+										313 link Show description, Value: tradingview.com/support/solutions/43000681735
+										314 pop up button Scale
+										315 button Take a snapshot
+										316 button Expand chart
+										317 container
+											318 text Cumulative PnL Buy and hold
+											319 button Show
+											320 text Trades excursions Run-ups and drawdowns
+											321 button Hide metrics legend
+										322 text Performance analysis
+										323 tab group
+											324 tab (selected) Breakdown, Value: 1
+											325 tab (settable, integer) Periodical, Value: 0
+											326 tab (settable, integer) Benchmarking, Value: 0
+											327 tab (settable, integer) Margin usage, Value: 0
+											328 tab (settable, integer) Growth and decline, Value: 0
+										329 text Gross profit
+										330 container
+											331 text 366.49 USD 3.66%
+										332 text Gross loss
+										333 container
+											334 text 563.09 USD 5.63%
+										335 text Profit factor
+										336 text 0.651
+										337 text Commission load
+										338 button Upgrade to get full access to Strategy report data
+										339 text Profits and losses
+										340 radio button By signals
+										341 radio button By side
+										342 text All signals
+										343 text −196.60 USD
+										344 text E_SUPPLY
+										345 text +19.62 USD
+										346 text E_DEMAND
+										347 text +6.40 USD
+										348 text D_SNR
+										349 text +3.53 USD
+										350 text F_TREND_PULLBACK
+										351 text −32.80 USD
+										352 text C_TURTLE_SOUP
+										353 text −37.53 USD
+										354 text B_CRT
+										355 text −155.82 USD Trades analysis
+										356 tab group
+											357 tab (selected) Distribution, Value: 1
+											358 tab (settable, integer) Streaks, Value: 0
+											359 tab (settable, integer) Time patterns, Value: 0
+										360 text Expectancy
+										361 container
+											362 text −1.65 USD −0.01%
+										363 text Outliers PnL
+										364 container
+											365 text 29.32 USD 0.29%
+										366 text Largest profit
+										367 button Upgrade to get full access to Strategy report data
+										368 text Largest loss
+										369 button Upgrade to get full access to Strategy report data
+										370 text Returns distribution
+										371 text Losers Winners Average loss −0.13% Average profit 0.10% Trades distribution
+										372 container
+											373 text 119
+											374 text Total trades
+										375 text Winners
+										376 text 54 trades
+										377 text 45.38%
+										378 text Losers
+										379 text 65 trades
+										380 text 54.62%
+										381 text Breakevens
+										382 text 0 trades
+										383 text 0.00%
+							384 container Trading panel
+						385 container
+							386 container
+								387 text Scroll to the left
+								388 image
+						389 container
+							390 content list
+								391 container
+									392 button Close ad
+									393 container Advertisement, Help: 3rd party ad content
+										394 HTML content SafeFrame Container, URL: c4d314a98fee5cb43fde023a71205053.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+											395 container
+												396 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjst-GljMgm5D4VfipeHk8SPblKsCGrUfb2kBLJ1slnhLFwRjC3iP1tRmG8vaqfTnEwufeBY10T95dHCk7nYrfQCWllEt_R41LnoGJFKStU3tHRdXo4ypZPqmnGWKTF2_Mm3Ffqg0ru64T4QFs6ueG3MGPyeRKBuRlojKqE8HguwolXASXRXt2q5jhfNPbkRx4WFTKujpkXbDSrYtYt9vmsAYKTltdvPXtwfVyj23ndvPyhg7b26xyFM_SgV9sfX5330zw8r2TQlZTsWc_RjMaQSYBoa9UPU_4uS79cVpLaEYI_BW2T4DCtNv7NT9mimPkskJxb14TPQgyM0fC2kAUnejpTJPU6uygQa-TpZCLH7EakZjNTpC9VAphg-Yn-2hPQ_nRALnFjv5o-8aPrnnRjBmWNDZxZk6BKMmhCdovrfD0FzJNmATsQM&sai=AMfl-YS8xbqKydi27kSO5w50Q5YXajSwX1E2mlILJOn4rEoI0oo-Ma73JZb9ZhfwaoVJdWSWddbVMqww3GEpcUwXVXhdreXsrFc7lnVQAvnmm2dW9ZWGoC4JlUHWQwefQcsAeGcRKkEMdMpmrWjxuXlj3b6Hl2zOB8CgAJ-4_DXrV95B5D1KzFcAMzc4-y3lrkGmxQNoTUtAxwWaY-Fcl1nytIQ1OS21esSM5getPuTqj6nOjybPMy93Fl7dZjL-VWZC5FnvMv-WjPqaZtSUp3AoqRfy355suABPeRgE0T-D2UJEH5R2RQK4bon9WCRR2gjer3PmC6AMm5jFYzZpJcK9eUIbPa4AqSrg_1nR6cKWsFFfYuKi1Ynuo8B0&sig=Cg0ArKJSzL3yUOCU0kXXEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/share-your-love/%3Fsource%3Dcpm_promo%26utm_campaign%3Draf_oct_2026_v3_left
+												397 link Cash out with referral rewards, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjst-GljMgm5D4VfipeHk8SPblKsCGrUfb2kBLJ1slnhLFwRjC3iP1tRmG8vaqfTnEwufeBY10T95dHCk7nYrfQCWllEt_R41LnoGJFKStU3tHRdXo4ypZPqmnGWKTF2_Mm3Ffqg0ru64T4QFs6ueG3MGPyeRKBuRlojKqE8HguwolXASXRXt2q5jhfNPbkRx4WFTKujpkXbDSrYtYt9vmsAYKTltdvPXtwfVyj23ndvPyhg7b26xyFM_SgV9sfX5330zw8r2TQlZTsWc_RjMaQSYBoa9UPU_4uS79cVpLaEYI_BW2T4DCtNv7NT9mimPkskJxb14TPQgyM0fC2kAUnejpTJPU6uygQa-TpZCLH7EakZjNTpC9VAphg-Yn-2hPQ_nRALnFjv5o-8aPrnnRjBmWNDZxZk6BKMmhCdovrfD0FzJNmATsQM&sai=AMfl-YS8xbqKydi27kSO5w50Q5YXajSwX1E2mlILJOn4rEoI0oo-Ma73JZb9ZhfwaoVJdWSWddbVMqww3GEpcUwXVXhdreXsrFc7lnVQAvnmm2dW9ZWGoC4JlUHWQwefQcsAeGcRKkEMdMpmrWjxuXlj3b6Hl2zOB8CgAJ-4_DXrV95B5D1KzFcAMzc4-y3lrkGmxQNoTUtAxwWaY-Fcl1nytIQ1OS21esSM5getPuTqj6nOjybPMy93Fl7dZjL-VWZC5FnvMv-WjPqaZtSUp3AoqRfy355suABPeRgE0T-D2UJEH5R2RQK4bon9WCRR2gjer3PmC6AMm5jFYzZpJcK9eUIbPa4AqSrg_1nR6cKWsFFfYuKi1Ynuo8B0&sig=Cg0ArKJSzL3yUOCU0kXXEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/share-your-love/%3Fsource%3Dcpm_promo%26utm_campaign%3Draf_oct_2026_v3_left
+												398 link Earn $15 for each friend who subscribes. Once the pot reaches $100 — withdraw it as cash. They get $15 off., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjst-GljMgm5D4VfipeHk8SPblKsCGrUfb2kBLJ1slnhLFwRjC3iP1tRmG8vaqfTnEwufeBY10T95dHCk7nYrfQCWllEt_R41LnoGJFKStU3tHRdXo4ypZPqmnGWKTF2_Mm3Ffqg0ru64T4QFs6ueG3MGPyeRKBuRlojKqE8HguwolXASXRXt2q5jhfNPbkRx4WFTKujpkXbDSrYtYt9vmsAYKTltdvPXtwfVyj23ndvPyhg7b26xyFM_SgV9sfX5330zw8r2TQlZTsWc_RjMaQSYBoa9UPU_4uS79cVpLaEYI_BW2T4DCtNv7NT9mimPkskJxb14TPQgyM0fC2kAUnejpTJPU6uygQa-TpZCLH7EakZjNTpC9VAphg-Yn-2hPQ_nRALnFjv5o-8aPrnnRjBmWNDZxZk6BKMmhCdovrfD0FzJNmATsQM&sai=AMfl-YS8xbqKydi27kSO5w50Q5YXajSwX1E2mlILJOn4rEoI0oo-Ma73JZb9ZhfwaoVJdWSWddbVMqww3GEpcUwXVXhdreXsrFc7lnVQAvnmm2dW9ZWGoC4JlUHWQwefQcsAeGcRKkEMdMpmrWjxuXlj3b6Hl2zOB8CgAJ-4_DXrV95B5D1KzFcAMzc4-y3lrkGmxQNoTUtAxwWaY-Fcl1nytIQ1OS21esSM5getPuTqj6nOjybPMy93Fl7dZjL-VWZC5FnvMv-WjPqaZtSUp3AoqRfy355suABPeRgE0T-D2UJEH5R2RQK4bon9WCRR2gjer3PmC6AMm5jFYzZpJcK9eUIbPa4AqSrg_1nR6cKWsFFfYuKi1Ynuo8B0&sig=Cg0ArKJSzL3yUOCU0kXXEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/share-your-love/%3Fsource%3Dcpm_promo%26utm_campaign%3Draf_oct_2026_v3_left
+												399 text AD
+												400 link Start earning now, Value: …
+												401 link …
+		402 container
+			403 container
+				404 toolbar
+					405 button Back
+					406 button (disabled) Forward
+					407 button Reload
+					408 container
+						409 pop up button View site information
+						410 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+						411 button Bookmark this tab
+					412 container
+						413 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+						414 pop up button Extensions
+					415 checkbox Downloads
+					416 button Chheang
+					417 pop up button Chrome
+			418 container
+				419 pop up button Tab search
+				420 tab group
+					421 tab (selected, settable, boolean) XAUUSD 4,121.95 ▲ +1.49% Unnamed - Memory usage - 451 MB, Value: on
+						422 button Close
+					423 tab (settable, boolean) SNR and KSNR in trading - Google Search - Memory usage - 355 MB, Value: off
+						424 button Close
+				425 button New Tab
+				426 button Open Gemini in Chrome
+	427 container
+		428 close button
+		429 zoom button
+430 menu bar
+	431 Chrome
+	432 File
+	433 Edit
+	434 View
+	435 History
+	436 Bookmarks
+	437 Profiles
+	438 Tab
+	439 Window
+	440 Help
+
+The focused UI element is 5 HTML content XAUUSD 4,123.23 ▲ +1.52% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

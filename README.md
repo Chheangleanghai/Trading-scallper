@@ -53,9 +53,23 @@ The indicator uses conservative OHLC estimates; the strategy uses actual emulato
 
 In **Settings → Inputs → Historical view**, `Historical plan drawings` offers `Off`, `Recent plans` or `Full bounded`. Accepted plans draw Entry, initial SL and TP1–TP3 levels starting on the confirmation bar. `Recent plans` keeps up to the configured plan count; `Full bounded` also limits eligible bars by `Full history lookback bars`. The drawing cap is ten plans. End labels show the last confirmed plan status; indicator OHLC outcomes are estimates, and strategy fills come from the TradingView emulator. This view draws qualified trade plans only; setup/context labels remain controlled separately by `Context annotation history`. Historical drawings do not generate alerts or backdated entries.
 
+## Clear Entry / SL / TP display
+
+The separate [clear-levels Indicator](pine/experiments/indicator_clear_levels.pine) adds high-contrast Entry, SL and TP1–TP3 labels, a fixed price card and an explicitly marked previous-plan view. It preserves the frozen Indicator's trading rules. The M5 native display regression matched 69 original plans at zero tolerance; this is not Indicator/Strategy parity. See [source, native captures and checks](reports/native-v080/clear-levels-2026-11-05/README.md).
+
+## Offline plan/outcome research
+
+For one genuine Strategy Pine Logs capture containing `PLAN_AUDIT`, `TRADE_EXIT_AUDIT` and `TRADE_GROUP_AUDIT` records:
+
+```sh
+node scripts/analyze-plan-outcomes.mjs one-run-pine-logs.txt > outcomes.json
+```
+
+The tool joins plans to complete positions, reconciles partial quantities and net results, and reports costs, planned-risk R, module/score summaries and missing outcomes separately. It rejects inconsistent or duplicated capture data. Keep runs separate; the tool does not authenticate source/settings or establish probability calibration, Replay stability or profitability. See the [genuine score and reload research](reports/native-v080/score-outcomes-2026-11-05/README.md).
+
 ## Readiness
 
-The current generated Pine validation harness contains **206 synthetic assertions** over predicates, module setup gates and shared candidate state methods. Local verification runs the harness and reports 99 automated tests passing. Historical v0.6.0 native TradingView evidence covers a 107-assertion harness, not the current 206-assertion source. Current-source full TradingView compilation, candle-by-candle parity, replay/repaint review, cost-aware M1/M3/M5/M15 tests and out-of-sample/walk-forward evaluation remain unverified; see [the status report](reports/PHASE_2_PROGRESS.md). The backend has historical payload fixtures for nine event types, but a current native TradingView alert reaching Telegram has not been independently verified.
+The current generated Pine validation harness contains **206 synthetic assertions** over predicates, module setup gates and shared candidate state methods. The latest local verification passed **174 automated tests across 18 files**, TypeScript, generation checks and independent Pine parsing. Baseline native compile gates are accepted with their recorded evidence limits. Separate quantity/trace experiments have genuine native execution evidence, and the saved M15 exit-audit experiment produced identical logs across one reload. Strict multi-plan parity still fails; candle-by-candle non-repainting, untouched OOS and profitability remain unverified. See the [authoritative release assessment](reports/V090_RELEASE_READINESS.md). The backend has historical payload fixtures for nine event types, but a current native TradingView alert reaching Telegram has not been independently verified.
 
 Version 0.2.2 expands delivery verification to 75 automated tests, including all 67 native payloads through the full handler and actual loopback HTTP, failure handling and concurrency. See [TESTING.md](TESTING.md). Pine logic and the recorded historical results are unchanged.
 

@@ -1,0 +1,16 @@
+{
+  "scope": "Original Indicator versus presentation-only Indicator, not Strategy parity",
+  "rawCsvByteIdentical": true,
+  "captures": {
+    "original": {
+      "records": 300,
+      "plans": 69,
+      "sha256": "4ab2b4546fe1351d300d1895c07cf41917d2c26d2b7804029d903d431c5c8eed"
+    },
+    "clear": {
+      "records": 300,
+      "plans": 69,
+      "sha256": "4ab2b4546fe1351d300d1895c07cf41917d2c26d2b7804029d903d431c5c8eed"
+    }
+  }
+}

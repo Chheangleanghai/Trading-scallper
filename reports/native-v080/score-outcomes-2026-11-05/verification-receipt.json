@@ -1,0 +1,72 @@
+{
+  "type": "OFFLINE_SCORE_ANALYSIS_AND_LIMITED_NATIVE_RELOAD_NOT_RELEASE_APPROVAL",
+  "projectVersion": "0.8.0",
+  "recordedAtUTC": "2026-11-05T04:36:18.567164+00:00",
+  "preservedPineHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/strategy_exit_audit.pine": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+    "pine/experiments/strategy_quantity_units.pine": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed"
+  },
+  "changedFilesSha256": {
+    "scripts/analyze-plan-outcomes.mjs": "41be5d24f0b36208f60f7cc6603c13c1ad133b5a20c67da34e69b9fd5365f358",
+    "tests/plan-outcomes.test.mjs": "2afd0442513094043f091ac5953ea5729a399f29b03b7075a6544a27322cef8a",
+    "README.md": "c73f4f9fb3035aafa73e10e5d3b837f4afe193fdfa66ac4d6699aa3c2d6b498c",
+    "reports/V090_RELEASE_READINESS.md": "4b7c396a9b3e052b65636b2e7a3db3408a7bf8eefc1791758b502c1bde3d777e"
+  },
+  "localValidation": {
+    "fullVerify": "173 tests / 17 files, TypeScript, generation and ten independent parses passed",
+    "focusedTests": "4/4 passed",
+    "independentRawCsvChecks": "92 corrected and 92 legacy complete positions reconciled separately",
+    "productionVulnerabilities": 0,
+    "productionDependencies": "empty",
+    "gitDiffCheck": "passed"
+  },
+  "nativeReload": {
+    "status": "OBSERVED_RELOAD_LOG_IDENTITY",
+    "rawExportsByteIdentical": true,
+    "recordsPerExport": 650,
+    "plansPerExport": 104,
+    "groupRecordsPerExport": 104,
+    "exitRowsPerExport": 119,
+    "sha256BothRawExports": "850895a543f573cd0a332be13cebe3f09068a537580e351f0bb37219625e9c4c",
+    "freshSourceCopyback": false,
+    "indicatorCovered": false,
+    "barReplayPerformed": false
+  },
+  "scoreCalibration": "INCONCLUSIVE; corrected M5 scores fixed within each observed module; no probability interpretation",
+  "releaseDecision": "BLOCKED; keep v0.8.0",
+  "priorResearchArchive": "../xauusd-smart-scalper-research-2026-11-05.zip preserved unchanged",
+  "followupArchive": "../xauusd-smart-scalper-research-2026-11-05-score-reload.zip",
+  "remaining": [
+    "Strict planned parity differences",
+    "Candle-by-candle non-repainting and paired Indicator reload",
+    "Untouched future OOS and walk-forward",
+    "Profitability not established"
+  ],
+  "artifactsSha256": {
+    "README.md": "8e44c895c676118be15a6d22c6080de2c4d96037df30295ba31eeda312d9c8ca",
+    "after-reload.ax.txt": "a42fd9da60539713a56707e0d325f07d2efc8fb1780ac512270f82098ebe1a30",
+    "before-reload.ax.txt": "5ac4c08c7f4b119ffa05e6692259c305a339cce3612ce784b3ead8f74fac5671",
+    "before-reload.png": "efddc37d2dde46351a36e11a040b3d3a4985d0325414b6e46bf49432b701e4a8",
+    "corrected-outcomes.json": "4877eaa7fad82c8919bfe89f7613d787bd90fde3250b1fffd64f4111caad3623",
+    "dependency-audit.json": "f64685b5aa67ffa62fdbc95bc9b813c24bc7473c6edb243d3b4ba14745e420af",
+    "final-chart-full.ax.txt": "0716f92f6775f4a1571e94b7b839109f9a57a3275126721558cfe87ce144082c",
+    "final-chart.ax.txt": "193db4266b3a9bfe268974c410ef52fcd364a93958e666b31ba806a69e3d3ec7",
+    "final-chart.png": "5b8b06647bd92f8560ad1381c5b2b8e195be0bfb3b9251c99e1382b8d8114b07",
+    "independent-verification.json": "358d115e1ee5a742b167cda8b3662f63f6ad7bbdc884e4cbe976cd934b39a2f4",
+    "initial-chart.ax.txt": "3dfc2479318580a37289a1d7e53a6a95385c7b947f76043554bcee7248514667",
+    "legacy-outcomes.json": "26138f6ba6e74c8b48fc0b5abf2b9d638b03377c32c9f08d209a7d3c77ca7b83",
+    "local-verification.txt": "23288845f9fd7433b7e527c6c7bda5b69de9cffd57ba22ee64ae5a54492e4f82",
+    "production-dependencies.txt": "d9cf908f526f9ef88fd3b496e1734baaccc50239f29069a193daffc847c907ac",
+    "reload-comparison.json": "06f31ed92075c5d859a31e01071361e69e354068e6773fa6bdbf70e1564d02fa",
+    "reloaded-m15-outcomes.json": "807fa73ffd7917fc366823e5c5860efc62006896c64a69edf69e5556ad93d451",
+    "reopened-chart.ax.txt": "aa55e65d13443254323297c4f5dd339650bc8bf3f890ad69f4c19a02f8a22f75",
+    "strategy-after-reload.csv": "850895a543f573cd0a332be13cebe3f09068a537580e351f0bb37219625e9c4c",
+    "strategy-after-reload.txt": "d8b7b3f20f24a18abc080082b2ab81496f11c22a9638014de15dfc5cd1ab70cd",
+    "strategy-before-reload.csv": "850895a543f573cd0a332be13cebe3f09068a537580e351f0bb37219625e9c4c",
+    "strategy-before-reload.txt": "d8b7b3f20f24a18abc080082b2ab81496f11c22a9638014de15dfc5cd1ab70cd",
+    "verify-outcomes.py": "1eea36a7abd934e2c95a8aac96e0e801f1caa2fa43ce964d42d0527ff381794b",
+    "verify-reload.py": "8e40339f01d323caa9770f65d9bfa073c3e9eb3caa47ec3c2b5cc55b15bd0313"
+  }
+}

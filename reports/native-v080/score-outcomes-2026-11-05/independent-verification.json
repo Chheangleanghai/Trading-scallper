@@ -1,0 +1,20 @@
+{
+  "status": "PASSED",
+  "method": "Independent Python raw-CSV join and arithmetic; not native execution or OOS.",
+  "captures": [
+    {
+      "capture": "reports/native-v080/continuation-2026-11-05/corrected-strategy-native.csv",
+      "sha256": "a10bb8aa67294e332bc26f738d006989b5368a1c04714a8c8eaff0c8c6e3305b",
+      "positions": 92,
+      "exitRows": 140,
+      "independentScoreAndNetRReconciliation": true
+    },
+    {
+      "capture": "reports/native-v080/continuation-2026-11-05/legacy-trace-native.csv",
+      "sha256": "45dae18907809e2adb687d259e04c69d07747a3af6c67905ca6df94d3a58adc7",
+      "positions": 92,
+      "exitRows": 156,
+      "independentScoreAndNetRReconciliation": true
+    }
+  ]
+}

@@ -1,0 +1,2453 @@
+{
+  "schema": "plan-outcomes-descriptive/v1",
+  "status": "SCORE_CALIBRATION_INCONCLUSIVE",
+  "input": {
+    "name": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/score-outcomes-2026-11-05/strategy-after-reload.txt",
+    "sha256": "d8b7b3f20f24a18abc080082b2ab81496f11c22a9638014de15dfc5cd1ab70cd"
+  },
+  "context": {
+    "scriptVersion": "0.8.0",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "15",
+    "accountCurrency": "USD",
+    "sourceAndSettingsAuthenticatedByThisTool": false
+  },
+  "counts": {
+    "plans": 104,
+    "completedPositions": 104,
+    "incompletePositions": 0,
+    "plansWithoutExitRows": 0
+  },
+  "overall": {
+    "completePositions": 104,
+    "actualExitRows": 119,
+    "wins": 45,
+    "losses": 59,
+    "breakevens": 0,
+    "winRate": 0.4326923076923077,
+    "winRateWilson95IID": {
+      "lower": 0.34155001052392997,
+      "upper": 0.5286297871800539
+    },
+    "grossBeforeCommission": -17.78900000000002,
+    "commission": 178.81120990000002,
+    "net": -196.60020989999992,
+    "meanNetPerCompletePosition": -1.8903866336538455,
+    "meanNetRToPlannedInitialCashRisk": -0.07085510364430193,
+    "meanWin": 8.144181824444443,
+    "meanLoss": -9.543871050847459,
+    "positionProfitFactor": 0.6508537332802979,
+    "profitFactorStatus": "FINITE",
+    "sparseDescriptiveSample": false,
+    "positionsWithExitComment": {
+      "STOP_LOSS_HIT": 2,
+      "TP1_HIT": 6,
+      "TP2_HIT": 2,
+      "TP3_HIT": 1,
+      "TRADE_CLOSED": 104
+    }
+  },
+  "byScore": {
+    "80": {
+      "completePositions": 16,
+      "actualExitRows": 17,
+      "wins": 7,
+      "losses": 9,
+      "breakevens": 0,
+      "winRate": 0.4375,
+      "winRateWilson95IID": {
+        "lower": 0.23098652405492354,
+        "upper": 0.6682144360118811
+      },
+      "grossBeforeCommission": 4.923000000000003,
+      "commission": 26.981082699999998,
+      "net": -22.058082699999993,
+      "meanNetPerCompletePosition": -1.3786301687499996,
+      "meanNetRToPlannedInitialCashRisk": -0.04788728078406843,
+      "meanWin": 6.075007842857143,
+      "meanLoss": -7.175904177777777,
+      "positionProfitFactor": 0.6584544585520418,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 16
+      }
+    },
+    "90": {
+      "completePositions": 86,
+      "actualExitRows": 100,
+      "wins": 36,
+      "losses": 50,
+      "breakevens": 0,
+      "winRate": 0.4186046511627907,
+      "winRateWilson95IID": {
+        "lower": 0.3200145026690673,
+        "upper": 0.5241554364239606
+      },
+      "grossBeforeCommission": -44.952,
+      "commission": 148.39180019999998,
+      "net": -193.34380019999995,
+      "meanNetPerCompletePosition": -2.2481837232558135,
+      "meanNetRToPlannedInitialCashRisk": -0.08484681394267979,
+      "meanWin": 8.476707061111107,
+      "meanLoss": -9.970105088000002,
+      "positionProfitFactor": 0.6121529342098743,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 2,
+        "TP1_HIT": 5,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 86
+      }
+    },
+    "100": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 2,
+      "losses": 0,
+      "breakevens": 0,
+      "winRate": 1,
+      "winRateWilson95IID": {
+        "lower": 0.34238022750665303,
+        "upper": 1
+      },
+      "grossBeforeCommission": 22.240000000000002,
+      "commission": 3.438327,
+      "net": 18.801673,
+      "meanNetPerCompletePosition": 9.4008365,
+      "meanNetRToPlannedInitialCashRisk": 0.3470458563040782,
+      "meanWin": 9.4008365,
+      "meanLoss": null,
+      "positionProfitFactor": null,
+      "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    }
+  },
+  "byModule": {
+    "B_CRT": {
+      "completePositions": 75,
+      "actualExitRows": 88,
+      "wins": 33,
+      "losses": 42,
+      "breakevens": 0,
+      "winRate": 0.44,
+      "winRateWilson95IID": {
+        "lower": 0.3333145749124916,
+        "upper": 0.5525322861854451
+      },
+      "grossBeforeCommission": -26.305999999999987,
+      "commission": 129.5109424,
+      "net": -155.81694239999993,
+      "meanNetPerCompletePosition": -2.077559231999999,
+      "meanNetRToPlannedInitialCashRisk": -0.08790183997491775,
+      "meanWin": 8.231919669696968,
+      "meanLoss": -10.177864083333333,
+      "positionProfitFactor": 0.6354905931515477,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 2,
+        "TP1_HIT": 4,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 75
+      }
+    },
+    "C_TURTLE_SOUP": {
+      "completePositions": 11,
+      "actualExitRows": 12,
+      "wins": 3,
+      "losses": 8,
+      "breakevens": 0,
+      "winRate": 0.2727272727272727,
+      "winRateWilson95IID": {
+        "lower": 0.09746059290024889,
+        "upper": 0.5656453011761291
+      },
+      "grossBeforeCommission": -18.646,
+      "commission": 18.880857799999998,
+      "net": -37.5268578,
+      "meanNetPerCompletePosition": -3.4115325272727275,
+      "meanNetRToPlannedInitialCashRisk": -0.0640170909956028,
+      "meanWin": 11.169368366666667,
+      "meanLoss": -8.8793703625,
+      "positionProfitFactor": 0.47171285423448855,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 11
+      }
+    },
+    "D_SNR": {
+      "completePositions": 5,
+      "actualExitRows": 5,
+      "wins": 3,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0.6,
+      "winRateWilson95IID": {
+        "lower": 0.2307242812760128,
+        "upper": 0.882379225767352
+      },
+      "grossBeforeCommission": 12.187000000000001,
+      "commission": 8.6556047,
+      "net": 3.5313953000000016,
+      "meanNetPerCompletePosition": 0.7062790600000003,
+      "meanNetRToPlannedInitialCashRisk": 0.0042306311779708675,
+      "meanWin": 6.842473000000001,
+      "meanLoss": -8.49801185,
+      "positionProfitFactor": 1.2077777345062188,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 5
+      }
+    },
+    "E_DEMAND": {
+      "completePositions": 3,
+      "actualExitRows": 3,
+      "wins": 2,
+      "losses": 1,
+      "breakevens": 0,
+      "winRate": 0.6666666666666666,
+      "winRateWilson95IID": {
+        "lower": 0.2076596008020477,
+        "upper": 0.9385080552796037
+      },
+      "grossBeforeCommission": 11.585,
+      "commission": 5.189754499999999,
+      "net": 6.3952455,
+      "meanNetPerCompletePosition": 2.1317485,
+      "meanNetRToPlannedInitialCashRisk": 0.10655516644361468,
+      "meanWin": 4.41231,
+      "meanLoss": -2.4293745,
+      "positionProfitFactor": 3.632465887824211,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 3
+      }
+    },
+    "E_SUPPLY": {
+      "completePositions": 3,
+      "actualExitRows": 4,
+      "wins": 2,
+      "losses": 1,
+      "breakevens": 0,
+      "winRate": 0.6666666666666666,
+      "winRateWilson95IID": {
+        "lower": 0.2076596008020477,
+        "upper": 0.9385080552796037
+      },
+      "grossBeforeCommission": 24.790999999999997,
+      "commission": 5.1749351,
+      "net": 19.616064899999998,
+      "meanNetPerCompletePosition": 6.5386883,
+      "meanNetRToPlannedInitialCashRisk": 0.21532941629910296,
+      "meanWin": 15.263484649999999,
+      "meanLoss": -10.9109044,
+      "positionProfitFactor": 2.797840415502128,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 3
+      }
+    },
+    "F_TREND_PULLBACK": {
+      "completePositions": 7,
+      "actualExitRows": 7,
+      "wins": 2,
+      "losses": 5,
+      "breakevens": 0,
+      "winRate": 0.2857142857142857,
+      "winRateWilson95IID": {
+        "lower": 0.08221892400405678,
+        "upper": 0.6410655481673808
+      },
+      "grossBeforeCommission": -21.4,
+      "commission": 11.3991154,
+      "net": -32.7991154,
+      "meanNetPerCompletePosition": -4.685587914285714,
+      "meanNetRToPlannedInitialCashRisk": -0.15127309772213507,
+      "meanWin": 0.7238598,
+      "meanLoss": -6.849366999999999,
+      "positionProfitFactor": 0.04227309180541794,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 7
+      }
+    }
+  },
+  "byModuleAndScore": {
+    "B_CRT|90": {
+      "completePositions": 75,
+      "actualExitRows": 88,
+      "wins": 33,
+      "losses": 42,
+      "breakevens": 0,
+      "winRate": 0.44,
+      "winRateWilson95IID": {
+        "lower": 0.3333145749124916,
+        "upper": 0.5525322861854451
+      },
+      "grossBeforeCommission": -26.305999999999987,
+      "commission": 129.5109424,
+      "net": -155.81694239999993,
+      "meanNetPerCompletePosition": -2.077559231999999,
+      "meanNetRToPlannedInitialCashRisk": -0.08790183997491775,
+      "meanWin": 8.231919669696968,
+      "meanLoss": -10.177864083333333,
+      "positionProfitFactor": 0.6354905931515477,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 2,
+        "TP1_HIT": 4,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 75
+      }
+    },
+    "C_TURTLE_SOUP|90": {
+      "completePositions": 11,
+      "actualExitRows": 12,
+      "wins": 3,
+      "losses": 8,
+      "breakevens": 0,
+      "winRate": 0.2727272727272727,
+      "winRateWilson95IID": {
+        "lower": 0.09746059290024889,
+        "upper": 0.5656453011761291
+      },
+      "grossBeforeCommission": -18.646,
+      "commission": 18.880857799999998,
+      "net": -37.5268578,
+      "meanNetPerCompletePosition": -3.4115325272727275,
+      "meanNetRToPlannedInitialCashRisk": -0.0640170909956028,
+      "meanWin": 11.169368366666667,
+      "meanLoss": -8.8793703625,
+      "positionProfitFactor": 0.47171285423448855,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 11
+      }
+    },
+    "D_SNR|80": {
+      "completePositions": 3,
+      "actualExitRows": 3,
+      "wins": 1,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0.3333333333333333,
+      "winRateWilson95IID": {
+        "lower": 0.06149194472039621,
+        "upper": 0.7923403991979522
+      },
+      "grossBeforeCommission": -10.053,
+      "commission": 5.2172777,
+      "net": -15.2702777,
+      "meanNetPerCompletePosition": -5.090092566666667,
+      "meanNetRToPlannedInitialCashRisk": -0.22431285223943406,
+      "meanWin": 1.725746,
+      "meanLoss": -8.49801185,
+      "positionProfitFactor": 0.10153822037798171,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 3
+      }
+    },
+    "D_SNR|100": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 2,
+      "losses": 0,
+      "breakevens": 0,
+      "winRate": 1,
+      "winRateWilson95IID": {
+        "lower": 0.34238022750665303,
+        "upper": 1
+      },
+      "grossBeforeCommission": 22.240000000000002,
+      "commission": 3.438327,
+      "net": 18.801673,
+      "meanNetPerCompletePosition": 9.4008365,
+      "meanNetRToPlannedInitialCashRisk": 0.3470458563040782,
+      "meanWin": 9.4008365,
+      "meanLoss": null,
+      "positionProfitFactor": null,
+      "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    },
+    "E_DEMAND|80": {
+      "completePositions": 3,
+      "actualExitRows": 3,
+      "wins": 2,
+      "losses": 1,
+      "breakevens": 0,
+      "winRate": 0.6666666666666666,
+      "winRateWilson95IID": {
+        "lower": 0.2076596008020477,
+        "upper": 0.9385080552796037
+      },
+      "grossBeforeCommission": 11.585,
+      "commission": 5.189754499999999,
+      "net": 6.3952455,
+      "meanNetPerCompletePosition": 2.1317485,
+      "meanNetRToPlannedInitialCashRisk": 0.10655516644361468,
+      "meanWin": 4.41231,
+      "meanLoss": -2.4293745,
+      "positionProfitFactor": 3.632465887824211,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 3
+      }
+    },
+    "E_SUPPLY|80": {
+      "completePositions": 3,
+      "actualExitRows": 4,
+      "wins": 2,
+      "losses": 1,
+      "breakevens": 0,
+      "winRate": 0.6666666666666666,
+      "winRateWilson95IID": {
+        "lower": 0.2076596008020477,
+        "upper": 0.9385080552796037
+      },
+      "grossBeforeCommission": 24.790999999999997,
+      "commission": 5.1749351,
+      "net": 19.616064899999998,
+      "meanNetPerCompletePosition": 6.5386883,
+      "meanNetRToPlannedInitialCashRisk": 0.21532941629910296,
+      "meanWin": 15.263484649999999,
+      "meanLoss": -10.9109044,
+      "positionProfitFactor": 2.797840415502128,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 3
+      }
+    },
+    "F_TREND_PULLBACK|80": {
+      "completePositions": 7,
+      "actualExitRows": 7,
+      "wins": 2,
+      "losses": 5,
+      "breakevens": 0,
+      "winRate": 0.2857142857142857,
+      "winRateWilson95IID": {
+        "lower": 0.08221892400405678,
+        "upper": 0.6410655481673808
+      },
+      "grossBeforeCommission": -21.4,
+      "commission": 11.3991154,
+      "net": -32.7991154,
+      "meanNetPerCompletePosition": -4.685587914285714,
+      "meanNetRToPlannedInitialCashRisk": -0.15127309772213507,
+      "meanWin": 0.7238598,
+      "meanLoss": -6.849366999999999,
+      "positionProfitFactor": 0.04227309180541794,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 7
+      }
+    }
+  },
+  "byDirection": {
+    "LONG": {
+      "completePositions": 47,
+      "actualExitRows": 57,
+      "wins": 18,
+      "losses": 29,
+      "breakevens": 0,
+      "winRate": 0.3829787234042553,
+      "winRateWilson95IID": {
+        "lower": 0.25790681096421997,
+        "upper": 0.5257343304358642
+      },
+      "grossBeforeCommission": 13.41400000000001,
+      "commission": 80.15936199999999,
+      "net": -66.74536200000001,
+      "meanNetPerCompletePosition": -1.4201140851063834,
+      "meanNetRToPlannedInitialCashRisk": -0.03421198273240478,
+      "meanWin": 11.073715083333335,
+      "meanLoss": -9.174904603448276,
+      "positionProfitFactor": 0.7491457070810812,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 1,
+        "TP1_HIT": 4,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 47
+      }
+    },
+    "SHORT": {
+      "completePositions": 57,
+      "actualExitRows": 62,
+      "wins": 27,
+      "losses": 30,
+      "breakevens": 0,
+      "winRate": 0.47368421052631576,
+      "winRateWilson95IID": {
+        "lower": 0.3498716798112528,
+        "upper": 0.6008198378125881
+      },
+      "grossBeforeCommission": -31.203,
+      "commission": 98.65184790000002,
+      "net": -129.85484789999998,
+      "meanNetPerCompletePosition": -2.278155226315789,
+      "meanNetRToPlannedInitialCashRisk": -0.1010696068523575,
+      "meanWin": 6.191159651851852,
+      "meanLoss": -9.900538616666667,
+      "positionProfitFactor": 0.5628020759685369,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 1,
+        "TP1_HIT": 2,
+        "TRADE_CLOSED": 57
+      }
+    }
+  },
+  "scoreSupportByModule": {
+    "B_CRT": [
+      90
+    ],
+    "C_TURTLE_SOUP": [
+      90
+    ],
+    "D_SNR": [
+      80,
+      100
+    ],
+    "E_DEMAND": [
+      80
+    ],
+    "E_SUPPLY": [
+      80
+    ],
+    "F_TREND_PULLBACK": [
+      80
+    ]
+  },
+  "modulesWithMultipleScores": [
+    "D_SNR"
+  ],
+  "scoreAndModuleFullyConfoundedInThisSample": false,
+  "incompletePositions": [],
+  "plansWithoutExitRows": [],
+  "positions": [
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786000500000,\"B_CRT\"]",
+      "planTimestamp": 1786000500000,
+      "entryTime": 1786000500000,
+      "exitTime": 1786001400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 31.919999999999998,
+      "net": -4.982292,
+      "commission": 1.790292,
+      "grossBeforeCommission": -3.192,
+      "netRToPlannedInitialCashRisk": -0.15608684210526316,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786362300000,\"B_CRT\"]",
+      "planTimestamp": 1786362300000,
+      "entryTime": 1786362300000,
+      "exitTime": 1786363200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 18.6,
+      "net": -6.334516,
+      "commission": 1.734516,
+      "grossBeforeCommission": -4.6,
+      "netRToPlannedInitialCashRisk": -0.340565376344086,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786377600000,\"B_CRT\"]",
+      "planTimestamp": 1786377600000,
+      "entryTime": 1786377600000,
+      "exitTime": 1786378500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 34.06,
+      "net": 4.035978,
+      "commission": 1.744022,
+      "grossBeforeCommission": 5.78,
+      "netRToPlannedInitialCashRisk": 0.11849612448620081,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786436100000,\"B_CRT\"]",
+      "planTimestamp": 1786436100000,
+      "entryTime": 1786436100000,
+      "exitTime": 1786437000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.52,
+      "net": 6.313094,
+      "commission": 1.746906,
+      "grossBeforeCommission": 8.06,
+      "netRToPlannedInitialCashRisk": 0.32341670081967216,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786450500000,\"B_CRT\"]",
+      "planTimestamp": 1786450500000,
+      "entryTime": 1786450500000,
+      "exitTime": 1786451400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 30.22,
+      "net": -13.057682,
+      "commission": 1.757682,
+      "grossBeforeCommission": -11.3,
+      "netRToPlannedInitialCashRisk": -0.43208742554599605,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786459500000,\"B_CRT\"]",
+      "planTimestamp": 1786459500000,
+      "entryTime": 1786459500000,
+      "exitTime": 1786460400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 27.04,
+      "net": -0.61755,
+      "commission": 1.75755,
+      "grossBeforeCommission": 1.14,
+      "netRToPlannedInitialCashRisk": -0.0228383875739645,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786520700000,\"B_CRT\"]",
+      "planTimestamp": 1786520700000,
+      "entryTime": 1786520700000,
+      "exitTime": 1786521600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 21.44,
+      "net": -5.10285,
+      "commission": 1.76285,
+      "grossBeforeCommission": -3.34,
+      "netRToPlannedInitialCashRisk": -0.2380060634328358,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786529700000,\"B_CRT\"]",
+      "planTimestamp": 1786529700000,
+      "entryTime": 1786529700000,
+      "exitTime": 1786530600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 16.1,
+      "net": 1.47246,
+      "commission": 1.76754,
+      "grossBeforeCommission": 3.24,
+      "netRToPlannedInitialCashRisk": 0.09145714285714286,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786608000000,\"B_CRT\"]",
+      "planTimestamp": 1786608000000,
+      "entryTime": 1786608000000,
+      "exitTime": 1786608900000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 26.12,
+      "net": 5.972788,
+      "commission": 1.747212,
+      "grossBeforeCommission": 7.720000000000001,
+      "netRToPlannedInitialCashRisk": 0.22866722817764165,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786951800000,\"E_DEMAND\"]",
+      "planTimestamp": 1786951800000,
+      "entryTime": 1786951800000,
+      "exitTime": 1786952700000,
+      "module": "E_DEMAND",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.72,
+      "net": 6.957144,
+      "commission": 1.762856,
+      "grossBeforeCommission": 8.72,
+      "netRToPlannedInitialCashRisk": 0.2814378640776699,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786961700000,\"B_CRT\"]",
+      "planTimestamp": 1786961700000,
+      "entryTime": 1786961700000,
+      "exitTime": 1786962600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 3,
+      "plannedInitialCashRisk": 8.44,
+      "net": 13.2680732,
+      "commission": 1.7599268000000001,
+      "grossBeforeCommission": 15.028,
+      "netRToPlannedInitialCashRisk": 1.5720465876777252,
+      "exitComments": [
+        "TP1_HIT",
+        "TP2_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1786966200000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1786966200000,
+      "entryTime": 1786966200000,
+      "exitTime": 1786967100000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.04,
+      "net": -9.820678,
+      "commission": 1.760678,
+      "grossBeforeCommission": -8.059999999999999,
+      "netRToPlannedInitialCashRisk": -0.40851405990016637,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787042700000,\"B_CRT\"]",
+      "planTimestamp": 1787042700000,
+      "entryTime": 1787042700000,
+      "exitTime": 1787043600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 21.46,
+      "net": -8.658042,
+      "commission": 1.758042,
+      "grossBeforeCommission": -6.9,
+      "netRToPlannedInitialCashRisk": -0.4034502329916123,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787054400000,\"B_CRT\"]",
+      "planTimestamp": 1787054400000,
+      "entryTime": 1787054400000,
+      "exitTime": 1787055300000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.64,
+      "net": -7.457854,
+      "commission": 1.757854,
+      "grossBeforeCommission": -5.7,
+      "netRToPlannedInitialCashRisk": -0.37972780040733195,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787059800000,\"B_CRT\"]",
+      "planTimestamp": 1787059800000,
+      "entryTime": 1787059800000,
+      "exitTime": 1787060700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 4,
+      "plannedInitialCashRisk": 25.9,
+      "net": -27.6951457,
+      "commission": 1.7581457,
+      "grossBeforeCommission": -25.937,
+      "netRToPlannedInitialCashRisk": -1.0693106447876448,
+      "exitComments": [
+        "STOP_LOSS_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787154300000,\"B_CRT\"]",
+      "planTimestamp": 1787154300000,
+      "entryTime": 1787154300000,
+      "exitTime": 1787155200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 26.79,
+      "net": 4.9999849,
+      "commission": 1.7070151,
+      "grossBeforeCommission": 6.707000000000001,
+      "netRToPlannedInitialCashRisk": 0.1866362411347518,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787211900000,\"B_CRT\"]",
+      "planTimestamp": 1787211900000,
+      "entryTime": 1787211900000,
+      "exitTime": 1787212800000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 27.055999999999997,
+      "net": -2.1626104,
+      "commission": 1.7066104,
+      "grossBeforeCommission": -0.4560000000000002,
+      "netRToPlannedInitialCashRisk": -0.0799308988764045,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787566500000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1787566500000,
+      "entryTime": 1787566500000,
+      "exitTime": 1787567400000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 39.709999999999994,
+      "net": -11.2843983,
+      "commission": 1.7653983,
+      "grossBeforeCommission": -9.519,
+      "netRToPlannedInitialCashRisk": -0.28417019138755983,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787574600000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1787574600000,
+      "entryTime": 1787574600000,
+      "exitTime": 1787575500000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 48.672000000000004,
+      "net": -8.4991136,
+      "commission": 1.4911136,
+      "grossBeforeCommission": -7.007999999999999,
+      "netRToPlannedInitialCashRisk": -0.17462018408941482,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787581800000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1787581800000,
+      "entryTime": 1787581800000,
+      "exitTime": 1787582700000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 48.608,
+      "net": -1.2241404,
+      "commission": 1.3081404,
+      "grossBeforeCommission": 0.08400000000000007,
+      "netRToPlannedInitialCashRisk": -0.025183928571428572,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787646600000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1787646600000,
+      "entryTime": 1787646600000,
+      "exitTime": 1787647500000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 27.378999999999998,
+      "net": -3.5463918,
+      "commission": 1.7603918,
+      "grossBeforeCommission": -1.7859999999999998,
+      "netRToPlannedInitialCashRisk": -0.12952963219986122,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787670000000,\"B_CRT\"]",
+      "planTimestamp": 1787670000000,
+      "entryTime": 1787670000000,
+      "exitTime": 1787670900000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 25.46,
+      "net": 2.4758539,
+      "commission": 1.7611461,
+      "grossBeforeCommission": 4.237,
+      "netRToPlannedInitialCashRisk": 0.09724485074626867,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787728500000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1787728500000,
+      "entryTime": 1787728500000,
+      "exitTime": 1787729400000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 22.400999999999996,
+      "net": -11.5079295,
+      "commission": 1.7609295,
+      "grossBeforeCommission": -9.747,
+      "netRToPlannedInitialCashRisk": -0.5137239185750637,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787754600000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1787754600000,
+      "entryTime": 1787754600000,
+      "exitTime": 1787755500000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 34.903,
+      "net": -11.9963739,
+      "commission": 1.7553739,
+      "grossBeforeCommission": -10.241,
+      "netRToPlannedInitialCashRisk": -0.3437060968971149,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787820300000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1787820300000,
+      "entryTime": 1787820300000,
+      "exitTime": 1787821200000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 32.224,
+      "net": -7.5610842,
+      "commission": 1.7470842,
+      "grossBeforeCommission": -5.814,
+      "netRToPlannedInitialCashRisk": -0.23464139150943397,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787832900000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1787832900000,
+      "entryTime": 1787832900000,
+      "exitTime": 1787833800000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.899,
+      "net": -7.1418188,
+      "commission": 1.7458188,
+      "grossBeforeCommission": -5.396000000000001,
+      "netRToPlannedInitialCashRisk": -0.2471303090072321,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787838300000,\"B_CRT\"]",
+      "planTimestamp": 1787838300000,
+      "entryTime": 1787838300000,
+      "exitTime": 1787839200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 30.076999999999998,
+      "net": 10.3832606,
+      "commission": 1.7387394,
+      "grossBeforeCommission": 12.122,
+      "netRToPlannedInitialCashRisk": 0.3452226152874289,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787908500000,\"B_CRT\"]",
+      "planTimestamp": 1787908500000,
+      "entryTime": 1787908500000,
+      "exitTime": 1787909400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 26.733,
+      "net": -2.1666878,
+      "commission": 1.7486878,
+      "grossBeforeCommission": -0.41800000000000015,
+      "netRToPlannedInitialCashRisk": -0.08104918265813789,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1787929200000,\"B_CRT\"]",
+      "planTimestamp": 1787929200000,
+      "entryTime": 1787929200000,
+      "exitTime": 1787930100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 49.5,
+      "net": -18.183605,
+      "commission": 0.913605,
+      "grossBeforeCommission": -17.27,
+      "netRToPlannedInitialCashRisk": -0.36734555555555554,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788183900000,\"B_CRT\"]",
+      "planTimestamp": 1788183900000,
+      "entryTime": 1788183900000,
+      "exitTime": 1788184800000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 2,
+      "plannedInitialCashRisk": 31.98,
+      "net": 28.9515882,
+      "commission": 1.7704117999999998,
+      "grossBeforeCommission": 30.722,
+      "netRToPlannedInitialCashRisk": 0.9053029455909943,
+      "exitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788191100000,\"B_CRT\"]",
+      "planTimestamp": 1788191100000,
+      "entryTime": 1788191100000,
+      "exitTime": 1788192000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 23.98,
+      "net": 0.469224,
+      "commission": 1.770776,
+      "grossBeforeCommission": 2.2399999999999998,
+      "netRToPlannedInitialCashRisk": 0.019567306088407004,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788247800000,\"B_CRT\"]",
+      "planTimestamp": 1788247800000,
+      "entryTime": 1788247800000,
+      "exitTime": 1788248700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 41.82,
+      "net": 13.931066,
+      "commission": 1.768934,
+      "grossBeforeCommission": 15.7,
+      "netRToPlannedInitialCashRisk": 0.33311970349115255,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788260400000,\"B_CRT\"]",
+      "planTimestamp": 1788260400000,
+      "entryTime": 1788260400000,
+      "exitTime": 1788261300000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 18.38,
+      "net": 0.088884,
+      "commission": 1.751116,
+      "grossBeforeCommission": 1.8399999999999999,
+      "netRToPlannedInitialCashRisk": 0.004835908596300327,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788274800000,\"B_CRT\"]",
+      "planTimestamp": 1788274800000,
+      "entryTime": 1788274800000,
+      "exitTime": 1788275700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 34.1,
+      "net": 4.436422,
+      "commission": 1.743578,
+      "grossBeforeCommission": 6.180000000000001,
+      "netRToPlannedInitialCashRisk": 0.13010035190615837,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788507000000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1788507000000,
+      "entryTime": 1788507000000,
+      "exitTime": 1788507900000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 2,
+      "plannedInitialCashRisk": 22.857,
+      "net": 22.4559506,
+      "commission": 1.7020494,
+      "grossBeforeCommission": 24.158,
+      "netRToPlannedInitialCashRisk": 0.9824539790873694,
+      "exitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788865200000,\"B_CRT\"]",
+      "planTimestamp": 1788865200000,
+      "entryTime": 1788865200000,
+      "exitTime": 1788866100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.88,
+      "net": -1.418114,
+      "commission": 1.758114,
+      "grossBeforeCommission": 0.33999999999999986,
+      "netRToPlannedInitialCashRisk": -0.056998151125401936,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788875100000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1788875100000,
+      "entryTime": 1788875100000,
+      "exitTime": 1788876000000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 31.44,
+      "net": 0.081492,
+      "commission": 1.758508,
+      "grossBeforeCommission": 1.8399999999999999,
+      "netRToPlannedInitialCashRisk": 0.0025919847328244273,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788958800000,\"B_CRT\"]",
+      "planTimestamp": 1788958800000,
+      "entryTime": 1788958800000,
+      "exitTime": 1788959700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 2,
+      "plannedInitialCashRisk": 20.46,
+      "net": 22.6754722,
+      "commission": 1.7625278,
+      "grossBeforeCommission": 24.438000000000002,
+      "netRToPlannedInitialCashRisk": 1.1082830987292278,
+      "exitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1788968700000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1788968700000,
+      "entryTime": 1788968700000,
+      "exitTime": 1788969600000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 47.808,
+      "net": -8.640272,
+      "commission": 1.408272,
+      "grossBeforeCommission": -7.231999999999999,
+      "netRToPlannedInitialCashRisk": -0.18072858099062916,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789027200000,\"B_CRT\"]",
+      "planTimestamp": 1789027200000,
+      "entryTime": 1789027200000,
+      "exitTime": 1789028100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 17.98,
+      "net": -14.083544,
+      "commission": 1.763544,
+      "grossBeforeCommission": -12.32,
+      "netRToPlannedInitialCashRisk": -0.7832894327030033,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789049700000,\"B_CRT\"]",
+      "planTimestamp": 1789049700000,
+      "entryTime": 1789049700000,
+      "exitTime": 1789050600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 37.02,
+      "net": -9.844606,
+      "commission": 1.744606,
+      "grossBeforeCommission": -8.100000000000001,
+      "netRToPlannedInitialCashRisk": -0.26592668827660726,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789111800000,\"B_CRT\"]",
+      "planTimestamp": 1789111800000,
+      "entryTime": 1789111800000,
+      "exitTime": 1789112700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 22.64,
+      "net": 0.40167,
+      "commission": 1.73833,
+      "grossBeforeCommission": 2.14,
+      "netRToPlannedInitialCashRisk": 0.01774160777385159,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789126200000,\"D_SNR\"]",
+      "planTimestamp": 1789126200000,
+      "entryTime": 1789126200000,
+      "exitTime": 1789127100000,
+      "module": "D_SNR",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 20.14,
+      "net": 1.725746,
+      "commission": 1.734254,
+      "grossBeforeCommission": 3.46,
+      "netRToPlannedInitialCashRisk": 0.08568748758689175,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789372800000,\"D_SNR\"]",
+      "planTimestamp": 1789372800000,
+      "entryTime": 1789372800000,
+      "exitTime": 1789373700000,
+      "module": "D_SNR",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 29.24,
+      "net": -6.564868,
+      "commission": 1.724868,
+      "grossBeforeCommission": -4.84,
+      "netRToPlannedInitialCashRisk": -0.22451668946648426,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789387200000,\"B_CRT\"]",
+      "planTimestamp": 1789387200000,
+      "entryTime": 1789387200000,
+      "exitTime": 1789388100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 22.3,
+      "net": -17.056354,
+      "commission": 1.716354,
+      "grossBeforeCommission": -15.34,
+      "netRToPlannedInitialCashRisk": -0.7648589237668161,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789459200000,\"E_SUPPLY\"]",
+      "planTimestamp": 1789459200000,
+      "entryTime": 1789459200000,
+      "exitTime": 1789460100000,
+      "module": "E_SUPPLY",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 2,
+      "plannedInitialCashRisk": 25.78,
+      "net": 23.940313,
+      "commission": 1.709687,
+      "grossBeforeCommission": 25.65,
+      "netRToPlannedInitialCashRisk": 0.928638983708301,
+      "exitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789474500000,\"B_CRT\"]",
+      "planTimestamp": 1789474500000,
+      "entryTime": 1789474500000,
+      "exitTime": 1789475400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 18.42,
+      "net": -0.531314,
+      "commission": 1.711314,
+      "grossBeforeCommission": 1.1800000000000002,
+      "netRToPlannedInitialCashRisk": -0.028844408251900103,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789549200000,\"E_DEMAND\"]",
+      "planTimestamp": 1789549200000,
+      "entryTime": 1789549200000,
+      "exitTime": 1789550100000,
+      "module": "E_DEMAND",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 16.68,
+      "net": 1.867476,
+      "commission": 1.732524,
+      "grossBeforeCommission": 3.5999999999999996,
+      "netRToPlannedInitialCashRisk": 0.11195899280575539,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789563600000,\"B_CRT\"]",
+      "planTimestamp": 1789563600000,
+      "entryTime": 1789563600000,
+      "exitTime": 1789564500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 27.4,
+      "net": 15.699136,
+      "commission": 1.740864,
+      "grossBeforeCommission": 17.439999999999998,
+      "netRToPlannedInitialCashRisk": 0.5729611678832117,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789659900000,\"B_CRT\"]",
+      "planTimestamp": 1789659900000,
+      "entryTime": 1789659900000,
+      "exitTime": 1789660800000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 32.46,
+      "net": 6.472842,
+      "commission": 1.747158,
+      "grossBeforeCommission": 8.22,
+      "netRToPlannedInitialCashRisk": 0.1994097966728281,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789983000000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1789983000000,
+      "entryTime": 1789983000000,
+      "exitTime": 1789983900000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.08,
+      "net": -3.678858,
+      "commission": 1.738858,
+      "grossBeforeCommission": -1.94,
+      "netRToPlannedInitialCashRisk": -0.1527764950166113,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1789987500000,\"B_CRT\"]",
+      "planTimestamp": 1789987500000,
+      "entryTime": 1789987500000,
+      "exitTime": 1789988400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 18.8,
+      "net": 9.60175,
+      "commission": 1.73825,
+      "grossBeforeCommission": 11.34,
+      "netRToPlannedInitialCashRisk": 0.5107313829787233,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790005500000,\"D_SNR\"]",
+      "planTimestamp": 1790005500000,
+      "entryTime": 1790005500000,
+      "exitTime": 1790006400000,
+      "module": "D_SNR",
+      "quality": 100,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 44.96,
+      "net": 2.020384,
+      "commission": 1.739616,
+      "grossBeforeCommission": 3.76,
+      "netRToPlannedInitialCashRisk": 0.0449373665480427,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790063100000,\"B_CRT\"]",
+      "planTimestamp": 1790063100000,
+      "entryTime": 1790063100000,
+      "exitTime": 1790064000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 29.36,
+      "net": 17.657578,
+      "commission": 1.722422,
+      "grossBeforeCommission": 19.380000000000003,
+      "netRToPlannedInitialCashRisk": 0.601416144414169,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790083800000,\"B_CRT\"]",
+      "planTimestamp": 1790083800000,
+      "entryTime": 1790083800000,
+      "exitTime": 1790084700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 29.92,
+      "net": -22.434306,
+      "commission": 1.734306,
+      "grossBeforeCommission": -20.7,
+      "netRToPlannedInitialCashRisk": -0.7498096925133689,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790088300000,\"B_CRT\"]",
+      "planTimestamp": 1790088300000,
+      "entryTime": 1790088300000,
+      "exitTime": 1790089200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 48.525999999999996,
+      "net": -16.8811656,
+      "commission": 1.6431656,
+      "grossBeforeCommission": -15.238,
+      "netRToPlannedInitialCashRisk": -0.34787877838684417,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790173800000,\"B_CRT\"]",
+      "planTimestamp": 1790173800000,
+      "entryTime": 1790173800000,
+      "exitTime": 1790174700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.32,
+      "net": -14.013498,
+      "commission": 1.713498,
+      "grossBeforeCommission": -12.3,
+      "netRToPlannedInitialCashRisk": -0.494826906779661,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790236800000,\"B_CRT\"]",
+      "planTimestamp": 1790236800000,
+      "entryTime": 1790236800000,
+      "exitTime": 1790237700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 21.12,
+      "net": 0.5288,
+      "commission": 1.7112,
+      "grossBeforeCommission": 2.24,
+      "netRToPlannedInitialCashRisk": 0.02503787878787879,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790256600000,\"B_CRT\"]",
+      "planTimestamp": 1790256600000,
+      "entryTime": 1790256600000,
+      "exitTime": 1790257500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.8,
+      "net": 4.430054,
+      "commission": 1.709946,
+      "grossBeforeCommission": 6.140000000000001,
+      "netRToPlannedInitialCashRisk": 0.223740101010101,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790321400000,\"B_CRT\"]",
+      "planTimestamp": 1790321400000,
+      "entryTime": 1790321400000,
+      "exitTime": 1790322300000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 17.56,
+      "net": -7.630124,
+      "commission": 1.710124,
+      "grossBeforeCommission": -5.92,
+      "netRToPlannedInitialCashRisk": -0.434517312072893,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790334000000,\"B_CRT\"]",
+      "planTimestamp": 1790334000000,
+      "entryTime": 1790334000000,
+      "exitTime": 1790334900000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.38,
+      "net": 1.25529,
+      "commission": 1.72471,
+      "grossBeforeCommission": 2.98,
+      "netRToPlannedInitialCashRisk": 0.06477244582043344,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790669700000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1790669700000,
+      "entryTime": 1790669700000,
+      "exitTime": 1790670600000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.236,
+      "net": -4.6163985,
+      "commission": 1.7393985,
+      "grossBeforeCommission": -2.877,
+      "netRToPlannedInitialCashRisk": -0.23998744541484715,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790764200000,\"D_SNR\"]",
+      "planTimestamp": 1790764200000,
+      "entryTime": 1790764200000,
+      "exitTime": 1790765100000,
+      "module": "D_SNR",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.53,
+      "net": -10.4311557,
+      "commission": 1.7581557,
+      "grossBeforeCommission": -8.673,
+      "netRToPlannedInitialCashRisk": -0.5341093548387096,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790768700000,\"B_CRT\"]",
+      "planTimestamp": 1790768700000,
+      "entryTime": 1790768700000,
+      "exitTime": 1790769600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 23.268,
+      "net": -1.6114077,
+      "commission": 1.7584077,
+      "grossBeforeCommission": 0.14700000000000002,
+      "netRToPlannedInitialCashRisk": -0.06925424187725632,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790779500000,\"E_SUPPLY\"]",
+      "planTimestamp": 1790779500000,
+      "entryTime": 1790779500000,
+      "exitTime": 1790780400000,
+      "module": "E_SUPPLY",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 33.201,
+      "net": 6.5866563,
+      "commission": 1.7503437,
+      "grossBeforeCommission": 8.337,
+      "netRToPlannedInitialCashRisk": 0.19838728652751422,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790855100000,\"B_CRT\"]",
+      "planTimestamp": 1790855100000,
+      "entryTime": 1790855100000,
+      "exitTime": 1790856000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.896,
+      "net": 5.4259674,
+      "commission": 1.7560326,
+      "grossBeforeCommission": 7.182,
+      "netRToPlannedInitialCashRisk": 0.18777572674418605,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790925300000,\"B_CRT\"]",
+      "planTimestamp": 1790925300000,
+      "entryTime": 1790925300000,
+      "exitTime": 1790926200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 23.814,
+      "net": -6.6513825,
+      "commission": 1.7583825,
+      "grossBeforeCommission": -4.893000000000001,
+      "netRToPlannedInitialCashRisk": -0.2793055555555556,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790939700000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1790939700000,
+      "entryTime": 1790939700000,
+      "exitTime": 1790940600000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 31.731,
+      "net": -15.7643409,
+      "commission": 1.7573409,
+      "grossBeforeCommission": -14.007000000000001,
+      "netRToPlannedInitialCashRisk": -0.4968119788219722,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1790944200000,\"B_CRT\"]",
+      "planTimestamp": 1790944200000,
+      "entryTime": 1790944200000,
+      "exitTime": 1790945100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 4,
+      "plannedInitialCashRisk": 27.048000000000002,
+      "net": 54.7190553,
+      "commission": 1.7639447000000001,
+      "grossBeforeCommission": 56.483000000000004,
+      "netRToPlannedInitialCashRisk": 2.023035170807453,
+      "exitComments": [
+        "TP1_HIT",
+        "TP2_HIT",
+        "TP3_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791189900000,\"B_CRT\"]",
+      "planTimestamp": 1791189900000,
+      "entryTime": 1791189900000,
+      "exitTime": 1791190800000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.95,
+      "net": -11.5560669,
+      "commission": 1.7490669,
+      "grossBeforeCommission": -9.806999999999999,
+      "netRToPlannedInitialCashRisk": -0.5792514736842105,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791199800000,\"B_CRT\"]",
+      "planTimestamp": 1791199800000,
+      "entryTime": 1791199800000,
+      "exitTime": 1791200700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 4,
+      "plannedInitialCashRisk": 25.851000000000003,
+      "net": -27.7015908,
+      "commission": 1.7475908,
+      "grossBeforeCommission": -25.954,
+      "netRToPlannedInitialCashRisk": -1.0715868167575722,
+      "exitComments": [
+        "STOP_LOSS_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791298800000,\"B_CRT\"]",
+      "planTimestamp": 1791298800000,
+      "entryTime": 1791298800000,
+      "exitTime": 1791299700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.665000000000003,
+      "net": 11.3780415,
+      "commission": 1.7469585,
+      "grossBeforeCommission": 13.125,
+      "netRToPlannedInitialCashRisk": 0.3969315018315018,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791360900000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1791360900000,
+      "entryTime": 1791360900000,
+      "exitTime": 1791361800000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 16.821,
+      "net": 10.9706625,
+      "commission": 1.7343375,
+      "grossBeforeCommission": 12.705,
+      "netRToPlannedInitialCashRisk": 0.6522003745318351,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791388800000,\"B_CRT\"]",
+      "planTimestamp": 1791388800000,
+      "entryTime": 1791388800000,
+      "exitTime": 1791389700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 42.147000000000006,
+      "net": -11.7003579,
+      "commission": 1.7253579,
+      "grossBeforeCommission": -9.975,
+      "netRToPlannedInitialCashRisk": -0.2776083208769307,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791448200000,\"B_CRT\"]",
+      "planTimestamp": 1791448200000,
+      "entryTime": 1791448200000,
+      "exitTime": 1791449100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 31.668000000000003,
+      "net": 5.7429876,
+      "commission": 1.7330124,
+      "grossBeforeCommission": 7.476,
+      "netRToPlannedInitialCashRisk": 0.1813498673740053,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791452700000,\"B_CRT\"]",
+      "planTimestamp": 1791452700000,
+      "entryTime": 1791452700000,
+      "exitTime": 1791453600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.864,
+      "net": -9.3121581,
+      "commission": 1.7311581,
+      "grossBeforeCommission": -7.5809999999999995,
+      "netRToPlannedInitialCashRisk": -0.3745237331081081,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791458100000,\"B_CRT\"]",
+      "planTimestamp": 1791458100000,
+      "entryTime": 1791458100000,
+      "exitTime": 1791459000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 18.983999999999998,
+      "net": -13.7847864,
+      "commission": 1.7307864,
+      "grossBeforeCommission": -12.054,
+      "netRToPlannedInitialCashRisk": -0.7261265486725664,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791469800000,\"B_CRT\"]",
+      "planTimestamp": 1791469800000,
+      "entryTime": 1791469800000,
+      "exitTime": 1791470700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 47.671,
+      "net": -22.1470897,
+      "commission": 1.5700897,
+      "grossBeforeCommission": -20.576999999999998,
+      "netRToPlannedInitialCashRisk": -0.4645820247110402,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791531000000,\"B_CRT\"]",
+      "planTimestamp": 1791531000000,
+      "entryTime": 1791531000000,
+      "exitTime": 1791531900000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 12.831000000000001,
+      "net": -7.5361587,
+      "commission": 1.7611587,
+      "grossBeforeCommission": -5.7749999999999995,
+      "netRToPlannedInitialCashRisk": -0.5873399345335515,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791812700000,\"B_CRT\"]",
+      "planTimestamp": 1791812700000,
+      "entryTime": 1791812700000,
+      "exitTime": 1791813600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 16.107,
+      "net": 1.4394996,
+      "commission": 1.7525004,
+      "grossBeforeCommission": 3.192,
+      "netRToPlannedInitialCashRisk": 0.08937105606258149,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791817200000,\"B_CRT\"]",
+      "planTimestamp": 1791817200000,
+      "entryTime": 1791817200000,
+      "exitTime": 1791818100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.675,
+      "net": -15.0223752,
+      "commission": 1.7503752,
+      "grossBeforeCommission": -13.272,
+      "netRToPlannedInitialCashRisk": -0.6088095319148936,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791876600000,\"B_CRT\"]",
+      "planTimestamp": 1791876600000,
+      "entryTime": 1791876600000,
+      "exitTime": 1791877500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 14.952000000000002,
+      "net": -13.644771,
+      "commission": 1.758771,
+      "grossBeforeCommission": -11.886000000000001,
+      "netRToPlannedInitialCashRisk": -0.9125716292134831,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791885600000,\"B_CRT\"]",
+      "planTimestamp": 1791885600000,
+      "entryTime": 1791885600000,
+      "exitTime": 1791886500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 13.566,
+      "net": -8.5407147,
+      "commission": 1.7577147,
+      "grossBeforeCommission": -6.783,
+      "netRToPlannedInitialCashRisk": -0.6295676470588235,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1791967500000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1791967500000,
+      "entryTime": 1791967500000,
+      "exitTime": 1791968400000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 42.650999999999996,
+      "net": 0.2336376,
+      "commission": 1.7403624,
+      "grossBeforeCommission": 1.974,
+      "netRToPlannedInitialCashRisk": 0.005477892663712457,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792055700000,\"B_CRT\"]",
+      "planTimestamp": 1792055700000,
+      "entryTime": 1792055700000,
+      "exitTime": 1792056600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 20.937,
+      "net": 0.7315014,
+      "commission": 1.7464986,
+      "grossBeforeCommission": 2.4779999999999998,
+      "netRToPlannedInitialCashRisk": 0.03493821464393179,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792141200000,\"B_CRT\"]",
+      "planTimestamp": 1792141200000,
+      "entryTime": 1792141200000,
+      "exitTime": 1792142100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.066000000000003,
+      "net": 2.818116,
+      "commission": 1.759884,
+      "grossBeforeCommission": 4.577999999999999,
+      "netRToPlannedInitialCashRisk": 0.11709947643979056,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792146600000,\"B_CRT\"]",
+      "planTimestamp": 1792146600000,
+      "entryTime": 1792146600000,
+      "exitTime": 1792147500000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 20.727,
+      "net": -6.5448516,
+      "commission": 1.7568516,
+      "grossBeforeCommission": -4.788,
+      "netRToPlannedInitialCashRisk": -0.3157645390070922,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792408500000,\"B_CRT\"]",
+      "planTimestamp": 1792408500000,
+      "entryTime": 1792408500000,
+      "exitTime": 1792409400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.665000000000003,
+      "net": -7.9059267,
+      "commission": 1.7529267,
+      "grossBeforeCommission": -6.1530000000000005,
+      "netRToPlannedInitialCashRisk": -0.2758041758241758,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792573200000,\"B_CRT\"]",
+      "planTimestamp": 1792573200000,
+      "entryTime": 1792573200000,
+      "exitTime": 1792574100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 13.209000000000001,
+      "net": -12.6093114,
+      "commission": 1.7313114,
+      "grossBeforeCommission": -10.878,
+      "netRToPlannedInitialCashRisk": -0.9545999999999999,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792577700000,\"B_CRT\"]",
+      "planTimestamp": 1792577700000,
+      "entryTime": 1792577700000,
+      "exitTime": 1792578600000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.528,
+      "net": -13.3214844,
+      "commission": 1.7294844,
+      "grossBeforeCommission": -11.591999999999999,
+      "netRToPlannedInitialCashRisk": -0.5431133561643836,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792591200000,\"B_CRT\"]",
+      "planTimestamp": 1792591200000,
+      "entryTime": 1792591200000,
+      "exitTime": 1792592100000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 26.376,
+      "net": 0.365925,
+      "commission": 1.734075,
+      "grossBeforeCommission": 2.1,
+      "netRToPlannedInitialCashRisk": 0.0138734076433121,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792655100000,\"B_CRT\"]",
+      "planTimestamp": 1792655100000,
+      "entryTime": 1792655100000,
+      "exitTime": 1792656000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 28.455000000000002,
+      "net": 3.4065108,
+      "commission": 1.7174892,
+      "grossBeforeCommission": 5.124,
+      "netRToPlannedInitialCashRisk": 0.11971571955719557,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792682100000,\"B_CRT\"]",
+      "planTimestamp": 1792682100000,
+      "entryTime": 1792682100000,
+      "exitTime": 1792683000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.150000000000002,
+      "net": 4.7025405,
+      "commission": 1.7024595,
+      "grossBeforeCommission": 6.404999999999999,
+      "netRToPlannedInitialCashRisk": 0.19472217391304344,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1792763100000,\"B_CRT\"]",
+      "planTimestamp": 1792763100000,
+      "entryTime": 1792763100000,
+      "exitTime": 1792764000000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 23.982,
+      "net": -1.269849,
+      "commission": 1.689849,
+      "grossBeforeCommission": 0.41999999999999993,
+      "netRToPlannedInitialCashRisk": -0.05295008756567426,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793011500000,\"B_CRT\"]",
+      "planTimestamp": 1793011500000,
+      "entryTime": 1793011500000,
+      "exitTime": 1793012400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.706000000000003,
+      "net": -9.1139752,
+      "commission": 1.7659752,
+      "grossBeforeCommission": -7.348000000000001,
+      "netRToPlannedInitialCashRisk": -0.3688972395369546,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793263500000,\"B_CRT\"]",
+      "planTimestamp": 1793263500000,
+      "entryTime": 1793263500000,
+      "exitTime": 1793264400000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 31.206,
+      "net": -1.5851031,
+      "commission": 1.6901031,
+      "grossBeforeCommission": 0.10499999999999998,
+      "netRToPlannedInitialCashRisk": -0.050794818304172276,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793278800000,\"B_CRT\"]",
+      "planTimestamp": 1793278800000,
+      "entryTime": 1793278800000,
+      "exitTime": 1793279700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 27.741000000000003,
+      "net": -11.9377146,
+      "commission": 1.6897146,
+      "grossBeforeCommission": -10.248,
+      "netRToPlannedInitialCashRisk": -0.43032747918243747,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793290500000,\"F_TREND_PULLBACK\"]",
+      "planTimestamp": 1793290500000,
+      "entryTime": 1793290500000,
+      "exitTime": 1793291400000,
+      "module": "F_TREND_PULLBACK",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 47.24,
+      "net": 1.214082,
+      "commission": 1.605918,
+      "grossBeforeCommission": 2.8200000000000003,
+      "netRToPlannedInitialCashRisk": 0.02570029635901778,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793359800000,\"B_CRT\"]",
+      "planTimestamp": 1793359800000,
+      "entryTime": 1793359800000,
+      "exitTime": 1793360700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 20.064,
+      "net": 5.401935,
+      "commission": 1.748065,
+      "grossBeforeCommission": 7.15,
+      "netRToPlannedInitialCashRisk": 0.26923519736842105,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793608200000,\"E_SUPPLY\"]",
+      "planTimestamp": 1793608200000,
+      "entryTime": 1793608200000,
+      "exitTime": 1793609100000,
+      "module": "E_SUPPLY",
+      "quality": 80,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 22.682000000000002,
+      "net": -10.9109044,
+      "commission": 1.7149044,
+      "grossBeforeCommission": -9.196,
+      "netRToPlannedInitialCashRisk": -0.48103802133850626,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793615400000,\"B_CRT\"]",
+      "planTimestamp": 1793615400000,
+      "entryTime": 1793615400000,
+      "exitTime": 1793616300000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 26.004,
+      "net": -3.9579584,
+      "commission": 1.7139584,
+      "grossBeforeCommission": -2.2439999999999998,
+      "netRToPlannedInitialCashRisk": -0.1522057529610829,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793620800000,\"B_CRT\"]",
+      "planTimestamp": 1793620800000,
+      "entryTime": 1793620800000,
+      "exitTime": 1793621700000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 14.3,
+      "net": -9.703397,
+      "commission": 1.717397,
+      "grossBeforeCommission": -7.986000000000001,
+      "netRToPlannedInitialCashRisk": -0.6785592307692307,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793781900000,\"E_DEMAND\"]",
+      "planTimestamp": 1793781900000,
+      "entryTime": 1793781900000,
+      "exitTime": 1793782800000,
+      "module": "E_DEMAND",
+      "quality": 80,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 32.949,
+      "net": -2.4293745,
+      "commission": 1.6943745,
+      "grossBeforeCommission": -0.7350000000000003,
+      "netRToPlannedInitialCashRisk": -0.07373135755258127,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"15\",1793807100000,\"D_SNR\"]",
+      "planTimestamp": 1793807100000,
+      "entryTime": 1793807100000,
+      "exitTime": 1793808000000,
+      "module": "D_SNR",
+      "quality": 100,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 25.851000000000003,
+      "net": 16.781289,
+      "commission": 1.698711,
+      "grossBeforeCommission": 18.48,
+      "netRToPlannedInitialCashRisk": 0.6491543460601137,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    }
+  ],
+  "limitations": [
+    "Descriptive already-inspected historical sample, not untouched OOS, probability calibration or causal inference.",
+    "Score/module associations do not identify a score effect; module selection and state histories can confound outcomes.",
+    "Wilson intervals assume IID Bernoulli outcomes; serially correlated trades and small samples limit that interpretation.",
+    "Partial exit rows are aggregated into complete positions. Reported net already includes commission; it is not subtracted twice.",
+    "Net R uses logged planned account risk per unit times initial quantity, not a guaranteed maximum loss or actual-fill stop risk.",
+    "Missing/open/rejected plans are separately retained and excluded from closed-position summaries, never assigned zero P&L.",
+    "Observed win rate is not the quality score divided by 100; no threshold, module or trading rule is recommended from this sample.",
+    "Fewer than 30 positions is marked sparse descriptively; 30 does not establish statistical power or independence."
+  ]
+}

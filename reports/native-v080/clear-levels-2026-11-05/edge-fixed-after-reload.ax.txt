@@ -1,0 +1,135 @@
+Window: "Live stock, index, futures, Fore…nd Bitcoin charts on TradingView", App: Google Chrome.
+0 standard window Live stock, index, futures, Forex and Bitcoin charts on TradingView - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container Live stock, index, futures, Forex and Bitcoin charts on TradingView - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content Live stock, index, futures, Forex and Bitcoin charts on TradingView, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+							8 text 2
+							9 toolbar
+								10 container
+									11 button XAUUSD, Help: Symbol search
+									12 button Switch data type
+									13 pop up button Compare symbols
+									14 pop up button 5 minutes
+										15 container
+											16 text 5 m
+									17 pop up button
+									18 button Indicators, metrics, and strategies
+									19 pop up button Favorite indicators and indicators templates
+									20 button Create alert
+									21 toggle button Bar replay, Value: 0
+										22 text Replay
+									23 pop up button Layout setup
+									24 button (disabled) All changes saved
+									25 pop up button Manage layouts
+									26 button Quick search
+									27 button Settings
+									28 button Fullscreen mode
+									29 pop up button Take a snapshot
+								30 pop up button Share your idea with the trade community
+								31 container
+									32 button Trade
+								33 container
+									34 button Upgrade
+							35 toolbar
+								36 container
+									37 container
+										38 button Cross
+										39 toggle button Cursors, Value: 1
+									40 container
+										41 button Trendline
+										42 toggle button Trend tools, Value: 0
+									43 container
+										44 button Fib retracement
+										45 toggle button Gann and Fibonacci tools, Value: 0
+									46 container
+										47 button XABCD pattern
+										48 toggle button Patterns, Value: 0
+									49 container
+										50 button Long position
+										51 toggle button Forecasting and measurement tools, Value: 0
+									52 container
+										53 button Brush
+										54 toggle button Geometric shapes, Value: 0
+									55 container
+										56 button Text
+										57 toggle button Annotation tools, Value: 0
+									58 container
+										59 button Icon
+										60 toggle button Icons, Value: 0
+									61 button Measure
+									62 button Zoom in
+									63 container
+										64 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+										65 toggle button Magnets, Value: 0
+									66 toggle button Keep drawing, Value: 0
+									67 container
+										68 toggle button Lock drawings and indicators, Value: 0
+										69 toggle button Lock options, Value: 0
+									70 container
+										71 toggle button Hide all drawings, Value: 0
+										72 toggle button Hide options, Value: 0
+									73 container
+										74 button Remove objects
+										75 button Remove options
+							76 container
+							77 toolbar
+								78 button Go to
+								79 button Timezone
+							80 container
+								81 toolbar
+									82 toggle button Watchlist, details, and news, Value: 0
+									83 toggle button Alerts, Value: 0
+									84 toggle button Object tree and data window, Value: 0
+									85 toggle button AI Copilot, Value: 0
+									86 toggle button Screeners, Value: 0
+									87 toggle button Pine Editor, Value: 0
+									88 toggle button Calendars, Value: 0
+									89 toggle button Community, Value: 0
+									90 toggle button Notifications, Value: 0
+									91 toggle button Chats, Value: 0
+									92 pop up button Products
+									93 toggle button Help Center, Value: 0
+							94 container Trading panel
+		95 container
+			96 pop up button Tab search
+			97 tab group
+				98 tab (selected, settable, boolean) Live stock, index, futures, Forex and Bitcoin charts on TradingView - Memory usage - 363 MB, Value: on
+					99 button Close
+			100 button New Tab
+			101 button Open Gemini in Chrome
+		102 container
+			103 toolbar
+				104 button Back
+				105 button (disabled) Forward
+				106 button Reload
+				107 container
+					108 pop up button View site information
+					109 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					110 button Bookmark this tab
+				111 container
+					112 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					113 pop up button Extensions
+				114 checkbox Downloads, Value: 0
+				115 button Chheang
+				116 pop up button Chrome
+	117 container
+		118 close button
+		119 zoom button
+120 menu bar
+	121 Chrome
+	122 File
+	123 Edit
+	124 View
+	125 History
+	126 Bookmarks
+	127 Profiles
+	128 Tab
+	129 Window
+	130 Help
+
+The focused UI element is 5 HTML content Live stock, index, futures, Forex and Bitcoin charts on TradingView, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

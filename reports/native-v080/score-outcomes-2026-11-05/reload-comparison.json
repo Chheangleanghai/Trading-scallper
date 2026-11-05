@@ -1,0 +1,33 @@
+{
+  "status": "OBSERVED_RELOAD_LOG_IDENTITY",
+  "recordedAtUTC": "2026-11-05T04:33:22.699987+00:00",
+  "symbol": "FOREXCOM:XAUUSD",
+  "timeframe": "15",
+  "scope": "Saved exit-audit experiment, one native browser reload, same saved layout; Indicator not covered.",
+  "rawExportsByteIdentical": true,
+  "decodedRecordsIdentical": true,
+  "recordCountPerExport": 650,
+  "countsPerExport": {
+    "PLAN_AUDIT": 104,
+    "lifecycle": 323,
+    "TRADE_EXIT_AUDIT": 119,
+    "TRADE_GROUP_AUDIT": 104
+  },
+  "sha256BothRawExports": "850895a543f573cd0a332be13cebe3f09068a537580e351f0bb37219625e9c4c",
+  "earliestDisplayPrefix": "2026-08-06T07:00:00.000-00:00",
+  "latestDisplayPrefix": "2026-11-04T16:00:00.000-00:00",
+  "sourceAttribution": {
+    "displayTitle": "XAUUSD SMART SCALPER PRO Backtest \u00b7 Exit audit experiment",
+    "priorRestoredCopyback": "reports/native-v080/continuation-2026-11-05/restored-exit-audit-editor-copy.pine",
+    "priorCopybackSha256": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+    "freshCopybackOrCompileThisCheck": false,
+    "note": "Prior exact copy-back and saved-chart restoration are preserved. This check did not edit or replace source; title and payload version alone are not independent current-hash authentication."
+  },
+  "limitations": [
+    "Historical log equality does not establish first signal appearance or tick/candle-by-candle timing.",
+    "No Bar Replay, current-baseline native verification, live-fill or profitability gate is passed.",
+    "Hidden Indicator log view was empty before reload; there is no paired Indicator reload result.",
+    "Full inputs were not recaptured here; visible legend values and study visibility persisted."
+  ],
+  "chartAfterCheck": "M15, original exit-audit Strategy visible, saved Indicator hidden, Replay off, editor/log panes closed, All changes saved."
+}

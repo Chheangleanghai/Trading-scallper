@@ -1,0 +1,3 @@
+xauusd-smart-scalper-pro@0.8.0 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+└── (empty)
+
