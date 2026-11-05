@@ -55,7 +55,9 @@ In **Settings → Inputs → Historical view**, `Historical plan drawings` offer
 
 ## Clear Entry / SL / TP display
 
-The separate [clear-levels Indicator](pine/experiments/indicator_clear_levels.pine) adds high-contrast Entry, SL and TP1–TP3 labels, a fixed price card and an explicitly marked previous-plan view. It preserves the frozen Indicator's trading rules. The M5 native display regression matched 69 original plans at zero tolerance; this is not Indicator/Strategy parity. See [source, native captures and checks](reports/native-v080/clear-levels-2026-11-05/README.md).
+The new isolated [A–H Indicator candidate](pine/experiments/indicator_professional.pine) and [Strategy candidate](pine/experiments/strategy_professional.pine) enable A–H by default, remove standalone BUY/SELL badges, and show priced Entry/SL/TP1–TP3 plans with the existing context overlays. D is displayed as **K-SNR**, preserving its current confirmed support/resistance rules. Both candidates compiled natively; 178 local tests passed, and 74 Indicator plans were unchanged after reload. The fresh paired streams still mismatch and the complete-position Strategy sample is negative. The Free account blocked webhook activation. See [actual capture results and limitations](reports/native-v080/professional-candidate-2026-11-05/README.md). Baseline Pine files remain unchanged at v0.8.0.
+
+The separate [clear-levels Indicator](pine/experiments/indicator_clear_levels.pine) adds bounded recent Entry/SL/TP1–TP3 plans, spaced price callouts and a compact dark status/price card. It preserves the frozen Indicator's trading rules. The preceding display revision matched 69 native plans at tolerance zero; the latest layout has local checks and an initial native compile, with final visual/session testing pending reliable chart focus. See [current reference-style UI work](reports/native-v080/reference-ui-2026-11-05/README.md) and [preserved preceding native evidence](reports/native-v080/clear-levels-2026-11-05/README.md).
 
 ## Offline plan/outcome research
 

@@ -1,0 +1,40 @@
+Window: "XAUUSD 4,120.93 ▲ +1.46% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,120.93 ▲ +1.46% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,120.93 ▲ +1.46% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+		3 container
+			4 pop up button Tab search
+			5 tab group
+				6 tab (selected, settable, boolean) XAUUSD 4,120.93 ▲ +1.46% Unnamed - Memory usage - 341 MB, Value: on
+					7 button Close
+			8 button New Tab
+			9 button Open Gemini in Chrome
+		10 container
+			11 toolbar
+				12 button Back
+				13 button (disabled) Forward
+				14 button Reload
+				15 container
+					16 pop up button View site information
+					17 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					18 button Bookmark this tab
+				19 container
+					20 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					21 pop up button Extensions
+				22 button Chheang
+				23 pop up button Chrome
+	24 container
+		25 close button
+		26 zoom button
+27 menu bar
+	28 Chrome
+	29 File
+	30 Edit
+	31 View
+	32 History
+	33 Bookmarks
+	34 Profiles
+	35 Tab
+	36 Window
+	37 Help

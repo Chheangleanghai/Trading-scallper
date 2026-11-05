@@ -13,6 +13,8 @@ for (const name of [
   "experiments/strategy_legacy_candidate_trace.pine",
   "experiments/strategy_quantity_candidate_trace.pine",
   "experiments/indicator_clear_levels.pine",
+  "experiments/indicator_professional.pine",
+  "experiments/strategy_professional.pine",
 ]) {
   const result = canTranspilePineScript(
     readFileSync(new URL(`../pine/${name}`, import.meta.url), "utf8"),

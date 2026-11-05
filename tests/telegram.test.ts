@@ -19,6 +19,13 @@ export const sample = {
 };
 afterEach(() => vi.unstubAllGlobals());
 describe("Telegram", () => {
+  it("names K-SNR without changing the stable strategy ID or planned prices", () => {
+    const signal = validate({ ...sample, strategy: "D_SNR" });
+    const text = formatMessage(signal);
+    expect(text).toContain("Strategy: D_SNR");
+    expect(text).toContain("Concept: D · K-SNR (confirmed support/resistance)");
+    for (const caption of ["ENTRY (planned): 100", "INITIAL SL: 99", "TP1: 101", "TP2: 102", "TP3: 103"]) expect(text).toContain(caption);
+  });
   it("escapes markup and displays actual R and Cambodia time", () => {
     const text = formatMessage(validate({ ...sample, symbol: '<b>&"' }));
     expect(text).toContain("&lt;b&gt;&amp;&quot;");

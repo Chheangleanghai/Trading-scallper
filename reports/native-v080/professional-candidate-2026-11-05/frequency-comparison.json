@@ -1,0 +1,81 @@
+{
+  "status": "DESCRIPTIVE_INDICATOR_PLAN_FREQUENCY_ONLY",
+  "startInclusive": "2026-10-13T00:00:00Z",
+  "endExclusive": "2026-11-05T00:00:00Z",
+  "changedInput": "sessionPreset",
+  "otherTradingInputs": "unchanged; native controls captured",
+  "runs": {
+    "final-london": {
+      "rawRows": 320,
+      "allPlans": 74,
+      "comparisonPlans": 65,
+      "modules": {
+        "B_CRT": 39,
+        "F_TREND_PULLBACK": 11,
+        "C_TURTLE_SOUP": 6,
+        "D_SNR": 2,
+        "E_DEMAND": 1,
+        "E_SUPPLY": 4,
+        "H_QUASIMODO": 2
+      },
+      "byUTCDate": {
+        "2026-10-13": 2,
+        "2026-10-14": 2,
+        "2026-10-15": 2,
+        "2026-10-16": 5,
+        "2026-10-19": 5,
+        "2026-10-20": 5,
+        "2026-10-21": 5,
+        "2026-10-22": 4,
+        "2026-10-23": 4,
+        "2026-10-26": 1,
+        "2026-10-27": 5,
+        "2026-10-28": 3,
+        "2026-10-29": 5,
+        "2026-10-30": 3,
+        "2026-11-02": 5,
+        "2026-11-03": 4,
+        "2026-11-04": 5
+      }
+    },
+    "all-major": {
+      "rawRows": 404,
+      "allPlans": 94,
+      "comparisonPlans": 84,
+      "modules": {
+        "H_QUASIMODO": 3,
+        "B_CRT": 40,
+        "C_TURTLE_SOUP": 17,
+        "D_SNR": 4,
+        "E_SUPPLY": 8,
+        "F_TREND_PULLBACK": 11,
+        "E_DEMAND": 1
+      },
+      "byUTCDate": {
+        "2026-10-13": 5,
+        "2026-10-14": 5,
+        "2026-10-15": 5,
+        "2026-10-16": 5,
+        "2026-10-19": 5,
+        "2026-10-20": 5,
+        "2026-10-21": 5,
+        "2026-10-22": 5,
+        "2026-10-23": 5,
+        "2026-10-26": 4,
+        "2026-10-27": 5,
+        "2026-10-28": 5,
+        "2026-10-29": 5,
+        "2026-10-30": 5,
+        "2026-11-02": 5,
+        "2026-11-03": 5,
+        "2026-11-04": 5
+      }
+    }
+  },
+  "limitations": [
+    "No execution or profitability conclusion.",
+    "Session selection also affects session score and quota reset through existing engine logic.",
+    "Combined enabled modules compete for one plan slot.",
+    "First partial day and ongoing capture day excluded."
+  ]
+}

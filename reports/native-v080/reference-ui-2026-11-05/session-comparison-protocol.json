@@ -1,0 +1,29 @@
+{
+  "scope": "Isolated frequency experiment; configurations are planned until captured in actual TradingView inputs",
+  "shared": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "entryMode": "Close",
+    "qualityThreshold": 75,
+    "requireH1Alignment": true,
+    "maximumPlansPerSession": 5,
+    "cooldownBars": 5,
+    "holdingMinutes": 15,
+    "modules": "A-H enabled, matching the existing user runtime configuration",
+    "baselineTradingRulesChanged": false
+  },
+  "control": {
+    "sessionPreset": "London"
+  },
+  "experiment": {
+    "sessionPreset": "All major sessions"
+  },
+  "hypothesis": "A wider permitted time range may admit qualified plans while Cambodia is outside London hours; the unchanged five-plan quota can still bind.",
+  "acceptance": [
+    "Capture complete actual inputs for both runs.",
+    "Use the same source and loaded historical context.",
+    "Preserve raw CSVs and compare actual plan times and counts; do not fabricate missing results.",
+    "Check ordering, heuristic quality, execution model and current WAIT reason."
+  ],
+  "performanceLimit": "Indicator planned frequency alone cannot show Strategy fill quality, profitability, OOS or non-repainting."
+}

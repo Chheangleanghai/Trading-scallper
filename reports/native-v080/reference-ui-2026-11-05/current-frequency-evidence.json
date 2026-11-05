@@ -1,0 +1,43 @@
+{
+  "scope": "Preserved genuine Indicator capture with A-H enabled and London/H1 filters; not A-only frequency or Strategy performance",
+  "rawArtifact": "reports/native-v080/clear-levels-2026-11-05/original-indicator-native.csv",
+  "sha256": "4ab2b4546fe1351d300d1895c07cf41917d2c26d2b7804029d903d431c5c8eed",
+  "plans": 69,
+  "byModule": {
+    "C_TURTLE_SOUP": 7,
+    "D_SNR": 3,
+    "B_CRT": 41,
+    "F_TREND_PULLBACK": 11,
+    "E_DEMAND": 1,
+    "E_SUPPLY": 4,
+    "H_QUASIMODO": 2
+  },
+  "byUtcDay": {
+    "2026-10-12": 4,
+    "2026-10-13": 2,
+    "2026-10-14": 2,
+    "2026-10-15": 2,
+    "2026-10-16": 5,
+    "2026-10-19": 5,
+    "2026-10-20": 5,
+    "2026-10-21": 5,
+    "2026-10-22": 4,
+    "2026-10-23": 4,
+    "2026-10-26": 1,
+    "2026-10-27": 5,
+    "2026-10-28": 3,
+    "2026-10-29": 5,
+    "2026-10-30": 3,
+    "2026-11-02": 5,
+    "2026-11-03": 4,
+    "2026-11-04": 5
+  },
+  "earliestPlanUtc": "2026-10-12T10:05:00+00:00",
+  "latestPlanUtc": "2026-11-04T10:55:00+00:00",
+  "minimumScore": 80,
+  "limitations": [
+    "Earliest plan is not an authenticated loaded-history start.",
+    "No signal is guaranteed in any waiting interval.",
+    "Does not measure individual filter rejection rates."
+  ]
+}

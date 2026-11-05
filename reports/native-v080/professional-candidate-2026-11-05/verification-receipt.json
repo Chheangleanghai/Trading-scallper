@@ -1,0 +1,158 @@
+{
+  "schema": "professional-candidate-observed-research/v1",
+  "date": "2026-11-05",
+  "version": "0.8.0",
+  "releaseStatus": "RESEARCH_CANDIDATE_NOT_RELEASED",
+  "sourceHashes": {
+    "baselineIndicator": {
+      "path": "pine/indicator.pine",
+      "sha256": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4"
+    },
+    "baselineStrategy": {
+      "path": "pine/strategy.pine",
+      "sha256": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0"
+    },
+    "indicatorCandidate": {
+      "path": "pine/experiments/indicator_professional.pine",
+      "sha256": "050518694b7d83a112dc22e40e1072621f7884cc89b526b29995532131f0ad1b"
+    },
+    "strategyCandidate": {
+      "path": "pine/experiments/strategy_professional.pine",
+      "sha256": "eb601426b7a71779cd0aee0f56f987a6cf723cf48b23131aa29d9214913f4851"
+    },
+    "quantityParent": {
+      "path": "pine/experiments/strategy_quantity_units.pine",
+      "sha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed"
+    }
+  },
+  "nativeCompilation": {
+    "indicator": {
+      "status": "OBSERVED_SUCCESS",
+      "compileTimeDisplayed": "9:41:27 PM",
+      "localTimezone": "Asia/Phnom_Penh",
+      "copy": "indicator-final-editor-copy.pine",
+      "normalizedCopyMatches": true,
+      "compileScreenshot": "indicator-final-compile.png"
+    },
+    "strategy": {
+      "status": "OBSERVED_SUCCESS",
+      "compileTimeDisplayed": "9:33:17 PM",
+      "localTimezone": "Asia/Phnom_Penh",
+      "copy": "strategy-final-editor-copy.pine",
+      "normalizedCopyMatches": true,
+      "compileScreenshot": "strategy-final-compile.png"
+    }
+  },
+  "localVerification": {
+    "testFiles": 19,
+    "testsPassed": 178,
+    "independentPineParses": 13,
+    "productionDependencies": 0,
+    "productionAuditVulnerabilities": 0,
+    "gitDiffCheck": "PASS"
+  },
+  "runtimeInputs": {
+    "count": 115,
+    "indicatorAndStrategyEqual": true,
+    "evidence": "runtime-input-comparison.json",
+    "actualInputs": "indicator-runtime-inputs.json",
+    "strategyProperties": "strategy-properties.ax.txt",
+    "researchWindowEnabled": false,
+    "chartTimezone": "UTC",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "candleType": "standard"
+  },
+  "parity": {
+    "status": "MULTI_PLAN_MISMATCH",
+    "tolerance": 0,
+    "indicatorPlans": 74,
+    "strategyPlans": 75,
+    "commonTimestamps": 72,
+    "exactPlannedMatches": 68,
+    "differentCommonPlans": 4,
+    "unpairedPlans": 5,
+    "mismatchRecords": 18,
+    "executionModelDifferences": 72,
+    "runtimeInputsCompared": 115,
+    "runtimeInputsEqual": true,
+    "sourceAttribution": "Native editor copy-backs normalized to exact candidate files; observed compiler success and log selection in those chart studies. Payloads do not embed a cryptographic source identity.",
+    "dataContextLimit": "Same FOREXCOM:XAUUSD standard M5 chart. Research window disabled. Full loaded OHLC history and calculation start were not exported. Observed first event is not asserted to be the first calculation bar."
+  },
+  "indicatorReload": {
+    "status": "IDENTICAL_CAPTURED_LOGS",
+    "before": "indicator-final-london-raw.csv",
+    "after": "indicator-after-reload-raw.csv",
+    "rawCsvByteEqual": true,
+    "plans": 74,
+    "candleByCandleReplay": "NOT_PERFORMED_IN_THIS_PASS",
+    "nonRepaintingConclusion": "Not established by matching historical logs alone"
+  },
+  "strategyCompletePositions": {
+    "completePositions": 74,
+    "actualExitRows": 107,
+    "wins": 31,
+    "losses": 43,
+    "breakevens": 0,
+    "winRate": 0.4189189189189189,
+    "winRateWilson95IID": {
+      "lower": 0.3132433492747786,
+      "upper": 0.5325971554922029
+    },
+    "grossBeforeCommission": 40.36600000000003,
+    "commission": 128.96827199999998,
+    "net": -88.60227200000011,
+    "meanNetPerCompletePosition": -1.1973280000000015,
+    "meanNetRToPlannedInitialCashRisk": -0.11735936590390843,
+    "meanWin": 8.356843538709676,
+    "meanLoss": -8.085219109302324,
+    "positionProfitFactor": 0.7451500168848023,
+    "profitFactorStatus": "FINITE",
+    "sparseDescriptiveSample": false,
+    "positionsWithExitComment": {
+      "STOP_LOSS_HIT": 9,
+      "TP1_HIT": 14,
+      "TP2_HIT": 1,
+      "TRADE_CLOSED": 65
+    }
+  },
+  "strategyIncompletePositions": [
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793888400000,\"B_CRT\"]",
+      "entryTime": 1793888400000,
+      "exitRows": 1
+    }
+  ],
+  "bracketResidualsObserved": 0,
+  "telegram": {
+    "localFormattingAndMockDelivery": "PASS",
+    "liveWebhook": "BLOCKED_BY_ACCOUNT_PLAN",
+    "observedAccountPlan": "Basic",
+    "evidence": "webhook-availability.ax.txt",
+    "liveAlertCreated": false,
+    "realTelegramMessagesSent": 0,
+    "deploymentPerformed": false,
+    "publicRelayUrlVerified": false,
+    "databaseRequired": false
+  },
+  "finalChart": {
+    "newIndicatorVisible": true,
+    "existingIndicatorAndExitAuditStudies": "retained hidden as before",
+    "temporaryStrategy": "removed by restoring saved layout",
+    "timeframe": "M5",
+    "sessionPreset": "London",
+    "autosave": "restored on and observed",
+    "rightMarginBars": 80,
+    "priceScale": "native menu shows right; rendered prices share the candle right axis; no separate overlay scale observed",
+    "screenshot": "final-chart.png"
+  },
+  "limitations": [
+    "The broker emulator and Indicator use different occupancy and execution histories; general parity still fails.",
+    "A Close-mode planned-entry difference cannot be attributed to fill slippage. Underlying bar snapshots were not exported.",
+    "Strategy Tester snapshot -77.19/109 exit rows was captured later than the audit snapshot and its Manage strategy selection was not recorded; do not use it as reconciled candidate performance or silently replace audit totals.",
+    "No controlled native intraday Bar Replay or untouched OOS completed. Existing Free-plan limitation retained.",
+    "A/G had no selected plan in this combined sample; no isolated performance conclusion.",
+    "Context annotations can overlap price callouts at some zooms; the fixed price card provides all five exact levels.",
+    "One native log pane displayed a poor-connection delay warning; matching captured logs do not certify completeness of all realtime events."
+  ]
+}

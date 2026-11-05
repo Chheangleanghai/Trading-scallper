@@ -1,0 +1,25 @@
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  19:47:20
+   Duration  147ms (tests 77%, import 13%, transform 5%, worker 5%)
+
+
+> xauusd-smart-scalper-pro@0.8.0 pine:parse
+> node scripts/check_pine.mjs
+
+indicator.pine: independent parse passed
+strategy.pine: independent parse passed
+validation.pine: independent parse passed
+experiments/strategy_exit_audit.pine: independent parse passed
+experiments/quantity_rounding_probe.pine: independent parse passed
+experiments/strategy_quantity_units.pine: independent parse passed
+experiments/quantity_units_matrix.pine: independent parse passed
+experiments/indicator_candidate_trace.pine: independent parse passed
+experiments/strategy_legacy_candidate_trace.pine: independent parse passed
+experiments/strategy_quantity_candidate_trace.pine: independent parse passed
+experiments/indicator_clear_levels.pine: independent parse passed
+This independent parser does not certify TradingView compilation or broker-emulator behavior.

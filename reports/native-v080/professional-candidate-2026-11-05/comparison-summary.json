@@ -1,0 +1,16 @@
+{
+  "status": "MULTI_PLAN_MISMATCH",
+  "tolerance": 0,
+  "indicatorPlans": 74,
+  "strategyPlans": 75,
+  "commonTimestamps": 72,
+  "exactPlannedMatches": 68,
+  "differentCommonPlans": 4,
+  "unpairedPlans": 5,
+  "mismatchRecords": 18,
+  "executionModelDifferences": 72,
+  "runtimeInputsCompared": 115,
+  "runtimeInputsEqual": true,
+  "sourceAttribution": "Native editor copy-backs normalized to exact candidate files; observed compiler success and log selection in those chart studies. Payloads do not embed a cryptographic source identity.",
+  "dataContextLimit": "Same FOREXCOM:XAUUSD standard M5 chart. Research window disabled. Full loaded OHLC history and calculation start were not exported. Observed first event is not asserted to be the first calculation bar."
+}

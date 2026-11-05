@@ -1,0 +1,511 @@
+{
+  "source": "pine/experiments/indicator_professional.pine",
+  "inputs": {
+    "clearSignalView": {
+      "type": "string",
+      "label": "Signal display",
+      "observedControls": [
+        "460 combo box (settable) Context + levels"
+      ]
+    },
+    "clearLevelBars": {
+      "type": "int",
+      "label": "Level / box extension bars",
+      "observedControls": [
+        "463 text field (settable) 8"
+      ]
+    },
+    "clearPlanLimit": {
+      "type": "int",
+      "label": "Recent signal plans to keep",
+      "observedControls": [
+        "465 text field (settable) 1"
+      ]
+    },
+    "clearSpaceLabels": false,
+    "clearShowPriceCard": true,
+    "enableA": true,
+    "enableB": true,
+    "enableC": true,
+    "enableD": true,
+    "enableE": true,
+    "enableF": true,
+    "enableG": true,
+    "enableH": true,
+    "crtTF": {
+      "type": "timeframe",
+      "label": "CRT reference timeframe",
+      "observedControls": [
+        "486 combo box (settable) 15 minutes"
+      ]
+    },
+    "turtleAge": {
+      "type": "int",
+      "label": "Turtle Soup minimum bars since pivot confirmation",
+      "observedControls": [
+        "489 text field (settable) 3"
+      ]
+    },
+    "levelTolerance": {
+      "type": "float",
+      "label": "Level/zone tolerance ATR",
+      "observedControls": [
+        "491 text field (settable) 0.15"
+      ]
+    },
+    "maxZoneTests": {
+      "type": "int",
+      "label": "S/D maximum tested bars",
+      "observedControls": [
+        "493 text field (settable) 2"
+      ]
+    },
+    "useEMA50": true,
+    "pullbackDepth": {
+      "type": "float",
+      "label": "Trend pullback: maximum EMA21 overshoot ATR",
+      "observedControls": [
+        "496 text field (settable) 0.3"
+      ]
+    },
+    "accumulationBars": {
+      "type": "int",
+      "label": "AMD prior accumulation bars",
+      "observedControls": [
+        "498 text field (settable) 12"
+      ]
+    },
+    "accumulationWidth": {
+      "type": "float",
+      "label": "AMD maximum prior range ATR",
+      "observedControls": [
+        "500 text field (settable) 3"
+      ]
+    },
+    "strategyThresholds": false,
+    "thresholdA": {
+      "type": "int",
+      "label": "A quality threshold",
+      "observedControls": [
+        "504 text field (settable) 75"
+      ]
+    },
+    "thresholdB": {
+      "type": "int",
+      "label": "B quality threshold",
+      "observedControls": [
+        "506 text field (settable) 75"
+      ]
+    },
+    "thresholdC": {
+      "type": "int",
+      "label": "C quality threshold",
+      "observedControls": [
+        "508 text field (settable) 75"
+      ]
+    },
+    "thresholdD": {
+      "type": "int",
+      "label": "D quality threshold",
+      "observedControls": [
+        "510 text field (settable) 75"
+      ]
+    },
+    "thresholdE": {
+      "type": "int",
+      "label": "E quality threshold",
+      "observedControls": [
+        "512 text field (settable) 75"
+      ]
+    },
+    "thresholdF": {
+      "type": "int",
+      "label": "F quality threshold",
+      "observedControls": [
+        "514 text field (settable) 75"
+      ]
+    },
+    "thresholdG": {
+      "type": "int",
+      "label": "G quality threshold",
+      "observedControls": [
+        "516 text field (settable) 75"
+      ]
+    },
+    "thresholdH": {
+      "type": "int",
+      "label": "H quality threshold",
+      "observedControls": [
+        "518 text field (settable) 75"
+      ]
+    },
+    "useResearchWindow": false,
+    "researchStart": {
+      "type": "time",
+      "label": "Window start (inclusive)",
+      "observedControls": [
+        "522 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+        "523 combo box (settable) 00:00",
+        "525 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+        "526 combo box (settable) 00:00"
+      ]
+    },
+    "researchEnd": {
+      "type": "time",
+      "label": "Window end (exclusive)",
+      "observedControls": [
+        "525 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+        "526 combo box (settable) 00:00",
+        "528 combo box (settable) Both"
+      ]
+    },
+    "tradeSide": {
+      "type": "string",
+      "label": "Allowed direction",
+      "observedControls": [
+        "528 combo box (settable) Both"
+      ]
+    },
+    "auditLog": true,
+    "swing": {
+      "type": "int",
+      "label": "Confirmed pivot strength",
+      "observedControls": [
+        "532 text field (settable) 3"
+      ]
+    },
+    "expiry": {
+      "type": "int",
+      "label": "Setup expiry bars",
+      "observedControls": [
+        "534 text field (settable) 20"
+      ]
+    },
+    "threshold": {
+      "type": "int",
+      "label": "Minimum heuristic quality",
+      "observedControls": [
+        "536 text field (settable) 75"
+      ]
+    },
+    "cooldown": {
+      "type": "int",
+      "label": "Signal cooldown bars",
+      "observedControls": [
+        "538 text field (settable) 5"
+      ]
+    },
+    "maxTrades": {
+      "type": "int",
+      "label": "Maximum entries per session",
+      "observedControls": [
+        "540 text field (settable) 5"
+      ]
+    },
+    "maxExposurePct": {
+      "type": "float",
+      "label": "Maximum simulated notional / equity % (align with margin properties)",
+      "observedControls": [
+        "542 text field (settable) 90"
+      ]
+    },
+    "riskPct": {
+      "type": "float",
+      "label": "Simulation risk %",
+      "observedControls": [
+        "552 text field (settable) 0.5"
+      ]
+    },
+    "buffer": {
+      "type": "float",
+      "label": "ATR stop buffer",
+      "observedControls": [
+        "554 text field (settable) 0.15"
+      ]
+    },
+    "maxStop": {
+      "type": "float",
+      "label": "Maximum stop ATR",
+      "observedControls": [
+        "556 text field (settable) 3"
+      ]
+    },
+    "maxDistance": {
+      "type": "float",
+      "label": "Maximum entry distance from FVG ATR",
+      "observedControls": [
+        "558 text field (settable) 1.5"
+      ]
+    },
+    "minRR": {
+      "type": "float",
+      "label": "Minimum TP2 reward/risk",
+      "observedControls": [
+        "560 text field (settable) 2"
+      ]
+    },
+    "r1": {
+      "type": "float",
+      "label": "TP1 fixed R projection",
+      "observedControls": [
+        "562 text field (settable) 1"
+      ]
+    },
+    "r2": {
+      "type": "float",
+      "label": "TP2 fixed R projection",
+      "observedControls": [
+        "564 text field (settable) 2"
+      ]
+    },
+    "r3": {
+      "type": "float",
+      "label": "TP3 fixed R projection",
+      "observedControls": [
+        "566 text field (settable) 3"
+      ]
+    },
+    "minDisp": {
+      "type": "float",
+      "label": "MSS body minimum ATR",
+      "observedControls": [
+        "568 text field (settable) 0.7"
+      ]
+    },
+    "trendFilter": true,
+    "emaFilter": false,
+    "useSession": true,
+    "sessionPreset": {
+      "type": "string",
+      "label": "Session preset",
+      "observedControls": [
+        "468 combo box (settable) London"
+      ]
+    },
+    "sessionHours": {
+      "type": "session",
+      "label": "Trading session",
+      "observedControls": [
+        "471 combo box (settable) 08:00",
+        "473 combo box (settable) 17:00",
+        "475 text field (settable) Europe/London"
+      ]
+    },
+    "sessionZone": {
+      "type": "string",
+      "label": "IANA session timezone (handles DST)",
+      "observedControls": [
+        "475 text field (settable) Europe/London"
+      ]
+    },
+    "manualPause": false,
+    "newsStart": {
+      "type": "time",
+      "label": "Manual exclusion start",
+      "observedControls": [
+        "478 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "479 combo box (settable) 00:00",
+        "481 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "482 combo box (settable) 00:00"
+      ]
+    },
+    "newsEnd": {
+      "type": "time",
+      "label": "Manual exclusion end",
+      "observedControls": [
+        "481 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "482 combo box (settable) 00:00",
+        "484 combo box (settable) Close"
+      ]
+    },
+    "entryMode": {
+      "type": "string",
+      "label": "Entry mode",
+      "observedControls": [
+        "484 combo box (settable) Close"
+      ]
+    },
+    "pendingBars": {
+      "type": "int",
+      "label": "Pending entry expiry bars",
+      "observedControls": [
+        "487 text field (settable) 3"
+      ]
+    },
+    "timeExit": {
+      "type": "int",
+      "label": "Maximum holding minutes (0 disables)",
+      "observedControls": [
+        "489 text field (settable) 15"
+      ]
+    },
+    "targetMode": {
+      "type": "string",
+      "label": "Target mode",
+      "observedControls": [
+        "544 combo box (settable) Fixed R"
+      ]
+    },
+    "stopMode": {
+      "type": "string",
+      "label": "Stop mode",
+      "observedControls": [
+        "547 combo box (settable) Structure"
+      ]
+    },
+    "atrStop": {
+      "type": "float",
+      "label": "ATR stop multiplier",
+      "observedControls": [
+        "550 text field (settable) 1.5"
+      ]
+    },
+    "breakEven": false,
+    "breakEvenR": {
+      "type": "float",
+      "label": "Break-even trigger R",
+      "observedControls": [
+        "493 text field (settable) 1"
+      ]
+    },
+    "trailing": false,
+    "trailingStartR": {
+      "type": "float",
+      "label": "Trailing activation R",
+      "observedControls": [
+        "496 text field (settable) 2"
+      ]
+    },
+    "trailingATR": {
+      "type": "float",
+      "label": "Trailing ATR distance",
+      "observedControls": [
+        "498 text field (settable) 1.5"
+      ]
+    },
+    "confluenceLiquidity": false,
+    "confluenceFib": false,
+    "confluencePD": false,
+    "showDaily": false,
+    "showSessionLevels": false,
+    "showFibonacci": false,
+    "showPremiumDiscount": false,
+    "showBreakers": false,
+    "showWyckoff": false,
+    "partial": true,
+    "visualLayout": {
+      "type": "string",
+      "label": "Chart layout",
+      "observedControls": [
+        "520 combo box (settable) Reference"
+      ]
+    },
+    "historyMode": {
+      "type": "string",
+      "label": "Historical plan drawings",
+      "observedControls": [
+        "545 combo box (settable) Off"
+      ]
+    },
+    "historyPlanLimit": {
+      "type": "int",
+      "label": "Maximum historical plans",
+      "observedControls": [
+        "548 text field (settable) 8"
+      ]
+    },
+    "historyLookback": {
+      "type": "int",
+      "label": "Full history lookback bars",
+      "observedControls": [
+        "550 text field (settable) 3000"
+      ]
+    },
+    "showConceptPanel": false,
+    "showSwingLevels": true,
+    "showSupportResistance": true,
+    "showCRTSweeps": false,
+    "showContextSweeps": true,
+    "showEMA55": true,
+    "contextHistory": {
+      "type": "string",
+      "label": "Context annotation history",
+      "observedControls": [
+        "534 combo box (settable) Latest only"
+      ]
+    },
+    "contextZoneBars": {
+      "type": "int",
+      "label": "Maximum context zone age bars",
+      "observedControls": [
+        "537 text field (settable) 60"
+      ]
+    },
+    "contextZoneDistance": {
+      "type": "float",
+      "label": "Maximum context zone distance ATR",
+      "observedControls": [
+        "539 text field (settable) 8"
+      ]
+    },
+    "contextLabelGap": {
+      "type": "int",
+      "label": "Minimum bars between same-side sweep labels",
+      "observedControls": [
+        "541 text field (settable) 8"
+      ]
+    },
+    "zoneExtension": {
+      "type": "int",
+      "label": "Zone / right-label extension bars",
+      "observedControls": [
+        "543 text field (settable) 12"
+      ]
+    },
+    "dashboardSize": {
+      "type": "string",
+      "label": "Dashboard text size",
+      "observedControls": [
+        "552 combo box (settable) Small"
+      ]
+    },
+    "chartLabelSize": {
+      "type": "string",
+      "label": "Chart label text size",
+      "observedControls": [
+        "555 combo box (settable) Normal"
+      ]
+    },
+    "showDashboard": false,
+    "showPerformance": true,
+    "showUnusedModules": false,
+    "showSwingLabels": false,
+    "maxStructureLabels": {
+      "type": "int",
+      "label": "Maximum recent structure labels",
+      "observedControls": [
+        "565 text field (settable) 15"
+      ]
+    },
+    "showLastPlan": true,
+    "contextTransparency": {
+      "type": "int",
+      "label": "Context label background transparency",
+      "observedControls": [
+        "568 text field (settable) 82"
+      ]
+    },
+    "showEMA": true,
+    "showZones": true,
+    "showTrade": true,
+    "showEntryLine": true,
+    "showSLLine": true,
+    "showTP1Line": true,
+    "showTP2Line": true,
+    "showTP3Line": true,
+    "showRiskReward": true,
+    "showOB": true,
+    "showStructure": true
+  },
+  "missing": []
+}

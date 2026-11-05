@@ -5,6 +5,17 @@ export const escapeHtml = (s: string): string =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+const conceptNames: Readonly<Record<string, string>> = {
+  A_SWEEP_MSS_FVG: "A · Sweep / MSS / FVG",
+  B_CRT: "B · CRT range reversal",
+  C_TURTLE_SOUP: "C · Confirmed-pivot false breakout",
+  D_SNR: "D · K-SNR (confirmed support/resistance)",
+  E_DEMAND: "E · Demand retest",
+  E_SUPPLY: "E · Supply retest",
+  F_TREND_PULLBACK: "F · Structural trend pullback",
+  G_AMD: "G · Compressed-range AMD approximation",
+  H_QUASIMODO: "H · Confirmed Quasimodo approximation",
+};
 export function formatMessage(s: Signal): string {
   const risk = Math.abs(s.entry - s.sl);
   const time = new Intl.DateTimeFormat("en-GB", {
@@ -39,6 +50,7 @@ Symbol: ${escapeHtml(s.symbol)}
 Timeframe: ${escapeHtml(s.timeframe)}
 H1: ${escapeHtml(s.h1Trend)}
 Strategy: ${escapeHtml(s.strategy)}
+Concept: ${escapeHtml(conceptNames[s.strategy] ?? s.strategy)}
 Quality: ${s.quality}/100 (heuristic)
 ENTRY (planned): ${s.entry}
 INITIAL SL: ${s.sl}

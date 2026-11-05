@@ -77,7 +77,8 @@ if barstate.isconfirmed and array.size(clearPlans) > 0
         latestView.endTime := math.max(minimumEnd, time_close)
         if newSignal or not (active or pending)
             latestView.isOpen := false
-            latestView.terminal := not newSignal and status != 'CLOSED' ? statusName(status) : 'ENDED'
+            bool cancelledPlan = not newSignal and (status == 'EXPIRED' or str.startswith(status, 'INVALIDATED'))
+            latestView.terminal := cancelledPlan ? statusName(status) : 'ENDED'
 
 if newSignal and showTrade and (active or pending or not useBroker)
     clearPlanTime := signalTime
