@@ -1,0 +1,26 @@
+{
+  "freshMatrixEvidence": [
+    "matrix-native-result.png",
+    "matrix-native.csv",
+    "matrix-copy-back.ax.txt",
+    "matrix-editor-copy.pine"
+  ],
+  "staleOrNotFinalState": [
+    "chart-before.png",
+    "autosave-before.png",
+    "quantity-strategy-compiled.png",
+    "quantity-strategy-m5-overview.png",
+    "autosave-during-test.png"
+  ],
+  "note": "Later PNG captures froze. Use native accessibility and raw exports with the README limitations; filenames do not authenticate visible state.",
+  "duplicatePngGroups": [
+    [
+      "chart-before.png",
+      "autosave-before.png"
+    ],
+    [
+      "quantity-strategy-m5-overview.png",
+      "autosave-during-test.png"
+    ]
+  ]
+}

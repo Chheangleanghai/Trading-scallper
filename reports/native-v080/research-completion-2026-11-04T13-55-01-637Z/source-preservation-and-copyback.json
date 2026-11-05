@@ -1,0 +1,11 @@
+{
+  "frozenSourcesUnchanged": true,
+  "experimentalCopybacksExact": true,
+  "sha256": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/strategy_exit_audit.pine": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+    "pine/experiments/quantity_units_matrix.pine": "f955a8b06b36cc123f41e2c1b2e475c3db005e625238256b5e8279215c7607ff",
+    "pine/experiments/strategy_quantity_units.pine": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed"
+  }
+}

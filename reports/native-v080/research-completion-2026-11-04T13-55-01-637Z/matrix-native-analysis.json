@@ -1,0 +1,22 @@
+{
+  "sourceSha256": "f955a8b06b36cc123f41e2c1b2e475c3db005e625238256b5e8279215c7607ff",
+  "csvSha256": "8d51a6e83a4239674130328734800be94880ea9453d19d4daecaa88719bb9388",
+  "rows": 329,
+  "counts": {
+    "QTY_MATRIX_REQUEST": 68,
+    "QTY_MATRIX_ALLOCATION": 68,
+    "QTY_MATRIX_EXIT": 124,
+    "QTY_MATRIX_AFTER": 68,
+    "QTY_MATRIX_COMPLETE": 1
+  },
+  "remainingNonzero": [],
+  "complete": [
+    {
+      "cases": 68,
+      "residualCases": 0,
+      "entryMismatchCases": 0,
+      "failures": 0
+    }
+  ],
+  "verdict": "NATIVE_MATRIX_PASS"
+}

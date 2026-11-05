@@ -1,0 +1,59 @@
+Window: "Untitled 4", App: TextEdit.
+0 standard window Untitled 4, URL: file:///Users/macbook/Library/Mobile%20Documents/com~apple~TextEdit/Documents/Untitled%204.txt, Secondary Actions: Raise
+	1 scroll area Secondary Actions: Scroll Left, Scroll Right, Scroll Up, Scroll Down
+		2 text entry area ID: First Text View, Value:                 table.cell(performance, 2, visibleRow, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') + '%' : 'No trades', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 3, visibleRow, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 4, visibleRow, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 5, visibleRow, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.#') + ' min' : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                visibleRow += 1
+        if visibleRow == 1
+            table.cell(performance, 0, visibleRow, 'No closed trades yet', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            for col = 1 to 5
+                table.cell(performance, col, visibleRow, col == 1 ? '0' : '—', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            visibleRow += 1
+        table.cell(performance, 0, visibleRow, 'Max drawdown', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 1, visibleRow, str.tostring(strategy.max_drawdown, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 2, visibleRow, 'Total net P&L', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 3, visibleRow, str.tostring(strategy.netprofit, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 4, visibleRow, 'Plans / size skips', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 5, visibleRow, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+
+		3 scroll bar (disabled, settable, float) 0.1851851791143417
+		4 scroll bar (settable, float) 1
+			5 value indicator (settable, float) 1
+			6 increment arrow button
+			7 decrement arrow button
+			8 increment page button
+			9 decrement page button
+	10 close button
+	11 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
+	12 minimize button
+	13 menu button (disabled) Edited, Description: document actions
+	14 text —
+	15 image Untitled 4
+	16 text Untitled 4
+17 menu bar
+	18 TextEdit
+	19 File
+	20 Edit
+	21 Format
+	22 View
+	23 Window
+	24 Help
+
+The focused UI element is 2 text entry area ID: First Text View, Value:                 table.cell(performance, 2, visibleRow, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') + '%' : 'No trades', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 3, visibleRow, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 4, visibleRow, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 5, visibleRow, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.#') + ' min' : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                visibleRow += 1
+        if visibleRow == 1
+            table.cell(performance, 0, visibleRow, 'No closed trades yet', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            for col = 1 to 5
+                table.cell(performance, col, visibleRow, col == 1 ? '0' : '—', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            visibleRow += 1
+        table.cell(performance, 0, visibleRow, 'Max drawdown', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 1, visibleRow, str.tostring(strategy.max_drawdown, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 2, visibleRow, 'Total net P&L', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 3, visibleRow, str.tostring(strategy.netprofit, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 4, visibleRow, 'Plans / size skips', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 5, visibleRow, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)

@@ -1,0 +1,44 @@
+Window: "XAUUSD 4,036.64 ▲ +2.71% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,036.64 ▲ +2.71% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,036.64 ▲ +2.71% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+		3 container
+			4 container
+				5 toolbar
+					6 button Back
+					7 button (disabled) Forward
+					8 button Reload
+					9 container
+						10 pop up button View site information
+						11 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+						12 button Bookmark this tab
+					13 container
+						14 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+						15 pop up button Extensions
+					16 checkbox Downloads, Value: 0
+					17 button Chheang
+					18 pop up button Chrome
+			19 container
+				20 pop up button Tab search
+				21 tab group
+					22 tab (selected, settable, boolean) XAUUSD 4,036.64 ▲ +2.71% Unnamed - Memory usage - 304 MB, Value: on
+						23 button Close
+					24 tab (settable, boolean) SNR and KSNR in trading - Google Search - Memory usage - 355 MB, Value: off
+						25 button Close
+				26 button New Tab
+				27 button Open Gemini in Chrome
+	28 container
+		29 close button
+		30 zoom button
+31 menu bar
+	32 Chrome
+	33 File
+	34 Edit
+	35 View
+	36 History
+	37 Bookmarks
+	38 Profiles
+	39 Tab
+	40 Window
+	41 Help

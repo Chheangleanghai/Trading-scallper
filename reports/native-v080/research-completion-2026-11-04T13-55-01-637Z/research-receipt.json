@@ -1,0 +1,67 @@
+{
+  "status": "EXPERIMENTAL_CORRECTION_NATIVE_MATRIX_PASS_RELEASE_BLOCKED",
+  "version": "0.8.0",
+  "fullLocalSuite": {
+    "command": "npm run verify",
+    "testsPassed": 164,
+    "filesPassed": 15,
+    "typescript": "passed",
+    "generation": "passed",
+    "parser": "passed",
+    "scope": "Actual implementation run earlier in this same session; not repeated after evidence-only writes"
+  },
+  "nativeQuantityMatrix": {
+    "sourceSha256": "f955a8b06b36cc123f41e2c1b2e475c3db005e625238256b5e8279215c7607ff",
+    "csvSha256": "8d51a6e83a4239674130328734800be94880ea9453d19d4daecaa88719bb9388",
+    "rows": 329,
+    "counts": {
+      "QTY_MATRIX_REQUEST": 68,
+      "QTY_MATRIX_ALLOCATION": 68,
+      "QTY_MATRIX_EXIT": 124,
+      "QTY_MATRIX_AFTER": 68,
+      "QTY_MATRIX_COMPLETE": 1
+    },
+    "remainingNonzero": [],
+    "complete": [
+      {
+        "cases": 68,
+        "residualCases": 0,
+        "entryMismatchCases": 0,
+        "failures": 0
+      }
+    ],
+    "verdict": "NATIVE_MATRIX_PASS"
+  },
+  "correctedStrategy": {
+    "exactEditorCopyBack": true,
+    "compileSuccessObserved": true,
+    "appliedAfterStudyCapSlotFreed": true,
+    "m5AllModuleUi": {
+      "dateRange": "2026-10-05 through 2026-11-04",
+      "netUSD": -84.12,
+      "profitFactor": 0.794,
+      "maxDrawdownUSD": 216.24,
+      "positiveClosedRows": 58,
+      "closedRows": 140
+    },
+    "rawExitExportObtained": false,
+    "completePositionCount": null,
+    "newPairedPlanComparison": "NOT_PERFORMED"
+  },
+  "restoration": {
+    "originalTimeframe": "15",
+    "originalIndicatorHidden": true,
+    "originalStrategy": "Exit audit experiment",
+    "originalAutosave": "ON",
+    "autosaveOffVisiblyVerified": "14:08:35 UTC",
+    "restoreReloadInvoked": true,
+    "finalState": "NOT_VERIFIED_BROWSER_SHELL_ONLY"
+  },
+  "remaining": [
+    "Raw corrected Strategy export and complete matching context",
+    "Fresh zero-tolerance parity and candidate-history tracing",
+    "Native candle-by-candle Replay",
+    "Untouched OOS and walk-forward",
+    "Final chart and Autosave restoration verification"
+  ]
+}
