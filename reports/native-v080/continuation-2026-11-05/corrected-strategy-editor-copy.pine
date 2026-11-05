@@ -1,0 +1,1547 @@
+//@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · Quantity units experiment", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=100, max_boxes_count=20)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run pine:generate.
+const string SCRIPT_VERSION = '0.8.0'
+enableA = input.bool(true, 'A: Sweep + MSS + FVG', group='Strategies')
+enableB = input.bool(false, 'B: CRT', group='Strategies')
+enableC = input.bool(false, 'C: Confirmed-pivot Turtle Soup', group='Strategies')
+enableD = input.bool(false, 'D: Confirmed support/resistance', group='Strategies')
+enableE = input.bool(false, 'E: Supply/demand', group='Strategies')
+enableF = input.bool(false, 'F: Structural trend pullback', group='Strategies')
+enableG = input.bool(false, 'G: AMD range approximation', group='Strategies')
+enableH = input.bool(false, 'H: Confirmed Quasimodo approximation', group='Strategies')
+crtTF = input.timeframe('15', 'CRT reference timeframe', group='Modules')
+turtleAge = input.int(3, 'Turtle Soup minimum bars since pivot confirmation', minval=1, group='Modules')
+levelTolerance = input.float(0.15, 'Level/zone tolerance ATR', minval=0.01, group='Modules')
+maxZoneTests = input.int(2, 'S/D maximum tested bars', minval=1, maxval=10, group='Modules')
+useEMA50 = input.bool(true, 'Trend pullback: require EMA50', group='Modules')
+pullbackDepth = input.float(0.3, 'Trend pullback: maximum EMA21 overshoot ATR', minval=0, group='Modules')
+accumulationBars = input.int(12, 'AMD prior accumulation bars', minval=4, maxval=100, group='Modules')
+accumulationWidth = input.float(3, 'AMD maximum prior range ATR', minval=0.5, group='Modules')
+strategyThresholds = input.bool(false, 'Use strategy-specific quality thresholds', group='Quality')
+thresholdA = input.int(75, 'A quality threshold', minval=0, maxval=100, group='Quality')
+thresholdB = input.int(75, 'B quality threshold', minval=0, maxval=100, group='Quality')
+thresholdC = input.int(75, 'C quality threshold', minval=0, maxval=100, group='Quality')
+thresholdD = input.int(75, 'D quality threshold', minval=0, maxval=100, group='Quality')
+thresholdE = input.int(75, 'E quality threshold', minval=0, maxval=100, group='Quality')
+thresholdF = input.int(75, 'F quality threshold', minval=0, maxval=100, group='Quality')
+thresholdG = input.int(75, 'G quality threshold', minval=0, maxval=100, group='Quality')
+thresholdH = input.int(75, 'H quality threshold', minval=0, maxval=100, group='Quality')
+useResearchWindow = input.bool(false, 'Restrict new plans to date window', group='Research')
+researchStart = input.time(timestamp('01 Jan 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
+researchEnd = input.time(timestamp('01 Jan 2027 00:00 +0000'), 'Window end (exclusive)', group='Research')
+tradeSide = input.string('Both', 'Allowed direction', options=['Both', 'BUY only', 'SELL only'], group='Research')
+auditLog = input.bool(false, 'Log qualified plans and lifecycle events (research only)', group='Research')
+swing = input.int(3, 'Confirmed pivot strength', minval=2, maxval=20)
+expiry = input.int(20, 'Setup expiry bars', minval=3)
+threshold = input.int(75, 'Minimum heuristic quality', minval=0, maxval=100)
+cooldown = input.int(5, 'Signal cooldown bars', minval=1)
+maxTrades = input.int(5, 'Maximum entries per session', minval=1)
+maxExposurePct = input.float(90, 'Maximum simulated notional / equity % (align with margin properties)', minval=1, maxval=10000, group='Risk')
+riskPct = input.float(0.5, 'Simulation risk %', minval=0.01, maxval=5)
+buffer = input.float(0.15, 'ATR stop buffer', minval=0)
+maxStop = input.float(3, 'Maximum stop ATR', minval=0.1)
+maxDistance = input.float(1.5, 'Maximum entry distance from FVG ATR', minval=0.1)
+minRR = input.float(2, 'Minimum TP2 reward/risk', minval=0.1)
+r1 = input.float(1, 'TP1 fixed R projection', minval=0.1)
+r2 = input.float(2, 'TP2 fixed R projection', minval=0.2)
+r3 = input.float(3, 'TP3 fixed R projection', minval=0.3)
+minDisp = input.float(0.7, 'MSS body minimum ATR', minval=0.1)
+trendFilter = input.bool(true, 'Require H1 alignment')
+emaFilter = input.bool(false, 'Require EMA 9/21 alignment')
+useSession = input.bool(true, 'Session filter')
+sessionPreset = input.string('London', 'Session preset', options=['Custom', 'Asian', 'London', 'New York', 'London/New York overlap', 'All major sessions'])
+sessionHours = input.session('0800-1700', 'Trading session')
+sessionZone = input.string('Europe/London', 'IANA session timezone (handles DST)')
+manualPause = input.bool(false, 'Manual news pause')
+newsStart = input.time(0, 'Manual exclusion start')
+newsEnd = input.time(0, 'Manual exclusion end')
+entryMode = input.string('Close', 'Entry mode', options=['Close', 'Limit', 'Breakout'])
+pendingBars = input.int(3, 'Pending entry expiry bars', minval=1)
+timeExit = input.int(15, 'Maximum holding minutes (0 disables)', minval=0)
+targetMode = input.string('Fixed R', 'Target mode', options=['Fixed R', 'Structure', 'Hybrid'], group='Risk')
+stopMode = input.string('Structure', 'Stop mode', options=['Structure', 'Sweep extreme', 'Swing', 'ATR', 'Order Block'], group='Risk')
+atrStop = input.float(1.5, 'ATR stop multiplier', minval=0.1, group='Risk')
+breakEven = input.bool(false, 'Move stop to filled entry after trigger R', group='Management')
+breakEvenR = input.float(1, 'Break-even trigger R', minval=0.1, group='Management')
+trailing = input.bool(false, 'ATR trailing stop after trigger R', group='Management')
+trailingStartR = input.float(2, 'Trailing activation R', minval=0.1, group='Management')
+trailingATR = input.float(1.5, 'Trailing ATR distance', minval=0.1, group='Management')
+confluenceLiquidity = input.bool(false, 'Score optional liquidity (category cap 20)', group='Confluence')
+confluenceFib = input.bool(false, 'Require optional 50–61.8% swing retracement', group='Confluence')
+confluencePD = input.bool(false, 'Require optional premium/discount location', group='Confluence')
+showDaily = input.bool(false, 'Show previous day/week levels', group='Context visuals')
+showSessionLevels = input.bool(false, 'Show session high/low', group='Context visuals')
+showFibonacci = input.bool(false, 'Show confirmed swing Fibonacci', group='Context visuals')
+showPremiumDiscount = input.bool(false, 'Show confirmed swing midpoint', group='Context visuals')
+showBreakers = input.bool(false, 'Show breaker-level heuristics', group='Context visuals')
+showWyckoff = input.bool(false, 'Show spring/upthrust candidates', group='Context visuals')
+partial = input.bool(true, 'Partial TP: 33% / 33% / 34% (strategy)')
+visualLayout = input.string('Reference', 'Chart layout', options=['Reference', 'Dashboard'], group='Chart style')
+historyMode = input.string('Off', 'Historical plan drawings', options=['Off', 'Recent plans', 'Full bounded'], group='Historical view')
+historyPlanLimit = input.int(8, 'Maximum historical plans', minval=1, maxval=10, group='Historical view')
+historyLookback = input.int(3000, 'Full history lookback bars', minval=100, maxval=20000, group='Historical view')
+showConceptPanel = input.bool(true, 'Show compact analysis context', group='Chart style')
+showSwingLevels = input.bool(true, 'Show confirmed swing levels and right labels', group='Chart style')
+showSupportResistance = input.bool(true, 'Show confirmed support/resistance zones', group='Chart style')
+showCRTSweeps = input.bool(false, 'Show completed-reference CRT sweeps (context only)', group='Chart style')
+showContextSweeps = input.bool(true, 'Show confirmed-pivot liquidity sweeps (context only)', group='Chart style')
+showEMA55 = input.bool(true, 'Show visual EMA 55 (does not change strategy EMA 50)', group='Chart style')
+contextHistory = input.string('Latest only', 'Context annotation history', options=['Latest only', 'Recent history'], group='Chart style')
+contextZoneBars = input.int(60, 'Maximum context zone age bars', minval=5, maxval=500, group='Chart style')
+contextZoneDistance = input.float(8, 'Maximum context zone distance ATR', minval=1, group='Chart style')
+contextLabelGap = input.int(8, 'Minimum bars between same-side sweep labels', minval=1, maxval=50, group='Chart style')
+zoneExtension = input.int(12, 'Zone / right-label extension bars', minval=3, maxval=50, group='Chart style')
+dashboardSize = input.string('Small', 'Dashboard text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
+chartLabelSize = input.string('Small', 'Chart label text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
+showDashboard = input.bool(true, 'Show signal dashboard', group='Readability')
+showPerformance = input.bool(true, 'Show backtest results table', group='Readability')
+showUnusedModules = input.bool(false, 'Show strategies with no completed trades', group='Readability')
+showSwingLabels = input.bool(false, 'Show detailed swing labels', group='Readability')
+maxStructureLabels = input.int(15, 'Maximum recent structure labels', minval=5, maxval=100, group='Readability')
+showLastPlan = input.bool(false, 'Show previous trade prices when no current plan', group='Readability')
+contextTransparency = input.int(82, 'Context label background transparency', minval=0, maxval=95, group='Readability')
+panelText = dashboardSize == 'Tiny' ? size.tiny : dashboardSize == 'Large' ? size.large : dashboardSize == 'Small' ? size.small : size.normal
+chartText = chartLabelSize == 'Tiny' ? size.tiny : chartLabelSize == 'Large' ? size.large : chartLabelSize == 'Small' ? size.small : size.normal
+panelBackground = color.rgb(250, 252, 255)
+panelAlternate = color.rgb(241, 245, 249)
+panelHeader = color.rgb(226, 232, 240)
+panelMuted = color.rgb(71, 85, 105)
+panelValue = color.rgb(15, 23, 42)
+showEMA = input.bool(true, 'Show EMAs')
+showZones = input.bool(true, 'Show latest FVG')
+showTrade = input.bool(true, 'Show latest trade levels and boxes')
+showEntryLine = input.bool(true, 'Entry line/price', group='Trade visuals')
+showSLLine = input.bool(true, 'SL line/price', group='Trade visuals')
+showTP1Line = input.bool(true, 'TP1 line/price', group='Trade visuals')
+showTP2Line = input.bool(true, 'TP2 line/price', group='Trade visuals')
+showTP3Line = input.bool(true, 'TP3 line/price', group='Trade visuals')
+showRiskReward = input.bool(true, 'Risk/reward boxes', group='Trade visuals')
+showOB = input.bool(true, 'Show latest displacement order block heuristic')
+showStructure = input.bool(true, 'Show structure and sweeps')
+if barstate.isfirst and (not chart.is_standard or not timeframe.isminutes or (timeframe.multiplier != 1 and timeframe.multiplier != 3 and timeframe.multiplier != 5 and timeframe.multiplier != 15) or (enableB and timeframe.in_seconds(crtTF) < timeframe.in_seconds()) or r1 >= r2 or r2 >= r3)
+    runtime.error('Use standard M1/M3/M5/M15 candles and ascending R targets.')
+atr = ta.atr(14)
+atrMean = ta.sma(atr, 50)
+ema9 = ta.ema(close, 9)
+ema21 = ta.ema(close, 21)
+[hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)
+// Pure predicates shared by the engine and the standalone synthetic Pine test harness.
+breakConfirmed(int direction, float trigger, float o, float c) =>
+    direction == 1 ? c > trigger and c > o : c < trigger and c < o
+retestConfirmed(int direction, float lower, float upper, float h, float l, float o, float c) =>
+    h >= lower and l <= upper and (direction == 1 ? c > upper and c > o : c < lower and c < o)
+rangeSweep(int direction, float lower, float upper, float h, float l, float c) =>
+    direction == 1 ? l < lower and c > lower and c < upper : h > upper and c < upper and c > lower
+pivotSweep(int direction, float level, float h, float l, float c) =>
+    direction == 1 ? l < level and c > level : h > level and c < level
+swingSweep(int direction, float sweptLevel, float oppositeLevel, float h, float l, float c, bool pivotUnused) =>
+    pivotUnused and not na(sweptLevel) and not na(oppositeLevel) and (direction == 1 ? l < sweptLevel and c > sweptLevel and c < oppositeLevel : direction == -1 and h > sweptLevel and c < sweptLevel and c > oppositeLevel)
+referenceUnused(int currentReferenceTime, int usedReferenceTime) =>
+    not na(currentReferenceTime) and (na(usedReferenceTime) or currentReferenceTime != usedReferenceTime)
+pivotAgeAvailable(int currentBar, int pivotBar, int minimumAge, int usedPivotBar) =>
+    not na(pivotBar) and currentBar - pivotBar >= minimumAge and (na(usedPivotBar) or usedPivotBar != pivotBar)
+zoneTestsWithinLimit(int priorTests, bool touched, int maximumTests) =>
+    priorTests + (touched ? 1 : 0) <= maximumTests
+trendStillValid(int direction, bool bullishTrend, bool bearishTrend) =>
+    direction == 1 ? bullishTrend : direction == -1 and bearishTrend
+amdCooldownElapsed(int currentBar, int lastSetupBar, int rangeLength) =>
+    na(lastSetupBar) or currentBar - lastSetupBar > rangeLength
+fairValueGap(int direction, float currentHigh, float currentLow, float highTwoBarsAgo, float lowTwoBarsAgo) =>
+    direction == 1 ? currentLow > highTwoBarsAgo : direction == -1 and currentHigh < lowTwoBarsAgo
+mssFvgConfirmed(int direction, float breakLevel, float h, float l, float highTwoBarsAgo, float lowTwoBarsAgo, float o, float c, float atrValue, float minimumDisplacement) =>
+    bool mss = direction == 1 ? c > breakLevel and c > o : direction == -1 and c < breakLevel and c < o
+    mss and fairValueGap(direction, h, l, highTwoBarsAgo, lowTwoBarsAgo) and math.abs(c - o) >= atrValue * minimumDisplacement
+zoneDeparture(int direction, float swingLevel, float previousClose, float previousOpen, float o, float c, bool displaced) =>
+    displaced and (direction == 1 ? c > o and previousClose < previousOpen and c > swingLevel and previousClose <= swingLevel : c < o and previousClose > previousOpen and c < swingLevel and previousClose >= swingLevel)
+trendPullback(int direction, bool trend, float fast, float slow, float h, float l, float c, float atrValue, float depth) =>
+    trend and (direction == 1 ? l <= fast and l >= slow - atrValue * depth and c > slow : h >= fast and h <= slow + atrValue * depth and c < slow)
+compressedRange(float upper, float lower, float atrValue, float width) =>
+    upper > lower and upper - lower <= atrValue * width
+snrBreakout(int direction, float level, float tolerance, int confirmedTouches, float previousClose, float o, float c, bool displaced) =>
+    confirmedTouches >= 2 and displaced and (direction == 1 ? c > level + tolerance and previousClose <= level and c > o : direction == -1 and c < level - tolerance and previousClose >= level and c < o)
+snrRejection(int direction, float level, float tolerance, int confirmedTouches, float h, float l, float o, float c) =>
+    confirmedTouches >= 2 and (direction == 1 ? l <= level + tolerance and c > level + tolerance and c > o : direction == -1 and h >= level - tolerance and c < level - tolerance and c < o)
+qmPattern(int direction, int firstType, float p0, float p1, float p2, float p3, float p4, float c) =>
+    direction == 1 ? firstType == -1 and p2 < p0 and p3 > p1 and p4 > p2 and c > p0 : firstType == 1 and p2 > p0 and p3 < p1 and p4 < p2 and c < p0
+orderedPrices(int direction, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree) =>
+    direction == 1 ? stopPrice < planned and planned < targetOne and targetOne < targetTwo and targetTwo < targetThree : stopPrice > planned and planned > targetOne and targetOne > targetTwo and targetTwo > targetThree
+qualityScore(int structure, int liquidity, bool aligned, bool rr, bool volatility, bool session) =>
+    structure + liquidity + 20 + (aligned ? 15 : 0) + (rr ? 10 : 0) + (volatility ? 10 : 0) + (session ? 5 : 0)
+tightenStop(int direction, float current, float proposed) =>
+    direction == 1 ? math.max(current, proposed) : math.min(current, proposed)
+
+rrFeasible(int direction, float planned, float stopPrice, float targetPrice, float minimum, float tick) =>
+    float riskTicks = tick > 0 ? math.round(direction * (planned - stopPrice) / tick) : na
+    float rewardTicks = tick > 0 ? math.round(direction * (targetPrice - planned) / tick) : na
+    riskTicks > 0 and rewardTicks >= math.ceil(riskTicks * minimum - 0.000000001)
+
+// Time inputs are absolute timestamps. Require the whole signal bar inside the window.
+researchBarAllowed(bool enabled, int startTime, int endTime, int barOpen, int barClose) =>
+    not enabled or (endTime > startTime and barOpen >= startTime and barClose < endTime)
+directionAllowed(string selection, int direction) =>
+    (direction == 1 or direction == -1) and (selection == 'Both' or (selection == 'BUY only' and direction == 1) or (selection == 'SELL only' and direction == -1))
+planSlotAvailable(bool isActive, bool isPending, bool brokerOccupied, bool cancelling) =>
+    not isActive and not isPending and not brokerOccupied and not cancelling
+
+// Consume a confirmed swing only once. Wick touches and repeated recrosses are not new BOS.
+freshStructureBreak(int direction, float level, int pivotId, int consumedId, float previousClose, float currentClose) =>
+    bool known = not na(level) and not na(pivotId) and (na(consumedId) or pivotId != consumedId)
+    known and (direction == 1 ? previousClose <= level and currentClose > level : direction == -1 ? previousClose >= level and currentClose < level : false)
+uniqueStructureDirection(bool upward, bool downward) =>
+    upward == downward ? 0 : upward ? 1 : -1
+structureBreakTime(array<int> pivotIds, array<int> breakBars, int targetId) =>
+    int found = na
+    if array.size(pivotIds) == array.size(breakBars) and array.size(pivotIds) > 0 and not na(targetId)
+        for i = 0 to array.size(pivotIds) - 1
+            if array.get(pivotIds, i) == targetId
+                found := array.get(breakBars, i)
+    found
+qmQualified(bool geometry, int necklineBreakBar, int headConfirmedBar, int shoulderConfirmedBar) =>
+    geometry and not na(necklineBreakBar) and necklineBreakBar > headConfirmedBar and necklineBreakBar <= shoulderConfirmedBar
+
+// Same mandatory filter conjunction as earlier versions, with an explicit first-failure reason.
+candidateRejection(bool windowOK, bool sideOK, bool invalidationOK, bool targetsOK, bool fibOK, bool discountOK, bool volatilityOK, bool paused, bool sessionOK, bool trendOK, bool emaOK, bool stopOK, bool distanceOK, bool rrOK, bool pricesOK, bool quotaOK, bool cooldownOK, int score, int requiredScore) =>
+    not windowOK ? 'Outside research date window' : not sideOK ? 'Direction disabled' : not invalidationOK ? 'Missing structural invalidation' : not targetsOK ? 'Insufficient structure targets' : not fibOK ? 'Fibonacci location filter' : not discountOK ? 'Premium/discount filter' : not volatilityOK ? 'ATR volatility filter' : paused ? 'Manual news pause' : not sessionOK ? 'Outside selected session' : not trendOK ? 'Setup opposes H1 trend' : not emaOK ? 'EMA alignment filter' : not stopOK ? 'Stop distance invalid' : not distanceOK ? 'Entry too far from setup' : not rrOK ? 'Minimum reward/risk not met' : not pricesOK ? 'Invalid Entry/SL/TP order' : not quotaOK ? 'Session plan limit' : not cooldownOK ? 'Signal cooldown' : score < requiredScore ? 'Quality below threshold' : ''
+readinessState(int direction, bool pendingOrder, bool activeTrade, bool triggered) =>
+    direction != 1 and direction != -1 ? 'WAIT' : pendingOrder ? (direction == 1 ? 'BUY READY' : 'SELL READY') : activeTrade ? (direction == 1 ? (triggered ? 'BUY CONFIRMED' : 'BUY ACTIVE (sim.)') : (triggered ? 'SELL CONFIRMED' : 'SELL ACTIVE (sim.)')) : 'WAIT'
+structureContext() =>
+    float pHigh = ta.pivothigh(high, swing, swing)
+    float pLow = ta.pivotlow(low, swing, swing)
+    var float lastHigh = na
+    var float lastLow = na
+    var int trend = 0
+    var int highId = na
+    var int lowId = na
+    var int consumedHigh = na
+    var int consumedLow = na
+    bool up = freshStructureBreak(1, lastHigh, highId, consumedHigh, close[1], close)
+    bool down = freshStructureBreak(-1, lastLow, lowId, consumedLow, close[1], close)
+    int next = uniqueStructureDirection(up, down)
+    if next != 0
+        trend := next
+        if next == 1
+            consumedHigh := highId
+        else
+            consumedLow := lowId
+    if not na(pHigh)
+        lastHigh := pHigh
+        highId := bar_index
+    if not na(pLow)
+        lastLow := pLow
+        lowId := bar_index
+    trend
+mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)
+hTrend = na(hClose) or na(hEMA) ? 0 : hClose > hEMA ? 1 : -1
+customSession = not na(time(timeframe.period, sessionHours, sessionZone))
+asianSession = not na(time(timeframe.period, '0900-1800', 'Asia/Tokyo'))
+londonSession = not na(time(timeframe.period, '0800-1700', 'Europe/London'))
+newYorkSession = not na(time(timeframe.period, '0800-1700', 'America/New_York'))
+inSession = sessionPreset == 'Asian' ? asianSession : sessionPreset == 'London' ? londonSession : sessionPreset == 'New York' ? newYorkSession : sessionPreset == 'London/New York overlap' ? londonSession and newYorkSession : sessionPreset == 'All major sessions' ? asianSession or londonSession or newYorkSession : customSession
+sessionDay = time('1D', '0000-0000', sessionZone)
+newSession = inSession and (not inSession[1] or (sessionPreset == 'Custom' and sessionHours == '0000-0000' and sessionDay != sessionDay[1]))
+volOK = atr > atrMean * 0.5 and atr < atrMean * 2.5
+pause = manualPause or (newsEnd > newsStart and time_close >= newsStart and time < newsEnd)
+ph = ta.pivothigh(high, swing, swing)
+pl = ta.pivotlow(low, swing, swing)
+var float sh = na
+var float slw = na
+var int shBar = na
+var int slBar = na
+var int usedLow = na
+var int usedHigh = na
+var int stage = 0
+var int dir = 0
+var int setupBar = na
+var int setupTime = na
+var float extreme = na
+var float breakLevel = na
+var float gapTop = na
+var float gapBottom = na
+var int gapBar = na
+var float entry = na
+var float stop = na
+var float tp1 = na
+var float tp2 = na
+var float tp3 = na
+var int quality = 0
+var string status = 'IDLE'
+var string selectedStrategy = 'A_SWEEP_MSS_FVG'
+var int lastSignal = na
+var int signalTime = na
+var int signalBar = na
+var int fillTime = na
+var bool active = false
+var bool pending = false
+var bool hit1 = false
+var bool hit2 = false
+var int sessionTrades = 0
+var int totalPlans = 0
+var int rejectedSizes = 0
+var int chartStructure = 0
+var int brokenHighPivot = na
+var int brokenLowPivot = na
+var array<int> bullBreakPivots = array.new<int>()
+var array<int> bullBreakBars = array.new<int>()
+var array<int> bearBreakPivots = array.new<int>()
+var array<int> bearBreakBars = array.new<int>()
+var string contextStructureCaption = 'No confirmed break yet'
+var string signalReason = ''
+var string signalAlignment = 'NEUTRAL'
+var string validationReason = 'Waiting for a qualified setup'
+var string decisionState = 'WAIT'
+var string decisionReason = 'Waiting for a qualified setup'
+var string decisionProgress = 'Sweep … → MSS + FVG … → Retest … → Checks …'
+var box obBox = na
+var box fvgBox = na
+var box riskBox = na
+var box rewardBox = na
+var array<line> levels = array.new<line>()
+var array<label> tags = array.new<label>()
+// Shared candidate lifecycle. Inputs are explicit so fixtures can exercise this exact production code.
+type Candidate
+    string id = ''
+    bool enabled = false
+    int stage = 0
+    int direction = 0
+    int setupBar = na
+    int setupTime = na
+    int confirmationTime = na
+    int readyBar = na
+    float trigger = na
+    float upper = na
+    float lower = na
+    float invalidation = na
+    int structurePoints = 0
+    int liquidityPoints = 0
+    int tests = 0
+    string status = 'IDLE'
+    bool ready = false
+    string mode = ''
+    string entryMode = ''
+    string targetSource = ''
+    float plannedEntry = na
+    float suggestedStop = na
+    float target1 = na
+    float target2 = na
+    float target3 = na
+    int quality = 0
+    string rejectionReason = 'Waiting for entry confirmation'
+
+method begin(Candidate c, int currentBar, int currentTime, int direction, float lower, float upper, float invalidation, float trigger, int structurePoints, int liquidityPoints, string mode) =>
+    c.stage := 1
+    c.direction := direction
+    c.setupBar := currentBar
+    c.setupTime := currentTime
+    c.confirmationTime := na
+    c.readyBar := na
+    c.lower := lower
+    c.upper := upper
+    c.invalidation := invalidation
+    c.trigger := trigger
+    c.structurePoints := structurePoints
+    c.liquidityPoints := liquidityPoints
+    c.tests := 0
+    c.ready := false
+    c.status := 'WAITING_CONFIRMATION'
+    c.mode := mode
+    c.targetSource := ''
+    c.plannedEntry := na
+    c.suggestedStop := na
+    c.target1 := na
+    c.target2 := na
+    c.target3 := na
+    c.quality := 0
+    c.rejectionReason := 'Waiting for entry confirmation'
+
+method maintain(Candidate c, int currentBar, float currentLow, float currentHigh, int maxAge) =>
+    c.ready := false
+    if c.stage > 0
+        bool invalid = c.direction == 1 ? currentLow < c.invalidation : currentHigh > c.invalidation
+        if invalid or currentBar - c.setupBar > maxAge or not c.enabled
+            c.stage := 0
+            c.status := invalid ? 'INVALIDATED' : 'EXPIRED'
+
+method confirmBreak(Candidate c, int currentBar, int currentTime, float currentOpen, float currentClose) =>
+    if c.stage > 0 and currentBar > c.setupBar
+        bool confirmed = breakConfirmed(c.direction, c.trigger, currentOpen, currentClose)
+        if confirmed
+            c.ready := true
+            c.readyBar := currentBar
+            c.confirmationTime := currentTime
+            c.status := 'WAITING_CONFIRMATION'
+
+method confirmRetest(Candidate c, int currentBar, int currentTime, float currentHigh, float currentLow, float currentOpen, float currentClose) =>
+    if c.stage > 0 and currentBar > c.setupBar
+        if retestConfirmed(c.direction, c.lower, c.upper, currentHigh, currentLow, currentOpen, currentClose)
+            c.ready := true
+            c.readyBar := currentBar
+            c.confirmationTime := currentTime
+            c.status := 'WAITING_CONFIRMATION'
+
+// Independent, persistent candidates. All mutation happens inside confirmed-bar scope.
+var Candidate candA = Candidate.new(id='A_SWEEP_MSS_FVG', enabled=enableA)
+var Candidate candB = Candidate.new(id='B_CRT', enabled=enableB)
+var Candidate candC = Candidate.new(id='C_TURTLE_SOUP', enabled=enableC)
+var Candidate candD = Candidate.new(id='D_SNR', enabled=enableD)
+var Candidate candDemand = Candidate.new(id='E_DEMAND', enabled=enableE)
+var Candidate candSupply = Candidate.new(id='E_SUPPLY', enabled=enableE)
+var Candidate candF = Candidate.new(id='F_TREND_PULLBACK', enabled=enableF)
+var Candidate candG = Candidate.new(id='G_AMD', enabled=enableG)
+var Candidate candH = Candidate.new(id='H_QUASIMODO', enabled=enableH)
+var array<Candidate> candidates = array.from(candA, candB, candC, candD, candDemand, candSupply, candF, candG, candH)
+var float srHigh = na
+var float srLow = na
+var int srHighTouches = 0
+var int srLowTouches = 0
+var array<int> pivotDirs = array.new<int>()
+var array<float> pivotPrices = array.new<float>()
+var array<int> pivotTimes = array.new<int>()
+
+// Requests are top-level: confirmed source candles only, never synthetic lower-TF entries.
+[crtHigh, crtLow, crtTime] = request.security(syminfo.tickerid, crtTF, [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)
+accHigh = ta.highest(high[1], accumulationBars)
+accLow = ta.lowest(low[1], accumulationBars)
+ema50 = ta.ema(close, 50)
+bodyDisplacement = math.abs(close - open) >= atr * minDisp
+
+type ModuleMemory
+    int crtUsed = na
+    int turtleUsedLow = na
+    int turtleUsedHigh = na
+    int demandUsed = na
+    int supplyUsed = na
+    int amdUsed = na
+    int qmUsed = na
+var ModuleMemory memory = ModuleMemory.new()
+// Context is always calculated; optional overlays never become mandatory strategy votes.
+[pdh, pdl] = request.security(syminfo.tickerid, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)
+[pwh, pwl] = request.security(syminfo.tickerid, 'W', [high[1], low[1]], lookahead=barmerge.lookahead_on)
+var float sessionHigh = na
+var float sessionLow = na
+var float previousSessionHigh = na
+var float previousSessionLow = na
+var float bullOBLow = na
+var float bullOBHigh = na
+var float bearOBLow = na
+var float bearOBHigh = na
+var float bullBreaker = na
+var float bearBreaker = na
+var float equalHigh = na
+var float equalLow = na
+var bool bullSpring = false
+var bool bearUpthrust = false
+var float managedStop = na
+var float filledEntry = na
+var int fillBar = na
+var float initialQty = na
+var string targetSource = 'Fixed R projection'
+var string signalTrend = 'Unknown'
+var int signalSetupTime = na
+var float signalInvalidation = na
+var float signalPrice = na
+// EXIT_AUDIT_STATE_BEGIN — pins the plan identity before any later same-bar plan can replace globals.
+var int auditGroupPlanTimestamp = na
+var int auditGroupSetupTimestamp = na
+var int auditGroupDirection = 0
+var string auditGroupModule = ''
+var int auditGroupEntryTime = na
+var float auditGroupPlannedEntry = na
+var float auditGroupActualEntry = na
+var float auditGroupInitialStop = na
+var float auditGroupInitialQty = na
+var float auditSizingEquity = na
+var float auditAccountRiskPerUnit = na
+var float auditUnitNotional = na
+var float auditRiskQty = na
+var float auditExposureQty = na
+var float auditRawQty = na
+var float auditSizedQty = na
+// EXIT_AUDIT_STATE_END
+
+getTargets(int direction, float planned, float risk) =>
+    array<float> known = array.from(sh, slw, srHigh, srLow, pdh, pdl, pwh, pwl, previousSessionHigh, previousSessionLow, equalHigh, equalLow)
+    if direction == -1 and candDemand.stage > 0
+        array.push(known, candDemand.upper)
+    if direction == 1 and candSupply.stage > 0
+        array.push(known, candSupply.lower)
+    array<float> opposing = array.new<float>()
+    for level in known
+        float rounded = math.round_to_mintick(level)
+        if not na(rounded) and direction * (rounded - planned) >= syminfo.mintick * 2 and not array.includes(opposing, rounded)
+            array.push(opposing, rounded)
+    array.sort(opposing, direction == 1 ? order.ascending : order.descending)
+    bool enough = array.size(opposing) >= 3
+    bool structural = targetMode != 'Fixed R' and enough
+    float targetOne = structural ? array.get(opposing, 0) : math.round_to_mintick(planned + direction * risk * r1)
+    float targetTwo = structural ? array.get(opposing, 1) : math.round_to_mintick(planned + direction * risk * r2)
+    float targetThree = structural ? array.get(opposing, 2) : math.round_to_mintick(planned + direction * risk * r3)
+    string source = structural ? 'Confirmed structure' : targetMode == 'Hybrid' ? 'Hybrid: fixed-R fallback' : 'Fixed R projection'
+    bool available = targetMode != 'Structure' or enough
+    [targetOne, targetTwo, targetThree, source, available]
+
+optionalLiquidity(int direction) =>
+    bool equalSweep = direction == 1 ? not na(equalLow) and low < equalLow and close > equalLow : not na(equalHigh) and high > equalHigh and close < equalHigh
+    bool daySweep = direction == 1 ? low < pdl and close > pdl : high > pdh and close < pdh
+    bool weekSweep = direction == 1 ? low < pwl and close > pwl : high > pwh and close < pwh
+    bool spring = direction == 1 ? bullSpring : bearUpthrust
+    // One liquidity category: never stack points for different names of the same sweep.
+    equalSweep or daySweep or weekSweep or spring
+updateCandidates() =>
+    // Called once at chart close. This file is inlined inside the confirmed-bar block.
+    for c in candidates
+        c.maintain(bar_index, low, high, expiry)
+
+    // A exposes the existing sweep/MSS/FVG state without changing its sequence.
+    candA.stage := stage
+    candA.direction := dir
+    candA.setupBar := setupBar
+    candA.setupTime := setupTime
+    candA.lower := gapBottom
+    candA.upper := gapTop
+    candA.invalidation := extreme
+    candA.structurePoints := 20
+    candA.liquidityPoints := 20
+    candA.status := status
+    candA.ready := enableA and stage == 2 and bar_index > gapBar and retestConfirmed(dir, gapBottom, gapTop, high, low, open, close)
+
+    bool idleForSetup = not active and not pending and not brokerBusy
+    if idleForSetup
+        // B: previous completed reference candle; frozen sweep -> later break of sweep candle.
+        candB.confirmBreak(bar_index, time_close, open, close)
+        if enableB and candB.stage == 0 and referenceUnused(crtTime, memory.crtUsed)
+            bool bull = rangeSweep(1, crtLow, crtHigh, high, low, close)
+            bool bear = rangeSweep(-1, crtLow, crtHigh, high, low, close)
+            if bull != bear
+                candB.begin(bar_index, time_close, bull ? 1 : -1, crtLow, crtHigh, bull ? low : high, bull ? high : low, 10, 20, 'Reference sweep')
+                memory.crtUsed := crtTime
+
+        // C: confirmed-pivot false breakout, not the original 20-day Turtle Soup variant.
+        candC.confirmBreak(bar_index, time_close, open, close)
+        if enableC and candC.stage == 0
+            bool bull = not na(slw) and pivotAgeAvailable(bar_index, slBar, turtleAge, memory.turtleUsedLow) and pivotSweep(1, slw, high, low, close)
+            bool bear = not na(sh) and pivotAgeAvailable(bar_index, shBar, turtleAge, memory.turtleUsedHigh) and pivotSweep(-1, sh, high, low, close)
+            if bull != bear
+                candC.begin(bar_index, time_close, bull ? 1 : -1, bull ? slw : low, bull ? high : sh, bull ? low : high, bull ? high : low, 10, 20, 'Pivot false breakout')
+                if bull
+                    memory.turtleUsedLow := slBar
+                else
+                    memory.turtleUsedHigh := shBar
+
+        // D: repeated confirmed horizontal pivots; displaced breakout/retest or failed breakout/rejection.
+        if candD.mode == 'Breakout retest'
+            candD.confirmRetest(bar_index, time_close, high, low, open, close)
+        else
+            candD.confirmBreak(bar_index, time_close, open, close)
+        if enableD and candD.stage == 0
+            float tolerance = atr * levelTolerance
+            bool up = snrBreakout(1, srHigh, tolerance, srHighTouches, close[1], open, close, bodyDisplacement)
+            bool down = snrBreakout(-1, srLow, tolerance, srLowTouches, close[1], open, close, bodyDisplacement)
+            bool rejectLow = snrRejection(1, srLow, tolerance, srLowTouches, high, low, open, close)
+            bool rejectHigh = snrRejection(-1, srHigh, tolerance, srHighTouches, high, low, open, close)
+            if up != down and (up or down)
+                float level = up ? srHigh : srLow
+                candD.begin(bar_index, time_close, up ? 1 : -1, level - tolerance, level + tolerance, up ? math.min(low, level - tolerance) : math.max(high, level + tolerance), level, 20, 0, 'Breakout retest')
+            else if rejectLow != rejectHigh
+                float level = rejectLow ? srLow : srHigh
+                bool swept = rejectLow ? low < srLow - tolerance : high > srHigh + tolerance
+                candD.begin(bar_index, time_close, rejectLow ? 1 : -1, level - tolerance, level + tolerance, rejectLow ? low : high, rejectLow ? high : low, 20, swept ? 20 : 0, swept ? 'Failed breakout' : 'Rejection')
+
+        // E: opposite-candle zone followed by impulsive break of a known confirmed swing.
+        // Existing zones are processed before creating replacements; tested bars are counted explicitly.
+        for c in array.from(candDemand, candSupply)
+            if c.stage > 0 and bar_index > c.setupBar
+                bool touch = high >= c.lower and low <= c.upper
+                bool withinTestLimit = zoneTestsWithinLimit(c.tests, touch, maxZoneTests)
+                if touch
+                    c.tests += 1
+                    c.status := c.tests == 1 ? 'FRESH_TEST' : 'TESTED'
+                if not withinTestLimit
+                    c.stage := 0
+                    c.status := 'EXPIRED'
+                else
+                    c.confirmRetest(bar_index, time_close, high, low, open, close)
+        bool demandDeparture = not na(sh) and zoneDeparture(1, sh, close[1], open[1], open, close, bodyDisplacement)
+        bool supplyDeparture = not na(slw) and zoneDeparture(-1, slw, close[1], open[1], open, close, bodyDisplacement)
+        if enableE and candDemand.stage == 0 and demandDeparture and (na(memory.demandUsed) or memory.demandUsed != time[1])
+            candDemand.begin(bar_index, time_close, 1, low[1], high[1], low[1], high[1], 20, 0, 'Demand departure')
+            memory.demandUsed := time[1]
+        if enableE and candSupply.stage == 0 and supplyDeparture and (na(memory.supplyUsed) or memory.supplyUsed != time[1])
+            candSupply.begin(bar_index, time_close, -1, low[1], high[1], high[1], low[1], 20, 0, 'Supply departure')
+            memory.supplyUsed := time[1]
+
+        // F: structural trend + pullback into EMA9/21 band, then later rejection of frozen pullback high/low.
+        candF.confirmBreak(bar_index, time_close, open, close)
+        bool bullTrend = chartStructure == 1 and ema9 > ema21 and (not useEMA50 or ema21 > ema50)
+        bool bearTrend = chartStructure == -1 and ema9 < ema21 and (not useEMA50 or ema21 < ema50)
+        if candF.stage > 0 and not trendStillValid(candF.direction, bullTrend, bearTrend)
+            candF.stage := 0
+            candF.ready := false
+            candF.status := 'INVALIDATED'
+        if enableF and candF.stage == 0
+            bool bull = trendPullback(1, bullTrend, ema9, ema21, high, low, close, atr, pullbackDepth)
+            bool bear = trendPullback(-1, bearTrend, ema9, ema21, high, low, close, atr, pullbackDepth)
+            if bull != bear
+                candF.begin(bar_index, time_close, bull ? 1 : -1, math.min(ema9, ema21), math.max(ema9, ema21), bull ? math.min(low, slw) : math.max(high, sh), bull ? high : low, 20, 0, 'EMA structural pullback')
+
+        // G: compressed prior rolling range -> sweep/reclaim -> later displacement out of frozen range.
+        candG.confirmBreak(bar_index, time_close, open, close)
+        if candG.ready and not bodyDisplacement
+            candG.ready := false
+        if enableG and candG.stage == 0 and compressedRange(accHigh, accLow, atr, accumulationWidth) and amdCooldownElapsed(bar_index, memory.amdUsed, accumulationBars)
+            bool bull = rangeSweep(1, accLow, accHigh, high, low, close)
+            bool bear = rangeSweep(-1, accLow, accHigh, high, low, close)
+            if bull != bear
+                candG.begin(bar_index, time_close, bull ? 1 : -1, accLow, accHigh, bull ? low : high, bull ? accHigh : accLow, 20, 20, 'Compression sweep')
+                memory.amdUsed := bar_index
+
+        // H: five alternating confirmed pivots form shoulder/head/neckline break, then level retest.
+        candH.confirmRetest(bar_index, time_close, high, low, open, close)
+        if enableH and candH.stage == 0 and array.size(pivotPrices) == 5
+            float p0 = array.get(pivotPrices, 0)
+            float p1 = array.get(pivotPrices, 1)
+            float p2 = array.get(pivotPrices, 2)
+            float p3 = array.get(pivotPrices, 3)
+            float p4 = array.get(pivotPrices, 4)
+            int patternKey = array.get(pivotTimes, 4)
+            int necklinePivot = array.get(pivotTimes, 1)
+            int headConfirmed = array.get(pivotTimes, 2)
+            int shoulderConfirmed = array.get(pivotTimes, 4)
+            int bullNecklineBar = structureBreakTime(bullBreakPivots, bullBreakBars, necklinePivot)
+            int bearNecklineBar = structureBreakTime(bearBreakPivots, bearBreakBars, necklinePivot)
+            bool bull = qmQualified(qmPattern(1, array.get(pivotDirs, 0), p0, p1, p2, p3, p4, close), bullNecklineBar, headConfirmed, shoulderConfirmed)
+            bool bear = qmQualified(qmPattern(-1, array.get(pivotDirs, 0), p0, p1, p2, p3, p4, close), bearNecklineBar, headConfirmed, shoulderConfirmed)
+            if (bull != bear) and (na(memory.qmUsed) or memory.qmUsed != patternKey)
+                float tolerance = atr * levelTolerance
+                candH.begin(bar_index, time_close, bull ? 1 : -1, p0 - tolerance, p0 + tolerance, p2, p0, 20, 20, 'Confirmed 5-pivot QM')
+                memory.qmUsed := patternKey
+    0
+strategyName(string id) =>
+    str.startswith(id, 'A_') ? 'A · Sweep + reversal + gap' : str.startswith(id, 'B_') ? 'B · Candle range reversal' : str.startswith(id, 'C_') ? 'C · False breakout reversal' : str.startswith(id, 'D_') ? 'D · Support / resistance' : str.startswith(id, 'E_') ? 'E · Supply / demand' : str.startswith(id, 'F_') ? 'F · Trend pullback' : str.startswith(id, 'G_') ? 'G · Range sweep continuation' : str.startswith(id, 'H_') ? 'H · Quasimodo retest' : 'No strategy selected'
+setupExplanation(string id) =>
+    str.startswith(id, 'A_') ? 'Sweep reclaimed; MSS + FVG; later retest confirmed' : str.startswith(id, 'B_') ? 'Completed range reclaimed; later reversal close' : str.startswith(id, 'C_') ? 'Confirmed-pivot false breakout; reversal close' : str.startswith(id, 'D_') ? 'Confirmed SNR level; retest/rejection trigger' : str.startswith(id, 'E_') ? 'Impulsive departure; zone retest confirmed' : str.startswith(id, 'F_') ? 'Structure + EMA pullback; later trigger close' : str.startswith(id, 'G_') ? 'Compressed range swept; later displacement' : 'Five confirmed pivots; closing neckline break; later retest'
+statusName(string raw) =>
+    raw == 'IDLE' ? 'Waiting for a setup' : raw == 'DETECTED' ? 'Setup found · not an entry' : raw == 'WAITING_CONFIRMATION' ? 'Waiting for confirmation' : raw == 'CONFIRMED' ? 'Setup confirmed' : raw == 'ENTRY_PENDING' ? 'Order pending · not filled' : raw == 'ENTRY_TRIGGERED' ? 'Entry triggered (simulated)' : raw == 'CLOSED' ? 'Previous trade closed' : raw == 'EXPIRED' ? 'Setup expired' : raw == 'INVALIDATED' ? 'Setup no longer valid' : raw == 'EXPIRED / INVALIDATED' ? 'Setup expired / invalid' : raw == 'INVALIDATED FVG' ? 'Price gap invalidated' : str.startswith(raw, 'REJECTED') ? 'Rejected: ' + str.lower(str.replace_all(raw, 'REJECTED: ', '')) : str.replace_all(raw, '_', ' ')
+priceText(float value) => na(value) ? '—' : str.tostring(value, format.mintick)
+var array<label> structureTags = array.new<label>()
+var array<string> structureKinds = array.new<string>()
+structureTag(float price, string caption, color background) =>
+    string kind = str.contains(caption, 'SWEEP') ? (str.contains(caption, 'HIGH') ? 'sweep-high' : 'sweep-low') : (str.contains(caption, 'BOS') or str.contains(caption, 'CHoCH') or str.contains(caption, 'MSS') ? 'structure' : 'swing')
+    if contextHistory == 'Latest only' and array.size(structureTags) > 0
+        for i = array.size(structureTags) - 1 to 0
+            if array.get(structureKinds, i) == kind
+                label.delete(array.remove(structureTags, i))
+                array.remove(structureKinds, i)
+    bool above = str.contains(caption, 'Bullish') ? false : str.contains(caption, 'Bearish') ? true : price >= close
+    float offset = atr * (0.5 + 0.35 * (bar_index % 3))
+    float labelPrice = above ? math.max(price, high) + offset : math.min(price, low) - offset
+    label tag = label.new(bar_index, labelPrice, caption, style=above ? label.style_label_down : label.style_label_up, color=color.new(background, contextTransparency), textcolor=panelValue, size=chartText)
+    array.push(structureTags, tag)
+    array.push(structureKinds, kind)
+    if array.size(structureTags) > maxStructureLabels
+        label.delete(array.shift(structureTags))
+        array.shift(structureKinds)
+    tag
+roundPrice(float p) => math.round_to_mintick(p)
+jsonEscape(string s) => str.replace_all(str.replace_all(str.replace_all(s, '\\', '\\\\'), '"', '\\"'), '\n', ' ')
+event(string kind) =>
+    string id = syminfo.tickerid + ':' + timeframe.period + ':' + str.tostring(signalTime) + ':' + str.tostring(dir) + ':' + selectedStrategy + ':' + kind
+    '{"eventId":"' + jsonEscape(id) + '","eventType":"' + kind + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","direction":"' + (dir == 1 ? 'BUY' : 'SELL') + '","strategy":"' + selectedStrategy + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"reason":"' + jsonEscape(signalReason) + '","setupProgress":"' + jsonEscape(statusName(status)) + '","alignment":"' + signalAlignment + '","scriptVersion":"' + SCRIPT_VERSION + '","quality":' + str.tostring(quality) + ',"timestamp":' + str.tostring(signalTime) + ',"h1Trend":"' + signalTrend + '","targetSource":"' + targetSource + '","setupTimestamp":' + str.tostring(signalSetupTime) + ',"invalidation":' + str.tostring(signalInvalidation, format.mintick) + ',"eventTimestamp":' + str.tostring(time_close) + ',"status":"' + status + '","entryMode":"' + entryMode + '","managedSl":' + str.tostring(managedStop, format.mintick) + ',"signalPrice":' + str.tostring(signalPrice, format.mintick) + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '","filledEntry":' + (na(filledEntry) ? 'null' : str.tostring(filledEntry, format.mintick)) + '}'
+notifyEntry(string kind) =>
+    string payload = event(kind)
+    if auditLog
+        log.info(payload)
+    alert(payload, alert.freq_once_per_bar_close)
+notifyLifecycle(string kind) =>
+    string payload = event(kind)
+    if auditLog
+        log.info(payload)
+    alert(payload, alert.freq_all)
+// Flags consumed by both the visual indicator and strategy adapter.
+bool newSignal = false
+bool entryTriggered = false
+bool cancelOrder = false
+if barstate.isfirst and useResearchWindow and researchEnd <= researchStart
+    runtime.error('Research window end must be later than start')
+if barstate.isconfirmed
+    validationReason := 'Waiting for entry confirmation'
+    bullSpring := not na(slw) and low < slw and close > slw and close > open and close > low + (high - low) * 0.65
+    bearUpthrust := not na(sh) and high > sh and close < sh and close < open and close < high - (high - low) * 0.65
+    if newSession
+        previousSessionHigh := sessionHigh
+        previousSessionLow := sessionLow
+        sessionHigh := high
+        sessionLow := low
+    else if inSession
+        sessionHigh := na(sessionHigh) ? high : math.max(sessionHigh, high)
+        sessionLow := na(sessionLow) ? low : math.min(sessionLow, low)
+    // Broken OBs become breaker-level heuristics only after a confirmed close through the far boundary.
+    if not na(bullOBLow) and close < bullOBLow
+        bearBreaker := bullOBLow
+        bullOBLow := na
+        bullOBHigh := na
+    if not na(bearOBHigh) and close > bearOBHigh
+        bullBreaker := bearOBHigh
+        bearOBHigh := na
+        bearOBLow := na
+    if bodyDisplacement and close > open and close[1] < open[1] and close > high[1]
+        bullOBLow := low[1]
+        bullOBHigh := high[1]
+    if bodyDisplacement and close < open and close[1] > open[1] and close < low[1]
+        bearOBLow := low[1]
+        bearOBHigh := high[1]
+    if not na(ph) and not na(sh) and math.abs(ph - sh) <= atr * 0.1
+        equalHigh := math.round_to_mintick((ph + sh) / 2)
+    if not na(pl) and not na(slw) and math.abs(pl - slw) <= atr * 0.1
+        equalLow := math.round_to_mintick((pl + slw) / 2)
+    // Broker emulator is authoritative in the strategy. Never infer its fills from OHLC touches.
+    int newlyClosed = strategy.closedtrades - nz(strategy.closedtrades[1])
+    bool openingFill = strategy.position_size != 0 and (not active or na(filledEntry))
+    bool roundTripFill = newlyClosed > 0 and pending and strategy.position_size == 0
+    if openingFill or roundTripFill
+        filledEntry := openingFill ? strategy.position_avg_price : strategy.closedtrades.entry_price(strategy.closedtrades - 1)
+        fillTime := openingFill ? strategy.opentrades.entry_time(0) : strategy.closedtrades.entry_time(strategy.closedtrades - 1)
+        fillBar := openingFill ? strategy.opentrades.entry_bar_index(0) : strategy.closedtrades.entry_bar_index(strategy.closedtrades - 1)
+        pending := false
+        active := true
+        entryTriggered := true
+        status := 'ENTRY_TRIGGERED'
+        notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+        notifyLifecycle('ENTRY_TRIGGERED')
+    if newlyClosed > 0
+        bool stopReported = false
+        for trade = strategy.closedtrades - newlyClosed to strategy.closedtrades - 1
+            string reason = strategy.closedtrades.exit_comment(trade)
+            // EXIT_AUDIT_ROW_BEGIN — logging only; this block does not place or modify orders.
+            if auditLog
+                if na(auditGroupEntryTime)
+                    auditGroupPlanTimestamp := signalTime
+                    auditGroupSetupTimestamp := signalSetupTime
+                    auditGroupDirection := dir
+                    auditGroupModule := strategy.closedtrades.entry_id(trade)
+                    auditGroupEntryTime := strategy.closedtrades.entry_time(trade)
+                    auditGroupPlannedEntry := entry
+                    auditGroupActualEntry := strategy.closedtrades.entry_price(trade)
+                    auditGroupInitialStop := stop
+                    auditGroupInitialQty := initialQty
+                float auditEntryPrice = strategy.closedtrades.entry_price(trade)
+                float auditExitPrice = strategy.closedtrades.exit_price(trade)
+                float auditRiskDistance = math.abs(auditEntryPrice - stop)
+                float auditPriceR = auditRiskDistance > 0 ? dir * (auditExitPrice - auditEntryPrice) / auditRiskDistance : na
+                string auditPriceRJson = na(auditPriceR) ? 'null' : str.tostring(auditPriceR, '#.########')
+                log.info('TRADE_EXIT_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(signalTime) + ',"setupTimestamp":' + str.tostring(signalSetupTime) + ',"direction":' + str.tostring(dir) + ',"module":"' + jsonEscape(selectedStrategy) + '","closedTradeIndex":' + str.tostring(trade) + ',"entryId":"' + jsonEscape(strategy.closedtrades.entry_id(trade)) + '","entryTime":' + str.tostring(strategy.closedtrades.entry_time(trade)) + ',"entryBar":' + str.tostring(strategy.closedtrades.entry_bar_index(trade)) + ',"actualEntry":' + str.tostring(auditEntryPrice, format.mintick) + ',"exitId":"' + jsonEscape(strategy.closedtrades.exit_id(trade)) + '","exitComment":"' + jsonEscape(strategy.closedtrades.exit_comment(trade)) + '","exitTime":' + str.tostring(strategy.closedtrades.exit_time(trade)) + ',"exitBar":' + str.tostring(strategy.closedtrades.exit_bar_index(trade)) + ',"actualExit":' + str.tostring(auditExitPrice, format.mintick) + ',"size":' + str.tostring(strategy.closedtrades.size(trade)) + ',"profit":' + str.tostring(strategy.closedtrades.profit(trade)) + ',"commission":' + str.tostring(strategy.closedtrades.commission(trade)) + ',"profitPercent":' + str.tostring(strategy.closedtrades.profit_percent(trade)) + ',"maxRunup":' + str.tostring(strategy.closedtrades.max_runup(trade)) + ',"maxDrawdown":' + str.tostring(strategy.closedtrades.max_drawdown(trade)) + ',"plannedEntry":' + str.tostring(entry, format.mintick) + ',"initialStop":' + str.tostring(stop, format.mintick) + ',"managedStopAtObservation":' + str.tostring(managedStop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"initialQty":' + str.tostring(initialQty) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '","priceRMultiple":' + auditPriceRJson + '}')
+            // EXIT_AUDIT_ROW_END
+            if reason == 'TP1_HIT' and not hit1
+                hit1 := true
+                notifyLifecycle('TP1_HIT')
+            if reason == 'TP2_HIT' and not hit2
+                hit2 := true
+                notifyLifecycle('TP2_HIT')
+            if reason == 'TP3_HIT'
+                notifyLifecycle('TP3_HIT')
+            if reason == 'STOP_LOSS_HIT' and not stopReported
+                stopReported := true
+                notifyLifecycle('STOP_LOSS_HIT')
+        if strategy.position_size == 0
+            active := false
+            pending := false
+            status := 'CLOSED'
+            notifyLifecycle('TRADE_CLOSED')
+    if newSession
+        sessionTrades := 0
+    // Manage existing plans before detecting new ones. Never evaluate fills on signal bar.
+    if pending and bar_index > signalBar
+        bool invalid = dir == 1 ? low <= stop : high >= stop
+        bool expired = bar_index - signalBar > pendingBars
+        bool touched = not useBroker and (entryMode == 'Limit' ? (dir == 1 ? low <= entry : high >= entry) : (dir == 1 ? high >= entry : low <= entry))
+        if invalid or expired or pause or (useSession and not inSession) or not researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close)
+            pending := false
+            cancelOrder := true
+            status := expired ? 'EXPIRED' : 'INVALIDATED'
+            notifyLifecycle('SIGNAL_INVALIDATED')
+        else if touched
+            pending := false
+            active := true
+            fillTime := time_close
+            fillBar := bar_index
+            filledEntry := entryMode == 'Limit' ? (dir == 1 ? math.min(open, entry) : math.max(open, entry)) : (dir == 1 ? math.max(open, entry) : math.min(open, entry))
+            entryTriggered := true
+            status := 'ENTRY_TRIGGERED'
+            notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+            notifyLifecycle('ENTRY_TRIGGERED')
+    if active and not entryTriggered and bar_index > fillBar
+        bool stopped = dir == 1 ? low <= managedStop : high >= managedStop
+        bool third = dir == 1 ? high >= tp3 : low <= tp3
+        bool timed = timeExit > 0 and time_close - fillTime >= timeExit * 60000
+        if not useBroker
+            // Conservative stop-first convention for indicator-only touch estimates.
+            if stopped or third or timed
+                status := 'CLOSED'
+            if stopped
+                notifyLifecycle('STOP_LOSS_HIT')
+            else
+                if not hit1 and (dir == 1 ? high >= tp1 : low <= tp1)
+                    hit1 := true
+                    notifyLifecycle('TP1_HIT')
+                if not hit2 and (dir == 1 ? high >= tp2 : low <= tp2)
+                    hit2 := true
+                    notifyLifecycle('TP2_HIT')
+                if third
+                    notifyLifecycle('TP3_HIT')
+            if stopped or third or timed
+                active := false
+                notifyLifecycle('TRADE_CLOSED')
+        if active
+            float originalRisk = math.abs(filledEntry - stop)
+            float favorableR = originalRisk > 0 ? dir * (close - filledEntry) / originalRisk : 0
+            float tightened = managedStop
+            if breakEven and favorableR >= breakEvenR
+                tightened := tightenStop(dir, tightened, filledEntry)
+            if trailing and favorableR >= trailingStartR
+                float trailPrice = roundPrice(close - dir * atr * trailingATR)
+                tightened := tightenStop(dir, tightened, trailPrice)
+            managedStop := roundPrice(tightened)
+    if stage > 0 and (bar_index - setupBar > expiry or (dir == 1 ? low < extreme : high > extreme))
+        stage := 0
+        status := 'EXPIRED / INVALIDATED'
+    if stage == 2 and (dir == 1 ? close < gapBottom : close > gapTop)
+        stage := 0
+        status := 'INVALIDATED FVG'
+    updateCandidates()
+    // Safety is applied per candidate before deterministic, conflict-aware arbitration.
+    Candidate best = na
+    int bestScore = -1
+    int eligibleDirection = 0
+    bool conflict = false
+    float bestEntry = na
+    float bestStop = na
+    float best1 = na
+    float best2 = na
+    float best3 = na
+    string bestTargetSource = ''
+    // A cancellation belongs to the old order ID. Do not replace it on this bar.
+    if planSlotAvailable(active, pending, brokerBusy, cancelOrder)
+        for c in candidates
+            if c.enabled and c.ready
+                int direction = c.direction
+                bool aligned = hTrend == direction
+                bool emaOK = direction == 1 ? ema9 > ema21 : ema9 < ema21
+                float anchor = (c.upper + c.lower) / 2
+                float planned = roundPrice(entryMode == 'Close' ? close : entryMode == 'Limit' ? anchor : direction == 1 ? high + syminfo.mintick : low - syminfo.mintick)
+                float baseStop = stopMode == 'Swing' ? (direction == 1 ? slw : sh) : stopMode == 'ATR' ? planned - direction * atr * atrStop : stopMode == 'Order Block' ? (direction == 1 ? bullOBLow : bearOBHigh) : stopMode == 'Sweep extreme' ? (c.liquidityPoints > 0 ? c.invalidation : na) : c.invalidation
+                float proposedStop = roundPrice(baseStop - direction * atr * buffer)
+                float risk = direction * (planned - proposedStop)
+                [t1, t2, t3, source, targetsAvailable] = getTargets(direction, planned, risk)
+                bool validTargets = orderedPrices(direction, planned, proposedStop, t1, t2, t3)
+                float riskTicks = math.round(risk / syminfo.mintick)
+                bool rrOK = rrFeasible(direction, planned, proposedStop, t2, minRR, syminfo.mintick)
+                int liquidityScore = confluenceLiquidity and optionalLiquidity(direction) ? math.max(c.liquidityPoints, 20) : c.liquidityPoints
+                int score = qualityScore(c.structurePoints, liquidityScore, aligned, rrOK, volOK, inSession)
+                int moduleThreshold = str.startswith(c.id, 'A_') ? thresholdA : str.startswith(c.id, 'B_') ? thresholdB : str.startswith(c.id, 'C_') ? thresholdC : str.startswith(c.id, 'D_') ? thresholdD : str.startswith(c.id, 'E_') ? thresholdE : str.startswith(c.id, 'F_') ? thresholdF : str.startswith(c.id, 'G_') ? thresholdG : thresholdH
+                float swingRange = sh - slw
+                float retracement = swingRange > 0 ? (direction == 1 ? (sh - planned) / swingRange : (planned - slw) / swingRange) : na
+                bool fibOK = not confluenceFib or (retracement >= 0.5 and retracement <= 0.618)
+                bool pdOK = not confluencePD or (swingRange > 0 and (direction == 1 ? planned <= (sh + slw) / 2 : planned >= (sh + slw) / 2))
+                string blocked = candidateRejection(researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close), directionAllowed(tradeSide, direction), not na(c.invalidation) and c.invalidation > 0, targetsAvailable, fibOK, pdOK, volOK, pause, not useSession or inSession, not trendFilter or aligned, not emaFilter or emaOK, riskTicks >= 2 and risk <= atr * maxStop, math.abs(planned - anchor) <= atr * maxDistance, rrOK, validTargets and math.min(proposedStop, t3) > 0, sessionTrades < maxTrades, na(lastSignal) or bar_index - lastSignal >= cooldown, score, strategyThresholds ? moduleThreshold : threshold)
+                bool safe = blocked == ''
+                c.rejectionReason := blocked
+                if blocked != ''
+                    validationReason := strategyName(c.id) + ': ' + blocked
+                c.targetSource := source
+                c.entryMode := entryMode
+                c.plannedEntry := planned
+                c.suggestedStop := proposedStop
+                c.target1 := t1
+                c.target2 := t2
+                c.target3 := t3
+                c.quality := score
+                c.confirmationTime := time_close
+                if safe and score >= (strategyThresholds ? moduleThreshold : threshold)
+                    c.status := 'CONFIRMED'
+                    if eligibleDirection != 0 and eligibleDirection != direction
+                        conflict := true
+                    eligibleDirection := direction
+                    if score > bestScore
+                        best := c
+                        bestScore := score
+                        bestEntry := planned
+                        bestStop := proposedStop
+                        best1 := t1
+                        best2 := t2
+                        best3 := t3
+                        bestTargetSource := source
+        if conflict
+            status := 'REJECTED: OPPOSING CANDIDATES'
+            validationReason := 'Opposing qualified directions; no trade'
+        else if not na(best)
+            dir := best.direction
+            selectedStrategy := best.id
+            setupTime := best.setupTime
+            entry := bestEntry
+            stop := bestStop
+            tp1 := best1
+            tp2 := best2
+            tp3 := best3
+            quality := bestScore
+            signalAlignment := hTrend == 0 ? 'NEUTRAL' : hTrend == dir ? 'ALIGNED' : 'COUNTER_TREND'
+            signalReason := setupExplanation(selectedStrategy) + ' | H1 ' + (signalAlignment == 'ALIGNED' ? 'aligned' : signalAlignment == 'COUNTER_TREND' ? 'counter-trend' : 'neutral') + ' | TP2 ' + str.tostring(math.abs(best2 - bestEntry) / math.abs(bestEntry - bestStop), '#.##') + 'R | Quality ' + str.tostring(bestScore) + '/100'
+            managedStop := bestStop
+            targetSource := bestTargetSource
+            signalTrend := hTrend == 1 ? 'Bullish' : hTrend == -1 ? 'Bearish' : 'Neutral'
+            signalSetupTime := best.setupTime
+            signalInvalidation := best.invalidation
+            signalPrice := close
+            filledEntry := not useBroker and entryMode == 'Close' ? entry : na
+            fillBar := not useBroker and entryMode == 'Close' ? bar_index : na
+            signalTime := time_close
+            signalBar := bar_index
+            lastSignal := bar_index
+            sessionTrades += 1
+            totalPlans += 1
+            newSignal := true
+            hit1 := false
+            hit2 := false
+            pending := useBroker or entryMode != 'Close'
+            active := not pending
+            fillTime := active ? time_close : na
+            entryTriggered := active
+            status := pending ? 'ENTRY_PENDING' : 'ENTRY_TRIGGERED'
+            stage := 0
+            for c in candidates
+                c.stage := 0
+                c.ready := false
+                c.status := c.id == selectedStrategy ? status : 'IDLE'
+            if active
+                notifyEntry(dir == 1 ? 'BUY_SIGNAL' : 'SELL_SIGNAL')
+                notifyLifecycle('ENTRY_TRIGGERED')
+    if enableA and stage == 1 and bar_index > setupBar
+        bool mssFvg = mssFvgConfirmed(dir, breakLevel, high, low, high[2], low[2], open, close, atr, minDisp)
+        if mssFvg
+            gapTop := dir == 1 ? low : low[2]
+            gapBottom := dir == 1 ? high[2] : high
+            gapBar := bar_index
+            stage := 2
+            status := 'WAITING_CONFIRMATION'
+            if showZones and visualLayout != 'Reference'
+                box.delete(fvgBox)
+                fvgBox := box.new(bar_index, gapTop, bar_index + expiry, gapBottom, bgcolor=color.new(color.orange, 85), border_color=color.orange, text='Price gap · reversal', text_color=color.rgb(124, 45, 18), text_size=chartText)
+            if showOB and visualLayout != 'Reference'
+                for offset = 1 to 5
+                    bool opposite = dir == 1 ? close[offset] < open[offset] : close[offset] > open[offset]
+                    if opposite
+                        box.delete(obBox)
+                        obBox := box.new(bar_index, high[offset], bar_index + expiry, low[offset], bgcolor=color.new(color.purple, 88), border_color=color.purple, text='Order block (estimated)', text_color=color.rgb(107, 33, 168), text_size=chartText)
+                        break
+            if showStructure and visualLayout != 'Reference'
+                structureTag(close, dir == 1 ? 'Bullish MSS' : 'Bearish MSS', dir == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
+    // Use only levels known before this bar; pivots are updated below.
+    bool bullSweep = swingSweep(1, slw, sh, high, low, close, na(usedLow) or slBar != usedLow)
+    bool bearSweep = swingSweep(-1, sh, slw, high, low, close, na(usedHigh) or shBar != usedHigh)
+    if enableA and stage == 0 and not active and not pending and not brokerBusy and bullSweep != bearSweep
+        if bullSweep or bearSweep
+            dir := bullSweep ? 1 : -1
+            extreme := bullSweep ? low : high
+            breakLevel := bullSweep ? sh : slw
+            setupBar := bar_index
+            setupTime := time_close
+            stage := 1
+            status := 'DETECTED'
+            if bullSweep
+                usedLow := slBar
+            else
+                usedHigh := shBar
+            if showStructure and visualLayout != 'Reference'
+                structureTag(extreme, dir == 1 ? 'LOW LIQUIDITY SWEEP' : 'HIGH LIQUIDITY SWEEP', color.rgb(130, 135, 142))
+    bool upBreak = freshStructureBreak(1, sh, shBar, brokenHighPivot, close[1], close)
+    bool downBreak = freshStructureBreak(-1, slw, slBar, brokenLowPivot, close[1], close)
+    int nextStructure = uniqueStructureDirection(upBreak, downBreak)
+    if nextStructure != 0
+        if nextStructure == 1
+            brokenHighPivot := shBar
+            array.push(bullBreakPivots, shBar)
+            array.push(bullBreakBars, bar_index)
+            if array.size(bullBreakPivots) > 6
+                array.shift(bullBreakPivots)
+                array.shift(bullBreakBars)
+        else
+            brokenLowPivot := slBar
+            array.push(bearBreakPivots, slBar)
+            array.push(bearBreakBars, bar_index)
+            if array.size(bearBreakPivots) > 6
+                array.shift(bearBreakPivots)
+                array.shift(bearBreakBars)
+        contextStructureCaption := (nextStructure == 1 ? 'Bullish ' : 'Bearish ') + (chartStructure != 0 and chartStructure != nextStructure ? 'CHoCH' : 'BOS')
+        if showStructure
+            string annotation = contextStructureCaption + (hTrend != 0 and hTrend != nextStructure ? ' · Counter H1' : '')
+            structureTag(close, annotation, nextStructure == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
+        chartStructure := nextStructure
+    // Repeated horizontal levels use only pivots confirmed now; usable by modules from the next bar.
+    if not na(ph)
+        if not na(srHigh) and math.abs(ph - srHigh) <= atr * levelTolerance
+            srHighTouches += 1
+        else
+            srHigh := ph
+            srHighTouches := 1
+    if not na(pl)
+        if not na(srLow) and math.abs(pl - srLow) <= atr * levelTolerance
+            srLowTouches += 1
+        else
+            srLow := pl
+            srLowTouches := 1
+    // Ambiguous bars confirming both pivot types are excluded from QM sequencing.
+    if (not na(ph)) != (not na(pl))
+        int pDir = not na(ph) ? 1 : -1
+        float pPrice = not na(ph) ? ph : pl
+        int count = array.size(pivotDirs)
+        if count == 0
+            array.push(pivotDirs, pDir)
+            array.push(pivotPrices, pPrice)
+            array.push(pivotTimes, bar_index)
+        else if array.get(pivotDirs, count - 1) == pDir
+            float previous = array.get(pivotPrices, count - 1)
+            if pDir == 1 ? pPrice > previous : pPrice < previous
+                array.set(pivotPrices, count - 1, pPrice)
+                array.set(pivotTimes, count - 1, bar_index)
+        else
+            array.push(pivotDirs, pDir)
+            array.push(pivotPrices, pPrice)
+            array.push(pivotTimes, bar_index)
+            if array.size(pivotDirs) > 5
+                array.shift(pivotDirs)
+                array.shift(pivotPrices)
+                array.shift(pivotTimes)
+    if not na(ph)
+        if showStructure and showSwingLabels and not na(sh)
+            structureTag(ph, math.abs(ph - sh) <= atr * 0.1 ? 'Equal highs' : ph > sh ? 'Higher high' : 'Lower high', color.rgb(71, 85, 105))
+        sh := ph
+        shBar := bar_index
+    if not na(pl)
+        if showStructure and showSwingLabels and not na(slw)
+            structureTag(pl, math.abs(pl - slw) <= atr * 0.1 ? 'Equal lows' : pl > slw ? 'Higher low' : 'Lower low', color.rgb(71, 85, 105))
+        slw := pl
+        slBar := bar_index
+// QUANTITY_UNITS_HELPER_BEGIN
+// Research-only allocation: conserve integer minimum-contract units before converting to quantities.
+exitQuantityUnits(float quantity, float step, bool usePartials) =>
+    int totalUnits = int(math.round(quantity / step))
+    int firstUnits = usePartials ? int(math.floor(totalUnits * 33.0 / 100.0)) : 0
+    int thirdUnits = totalUnits - firstUnits - firstUnits
+    [firstUnits * step, firstUnits * step, thirdUnits * step]
+// QUANTITY_UNITS_HELPER_END
+// Submit a plan once. No stop widening or exit level recalculation after confirmation.
+if newSignal and strategy.position_size == 0
+    float accountRisk = strategy.convert_to_account(math.abs(entry - stop) * syminfo.pointvalue)
+    float unitNotional = strategy.convert_to_account(entry * syminfo.pointvalue)
+    float riskQty = accountRisk > 0 ? strategy.equity * riskPct / 100 / accountRisk : na
+    float exposureQty = unitNotional > 0 ? strategy.equity * maxExposurePct / 100 / unitNotional : na
+    float rawQty = math.min(riskQty, exposureQty)
+    float qty = syminfo.mincontract > 0 ? math.floor(rawQty / syminfo.mincontract) * syminfo.mincontract : na
+    // EXIT_AUDIT_SIZING_BEGIN — records the inputs and intermediate quantities without changing orders.
+    if auditLog
+        auditSizingEquity := strategy.equity
+        auditAccountRiskPerUnit := accountRisk
+        auditUnitNotional := unitNotional
+        auditRiskQty := riskQty
+        auditExposureQty := exposureQty
+        auditRawQty := rawQty
+        auditSizedQty := qty
+    // EXIT_AUDIT_SIZING_END
+    if not na(qty) and qty > 0
+        initialQty := qty
+        strategy.entry(selectedStrategy, dir == 1 ? strategy.long : strategy.short, qty=qty, limit=entryMode == 'Limit' ? entry : na, stop=entryMode == 'Breakout' ? entry : na)
+    else
+        pending := false
+        active := false
+        status := 'REJECTED: INVALID UNIT SIZE'
+        rejectedSizes += 1
+if (newSignal and pending) or strategy.position_size != 0
+    // QUANTITY_UNITS_ALLOCATION_BEGIN
+    [q1, q2, q3] = exitQuantityUnits(initialQty, syminfo.mincontract, partial)
+    if auditLog and newSignal
+        log.info('QUANTITY_AUDIT ' + '{"experiment":"QTY_UNITS_1","timestamp":' + str.tostring(signalTime) + ',"module":"' + selectedStrategy + '","initialQty":' + str.tostring(initialQty, '0.0000000000000000') + ',"step":' + str.tostring(syminfo.mincontract, '0.0000000000000000') + ',"partial":' + (partial ? 'true' : 'false') + ',"q1":' + str.tostring(q1, '0.0000000000000000') + ',"q2":' + str.tostring(q2, '0.0000000000000000') + ',"q3":' + str.tostring(q3, '0.0000000000000000') + '}')
+    // QUANTITY_UNITS_ALLOCATION_END
+    if not hit1 and q1 > 0
+        strategy.exit('TP1', selectedStrategy, stop=managedStop, limit=tp1, qty=q1, comment_profit='TP1_HIT', comment_loss='STOP_LOSS_HIT')
+    if not hit2 and q2 > 0
+        strategy.exit('TP2', selectedStrategy, stop=managedStop, limit=tp2, qty=q2, comment_profit='TP2_HIT', comment_loss='STOP_LOSS_HIT')
+    if q3 > 0
+        strategy.exit('TP3', selectedStrategy, stop=managedStop, limit=tp3, qty=q3, comment_profit='TP3_HIT', comment_loss='STOP_LOSS_HIT')
+if cancelOrder
+    strategy.cancel(selectedStrategy)
+    strategy.cancel('TP1')
+    strategy.cancel('TP2')
+    strategy.cancel('TP3')
+if strategy.position_size != 0 and timeExit > 0 and time_close - strategy.opentrades.entry_time(0) >= timeExit * 60000
+    strategy.close(selectedStrategy, comment='TRADE_CLOSED', immediately=false)
+
+if newSignal and showTrade and (active or pending or not useBroker)
+    for ln in levels
+        line.delete(ln)
+    for tag in tags
+        label.delete(tag)
+    array.clear(levels)
+    array.clear(tags)
+    box.delete(riskBox)
+    box.delete(rewardBox)
+    if showRiskReward
+        riskBox := box.new(bar_index, math.max(entry, stop), bar_index + 20, math.min(entry, stop), bgcolor=color.new(color.red, 94), border_color=color.new(color.red, 75))
+        rewardBox := box.new(bar_index, math.max(entry, tp3), bar_index + 20, math.min(entry, tp3), bgcolor=color.new(color.green, 94), border_color=color.new(color.green, 75))
+    prices = array.from(entry, stop, tp1, tp2, tp3)
+    names = array.from(dir == 1 ? 'BUY · Planned entry ' : 'SELL · Planned entry ', 'Stop loss ', 'Target 1 ', 'Target 2 ', 'Target 3 ')
+    for i = 0 to 4
+        float price = array.get(prices, i)
+        color c = i == 0 ? color.rgb(51, 65, 85) : i == 1 ? color.rgb(185, 28, 28) : color.rgb(21, 128, 61)
+        bool visible = i == 0 ? showEntryLine : i == 1 ? showSLLine : i == 2 ? showTP1Line : i == 3 ? showTP2Line : showTP3Line
+        if visible
+            array.push(levels, line.new(bar_index, price, bar_index + 20, price, color=c))
+            array.push(tags, label.new(bar_index + 20, price, array.get(names, i) + str.tostring(price, format.mintick), style=label.style_label_left, color=color.new(c, contextTransparency), textcolor=panelValue, size=chartText))
+// Remove old drawings when the plan ends; historical entry markers remain at their true bars.
+if not active and not pending and (not newSignal or useBroker) and not showLastPlan
+    for ln in levels
+        line.delete(ln)
+    for tag in tags
+        label.delete(tag)
+    array.clear(levels)
+    array.clear(tags)
+    box.delete(riskBox)
+    box.delete(rewardBox)
+if showTrade and (active or pending)
+    if showRiskReward and not na(riskBox)
+        box.set_right(riskBox, bar_index + 20)
+        box.set_right(rewardBox, bar_index + 20)
+    for ln in levels
+        line.set_x2(ln, bar_index + 20)
+    for tag in tags
+        label.set_x(tag, bar_index + 20)
+plot(showEMA and visualLayout == 'Dashboard' ? ema9 : na, 'EMA 9', color=color.aqua)
+plot(showEMA ? ema21 : na, 'EMA 21', color=color.rgb(228, 163, 46), linewidth=1)
+plot(showEMA and useEMA50 and visualLayout == 'Dashboard' ? ema50 : na, 'Strategy EMA 50', color=color.blue)
+plotshape(entryTriggered and dir == 1, 'BUY confirmed', shape.labelup, location.belowbar, color.rgb(21, 128, 61), text='BUY', textcolor=color.white, size=size.small)
+plotshape(entryTriggered and dir == -1, 'SELL confirmed', shape.labeldown, location.abovebar, color.rgb(185, 28, 28), text='SELL', textcolor=color.white, size=size.small)
+plot(showDaily ? pdh : na, 'Previous day high', color=color.new(color.green, 35), style=plot.style_stepline)
+plot(showDaily ? pdl : na, 'Previous day low', color=color.new(color.red, 35), style=plot.style_stepline)
+plot(showDaily ? pwh : na, 'Previous week high', color=color.new(color.green, 65), style=plot.style_stepline)
+plot(showDaily ? pwl : na, 'Previous week low', color=color.new(color.red, 65), style=plot.style_stepline)
+plot(showSessionLevels ? sessionHigh : na, 'Session high', color=color.new(color.blue, 50))
+plot(showSessionLevels ? sessionLow : na, 'Session low', color=color.new(color.blue, 50))
+plot(showFibonacci and sh > slw ? sh - (sh - slw) * 0.618 : na, 'Bullish 61.8%', color=color.new(color.orange, 50))
+plot(showFibonacci and sh > slw ? slw + (sh - slw) * 0.618 : na, 'Bearish 61.8%', color=color.new(color.orange, 50))
+plot(showPremiumDiscount or showFibonacci ? (sh + slw) / 2 : na, 'Premium/discount midpoint 50%', color=color.new(color.gray, 50))
+plot(showBreakers ? bullBreaker : na, 'Bullish breaker level', color=color.new(color.green, 35), style=plot.style_circles)
+plot(showBreakers ? bearBreaker : na, 'Bearish breaker level', color=color.new(color.red, 35), style=plot.style_circles)
+plotshape(showWyckoff and barstate.isconfirmed and bullSpring, 'Spring candidate', shape.triangleup, location.belowbar, color.purple, size=size.tiny)
+plotshape(showWyckoff and barstate.isconfirmed and bearUpthrust, 'Upthrust candidate', shape.triangledown, location.abovebar, color.purple, size=size.tiny)
+plot(active ? managedStop : na, 'Managed SL (next bar)', color=color.red, style=plot.style_linebr)
+// Read-only explanation of the most recent confirmed-bar decision. Never opens orders.
+if barstate.isconfirmed
+    decisionState := readinessState(dir, pending, active or brokerBusy, entryTriggered)
+    if pending or active or brokerBusy
+        decisionReason := pending ? 'Qualified plan; waiting for ' + (entryMode == 'Limit' ? 'limit fill' : entryMode == 'Breakout' ? 'breakout fill' : 'emulator market fill') + ' · not executed yet' : signalReason
+        decisionProgress := pending ? 'Setup ✓ → Confirmation ✓ → Risk ✓ → Fill …' : 'Setup ✓ → Confirmation ✓ → Risk ✓ → Entry triggered (sim.)'
+    else
+        string commonBlock = newSignal and status == 'REJECTED: INVALID UNIT SIZE' ? 'Simulation quantity below feed minimum / invalid conversion' : not (enableA or enableB or enableC or enableD or enableE or enableF or enableG or enableH) ? 'All strategies disabled' : cancelOrder ? 'Previous order cancelled; reevaluate on a later bar' : pause ? 'Manual news pause' : not researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close) ? 'Outside research date window' : useSession and not inSession ? 'Outside selected session' : not volOK ? 'ATR filtered / warming up' : sessionTrades >= maxTrades ? 'Session plan limit' : not na(lastSignal) and bar_index - lastSignal < cooldown ? 'Signal cooldown' : ''
+        string effectiveBlock = commonBlock != '' ? commonBlock : validationReason == 'Opposing qualified directions; no trade' ? validationReason : ''
+        decisionReason := effectiveBlock != '' ? effectiveBlock : validationReason
+        decisionProgress := 'No qualified setup → WAIT'
+        if enableA and stage > 0
+            decisionProgress := stage == 1 ? 'Sweep ✓ → MSS … + FVG … → Retest … → Risk …' : 'Sweep ✓ → MSS ✓ + FVG ✓ → Retest … → Risk …'
+            if effectiveBlock == ''
+                decisionReason := stage == 1 ? 'Need a later displaced MSS candle with FVG' : candA.ready ? validationReason : 'Need a later FVG retest and directional close'
+        else
+            for candidate in candidates
+                if candidate.enabled and candidate.stage > 0
+                    decisionProgress := strategyName(candidate.id) + ' → ' + (candidate.ready ? 'Trigger ✓ → risk checks' : 'Setup ✓ → later confirmation …')
+                    if effectiveBlock == ''
+                        decisionReason := candidate.ready ? candidate.rejectionReason : 'Waiting for later setup-specific confirmation'
+                    break
+    if newSignal and useBroker and not pending and not active and status == 'REJECTED: INVALID UNIT SIZE'
+        decisionProgress := 'Setup ✓ → Confirmation ✓ → Execution quantity rejected'
+// Presentation-only context. None of these objects or flags feed the trading candidates.
+type HistoricalPlan
+    array<line> priceLines
+    array<label> priceLabels
+    bool isOpen
+var array<HistoricalPlan> historicalPlans = array.new<HistoricalPlan>()
+
+createHistoricalPlan(int direction, string strategyId, float planned, float stopPrice, float targetOne, float targetTwo, float targetThree, int keepPlans) =>
+    array<line> planLines = array.new<line>()
+    array<label> planLabels = array.new<label>()
+    array<float> planPrices = array.from(planned, stopPrice, targetOne, targetTwo, targetThree)
+    array<string> planNames = array.from((direction == 1 ? 'BUY ' : 'SELL ') + str.substring(strategyId, 0, 1) + ' ', 'SL ', 'T1 ', 'T2 ', 'T3 ')
+    array<color> planColors = array.from(color.rgb(71, 85, 105), color.rgb(185, 28, 28), color.rgb(21, 128, 61), color.rgb(21, 128, 61), color.rgb(21, 128, 61))
+    for i = 0 to 4
+        float level = array.get(planPrices, i)
+        color levelColor = array.get(planColors, i)
+        int labelBar = bar_index + 2 + i * 12
+        array.push(planLines, line.new(bar_index, level, labelBar, level, color=color.new(levelColor, 15), width=i == 0 ? 2 : 1))
+        array.push(planLabels, label.new(labelBar, level, array.get(planNames, i) + priceText(level), style=label.style_label_left, color=color.new(levelColor, contextTransparency), textcolor=panelValue, size=size.tiny))
+    array.push(historicalPlans, HistoricalPlan.new(planLines, planLabels, true))
+    if array.size(historicalPlans) > keepPlans
+        HistoricalPlan oldest = array.shift(historicalPlans)
+        for oldLine in oldest.priceLines
+            line.delete(oldLine)
+        for oldLabel in oldest.priceLabels
+            label.delete(oldLabel)
+    0
+
+updateHistoricalPlans(bool planActive) =>
+    if array.size(historicalPlans) > 0
+        for index = 0 to array.size(historicalPlans) - 1
+            HistoricalPlan view = array.get(historicalPlans, index)
+            if view.isOpen
+                bool latest = index == array.size(historicalPlans) - 1
+                bool stillActive = latest and planActive
+                int endBar = stillActive ? bar_index + 1 : bar_index
+                for lineIndex = 0 to array.size(view.priceLines) - 1
+                    line planLine = array.get(view.priceLines, lineIndex)
+                    int labelBar = endBar + 2 + lineIndex * 12
+                    line.set_x2(planLine, labelBar)
+                for labelIndex = 0 to array.size(view.priceLabels) - 1
+                    label planLabel = array.get(view.priceLabels, labelIndex)
+                    if labelIndex < 5
+                        label.set_x(planLabel, endBar + 2 + labelIndex * 12)
+                if not stillActive
+                    label entryTag = array.get(view.priceLabels, 0)
+                    string terminal = status == 'CLOSED' ? 'CLOSED' : status == 'EXPIRED' ? 'EXPIRED' : str.startswith(status, 'INVALIDATED') ? 'INVALID' : statusName(status)
+                    label.set_text(entryTag, label.get_text(entryTag) + ' · ' + terminal)
+                    view.isOpen := false
+                    array.set(historicalPlans, index, view)
+
+bool referenceView = visualLayout == 'Reference'
+color bullColor = color.rgb(44, 153, 124)
+color bearColor = color.rgb(220, 73, 83)
+color sweepColor = color.rgb(130, 135, 142)
+float visualEMA55 = ta.ema(close, 55)
+plot(referenceView and showEMA and showEMA55 ? visualEMA55 : na, 'Visual EMA 55', color=color.rgb(54, 88, 214), linewidth=2)
+// Pivots step only on their confirmation bars; no negative offsets.
+plot(referenceView and showSwingLevels and (na(brokenHighPivot) or shBar != brokenHighPivot) ? sh : na, 'Confirmed swing high', color=color.new(bearColor, 65), style=plot.style_stepline)
+plot(referenceView and showSwingLevels and (na(brokenLowPivot) or slBar != brokenLowPivot) ? slw : na, 'Confirmed swing low', color=color.new(bullColor, 65), style=plot.style_stepline)
+
+rightTag(label previous, int x, float price, string caption, color background) =>
+    label result = previous
+    if na(price)
+        if not na(result)
+            label.delete(result)
+        result := na
+    else if na(result)
+        result := label.new(x, price, caption, style=label.style_label_left, color=color.new(background, contextTransparency), textcolor=panelValue, size=chartText)
+    else
+        label.set_xy(result, x, price)
+        label.set_text(result, caption)
+        label.set_color(result, color.new(background, contextTransparency))
+        label.set_textcolor(result, panelValue)
+        label.set_size(result, chartText)
+    result
+
+var label highTag = na
+var label lowTag = na
+var label fastTag = na
+var label slowTag = na
+var box supportArea = na
+var box resistanceArea = na
+var box demandOB = na
+var box supplyOB = na
+var box bullGap = na
+var box bearGap = na
+var float drawnSupport = na
+var float drawnResistance = na
+var int supportTouches = 0
+var int resistanceTouches = 0
+var float drawnBullOB = na
+var float drawnBearOB = na
+var int bullGapBar = na
+var int bearGapBar = na
+var int sweptHighPivot = na
+var int sweptLowPivot = na
+var int sweptCRTHigh = na
+var int sweptCRTLow = na
+var string recentContextPattern = 'Waiting for a confirmed pattern'
+var int recentContextTime = na
+var int lastHighCaption = na
+var int lastLowCaption = na
+
+if barstate.isconfirmed and referenceView
+    // Use the pivot levels known before this candle, independently of strategy enablement.
+    bool highSweep = showContextSweeps and not na(sh[1]) and not na(slw[1]) and rangeSweep(-1, slw[1], sh[1], high, low, close) and (na(sweptHighPivot) or sweptHighPivot != shBar[1])
+    bool lowSweep = showContextSweeps and not na(sh[1]) and not na(slw[1]) and rangeSweep(1, slw[1], sh[1], high, low, close) and (na(sweptLowPivot) or sweptLowPivot != slBar[1])
+    bool crtSupported = timeframe.in_seconds(crtTF) >= timeframe.in_seconds()
+    bool crtHighSweep = showCRTSweeps and crtSupported and rangeSweep(-1, crtLow, crtHigh, high, low, close) and (na(sweptCRTHigh) or sweptCRTHigh != crtTime)
+    bool crtLowSweep = showCRTSweeps and crtSupported and rangeSweep(1, crtLow, crtHigh, high, low, close) and (na(sweptCRTLow) or sweptCRTLow != crtTime)
+    if highSweep or crtHighSweep
+        string caption = highSweep and crtHighSweep ? 'HIGH LIQUIDITY SWEEP\nCRT HIGH SWEEP' : highSweep ? 'HIGH LIQUIDITY SWEEP' : 'CRT HIGH SWEEP'
+        if showStructure and (na(lastHighCaption) or bar_index - lastHighCaption >= contextLabelGap)
+            structureTag(high, caption, sweepColor)
+            lastHighCaption := bar_index
+        recentContextPattern := highSweep and crtHighSweep ? 'High sweep + CRT reclaim' : highSweep ? 'High liquidity sweep' : 'CRT high sweep'
+        recentContextTime := time_close
+    if lowSweep or crtLowSweep
+        string caption = lowSweep and crtLowSweep ? 'LOW LIQUIDITY SWEEP\nCRT LOW SWEEP' : lowSweep ? 'LOW LIQUIDITY SWEEP' : 'CRT LOW SWEEP'
+        if showStructure and (na(lastLowCaption) or bar_index - lastLowCaption >= contextLabelGap)
+            structureTag(low, caption, sweepColor)
+            lastLowCaption := bar_index
+        recentContextPattern := highSweep or crtHighSweep ? 'Both sides swept · ambiguous' : lowSweep and crtLowSweep ? 'Low sweep + CRT reclaim' : lowSweep ? 'Low liquidity sweep' : 'CRT low sweep'
+        recentContextTime := time_close
+    if highSweep
+        sweptHighPivot := shBar[1]
+    if lowSweep
+        sweptLowPivot := slBar[1]
+    if crtHighSweep
+        sweptCRTHigh := crtTime
+    if crtLowSweep
+        sweptCRTLow := crtTime
+
+    // Repeated confirmed pivot clusters, with frozen ATR width at recognition.
+    if showSupportResistance
+        if not na(srLow) and srLowTouches >= 2 and close >= srLow - atr * levelTolerance and (na(drawnSupport) or srLow != drawnSupport or srLowTouches > supportTouches)
+            box.delete(supportArea)
+            supportArea := box.new(bar_index, srLow + atr * levelTolerance, bar_index + zoneExtension, srLow - atr * levelTolerance, border_color=color.new(bullColor, 35), bgcolor=color.new(bullColor, 92), text='SNR SUPPORT', text_color=bullColor, text_size=chartText, text_halign=text.align_right)
+            drawnSupport := srLow
+            supportTouches := srLowTouches
+        if not na(srHigh) and srHighTouches >= 2 and close <= srHigh + atr * levelTolerance and (na(drawnResistance) or srHigh != drawnResistance or srHighTouches > resistanceTouches)
+            box.delete(resistanceArea)
+            resistanceArea := box.new(bar_index, srHigh + atr * levelTolerance, bar_index + zoneExtension, srHigh - atr * levelTolerance, border_color=color.new(bearColor, 35), bgcolor=color.new(bearColor, 92), text='SNR RESISTANCE', text_color=bearColor, text_size=chartText, text_halign=text.align_right)
+            drawnResistance := srHigh
+            resistanceTouches := srHighTouches
+        if not na(supportArea)
+            if close < box.get_bottom(supportArea)
+                box.delete(supportArea)
+                supportArea := na
+            else
+                box.set_right(supportArea, bar_index + zoneExtension)
+        if not na(resistanceArea)
+            if close > box.get_top(resistanceArea)
+                box.delete(resistanceArea)
+                resistanceArea := na
+            else
+                box.set_right(resistanceArea, bar_index + zoneExtension)
+
+    // Existing displacement/previous-opposite-candle OB heuristic; two live zones maximum.
+    if showOB
+        if na(bullOBLow)
+            box.delete(demandOB)
+            demandOB := na
+            drawnBullOB := na
+        else if na(drawnBullOB) or bullOBLow != drawnBullOB or (not na(demandOB) and bullOBHigh != box.get_top(demandOB))
+            box.delete(demandOB)
+            demandOB := box.new(bar_index, bullOBHigh, bar_index + zoneExtension, bullOBLow, border_color=color.new(color.teal, 25), bgcolor=color.new(color.teal, 93), text='BULL OB · candidate', text_color=color.teal, text_size=chartText, text_halign=text.align_right)
+            drawnBullOB := bullOBLow
+        if na(bearOBHigh)
+            box.delete(supplyOB)
+            supplyOB := na
+            drawnBearOB := na
+        else if na(drawnBearOB) or bearOBHigh != drawnBearOB or (not na(supplyOB) and bearOBLow != box.get_bottom(supplyOB))
+            box.delete(supplyOB)
+            supplyOB := box.new(bar_index, bearOBHigh, bar_index + zoneExtension, bearOBLow, border_color=color.new(bearColor, 25), bgcolor=color.new(bearColor, 93), text='BEAR OB · candidate', text_color=bearColor, text_size=chartText, text_halign=text.align_right)
+            drawnBearOB := bearOBHigh
+        if not na(demandOB)
+            box.set_right(demandOB, bar_index + zoneExtension)
+        if not na(supplyOB)
+            box.set_right(supplyOB, bar_index + zoneExtension)
+
+    // Displacement FVG context, identified now, never backdated to the first candle.
+    if showZones
+        bool bullishGap = low > high[2] and close[1] > open[1] and math.abs(close[1] - open[1]) >= atr[1] * minDisp
+        bool bearishGap = high < low[2] and close[1] < open[1] and math.abs(close[1] - open[1]) >= atr[1] * minDisp
+        if bullishGap
+            box.delete(bullGap)
+            bullGap := box.new(bar_index, low, bar_index + zoneExtension, high[2], border_color=color.new(bullColor, 45), bgcolor=color.new(bullColor, 94), text='BULL FVG', text_color=bullColor, text_size=chartText, text_halign=text.align_right)
+            bullGapBar := bar_index
+        if bearishGap
+            box.delete(bearGap)
+            bearGap := box.new(bar_index, low[2], bar_index + zoneExtension, high, border_color=color.new(bearColor, 45), bgcolor=color.new(bearColor, 94), text='BEAR FVG', text_color=bearColor, text_size=chartText, text_halign=text.align_right)
+            bearGapBar := bar_index
+        if not na(bullGap)
+            if bar_index > bullGapBar and low <= box.get_bottom(bullGap)
+                box.delete(bullGap)
+                bullGap := na
+            else
+                box.set_right(bullGap, bar_index + zoneExtension)
+        if not na(bearGap)
+            if bar_index > bearGapBar and high >= box.get_top(bearGap)
+                box.delete(bearGap)
+                bearGap := na
+            else
+                box.set_right(bearGap, bar_index + zoneExtension)
+
+trimContextBox(box area) =>
+    box result = area
+    if not na(area)
+        bool staleArea = bar_index - box.get_left(area) > contextZoneBars
+        bool distantArea = math.abs((box.get_top(area) + box.get_bottom(area)) / 2 - close) > atr * contextZoneDistance
+        if staleArea or distantArea
+            box.delete(area)
+            result := na
+    result
+if barstate.isconfirmed and referenceView
+    supportArea := trimContextBox(supportArea)
+    resistanceArea := trimContextBox(resistanceArea)
+    demandOB := trimContextBox(demandOB)
+    supplyOB := trimContextBox(supplyOB)
+    bullGap := trimContextBox(bullGap)
+    bearGap := trimContextBox(bearGap)
+var table conceptPanel = table.new(position.middle_right, 2, 9, frame_color=color.new(color.gray, 65), frame_width=1, bgcolor=color.new(color.white, 8))
+if barstate.islast or barstate.islastconfirmedhistory
+    highTag := rightTag(highTag, bar_index + zoneExtension + 14, referenceView and showSwingLevels and (na(brokenHighPivot) or shBar != brokenHighPivot) ? sh : na, 'SWING HIGH  ' + priceText(sh), bearColor)
+    lowTag := rightTag(lowTag, bar_index + zoneExtension + 14, referenceView and showSwingLevels and (na(brokenLowPivot) or slBar != brokenLowPivot) ? slw : na, 'SWING LOW  ' + priceText(slw), bullColor)
+    fastTag := rightTag(fastTag, bar_index + zoneExtension, referenceView and showEMA ? ema21 : na, 'EMA 21', color.rgb(228, 163, 46))
+    slowTag := rightTag(slowTag, bar_index + zoneExtension + 6, referenceView and showEMA and showEMA55 ? visualEMA55 : na, 'EMA 55', color.rgb(54, 88, 214))
+    table.clear(conceptPanel, 0, 0, 1, 8)
+    if referenceView and showConceptPanel
+        string zoneNames = (not na(supportArea) or not na(resistanceArea) ? 'SNR ' : '') + (not na(demandOB) or not na(supplyOB) ? 'OB ' : '') + (not na(bullGap) or not na(bearGap) ? 'FVG' : '')
+        string alignmentCaption = pending or active or brokerBusy ? signalAlignment : hTrend != 0 and chartStructure != 0 and chartStructure != hTrend ? 'Chart counter H1 · not an entry' : 'Chart aligned / neutral · not an entry'
+        array<string> captions = array.from('GOLD EMPIRE · ANALYSIS', 'Decision · last closed bar', 'Why WAIT / READY', 'Setup progress', 'H1 / M15 direction', 'Chart structure', 'Alignment context', 'Context zones (display)', 'Price levels')
+        array<string> descriptions = array.from('CONTEXT ≠ BUY / SELL', decisionState, str.replace_all(decisionReason, ' | ', '\n'), decisionProgress, (hTrend == 1 ? 'Bullish' : hTrend == -1 ? 'Bearish' : 'Neutral') + ' / ' + (mTrend == 1 ? 'Bullish' : mTrend == -1 ? 'Bearish' : 'Neutral'), contextStructureCaption, alignmentCaption, zoneNames == '' ? 'No fresh nearby display zones' : zoneNames, pending or active or brokerBusy ? 'Qualified plan only · see chart' : 'Hidden until a plan passes all checks')
+        for row = 0 to 8
+            color rowColor = row == 0 ? color.rgb(235, 240, 244) : color.new(color.white, 8)
+            table.cell(conceptPanel, 0, row, array.get(captions, row), text_color=color.rgb(71, 85, 105), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
+            table.cell(conceptPanel, 1, row, array.get(descriptions, row), text_color=color.rgb(30, 41, 59), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
+
+// Plan history is a read-only overlay. It starts at the confirmed plan bar and never submits orders or alerts.
+bool inHistoryWindow = historyMode != 'Full bounded' or bar_index >= last_bar_index - historyLookback
+if barstate.isconfirmed and newSignal and historyMode != 'Off' and inHistoryWindow and (active or pending or not useBroker)
+    createHistoricalPlan(dir, selectedStrategy, entry, stop, tp1, tp2, tp3, historyPlanLimit)
+if barstate.isconfirmed and array.size(historicalPlans) > 0
+    updateHistoricalPlans(active or pending or brokerBusy)
+var table dash = table.new(position.top_right, 2, 19, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
+if barstate.islast or barstate.islastconfirmedhistory
+    table.clear(dash, 0, 0, 1, 18)
+    bool currentPlan = active or pending or brokerBusy
+    string displayStrategy = currentPlan or showLastPlan ? strategyName(selectedStrategy) : 'Waiting for a setup'
+    string displayStatus = statusName(status)
+    string displayQuality = currentPlan or showLastPlan ? str.tostring(quality) + ' / 100' : 'Not scored yet'
+    int displayDirection = currentPlan or showLastPlan ? dir : 0
+    float displayEntry = currentPlan or showLastPlan ? entry : na
+    float displaySL = currentPlan or showLastPlan ? stop : na
+    float display1 = currentPlan or showLastPlan ? tp1 : na
+    float display2 = currentPlan or showLastPlan ? tp2 : na
+    float display3 = currentPlan or showLastPlan ? tp3 : na
+    float displayFill = currentPlan or showLastPlan ? filledEntry : na
+    float displayManaged = currentPlan or showLastPlan ? managedStop : na
+    string displaySource = currentPlan or showLastPlan ? targetSource : 'No current trade plan'
+    if not currentPlan and not str.startswith(status, 'REJECTED')
+        for c in candidates
+            if c.enabled and c.stage > 0
+                displayStrategy := strategyName(c.id)
+                displayStatus := statusName(c.status)
+                displayQuality := c.ready ? str.tostring(c.quality) + ' / 100' : 'Not scored yet'
+                displayDirection := c.direction
+                displayEntry := na
+                displaySL := na
+                display1 := na
+                display2 := na
+                display3 := na
+                displayFill := na
+                displayManaged := na
+                displaySource := c.ready and c.confirmationTime == time_close and c.targetSource != '' ? c.targetSource : 'Targets not calculated yet'
+                break
+    if not currentPlan and displayStrategy == 'Waiting for a setup' and enableA and stage > 0
+        displayStrategy := strategyName('A_')
+        displayStatus := stage == 1 ? 'Sweep found · waiting for reversal' : 'Reversal found · waiting for entry'
+        displayDirection := dir
+    string planCaption = currentPlan ? (pending ? 'CURRENT · ORDER PENDING' : 'CURRENT · SIMULATED TRADE') : showLastPlan ? 'PREVIOUS PLAN / NEW SETUP' : 'NO CURRENT TRADE'
+    float displayRisk = math.abs(displayEntry - displaySL)
+    string rrText = not na(displayRisk) and displayRisk > 0 ? str.tostring(math.abs(display2 - displayEntry) / displayRisk, '#.##') + 'R  |  ' + str.tostring(riskPct) + '% risk' : '—'
+    keys = array.from('SMART SCALPER PRO', 'Chart / execution', '1-hour trend', '15-minute structure', 'Plan information', 'Strategy', 'Setup status', 'Direction', 'Setup score · not win %', 'Session / volatility', 'Planned entry', 'Initial stop loss', 'Take profit 1', 'Take profit 2', 'Take profit 3', 'Target 2 / planned risk', 'Target method', 'Simulated fill price', 'Current stop loss')
+    vals = array.from(syminfo.ticker, timeframe.period + ' min', hTrend == 1 ? 'UPTREND' : hTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', mTrend == 1 ? 'UPTREND' : mTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', planCaption, displayStrategy, displayStatus, displayDirection == 1 ? (currentPlan ? 'BUY' : 'Potential BUY · not an entry') : displayDirection == -1 ? (currentPlan ? 'SELL' : 'Potential SELL · not an entry') : 'No entry', displayQuality, (inSession ? sessionPreset : 'Outside trading hours') + (volOK ? ' / Normal' : ' / Filtered'), priceText(displayEntry), priceText(displaySL), priceText(display1), priceText(display2), priceText(display3), rrText, displaySource, priceText(displayFill), priceText(displayManaged))
+    if showDashboard and visualLayout == 'Dashboard'
+        for i = 0 to 18
+            color rowBackground = i == 0 ? panelHeader : i % 2 == 0 ? panelAlternate : panelBackground
+            color valueColor = i == 7 and displayDirection != 0 ? (displayDirection == 1 ? color.rgb(21, 128, 61) : color.rgb(185, 28, 28)) : i == 4 ? color.rgb(146, 64, 14) : panelValue
+            table.cell(dash, 0, i, array.get(keys, i), text_color=panelMuted, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+            table.cell(dash, 1, i, array.get(vals, i), text_color=valueColor, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+
+if auditLog and newSignal
+    log.info('PLAN_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","strategy":"' + selectedStrategy + '","timestamp":' + str.tostring(signalTime) + ',"setupTimestamp":' + str.tostring(signalSetupTime) + ',"direction":' + str.tostring(dir) + ',"entryMode":"' + entryMode + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"quality":' + str.tostring(quality) + ',"executionAccepted":' + (active or pending ? 'true' : 'false') + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '"}')
+
+// Closed-position aggregation: partial exits are combined by actual entry time and module ID.
+var int countedRows = 0
+var float previousClosedNet = 0
+var int groupedLastExit = na
+var int groupedEntryTime = na
+var string groupedId = ''
+var array<int> moduleTrades = array.new<int>(8, 0)
+var array<int> moduleWins = array.new<int>(8, 0)
+var array<float> moduleGrossWin = array.new<float>(8, 0)
+var array<float> moduleGrossLoss = array.new<float>(8, 0)
+var array<float> moduleNet = array.new<float>(8, 0)
+var array<float> moduleHold = array.new<float>(8, 0)
+moduleIndex(string id) =>
+    str.startswith(id, 'A_') ? 0 : str.startswith(id, 'B_') ? 1 : str.startswith(id, 'C_') ? 2 : str.startswith(id, 'D_') ? 3 : str.startswith(id, 'E_') ? 4 : str.startswith(id, 'F_') ? 5 : str.startswith(id, 'G_') ? 6 : 7
+if strategy.closedtrades > countedRows
+    for row = countedRows to strategy.closedtrades - 1
+        string id = strategy.closedtrades.entry_id(row)
+        int entered = strategy.closedtrades.entry_time(row)
+        if na(groupedEntryTime)
+            groupedEntryTime := entered
+            groupedId := id
+        int exited = strategy.closedtrades.exit_time(row)
+        groupedLastExit := na(groupedLastExit) ? exited : math.max(groupedLastExit, exited)
+    countedRows := strategy.closedtrades
+// Flat after all exit rows means the position group is complete; pyramiding is disabled.
+if strategy.position_size == 0 and not na(groupedEntryTime)
+    int index = moduleIndex(groupedId)
+    // Net-profit delta at complete closure includes emulator transaction costs.
+    float net = strategy.netprofit - previousClosedNet
+    // EXIT_AUDIT_GROUP_BEGIN — realized group delta is the Strategy's netprofit change for this flat position.
+    if auditLog
+        log.info('TRADE_GROUP_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","planTimestamp":' + str.tostring(auditGroupPlanTimestamp) + ',"setupTimestamp":' + str.tostring(auditGroupSetupTimestamp) + ',"module":"' + jsonEscape(auditGroupModule) + '","direction":' + str.tostring(auditGroupDirection) + ',"entryTime":' + str.tostring(auditGroupEntryTime) + ',"exitTime":' + str.tostring(groupedLastExit) + ',"holdMinutes":' + str.tostring((groupedLastExit - auditGroupEntryTime) / 60000.0) + ',"plannedEntry":' + str.tostring(auditGroupPlannedEntry, format.mintick) + ',"actualEntry":' + str.tostring(auditGroupActualEntry, format.mintick) + ',"initialStop":' + str.tostring(auditGroupInitialStop, format.mintick) + ',"initialQty":' + str.tostring(auditGroupInitialQty) + ',"sizingEquity":' + str.tostring(auditSizingEquity) + ',"accountRiskPerUnit":' + str.tostring(auditAccountRiskPerUnit) + ',"unitNotional":' + str.tostring(auditUnitNotional) + ',"riskQty":' + str.tostring(auditRiskQty) + ',"exposureQty":' + str.tostring(auditExposureQty) + ',"rawQty":' + str.tostring(auditRawQty) + ',"sizedQty":' + str.tostring(auditSizedQty) + ',"riskPctInput":' + str.tostring(riskPct) + ',"maxExposurePctInput":' + str.tostring(maxExposurePct) + ',"partialInput":' + (partial ? 'true' : 'false') + ',"minContract":' + str.tostring(syminfo.mincontract) + ',"minTick":' + str.tostring(syminfo.mintick, format.mintick) + ',"pointValue":' + str.tostring(syminfo.pointvalue) + ',"netProfitDelta":' + str.tostring(net) + ',"accountCurrency":"' + jsonEscape(strategy.account_currency) + '"}')
+    auditGroupPlanTimestamp := na
+    auditGroupSetupTimestamp := na
+    auditGroupDirection := 0
+    auditGroupModule := ''
+    auditGroupEntryTime := na
+    auditGroupPlannedEntry := na
+    auditGroupActualEntry := na
+    auditGroupInitialStop := na
+    auditGroupInitialQty := na
+    auditSizingEquity := na
+    auditAccountRiskPerUnit := na
+    auditUnitNotional := na
+    auditRiskQty := na
+    auditExposureQty := na
+    auditRawQty := na
+    auditSizedQty := na
+    // EXIT_AUDIT_GROUP_END
+    previousClosedNet := strategy.netprofit
+    array.set(moduleTrades, index, array.get(moduleTrades, index) + 1)
+    array.set(moduleWins, index, array.get(moduleWins, index) + (net > 0 ? 1 : 0))
+    array.set(moduleNet, index, array.get(moduleNet, index) + net)
+    array.set(moduleGrossWin, index, array.get(moduleGrossWin, index) + math.max(net, 0))
+    array.set(moduleGrossLoss, index, array.get(moduleGrossLoss, index) + math.abs(math.min(net, 0)))
+    array.set(moduleHold, index, array.get(moduleHold, index) + (groupedLastExit - groupedEntryTime) / 60000.0)
+    groupedLastExit := na
+    groupedEntryTime := na
+    groupedId := ''
+var table performance = table.new(position.bottom_right, 6, 10, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
+if barstate.islast or barstate.islastconfirmedhistory
+    table.clear(performance, 0, 0, 5, 9)
+    if showPerformance and visualLayout == 'Dashboard'
+        array<string> headers = array.from('Strategy', 'Closed trades', 'Win rate', 'Profit factor', 'Avg net P&L (' + strategy.account_currency + ')', 'Avg hold')
+        for col = 0 to 5
+            table.cell(performance, col, 0, array.get(headers, col), text_color=panelValue, text_size=panelText, bgcolor=panelHeader)
+        int visibleRow = 1
+        for index = 0 to 7
+            int count = array.get(moduleTrades, index)
+            float losses = array.get(moduleGrossLoss, index)
+            if showUnusedModules or count > 0
+                color rowBackground = visibleRow % 2 == 0 ? panelAlternate : panelBackground
+                table.cell(performance, 0, visibleRow, strategyName(str.substring('ABCDEFGH', index, index + 1) + '_'), text_color=panelValue, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
+                table.cell(performance, 1, visibleRow, str.tostring(count), text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 2, visibleRow, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') + '%' : 'No trades', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 3, visibleRow, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 4, visibleRow, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                table.cell(performance, 5, visibleRow, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.#') + ' min' : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
+                visibleRow += 1
+        if visibleRow == 1
+            table.cell(performance, 0, visibleRow, 'No closed trades yet', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            for col = 1 to 5
+                table.cell(performance, col, visibleRow, col == 1 ? '0' : '—', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
+            visibleRow += 1
+        table.cell(performance, 0, visibleRow, 'Max drawdown', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 1, visibleRow, str.tostring(strategy.max_drawdown, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 2, visibleRow, 'Total net P&L', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 3, visibleRow, str.tostring(strategy.netprofit, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 4, visibleRow, 'Plans / size skips', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
+        table.cell(performance, 5, visibleRow, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)

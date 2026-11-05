@@ -1,0 +1,18 @@
+{
+  "restored-strategy-inputs": {
+    "controls": 115,
+    "matchesOriginalObservedConfiguration": true
+  },
+  "restored-indicator-inputs": {
+    "controls": 115,
+    "matchesOriginalObservedConfiguration": true
+  },
+  "persisted-strategy-inputs": {
+    "controls": 115,
+    "matchesOriginalObservedConfiguration": true
+  },
+  "persisted-indicator-inputs": {
+    "controls": 115,
+    "matchesOriginalObservedConfiguration": true
+  }
+}

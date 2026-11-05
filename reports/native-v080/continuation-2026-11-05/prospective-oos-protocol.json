@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "protocolType": "LOCAL_PROSPECTIVE_RESEARCH_PLAN_NOT_EVIDENCE_MANIFEST",
+  "preparedAtUTC": "2026-11-05T01:26:23.182856+00:00",
+  "status": "AWAITING_FUTURE_DATA_AND_NATIVE_CONTEXT_CAPTURE",
+  "independentlyRegistered": false,
+  "runtimeApplied": false,
+  "scheduledOrBackgroundWorkCreated": false,
+  "projectVersion": "0.8.0",
+  "symbol": "FOREXCOM:XAUUSD",
+  "chartType": "standard candles",
+  "timeframe": "5",
+  "strategySource": "pine/experiments/strategy_quantity_units.pine",
+  "strategySourceSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+  "researchWindowUTC": {
+    "startInclusive": "2026-11-06T00:00:00+00:00",
+    "endExclusive": "2026-11-20T00:00:00+00:00",
+    "startMs": 1793923200000,
+    "endMs": 1795132800000
+  },
+  "configurationDefinition": {
+    "actualReferenceCaptures": [
+      {
+        "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-top.ax.txt",
+        "sha256": "2682e61d2fdaaa479b8d5411520d7edb1aac4ad9505f783238a3cd93f2e09b60"
+      },
+      {
+        "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-middle.ax.txt",
+        "sha256": "16635f220e4db4063ad2f773c5abeb7bdf750ab02735d2a6bb82fc1198a1bfe8"
+      },
+      {
+        "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-bottom.ax.txt",
+        "sha256": "20211c8b810e71ed21d6fe4b59fdf805fe81032a24d8a08b34667fe30e44bf34"
+      }
+    ],
+    "plannedOverrides": {
+      "useResearchWindow": true,
+      "researchStart": 1793923200000,
+      "researchEnd": 1795132800000
+    },
+    "allOtherInputs": "Exactly the 115-control matrix-window-final configuration, A-H on; no optimization or filter changes.",
+    "propertiesReference": {
+      "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-properties.ax.txt",
+      "sha256": "5a69048184def7a9c5ba54fc521c7cd8dd90900a2aa4d51c13133b614b3ffdfa"
+    },
+    "strategyProperties": "10000 USD, 0.01 percent commission per side, 2 ticks slippage, pyramiding 0, 1x long/short leverage, bar-close calculation, one-tick order delay. Explicit Pine qty controls size.",
+    "spreadConfigured": false
+  },
+  "evaluationRules": [
+    "M5 is the pre-existing primary research interval; do not select an interval after seeing this holdout.",
+    "Obtain an exact editor copy-back and complete actual input/Properties captures for this future run. This file does not assert those future runtime settings.",
+    "Record available history/warm-up and require at least 1000 preceding M5 bars before the holdout start; report failure if the account cannot supply the required context.",
+    "Include every admitted plan and every position entered inside the window. Preserve unmatched/open positions separately; follow cross-end positions to closure without admitting new plans.",
+    "Aggregate partial exit rows by actual entry identity; report complete position counts, costs, net profit, profit factor, intratrade and closed-position drawdowns separately.",
+    "Report actual counts and all losses; fewer than 30 complete positions makes this small study inconclusive, and 30 is not a statistical-power guarantee.",
+    "Use Nov 6-13 and Nov 13-20 only as predeclared chronological summaries; do not retune between them or label them walk-forward optimization.",
+    "No parameter/source/window selection after viewing holdout outcomes. A change creates a separate disclosed experiment and cannot retain this protocol identity.",
+    "Keep all raw Pine Logs and available native report evidence, including negative or incomplete outcomes.",
+    "Optional manual closed-bar observation and reload captures on Free can document specific signal stability; they do not become Bar Replay evidence."
+  ],
+  "automationAndSafety": {
+    "manualResearchOnly": true,
+    "liveOrders": false,
+    "alerts": false,
+    "telegram": false,
+    "deployment": false,
+    "accountUpgrade": false
+  },
+  "limitations": [
+    "Locally timestamped preparation, not independent preregistration.",
+    "No future market results exist in this artifact.",
+    "Does not close Replay, baseline parity, OOS, walk-forward or profitability gates."
+  ]
+}

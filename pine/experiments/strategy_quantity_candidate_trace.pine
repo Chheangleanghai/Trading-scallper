@@ -674,7 +674,8 @@ traceWindow(int barOpen) =>
     bool octoberTwentyOne = barOpen >= 1792573200000 and barOpen < 1792589400000
     bool octoberTwentyTwo = (barOpen >= 1792655100000 and barOpen < 1792659600000) or (barOpen >= 1792681200000 and barOpen < 1792684800000)
     bool novemberThree = barOpen >= 1793692800000 and barOpen < 1793696400000
-    octoberEight or octoberNine or octoberNineteen or octoberTwentyOne or octoberTwentyTwo or novemberThree
+    bool novemberFour = barOpen >= 1793784600000 and barOpen < 1793791800000
+    octoberEight or octoberNine or octoberNineteen or octoberTwentyOne or octoberTwentyTwo or novemberThree or novemberFour
 
 researchCandidateTrace(string phase, bool cancelling) =>
     if auditLog and timeframe.isminutes and timeframe.multiplier == 5 and barstate.isconfirmed and traceWindow(time)

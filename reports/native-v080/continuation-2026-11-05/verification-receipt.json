@@ -1,0 +1,196 @@
+{
+  "evidenceType": "NATIVE_EXPERIMENT_RESEARCH_NOT_BASELINE_RELEASE_MANIFEST",
+  "recordedAtUTC": "2026-11-05T01:26:23.182856+00:00",
+  "projectVersion": "0.8.0",
+  "preservedSourceHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/strategy_exit_audit.pine": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+    "pine/experiments/strategy_quantity_units.pine": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed"
+  },
+  "traceSourceHashes": {
+    "indicator_candidate_trace.pine": "498cada5de4ee79311499bb073506d225fec6d5dbed202d663b8d0332885154d",
+    "strategy_legacy_candidate_trace.pine": "5b3d9a729f186652a47549077dd3c6c82bed1eba79087cfbe5410e36714029ae",
+    "strategy_quantity_candidate_trace.pine": "b1e3d34cec84b5fccf1c16fe65c351b56857dfe5877e29ab6c8980c44c92603a"
+  },
+  "copybacks": {
+    "corrected-strategy-editor-copy.pine": {
+      "localSource": "pine/experiments/strategy_quantity_units.pine",
+      "rawSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+      "normalizedSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+      "normalizedExactMatch": true,
+      "lineCount": 1547
+    },
+    "matrix-strategy-editor-copy.pine": {
+      "localSource": "pine/experiments/strategy_quantity_units.pine",
+      "rawSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+      "normalizedSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+      "normalizedExactMatch": true,
+      "lineCount": 1547
+    },
+    "indicator-trace-editor-copy.pine": {
+      "localSource": "pine/experiments/indicator_candidate_trace.pine",
+      "rawSha256": "498cada5de4ee79311499bb073506d225fec6d5dbed202d663b8d0332885154d",
+      "normalizedSha256": "498cada5de4ee79311499bb073506d225fec6d5dbed202d663b8d0332885154d",
+      "normalizedExactMatch": true,
+      "lineCount": 1365
+    },
+    "legacy-trace-editor-copy.pine": {
+      "localSource": "pine/experiments/strategy_legacy_candidate_trace.pine",
+      "rawSha256": "5b3d9a729f186652a47549077dd3c6c82bed1eba79087cfbe5410e36714029ae",
+      "normalizedSha256": "5b3d9a729f186652a47549077dd3c6c82bed1eba79087cfbe5410e36714029ae",
+      "normalizedExactMatch": true,
+      "lineCount": 1569
+    },
+    "quantity-trace-editor-copy.pine": {
+      "localSource": "pine/experiments/strategy_quantity_candidate_trace.pine",
+      "rawSha256": "b1e3d34cec84b5fccf1c16fe65c351b56857dfe5877e29ab6c8980c44c92603a",
+      "normalizedSha256": "b1e3d34cec84b5fccf1c16fe65c351b56857dfe5877e29ab6c8980c44c92603a",
+      "normalizedExactMatch": true,
+      "lineCount": 1579
+    },
+    "restored-exit-audit-editor-copy.pine": {
+      "localSource": "pine/experiments/strategy_exit_audit.pine",
+      "rawSha256": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+      "normalizedSha256": "a8267588770637b4a75e50367267dac11a8ba6783cdd9084e7d9620ff3961623",
+      "normalizedExactMatch": true,
+      "lineCount": 1537
+    },
+    "indicator-editor-copy-current.pine": {
+      "localSource": "pine/indicator.pine",
+      "rawSha256": "d13f4f7c741c7a54c67d0d2a86f30181b346e136b457e12aee925d62d0270646",
+      "normalizedSha256": "109593dc793ecd8b7a63485b6a7d4f4034e845bc02c6c18f560a121e3a924c63",
+      "normalizedExactMatch": false,
+      "lineCount": 1334,
+      "difference": "Exactly four trailing EOF spaces after CRLF normalization; saved user source preserved."
+    }
+  },
+  "nativeCsvArtifacts": {
+    "corrected-strategy-native.csv": {
+      "sha256": "a10bb8aa67294e332bc26f738d006989b5368a1c04714a8c8eaff0c8c6e3305b",
+      "bytes": 527671
+    },
+    "indicator-native.csv": {
+      "sha256": "1d7e7577ebd90aa8bab73d450afe8a42a065dc32bfe24e0526c8724427ed91c1",
+      "bytes": 305731
+    },
+    "indicator-trace-native.csv": {
+      "sha256": "bb216f2562bd6cbcb8787fea0d8ad6e8977f2d97b4a77589c8ca643fb62cd9e0",
+      "bytes": 5877094
+    },
+    "legacy-trace-native.csv": {
+      "sha256": "45dae18907809e2adb687d259e04c69d07747a3af6c67905ca6df94d3a58adc7",
+      "bytes": 6124690
+    },
+    "matrix-m1-native.csv": {
+      "sha256": "5a69fa452d12831cab367841abfc20dd1970615352467987129089e46a8da5f0",
+      "bytes": 147369
+    },
+    "matrix-m15-native.csv": {
+      "sha256": "ffd8d9d0f84d0c93367395152d5e6f080b7d21937e47ff1a3f083c88c29288e7",
+      "bytes": 29712
+    },
+    "matrix-m3-native.csv": {
+      "sha256": "b179d8350732ce9c67e81f829c2b6024b99f6e9786cd28fa95a715ce0e301136",
+      "bytes": 111756
+    },
+    "matrix-m5-native.csv": {
+      "sha256": "4d845801a8c8d3e5b1469d83ce94448dbd6d47d97b49f1ee1ebfa219270cfae2",
+      "bytes": 97346
+    },
+    "quantity-trace-native.csv": {
+      "sha256": "2f12254cffc376c2ef61731840747a2e1284c6dfd685264431e62fa913a420a9",
+      "bytes": 6153412
+    }
+  },
+  "correctedRun": {
+    "status": "NATIVE_CORRECTED_RUN_RECONCILED",
+    "requestedAllocationRecords": 92,
+    "completePositionGroups": 92,
+    "actualExitRows": 140,
+    "allocationOrClosureViolations": [],
+    "groupsWithAllThreeBracketIds": 14,
+    "bracketResidualGroups": 0,
+    "rowNetMatchesEveryGroup": true,
+    "grossPricePnL": 76.32200000000444,
+    "commission": 160.43720279999997,
+    "net": -84.11520280000008,
+    "limitations": [
+      "Experimental source; not baseline validation.",
+      "Historical OHLC emulator run; not Replay or live fills.",
+      "No configured spread model."
+    ]
+  },
+  "comparisons": {
+    "legacy": {
+      "indicatorPlans": 89,
+      "strategyPlans": 92,
+      "commonPlans": 84,
+      "exactCommonPlans": 80,
+      "tolerance": 0,
+      "parity": false
+    },
+    "quantity": {
+      "indicatorPlans": 89,
+      "strategyPlans": 92,
+      "commonPlans": 85,
+      "exactCommonPlans": 82,
+      "tolerance": 0,
+      "parity": false
+    }
+  },
+  "restoration": {
+    "status": "RESTORED_SAVED_AND_RELOADED",
+    "timeframe": "15",
+    "symbol": "FOREXCOM:XAUUSD",
+    "indicator": "Original saved Indicator; hidden; whitespace-only EOF variant preserved.",
+    "strategy": "Original exit-audit experiment; visible.",
+    "observedInputsBeforeAndAfterReload": {
+      "restored-strategy-inputs": {
+        "controls": 115,
+        "matchesOriginalObservedConfiguration": true
+      },
+      "restored-indicator-inputs": {
+        "controls": 115,
+        "matchesOriginalObservedConfiguration": true
+      },
+      "persisted-strategy-inputs": {
+        "controls": 115,
+        "matchesOriginalObservedConfiguration": true
+      },
+      "persisted-indicator-inputs": {
+        "controls": 115,
+        "matchesOriginalObservedConfiguration": true
+      }
+    },
+    "autosave": "ON, native screenshot observed before and after reload.",
+    "scale": "Both native menus show Pinned to right scale; one rendered right price axis; fitted display saved and reloaded.",
+    "panels": "Editor and logs closed; Strategy Tester open; Replay off.",
+    "finalEvidence": [
+      "final-chart.png",
+      "final-chart.ax.txt",
+      "persisted-autosave-on.png"
+    ]
+  },
+  "localValidation": {
+    "fullVerify": "169 tests / 16 files, TypeScript, generation and 10 independent parses passed.",
+    "fullOutput": "local-verification-final.txt",
+    "productionDependencyVulnerabilities": 0,
+    "productionDependencies": "empty",
+    "gitDiffCheck": "passed after final report edits"
+  },
+  "openGates": [
+    "Frozen baseline multi-plan parity",
+    "Candle-by-candle non-repainting/Replay",
+    "Untouched OOS and walk-forward",
+    "General profitability"
+  ],
+  "noExternalActions": [
+    "No alert created",
+    "No Telegram message",
+    "No live order",
+    "No deployment",
+    "No upgrade"
+  ],
+  "shareArchive": "../xauusd-smart-scalper-research-2026-11-05.zip"
+}

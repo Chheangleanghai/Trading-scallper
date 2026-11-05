@@ -1,0 +1,18 @@
+{
+  "status": "NATIVE_CORRECTED_RUN_RECONCILED",
+  "requestedAllocationRecords": 92,
+  "completePositionGroups": 92,
+  "actualExitRows": 140,
+  "allocationOrClosureViolations": [],
+  "groupsWithAllThreeBracketIds": 14,
+  "bracketResidualGroups": 0,
+  "rowNetMatchesEveryGroup": true,
+  "grossPricePnL": 76.32200000000444,
+  "commission": 160.43720279999997,
+  "net": -84.11520280000008,
+  "limitations": [
+    "Experimental source; not baseline validation.",
+    "Historical OHLC emulator run; not Replay or live fills.",
+    "No configured spread model."
+  ]
+}

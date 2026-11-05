@@ -1,0 +1,174 @@
+{
+  "status": "NATIVE_EXPERIMENT_IN_SAMPLE_RESEARCH",
+  "source": "pine/experiments/strategy_quantity_units.pine",
+  "sourceSha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+  "effectivePlanWindowUTC": {
+    "startInclusive": 1793318400000,
+    "endExclusive": 1793836800000
+  },
+  "costs": {
+    "commissionPctPerSide": 0.01,
+    "slippageTicks": 2,
+    "spreadConfigured": false,
+    "initialCapitalUSD": 10000
+  },
+  "runs": [
+    {
+      "timeframe": 1,
+      "nativeRecords": 196,
+      "rawCsvSha256": "5a69fa452d12831cab367841abfc20dd1970615352467987129089e46a8da5f0",
+      "plans": 20,
+      "completedPositions": 20,
+      "closedExitRows": 49,
+      "positionWins": 12,
+      "positionLosses": 8,
+      "grossPricePnL": 78.73000000000079,
+      "commission": 35.5542758,
+      "net": 43.17572420000001,
+      "positionProfitFactor": 1.9758091047367987,
+      "closedPositionMaxDrawdown": 28.81666299999999,
+      "bracketResidualGroups": 0,
+      "testerUI": {
+        "loadedReportRange": "Oct 26, 2026 \u2014 Nov 5, 2026",
+        "net": "+43.18 USD +0.43%",
+        "maxDrawdown": "33.00 USD 0.33%",
+        "positiveClosedRows": "55.10% 27/49",
+        "closedRowProfitFactor": "1.863"
+      },
+      "additionalRoundTripPriceCostScenarios": [
+        {
+          "extraPriceCostPerUnit": 0.1,
+          "netAfterExtraCost": 38.67572420000001
+        },
+        {
+          "extraPriceCostPerUnit": 0.3,
+          "netAfterExtraCost": 29.675724200000012
+        },
+        {
+          "extraPriceCostPerUnit": 0.5,
+          "netAfterExtraCost": 20.67572420000001
+        }
+      ]
+    },
+    {
+      "timeframe": 3,
+      "nativeRecords": 153,
+      "rawCsvSha256": "b179d8350732ce9c67e81f829c2b6024b99f6e9786cd28fa95a715ce0e301136",
+      "plans": 19,
+      "completedPositions": 19,
+      "closedExitRows": 30,
+      "positionWins": 8,
+      "positionLosses": 11,
+      "grossPricePnL": 51.269999999999264,
+      "commission": 33.5790694,
+      "net": 17.690930599999994,
+      "positionProfitFactor": 1.2352460779703398,
+      "closedPositionMaxDrawdown": 57.04347750000001,
+      "bracketResidualGroups": 0,
+      "testerUI": {
+        "loadedReportRange": "Oct 19, 2026 \u2014 Nov 5, 2026",
+        "net": "+17.69 USD +0.18%",
+        "maxDrawdown": "61.93 USD 0.62%",
+        "positiveClosedRows": "50.00% 15/30",
+        "closedRowProfitFactor": "1.235"
+      },
+      "additionalRoundTripPriceCostScenarios": [
+        {
+          "extraPriceCostPerUnit": 0.1,
+          "netAfterExtraCost": 13.440930599999994
+        },
+        {
+          "extraPriceCostPerUnit": 0.3,
+          "netAfterExtraCost": 4.940930599999993
+        },
+        {
+          "extraPriceCostPerUnit": 0.5,
+          "netAfterExtraCost": -3.559069400000009
+        }
+      ]
+    },
+    {
+      "timeframe": 5,
+      "nativeRecords": 134,
+      "rawCsvSha256": "4d845801a8c8d3e5b1469d83ce94448dbd6d47d97b49f1ee1ebfa219270cfae2",
+      "plans": 17,
+      "completedPositions": 17,
+      "closedExitRows": 25,
+      "positionWins": 11,
+      "positionLosses": 6,
+      "grossPricePnL": 90.05200000000069,
+      "commission": 30.239169,
+      "net": 59.812830999999996,
+      "positionProfitFactor": 2.024124652778504,
+      "closedPositionMaxDrawdown": 23.3867178,
+      "bracketResidualGroups": 0,
+      "testerUI": {
+        "loadedReportRange": "Oct 5, 2026 \u2014 Nov 5, 2026",
+        "net": "+59.81 USD +0.60%",
+        "maxDrawdown": "27.06 USD 0.27%",
+        "positiveClosedRows": "64.00% 16/25",
+        "closedRowProfitFactor": "1.998"
+      },
+      "additionalRoundTripPriceCostScenarios": [
+        {
+          "extraPriceCostPerUnit": 0.1,
+          "netAfterExtraCost": 55.992830999999995
+        },
+        {
+          "extraPriceCostPerUnit": 0.3,
+          "netAfterExtraCost": 48.352830999999995
+        },
+        {
+          "extraPriceCostPerUnit": 0.5,
+          "netAfterExtraCost": 40.712830999999994
+        }
+      ]
+    },
+    {
+      "timeframe": 15,
+      "nativeRecords": 42,
+      "rawCsvSha256": "ffd8d9d0f84d0c93367395152d5e6f080b7d21937e47ff1a3f083c88c29288e7",
+      "plans": 6,
+      "completedPositions": 6,
+      "closedExitRows": 6,
+      "positionWins": 2,
+      "positionLosses": 4,
+      "grossPricePnL": 5.431000000000818,
+      "commission": 10.6829067,
+      "net": -5.251906700000003,
+      "positionProfitFactor": 0.8139880246182083,
+      "closedPositionMaxDrawdown": 28.234239700000003,
+      "bracketResidualGroups": 0,
+      "testerUI": {
+        "loadedReportRange": "Aug 3, 2026 \u2014 Nov 5, 2026",
+        "net": "\u22125.25 USD \u22120.05%",
+        "maxDrawdown": "35.94 USD 0.36%",
+        "positiveClosedRows": "33.33% 2/6",
+        "closedRowProfitFactor": "0.814"
+      },
+      "additionalRoundTripPriceCostScenarios": [
+        {
+          "extraPriceCostPerUnit": 0.1,
+          "netAfterExtraCost": -6.6019067000000025
+        },
+        {
+          "extraPriceCostPerUnit": 0.3,
+          "netAfterExtraCost": -9.301906700000004
+        },
+        {
+          "extraPriceCostPerUnit": 0.5,
+          "netAfterExtraCost": -12.001906700000003
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Experimental quantity correction, not the frozen baseline Strategy.",
+    "Four separate runs, not a combined portfolio.",
+    "Only four London sessions plus a weekend; already inspected in-sample data.",
+    "Loaded warm-up history differs by interval; exact earliest bar is not in these logs.",
+    "UI maximum drawdown includes intratrade excursions; closed-position drawdown does not.",
+    "Additional spread costs below are assumed sensitivity scenarios, not broker measurements.",
+    "No untouched OOS, walk-forward, tick replay, live fills or profitability claim."
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "status": "GENUINE_NATIVE_EXPERIMENT_TRACES",
+  "matchedInputControls": 115,
+  "traceBars": 249,
+  "completePhasesPerBar": [
+    "BEFORE_UPDATE",
+    "AFTER_UPDATE",
+    "AFTER_ARBITRATION"
+  ],
+  "captures": {
+    "indicator": {
+      "records": 7863,
+      "sha256": "bb216f2562bd6cbcb8787fea0d8ad6e8977f2d97b4a77589c8ca643fb62cd9e0",
+      "engineRecords": 747,
+      "candidateRecords": 6723,
+      "plans": 89
+    },
+    "legacy": {
+      "records": 8124,
+      "sha256": "45dae18907809e2adb687d259e04c69d07747a3af6c67905ca6df94d3a58adc7",
+      "engineRecords": 747,
+      "candidateRecords": 6723,
+      "plans": 92
+    },
+    "quantity": {
+      "records": 8198,
+      "sha256": "2f12254cffc376c2ef61731840747a2e1284c6dfd685264431e62fa913a420a9",
+      "engineRecords": 747,
+      "candidateRecords": 6723,
+      "plans": 92
+    }
+  },
+  "comparisons": {
+    "legacy": {
+      "indicatorPlans": 89,
+      "strategyPlans": 92,
+      "commonPlans": 84,
+      "exactCommonPlans": 80,
+      "tolerance": 0,
+      "parity": false,
+      "mismatches": [
+        {
+          "timestamp": 1791444900000,
+          "field": "strategy",
+          "indicator": "C_TURTLE_SOUP",
+          "strategy": "B_CRT"
+        },
+        {
+          "timestamp": 1791448500000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791450900000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791532200000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791533100000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1791533700000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791539700000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791545400000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1791549000000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1792406100000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1792407900000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1792576500000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1792587300000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1792658100000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1792683600000,
+          "field": "setupTimestamp",
+          "indicator": 1792682700000,
+          "strategy": 1792683000000
+        },
+        {
+          "timestamp": 1793695200000,
+          "field": "setupTimestamp",
+          "indicator": 1793694000000,
+          "strategy": 1793694300000
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "setupTimestamp",
+          "indicator": 1793787000000,
+          "strategy": 1793787300000
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "strategy",
+          "indicator": "B_CRT",
+          "strategy": "F_TREND_PULLBACK"
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "sl",
+          "indicator": 4040.39,
+          "strategy": 4040.37
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp1",
+          "indicator": 4052.93,
+          "strategy": 4052.95
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp2",
+          "indicator": 4059.2,
+          "strategy": 4059.24
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp3",
+          "indicator": 4065.47,
+          "strategy": 4065.53
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "quality",
+          "indicator": 90,
+          "strategy": 80
+        }
+      ]
+    },
+    "quantity": {
+      "indicatorPlans": 89,
+      "strategyPlans": 92,
+      "commonPlans": 85,
+      "exactCommonPlans": 82,
+      "tolerance": 0,
+      "parity": false,
+      "mismatches": [
+        {
+          "timestamp": 1791448500000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791450900000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791532200000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791533100000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1791533700000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791539700000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1791545400000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1791549000000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1792406100000,
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        },
+        {
+          "timestamp": 1792407900000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1792658100000,
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        },
+        {
+          "timestamp": 1792683600000,
+          "field": "setupTimestamp",
+          "indicator": 1792682700000,
+          "strategy": 1792683000000
+        },
+        {
+          "timestamp": 1793695200000,
+          "field": "setupTimestamp",
+          "indicator": 1793694000000,
+          "strategy": 1793694300000
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "setupTimestamp",
+          "indicator": 1793787000000,
+          "strategy": 1793787300000
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "strategy",
+          "indicator": "B_CRT",
+          "strategy": "F_TREND_PULLBACK"
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "sl",
+          "indicator": 4040.39,
+          "strategy": 4040.37
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp1",
+          "indicator": 4052.93,
+          "strategy": 4052.95
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp2",
+          "indicator": 4059.2,
+          "strategy": 4059.24
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "tp3",
+          "indicator": 4065.47,
+          "strategy": 4065.53
+        },
+        {
+          "timestamp": 1793787600000,
+          "field": "quality",
+          "indicator": 90,
+          "strategy": 80
+        }
+      ]
+    }
+  },
+  "limits": [
+    "Experiments, not frozen baseline release gates.",
+    "Bounded historical snapshots do not establish Replay/non-repainting.",
+    "Matching source labels in payloads alone do not authenticate a draft."
+  ]
+}

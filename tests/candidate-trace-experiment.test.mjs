@@ -39,6 +39,8 @@ if traceWindow(1792670400000) or not traceWindow(1792681200000)
     runtime.error('Disjoint trace windows failed')
 if traceWindow(1793781000000)
     runtime.error('Trace escaped its research window')
+if not traceWindow(1793784600000) or traceWindow(1793791800000)
+    runtime.error('New native November 4 mismatch window boundary failed')
 if traceInteger(na) != 'null' or tracePrice(na) != 'null' or traceBoolean(false) != 'false'
     runtime.error('Trace JSON null/boolean serialization failed')
 `,
