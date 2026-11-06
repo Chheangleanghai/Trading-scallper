@@ -17,6 +17,9 @@ if barstate.isfirst
         array.push(reviewQmLines, line.new(bar_index, close, bar_index, close, color=na, style=line.style_dashed))
 
 var table reviewBoard = table.new(position.bottom_right, 3, 10, frame_color=color.rgb(148, 163, 184), frame_width=1, bgcolor=color.new(color.white, 8))
+var int reviewDecisionTime = na
+if barstate.isconfirmed
+    reviewDecisionTime := time_close
 if barstate.islast or barstate.islastconfirmedhistory
     table.clear(reviewBoard, 0, 0, 2, 9)
     for index = 0 to array.size(candidates) - 1
@@ -50,7 +53,7 @@ if barstate.islast or barstate.islastconfirmedhistory
             line.set_xy1(invalidLine, start, invalidation)
             line.set_xy2(invalidLine, right, invalidation)
             label.set_xy(guideTag, right, upper)
-    bool qmKnown = reviewShowGuides and array.size(reviewQmBars) == 5 and array.size(reviewQmPrices) == 5 and (candH.stage > 0 or ((active or pending) and selectedStrategy == 'H_QUASIMODO' and reviewQmSetupTime == signalSetupTime))
+    bool qmKnown = reviewShowGuides and array.size(reviewQmBars) == 5 and array.size(reviewQmPrices) == 5 and (candH.stage > 0 or ((active or pending) and selectedStrategy == 'H_QUASIMODO' and reviewQm.setupTime == signalSetupTime))
     if qmKnown
         qmKnown := bar_index - array.get(reviewQmBars, 0) <= 1000
     for index = 0 to 3
@@ -71,7 +74,7 @@ if barstate.islast or barstate.islastconfirmedhistory
                 c := candSupply
             int currentStage = module == 0 ? stage : c.stage
             bool selected = (active or pending or brokerBusy) and str.substring(selectedStrategy, 0, 1) == str.substring(c.id, 0, 1)
-            bool checked = c.ready and c.confirmationTime == time_close
+            bool checked = c.ready and c.confirmationTime == reviewDecisionTime
             string stateCaption = not c.enabled ? 'OFF' : selected ? (pending ? 'PLAN PENDING' : 'PLAN ACTIVE') : checked ? (c.rejectionReason == '' ? 'TRIGGER ✓' : 'BLOCKED') : currentStage > 0 ? 'SETUP' : 'WAIT'
             string detail = not c.enabled ? 'Disabled in inputs' : selected ? signalReason : checked ? (c.rejectionReason == '' ? 'Qualified directions need arbitration' : c.rejectionReason) : currentStage > 0 ? ((active or pending or brokerBusy) ? 'Plan slot occupied' : reviewNeeded(c, currentStage)) : c.status == 'EXPIRED' or c.status == 'INVALIDATED' ? 'Last setup ' + str.lower(c.status) : 'Need a new confirmed setup'
             color rowBackground = module % 2 == 0 ? color.rgb(250, 252, 255) : color.rgb(241, 245, 249)

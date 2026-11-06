@@ -1,0 +1,9 @@
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  23:56:16
+   Duration  194ms (tests 82%, import 11%, transform 5%, worker 2%)
+

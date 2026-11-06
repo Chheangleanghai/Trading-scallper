@@ -1,0 +1,332 @@
+{
+  "attribution": "Observed native TradingView input controls, captured UTC chart display; no defaults substituted",
+  "evidenceFiles": [
+    "inputs-page0.ax.txt",
+    "inputs-page1.ax.txt",
+    "inputs-page2.ax.txt",
+    "inputs-page3.ax.txt"
+  ],
+  "inputCount": 117,
+  "inputSettings": {
+    "reviewShowBoard": true,
+    "reviewShowGuides": true,
+    "clearSignalView": "Context + levels",
+    "clearLevelBars": 8,
+    "clearPlanLimit": 1,
+    "clearSpaceLabels": false,
+    "clearShowPriceCard": true,
+    "enableA": true,
+    "enableB": true,
+    "enableC": true,
+    "enableD": true,
+    "enableE": true,
+    "enableF": true,
+    "enableG": true,
+    "enableH": true,
+    "crtTF": "15",
+    "turtleAge": 3,
+    "levelTolerance": 0.15,
+    "maxZoneTests": 2,
+    "useEMA50": true,
+    "pullbackDepth": 0.3,
+    "accumulationBars": 12,
+    "accumulationWidth": 3.0,
+    "strategyThresholds": false,
+    "thresholdA": 75,
+    "thresholdB": 75,
+    "thresholdC": 75,
+    "thresholdD": 75,
+    "thresholdE": 75,
+    "thresholdF": 75,
+    "thresholdG": 75,
+    "thresholdH": 75,
+    "useResearchWindow": false,
+    "researchStart": 1767225600000,
+    "researchEnd": 1798761600000,
+    "tradeSide": "Both",
+    "auditLog": true,
+    "swing": 3,
+    "expiry": 20,
+    "threshold": 75,
+    "cooldown": 5,
+    "maxTrades": 5,
+    "maxExposurePct": 90.0,
+    "riskPct": 0.5,
+    "buffer": 0.15,
+    "maxStop": 3.0,
+    "maxDistance": 1.5,
+    "minRR": 2.0,
+    "r1": 1.0,
+    "r2": 2.0,
+    "r3": 3.0,
+    "minDisp": 0.7,
+    "trendFilter": true,
+    "emaFilter": false,
+    "useSession": true,
+    "sessionPreset": "London",
+    "sessionHours": "0800-1700",
+    "sessionZone": "Europe/London",
+    "manualPause": false,
+    "newsStart": 0,
+    "newsEnd": 0,
+    "entryMode": "Close",
+    "pendingBars": 3,
+    "timeExit": 15,
+    "targetMode": "Fixed R",
+    "stopMode": "Structure",
+    "atrStop": 1.5,
+    "breakEven": false,
+    "breakEvenR": 1.0,
+    "trailing": false,
+    "trailingStartR": 2.0,
+    "trailingATR": 1.5,
+    "confluenceLiquidity": false,
+    "confluenceFib": false,
+    "confluencePD": false,
+    "showDaily": false,
+    "showSessionLevels": false,
+    "showFibonacci": false,
+    "showPremiumDiscount": false,
+    "showBreakers": false,
+    "showWyckoff": false,
+    "partial": true,
+    "visualLayout": "Reference",
+    "historyMode": "Off",
+    "historyPlanLimit": 8,
+    "historyLookback": 3000,
+    "showConceptPanel": false,
+    "showSwingLevels": true,
+    "showSupportResistance": true,
+    "showCRTSweeps": false,
+    "showContextSweeps": true,
+    "showEMA55": true,
+    "contextHistory": "Latest only",
+    "contextZoneBars": 60,
+    "contextZoneDistance": 8.0,
+    "contextLabelGap": 8,
+    "zoneExtension": 12,
+    "dashboardSize": "Tiny",
+    "chartLabelSize": "Small",
+    "showDashboard": false,
+    "showPerformance": true,
+    "showUnusedModules": false,
+    "showSwingLabels": false,
+    "maxStructureLabels": 15,
+    "showLastPlan": true,
+    "contextTransparency": 82,
+    "showEMA": true,
+    "showZones": true,
+    "showTrade": true,
+    "showEntryLine": true,
+    "showSLLine": true,
+    "showTP1Line": true,
+    "showTP2Line": true,
+    "showTP3Line": true,
+    "showRiskReward": true,
+    "showOB": true,
+    "showStructure": true
+  },
+  "observedControls": {
+    "clearSignalView": [
+      "470 combo box (settable) Context + levels"
+    ],
+    "clearLevelBars": [
+      "473 text field (settable) 8"
+    ],
+    "clearPlanLimit": [
+      "475 text field (settable) 1"
+    ],
+    "crtTF": [
+      "496 combo box (settable) 15 minutes"
+    ],
+    "turtleAge": [
+      "499 text field (settable) 3"
+    ],
+    "levelTolerance": [
+      "501 text field (settable) 0.15"
+    ],
+    "maxZoneTests": [
+      "503 text field (settable) 2"
+    ],
+    "pullbackDepth": [
+      "506 text field (settable) 0.3"
+    ],
+    "accumulationBars": [
+      "508 text field (settable) 12"
+    ],
+    "accumulationWidth": [
+      "510 text field (settable) 3"
+    ],
+    "thresholdA": [
+      "514 text field (settable) 75"
+    ],
+    "thresholdB": [
+      "516 text field (settable) 75"
+    ],
+    "thresholdC": [
+      "518 text field (settable) 75"
+    ],
+    "thresholdD": [
+      "520 text field (settable) 75"
+    ],
+    "thresholdE": [
+      "522 text field (settable) 75"
+    ],
+    "thresholdF": [
+      "524 text field (settable) 75"
+    ],
+    "thresholdG": [
+      "526 text field (settable) 75"
+    ],
+    "thresholdH": [
+      "528 text field (settable) 75"
+    ],
+    "researchStart": [
+      "532 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+      "533 combo box (settable) 00:00",
+      "535 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+      "536 combo box (settable) 00:00"
+    ],
+    "researchEnd": [
+      "535 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+      "536 combo box (settable) 00:00",
+      "538 combo box (settable) Both"
+    ],
+    "tradeSide": [
+      "538 combo box (settable) Both"
+    ],
+    "swing": [
+      "542 text field (settable) 3"
+    ],
+    "expiry": [
+      "544 text field (settable) 20"
+    ],
+    "threshold": [
+      "546 text field (settable) 75"
+    ],
+    "cooldown": [
+      "548 text field (settable) 5"
+    ],
+    "maxTrades": [
+      "550 text field (settable) 5"
+    ],
+    "maxExposurePct": [
+      "552 text field (settable) 90"
+    ],
+    "riskPct": [
+      "562 text field (settable) 0.5"
+    ],
+    "buffer": [
+      "564 text field (settable) 0.15"
+    ],
+    "maxStop": [
+      "566 text field (settable) 3"
+    ],
+    "maxDistance": [
+      "568 text field (settable) 1.5"
+    ],
+    "minRR": [
+      "570 text field (settable) 2"
+    ],
+    "r1": [
+      "572 text field (settable) 1"
+    ],
+    "r2": [
+      "574 text field (settable) 2"
+    ],
+    "r3": [
+      "558 text field (settable) 3"
+    ],
+    "minDisp": [
+      "560 text field (settable) 0.7"
+    ],
+    "sessionPreset": [
+      "567 combo box (settable) London"
+    ],
+    "sessionHours": [
+      "570 combo box (settable) 08:00",
+      "572 combo box (settable) 17:00",
+      "574 text field (settable) Europe/London"
+    ],
+    "sessionZone": [
+      "574 text field (settable) Europe/London"
+    ],
+    "newsStart": [
+      "511 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+      "512 combo box (settable) 00:00",
+      "514 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+      "515 combo box (settable) 00:00"
+    ],
+    "newsEnd": [
+      "514 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+      "515 combo box (settable) 00:00",
+      "517 combo box (settable) Close"
+    ],
+    "entryMode": [
+      "517 combo box (settable) Close"
+    ],
+    "pendingBars": [
+      "520 text field (settable) 3"
+    ],
+    "timeExit": [
+      "522 text field (settable) 15"
+    ],
+    "targetMode": [
+      "554 combo box (settable) Fixed R"
+    ],
+    "stopMode": [
+      "557 combo box (settable) Structure"
+    ],
+    "atrStop": [
+      "560 text field (settable) 1.5"
+    ],
+    "breakEvenR": [
+      "526 text field (settable) 1"
+    ],
+    "trailingStartR": [
+      "529 text field (settable) 2"
+    ],
+    "trailingATR": [
+      "531 text field (settable) 1.5"
+    ],
+    "visualLayout": [
+      "553 combo box (settable) Reference"
+    ],
+    "historyMode": [
+      "578 combo box (settable) Off"
+    ],
+    "historyPlanLimit": [
+      "581 text field (settable) 8"
+    ],
+    "historyLookback": [
+      "555 text field (settable) 3000"
+    ],
+    "contextHistory": [
+      "567 combo box (settable) Latest only"
+    ],
+    "contextZoneBars": [
+      "570 text field (settable) 60"
+    ],
+    "contextZoneDistance": [
+      "572 text field (settable) 8"
+    ],
+    "contextLabelGap": [
+      "574 text field (settable) 8"
+    ],
+    "zoneExtension": [
+      "576 text field (settable) 12"
+    ],
+    "dashboardSize": [
+      "557 combo box (settable) Tiny"
+    ],
+    "chartLabelSize": [
+      "560 combo box (settable) Small"
+    ],
+    "maxStructureLabels": [
+      "570 text field (settable) 15"
+    ],
+    "contextTransparency": [
+      "573 text field (settable) 82"
+    ]
+  }
+}

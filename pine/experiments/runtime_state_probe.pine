@@ -1,0 +1,6 @@
+//@version=6
+indicator("XAUUSD Runtime state research", overlay=true)
+// Temporary observation control only; no entries, orders or alerts.
+plot(close, display=display.none)
+if barstate.islast
+    log.info('RUNTIME_STATE_AUDIT ' + '{"schema":"runtime-state/v1","symbol":"' + syminfo.tickerid + '","timeframe":"' + timeframe.period + '","time":' + str.tostring(time) + ',"timeClose":' + str.tostring(time_close) + ',"observedAt":' + str.tostring(timenow) + ',"barIndex":' + str.tostring(bar_index) + ',"realtime":' + (barstate.isrealtime ? 'true' : 'false') + ',"history":' + (barstate.ishistory ? 'true' : 'false') + ',"confirmed":' + (barstate.isconfirmed ? 'true' : 'false') + ',"isNew":' + (barstate.isnew ? 'true' : 'false') + '}')

@@ -1,0 +1,149 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,091.87 ▲ +0.75% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 552-554
+~0 standard window XAUUSD 4,091.56 ▲ +0.74% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,091.56 ▲ +0.74% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,091.56 ▲ +0.74% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~												101 text O 4,084.18 H 4,091.56 L 4,083.86 C 4,091.56 +7.38 (+0.18%)
+~											103 text 4,090.86 SELL
+~											104 text 75
+~											105 text 4,091.61 BUY
++							606 container
++								607 container XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++									608 container XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++										609 text XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++										610 button Close menu
++										611 tab group
++											612 tab (selected) Inputs, Value: 1
++											613 tab (settable, integer) Properties, Value: 0
++											614 tab (settable, integer) Style, Value: 0
++											615 tab (settable, integer) Visibility, Value: 0
++										616 container (showing 0-100 of 200 items)
++											617 text CONCEPT REVIEW
++											618 checkbox Show A–H confirmation board, Value: 1
++											619 text Show A–H confirmation board
++											620 checkbox Show candidate zones / triggers (setup only), Value: 1
++											621 text Show candidate zones / triggers (setup only) CLEAR SIGNAL DISPLAY Signal display
++											622 combo box (settable) Context + levels
++												623 text Context + levels
++											624 text Level / box extension bars
++											625 text field (settable) 8
++											626 text Recent signal plans to keep
++											627 text field (settable) 1
++											628 checkbox Separate overlapping price labels with connectors, Value: 0
++											629 text Separate overlapping price labels with connectors
++											630 checkbox Show compact status and price card, Value: 1
++											631 text Show compact status and price card STRATEGIES
++											632 checkbox A: Sweep + MSS + FVG, Value: 1
++											633 text A: Sweep + MSS + FVG
++											634 checkbox B: CRT, Value: 1
++											635 text B: CRT
++											636 checkbox C: Confirmed-pivot Turtle Soup, Value: 1
++											637 text C: Confirmed-pivot Turtle Soup
++											638 checkbox D: K-SNR (confirmed support/resistance), Value: 1
++											639 text D: K-SNR (confirmed support/resistance)
++											640 checkbox E: Supply/demand, Value: 1
++											641 text E: Supply/demand
++											642 checkbox F: Structural trend pullback, Value: 1
++											643 text F: Structural trend pullback
++											644 checkbox G: AMD range approximation, Value: 1
++											645 text G: AMD range approximation
++											646 checkbox H: Confirmed Quasimodo approximation, Value: 1
++											647 text H: Confirmed Quasimodo approximation MODULES CRT reference timeframe
++											648 combo box (settable) 15 minutes
++												649 text 15 minutes
++											650 text Turtle Soup minimum bars since pivot confirmation
++											651 text field (settable) 3
++											652 text Level/zone tolerance ATR
++											653 text field (settable) 0.15
++											654 text S/D maximum tested bars
++											655 text field (settable) 2
++											656 checkbox Trend pullback: require EMA50, Value: 1
++											657 text Trend pullback: require EMA50 Trend pullback: maximum EMA21 overshoot ATR
++											658 text field (settable) 0.3
++											659 text AMD prior accumulation bars
++											660 text field (settable) 12
++											661 text AMD maximum prior range ATR
++											662 text field (settable) 3
++											663 text QUALITY
++											664 checkbox Use strategy-specific quality thresholds, Value: 0
++											665 text Use strategy-specific quality thresholds A quality threshold
++											666 text field (settable) 75
++											667 text B quality threshold
++											668 text field (settable) 75
++											669 text C quality threshold
++											670 text field (settable) 75
++											671 text D quality threshold
++											672 text field (settable) 75
++											673 text E quality threshold
++											674 text field (settable) 75
++											675 text F quality threshold
++											676 text field (settable) 75
++											677 text G quality threshold
++											678 text field (settable) 75
++											679 text H quality threshold
++											680 text field (settable) 75
++											681 text RESEARCH
++											682 checkbox Restrict new plans to date window, Value: 0
++											683 text Restrict new plans to date window Window start (inclusive)
++											684 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD
++											685 combo box (settable) 00:00
++											686 text Window end (exclusive)
++											687 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD
++											688 combo box (settable) 00:00
++											689 text Allowed direction
++											690 combo box (settable) Both
++												691 text Both
++											692 checkbox Log qualified plans and lifecycle events (research only), Value: 1
++											693 text Log qualified plans and lifecycle events (research only) Confirmed pivot strength
++											694 text field (settable) 3
++											695 text Setup expiry bars
++											696 text field (settable) 20
++											697 text Minimum heuristic quality
++											698 text field (settable) 75
++											699 text Signal cooldown bars
++											700 text field (settable) 5
++											701 text Maximum entries per session
++											702 text field (settable) 5
++											703 text RISK Maximum simulated notional / equity % (align with margin properties)
++											704 text field (settable) 90
++											705 text Target mode
++											706 combo box (settable) Fixed R
++												707 text Fixed R
++											708 text Stop mode
++											709 combo box (settable) Structure
++												710 text Structure
++											711 text ATR stop multiplier
++											712 text field (settable) 1.5
++											713 text Simulation risk %
++											714 text field (settable) 0.5
++											715 text ATR stop buffer
++											716 text field (settable) 0.15
++											717 text Maximum stop ATR
++											718 text field (settable) 3
++											719 text Maximum entry distance from FVG ATR
++											720 text field (settable) 1.5
++											721 text Minimum TP2 reward/risk
++											722 text field (settable) 2
++											723 text TP1 fixed R projection
++											724 text field (settable) 1
++											725 text TP2 fixed R projection
++											726 text field (settable) 2
++											727 text TP3 fixed R projection
++										728 pop up button Defaults
++										729 container
++											730 button Cancel
++											731 button Ok
+~				571 tab (selected, settable, boolean) XAUUSD 4,091.56 ▲ +0.74% Unnamed - Memory usage - 466 MB, Value: on
+Selected text: ```
+//@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run…e.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 1, 9, 'H1 ' + (hTrend == 1 ? '↑' : hTrend == -1 ? '↓' : '—') + ' / M15 ' + (mTrend == 1 ? '↑' : mTrend == -1 ? '↓' : '—'), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 2, 9, reviewShort(decisionReason), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240), text_halign=text.align_left)
+// REVIEW_CONCEPT_VIEW_END
+
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

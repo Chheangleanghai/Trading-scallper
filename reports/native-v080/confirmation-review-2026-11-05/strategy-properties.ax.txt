@@ -1,0 +1,74 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,089.96 ▲ +0.7% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 566-711
+~0 standard window XAUUSD 4,089.96 ▲ +0.7% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,089.96 ▲ +0.7% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,089.96 ▲ +0.7% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~												101 text O 4,084.18 H 4,092.48 L 4,083.86 C 4,089.96 +5.78 (+0.14%)
+~											103 text 4,089.60 SELL
+~											104 text 72
+~											105 text 4,090.32 BUY
++								750 container XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++									751 text XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++									752 button Close menu
++									753 tab group
++										754 tab (settable, integer) Inputs, Value: 0
++										755 tab (selected) Properties, Value: 1
++										756 tab (settable, integer) Style, Value: 0
++										757 tab (settable, integer) Visibility, Value: 0
++									758 container
++										759 text GENERAL
++										760 container Click here to learn more
++										761 text Initial capital
++										762 text field (settable) 10,000
++										763 combo box (settable) USD
++											764 text USD
++										765 text Default order size
++										766 text field (settable) 100
++										767 combo box (settable) % of equity
++											768 text % of equity
++										769 text Pyramiding
++										770 text field (settable) 0
++										771 text DETALIZATION AND EXECUTION
++										772 container Click here to learn more
++										773 text Bar detalization
++										774 combo box (settable) Default (4 ticks per bar)
++											775 text Default (4 ticks per bar)
++										776 text Script execution
++										777 combo box (settable) On bar close
++											778 text On bar close
++										779 text BROKER EMULATOR
++										780 container Click here to learn more
++										781 text Commission
++										782 text field (settable) 0.01
++										783 combo box (settable) Percent
++											784 text Percent
++										785 text Long leverage
++										786 text field (settable) 1x
++										787 text Short leverage
++										788 text field (settable) 1x
++										789 text Slippage
++										790 text field (settable) 2
++										791 text ticks Limit order execution
++										792 combo box (settable) Requested price
++											793 text Requested price
++										794 text Order execution delay
++										795 combo box (settable) One tick
++											796 text One tick
++									797 pop up button Defaults
++									798 container
++										799 button Cancel
++										800 button Ok
+~				715 tab (selected, settable, boolean) XAUUSD 4,089.96 ▲ +0.7% Unnamed - Memory usage - 476 MB, Value: on
+Selected text: ```
+//@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run…e.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 1, 9, 'H1 ' + (hTrend == 1 ? '↑' : hTrend == -1 ? '↓' : '—') + ' / M15 ' + (mTrend == 1 ? '↑' : mTrend == -1 ? '↓' : '—'), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 2, 9, reviewShort(decisionReason), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240), text_halign=text.align_left)
+// REVIEW_CONCEPT_VIEW_END
+
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

@@ -1,0 +1,35 @@
+{
+  "scope": "Fresh snapshot-probe historical PLAN_AUDIT equality only; same Indicator execution model. Not Indicator/Strategy parity or candle-by-candle Replay. Exact JSON values, no tolerance or substitutions.",
+  "before": {
+    "file": "probe-before-raw.csv",
+    "sha256": "e128f81a70b29be8cfc30f70ebb0f1c57389a7979c74f6decaad0104db8e3b9b",
+    "rawRecords": 331,
+    "plans": 74
+  },
+  "comparisons": [
+    {
+      "after": {
+        "file": "probe-timeframe-cycle-raw.csv",
+        "sha256": "566e7945d2e75564f26d244343bd22b910b450239b787961505f1b6f69aa941f",
+        "rawRecords": 331,
+        "plans": 74
+      },
+      "commonPlans": 74,
+      "missingPlans": [],
+      "fieldDifferences": [],
+      "allPlanFieldsExactlyEqual": true
+    },
+    {
+      "after": {
+        "file": "probe-after-reload-raw.csv",
+        "sha256": "73a84d3bd85c84a3604338a55a053c9c24acf01cab91b9bae340fcb48db4110d",
+        "rawRecords": 331,
+        "plans": 74
+      },
+      "commonPlans": 74,
+      "missingPlans": [],
+      "fieldDifferences": [],
+      "allPlanFieldsExactlyEqual": true
+    }
+  ]
+}

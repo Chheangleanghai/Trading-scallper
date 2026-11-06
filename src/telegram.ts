@@ -40,6 +40,9 @@ export function formatMessage(s: Signal): string {
       : "Filled entry: not reported",
     s.managedSl !== undefined ? `Managed SL: ${s.managedSl}` : "",
     s.targetSource ? `Targets: ${escapeHtml(s.targetSource)}` : "",
+    s.closeReason ? `Closed: ${escapeHtml(s.closeReason)} at ${new Date(s.closedAt!).toISOString()}` : "",
+    s.exitPrice !== undefined ? `Exit price (emulator): ${s.exitPrice}` : "",
+    s.realizedNet !== undefined ? `Realized net (emulator, after fees): ${s.realizedNet.toFixed(2)} ${escapeHtml(s.realizedCurrency!)}` : "",
   ]
     .filter(Boolean)
     .join("\n");

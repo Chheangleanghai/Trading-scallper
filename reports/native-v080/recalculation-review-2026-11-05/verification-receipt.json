@@ -1,0 +1,426 @@
+{
+  "schema": "native-recalculation-review/v1",
+  "createdAt": "2026-11-06T00:51:14.165484+00:00",
+  "projectVersion": "0.8.0",
+  "scope": "Native isolated research diagnostics, not a baseline release-gate manifest or authenticated TradingView export signature. Preserved raw files are hashed; UI compile/settings attribution is recorded separately.",
+  "frozenSourceHashesUnchanged": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/indicator_confirmation_review.pine": "0a19862b22973e13a31abb29e59a75a18f3e0b84bb76deb2154eae7fa4cd1ed3",
+    "pine/experiments/strategy_confirmation_review.pine": "bbabd036eea548177eaaa85c45d33da07ce2b1289748dc6b041327f48969609a"
+  },
+  "copybacks": [
+    {
+      "copyback": "starting-editor-copy.pine",
+      "source": "pine/experiments/indicator_confirmation_review.pine",
+      "rawCopySha256": "9abff4d45390720af349ea7cbf1466662cb9f2ac2406969612e60014575835ba",
+      "normalizedSha256": "0a19862b22973e13a31abb29e59a75a18f3e0b84bb76deb2154eae7fa4cd1ed3",
+      "normalizedExactMatch": true
+    },
+    {
+      "copyback": "probe-editor-copy.pine",
+      "source": "pine/experiments/indicator_data_snapshot.pine",
+      "rawCopySha256": "73bd44b6755e82d7466e51fc4302f5faf70c866ed30a742a064c228e36604615",
+      "normalizedSha256": "1e814d428b20b24375951d169ef209d75b6e02afd4dc653be53eb1710bd2fdf0",
+      "normalizedExactMatch": true
+    },
+    {
+      "copyback": "probe-reloaded-editor-copy.pine",
+      "source": "pine/experiments/indicator_data_snapshot.pine",
+      "rawCopySha256": "73bd44b6755e82d7466e51fc4302f5faf70c866ed30a742a064c228e36604615",
+      "normalizedSha256": "1e814d428b20b24375951d169ef209d75b6e02afd4dc653be53eb1710bd2fdf0",
+      "normalizedExactMatch": true
+    },
+    {
+      "copyback": "indicator-nov5-editor-copy.pine",
+      "source": "pine/experiments/indicator_nov5_trace.pine",
+      "rawCopySha256": "1cf25b701d5a9372908ea3a1515cf3fe0a997e0abf7716a2b5a641d61d23e449",
+      "normalizedSha256": "b8af2d0cc5c3f5453b6015e977b405f965081dee68f7933f4ddf50760fd23ddf",
+      "normalizedExactMatch": true
+    },
+    {
+      "copyback": "strategy-nov5-editor-copy.pine",
+      "source": "pine/experiments/strategy_nov5_trace.pine",
+      "rawCopySha256": "3449fd3994fd8fb6b9b9928eb2a0e3fca461751b67741f0775833e6226ea9860",
+      "normalizedSha256": "ce4ca8ee7b1e10fc0920c43b457e2b0141bc1aa55fc1c6c854bc6cec9126504c",
+      "normalizedExactMatch": true
+    }
+  ],
+  "runtimeInputs": {
+    "indicatorInputCount": 117,
+    "strategyInputCount": 117,
+    "differences": {},
+    "equal": true
+  },
+  "tests": {
+    "files": 24,
+    "passed": 199,
+    "independentPineParses": 18,
+    "result": "PASS",
+    "log": "local-full-verification.txt"
+  },
+  "nativeObservation": {
+    "indicatorNov5CompileLocal": "2026-11-06T07:08:58+07:00",
+    "strategyNov5CompileLocal": "2026-11-06T07:14:46+07:00",
+    "chartRestored": true,
+    "autosaveRestoredOn": true,
+    "savedVisibleStudy": "A-H Confirmation review Indicator",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "studyCount": 3,
+    "otherOriginalStudiesHidden": true
+  },
+  "researchResults": {
+    "snapshotWindowBars": 11,
+    "snapshotDataAndStateEqual": true,
+    "snapshotMetadataEqual": false,
+    "freshIndicatorReloadPlansEqual": 74,
+    "nov5PairedTraceBars": 16,
+    "nov5PairedMarketFieldComparisons": 192,
+    "nov5PairedMarketDifferences": 0,
+    "nov5MissingPlanCause": "Different F triggers frozen at different execution-dependent setup times",
+    "earlierNov4PriceDriftCause": "UNRESOLVED",
+    "fullPairedParity": "NOT_PASSED",
+    "barReplay": "NOT_VERIFIED",
+    "oos": "NOT_VERIFIED",
+    "profitability": "NOT_ESTABLISHED",
+    "telegramActive": false
+  },
+  "artifacts": [
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/NOV5_F_TRACE_DIAGNOSIS.md",
+      "bytes": 6948,
+      "sha256": "625e092e7cc8ef45c770e6a51073d3b44299545ce47969790eb9ec5975e46009"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/PARITY_DIAGNOSIS.md",
+      "bytes": 9603,
+      "sha256": "c5b24e4c1ce12e95533efce556cd1de2512f99b76a993df9411d0d89854cb6ce"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/README.md",
+      "bytes": 10765,
+      "sha256": "02acdb1026ce1373f57170ff9c5fe3f4cc105d0e970ce79f17de23f2ddefe644"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/analyze-nov5-f-traces.py",
+      "bytes": 5986,
+      "sha256": "7bd06f532e19a5ae4e953b1341c37e4f77f43a7d45eb009b7951ef0e695f5a32"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/analyze-parity-timelines.py",
+      "bytes": 6590,
+      "sha256": "00445fe106d9535a688e6f7f4631d0109aa2f10dc32aeb1675281a55796bafdf"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/autosave-off.png",
+      "bytes": 967256,
+      "sha256": "eb3bd07b219774efb439aa54d20e11d672841e5f2d83f8dfbd3bd37872b6156e"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/autosave-restored.ax.txt",
+      "bytes": 7777,
+      "sha256": "73d38e13c91529cbd86612fdd21c98f0a6e0b7150f8210db0a5e9ec050a8283d"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/autosave-restored.png",
+      "bytes": 1032443,
+      "sha256": "cf5d095f9aa6855d02946c7a2fa1e220e1ece3eda390dc3be9a8fc8101689355"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/chart-data-export-availability.ax.txt",
+      "bytes": 1160,
+      "sha256": "1c81058f47bbc03a411aeeebd100c0c9cb02ca05af9d31e935504c47438540ba"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/chart-export-plan-limit.ax.txt",
+      "bytes": 10663,
+      "sha256": "1299a97faa0736a4cb1fd633b73043a8267cc705bb9484ff5c15678bbe7a421a"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/chart-export-plan-limit.png",
+      "bytes": 993113,
+      "sha256": "40b11b8dc79019a7fda2cc2451776b4e6d6faaff2f981669cf834daf72964efc"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/chart-export-upgrade-event.ax.txt",
+      "bytes": 1736,
+      "sha256": "cde7f350feab3852717b9ab543e9dc5e608fb67253722b6f334059e5021e7a9a"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/extract-runtime-inputs.py",
+      "bytes": 2939,
+      "sha256": "4ccea30a89171c09dc7148a41791afd9c2958e7ee0041206d08718e0ad3cf777"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/final-chart.ax.txt",
+      "bytes": 6745,
+      "sha256": "bdc2aa274d158a6baf8eee2d8817fd89097f0260aca7220f929f812b205f4945"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/final-chart.png",
+      "bytes": 1024013,
+      "sha256": "e94bbacebf07a14ed1c082fd650ee622768e1900c6142c9b1d6dd1918d8d2fd3"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-nov5-compile.ax.txt",
+      "bytes": 23014,
+      "sha256": "a180db8523aafa4e2155c13f24eaf969640c486cc796b2cb95261fa8c16fdd34"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-nov5-compile.png",
+      "bytes": 1235831,
+      "sha256": "1fba3d1d7e17aa2e2b6dc721f413f41679907dc31db73b956fda34cc8e47ea24"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-nov5-editor-copy.pine",
+      "bytes": 117088,
+      "sha256": "1cf25b701d5a9372908ea3a1515cf3fe0a997e0abf7716a2b5a641d61d23e449"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-nov5-raw.csv",
+      "bytes": 630643,
+      "sha256": "5eb96a6efd07471cef36594d1ef5fd44df8f1e880eb8ea7c1eb9596ba9761de9"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-restored-inputs-page0.ax.txt",
+      "bytes": 29786,
+      "sha256": "3a599b195ed01986160ddd028baacbf7e3fc085aeb8435f447f62f65db4a5782"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-restored-inputs-page1.ax.txt",
+      "bytes": 29559,
+      "sha256": "ee1cc8b1f176480639515b6b025f62d4400d8ce009d48e1b87fb84852569d18c"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-restored-inputs-page2.ax.txt",
+      "bytes": 30421,
+      "sha256": "1ec2d4e0e15e7febc2aff4b8d47c0fd844aa74c95881b32c09daf3334cd3f7b9"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-restored-inputs-page3.ax.txt",
+      "bytes": 31337,
+      "sha256": "58bfa42bccdda46cc520ba7cc59b962d58d65f67c92d48222f244ea282f9d7ca"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/indicator-runtime-inputs.json",
+      "bytes": 8247,
+      "sha256": "eafce24767865838c33d52fdadc7ce1c0d69c3bcc6ae524b9edf3d9a1dda4813"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/local-full-verification.txt",
+      "bytes": 1851,
+      "sha256": "d01cfffebded724b3caf15853d01d0dfd234d97ede3ac62774a0278ca28a4712"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/local-intake-and-trace-tests.txt",
+      "bytes": 204,
+      "sha256": "7c29b3d113db643d44d2c1102ef7f1d03d93ef06e4b8ab64b30fcbf2af237cde"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/local-targeted-verification.txt",
+      "bytes": 214,
+      "sha256": "e0e44f8b762dc7e0245ec4094b09ad9f178f6b2892ff81786b3578e868260ea3"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/nov5-f-trace-analysis.json",
+      "bytes": 374728,
+      "sha256": "15ccfc590ff93295c918685abd173d7581e3f308b310d7fe289cb9ad8a769c4c"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+      "bytes": 459121,
+      "sha256": "0e211f761e7e5214fed93be97792a1faa8ca9038c8dd493cd9bf8e33fdea7634"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-after-reload-compile.ax.txt",
+      "bytes": 23222,
+      "sha256": "54f3d6da04d295637966c14f7336dfcf294b861a27ab04ff663f81638c5ca525"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-after-reload-raw.csv",
+      "bytes": 303904,
+      "sha256": "73a84d3bd85c84a3604338a55a053c9c24acf01cab91b9bae340fcb48db4110d"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-before-raw.csv",
+      "bytes": 303904,
+      "sha256": "e128f81a70b29be8cfc30f70ebb0f1c57389a7979c74f6decaad0104db8e3b9b"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-compile.ax.txt",
+      "bytes": 16377,
+      "sha256": "e15bb88a25040d7a7aa535071aa25848366230a188b6a8718f61cac3a882c7f0"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-compile.png",
+      "bytes": 988413,
+      "sha256": "fc5954027b8de8e06864b774a585c89ed32d784ca3dd26aeae630e11269d27ec"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-editor-copy.pine",
+      "bytes": 118185,
+      "sha256": "73bd44b6755e82d7466e51fc4302f5faf70c866ed30a742a064c228e36604615"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-full-plan-comparison.json",
+      "bytes": 1095,
+      "sha256": "10bf2adacfc84e87139d77e6194ab1950ba25b8d9f626277918d2cc4ddc801ea"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-reload-comparison.json",
+      "bytes": 9675,
+      "sha256": "78e58879d271f1d10d185e4bd0ae6e57d97cb9111cfb9b64231d51e38b6a1206"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-reloaded-editor-copy.pine",
+      "bytes": 118185,
+      "sha256": "73bd44b6755e82d7466e51fc4302f5faf70c866ed30a742a064c228e36604615"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-timeframe-comparison.json",
+      "bytes": 9678,
+      "sha256": "1d20409c14a182f11310d2beb5c9ed0a43e95a9d622cbb7af3a02e630d0e9dd5"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/probe-timeframe-cycle-raw.csv",
+      "bytes": 303904,
+      "sha256": "566e7945d2e75564f26d244343bd22b910b450239b787961505f1b6f69aa941f"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/restore-reload-initial.ax.txt",
+      "bytes": 432,
+      "sha256": "17f13d39829a59bc0f0c77118945c4b9a3e26bc6ec5d46987af2ce0039bb3b12"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/restored-scale-menu.ax.txt",
+      "bytes": 25727,
+      "sha256": "e28a6b1e443a3700a44333a794bcb587bb344243118e5227a22557a659330d49"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/restored-studies.ax.txt",
+      "bytes": 23701,
+      "sha256": "61a8d039550f3a98db4fa1846d166e2aa823ee0f251debf66656b24cd4ed833d"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/runtime-input-comparison.json",
+      "bytes": 100,
+      "sha256": "4abe9e7ef5c1c7a6ba36fa3019ef650d5d5eb8a87261ed5903beff4892060b78"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/starting-chart.ax.txt",
+      "bytes": 10319,
+      "sha256": "f4b71d7508924ed3df31a3461de200c2970bb19702d24a627212238073b18e63"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/starting-chart.png",
+      "bytes": 852066,
+      "sha256": "5eb80b0037ddd098932db850cff19d81351dcd9943bcbe453d41ceaa15b68fc7"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/starting-editor-copy.pine",
+      "bytes": 113067,
+      "sha256": "9abff4d45390720af349ea7cbf1466662cb9f2ac2406969612e60014575835ba"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-compile.ax.txt",
+      "bytes": 24003,
+      "sha256": "c374080886dfa4cfbb629536cf34b6cd9112d9a812af913c099a4e82d507f874"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-compile.png",
+      "bytes": 1440952,
+      "sha256": "9d8f5226e046d0b156073554a374e733f954c014cfc687115d128528416b1caf"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-compiled-success.ax.txt",
+      "bytes": 28415,
+      "sha256": "f2cc69cf48e61c115f5257cc47fb4634e57bd27507d48b661a56151d9cbcef96"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-compiled-success.png",
+      "bytes": 1415614,
+      "sha256": "ea3d990e15b65d200fa84ee781423608deac49e2c4e6c35009a464a61d8e1c62"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-editor-copy.pine",
+      "bytes": 136386,
+      "sha256": "3449fd3994fd8fb6b9b9928eb2a0e3fca461751b67741f0775833e6226ea9860"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-inputs-page0.ax.txt",
+      "bytes": 34462,
+      "sha256": "b9656e8c401401b3f6425c2b2dbfe59fa3e63d8a2ad82a42e4596393d8911a89"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-inputs-page1.ax.txt",
+      "bytes": 34512,
+      "sha256": "bed0eeb5d3f913843bbe2ee50da0a6bf47c28c7af1d39b2a801e1f10a6443046"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-inputs-page2.ax.txt",
+      "bytes": 35053,
+      "sha256": "19420dc4b6f7ffe534eaed0f0319c3dd5b66b32284c3a891be0103d742d3ff82"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-inputs-page3.ax.txt",
+      "bytes": 35956,
+      "sha256": "4fdcc73fdd93bfbaedb984bcfe1bad5ab698b35ca4967afa704479401a5176d3"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-inputs-top.ax.txt",
+      "bytes": 30738,
+      "sha256": "cfedca45ae328d4d9b3647d7106ba443ea310d3dac5e8824efa8d2a98ae5719d"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-properties.ax.txt",
+      "bytes": 30738,
+      "sha256": "cfedca45ae328d4d9b3647d7106ba443ea310d3dac5e8824efa8d2a98ae5719d"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-raw.csv",
+      "bytes": 810113,
+      "sha256": "11f38d7c58900aae873dec907d2d9668a62841aab2a75dcf5d476ead8aa3fe2a"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/strategy-runtime-inputs.json",
+      "bytes": 8227,
+      "sha256": "71276fd047fa132cae73d3a2ee5feb24100d33408168bf8b2e6a1213f2b942f0"
+    },
+    {
+      "file": "reports/native-v080/recalculation-review-2026-11-05/timeframe-cycle-m5.ax.txt",
+      "bytes": 11662,
+      "sha256": "e4571d6cfe800fecb94cef6d520591f063aea033b8ca39b51635bc268bfef7ca"
+    },
+    {
+      "file": "pine/experiments/indicator_data_snapshot.pine",
+      "bytes": 116568,
+      "sha256": "1e814d428b20b24375951d169ef209d75b6e02afd4dc653be53eb1710bd2fdf0"
+    },
+    {
+      "file": "pine/experiments/strategy_nov5_trace.pine",
+      "bytes": 134532,
+      "sha256": "ce4ca8ee7b1e10fc0920c43b457e2b0141bc1aa55fc1c6c854bc6cec9126504c"
+    },
+    {
+      "file": "pine/experiments/indicator_nov5_trace.pine",
+      "bytes": 115468,
+      "sha256": "b8af2d0cc5c3f5453b6015e977b405f965081dee68f7933f4ddf50760fd23ddf"
+    },
+    {
+      "file": "scripts/compare-data-snapshots.py",
+      "bytes": 15626,
+      "sha256": "f0baf7a6845655f0f5ffc111a698bae8d5a12d97233ce3db84094b7aa4c5bba8"
+    },
+    {
+      "file": "scripts/generate_data_snapshot.py",
+      "bytes": 1257,
+      "sha256": "841ddd13573ab95201e33b1c20faff9839c934c94fea9749231e881ac6b3e7f0"
+    },
+    {
+      "file": "scripts/generate_nov5_candidate_trace.py",
+      "bytes": 2576,
+      "sha256": "a9b1debeaee50ac33fbfd2b626fbe6a060de8ae5bbc43994fbd3b504db9d297c"
+    }
+  ]
+}

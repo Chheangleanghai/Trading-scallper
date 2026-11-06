@@ -1,0 +1,85 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,096.22 ▲ +0.85% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 173-193
+~0 standard window XAUUSD 4,096.22 ▲ +0.85% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,096.22 ▲ +0.85% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,096.22 ▲ +0.85% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~												98 text O 4,093.17 H 4,096.62 L 4,091.38 C 4,096.24 +3.07 (+0.08%)
+~											100 text 4,095.85 SELL
+~											102 text 4,096.67 BUY
++												407 container
++													408 text ∅
++													409 text 4,102.69
++													410 text ∅
++													411 text ∅
++													412 text ∅
++													413 text ∅
++													414 text ∅
++													415 text ∅
++													416 text ∅
++													417 text ∅
++													418 text ∅
++													419 text ∅
++													420 text ∅
++													421 text ∅
++													422 text 0.00
++													423 text 0.00
++													424 text ∅
++													425 text 4,112.58
++													426 text 4,108.82
++													427 text ∅
++							428 container
++								429 table
++									430 row
++										431 cell
++											432 text Add alert on XAUUSD SMART SCALPER PRO · A-H Confirmation review (Context + levels, 8, 1, 15, 3, 0.15, 2, 0.3, 12, 3, 75, 75, 75, 75, 75, 75, 75, 75, Both, 3, 20, 75, 5, 5, 90, 0.5, 0.15, 3, 1.5, 2, 1, 2, 3, 0.7, London, 0800-1700, Europe/London, Close, 3, 15, Fixed R, Structure, 1.5, 1, 2, 1.5, Reference, Off, 8, 3,000, Latest only, 60, 8, 8, 12, Tiny, Small, 15, 82)… ⌥ A
++									433 row
++										434 cell
++											435 text Add indicator/strategy on XAUUSD SMART SCALPER PRO · A-H Confirmation review (Context + levels, 8, 1, 15, 3, 0.15, 2, 0.3, 12, 3, 75, 75, 75, 75, 75, 75, 75, 75, Both, 3, 20, 75, 5, 5, 90, 0.5, 0.15, 3, 1.5, 2, 1, 2, 3, 0.7, London, 0800-1700, Europe/London, Close, 3, 15, Fixed R, Structure, 1.5, 1, 2, 1.5, Reference, Off, 8, 3,000, Latest only, 60, 8, 8, 12, Tiny, Small, 15, 82)…
++									436 row (disabled)
++										437 cell
++											438 text Add this indicator to favorites
++									439 row
++										440 cell
++											441 text Visual order
++											442 image
++									443 row
++										444 cell
++											445 text Visibility on intervals
++											446 image
++									447 row
++										448 cell
++											449 text Move to
++											450 image
++									451 row
++										452 cell
++											453 text Pin to scale (now right)
++											454 image
++									455 row
++										456 cell
++											457 text Move tables to bottom panel NEW
++									458 row
++										459 cell
++											460 text Source code…
++									461 row
++										462 cell
++											463 text Reset points…
++									464 row
++										465 cell
++											466 text Pine logs...
++									467 row
++										468 cell
++											469 text Copy ⌘ C
++									470 row
++										471 cell
++											472 text Hide
++									473 row
++										474 cell
++											475 text Remove ⌫
++									476 row
++										477 cell
++											478 text Object tree
++									479 row
++										480 cell
++											481 text Settings…
+~				372 tab (selected, settable, boolean) XAUUSD 4,096.22 ▲ +0.85% Unnamed - Memory usage - 586 MB, Value: on
+The focused UI element is 430 row

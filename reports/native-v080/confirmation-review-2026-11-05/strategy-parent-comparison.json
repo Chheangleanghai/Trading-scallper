@@ -1,0 +1,8 @@
+{
+  "parity": true,
+  "indicatorPlans": 75,
+  "strategyPlans": 75,
+  "tolerance": 0,
+  "mismatches": [],
+  "executionDifferences": []
+}

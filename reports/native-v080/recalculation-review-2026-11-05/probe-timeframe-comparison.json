@@ -1,0 +1,404 @@
+{
+  "schema": "data-snapshot-comparison/v1",
+  "status": "DATA_AND_STATE_MATCH_METADATA_DIFFERS",
+  "scope": "Only captured rows/fields; missing snapshots are not synthesized. Declared parent hash does not authenticate probe source, settings or TradingView provenance.",
+  "numericComparison": "Exact numeric values; JSON decimal fractions are parsed as Decimal and rendered as strings in detail fields to preserve precision.",
+  "inputs": {
+    "before": {
+      "path": "reports/native-v080/recalculation-review-2026-11-05/probe-before-raw.csv",
+      "sha256": "e128f81a70b29be8cfc30f70ebb0f1c57389a7979c74f6decaad0104db8e3b9b",
+      "bytes": 303904,
+      "format": "CSV",
+      "snapshotCount": 11
+    },
+    "after": {
+      "path": "reports/native-v080/recalculation-review-2026-11-05/probe-timeframe-cycle-raw.csv",
+      "sha256": "566e7945d2e75564f26d244343bd22b910b450239b787961505f1b6f69aa941f",
+      "bytes": 303904,
+      "format": "CSV",
+      "snapshotCount": 11
+    }
+  },
+  "context": {
+    "schema": "data-snapshot/v1",
+    "parentSourceSha256": "0a19862b22973e13a31abb29e59a75a18f3e0b84bb76deb2154eae7fa4cd1ed3",
+    "scriptVersion": "0.8.0",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "windowBasis": "BAR_OPEN_TIME"
+  },
+  "counts": {
+    "commonSnapshots": 11,
+    "exactCommonSnapshots": 0,
+    "dataAndStateMatchingCommonSnapshots": 11,
+    "beforeOnlySnapshots": 0,
+    "afterOnlySnapshots": 0
+  },
+  "dataAndStateEqual": true,
+  "allComparedValuesEqual": false,
+  "missingSnapshots": {
+    "beforeOnly": [],
+    "afterOnly": []
+  },
+  "differenceCounts": {
+    "rawOhlc": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "rawMarketContext": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "derivedContext": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "executionState": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "candidates": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "plan": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "historyBoundary": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "metadata": {
+      "snapshots": 11,
+      "fields": 11
+    }
+  },
+  "differences": {
+    "rawOhlc": [],
+    "rawMarketContext": [],
+    "derivedContext": [],
+    "executionState": [],
+    "candidates": [],
+    "plan": [],
+    "historyBoundary": [],
+    "metadata": [
+      {
+        "time": 1793784600000,
+        "timeClose": 1793784900000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793784900000,
+        "timeClose": 1793785200000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793785200000,
+        "timeClose": 1793785500000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793785500000,
+        "timeClose": 1793785800000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793785800000,
+        "timeClose": 1793786100000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793786100000,
+        "timeClose": 1793786400000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793786400000,
+        "timeClose": 1793786700000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793786700000,
+        "timeClose": 1793787000000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793787000000,
+        "timeClose": 1793787300000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793787300000,
+        "timeClose": 1793787600000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      },
+      {
+        "time": 1793787600000,
+        "timeClose": 1793787900000,
+        "differences": [
+          {
+            "field": "lastBarIndex",
+            "before": 5184,
+            "after": 5255,
+            "absoluteDelta": "71"
+          }
+        ]
+      }
+    ]
+  },
+  "lastBarIndexMetadata": {
+    "before": [
+      {
+        "time": 1793784600000,
+        "timeClose": 1793784900000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793784900000,
+        "timeClose": 1793785200000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793785200000,
+        "timeClose": 1793785500000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793785500000,
+        "timeClose": 1793785800000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793785800000,
+        "timeClose": 1793786100000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793786100000,
+        "timeClose": 1793786400000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793786400000,
+        "timeClose": 1793786700000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793786700000,
+        "timeClose": 1793787000000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793787000000,
+        "timeClose": 1793787300000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793787300000,
+        "timeClose": 1793787600000,
+        "lastBarIndex": 5184
+      },
+      {
+        "time": 1793787600000,
+        "timeClose": 1793787900000,
+        "lastBarIndex": 5184
+      }
+    ],
+    "after": [
+      {
+        "time": 1793784600000,
+        "timeClose": 1793784900000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793784900000,
+        "timeClose": 1793785200000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793785200000,
+        "timeClose": 1793785500000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793785500000,
+        "timeClose": 1793785800000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793785800000,
+        "timeClose": 1793786100000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793786100000,
+        "timeClose": 1793786400000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793786400000,
+        "timeClose": 1793786700000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793786700000,
+        "timeClose": 1793787000000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793787000000,
+        "timeClose": 1793787300000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793787300000,
+        "timeClose": 1793787600000,
+        "lastBarIndex": 5255
+      },
+      {
+        "time": 1793787600000,
+        "timeClose": 1793787900000,
+        "lastBarIndex": 5255
+      }
+    ]
+  },
+  "targetBar": {
+    "requestedBarOpen": 1793785800000,
+    "expectedM5DecisionClose": 1793786100000,
+    "before": {
+      "present": true,
+      "time": 1793785800000,
+      "timeClose": 1793786100000,
+      "rawOhlc": {
+        "open": "4043.58",
+        "high": "4045.3",
+        "low": "4043.335",
+        "close": "4044.89"
+      },
+      "plan": {
+        "timestamp": 1793786100000,
+        "setupTimestamp": 1793785500000,
+        "strategy": "F_TREND_PULLBACK",
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": "4044.89",
+        "sl": "4031.97",
+        "tp1": "4057.81",
+        "tp2": "4070.73",
+        "tp3": "4083.65",
+        "quality": 80
+      },
+      "closeModeEntryEqualsRawClose": true,
+      "firstLoadedBarTime": 1791756000000,
+      "barIndex": 4822,
+      "lastBarIndex": 5184,
+      "sourceLocation": {
+        "line": 296,
+        "displayLogTime": "2026-11-04T09:50:00.000-00:00"
+      }
+    },
+    "after": {
+      "present": true,
+      "time": 1793785800000,
+      "timeClose": 1793786100000,
+      "rawOhlc": {
+        "open": "4043.58",
+        "high": "4045.3",
+        "low": "4043.335",
+        "close": "4044.89"
+      },
+      "plan": {
+        "timestamp": 1793786100000,
+        "setupTimestamp": 1793785500000,
+        "strategy": "F_TREND_PULLBACK",
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": "4044.89",
+        "sl": "4031.97",
+        "tp1": "4057.81",
+        "tp2": "4070.73",
+        "tp3": "4083.65",
+        "quality": 80
+      },
+      "closeModeEntryEqualsRawClose": true,
+      "firstLoadedBarTime": 1791756000000,
+      "barIndex": 4822,
+      "lastBarIndex": 5255,
+      "sourceLocation": {
+        "line": 296,
+        "displayLogTime": "2026-11-04T09:50:00.000-00:00"
+      }
+    }
+  }
+}

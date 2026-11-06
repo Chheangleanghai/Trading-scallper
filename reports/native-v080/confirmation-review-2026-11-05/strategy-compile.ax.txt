@@ -1,0 +1,251 @@
+The following is a diff from the previous accessibility tree for Window: "XAUUSD 4,088.18 ▲ +0.65% Unnamed" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 90, 92, 107-175, 417-418, 470-490
+~0 standard window XAUUSD 4,088.18 ▲ +0.65% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+~	1 container XAUUSD 4,088.18 ▲ +0.65% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+~					5 HTML content XAUUSD 4,088.18 ▲ +0.65% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
++											495 button Undo update XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review script
+~											28 button Save all charts for all symbols and intervals on your layout
++													496 text ·
++												497 text ·
+~												100 text O 4,084.18 H 4,089.18 L 4,083.86 C 4,088.16 +3.98 (+0.10%)
+~											102 text 4,087.66 SELL
+~											103 text 80
+~											104 text 4,088.46 BUY
++											498 toolbar
++												499 container
++													500 text XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review
++													501 text Context + levels
++													502 text 8
++													503 text 1
++													504 text 15
++													505 text 3
++													506 text 0.15
++													507 text 2
++													508 text 0.3
++													509 text 12
++													510 text 3
++													511 text 75
++													512 text 75
++													513 text 75
++													514 text 75
++													515 text 75
++													516 text 75
++													517 text 75
++													518 text 75
++													519 text Both
++													520 text 3
++													521 text 20
++													522 text 75
++													523 text 5
++													524 text 5
++													525 text 90
++													526 text 0.5
++													527 text 0.15
++													528 text 3
++													529 text 1.5
++													530 text 2
++													531 text 1
++													532 text 2
++													533 text 3
++													534 text 0.7
++													535 text London
++													536 text 0800-1700
++													537 text Europe/London
++													538 text Close
++													539 text 3
++													540 text 15
++													541 text Fixed R
++													542 text Structure
++													543 text 1.5
++													544 text 1
++													545 text 2
++													546 text 1.5
++													547 text Reference
++													548 text Off
++													549 text 8
++													550 text 3,000
++													551 text Latest only
++													552 text 60
++													553 text 8
++													554 text 8
++													555 text 12
++													556 text Tiny
++													557 text Small
++													558 text 15
++													559 text 82
++												560 container
++													561 button Hide
++													562 button Settings
++													563 image
++													564 button Remove
++													565 button More
++												566 button Active strategy · Opened in Pine Editor
++												567 container
++													568 text ∅
++													569 text 4,106.08
++													570 text ∅
++													571 text ∅
++													572 text ∅
++													573 text ∅
++													574 text ∅
++													575 text ∅
++													576 text ∅
++													577 text ∅
++													578 text ∅
++													579 text ∅
++													580 text ∅
++													581 text ∅
++													582 text 0.00
++													583 text 0.00
++													584 text ∅
++													585 text 4,114.92
++													586 text 4,121.48
++													587 text ∅
++								588 toolbar
++									589 container
++										590 button Collapse strategy report
++										591 pop up button Manage strategy
++									592 button Collapse panel
++									593 button Maximize panel
++								594 container
++									595 container
++										596 tab group
++											597 tab (selected) 1
++											598 tab (settable, integer) 0
++										599 button Oct 12, 2026 — Nov 5, 2026
++										600 button 10 K
++										601 button Default detalization
++										602 button Script execution
++										603 button Settings
++										604 button Add alert
++										605 container
++											606 text Key stats
++											607 text Total PnL
++											608 container
++												609 text −77.19 USD −0.77%
++											610 text Max drawdown
++											611 container
++												612 text 216.24 USD 2.15%
++											613 text Profitable trades
++											614 container
++												615 text 43.12% 47/109
++											616 text Profit factor
++											617 text 0.779
++											618 text Performance
++											619 link Show description, Value: tradingview.com/support/solutions/43000681735
++											620 pop up button Scale
++											621 button Take a snapshot
++											622 button Expand chart
++											623 container
++												624 text Cumulative PnL Buy and hold
++												625 button Show
++												626 text Trades excursions Run-ups and drawdowns
++												627 button Hide metrics legend
++												628 container
++													629 container
++														630 image
++														631 image
++													632 container
++														633 image
++														634 image
++												635 container
++													636 container
++														637 image
++														638 image
++											639 text Performance analysis
++											640 tab group
++												641 tab (selected) Breakdown, Value: 1
++												642 tab (settable, integer) Periodical, Value: 0
++												643 tab (settable, integer) Benchmarking, Value: 0
++												644 tab (settable, integer) Margin usage, Value: 0
++												645 tab (settable, integer) Growth and decline, Value: 0
++											646 text Gross profit
++											647 container
++												648 text 272.01 USD 2.72%
++											649 text Gross loss
++											650 container
++												651 text 349.21 USD 3.49%
++											652 text Profit factor
++											653 text 0.779
++											654 text Commission load
++											655 button Upgrade to get full access to Strategy report data
++											656 text Profits and losses
++											657 radio button By signals, Value: 1
++											658 radio button By side, Value: 0
++											659 text All signals
++											660 text −77.19 USD
++											661 text D_SNR
++											662 text +26.78 USD
++											663 text C_TURTLE_SOUP
++											664 text +18.69 USD
++											665 text H_QUASIMODO
++											666 text −1.18 USD
++											667 text E_SUPPLY
++											668 text −5.58 USD
++											669 text E_DEMAND
++											670 text −9.59 USD
++											671 text Other • 2
++											672 text −106.32 USD Trades analysis
++											673 tab group
++												674 tab (selected) Distribution, Value: 1
++												675 tab (settable, integer) Streaks, Value: 0
++												676 tab (settable, integer) Time patterns, Value: 0
++											677 text Expectancy
++											678 container
++												679 text −0.71 USD −0.01%
++											680 text Outliers PnL
++											681 container
++												682 text 39.26 USD 0.39%
++											683 text Largest profit
++											684 button Upgrade to get full access to Strategy report data
++											685 text Largest loss
++											686 button Upgrade to get full access to Strategy report data
++											687 text Returns distribution
++											688 container
++												689 container
++													690 image
++													691 image
++												692 container
++													693 image
++													694 image
++												695 container
++													696 image
++													697 image
++											698 text Losers Winners Average loss −0.11% Average profit 0.10% Trades distribution
++											699 container
++												700 text 109
++												701 text Total trades
++											702 text Winners
++											703 text 47 trades
++											704 text 43.12%
++											705 text Losers
++											706 text 62 trades
++											707 text 56.88%
++											708 text Breakevens
++											709 text 0 trades
++											710 text 0.00%
++										711 container 11:01:14 PM
++											712 text 11:01:14 PM
++										713 container Compiled.
++											714 text Compiled.
++										715 container 11:01:14 PM
++											716 text 11:01:14 PM
++										717 container Updated on chart.
++											718 text Updated on chart.
++							719 container
++								720 container
++									721 text Update on chart ⌘  + ↵
+~				435 tab (selected, settable, boolean) XAUUSD 4,088.18 ▲ +0.65% Unnamed - Memory usage - 436 MB, Value: on
+Selected text: ```
+//@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Confirmation review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run…e.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 1, 9, 'H1 ' + (hTrend == 1 ? '↑' : hTrend == -1 ? '↓' : '—') + ' / M15 ' + (mTrend == 1 ? '↑' : mTrend == -1 ? '↓' : '—'), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240))
+        table.cell(reviewBoard, 2, 9, reviewShort(decisionReason), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240), text_halign=text.align_left)
+// REVIEW_CONCEPT_VIEW_END
+
+```
+
+Note: Pay special attention to the content selected by the user. If the user asks a question or refers to the content they are looking at on-screen, they might be referring to the selected content (but they might be referring to something else that's visible, too).

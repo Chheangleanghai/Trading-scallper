@@ -1,0 +1,296 @@
+Window: "XAUUSD 4,086.83 ▼ −0.04% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,086.83 ▼ −0.04% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,086.83 ▼ −0.04% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,086.83 ▼ −0.04% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 container
+											13 button XAUUSD, Help: Symbol search
+											14 button Switch data type
+										15 pop up button Compare symbols
+										16 pop up button 5 minutes
+											17 container
+												18 text 5 m
+										19 pop up button Candles
+										20 container
+											21 button Indicators, metrics, and strategies
+											22 pop up button Favorite indicators and indicators templates
+										23 button Create alert
+										24 toggle button Bar replay, Value: 0
+										25 container
+											26 button Undo change resolution
+										27 pop up button Layout setup
+										28 container
+											29 button Save all charts for all symbols and intervals on your layout
+											30 pop up button Manage layouts
+										31 button Quick search
+										32 button Settings
+										33 button Fullscreen mode
+										34 pop up button Take a snapshot
+									35 pop up button Share your idea with the trade community
+									36 container
+										37 button Trade
+									38 container
+										39 button Upgrade
+								40 toolbar
+									41 container
+										42 container
+											43 button Cross
+											44 toggle button Cursors, Value: 1
+										45 container
+											46 button Trendline
+											47 toggle button Trend tools, Value: 0
+										48 container
+											49 button Fib retracement
+											50 toggle button Gann and Fibonacci tools, Value: 0
+										51 container
+											52 button XABCD pattern
+											53 toggle button Patterns, Value: 0
+										54 container
+											55 button Long position
+											56 toggle button Forecasting and measurement tools, Value: 0
+										57 container
+											58 button Brush
+											59 toggle button Geometric shapes, Value: 0
+										60 container
+											61 button Text
+											62 toggle button Annotation tools, Value: 0
+										63 container
+											64 button Icon
+											65 toggle button Icons, Value: 0
+										66 button Measure
+										67 button Zoom in
+										68 container
+											69 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											70 toggle button Magnets, Value: 0
+										71 toggle button Keep drawing, Value: 0
+										72 container
+											73 toggle button Lock drawings and indicators, Value: 0
+											74 toggle button Lock options, Value: 0
+										75 container
+											76 toggle button Hide all drawings, Value: 0
+											77 toggle button Hide options, Value: 0
+										78 container
+											79 button Remove objects
+											80 button Remove options
+								81 container Chart #1
+									82 container
+										83 toolbar
+											84 container
+												85 container Change symbol
+													86 container
+														87 Unlabeled image To get missing image descriptions, open the context menu.
+														88 text X
+													89 button Change symbol
+												90 container Change interval
+													91 text ·
+													92 button Change interval
+												93 text ·
+												94 text FOREX.com
+											95 container
+												96 button Unflag symbol
+													97 image
+												98 button More
+											99 button Market open · Data updates once per second
+											100 container
+												101 container
+													102 text O 4,090.11
+												103 container
+													104 text H 4,090.90
+												105 container
+													106 text L 4,086.41
+												107 container
+													108 text C 4,088.18
+												109 text −1.93 (−0.05%)
+										110 container
+											111 text 4,086.35 SELL 96 4,087.31 BUY
+										112 button Show indicators legend
+										113 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									114 container
+								115 toolbar
+									116 container
+										117 button 1 day in 1 minute intervals
+										118 button 5 days in 5 minutes intervals
+										119 button 1 month in 30 minutes intervals
+										120 button 3 months in 1 hour intervals
+										121 button 6 months in 2 hours intervals
+										122 button Year to day in 1 day intervals
+										123 button 1 year in 1 day intervals
+										124 button 5 years in 1 week intervals
+										125 button All data in 1 month intervals
+										126 button Go to
+									127 button Timezone
+								128 container
+									129 toolbar
+										130 toggle button Watchlist, details, and news, Value: 0
+										131 toggle button Alerts, Value: 0
+										132 toggle button Object tree and data window, Value: 0
+										133 toggle button AI Copilot, Value: 0
+										134 toggle button Screeners, Value: 0
+										135 toggle button (disabled) Pine Editor, Value: 1
+										136 toggle button Calendars, Value: 0
+										137 toggle button Community, Value: 0
+										138 toggle button Notifications, Value: 0
+										139 toggle button Chats, Value: 0
+										140 pop up button Products
+										141 toggle button Help Center, Value: 0
+									142 container
+										143 text XAUUSD SMART SCALPER PRO · Data snapshot research
+										144 pop up button Settings
+										145 container
+											146 text Waiting on logs We're holding out for some logs, but there's none available here yet.
+									147 image
+								148 container Trading panel
+							149 container
+								150 button Move split-view to overlay
+								151 text Pine Editor
+								152 button Collapse panel
+								153 button Fullscreen mode
+								154 button Close
+								155 container
+									156 pop up button Untitled script
+										157 heading Untitled script, Value: 2
+											158 text Untitled script
+									159 button Save script
+									160 button Share your script with the community
+									161 pop up button More
+									162 container
+										163 editor (settable) Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+indicator("XAUUSD SMART SCALPER PRO · Data snapshot research", overlay=true, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = false
+bool useBroker = false
+// Shared source: edit this file, then npm run pine:generate.
+// REVIEW_INPUTS_BEGIN
+reviewShowBoard = input.bool(true, 'Show A–H confirmation board', group='Concept review')
+reviewShowGuides = input.bool(true, 'Show candidate zones / triggers (setup only)', group='Concept review')
+// REVIEW_INPUTS_…',"fillBar":' + dataSnapshotInt(fillBar) + ',"selectedStrategy":"' + jsonEscape(selectedStrategy) + '","status":"' + jsonEscape(status) + '","inSession":' + dataSnapshotBool(inSession) + ',"volatilityAllowed":' + dataSnapshotBool(volOK) + ',"paused":' + dataSnapshotBool(pause) + ',"decisionReason":"' + jsonEscape(decisionReason) + '","plan":' + dataSnapshotPlan + ',"candidates":' + dataSnapshotCandidates + '}'
+    log.info('DATA_SNAPSHOT_AUDIT ' + dataSnapshotPayload)
+// DATA_SNAPSHOT_AUDIT_END
+
+									164 container
+										165 container 9:14:10 PM
+											166 text 9:14:10 PM
+										167 container "Untitled script" opened
+											168 text "Untitled script" opened
+										169 container 9:14:40 PM
+											170 text 9:14:40 PM
+										171 container Compiling...
+											172 text Compiling...
+										173 container 9:15:14 PM
+											174 text 9:15:14 PM
+										175 container Compiled.
+											176 text Compiled.
+										177 container 9:15:14 PM
+											178 text 9:15:14 PM
+										179 container Added to chart.
+											180 text Added to chart.
+										181 container 9:32:31 PM
+											182 text 9:32:31 PM
+										183 container Compiling...
+											184 text Compiling...
+										185 container 9:33:17 PM
+											186 text 9:33:17 PM
+										187 container Compiled.
+											188 text Compiled.
+										189 container 9:33:17 PM
+											190 text 9:33:17 PM
+										191 container Updated on chart.
+											192 text Updated on chart.
+										193 container 9:41:09 PM
+											194 text 9:41:09 PM
+										195 container Compiling...
+											196 text Compiling...
+										197 container 9:41:27 PM
+											198 text 9:41:27 PM
+										199 container Compiled.
+											200 text Compiled.
+										201 container 9:41:27 PM
+											202 text 9:41:27 PM
+										203 container Updated on chart.
+											204 text Updated on chart.
+										205 container 11:00:42 PM
+											206 text 11:00:42 PM
+										207 container Compiling...
+											208 text Compiling...
+										209 container 11:01:14 PM
+											210 text 11:01:14 PM
+										211 container Compiled.
+											212 text Compiled.
+										213 container 11:01:14 PM
+											214 text 11:01:14 PM
+										215 container Updated on chart.
+											216 text Updated on chart.
+										217 container 11:09:36 PM
+											218 text 11:09:36 PM
+										219 container Compiling...
+											220 text Compiling...
+										221 container 11:09:56 PM
+											222 text 11:09:56 PM
+										223 container Compiled.
+											224 text Compiled.
+										225 container 11:09:56 PM
+											226 text 11:09:56 PM
+										227 container Updated on chart.
+											228 text Updated on chart.
+										229 container 11:59:04 PM
+											230 text 11:59:04 PM
+										231 container Compiling...
+											232 text Compiling...
+										233 container 11:59:24 PM
+											234 text 11:59:24 PM
+										235 container Compiled.
+											236 text Compiled.
+										237 container 11:59:24 PM
+											238 text 11:59:24 PM
+										239 container Updated on chart.
+											240 text Updated on chart.
+									241 button
+									242 button Line 1618, Col 1
+		243 container
+			244 pop up button Tab search
+			245 tab group
+				246 tab (selected, settable, boolean) XAUUSD 4,086.83 ▼ −0.04% Unnamed - Memory usage - 515 MB, Value: on
+					247 button Close
+				248 tab (settable, boolean) K-SNR in trading full name - Google Search - Memory usage - 534 MB, Value: off
+					249 button Close
+			250 button New Tab
+			251 button Open Gemini in Chrome
+		252 container
+			253 toolbar
+				254 button Back
+				255 button (disabled) Forward
+				256 button Reload
+				257 container
+					258 pop up button View site information
+					259 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					260 button Bookmark this tab
+				261 container
+					262 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					263 pop up button Extensions
+				264 checkbox Downloads, Value: 0
+				265 button Chheang
+				266 pop up button Chrome
+	267 container
+		268 close button
+		269 zoom button
+270 menu bar
+	271 Chrome
+	272 File
+	273 Edit
+	274 View
+	275 History
+	276 Bookmarks
+	277 Profiles
+	278 Tab
+	279 Window
+	280 Help
+
+The focused UI element is 5 HTML content XAUUSD 4,086.83 ▼ −0.04% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD

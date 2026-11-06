@@ -1,0 +1,19 @@
+Window: "", App: Google Chrome.
+0 dialog Description: alert, Secondary Actions: Raise
+	1 image Chrome alert
+	2 text Reload site? Changes you made may not be saved.
+	3 button Cancel, ID: action-button-2
+	4 button Reload, ID: action-button-1
+5 menu bar
+	6 Chrome
+	7 File
+	8 Edit
+	9 View
+	10 History
+	11 Bookmarks
+	12 Profiles
+	13 Tab
+	14 Window
+	15 Help
+
+The focused UI element is 0 dialog Description: alert, Secondary Actions: Raise

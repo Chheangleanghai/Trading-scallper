@@ -50,4 +50,9 @@ export interface SignalMetadata {
     | "CLOSED";
   entryMode?: "Close" | "Limit" | "Breakout";
   executionModel?: ExecutionModel;
+  closeReason?: 'STOP' | 'TP1' | 'TP2' | 'TP3' | 'TIME_EXIT' | 'CLOSED_OTHER';
+  closedAt?: number;
+  exitPrice?: number;
+  realizedNet?: number;
+  realizedCurrency?: string;
 }

@@ -131,5 +131,21 @@ export function validate(input: unknown): Signal {
   }
   if (s.alignment !== undefined && !["ALIGNED", "COUNTER_TREND", "NEUTRAL"].includes(s.alignment))
     throw new Error("Invalid alignment");
+  const closure = [s.closeReason, s.closedAt, s.exitPrice, s.realizedNet, s.realizedCurrency].some(value => value !== undefined);
+  if (closure) {
+    if (s.eventType !== 'TRADE_CLOSED' || !['STOP', 'TP1', 'TP2', 'TP3', 'TIME_EXIT', 'CLOSED_OTHER'].includes(s.closeReason ?? ''))
+      throw new Error('Invalid closure context');
+    if (!Number.isSafeInteger(s.closedAt) || s.closedAt! < s.timestamp || s.closedAt! > 4102444800000 || (s.eventTimestamp !== undefined && s.closedAt! > s.eventTimestamp))
+      throw new Error('Invalid closedAt');
+    const actual = [s.exitPrice, s.realizedNet, s.realizedCurrency].some(value => value !== undefined);
+    if (actual && s.executionModel !== 'STRATEGY_EMULATOR')
+      throw new Error('Realized results require strategy emulator');
+    if (s.exitPrice !== undefined && (typeof s.exitPrice !== 'number' || !Number.isFinite(s.exitPrice) || s.exitPrice <= 0))
+      throw new Error('Invalid exitPrice');
+    if (s.realizedNet !== undefined && (typeof s.realizedNet !== 'number' || !Number.isFinite(s.realizedNet) || typeof s.realizedCurrency !== 'string'))
+      throw new Error('Invalid realizedNet');
+    if (s.realizedCurrency !== undefined && (typeof s.realizedCurrency !== 'string' || !/^[A-Za-z0-9]{1,12}$/.test(s.realizedCurrency) || s.realizedNet === undefined))
+      throw new Error('Invalid realizedCurrency');
+  }
   return s;
 }
