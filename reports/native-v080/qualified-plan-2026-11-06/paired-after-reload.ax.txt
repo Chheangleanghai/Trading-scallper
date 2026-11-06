@@ -1,0 +1,299 @@
+Window: "XAUUSD 4,063.35 ▼ −0.62% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,063.35 ▼ −0.62% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,063.35 ▼ −0.62% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,063.35 ▼ −0.62% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+										23 pop up button Layout setup
+										24 button (disabled) All changes saved
+										25 pop up button Manage layouts
+										26 button Quick search
+										27 button Settings
+										28 button Fullscreen mode
+										29 pop up button Take a snapshot
+									30 pop up button Share your idea with the trade community
+									31 container
+										32 button Trade
+									33 container
+										34 button Upgrade
+								35 toolbar
+									36 container
+										37 container
+											38 button Cross
+											39 toggle button Cursors, Value: 1
+										40 container
+											41 button Trendline
+											42 toggle button Trend tools, Value: 0
+										43 container
+											44 button Fib retracement
+											45 toggle button Gann and Fibonacci tools, Value: 0
+										46 container
+											47 button XABCD pattern
+											48 toggle button Patterns, Value: 0
+										49 container
+											50 button Long position
+											51 toggle button Forecasting and measurement tools, Value: 0
+										52 container
+											53 button Brush
+											54 toggle button Geometric shapes, Value: 0
+										55 container
+											56 button Text
+											57 toggle button Annotation tools, Value: 0
+										58 container
+											59 button Icon
+											60 toggle button Icons, Value: 0
+										61 button Measure
+										62 button Zoom in
+										63 container
+											64 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											65 toggle button Magnets, Value: 0
+										66 toggle button Keep drawing, Value: 0
+										67 container
+											68 toggle button Lock drawings and indicators, Value: 0
+											69 toggle button Lock options, Value: 0
+										70 container
+											71 toggle button Hide all drawings, Value: 0
+											72 toggle button Hide options, Value: 0
+										73 container
+											74 button Remove objects
+											75 button Remove options
+								76 container Chart #1
+									77 container
+										78 toolbar
+											79 container
+												80 container Change symbol
+													81 container
+														82 Unlabeled image To get missing image descriptions, open the context menu.
+														83 text X
+													84 button Change symbol
+												85 container Change interval
+													86 text ·
+													87 button Change interval
+												88 text ·
+												89 text FOREX.com
+											90 container
+												91 button Unflag symbol
+													92 image
+												93 button More options for Gold Spot / U.S. Dollar, Help: More
+											94 button Market open · Data updates once per second
+											95 container
+												96 text O 4,066.64 H 4,066.64 L 4,062.37 C 4,063.35 −3.29 (−0.08%)
+										97 container
+											98 text 4,063.06 SELL
+											99 text 75
+											100 text 4,063.81 BUY
+										101 button Show indicators legend
+										102 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									103 container
+										104 toolbar Navigation
+											105 button Zoom out
+											106 button Zoom in
+											107 button Scroll to the left
+											108 button Scroll to the right
+											109 button Reset chart view
+								110 toolbar
+									111 container
+										112 button 1 day in 1 minute intervals
+										113 button 5 days in 5 minutes intervals
+										114 button 1 month in 30 minutes intervals
+										115 button 3 months in 1 hour intervals
+										116 button 6 months in 2 hours intervals
+										117 button Year to day in 1 day intervals
+										118 button 1 year in 1 day intervals
+										119 button 5 years in 1 week intervals
+										120 button All data in 1 month intervals
+										121 button Go to
+									122 button Timezone
+								123 container
+									124 toolbar
+										125 toggle button Watchlist, details, and news, Value: 0
+										126 toggle button Alerts, Value: 0
+										127 toggle button Object tree and data window, Value: 0
+										128 toggle button AI Copilot, Value: 0
+										129 toggle button Screeners, Value: 0
+										130 toggle button (disabled) Pine Editor, Value: 1
+										131 toggle button Calendars, Value: 0
+										132 toggle button Community, Value: 0
+										133 toggle button Notifications, Value: 0
+										134 toggle button Chats, Value: 0
+										135 pop up button Products
+										136 toggle button Help Center, Value: 0
+									137 container
+										138 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+										139 pop up button Settings
+										140 container
+											141 container
+												142 container
+													143 text [2026-10-14T15:30:00.000-00:00]: {"eventId":"FOREXCOM:XAUUSD:5:1791992100000:-1:B_CRT:SELL_SIGNAL","eventType":"SELL_SIGNAL","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":4089.71,"sl":4096.91,"tp1":4082.51,"tp2":4075.31,"tp3":4068.11,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Entry triggered (simulated)","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":1791992100000,"h1Tre
+												144 container
+													145 text [2026-10-14T15:30:00.000-00:00]: {"eventId":"FOREXCOM:XAUUSD:5:1791992100000:-1:B_CRT:ENTRY_TRIGGERED","eventType":"ENTRY_TRIGGERED","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":4089.71,"sl":4096.91,"tp1":4082.51,"tp2":4075.31,"tp3":4068.11,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Entry triggered (simulated)","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":179199210000
+												146 container
+													147 text [2026-10-14T15:30:00.000-00:00]: PLAN_AUDIT {"scriptVersion":"0.8.0","symbol":"FOREXCOM:XAUUSD","timeframe":"5","strategy":"B_CRT","timestamp":1791992100000,"setupTimestamp":1791991800000,"direction":-1,"entryMode":"Close","entry":4089.71,"sl":4096.91,"tp1":4082.51,"tp2":4075.31,"tp3":4068.11,"quality":90,"executionAccepted":true,"executionModel":"INDICATOR_ESTIMATE"}
+												148 container
+													149 text [2026-10-14T15:40:00.000-00:00]: {"eventId":"FOREXCOM:XAUUSD:5:1791992100000:-1:B_CRT:TP1_HIT","eventType":"TP1_HIT","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":4089.71,"sl":4096.91,"tp1":4082.51,"tp2":4075.31,"tp3":4068.11,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Entry triggered (simulated)","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":1791992100000,"h1Trend":"Bea
+												150 container
+													151 text [2026-10-14T15:45:00.000-00:00]: {"eventId":"FOREXCOM:XAUUSD:5:1791992100000:-1:B_CRT:TRADE_CLOSED","eventType":"TRADE_CLOSED","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":4089.71,"sl":4096.91,"tp1":4082.51,"tp2":4075.31,"tp3":4068.11,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Previous trade closed","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":1791992100000,"h1Trend":
+											152 button Scroll down
+									153 image
+								154 container Trading panel
+							155 container
+								156 button Move split-view to overlay
+								157 text Pine Editor
+								158 button Collapse panel
+								159 button Fullscreen mode
+								160 button Close
+								161 container
+									162 pop up button Untitled script
+										163 heading Untitled script, Value: 2
+											164 text Untitled script
+									165 button Add to chart
+									166 button Save script
+									167 button Share your script with the community
+									168 pop up button More
+									169 container
+										170 editor (settable) Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Stable display review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then n
+									171 container
+										172 container 12:12:30 PM
+											173 text 12:12:30 PM
+										174 container Script version changed from 0.32 to 0.26
+											175 text Script version changed from 0.32 to 0.26
+										176 container 12:13:08 PM
+											177 text 12:13:08 PM
+										178 container Compiling...
+											179 text Compiling...
+										180 container 12:13:10 PM
+											181 text 12:13:10 PM
+										182 container Compiled.
+											183 text Compiled.
+										184 container 12:13:10 PM
+											185 text 12:13:10 PM
+										186 container Updated on chart.
+											187 text Updated on chart.
+										188 container 12:16:57 PM
+											189 text 12:16:57 PM
+										190 container Compiling...
+											191 text Compiling...
+										192 container 12:17:26 PM
+											193 text 12:17:26 PM
+										194 container Compiled.
+											195 text Compiled.
+										196 container 12:17:26 PM
+											197 text 12:17:26 PM
+										198 container Updated on chart.
+											199 text Updated on chart.
+										200 container 12:19:34 PM
+											201 text 12:19:34 PM
+										202 container Compiling...
+											203 text Compiling...
+										204 container 12:20:11 PM
+											205 text 12:20:11 PM
+										206 container Compiled.
+											207 text Compiled.
+										208 container 12:20:11 PM
+											209 text 12:20:11 PM
+										210 container Updated on chart.
+											211 text Updated on chart.
+										212 container 12:50:36 PM
+											213 text 12:50:36 PM
+										214 container Compiling...
+											215 text Compiling...
+										216 container 12:50:38 PM
+											217 text 12:50:38 PM
+										218 container Compiled.
+											219 text Compiled.
+										220 container 12:50:38 PM
+											221 text 12:50:38 PM
+										222 container Added to chart.
+											223 text Added to chart.
+										224 container 7:03:52 PM
+											225 text 7:03:52 PM
+										226 container Compiling...
+											227 text Compiling...
+										228 container 7:03:55 PM
+											229 text 7:03:55 PM
+										230 container Compiled.
+											231 text Compiled.
+										232 container 7:03:55 PM
+											233 text 7:03:55 PM
+										234 container Added to chart.
+											235 text Added to chart.
+									236 button
+									237 button Line 1, Col 1
+							238 container
+								239 content list
+									240 container
+										241 button Close ad
+										242 container Advertisement, Help: 3rd party ad content
+											243 HTML content SafeFrame Container, URL: 759d1e0635059531305d4b9ba7188009.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+												244 container
+													245 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													246 link Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													247 link Remember, the more tools and data you have, the easier it is to make better market decisions., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													248 text AD
+													249 link Explore our plans, Value: …
+													250 link TradingView, Value: …
+		251 container
+			252 pop up button Tab search
+			253 tab group
+				254 tab (selected, settable, boolean) XAUUSD 4,063.35 ▼ −0.62% Unnamed - Memory usage - 498 MB, Value: on
+					255 button Close
+			256 button New Tab
+			257 button Open Gemini in Chrome
+		258 container
+			259 toolbar
+				260 button Back
+				261 button (disabled) Forward
+				262 button Reload
+				263 container
+					264 pop up button View site information
+					265 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					266 button Bookmark this tab
+				267 container
+					268 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					269 pop up button Extensions
+				270 checkbox Downloads, Value: 0
+				271 button Chheang
+				272 pop up button Chrome
+	273 container
+		274 close button
+		275 zoom button
+276 menu bar
+	277 Chrome
+	278 File
+	279 Edit
+	280 View
+	281 History
+	282 Bookmarks
+	283 Profiles
+	284 Tab
+	285 Window
+	286 Help
+
+The focused UI element is 170 editor (settable) Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Stable display review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then n

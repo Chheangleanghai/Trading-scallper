@@ -1,0 +1,1557 @@
+{
+  "sourceSha256": "2e2495d846d4e2f49f13c649e59aef45f203079786e358aa951ce31bb02a4e5f",
+  "inputCount": 117,
+  "inputSettings": {
+    "reviewShowBoard": true,
+    "reviewShowGuides": true,
+    "clearSignalView": "Context + levels",
+    "clearLevelBars": 8,
+    "clearPlanLimit": 1,
+    "clearSpaceLabels": false,
+    "clearShowPriceCard": true,
+    "enableA": true,
+    "enableB": true,
+    "enableC": true,
+    "enableD": true,
+    "enableE": true,
+    "enableF": true,
+    "enableG": true,
+    "enableH": true,
+    "crtTF": "15",
+    "turtleAge": 3,
+    "levelTolerance": 0.15,
+    "maxZoneTests": 2,
+    "useEMA50": true,
+    "pullbackDepth": 0.3,
+    "accumulationBars": 12,
+    "accumulationWidth": 3.0,
+    "strategyThresholds": false,
+    "thresholdA": 75,
+    "thresholdB": 75,
+    "thresholdC": 75,
+    "thresholdD": 75,
+    "thresholdE": 75,
+    "thresholdF": 75,
+    "thresholdG": 75,
+    "thresholdH": 75,
+    "useResearchWindow": false,
+    "researchStart": 1767225600000,
+    "researchEnd": 1798761600000,
+    "tradeSide": "Both",
+    "auditLog": true,
+    "swing": 3,
+    "expiry": 20,
+    "threshold": 75,
+    "cooldown": 5,
+    "maxTrades": 5,
+    "maxExposurePct": 90.0,
+    "riskPct": 0.5,
+    "buffer": 0.15,
+    "maxStop": 3.0,
+    "maxDistance": 1.5,
+    "minRR": 2.0,
+    "r1": 1.0,
+    "r2": 2.0,
+    "r3": 3.0,
+    "minDisp": 0.7,
+    "trendFilter": true,
+    "emaFilter": false,
+    "useSession": true,
+    "sessionPreset": "London",
+    "sessionHours": "0800-1700",
+    "sessionZone": "Europe/London",
+    "manualPause": false,
+    "newsStart": 0,
+    "newsEnd": 0,
+    "entryMode": "Close",
+    "pendingBars": 3,
+    "timeExit": 15,
+    "targetMode": "Fixed R",
+    "stopMode": "Structure",
+    "atrStop": 1.5,
+    "breakEven": false,
+    "breakEvenR": 1.0,
+    "trailing": false,
+    "trailingStartR": 2.0,
+    "trailingATR": 1.5,
+    "confluenceLiquidity": false,
+    "confluenceFib": false,
+    "confluencePD": false,
+    "showDaily": false,
+    "showSessionLevels": false,
+    "showFibonacci": false,
+    "showPremiumDiscount": false,
+    "showBreakers": false,
+    "showWyckoff": false,
+    "partial": true,
+    "visualLayout": "Reference",
+    "historyMode": "Off",
+    "historyPlanLimit": 8,
+    "historyLookback": 3000,
+    "showConceptPanel": false,
+    "showSwingLevels": true,
+    "showSupportResistance": true,
+    "showCRTSweeps": false,
+    "showContextSweeps": true,
+    "showEMA55": true,
+    "contextHistory": "Latest only",
+    "contextZoneBars": 60,
+    "contextZoneDistance": 8.0,
+    "contextLabelGap": 8,
+    "zoneExtension": 12,
+    "dashboardSize": "Tiny",
+    "chartLabelSize": "Small",
+    "showDashboard": false,
+    "showPerformance": true,
+    "showUnusedModules": false,
+    "showSwingLabels": false,
+    "maxStructureLabels": 15,
+    "showLastPlan": true,
+    "contextTransparency": 82,
+    "showEMA": true,
+    "showZones": true,
+    "showTrade": true,
+    "showEntryLine": true,
+    "showSLLine": true,
+    "showTP1Line": true,
+    "showTP2Line": true,
+    "showTP3Line": true,
+    "showRiskReward": true,
+    "showOB": true,
+    "showStructure": true
+  },
+  "observedControls": {
+    "reviewShowBoard": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "451 checkbox Show A\u2013H confirmation board, Value: 1"
+      }
+    ],
+    "reviewShowGuides": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "453 checkbox Show candidate zones / triggers (setup only), Value: 1"
+      }
+    ],
+    "clearSignalView": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "455 combo box (settable) Context + levels"
+        ],
+        "displayed": [
+          "Context + levels"
+        ]
+      }
+    ],
+    "clearLevelBars": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "458 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "clearPlanLimit": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "460 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "clearSpaceLabels": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "461 checkbox Separate overlapping price labels with connectors, Value: 0"
+      }
+    ],
+    "clearShowPriceCard": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "463 checkbox Show compact status and price card, Value: 1"
+      }
+    ],
+    "enableA": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "465 checkbox A: Sweep + MSS + FVG, Value: 1"
+      }
+    ],
+    "enableB": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "467 checkbox B: CRT, Value: 1"
+      }
+    ],
+    "enableC": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "469 checkbox C: Confirmed-pivot Turtle Soup, Value: 1"
+      }
+    ],
+    "enableD": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "471 checkbox D: K-SNR (confirmed support/resistance), Value: 1"
+      }
+    ],
+    "enableE": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "473 checkbox E: Supply/demand, Value: 1"
+      }
+    ],
+    "enableF": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "475 checkbox F: Structural trend pullback, Value: 1"
+      }
+    ],
+    "enableG": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "477 checkbox G: AMD range approximation, Value: 1"
+      }
+    ],
+    "enableH": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "479 checkbox H: Confirmed Quasimodo approximation, Value: 1"
+      }
+    ],
+    "crtTF": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "481 combo box (settable) 15 minutes"
+        ],
+        "displayed": [
+          "15 minutes"
+        ]
+      }
+    ],
+    "turtleAge": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "484 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "levelTolerance": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "486 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      }
+    ],
+    "maxZoneTests": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "488 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "useEMA50": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "489 checkbox Trend pullback: require EMA50, Value: 1"
+      }
+    ],
+    "pullbackDepth": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "491 text field (settable) 0.3"
+        ],
+        "displayed": [
+          "0.3"
+        ]
+      }
+    ],
+    "accumulationBars": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "493 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      }
+    ],
+    "accumulationWidth": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "495 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "strategyThresholds": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "497 checkbox Use strategy-specific quality thresholds, Value: 0"
+      }
+    ],
+    "thresholdA": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "499 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdB": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "501 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdC": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "503 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdD": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "505 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdE": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "507 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "451 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdF": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "509 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "453 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdG": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "511 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "455 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdH": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "513 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "457 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "useResearchWindow": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "515 checkbox Restrict new plans to date window, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "459 checkbox Restrict new plans to date window, Value: 0"
+      }
+    ],
+    "researchStart": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "517 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+          "518 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "2026-01-01",
+          "07:00"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "461 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+          "462 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "2026-01-01",
+          "07:00"
+        ]
+      }
+    ],
+    "researchEnd": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "520 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+          "521 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "2027-01-01",
+          "07:00"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "464 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+          "465 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "2027-01-01",
+          "07:00"
+        ]
+      }
+    ],
+    "tradeSide": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "523 combo box (settable) Both"
+        ],
+        "displayed": [
+          "Both"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "467 combo box (settable) Both"
+        ],
+        "displayed": [
+          "Both"
+        ]
+      }
+    ],
+    "auditLog": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "control": "525 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "469 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+      }
+    ],
+    "swing": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "527 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "471 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "expiry": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "529 text field (settable) 20"
+        ],
+        "displayed": [
+          "20"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "473 text field (settable) 20"
+        ],
+        "displayed": [
+          "20"
+        ]
+      }
+    ],
+    "threshold": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "531 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "475 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "cooldown": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "533 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "477 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      }
+    ],
+    "maxTrades": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "535 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "479 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      }
+    ],
+    "maxExposurePct": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "537 text field (settable) 90"
+        ],
+        "displayed": [
+          "90"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "481 text field (settable) 90"
+        ],
+        "displayed": [
+          "90"
+        ]
+      }
+    ],
+    "riskPct": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "547 text field (settable) 0.5"
+        ],
+        "displayed": [
+          "0.5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "491 text field (settable) 0.5"
+        ],
+        "displayed": [
+          "0.5"
+        ]
+      }
+    ],
+    "buffer": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "549 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "493 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      }
+    ],
+    "maxStop": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "551 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "495 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "maxDistance": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "553 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "497 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "minRR": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "555 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "499 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "r1": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "557 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "501 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "r2": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "559 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "503 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "r3": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "505 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "minDisp": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "507 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "452 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      }
+    ],
+    "trendFilter": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "508 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "453 checkbox Require H1 alignment, Value: 1"
+      }
+    ],
+    "emaFilter": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "510 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "455 checkbox Require EMA 9/21 alignment, Value: 0"
+      }
+    ],
+    "useSession": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "512 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "457 checkbox Session filter, Value: 1"
+      }
+    ],
+    "sessionPreset": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "514 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "459 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      }
+    ],
+    "sessionHours": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "517 combo box (settable) 08:00",
+          "519 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "462 combo box (settable) 08:00",
+          "464 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      }
+    ],
+    "sessionZone": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "521 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "466 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      }
+    ],
+    "manualPause": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "522 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "467 checkbox Manual news pause, Value: 0"
+      }
+    ],
+    "newsStart": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "524 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "525 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "07:00"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "469 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "470 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "07:00"
+        ]
+      }
+    ],
+    "newsEnd": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "527 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "528 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "07:00"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "472 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "473 combo box (settable) 07:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "07:00"
+        ]
+      }
+    ],
+    "entryMode": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "530 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "475 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      }
+    ],
+    "pendingBars": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "533 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "478 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "timeExit": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "535 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "480 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      }
+    ],
+    "targetMode": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "539 combo box (settable) Fixed R"
+        ],
+        "displayed": [
+          "Fixed R"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "483 combo box (settable) Fixed R"
+        ],
+        "displayed": [
+          "Fixed R"
+        ]
+      }
+    ],
+    "stopMode": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "542 combo box (settable) Structure"
+        ],
+        "displayed": [
+          "Structure"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "486 combo box (settable) Structure"
+        ],
+        "displayed": [
+          "Structure"
+        ]
+      }
+    ],
+    "atrStop": [
+      {
+        "file": "indicator-inputs-page0.ax.txt",
+        "controls": [
+          "545 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "489 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "breakEven": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "537 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "482 checkbox Move stop to filled entry after trigger R, Value: 0"
+      }
+    ],
+    "breakEvenR": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "539 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "484 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "trailing": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "540 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "485 checkbox ATR trailing stop after trigger R, Value: 0"
+      }
+    ],
+    "trailingStartR": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "542 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "487 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "trailingATR": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "controls": [
+          "544 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "489 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "confluenceLiquidity": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "546 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "491 checkbox Score optional liquidity (category cap 20), Value: 0"
+      }
+    ],
+    "confluenceFib": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "548 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "493 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      }
+    ],
+    "confluencePD": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "550 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "495 checkbox Require optional premium/discount location, Value: 0"
+      }
+    ],
+    "showDaily": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "552 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "497 checkbox Show previous day/week levels, Value: 0"
+      }
+    ],
+    "showSessionLevels": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "554 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "499 checkbox Show session high/low, Value: 0"
+      }
+    ],
+    "showFibonacci": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "556 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "501 checkbox Show confirmed swing Fibonacci, Value: 0"
+      }
+    ],
+    "showPremiumDiscount": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "558 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "503 checkbox Show confirmed swing midpoint, Value: 0"
+      }
+    ],
+    "showBreakers": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "560 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "505 checkbox Show breaker-level heuristics, Value: 0"
+      }
+    ],
+    "showWyckoff": [
+      {
+        "file": "indicator-inputs-overlap.ax.txt",
+        "control": "562 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "507 checkbox Show spring/upthrust candidates, Value: 0"
+      }
+    ],
+    "partial": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "509 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      }
+    ],
+    "visualLayout": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "511 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      }
+    ],
+    "historyMode": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "536 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      }
+    ],
+    "historyPlanLimit": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "539 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "historyLookback": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "541 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      }
+    ],
+    "showConceptPanel": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "513 checkbox Show compact analysis context, Value: 0"
+      }
+    ],
+    "showSwingLevels": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "515 checkbox Show confirmed swing levels and right labels, Value: 1"
+      }
+    ],
+    "showSupportResistance": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "517 checkbox Show confirmed support/resistance zones, Value: 1"
+      }
+    ],
+    "showCRTSweeps": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "519 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      }
+    ],
+    "showContextSweeps": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "521 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      }
+    ],
+    "showEMA55": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "523 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      }
+    ],
+    "contextHistory": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "525 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      }
+    ],
+    "contextZoneBars": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "528 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      }
+    ],
+    "contextZoneDistance": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "530 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "contextLabelGap": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "532 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "zoneExtension": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "534 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      }
+    ],
+    "dashboardSize": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "543 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      }
+    ],
+    "chartLabelSize": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "546 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      }
+    ],
+    "showDashboard": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "548 checkbox Show signal dashboard, Value: 0"
+      }
+    ],
+    "showPerformance": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "550 checkbox Show backtest results table, Value: 1"
+      }
+    ],
+    "showUnusedModules": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "552 checkbox Show strategies with no completed trades, Value: 0"
+      }
+    ],
+    "showSwingLabels": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "554 checkbox Show detailed swing labels, Value: 0"
+      }
+    ],
+    "maxStructureLabels": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "556 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      }
+    ],
+    "showLastPlan": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "557 checkbox Show previous trade prices when no current plan, Value: 1"
+      }
+    ],
+    "contextTransparency": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "controls": [
+          "559 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      }
+    ],
+    "showEMA": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "560 checkbox Show EMAs, Value: 1"
+      }
+    ],
+    "showZones": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "562 checkbox Show latest FVG, Value: 1"
+      }
+    ],
+    "showTrade": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "564 checkbox Show latest trade levels and boxes, Value: 1"
+      }
+    ],
+    "showEntryLine": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "566 checkbox Entry line/price, Value: 1"
+      }
+    ],
+    "showSLLine": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "568 checkbox SL line/price, Value: 1"
+      }
+    ],
+    "showTP1Line": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "570 checkbox TP1 line/price, Value: 1"
+      }
+    ],
+    "showTP2Line": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "572 checkbox TP2 line/price, Value: 1"
+      }
+    ],
+    "showTP3Line": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "574 checkbox TP3 line/price, Value: 1"
+      }
+    ],
+    "showRiskReward": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "576 checkbox Risk/reward boxes, Value: 1"
+      }
+    ],
+    "showOB": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "578 checkbox Show latest displacement order block heuristic, Value: 1"
+      }
+    ],
+    "showStructure": [
+      {
+        "file": "indicator-inputs-page1.ax.txt",
+        "control": "580 checkbox Show structure and sweeps, Value: 1"
+      }
+    ]
+  },
+  "evidenceFiles": [
+    "indicator-inputs-page0.ax.txt",
+    "indicator-inputs-overlap.ax.txt",
+    "indicator-inputs-page1.ax.txt"
+  ],
+  "displayTimeZone": "Asia/Jakarta UTC+7",
+  "timeInputsNormalizedToUTC": true,
+  "comparisonWithPriorSavedIndicator": {
+    "missing": [],
+    "differences": {},
+    "all117Equal": true
+  }
+}

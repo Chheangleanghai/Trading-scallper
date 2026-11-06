@@ -1,0 +1,15 @@
+{
+  "scope": "New standalone stable Indicator versus its captured diagnostic source, not cross-model release parity.",
+  "indicator": {
+    "reference": "stable-live-final-raw.csv",
+    "candidate": "stable-indicator-raw.csv",
+    "plans": 74,
+    "allJsonPlanFieldsEqual": true
+  },
+  "strategy": {
+    "reference": "../recalculation-review-2026-11-05/strategy-nov5-raw.csv",
+    "candidate": "stable-strategy-raw.csv",
+    "plans": 75,
+    "allJsonPlanFieldsEqual": true
+  }
+}

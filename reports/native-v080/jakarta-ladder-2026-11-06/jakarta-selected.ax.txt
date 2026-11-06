@@ -1,0 +1,494 @@
+Window: "XAUUSD 4,058.35 ▼ −0.74% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,058.35 ▼ −0.74% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,058.35 ▼ −0.74% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,059.82 ▼ −0.7% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+											23 text Replay
+										24 button Undo change timezone
+										25 pop up button Layout setup
+										26 button Save all charts for all symbols and intervals on your layout
+										27 pop up button Manage layouts
+										28 button Quick search
+										29 button Settings
+										30 button Fullscreen mode
+										31 pop up button Take a snapshot
+									32 pop up button Share your idea with the trade community
+									33 container
+										34 button Trade
+									35 container
+										36 button Upgrade
+								37 toolbar
+									38 container
+										39 container
+											40 button Cross
+											41 toggle button Cursors, Value: 1
+										42 container
+											43 button Trendline
+											44 toggle button Trend tools, Value: 0
+										45 container
+											46 button Fib retracement
+											47 toggle button Gann and Fibonacci tools, Value: 0
+										48 container
+											49 button XABCD pattern
+											50 toggle button Patterns, Value: 0
+										51 container
+											52 button Long position
+											53 toggle button Forecasting and measurement tools, Value: 0
+										54 container
+											55 button Brush
+											56 toggle button Geometric shapes, Value: 0
+										57 container
+											58 button Text
+											59 toggle button Annotation tools, Value: 0
+										60 container
+											61 button Icon
+											62 toggle button Icons, Value: 0
+										63 button Measure
+										64 button Zoom in
+										65 container
+											66 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											67 toggle button Magnets, Value: 0
+										68 toggle button Keep drawing, Value: 0
+										69 container
+											70 toggle button Lock drawings and indicators, Value: 0
+											71 toggle button Lock options, Value: 0
+										72 container
+											73 toggle button Hide all drawings, Value: 0
+											74 toggle button Hide options, Value: 0
+										75 container
+											76 button Remove objects
+											77 button Remove options
+								78 container Chart #1
+									79 container
+										80 toolbar
+											81 container
+												82 container Change symbol
+													83 container
+														84 Unlabeled image To get missing image descriptions, open the context menu.
+														85 text X
+													86 button Change symbol
+												87 container Change interval
+													88 text ·
+													89 button Change interval
+												90 text ·
+												91 text FOREX.com
+											92 container
+												93 button Unflag symbol
+													94 image
+												95 button More options for Gold Spot / U.S. Dollar, Help: More
+											96 button Market open · Data updates once per second
+											97 container
+												98 text O 4,059.07 H 4,059.95 L 4,058.74 C 4,059.11 +0.03 (+0.00%)
+										99 container
+											100 text 4,059.27 SELL
+											101 text 71
+											102 text 4,059.98 BUY
+										103 button Show indicators legend
+										104 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									105 container
+										106 toolbar Navigation
+											107 button Zoom out
+											108 button Zoom in
+											109 button Scroll to the left
+											110 button Scroll to the right
+											111 button Reset chart view
+								112 toolbar
+									113 container
+										114 button 1 day in 1 minute intervals
+										115 button 5 days in 5 minutes intervals
+										116 button 1 month in 30 minutes intervals
+										117 button 3 months in 1 hour intervals
+										118 button 6 months in 2 hours intervals
+										119 button Year to day in 1 day intervals
+										120 button 1 year in 1 day intervals
+										121 button 5 years in 1 week intervals
+										122 button All data in 1 month intervals
+										123 button Go to
+									124 button Timezone
+								125 container
+									126 toolbar
+										127 toggle button Watchlist, details, and news, Value: 0
+										128 toggle button Alerts, Value: 0
+										129 toggle button Object tree and data window, Value: 0
+										130 toggle button AI Copilot, Value: 0
+										131 toggle button Screeners, Value: 0
+										132 toggle button Pine Editor, Value: 0
+										133 toggle button Calendars, Value: 0
+										134 toggle button Community, Value: 0
+										135 toggle button Notifications, Value: 0
+										136 toggle button Chats, Value: 0
+										137 pop up button Products
+										138 toggle button Help Center, Value: 0
+								139 container Trading panel
+							140 container
+								141 text Timezone
+							142 container
+								143 content list
+									144 container
+										145 button Close ad
+										146 container Advertisement, Help: 3rd party ad content
+											147 HTML content SafeFrame Container, URL: 759d1e0635059531305d4b9ba7188009.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+												148 container
+													149 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													150 link Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													151 link Remember, the more tools and data you have, the easier it is to make better market decisions., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													152 text AD
+													153 link Explore our plans, Value: …
+													154 link TradingView, Value: …
+							155 container
+								156 table
+									157 row
+										158 cell
+											159 text UTC
+									160 row
+										161 cell
+											162 text Exchange
+									163 row
+										164 cell
+											165 text (UTC-10) Honolulu
+									166 row
+										167 cell
+											168 text (UTC-9) Anchorage
+									169 row
+										170 cell
+											171 text (UTC-9) Juneau
+									172 row
+										173 cell
+											174 text (UTC-8) Los Angeles
+									175 row
+										176 cell
+											177 text (UTC-8) Vancouver
+									178 row
+										179 cell
+											180 text (UTC-7) Denver
+									181 row
+										182 cell
+											183 text (UTC-7) Phoenix
+									184 row
+										185 cell
+											186 text (UTC-6) Chicago
+									187 row
+										188 cell
+											189 text (UTC-6) Mexico City
+									190 row
+										191 cell
+											192 text (UTC-6) San Salvador
+									193 row
+										194 cell
+											195 text (UTC-5) Bogota
+									196 row
+										197 cell
+											198 text (UTC-5) Lima
+									199 row
+										200 cell
+											201 text (UTC-5) New York
+									202 row
+										203 cell
+											204 text (UTC-5) Toronto
+									205 row
+										206 cell
+											207 text (UTC-4) Caracas
+									208 row
+										209 cell
+											210 text (UTC-4) Halifax
+									211 row
+										212 cell
+											213 text (UTC-3) Buenos Aires
+									214 row
+										215 cell
+											216 text (UTC-3) Santiago
+									217 row
+										218 cell
+											219 text (UTC-3) Sao Paulo
+									220 row
+										221 cell
+											222 text (UTC-1) Azores
+									223 row
+										224 cell
+											225 text (UTC) Dublin
+									226 row
+										227 cell
+											228 text (UTC) Lisbon
+									229 row
+										230 cell
+											231 text (UTC) London
+									232 row
+										233 cell
+											234 text (UTC) Reykjavik
+									235 row
+										236 cell
+											237 text (UTC+1) Amsterdam
+									238 row
+										239 cell
+											240 text (UTC+1) Belgrade
+									241 row
+										242 cell
+											243 text (UTC+1) Berlin
+									244 row
+										245 cell
+											246 text (UTC+1) Bratislava
+									247 row
+										248 cell
+											249 text (UTC+1) Brussels
+									250 row
+										251 cell
+											252 text (UTC+1) Budapest
+									253 row
+										254 cell
+											255 text (UTC+1) Casablanca
+									256 row
+										257 cell
+											258 text (UTC+1) Copenhagen
+									259 row
+										260 cell
+											261 text (UTC+1) Lagos
+									262 row
+										263 cell
+											264 text (UTC+1) Ljubljana
+									265 row
+										266 cell
+											267 text (UTC+1) Luxembourg
+									268 row
+										269 cell
+											270 text (UTC+1) Madrid
+									271 row
+										272 cell
+											273 text (UTC+1) Malta
+									274 row
+										275 cell
+											276 text (UTC+1) Oslo
+									277 row
+										278 cell
+											279 text (UTC+1) Paris
+									280 row
+										281 cell
+											282 text (UTC+1) Prague
+									283 row
+										284 cell
+											285 text (UTC+1) Rome
+									286 row
+										287 cell
+											288 text (UTC+1) Stockholm
+									289 row
+										290 cell
+											291 text (UTC+1) Tunis
+									292 row
+										293 cell
+											294 text (UTC+1) Vienna
+									295 row
+										296 cell
+											297 text (UTC+1) Warsaw
+									298 row
+										299 cell
+											300 text (UTC+1) Zagreb
+									301 row
+										302 cell
+											303 text (UTC+1) Zurich
+									304 row
+										305 cell
+											306 text (UTC+2) Athens
+									307 row
+										308 cell
+											309 text (UTC+2) Bucharest
+									310 row
+										311 cell
+											312 text (UTC+2) Cairo
+									313 row
+										314 cell
+											315 text (UTC+2) Helsinki
+									316 row
+										317 cell
+											318 text (UTC+2) Jerusalem
+									319 row
+										320 cell
+											321 text (UTC+2) Johannesburg
+									322 row
+										323 cell
+											324 text (UTC+2) Nicosia
+									325 row
+										326 cell
+											327 text (UTC+2) Riga
+									328 row
+										329 cell
+											330 text (UTC+2) Sofia
+									331 row
+										332 cell
+											333 text (UTC+2) Tallinn
+									334 row
+										335 cell
+											336 text (UTC+2) Vilnius
+									337 row
+										338 cell
+											339 text (UTC+3) Bahrain
+									340 row
+										341 cell
+											342 text (UTC+3) Istanbul
+									343 row
+										344 cell
+											345 text (UTC+3) Kuwait
+									346 row
+										347 cell
+											348 text (UTC+3) Moscow
+									349 row
+										350 cell
+											351 text (UTC+3) Nairobi
+									352 row
+										353 cell
+											354 text (UTC+3) Qatar
+									355 row
+										356 cell
+											357 text (UTC+3) Riyadh
+									358 row
+										359 cell
+											360 text (UTC+3:30) Tehran
+									361 row
+										362 cell
+											363 text (UTC+4) Dubai
+									364 row
+										365 cell
+											366 text (UTC+4) Muscat
+									367 row
+										368 cell
+											369 text (UTC+4:30) Kabul
+									370 row
+										371 cell
+											372 text (UTC+5) Ashgabat
+									373 row
+										374 cell
+											375 text (UTC+5) Astana
+									376 row
+										377 cell
+											378 text (UTC+5) Karachi
+									379 row
+										380 cell
+											381 text (UTC+5:30) Colombo
+									382 row
+										383 cell
+											384 text (UTC+5:30) Kolkata
+									385 row
+										386 cell
+											387 text (UTC+5:45) Kathmandu
+									388 row
+										389 cell
+											390 text (UTC+6) Dhaka
+									391 row
+										392 cell
+											393 text (UTC+6:30) Yangon
+									394 row
+										395 cell
+											396 text (UTC+7) Bangkok
+									397 row
+										398 cell
+											399 text (UTC+7) Ho Chi Minh
+									400 row
+										401 cell
+											402 text (UTC+7) Jakarta
+									403 row
+										404 cell
+											405 text (UTC+8) Chongqing
+									406 row
+										407 cell
+											408 text (UTC+8) Hong Kong
+									409 row
+										410 cell
+											411 text (UTC+8) Kuala Lumpur
+									412 row
+										413 cell
+											414 text (UTC+8) Manila
+									415 row
+										416 cell
+											417 text (UTC+8) Perth
+									418 row
+										419 cell
+											420 text (UTC+8) Shanghai
+									421 row
+										422 cell
+											423 text (UTC+8) Singapore
+									424 row
+										425 cell
+											426 text (UTC+8) Taipei
+									427 row
+										428 cell
+											429 text (UTC+9) Seoul
+									430 row
+										431 cell
+											432 text (UTC+9) Tokyo
+									433 row
+										434 cell
+											435 text (UTC+10) Brisbane
+									436 row
+										437 cell
+											438 text (UTC+10:30) Adelaide
+									439 row
+										440 cell
+											441 text (UTC+11) Sydney
+									442 row
+										443 cell
+											444 text (UTC+12) Norfolk Island
+									445 row
+										446 cell
+											447 text (UTC+13) New Zealand
+									448 row
+										449 cell
+											450 text (UTC+13) Tokelau
+									451 row
+										452 cell
+											453 text (UTC+13:45) Chatham Islands
+		454 container
+			455 pop up button Tab search
+			456 tab group
+				457 tab (selected, settable, boolean) XAUUSD 4,058.35 ▼ −0.74% Unnamed - Memory usage - 376 MB, Value: on
+					458 button Close
+			459 button New Tab
+			460 button Open Gemini in Chrome
+		461 container
+			462 toolbar
+				463 button Back
+				464 button (disabled) Forward
+				465 button Reload
+				466 container
+					467 pop up button View site information
+					468 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					469 button Bookmark this tab
+				470 container
+					471 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					472 pop up button Extensions
+				473 checkbox Downloads, Value: 0
+				474 button Chheang
+				475 pop up button Chrome
+	476 container
+		477 close button
+		478 zoom button
+479 menu bar
+	480 Chrome
+	481 File
+	482 Edit
+	483 View
+	484 History
+	485 Bookmarks
+	486 Profiles
+	487 Tab
+	488 Window
+	489 Help
+
+The focused UI element is 490 container

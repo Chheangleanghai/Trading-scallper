@@ -1,0 +1,231 @@
+Window: "XAUUSD 4,063.75 ▼ −0.61% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,063.75 ▼ −0.61% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,063.75 ▼ −0.61% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,063.75 ▼ −0.61% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+											23 text Replay
+										24 pop up button Layout setup
+										25 button (disabled) All changes saved
+										26 pop up button Manage layouts
+										27 button Quick search
+										28 button Settings
+										29 button Fullscreen mode
+										30 pop up button Take a snapshot
+									31 pop up button Share your idea with the trade community
+									32 container
+										33 button Trade
+									34 container
+										35 button Upgrade
+								36 toolbar
+									37 container
+										38 container
+											39 button Cross
+											40 toggle button Cursors, Value: 1
+										41 container
+											42 button Trendline
+											43 toggle button Trend tools, Value: 0
+										44 container
+											45 button Fib retracement
+											46 toggle button Gann and Fibonacci tools, Value: 0
+										47 container
+											48 button XABCD pattern
+											49 toggle button Patterns, Value: 0
+										50 container
+											51 button Long position
+											52 toggle button Forecasting and measurement tools, Value: 0
+										53 container
+											54 button Brush
+											55 toggle button Geometric shapes, Value: 0
+										56 container
+											57 button Text
+											58 toggle button Annotation tools, Value: 0
+										59 container
+											60 button Icon
+											61 toggle button Icons, Value: 0
+										62 button Measure
+										63 button Zoom in
+										64 container
+											65 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											66 toggle button Magnets, Value: 0
+										67 toggle button Keep drawing, Value: 0
+										68 container
+											69 toggle button Lock drawings and indicators, Value: 0
+											70 toggle button Lock options, Value: 0
+										71 container
+											72 toggle button Hide all drawings, Value: 0
+											73 toggle button Hide options, Value: 0
+										74 container
+											75 button Remove objects
+											76 button Remove options
+								77 container Chart #1
+									78 container
+										79 toolbar
+											80 container
+												81 container Change symbol
+													82 container
+														83 Unlabeled image To get missing image descriptions, open the context menu.
+														84 text X
+													85 button Change symbol
+												86 container Change interval
+													87 text ·
+													88 button Change interval
+												89 text ·
+												90 text FOREX.com
+											91 container
+												92 button Unflag symbol
+													93 image
+												94 button More options for Gold Spot / U.S. Dollar, Help: More
+											95 button Market open · Data updates once per second
+											96 container
+												97 text O 4,064.24 H 4,064.24 L 4,062.37 C 4,063.75 −0.49 (−0.01%)
+										98 container
+											99 text 4,063.44 SELL
+											100 text 62
+											101 text 4,064.06 BUY
+										102 button Show indicators legend
+										103 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									104 container
+										105 toolbar Navigation
+											106 button Zoom out
+											107 button Zoom in
+											108 button Scroll to the left
+											109 button Scroll to the right
+											110 button Reset chart view
+								111 toolbar
+									112 container
+										113 button 1 day in 1 minute intervals
+										114 button 5 days in 5 minutes intervals
+										115 button 1 month in 30 minutes intervals
+										116 button 3 months in 1 hour intervals
+										117 button 6 months in 2 hours intervals
+										118 button Year to day in 1 day intervals
+										119 button 1 year in 1 day intervals
+										120 button 5 years in 1 week intervals
+										121 button All data in 1 month intervals
+										122 button Go to
+									123 button Timezone
+								124 container
+									125 toolbar
+										126 toggle button Watchlist, details, and news, Value: 0
+										127 toggle button Alerts, Value: 0
+										128 toggle button Object tree and data window, Value: 0
+										129 toggle button AI Copilot, Value: 0
+										130 toggle button Screeners, Value: 0
+										131 toggle button Pine Editor, Value: 0
+										132 toggle button Calendars, Value: 0
+										133 toggle button Community, Value: 0
+										134 toggle button Notifications, Value: 0
+										135 toggle button Chats, Value: 0
+										136 pop up button Products
+										137 toggle button Help Center, Value: 0
+								138 container Trading panel
+							139 container
+								140 content list
+									141 container
+										142 button Close ad
+										143 container Advertisement, Help: 3rd party ad content
+											144 HTML content SafeFrame Container, URL: 759d1e0635059531305d4b9ba7188009.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+												145 container
+													146 link To get missing image descriptions, open the context menu., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													147 link Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													148 link Remember, the more tools and data you have, the easier it is to make better market decisions., Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjsuIAyzgWql4CPyEwnzJm8kgqTA8tKNZbI1eFaJ_y74fpXC-N2Afuil1_fNAAHt247MwBH2Jg6lFhN8zjq3ejWh-SAxJCUIg5PPq7z8_8LMsP9OgooGq_LzARgcMcD7hI-dTORpPc7s85dS5i9fBKIApYgNy0sATDzzkfcwR1hhfPjwFCRsGtvnY5fs8TNXtVey1dYLy-73TrWNrCiACuUI6IwFtxC6tHR-MPrMr5Plqqbnnm-TW4UETojASvkAqrCefmOgwliMgZE9vWu8w6DJJ6cVKckaP6ktozN0Ps0sWrk6CzYt-wnJcCcE0IHXgrkKLRHVXroU7WjAKzN7hxKJhyctdc75iTcmMGWAE_jgJm1ZmBPGlgc-420MGR47xXRCMsEf8aQ5QFwgXbb4gF1qyny-nSe-V4e9CFpvl11ee9Wv9c-2ckbw&sai=AMfl-YQQq8vmyi6yU3nBu91txGH6NFovooQDMum8qej5JRcnZ2RkqzjG5LJ_nJ5NGQB3SbLLiGmZZ1KNxG_6V0jjQe3vD1i5mIjPEE9oqKY3-vtOe202vHA40oW44Nq7-k7dFRcq391fEGpzGgvttI6yjfBwc3fHZlD8DWTzkv1BQawhj5k4-tYQufA78KU1SD3jE5XLhBIWnwKad1UODwcs0DpSsdefinWLiezlnllqHarmVY4BDZkUorhJ1gqEr3Wm8RKc2S_D5MxXbd3DKzsxxIyQ7apn9AKKfn_DwY8k1KAVKHfCHZHByv_uDaAjdHZEFzCKEisTeRaNjoWhM02pR-vw8Dl7zavqXccA98tlwasR5-4Ko3uMEgA&sig=Cg0ArKJSzAJVS8chTIXaEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+													149 text AD
+													150 link Explore our plans, Value: …
+													151 link TradingView, Value: …
+							152 container
+								153 table
+									154 row (disabled) Save layout
+										155 cell
+											156 text Save layout
+										157 text ⌘ S
+									158 row Autosave
+										159 cell
+											160 text Autosave
+									161 row Share layout
+										162 row header
+											163 text Share layout
+										164 cell
+											165 container Everyone with the link can view and copy
+									166 row Make a copy
+										167 cell
+											168 text Make a copy…
+									169 row Rename
+										170 cell
+											171 text Rename…
+									172 row Download chart data
+										173 cell
+											174 text Download chart data…
+									175 row Create new layout
+										176 cell
+											177 text Create new layout…
+									178 row Recently used
+										179 cell
+											180 text RECENTLY USED
+									181 row Unnamed XAUUSD, 5 Add to favorites
+										182 cell
+											183 text Unnamed
+										184 text XAUUSD, 5
+										185 cell
+											186 button Add to favorites
+									187 row Open layout
+										188 cell
+											189 text Open layout…
+										190 text Dot
+		191 container
+			192 pop up button Tab search
+			193 tab group
+				194 tab (selected, settable, boolean) XAUUSD 4,063.75 ▼ −0.61% Unnamed - Memory usage - 395 MB, Value: on
+					195 button Close
+			196 button New Tab
+			197 button Open Gemini in Chrome
+		198 container
+			199 toolbar
+				200 button Back
+				201 button (disabled) Forward
+				202 button Reload
+				203 container
+					204 pop up button View site information
+					205 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					206 button Bookmark this tab
+				207 container
+					208 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					209 pop up button Extensions
+				210 checkbox Downloads, Value: 0
+				211 button Chheang
+				212 pop up button Chrome
+	213 container
+		214 close button
+		215 zoom button
+216 menu bar
+	217 Chrome
+	218 File
+	219 Edit
+	220 View
+	221 History
+	222 Bookmarks
+	223 Profiles
+	224 Tab
+	225 Window
+	226 Help
+
+The focused UI element is 158 row Autosave

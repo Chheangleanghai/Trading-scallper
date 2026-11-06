@@ -1,0 +1,205 @@
+{
+  "completedDate": "2026-11-07",
+  "displayTimeZone": "Asia/Jakarta",
+  "version": "0.8.0",
+  "sourceHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/indicator_jakarta_ladder.pine": "2e2495d846d4e2f49f13c649e59aef45f203079786e358aa951ce31bb02a4e5f",
+    "pine/experiments/strategy_jakarta_ladder.pine": "4d3a4772e56fbbbbb91afeb8675ec66a43ba7eccdadc98dd6e6774b6f2ad9801"
+  },
+  "nativeIndicatorCompile": "PASS: exact copy-back and visible success, preserved compile screenshot",
+  "nativeStrategyJakartaRevision": "NOT RUN; local validation only",
+  "nativeReload": {
+    "tolerance": 0,
+    "beforePlans": 78,
+    "afterPlans": 78,
+    "commonPlans": 78,
+    "exactCommonPlans": 78,
+    "mismatches": [],
+    "missingPlans": [],
+    "additionalPlans": [],
+    "beforeMessages": 338,
+    "afterMessages": 338,
+    "missingMessageOccurrences": 0,
+    "additionalMessageOccurrences": 0,
+    "allDateAndMessageRowsEqual": true
+  },
+  "chartFinalState": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "visible": "XAUUSD SMART SCALPER PRO \u00b7 A-H Jakarta ladder",
+    "priorStudiesPreservedHidden": 3,
+    "sharedRightScale": true,
+    "jakartaCheckedAfterReload": true,
+    "autosave": "ON",
+    "allChangesSaved": true,
+    "editorAndLogsClosed": true,
+    "extraLibraryScriptSave": "BLOCKED by actual Free-plan 1-script limit; original library script preserved",
+    "appliedLayoutPersistedAcrossReload": true
+  },
+  "limits": [
+    "Same-model display regression does not pass Indicator/Strategy full-stream parity",
+    "One reload does not establish general non-repainting or candle-by-candle Replay",
+    "No profitability or OOS conclusion",
+    "No live alert, Telegram, deployment or real trade"
+  ],
+  "artifacts": {
+    "README.md": {
+      "bytes": 4907,
+      "sha256": "199cec06de6d5da0844e655d2bb643ccafe716e8d6d3a46ed0d30e38fe814830"
+    },
+    "after-reload-jakarta-selected.png": {
+      "bytes": 992574,
+      "sha256": "fba0dc3550397006bdb1a96c2549bf9919d4ccdd5d1d68a917defb962528196f"
+    },
+    "after-reload-layout.ax.txt": {
+      "bytes": 14612,
+      "sha256": "03acff6a0003f689c08c9d1418d84b977274bcfbdf410ed6fa280bd88c202dce"
+    },
+    "after-reload-shared-scale.ax.txt": {
+      "bytes": 16887,
+      "sha256": "b0990288d979833488b87c9b058ae3516abc94aa6bf8b0240a3fd9735013cdd7"
+    },
+    "after-reload-timezone.ax.txt": {
+      "bytes": 14006,
+      "sha256": "1603cc5e1becdee06179d052b0f2ca91e93371247faa0791d6bf835cd7fc8dd7"
+    },
+    "analyze-display.py": {
+      "bytes": 5293,
+      "sha256": "20d4b3acbe811b2b00fd2227b38cddb8c2915042957c5316059a7708528aace0"
+    },
+    "before-reload-layout.ax.txt": {
+      "bytes": 18869,
+      "sha256": "81f7e3761fecbac0a5855ee10027127b9740b50328dd129f9375eafde785a26d"
+    },
+    "continuation-autosave-on.png": {
+      "bytes": 1266515,
+      "sha256": "35fd66d7c86e3eaee1c656a778ade6bfac7b8347dbfe1beb8f126ff05a867f3d"
+    },
+    "display-regression-before-save.json": {
+      "bytes": 613,
+      "sha256": "5a2fbe63f10f7379139707adcb9db6e9e56632ba0cfde119880a335296c37952"
+    },
+    "display-verification.json": {
+      "bytes": 4046,
+      "sha256": "d6b7407f9c09c6ab9859d8172763ab3a374497913a8d891da6b4d8c4da72460d"
+    },
+    "final-autosave.ax.txt": {
+      "bytes": 7597,
+      "sha256": "ba6c9d914091f70ab3989b6fa4ab839b31437e21955e24986ed0a34a837b1d82"
+    },
+    "final-autosave.png": {
+      "bytes": 1006737,
+      "sha256": "1ac27c9a183fcb7e258e22a030599da84f6d24f32f48a6c64e792990dd9ec781"
+    },
+    "final-chart.ax.txt": {
+      "bytes": 6878,
+      "sha256": "1a9446d2e68119a1c01e6d3339d615d2c113f8ca678d7d7634750e89fb927dc7"
+    },
+    "final-chart.png": {
+      "bytes": 1010557,
+      "sha256": "56a07f58791173c0c414fb6937aa6a2232e31fdba0bd3326fbdaebbbc942617b"
+    },
+    "free-script-save-limit.ax.txt": {
+      "bytes": 13209,
+      "sha256": "198a7ffcd80119d2a938c90e65974a91f9cc49e1a4f244d6eab9720706413493"
+    },
+    "indicator-after-reload-raw.csv": {
+      "bytes": 266757,
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55"
+    },
+    "indicator-before-save-raw.csv": {
+      "bytes": 266757,
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55"
+    },
+    "indicator-compile-success.ax.txt": {
+      "bytes": 12979,
+      "sha256": "cdea26a9506ef93c7585acd44b9effa010b3383814d3462601e55d8bd45f8b0c"
+    },
+    "indicator-compile-success.png": {
+      "bytes": 1288647,
+      "sha256": "ac517a6d8f83aeca65cc4ebad2ed90ffe07f055e32139ee0a22452f4324a4cc9"
+    },
+    "indicator-compile.ax.txt": {
+      "bytes": 13980,
+      "sha256": "bab15f8d9159968214494e99de6e868563b9ff0dbf230ed32b40cd5f1f2468e5"
+    },
+    "indicator-compile.png": {
+      "bytes": 1268684,
+      "sha256": "65e2549ea8283514630f03091811adc8df7ce303469cefe36e6604c17e974343"
+    },
+    "indicator-editor-copy.pine": {
+      "bytes": 111332,
+      "sha256": "2e2495d846d4e2f49f13c649e59aef45f203079786e358aa951ce31bb02a4e5f"
+    },
+    "indicator-inputs-middle.ax.txt": {
+      "bytes": 26150,
+      "sha256": "df5aff7a740a6f2358394b17c42351618e631fb77857eabe1afdeece05e98bab"
+    },
+    "indicator-inputs-overlap.ax.txt": {
+      "bytes": 24750,
+      "sha256": "b2a8f3290805326d8710d9718c90b9434c7c7a166bb3f8f878daa79aadd23651"
+    },
+    "indicator-inputs-page0.ax.txt": {
+      "bytes": 24681,
+      "sha256": "7ed69a02ca99f942410eadd1af4e8b4aaf5501ad96c8985aa23c572e1a863a7a"
+    },
+    "indicator-inputs-page1.ax.txt": {
+      "bytes": 26105,
+      "sha256": "90e33238f08e8777b704e55fcc94674708592151000c3d682694602a0cec4fd1"
+    },
+    "indicator-inputs-page2.ax.txt": {
+      "bytes": 26105,
+      "sha256": "e585072bd38400356fb923b86412862592d58b7dea9cc4656d8582a7c8ed70b4"
+    },
+    "indicator-inputs-page3.ax.txt": {
+      "bytes": 26105,
+      "sha256": "a91abbeeb9c1819e985f55fb39d6a64011c05fbdb67319702af290e3f01edb0e"
+    },
+    "indicator-inputs-page4.ax.txt": {
+      "bytes": 26105,
+      "sha256": "fc96b010aac09cc9538379d7ab54064c18bd05175f1a51f106d5a0ec8e0d1b83"
+    },
+    "indicator-inputs-page5.ax.txt": {
+      "bytes": 26101,
+      "sha256": "abb93a54d58d3afc910a31eb8f9347968475631fa901fddb5afb0094ada90154"
+    },
+    "indicator-inputs-page6.ax.txt": {
+      "bytes": 26101,
+      "sha256": "99eb8c1bad4eea708aba6815f337540dde67052e8c863e9bb43409767a00df2f"
+    },
+    "indicator-inputs-page7.ax.txt": {
+      "bytes": 26096,
+      "sha256": "f81b52892c61333fb30ef8dfcf2b9f94b24e7b1e518793d875b935ccf87ecd6f"
+    },
+    "indicator-inputs-page8.ax.txt": {
+      "bytes": 26096,
+      "sha256": "a86e3d947f0333bb7045540489cf02ea037c9f366cd1c1ad976b32d6653624cc"
+    },
+    "indicator-runtime-inputs.json": {
+      "bytes": 36471,
+      "sha256": "140bcb9effe1a40ea38fbcc57b8a405527a7894e79874b95f942d90b4b1f6658"
+    },
+    "indicator-shared-right-scale.ax.txt": {
+      "bytes": 21357,
+      "sha256": "666f9e41bb37b5c808b5842afa2edc0e0a612fd9dfc17016eb371da6066d2fc4"
+    },
+    "indicator-source-attribution.json": {
+      "bytes": 678,
+      "sha256": "f6676eb208b4652ea3efe63836b06b92d4fbd5b29058b8155a2651138db50bff"
+    },
+    "jakarta-selected.ax.txt": {
+      "bytes": 17905,
+      "sha256": "41e643253397bbb41222b99a2e52cbaa0a0bab05f47351a19ba652407363c648"
+    },
+    "jakarta-selected.png": {
+      "bytes": 1037768,
+      "sha256": "afa423f30fb20f6c7b88dacf07d60cd56e4a787bba42431a6212fc55fb09e95e"
+    },
+    "local-verification.json": {
+      "bytes": 1224,
+      "sha256": "fe9974df9439795c8846b52b53083f81565b0d418b6fdaa8f3ba7ece79f55ac4"
+    }
+  }
+}

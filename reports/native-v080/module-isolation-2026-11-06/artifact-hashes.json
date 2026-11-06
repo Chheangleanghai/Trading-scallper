@@ -1,0 +1,190 @@
+{
+  "baselineAndCandidateHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/indicator_confirmation_review.pine": "0a19862b22973e13a31abb29e59a75a18f3e0b84bb76deb2154eae7fa4cd1ed3",
+    "pine/experiments/strategy_stable_display.pine": "ce6c1256bd9d29387f194be4ac715e479bf98f14bdcc0e9c697e5f4110f2aae9"
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 6590,
+      "sha256": "ba1e97ebc535f6d3dd9acb15248cfdccf59b84713ad285be063eb3a90009f255"
+    },
+    {
+      "path": "a-inputs-page0.ax.txt",
+      "bytes": 33706,
+      "sha256": "6db1dfbf40cee06cce88312e01fd542dc05348c60f5289216096504ed8800cdd"
+    },
+    {
+      "path": "a-inputs-page1.ax.txt",
+      "bytes": 33724,
+      "sha256": "b6acb5b6ff83188c500ca7e3629875075099ad16c9697c27726f0732f0109efe"
+    },
+    {
+      "path": "a-inputs-page10.ax.txt",
+      "bytes": 34444,
+      "sha256": "1d3d1c50b49353209a09cb249baaaf909289661628579faee993d2aac04c9500"
+    },
+    {
+      "path": "a-inputs-page11.ax.txt",
+      "bytes": 34505,
+      "sha256": "3db46a86b898902952682117daf4f5bb1e58147edb8e79e5925fb4156daafac0"
+    },
+    {
+      "path": "a-inputs-page12.ax.txt",
+      "bytes": 33866,
+      "sha256": "163c82b13eceff65abd0a516c05c40df079e03262613b85c8834630eb4ddbf53"
+    },
+    {
+      "path": "a-inputs-page13.ax.txt",
+      "bytes": 33929,
+      "sha256": "e255655b55036bd048319ce3f33e0363f17a032cece10745af7e83509d4b5517"
+    },
+    {
+      "path": "a-inputs-page2.ax.txt",
+      "bytes": 33786,
+      "sha256": "a7e29133c06e92e988f7abacdf6c2035b3ea114bd7869b1393f622c6264ae799"
+    },
+    {
+      "path": "a-inputs-page3.ax.txt",
+      "bytes": 33681,
+      "sha256": "566e72bca2641a66cd81c1ad6460120be84282a8ee2acc16d809a28b794443bd"
+    },
+    {
+      "path": "a-inputs-page4.ax.txt",
+      "bytes": 33498,
+      "sha256": "c80d09f89debf735852f06631b7c8a66064a57fade4003b0cf7a8f4944e67ed2"
+    },
+    {
+      "path": "a-inputs-page5.ax.txt",
+      "bytes": 33215,
+      "sha256": "664fdc50578e3cd528308c975954ad9ba33a929dd5fa33a789ab8ecef5e8cfc8"
+    },
+    {
+      "path": "a-inputs-page6.ax.txt",
+      "bytes": 33129,
+      "sha256": "ed536f694b1d37687545dcb23513d912fcfe87106f0dec8af2e8c9d04800a212"
+    },
+    {
+      "path": "a-inputs-page7.ax.txt",
+      "bytes": 33273,
+      "sha256": "9567273f30671da2d6ce532b35c8a1fb2d54fd04210bea9a4b5de2e37ed84c57"
+    },
+    {
+      "path": "a-inputs-page8.ax.txt",
+      "bytes": 33547,
+      "sha256": "d2439284c35500826b405a8951f67316e37a2583e3697bdaa7f9dd28f2394568"
+    },
+    {
+      "path": "a-inputs-page9.ax.txt",
+      "bytes": 33890,
+      "sha256": "07330324d1f27ae3950a5e9b39937f838de2d72c87ba15b5e2b78b12a4db3d90"
+    },
+    {
+      "path": "a-inputs-top.ax.txt",
+      "bytes": 33867,
+      "sha256": "3cd89950d4f5e9cecc6073a0bcb589d2015c4d34d9ec1a5995247ed84eb30cdc"
+    },
+    {
+      "path": "a-native-report.ax.txt",
+      "bytes": 29616,
+      "sha256": "694a226ab5b3b0d2ea19382f4bb607bbe4abb00b703c172f133b57d92139b15d"
+    },
+    {
+      "path": "a-only-outcomes.json",
+      "bytes": 6525,
+      "sha256": "cdcb9e5630027485fad6b645d97922192adc3b0aa6790eb793d3b15b5eb57752"
+    },
+    {
+      "path": "a-only-raw.csv",
+      "bytes": 10403,
+      "sha256": "15e6fc91c6aaba33099f9ba057b042c33ca13e4e19783b27e449b7c869475a67"
+    },
+    {
+      "path": "analyze-isolation.py",
+      "bytes": 3589,
+      "sha256": "dd29831a4fa1c7266d65be46adcd8afb5a896cf862b18c9fb3a82fc488f6412d"
+    },
+    {
+      "path": "autosave-off.png",
+      "bytes": 1047636,
+      "sha256": "740257709f58b8b627bf7cb5c2a2d65d7b4ad6c8ebf153c2477e1007184f3928"
+    },
+    {
+      "path": "autosave-restored-resumed.png",
+      "bytes": 1050925,
+      "sha256": "7d0e451fb69a2862bac232d4a4587ee6f99b7d05b6c8b68acdcf62c1aa82f32a"
+    },
+    {
+      "path": "before-inputs-top.ax.txt",
+      "bytes": 34037,
+      "sha256": "a18bb2eea73e8e77cb46edc8b6155d2872da28040627915048a97d3006709f56"
+    },
+    {
+      "path": "extract-isolation-inputs.py",
+      "bytes": 6654,
+      "sha256": "ad8540e2721bd79feae92c3fbbaf7caa4d7e4980398aa85cc18a79bceb8a7202"
+    },
+    {
+      "path": "g-export-unavailable.ax.txt",
+      "bytes": 25063,
+      "sha256": "877e38997bc7ecf9f8fb5d561b2439006db6a071e017be495e6f7c6e52cfdf1b"
+    },
+    {
+      "path": "g-inputs-top.ax.txt",
+      "bytes": 35532,
+      "sha256": "245021cefecffb0080e2e23bc895518edbfffd6c4a8bf61f5c720aaa1b14a9c8"
+    },
+    {
+      "path": "g-native-report.ax.txt",
+      "bytes": 24604,
+      "sha256": "74da0a245a15660bae008bc3323904871ce5fb639ef1c298660469f34794618d"
+    },
+    {
+      "path": "g-zero-report.ax.txt",
+      "bytes": 24604,
+      "sha256": "d13e0a1def1305487c9e76012ccbd1f6fd63181c05219687da513e8b0654f42d"
+    },
+    {
+      "path": "g-zero-report.png",
+      "bytes": 1220313,
+      "sha256": "92daaaf53cf10f65ec740b96a5eecf2e9605e5c95bcb8eacf193cb7282adcf2e"
+    },
+    {
+      "path": "isolated-runtime-inputs.json",
+      "bytes": 166861,
+      "sha256": "f5793d7a24c01ef418fdff92ff351086c97a2870a6c3ec802fdb3efd88bd9f61"
+    },
+    {
+      "path": "isolation-analysis.json",
+      "bytes": 1202,
+      "sha256": "3caf760f2c9965910045c26fea9add2d48f59630b00f9c7d6475e4271ced04d3"
+    },
+    {
+      "path": "qualified-c-plan-resumed.png",
+      "bytes": 1051434,
+      "sha256": "56e3fa73aaaa5ab8c8d4c8218438f3cdfde44c189ae90a92ddf7224bdf10fefe"
+    },
+    {
+      "path": "restored-chart-resumed.ax.txt",
+      "bytes": 10406,
+      "sha256": "349508d01bbe66c908313af1868ea6a7c55a0f94540fd319462e7abd29e25105"
+    },
+    {
+      "path": "restored-inputs-top-resumed.ax.txt",
+      "bytes": 19353,
+      "sha256": "60795affbbeab10159b96901309b0081f6a304d311c65da396ce2e6af967ae75"
+    },
+    {
+      "path": "strategy-applied.ax.txt",
+      "bytes": 19756,
+      "sha256": "d55da49a98b446337742bbe64ff5fd51fd1def07e5a3afc3c77a9742eba052fc"
+    },
+    {
+      "path": "strategy-properties.ax.txt",
+      "bytes": 30279,
+      "sha256": "aeba608e52d7bad4911afff39e8034a69613692648ec604c5d61b1f35fb20f45"
+    }
+  ]
+}

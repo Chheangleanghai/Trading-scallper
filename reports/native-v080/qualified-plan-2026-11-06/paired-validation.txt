@@ -1,0 +1,173 @@
+{
+  "fullStream": {
+    "tolerance": 0,
+    "indicatorPlans": 76,
+    "strategyPlans": 77,
+    "commonPlans": 74,
+    "exactCommonPlans": 71,
+    "differingCommonPlans": [
+      {
+        "key": [
+          "FOREXCOM:XAUUSD",
+          "5",
+          1792683600000
+        ],
+        "differences": {
+          "setupTimestamp": {
+            "indicator": 1792682700000,
+            "strategy": 1792683000000
+          }
+        }
+      },
+      {
+        "key": [
+          "FOREXCOM:XAUUSD",
+          "5",
+          1793695200000
+        ],
+        "differences": {
+          "setupTimestamp": {
+            "indicator": 1793694000000,
+            "strategy": 1793694300000
+          }
+        }
+      },
+      {
+        "key": [
+          "FOREXCOM:XAUUSD",
+          "5",
+          1793787600000
+        ],
+        "differences": {
+          "quality": {
+            "indicator": 90,
+            "strategy": 80
+          },
+          "setupTimestamp": {
+            "indicator": 1793787000000,
+            "strategy": 1793787300000
+          },
+          "sl": {
+            "indicator": "4040.39",
+            "strategy": "4040.37"
+          },
+          "strategy": {
+            "indicator": "B_CRT",
+            "strategy": "F_TREND_PULLBACK"
+          },
+          "tp1": {
+            "indicator": "4052.93",
+            "strategy": "4052.95"
+          },
+          "tp2": {
+            "indicator": "4059.20",
+            "strategy": "4059.24"
+          },
+          "tp3": {
+            "indicator": "4065.47",
+            "strategy": "4065.53"
+          }
+        }
+      }
+    ],
+    "indicatorOnly": [
+      [
+        "FOREXCOM:XAUUSD",
+        "5",
+        1792406100000
+      ],
+      [
+        "FOREXCOM:XAUUSD",
+        "5",
+        1793880900000
+      ]
+    ],
+    "strategyOnly": [
+      [
+        "FOREXCOM:XAUUSD",
+        "5",
+        1792407900000
+      ],
+      [
+        "FOREXCOM:XAUUSD",
+        "5",
+        1792658100000
+      ],
+      [
+        "FOREXCOM:XAUUSD",
+        "5",
+        1793888400000
+      ]
+    ],
+    "strictParity": false
+  },
+  "newNovember6Plans": {
+    "tolerance": 0,
+    "indicatorPlans": 2,
+    "strategyPlans": 2,
+    "commonPlans": 2,
+    "exactCommonPlans": 2,
+    "differingCommonPlans": [],
+    "indicatorOnly": [],
+    "strategyOnly": [],
+    "strictParity": true
+  },
+  "cash": {
+    "positions": 77,
+    "exitRows": 113,
+    "grossBeforeCommission": "51.898",
+    "commission": "134.1201774",
+    "net": "-82.2221774",
+    "cashArithmeticResidual": "0",
+    "finalExitReasons": {
+      "TIME_EXIT": 68,
+      "STOP_LOSS_HIT": 9
+    },
+    "wins": 33,
+    "losses": 44
+  },
+  "newPositions": [
+    {
+      "planTimestamp": 1793964000000,
+      "module": "C_TURTLE_SOUP",
+      "entryTimeUtc": "2026-11-06T11:20:00+00:00",
+      "exitTimeUtc": "2026-11-06T11:35:00+00:00",
+      "holdMinutes": 15,
+      "initialQty": "2.1",
+      "actualEntry": "4066.02",
+      "grossBeforeCommission": "11.946",
+      "commission": "1.7089230",
+      "net": "10.2370770",
+      "closedTradeRows": 3,
+      "finalExit": "TIME_EXIT",
+      "sizing": {
+        "riskQty": "14.85410466631736526946107784",
+        "exposureQty": "2.196332445988686669945892769",
+        "sizedQty": "2.1",
+        "limitingCap": "EXPOSURE",
+        "plannedCashRisk": "7.014"
+      }
+    },
+    {
+      "planTimestamp": 1793967300000,
+      "module": "B_CRT",
+      "entryTimeUtc": "2026-11-06T12:15:00+00:00",
+      "exitTimeUtc": "2026-11-06T12:30:00+00:00",
+      "holdMinutes": 15,
+      "initialQty": "2.1",
+      "actualEntry": "4063.91",
+      "grossBeforeCommission": "-13.293",
+      "commission": "1.7081715",
+      "net": "-15.0011715",
+      "closedTradeRows": 1,
+      "finalExit": "TIME_EXIT",
+      "sizing": {
+        "riskQty": "5.135873316494312306101344364",
+        "exposureQty": "2.199718276321196477301528324",
+        "sizedQty": "2.1",
+        "limitingCap": "EXPOSURE",
+        "plannedCashRisk": "20.307"
+      }
+    }
+  ]
+}

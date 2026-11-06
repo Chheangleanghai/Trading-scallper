@@ -1,0 +1,53 @@
+
+> xauusd-smart-scalper-pro@0.8.0 verify
+> npm run typecheck && npm test && npm run pine:check && npm run pine:parse
+
+
+> xauusd-smart-scalper-pro@0.8.0 typecheck
+> tsc --noEmit
+
+
+> xauusd-smart-scalper-pro@0.8.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+
+ Test Files  25 passed (25)
+      Tests  203 passed (203)
+   Start at  12:03:03
+   Duration  2.86s (tests 94%, import 4%, transform 2%, worker 1%)
+
+
+> xauusd-smart-scalper-pro@0.8.0 pine:check
+> python3 scripts/generate_pine.py --check
+
+
+> xauusd-smart-scalper-pro@0.8.0 pine:parse
+> node scripts/check_pine.mjs
+
+indicator.pine: independent parse passed
+strategy.pine: independent parse passed
+validation.pine: independent parse passed
+experiments/strategy_exit_audit.pine: independent parse passed
+experiments/quantity_rounding_probe.pine: independent parse passed
+experiments/strategy_quantity_units.pine: independent parse passed
+experiments/quantity_units_matrix.pine: independent parse passed
+experiments/indicator_candidate_trace.pine: independent parse passed
+experiments/strategy_legacy_candidate_trace.pine: independent parse passed
+experiments/strategy_quantity_candidate_trace.pine: independent parse passed
+experiments/indicator_clear_levels.pine: independent parse passed
+experiments/indicator_professional.pine: independent parse passed
+experiments/strategy_professional.pine: independent parse passed
+experiments/indicator_confirmation_review.pine: independent parse passed
+experiments/strategy_confirmation_review.pine: independent parse passed
+experiments/indicator_data_snapshot.pine: independent parse passed
+experiments/indicator_nov5_trace.pine: independent parse passed
+experiments/strategy_nov5_trace.pine: independent parse passed
+experiments/indicator_live_snapshot.pine: independent parse passed
+experiments/runtime_state_probe.pine: independent parse passed
+experiments/indicator_stable_display.pine: independent parse passed
+experiments/strategy_stable_display.pine: independent parse passed
+experiments/indicator_stable_live_snapshot.pine: independent parse passed
+This independent parser does not certify TradingView compilation or broker-emulator behavior.

@@ -1,0 +1,6729 @@
+{
+  "attribution": "Native A dialog controls observed across14 AX pages; G top-page controls independently observed. Missing G controls are not filled from A or defaults.",
+  "source": {
+    "path": "pine/experiments/strategy_stable_display.pine",
+    "sha256": "ce6c1256bd9d29387f194be4ac715e479bf98f14bdcc0e9c697e5f4110f2aae9"
+  },
+  "timezone": {
+    "displayOffset": "+07:00",
+    "basis": "A raw native log row prefixes show+07:00 and root independently observed chart UTC+7 in G report screenshot. Inputs display07:00 versus prior capture00:00; normalize as+07, not UTC. Origin of chart display-zone change is unestablished.",
+    "timeInputEpochsUnchangedAfterNormalization": true
+  },
+  "aOnly": {
+    "inputCount": 117,
+    "inputSettings": {
+      "reviewShowBoard": true,
+      "reviewShowGuides": true,
+      "clearSignalView": "Context + levels",
+      "clearLevelBars": 8,
+      "clearPlanLimit": 1,
+      "clearSpaceLabels": false,
+      "clearShowPriceCard": true,
+      "enableA": true,
+      "enableB": false,
+      "enableC": false,
+      "enableD": false,
+      "enableE": false,
+      "enableF": false,
+      "enableG": false,
+      "enableH": false,
+      "crtTF": "15",
+      "turtleAge": 3,
+      "levelTolerance": 0.15,
+      "maxZoneTests": 2,
+      "useEMA50": true,
+      "pullbackDepth": 0.3,
+      "accumulationBars": 12,
+      "accumulationWidth": 3.0,
+      "strategyThresholds": false,
+      "thresholdA": 75,
+      "thresholdB": 75,
+      "thresholdC": 75,
+      "thresholdD": 75,
+      "thresholdE": 75,
+      "thresholdF": 75,
+      "thresholdG": 75,
+      "thresholdH": 75,
+      "useResearchWindow": false,
+      "researchStart": 1767225600000,
+      "researchEnd": 1798761600000,
+      "tradeSide": "Both",
+      "auditLog": true,
+      "swing": 3,
+      "expiry": 20,
+      "threshold": 75,
+      "cooldown": 5,
+      "maxTrades": 5,
+      "maxExposurePct": 90.0,
+      "riskPct": 0.5,
+      "buffer": 0.15,
+      "maxStop": 3.0,
+      "maxDistance": 1.5,
+      "minRR": 2.0,
+      "r1": 1.0,
+      "r2": 2.0,
+      "r3": 3.0,
+      "minDisp": 0.7,
+      "trendFilter": true,
+      "emaFilter": false,
+      "useSession": true,
+      "sessionPreset": "London",
+      "sessionHours": "0800-1700",
+      "sessionZone": "Europe/London",
+      "manualPause": false,
+      "newsStart": 0,
+      "newsEnd": 0,
+      "entryMode": "Close",
+      "pendingBars": 3,
+      "timeExit": 15,
+      "targetMode": "Fixed R",
+      "stopMode": "Structure",
+      "atrStop": 1.5,
+      "breakEven": false,
+      "breakEvenR": 1.0,
+      "trailing": false,
+      "trailingStartR": 2.0,
+      "trailingATR": 1.5,
+      "confluenceLiquidity": false,
+      "confluenceFib": false,
+      "confluencePD": false,
+      "showDaily": false,
+      "showSessionLevels": false,
+      "showFibonacci": false,
+      "showPremiumDiscount": false,
+      "showBreakers": false,
+      "showWyckoff": false,
+      "partial": true,
+      "visualLayout": "Reference",
+      "historyMode": "Off",
+      "historyPlanLimit": 8,
+      "historyLookback": 3000,
+      "showConceptPanel": false,
+      "showSwingLevels": true,
+      "showSupportResistance": true,
+      "showCRTSweeps": false,
+      "showContextSweeps": true,
+      "showEMA55": true,
+      "contextHistory": "Latest only",
+      "contextZoneBars": 60,
+      "contextZoneDistance": 8.0,
+      "contextLabelGap": 8,
+      "zoneExtension": 12,
+      "dashboardSize": "Tiny",
+      "chartLabelSize": "Small",
+      "showDashboard": false,
+      "showPerformance": true,
+      "showUnusedModules": false,
+      "showSwingLabels": false,
+      "maxStructureLabels": 15,
+      "showLastPlan": true,
+      "contextTransparency": 82,
+      "showEMA": true,
+      "showZones": true,
+      "showTrade": true,
+      "showEntryLine": true,
+      "showSLLine": true,
+      "showTP1Line": true,
+      "showTP2Line": true,
+      "showTP3Line": true,
+      "showRiskReward": true,
+      "showOB": true,
+      "showStructure": true
+    },
+    "missing": [],
+    "evidence": [
+      {
+        "path": "a-inputs-page0.ax.txt",
+        "sha256": "6db1dfbf40cee06cce88312e01fd542dc05348c60f5289216096504ed8800cdd"
+      },
+      {
+        "path": "a-inputs-page1.ax.txt",
+        "sha256": "b6acb5b6ff83188c500ca7e3629875075099ad16c9697c27726f0732f0109efe"
+      },
+      {
+        "path": "a-inputs-page2.ax.txt",
+        "sha256": "a7e29133c06e92e988f7abacdf6c2035b3ea114bd7869b1393f622c6264ae799"
+      },
+      {
+        "path": "a-inputs-page3.ax.txt",
+        "sha256": "566e72bca2641a66cd81c1ad6460120be84282a8ee2acc16d809a28b794443bd"
+      },
+      {
+        "path": "a-inputs-page4.ax.txt",
+        "sha256": "c80d09f89debf735852f06631b7c8a66064a57fade4003b0cf7a8f4944e67ed2"
+      },
+      {
+        "path": "a-inputs-page5.ax.txt",
+        "sha256": "664fdc50578e3cd528308c975954ad9ba33a929dd5fa33a789ab8ecef5e8cfc8"
+      },
+      {
+        "path": "a-inputs-page6.ax.txt",
+        "sha256": "ed536f694b1d37687545dcb23513d912fcfe87106f0dec8af2e8c9d04800a212"
+      },
+      {
+        "path": "a-inputs-page7.ax.txt",
+        "sha256": "9567273f30671da2d6ce532b35c8a1fb2d54fd04210bea9a4b5de2e37ed84c57"
+      },
+      {
+        "path": "a-inputs-page8.ax.txt",
+        "sha256": "d2439284c35500826b405a8951f67316e37a2583e3697bdaa7f9dd28f2394568"
+      },
+      {
+        "path": "a-inputs-page9.ax.txt",
+        "sha256": "07330324d1f27ae3950a5e9b39937f838de2d72c87ba15b5e2b78b12a4db3d90"
+      },
+      {
+        "path": "a-inputs-page10.ax.txt",
+        "sha256": "1d3d1c50b49353209a09cb249baaaf909289661628579faee993d2aac04c9500"
+      },
+      {
+        "path": "a-inputs-page11.ax.txt",
+        "sha256": "3db46a86b898902952682117daf4f5bb1e58147edb8e79e5925fb4156daafac0"
+      },
+      {
+        "path": "a-inputs-page12.ax.txt",
+        "sha256": "163c82b13eceff65abd0a516c05c40df079e03262613b85c8834630eb4ddbf53"
+      },
+      {
+        "path": "a-inputs-page13.ax.txt",
+        "sha256": "e255655b55036bd048319ce3f33e0363f17a032cece10745af7e83509d4b5517"
+      }
+    ],
+    "observedControls": {
+      "reviewShowBoard": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "651 checkbox Show A\u2013H confirmation board, Value: 1"
+        }
+      ],
+      "reviewShowGuides": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "653 checkbox Show candidate zones / triggers (setup only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "650 checkbox Show candidate zones / triggers (setup only), Value: 1"
+        }
+      ],
+      "clearSignalView": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "655 combo box (settable) Context + levels"
+          ],
+          "displayed": [
+            "Context + levels"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "652 combo box (settable) Context + levels"
+          ],
+          "displayed": [
+            "Context + levels"
+          ]
+        }
+      ],
+      "clearLevelBars": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "658 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "655 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "653 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        }
+      ],
+      "clearPlanLimit": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "660 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "657 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "655 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        }
+      ],
+      "clearSpaceLabels": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "661 checkbox Separate overlapping price labels with connectors, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "658 checkbox Separate overlapping price labels with connectors, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "656 checkbox Separate overlapping price labels with connectors, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "651 checkbox Separate overlapping price labels with connectors, Value: 0"
+        }
+      ],
+      "clearShowPriceCard": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "663 checkbox Show compact status and price card, Value: 1"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "660 checkbox Show compact status and price card, Value: 1"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "658 checkbox Show compact status and price card, Value: 1"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "653 checkbox Show compact status and price card, Value: 1"
+        }
+      ],
+      "enableA": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "665 checkbox A: Sweep + MSS + FVG, Value: 1"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "662 checkbox A: Sweep + MSS + FVG, Value: 1"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "660 checkbox A: Sweep + MSS + FVG, Value: 1"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "655 checkbox A: Sweep + MSS + FVG, Value: 1"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "651 checkbox A: Sweep + MSS + FVG, Value: 1"
+        }
+      ],
+      "enableB": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "667 checkbox B: CRT, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "664 checkbox B: CRT, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "662 checkbox B: CRT, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "657 checkbox B: CRT, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "653 checkbox B: CRT, Value: 0"
+        }
+      ],
+      "enableC": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "669 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "666 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "664 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "659 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "655 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        }
+      ],
+      "enableD": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "671 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "668 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "666 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "661 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "657 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        }
+      ],
+      "enableE": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "673 checkbox E: Supply/demand, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "670 checkbox E: Supply/demand, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "668 checkbox E: Supply/demand, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "663 checkbox E: Supply/demand, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "659 checkbox E: Supply/demand, Value: 0"
+        }
+      ],
+      "enableF": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "675 checkbox F: Structural trend pullback, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "672 checkbox F: Structural trend pullback, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "670 checkbox F: Structural trend pullback, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "665 checkbox F: Structural trend pullback, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "661 checkbox F: Structural trend pullback, Value: 0"
+        }
+      ],
+      "enableG": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "677 checkbox G: AMD range approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "674 checkbox G: AMD range approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "672 checkbox G: AMD range approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "667 checkbox G: AMD range approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "663 checkbox G: AMD range approximation, Value: 0"
+        }
+      ],
+      "enableH": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "679 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "676 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "674 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "669 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "665 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "650 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        }
+      ],
+      "crtTF": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "681 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "678 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "676 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "671 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "667 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "652 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        }
+      ],
+      "turtleAge": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "684 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "681 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "679 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "674 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "670 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "655 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "levelTolerance": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "686 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "683 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "681 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "676 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "672 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "657 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        }
+      ],
+      "maxZoneTests": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "688 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "685 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "683 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "678 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "674 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "659 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "651 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "useEMA50": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "689 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "686 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "684 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "679 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "675 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "660 checkbox Trend pullback: require EMA50, Value: 1"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "652 checkbox Trend pullback: require EMA50, Value: 1"
+        }
+      ],
+      "pullbackDepth": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "691 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "688 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "686 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "681 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "677 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "662 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "654 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        }
+      ],
+      "accumulationBars": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "693 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "690 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "688 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "683 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "679 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "664 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "656 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        }
+      ],
+      "accumulationWidth": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "695 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "692 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "690 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "685 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "681 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "666 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "658 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "651 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "strategyThresholds": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "697 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "694 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "692 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "687 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "683 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "668 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "660 checkbox Use strategy-specific quality thresholds, Value: 0"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "653 checkbox Use strategy-specific quality thresholds, Value: 0"
+        }
+      ],
+      "thresholdA": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "699 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "696 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "694 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "689 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "685 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "670 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "662 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "655 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdB": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "701 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "698 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "696 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "691 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "687 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "672 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "664 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "657 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdC": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "703 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "700 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "698 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "693 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "689 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "674 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "666 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "659 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "652 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdD": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "705 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "702 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "700 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "695 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "691 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "676 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "668 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "661 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "654 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdE": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "707 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "704 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "702 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "697 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "693 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "678 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "670 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "663 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "656 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdF": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "709 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "709 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "704 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "699 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "695 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "680 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "672 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "665 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "658 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdG": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "711 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "711 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "706 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "701 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "697 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "682 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "674 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "667 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "660 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "651 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdH": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "713 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "713 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "708 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "703 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "699 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "684 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "676 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "669 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "662 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "653 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "useResearchWindow": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "715 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "715 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "713 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "705 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "701 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "686 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "678 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "671 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "664 checkbox Restrict new plans to date window, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "655 checkbox Restrict new plans to date window, Value: 0"
+        }
+      ],
+      "researchStart": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "717 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "718 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "717 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "718 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "715 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "716 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "707 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "708 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "703 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "704 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "688 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "689 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "680 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "681 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "673 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "674 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "666 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "667 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "657 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "658 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "researchEnd": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "720 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "721 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "720 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "721 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "718 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "719 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "710 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "711 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "706 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "707 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "691 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "692 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "683 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "684 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "676 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "677 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "669 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "670 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "660 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "661 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "652 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "653 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "tradeSide": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "723 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "723 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "721 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "713 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "709 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "694 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "686 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "679 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "672 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "663 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "655 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        }
+      ],
+      "auditLog": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "control": "725 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "control": "725 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "723 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "715 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "711 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "696 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "688 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "681 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "674 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "665 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "657 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "650 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        }
+      ],
+      "swing": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "727 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "727 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "725 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "717 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "713 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "698 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "690 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "683 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "676 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "667 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "659 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "652 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "expiry": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "729 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "729 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "727 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "719 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "715 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "700 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "692 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "685 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "678 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "669 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "661 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "654 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        }
+      ],
+      "threshold": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "731 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "731 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "729 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "721 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "717 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "702 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "694 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "687 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "680 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "671 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "663 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "656 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "cooldown": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "733 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "733 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "731 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "723 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "719 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "704 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "696 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "689 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "682 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "673 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "665 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "658 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        }
+      ],
+      "maxTrades": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "735 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "735 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "733 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "725 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "721 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "706 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "698 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "691 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "684 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "675 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "667 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "660 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        }
+      ],
+      "maxExposurePct": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "737 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "737 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "735 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "727 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "723 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "708 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "700 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "693 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "686 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "677 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "669 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "662 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        }
+      ],
+      "riskPct": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "747 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "747 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "745 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "737 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "733 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "718 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "710 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "703 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "696 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "687 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "679 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "672 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        }
+      ],
+      "buffer": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "749 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "749 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "747 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "739 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "735 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "720 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "712 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "705 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "698 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "689 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "681 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "674 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        }
+      ],
+      "maxStop": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "751 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "751 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "749 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "741 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "737 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "722 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "714 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "707 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "700 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "691 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "683 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "676 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "maxDistance": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "753 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "753 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "751 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "743 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "739 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "724 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "716 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "712 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "702 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "693 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "685 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "678 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        }
+      ],
+      "minRR": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "755 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "755 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "753 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "745 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "741 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "726 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "718 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "714 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "704 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "695 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "687 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "680 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "r1": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "757 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "757 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "755 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "747 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "743 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "728 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "720 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "716 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "706 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "697 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "689 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "682 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        }
+      ],
+      "r2": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "759 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "759 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "757 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "749 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "745 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "730 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "722 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "718 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "708 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "699 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "691 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "684 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "r3": [
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "761 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "759 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "751 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "747 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "732 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "724 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "720 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "713 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "701 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "693 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "686 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "651 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "minDisp": [
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "761 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "753 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "749 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "734 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "726 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "722 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "715 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "703 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "695 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "688 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "653 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "652 text field (settable) 0.7"
+          ],
+          "displayed": [
+            "0.7"
+          ]
+        }
+      ],
+      "trendFilter": [
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "762 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "754 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "750 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "735 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "727 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "723 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "716 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "704 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "696 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "689 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "654 checkbox Require H1 alignment, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "653 checkbox Require H1 alignment, Value: 1"
+        }
+      ],
+      "emaFilter": [
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "control": "764 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "756 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "752 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "737 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "729 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "725 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "718 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "706 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "698 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "691 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "656 checkbox Require EMA 9/21 alignment, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "655 checkbox Require EMA 9/21 alignment, Value: 0"
+        }
+      ],
+      "useSession": [
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "control": "758 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "control": "754 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "739 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "731 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "727 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "720 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "708 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "700 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "693 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "658 checkbox Session filter, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "657 checkbox Session filter, Value: 1"
+        }
+      ],
+      "sessionPreset": [
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "760 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "756 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "741 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "733 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "729 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "722 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "710 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "702 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "695 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "660 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "659 combo box (settable) London"
+          ],
+          "displayed": [
+            "London"
+          ]
+        }
+      ],
+      "sessionHours": [
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "759 combo box (settable) 08:00",
+            "761 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "744 combo box (settable) 08:00",
+            "746 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "736 combo box (settable) 08:00",
+            "738 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "732 combo box (settable) 08:00",
+            "734 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "725 combo box (settable) 08:00",
+            "727 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "713 combo box (settable) 08:00",
+            "715 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "705 combo box (settable) 08:00",
+            "707 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "698 combo box (settable) 08:00",
+            "700 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "663 combo box (settable) 08:00",
+            "665 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "662 combo box (settable) 08:00",
+            "664 combo box (settable) 17:00"
+          ],
+          "displayed": [
+            "08:00",
+            "17:00"
+          ]
+        }
+      ],
+      "sessionZone": [
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "748 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "740 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "736 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "729 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "717 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "709 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "702 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "667 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "666 text field (settable) Europe/London"
+          ],
+          "displayed": [
+            "Europe/London"
+          ]
+        }
+      ],
+      "manualPause": [
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "control": "749 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "control": "741 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "737 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "730 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "718 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "710 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "703 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "668 checkbox Manual news pause, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "667 checkbox Manual news pause, Value: 0"
+        }
+      ],
+      "newsStart": [
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "751 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "752 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "743 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "744 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "739 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "740 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "732 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "733 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "720 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "721 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "712 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "713 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "705 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "706 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "670 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "671 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "669 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "670 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "newsEnd": [
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "746 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "747 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "742 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "743 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "735 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "736 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "723 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "724 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "715 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "716 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "708 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "709 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "673 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "674 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "672 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+            "673 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "1970-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "entryMode": [
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "749 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "745 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "738 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "726 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "718 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "711 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "676 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "675 combo box (settable) Close"
+          ],
+          "displayed": [
+            "Close"
+          ]
+        }
+      ],
+      "pendingBars": [
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "752 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "748 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "741 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "729 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "721 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "714 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "679 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "678 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "timeExit": [
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "754 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "750 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "743 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "731 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "723 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "716 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "681 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "680 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        }
+      ],
+      "targetMode": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "739 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "739 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "737 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "729 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "725 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "710 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "702 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "695 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "688 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "679 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "671 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "664 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        }
+      ],
+      "stopMode": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "742 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "742 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "740 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "732 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "728 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "713 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "705 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "698 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "691 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "682 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "674 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "667 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        }
+      ],
+      "atrStop": [
+        {
+          "file": "a-inputs-page0.ax.txt",
+          "controls": [
+            "745 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page1.ax.txt",
+          "controls": [
+            "745 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page2.ax.txt",
+          "controls": [
+            "743 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page3.ax.txt",
+          "controls": [
+            "735 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page4.ax.txt",
+          "controls": [
+            "731 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page5.ax.txt",
+          "controls": [
+            "716 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page6.ax.txt",
+          "controls": [
+            "708 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "701 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "694 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "685 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "677 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "670 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        }
+      ],
+      "breakEven": [
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "752 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "745 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "733 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "725 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "721 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "683 checkbox Move stop to filled entry after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "682 checkbox Move stop to filled entry after trigger R, Value: 0"
+        }
+      ],
+      "breakEvenR": [
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "754 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "747 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "735 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "727 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "723 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "685 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "684 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        }
+      ],
+      "trailing": [
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "control": "755 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "748 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "736 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "728 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "724 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "686 checkbox ATR trailing stop after trigger R, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "685 checkbox ATR trailing stop after trigger R, Value: 0"
+        }
+      ],
+      "trailingStartR": [
+        {
+          "file": "a-inputs-page7.ax.txt",
+          "controls": [
+            "757 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "750 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "738 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "730 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "726 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "688 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "687 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "trailingATR": [
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "controls": [
+            "752 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "740 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "732 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "728 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "690 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "689 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        }
+      ],
+      "confluenceLiquidity": [
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "754 checkbox Score optional liquidity (category cap 20), Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "742 checkbox Score optional liquidity (category cap 20), Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "734 checkbox Score optional liquidity (category cap 20), Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "730 checkbox Score optional liquidity (category cap 20), Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "692 checkbox Score optional liquidity (category cap 20), Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "691 checkbox Score optional liquidity (category cap 20), Value: 0"
+        }
+      ],
+      "confluenceFib": [
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "756 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "744 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "736 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "732 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "694 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "693 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+        }
+      ],
+      "confluencePD": [
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "758 checkbox Require optional premium/discount location, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "746 checkbox Require optional premium/discount location, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "738 checkbox Require optional premium/discount location, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "734 checkbox Require optional premium/discount location, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "696 checkbox Require optional premium/discount location, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "695 checkbox Require optional premium/discount location, Value: 0"
+        }
+      ],
+      "showDaily": [
+        {
+          "file": "a-inputs-page8.ax.txt",
+          "control": "760 checkbox Show previous day/week levels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "748 checkbox Show previous day/week levels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "740 checkbox Show previous day/week levels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "736 checkbox Show previous day/week levels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "698 checkbox Show previous day/week levels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "697 checkbox Show previous day/week levels, Value: 0"
+        }
+      ],
+      "showSessionLevels": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "750 checkbox Show session high/low, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "742 checkbox Show session high/low, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "738 checkbox Show session high/low, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "700 checkbox Show session high/low, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "699 checkbox Show session high/low, Value: 0"
+        }
+      ],
+      "showFibonacci": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "752 checkbox Show confirmed swing Fibonacci, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "744 checkbox Show confirmed swing Fibonacci, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "740 checkbox Show confirmed swing Fibonacci, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "702 checkbox Show confirmed swing Fibonacci, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "701 checkbox Show confirmed swing Fibonacci, Value: 0"
+        }
+      ],
+      "showPremiumDiscount": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "754 checkbox Show confirmed swing midpoint, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "746 checkbox Show confirmed swing midpoint, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "742 checkbox Show confirmed swing midpoint, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "704 checkbox Show confirmed swing midpoint, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "703 checkbox Show confirmed swing midpoint, Value: 0"
+        }
+      ],
+      "showBreakers": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "756 checkbox Show breaker-level heuristics, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "748 checkbox Show breaker-level heuristics, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "744 checkbox Show breaker-level heuristics, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "706 checkbox Show breaker-level heuristics, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "705 checkbox Show breaker-level heuristics, Value: 0"
+        }
+      ],
+      "showWyckoff": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "758 checkbox Show spring/upthrust candidates, Value: 0"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "750 checkbox Show spring/upthrust candidates, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "746 checkbox Show spring/upthrust candidates, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "708 checkbox Show spring/upthrust candidates, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "707 checkbox Show spring/upthrust candidates, Value: 0"
+        }
+      ],
+      "partial": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "control": "760 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "752 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "748 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "710 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "709 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+        }
+      ],
+      "visualLayout": [
+        {
+          "file": "a-inputs-page9.ax.txt",
+          "controls": [
+            "762 combo box (settable) Reference"
+          ],
+          "displayed": [
+            "Reference"
+          ]
+        },
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "754 combo box (settable) Reference"
+          ],
+          "displayed": [
+            "Reference"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "750 combo box (settable) Reference"
+          ],
+          "displayed": [
+            "Reference"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "712 combo box (settable) Reference"
+          ],
+          "displayed": [
+            "Reference"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "711 combo box (settable) Reference"
+          ],
+          "displayed": [
+            "Reference"
+          ]
+        }
+      ],
+      "historyMode": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "737 combo box (settable) Off"
+          ],
+          "displayed": [
+            "Off"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "736 combo box (settable) Off"
+          ],
+          "displayed": [
+            "Off"
+          ]
+        }
+      ],
+      "historyPlanLimit": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "740 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "739 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        }
+      ],
+      "historyLookback": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "742 text field (settable) 3000"
+          ],
+          "displayed": [
+            "3000"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "741 text field (settable) 3000"
+          ],
+          "displayed": [
+            "3000"
+          ]
+        }
+      ],
+      "showConceptPanel": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "756 checkbox Show compact analysis context, Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "752 checkbox Show compact analysis context, Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "714 checkbox Show compact analysis context, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "713 checkbox Show compact analysis context, Value: 0"
+        }
+      ],
+      "showSwingLevels": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "758 checkbox Show confirmed swing levels and right labels, Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "754 checkbox Show confirmed swing levels and right labels, Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "716 checkbox Show confirmed swing levels and right labels, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "715 checkbox Show confirmed swing levels and right labels, Value: 1"
+        }
+      ],
+      "showSupportResistance": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "760 checkbox Show confirmed support/resistance zones, Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "756 checkbox Show confirmed support/resistance zones, Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "718 checkbox Show confirmed support/resistance zones, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "717 checkbox Show confirmed support/resistance zones, Value: 1"
+        }
+      ],
+      "showCRTSweeps": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "762 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "758 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "720 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "719 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+        }
+      ],
+      "showContextSweeps": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "764 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "760 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "722 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "721 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+        }
+      ],
+      "showEMA55": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "control": "766 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "control": "762 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "724 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "723 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+        }
+      ],
+      "contextHistory": [
+        {
+          "file": "a-inputs-page10.ax.txt",
+          "controls": [
+            "768 combo box (settable) Latest only"
+          ],
+          "displayed": [
+            "Latest only"
+          ]
+        },
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "764 combo box (settable) Latest only"
+          ],
+          "displayed": [
+            "Latest only"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "726 combo box (settable) Latest only"
+          ],
+          "displayed": [
+            "Latest only"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "725 combo box (settable) Latest only"
+          ],
+          "displayed": [
+            "Latest only"
+          ]
+        }
+      ],
+      "contextZoneBars": [
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "767 text field (settable) 60"
+          ],
+          "displayed": [
+            "60"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "729 text field (settable) 60"
+          ],
+          "displayed": [
+            "60"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "728 text field (settable) 60"
+          ],
+          "displayed": [
+            "60"
+          ]
+        }
+      ],
+      "contextZoneDistance": [
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "769 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "731 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "730 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        }
+      ],
+      "contextLabelGap": [
+        {
+          "file": "a-inputs-page11.ax.txt",
+          "controls": [
+            "771 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "733 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "732 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        }
+      ],
+      "zoneExtension": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "735 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "734 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        }
+      ],
+      "dashboardSize": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "744 combo box (settable) Tiny"
+          ],
+          "displayed": [
+            "Tiny"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "743 combo box (settable) Tiny"
+          ],
+          "displayed": [
+            "Tiny"
+          ]
+        }
+      ],
+      "chartLabelSize": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "747 combo box (settable) Small"
+          ],
+          "displayed": [
+            "Small"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "746 combo box (settable) Small"
+          ],
+          "displayed": [
+            "Small"
+          ]
+        }
+      ],
+      "showDashboard": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "749 checkbox Show signal dashboard, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "748 checkbox Show signal dashboard, Value: 0"
+        }
+      ],
+      "showPerformance": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "751 checkbox Show backtest results table, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "750 checkbox Show backtest results table, Value: 1"
+        }
+      ],
+      "showUnusedModules": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "753 checkbox Show strategies with no completed trades, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "752 checkbox Show strategies with no completed trades, Value: 0"
+        }
+      ],
+      "showSwingLabels": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "755 checkbox Show detailed swing labels, Value: 0"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "754 checkbox Show detailed swing labels, Value: 0"
+        }
+      ],
+      "maxStructureLabels": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "757 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "756 text field (settable) 15"
+          ],
+          "displayed": [
+            "15"
+          ]
+        }
+      ],
+      "showLastPlan": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "758 checkbox Show previous trade prices when no current plan, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "757 checkbox Show previous trade prices when no current plan, Value: 1"
+        }
+      ],
+      "contextTransparency": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "controls": [
+            "760 text field (settable) 82"
+          ],
+          "displayed": [
+            "82"
+          ]
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "controls": [
+            "759 text field (settable) 82"
+          ],
+          "displayed": [
+            "82"
+          ]
+        }
+      ],
+      "showEMA": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "761 checkbox Show EMAs, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "760 checkbox Show EMAs, Value: 1"
+        }
+      ],
+      "showZones": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "763 checkbox Show latest FVG, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "762 checkbox Show latest FVG, Value: 1"
+        }
+      ],
+      "showTrade": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "765 checkbox Show latest trade levels and boxes, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "764 checkbox Show latest trade levels and boxes, Value: 1"
+        }
+      ],
+      "showEntryLine": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "767 checkbox Entry line/price, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "766 checkbox Entry line/price, Value: 1"
+        }
+      ],
+      "showSLLine": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "769 checkbox SL line/price, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "768 checkbox SL line/price, Value: 1"
+        }
+      ],
+      "showTP1Line": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "771 checkbox TP1 line/price, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "770 checkbox TP1 line/price, Value: 1"
+        }
+      ],
+      "showTP2Line": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "773 checkbox TP2 line/price, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "772 checkbox TP2 line/price, Value: 1"
+        }
+      ],
+      "showTP3Line": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "775 checkbox TP3 line/price, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "774 checkbox TP3 line/price, Value: 1"
+        }
+      ],
+      "showRiskReward": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "777 checkbox Risk/reward boxes, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "776 checkbox Risk/reward boxes, Value: 1"
+        }
+      ],
+      "showOB": [
+        {
+          "file": "a-inputs-page12.ax.txt",
+          "control": "779 checkbox Show latest displacement order block heuristic, Value: 1"
+        },
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "778 checkbox Show latest displacement order block heuristic, Value: 1"
+        }
+      ],
+      "showStructure": [
+        {
+          "file": "a-inputs-page13.ax.txt",
+          "control": "780 checkbox Show structure and sweeps, Value: 1"
+        }
+      ]
+    }
+  },
+  "comparisonWithPriorStableCombined": {
+    "differenceCount": 7,
+    "differences": [
+      {
+        "input": "enableB",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableC",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableD",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableE",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableF",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableG",
+        "stableCombined": true,
+        "aOnly": false
+      },
+      {
+        "input": "enableH",
+        "stableCombined": true,
+        "aOnly": false
+      }
+    ],
+    "nonModuleInputsExactlyEqual": true
+  },
+  "gOnly": {
+    "observedInputCount": 53,
+    "observedInputSettings": {
+      "reviewShowBoard": true,
+      "reviewShowGuides": true,
+      "clearSignalView": "Context + levels",
+      "clearLevelBars": 8,
+      "clearPlanLimit": 1,
+      "clearSpaceLabels": false,
+      "clearShowPriceCard": true,
+      "enableA": false,
+      "enableB": false,
+      "enableC": false,
+      "enableD": false,
+      "enableE": false,
+      "enableF": false,
+      "enableG": true,
+      "enableH": false,
+      "crtTF": "15",
+      "turtleAge": 3,
+      "levelTolerance": 0.15,
+      "maxZoneTests": 2,
+      "useEMA50": true,
+      "pullbackDepth": 0.3,
+      "accumulationBars": 12,
+      "accumulationWidth": 3.0,
+      "strategyThresholds": false,
+      "thresholdA": 75,
+      "thresholdB": 75,
+      "thresholdC": 75,
+      "thresholdD": 75,
+      "thresholdE": 75,
+      "thresholdF": 75,
+      "thresholdG": 75,
+      "thresholdH": 75,
+      "useResearchWindow": false,
+      "researchStart": 1767225600000,
+      "researchEnd": 1798761600000,
+      "tradeSide": "Both",
+      "auditLog": true,
+      "swing": 3,
+      "expiry": 20,
+      "threshold": 75,
+      "cooldown": 5,
+      "maxTrades": 5,
+      "maxExposurePct": 90.0,
+      "riskPct": 0.5,
+      "buffer": 0.15,
+      "maxStop": 3.0,
+      "maxDistance": 1.5,
+      "minRR": 2.0,
+      "r1": 1.0,
+      "r2": 2.0,
+      "targetMode": "Fixed R",
+      "stopMode": "Structure",
+      "atrStop": 1.5
+    },
+    "notIndependentlyRecaptured": [
+      "r3",
+      "minDisp",
+      "trendFilter",
+      "emaFilter",
+      "useSession",
+      "sessionPreset",
+      "sessionHours",
+      "sessionZone",
+      "manualPause",
+      "newsStart",
+      "newsEnd",
+      "entryMode",
+      "pendingBars",
+      "timeExit",
+      "breakEven",
+      "breakEvenR",
+      "trailing",
+      "trailingStartR",
+      "trailingATR",
+      "confluenceLiquidity",
+      "confluenceFib",
+      "confluencePD",
+      "showDaily",
+      "showSessionLevels",
+      "showFibonacci",
+      "showPremiumDiscount",
+      "showBreakers",
+      "showWyckoff",
+      "partial",
+      "visualLayout",
+      "historyMode",
+      "historyPlanLimit",
+      "historyLookback",
+      "showConceptPanel",
+      "showSwingLevels",
+      "showSupportResistance",
+      "showCRTSweeps",
+      "showContextSweeps",
+      "showEMA55",
+      "contextHistory",
+      "contextZoneBars",
+      "contextZoneDistance",
+      "contextLabelGap",
+      "zoneExtension",
+      "dashboardSize",
+      "chartLabelSize",
+      "showDashboard",
+      "showPerformance",
+      "showUnusedModules",
+      "showSwingLabels",
+      "maxStructureLabels",
+      "showLastPlan",
+      "contextTransparency",
+      "showEMA",
+      "showZones",
+      "showTrade",
+      "showEntryLine",
+      "showSLLine",
+      "showTP1Line",
+      "showTP2Line",
+      "showTP3Line",
+      "showRiskReward",
+      "showOB",
+      "showStructure"
+    ],
+    "expectedTransition": "OnlyAoff/Gon from captured A inputs, per root UI action record. This is continuity evidence, not a new117-control recapture.",
+    "observedControls": {
+      "reviewShowBoard": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "654 checkbox Show A\u2013H confirmation board, Value: 1"
+        }
+      ],
+      "reviewShowGuides": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "656 checkbox Show candidate zones / triggers (setup only), Value: 1"
+        }
+      ],
+      "clearSignalView": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "658 combo box (settable) Context + levels"
+          ],
+          "displayed": [
+            "Context + levels"
+          ]
+        }
+      ],
+      "clearLevelBars": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "661 text field (settable) 8"
+          ],
+          "displayed": [
+            "8"
+          ]
+        }
+      ],
+      "clearPlanLimit": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "663 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        }
+      ],
+      "clearSpaceLabels": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "664 checkbox Separate overlapping price labels with connectors, Value: 0"
+        }
+      ],
+      "clearShowPriceCard": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "666 checkbox Show compact status and price card, Value: 1"
+        }
+      ],
+      "enableA": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "668 checkbox A: Sweep + MSS + FVG, Value: 0"
+        }
+      ],
+      "enableB": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "670 checkbox B: CRT, Value: 0"
+        }
+      ],
+      "enableC": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "672 checkbox C: Confirmed-pivot Turtle Soup, Value: 0"
+        }
+      ],
+      "enableD": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "674 checkbox D: K-SNR (confirmed support/resistance), Value: 0"
+        }
+      ],
+      "enableE": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "676 checkbox E: Supply/demand, Value: 0"
+        }
+      ],
+      "enableF": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "678 checkbox F: Structural trend pullback, Value: 0"
+        }
+      ],
+      "enableG": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "680 checkbox G: AMD range approximation, Value: 1"
+        }
+      ],
+      "enableH": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "682 checkbox H: Confirmed Quasimodo approximation, Value: 0"
+        }
+      ],
+      "crtTF": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "684 combo box (settable) 15 minutes"
+          ],
+          "displayed": [
+            "15 minutes"
+          ]
+        }
+      ],
+      "turtleAge": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "687 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "levelTolerance": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "689 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        }
+      ],
+      "maxZoneTests": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "691 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "useEMA50": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "692 checkbox Trend pullback: require EMA50, Value: 1"
+        }
+      ],
+      "pullbackDepth": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "694 text field (settable) 0.3"
+          ],
+          "displayed": [
+            "0.3"
+          ]
+        }
+      ],
+      "accumulationBars": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "696 text field (settable) 12"
+          ],
+          "displayed": [
+            "12"
+          ]
+        }
+      ],
+      "accumulationWidth": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "698 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "strategyThresholds": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "700 checkbox Use strategy-specific quality thresholds, Value: 0"
+        }
+      ],
+      "thresholdA": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "702 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdB": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "704 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdC": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "706 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdD": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "708 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdE": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "710 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdF": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "712 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdG": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "714 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "thresholdH": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "716 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "useResearchWindow": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "718 checkbox Restrict new plans to date window, Value: 0"
+        }
+      ],
+      "researchStart": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "720 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+            "721 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2026-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "researchEnd": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "723 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+            "724 combo box (settable) 07:00"
+          ],
+          "displayed": [
+            "2027-01-01",
+            "07:00"
+          ]
+        }
+      ],
+      "tradeSide": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "726 combo box (settable) Both"
+          ],
+          "displayed": [
+            "Both"
+          ]
+        }
+      ],
+      "auditLog": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "control": "728 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+        }
+      ],
+      "swing": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "730 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "expiry": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "732 text field (settable) 20"
+          ],
+          "displayed": [
+            "20"
+          ]
+        }
+      ],
+      "threshold": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "734 text field (settable) 75"
+          ],
+          "displayed": [
+            "75"
+          ]
+        }
+      ],
+      "cooldown": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "736 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        }
+      ],
+      "maxTrades": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "738 text field (settable) 5"
+          ],
+          "displayed": [
+            "5"
+          ]
+        }
+      ],
+      "maxExposurePct": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "740 text field (settable) 90"
+          ],
+          "displayed": [
+            "90"
+          ]
+        }
+      ],
+      "riskPct": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "750 text field (settable) 0.5"
+          ],
+          "displayed": [
+            "0.5"
+          ]
+        }
+      ],
+      "buffer": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "752 text field (settable) 0.15"
+          ],
+          "displayed": [
+            "0.15"
+          ]
+        }
+      ],
+      "maxStop": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "754 text field (settable) 3"
+          ],
+          "displayed": [
+            "3"
+          ]
+        }
+      ],
+      "maxDistance": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "756 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        }
+      ],
+      "minRR": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "758 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "r1": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "760 text field (settable) 1"
+          ],
+          "displayed": [
+            "1"
+          ]
+        }
+      ],
+      "r2": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "762 text field (settable) 2"
+          ],
+          "displayed": [
+            "2"
+          ]
+        }
+      ],
+      "targetMode": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "742 combo box (settable) Fixed R"
+          ],
+          "displayed": [
+            "Fixed R"
+          ]
+        }
+      ],
+      "stopMode": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "745 combo box (settable) Structure"
+          ],
+          "displayed": [
+            "Structure"
+          ]
+        }
+      ],
+      "atrStop": [
+        {
+          "file": "g-inputs-top.ax.txt",
+          "controls": [
+            "748 text field (settable) 1.5"
+          ],
+          "displayed": [
+            "1.5"
+          ]
+        }
+      ]
+    },
+    "evidence": {
+      "path": "g-inputs-top.ax.txt",
+      "sha256": "245021cefecffb0080e2e23bc895518edbfffd6c4a8bf61f5c720aaa1b14a9c8"
+    },
+    "mismatchesAgainstExpectedTransition": []
+  }
+}

@@ -1,0 +1,33 @@
+
+> xauusd-smart-scalper-pro@0.8.0 verify
+> npm run typecheck && npm test && npm run pine:check && npm run pine:parse
+
+
+> xauusd-smart-scalper-pro@0.8.0 typecheck
+> tsc --noEmit
+
+
+> xauusd-smart-scalper-pro@0.8.0 test
+> vitest run
+
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+ ❯ tests/delivery-integration.test.ts (8 tests | 8 skipped) 11ms
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/delivery-integration.test.ts [ tests/delivery-integration.test.ts ]
+Error: listen EPERM: operation not permitted 127.0.0.1
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/delivery-integration.test.ts [ tests/delivery-integration.test.ts ]
+Error: Server is not running.
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 24 passed (25)
+      Tests  195 passed | 8 skipped (203)
+   Start at  01:13:26
+   Duration  1.66s (tests 91%, import 5%, transform 3%, worker 1%)
+

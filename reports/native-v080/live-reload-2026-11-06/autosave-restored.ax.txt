@@ -1,0 +1,213 @@
+Window: "XAUUSD 4,038.89 ▼ −1.22% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,038.89 ▼ −1.22% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,038.89 ▼ −1.22% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,038.89 ▼ −1.22% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+											23 text Replay
+										24 pop up button Layout setup
+										25 button (disabled) All changes saved
+										26 pop up button Manage layouts
+										27 button Quick search
+										28 button Settings
+										29 button Fullscreen mode
+										30 pop up button Take a snapshot
+									31 pop up button Share your idea with the trade community
+									32 container
+										33 button Trade
+									34 container
+										35 button Upgrade
+								36 toolbar
+									37 container
+										38 container
+											39 button Cross
+											40 toggle button Cursors, Value: 1
+										41 container
+											42 button Trendline
+											43 toggle button Trend tools, Value: 0
+										44 container
+											45 button Fib retracement
+											46 toggle button Gann and Fibonacci tools, Value: 0
+										47 container
+											48 button XABCD pattern
+											49 toggle button Patterns, Value: 0
+										50 container
+											51 button Long position
+											52 toggle button Forecasting and measurement tools, Value: 0
+										53 container
+											54 button Brush
+											55 toggle button Geometric shapes, Value: 0
+										56 container
+											57 button Text
+											58 toggle button Annotation tools, Value: 0
+										59 container
+											60 button Icon
+											61 toggle button Icons, Value: 0
+										62 button Measure
+										63 button Zoom in
+										64 container
+											65 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											66 toggle button Magnets, Value: 0
+										67 toggle button Keep drawing, Value: 0
+										68 container
+											69 toggle button Lock drawings and indicators, Value: 0
+											70 toggle button Lock options, Value: 0
+										71 container
+											72 toggle button Hide all drawings, Value: 0
+											73 toggle button Hide options, Value: 0
+										74 container
+											75 button Remove objects
+											76 button Remove options
+								77 container Chart #1
+									78 container
+										79 toolbar
+											80 container
+												81 container Change symbol
+													82 container
+														83 Unlabeled image To get missing image descriptions, open the context menu.
+														84 text X
+													85 button Change symbol
+												86 container Change interval
+													87 text ·
+													88 button Change interval
+												89 text ·
+												90 text FOREX.com
+											91 container
+												92 button Unflag symbol
+													93 image
+												94 button More
+											95 button Market open · Data updates once per second
+											96 container
+												97 text O 4,039.88 H 4,044.35 L 4,038.29 C 4,038.89 −0.99 (−0.02%)
+										98 container
+											99 text 4,038.31 SELL
+											100 text 80
+											101 text 4,039.11 BUY
+										102 container
+											103 button Show indicators legend
+										104 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									105 container
+								106 toolbar
+									107 container
+										108 button 1 day in 1 minute intervals
+										109 button 5 days in 5 minutes intervals
+										110 button 1 month in 30 minutes intervals
+										111 button 3 months in 1 hour intervals
+										112 button 6 months in 2 hours intervals
+										113 button Year to day in 1 day intervals
+										114 button 1 year in 1 day intervals
+										115 button 5 years in 1 week intervals
+										116 button All data in 1 month intervals
+										117 button Go to
+									118 button Timezone
+								119 container
+									120 toolbar
+										121 toggle button Watchlist, details, and news, Value: 0
+										122 toggle button Alerts, Value: 0
+										123 toggle button Object tree and data window, Value: 0
+										124 toggle button AI Copilot, Value: 0
+										125 toggle button Screeners, Value: 0
+										126 toggle button Pine Editor, Value: 0
+										127 toggle button Calendars, Value: 0
+										128 toggle button Community, Value: 0
+										129 toggle button Notifications, Value: 0
+										130 toggle button Chats, Value: 0
+										131 pop up button Products
+										132 toggle button Help Center, Value: 0
+								133 container Trading panel
+							134 container
+								135 table
+									136 row (disabled) Save layout
+										137 cell
+											138 text Save layout
+										139 text ⌘ S
+									140 row Autosave
+										141 cell
+											142 text Autosave
+									143 row Share layout
+										144 row header
+											145 text Share layout
+										146 cell
+											147 container Everyone with the link can view and copy
+									148 row Make a copy
+										149 cell
+											150 text Make a copy…
+									151 row Rename
+										152 cell
+											153 text Rename…
+									154 row Download chart data
+										155 cell
+											156 text Download chart data…
+									157 row Create new layout
+										158 cell
+											159 text Create new layout…
+									160 row Recently used
+										161 cell
+											162 text RECENTLY USED
+									163 row Unnamed XAUUSD, 5 Add to favorites
+										164 cell
+											165 text Unnamed
+										166 text XAUUSD, 5
+										167 cell
+											168 button Add to favorites
+									169 row Open layout
+										170 cell
+											171 text Open layout…
+										172 text Dot
+		173 container
+			174 pop up button Tab search
+			175 tab group
+				176 tab (selected, settable, boolean) XAUUSD 4,038.89 ▼ −1.22% Unnamed - Memory usage - 527 MB, Value: on
+					177 button Close
+			178 button New Tab
+			179 button Open Gemini in Chrome
+		180 container
+			181 toolbar
+				182 button Back
+				183 button (disabled) Forward
+				184 button Reload
+				185 container
+					186 pop up button View site information
+					187 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					188 button Bookmark this tab
+				189 container
+					190 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					191 pop up button Extensions
+				192 checkbox Downloads, Value: 0
+				193 button Chheang
+				194 pop up button Chrome
+	195 container
+		196 close button
+		197 zoom button
+198 menu bar
+	199 Chrome
+	200 File
+	201 Edit
+	202 View
+	203 History
+	204 Bookmarks
+	205 Profiles
+	206 Tab
+	207 Window
+	208 Help
+
+The focused UI element is 140 row Autosave

@@ -1,0 +1,828 @@
+{
+  "schema": "live-closed-bar-reload-review/v1",
+  "scope": "Only these observed closed bars and logged fields; no valid-entry first-appearance, intrabar stability, general non-repainting or Bar Replay certification.",
+  "realtimeCloseCount": 1,
+  "executionTransitions": [
+    {
+      "barOpen": 1793941500000,
+      "barClose": 1793941800000,
+      "before": [
+        {
+          "csvLine": 326,
+          "displayPrefix": "2026-11-06T05:10:00.547-00:00",
+          "schema": "snapshot-execution/v1",
+          "parentSourceSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "observedAt": 1793941800549,
+          "realtime": true,
+          "history": false,
+          "confirmed": true,
+          "bootAt": 1793941675070,
+          "updates": 5354
+        },
+        {
+          "csvLine": 329,
+          "displayPrefix": "2026-11-06T05:10:00.547-00:00",
+          "schema": "snapshot-execution/v1",
+          "parentSourceSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "observedAt": 1793941800550,
+          "realtime": true,
+          "history": false,
+          "confirmed": true,
+          "bootAt": 1793941675070,
+          "updates": 5355
+        }
+      ],
+      "after": [
+        {
+          "csvLine": 325,
+          "displayPrefix": "2026-11-06T05:05:00.000-00:00",
+          "schema": "snapshot-execution/v1",
+          "parentSourceSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "observedAt": 1793941993593,
+          "realtime": false,
+          "history": true,
+          "confirmed": true,
+          "bootAt": 1793941992902,
+          "updates": 5318
+        }
+      ]
+    }
+  ],
+  "explicitDuplicateHandling": {
+    "before": {
+      "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-live-final-raw.csv",
+      "sha256": "c74d84cb932f2179cca94f534e8ce9e770a7903a1881860900241613e4cf8e83",
+      "method": "Explicit per-bar aggregation only when every captured data snapshot is exactly equal; raw CSV and all execution metadata preserved.",
+      "groups": [
+        {
+          "barOpen": 1793941200000,
+          "barClose": 1793941500000,
+          "rawObservationCount": 1,
+          "rawDataCsvLines": [
+            322
+          ],
+          "rawPhaseCsvLines": [
+            323
+          ],
+          "allDataObservationsExactlyEqual": true
+        },
+        {
+          "barOpen": 1793941500000,
+          "barClose": 1793941800000,
+          "rawObservationCount": 2,
+          "rawDataCsvLines": [
+            325,
+            328
+          ],
+          "rawPhaseCsvLines": [
+            326,
+            329
+          ],
+          "allDataObservationsExactlyEqual": true
+        }
+      ]
+    },
+    "after": {
+      "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-after-reload-raw.csv",
+      "sha256": "3d42bb50dd1e1bcede09b8c42c2dae204125e339200563ea48d1192df0cbb646",
+      "method": "Explicit per-bar aggregation only when every captured data snapshot is exactly equal; raw CSV and all execution metadata preserved.",
+      "groups": [
+        {
+          "barOpen": 1793941200000,
+          "barClose": 1793941500000,
+          "rawObservationCount": 1,
+          "rawDataCsvLines": [
+            322
+          ],
+          "rawPhaseCsvLines": [
+            323
+          ],
+          "allDataObservationsExactlyEqual": true
+        },
+        {
+          "barOpen": 1793941500000,
+          "barClose": 1793941800000,
+          "rawObservationCount": 1,
+          "rawDataCsvLines": [
+            324
+          ],
+          "rawPhaseCsvLines": [
+            325
+          ],
+          "allDataObservationsExactlyEqual": true
+        }
+      ]
+    }
+  },
+  "liveCloseSnapshotComparison": {
+    "schema": "data-snapshot-comparison/v1",
+    "status": "CHANGED_OR_MISSING_SNAPSHOTS",
+    "scope": "Only captured rows/fields; missing snapshots are not synthesized. Declared parent hash does not authenticate probe source, settings or TradingView provenance.",
+    "numericComparison": "Exact numeric values; JSON decimal fractions are parsed as Decimal and rendered as strings in detail fields to preserve precision.",
+    "inputs": {
+      "before": {
+        "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-live-unique-derived.log",
+        "sha256": "87b95ea317825bd9d8b68a8ca0ac37c7ee64d31b1f3dd95be011497172217a37",
+        "bytes": 8388,
+        "format": "LOG_TEXT",
+        "snapshotCount": 1
+      },
+      "after": {
+        "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-reload-unique-derived.log",
+        "sha256": "438446fd4d948dd7d97d1aa700eb8f1bb9f64573e4adf4db8e1340958cb14890",
+        "bytes": 8391,
+        "format": "LOG_TEXT",
+        "snapshotCount": 1
+      }
+    },
+    "context": {
+      "schema": "data-snapshot/v1",
+      "parentSourceSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowBasis": "BAR_OPEN_TIME"
+    },
+    "counts": {
+      "commonSnapshots": 1,
+      "exactCommonSnapshots": 0,
+      "dataAndStateMatchingCommonSnapshots": 0,
+      "beforeOnlySnapshots": 0,
+      "afterOnlySnapshots": 0
+    },
+    "dataAndStateEqual": false,
+    "allComparedValuesEqual": false,
+    "missingSnapshots": {
+      "beforeOnly": [],
+      "afterOnly": []
+    },
+    "differenceCounts": {
+      "rawOhlc": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "rawMarketContext": {
+        "snapshots": 1,
+        "fields": 1
+      },
+      "derivedContext": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "executionState": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "candidates": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "plan": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "historyBoundary": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "metadata": {
+        "snapshots": 1,
+        "fields": 1
+      }
+    },
+    "differences": {
+      "rawOhlc": [],
+      "rawMarketContext": [
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "differences": [
+            {
+              "field": "volume",
+              "before": 0,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "derivedContext": [],
+      "executionState": [],
+      "candidates": [],
+      "plan": [],
+      "historyBoundary": [],
+      "metadata": [
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "differences": [
+            {
+              "field": "lastBarIndex",
+              "before": 5317,
+              "after": 5318,
+              "absoluteDelta": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "lastBarIndexMetadata": {
+      "before": [
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "lastBarIndex": 5317
+        }
+      ],
+      "after": [
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "lastBarIndex": 5318
+        }
+      ]
+    },
+    "targetBar": {
+      "requestedBarOpen": 1793941500000,
+      "expectedM5DecisionClose": 1793941800000,
+      "before": {
+        "present": true,
+        "time": 1793941500000,
+        "timeClose": 1793941800000,
+        "rawOhlc": {
+          "open": "4048.325",
+          "high": "4052.905",
+          "low": "4047.595",
+          "close": "4052.195"
+        },
+        "plan": null,
+        "closeModeEntryEqualsRawClose": null,
+        "firstLoadedBarTime": 1791756000000,
+        "barIndex": 5317,
+        "lastBarIndex": 5317,
+        "sourceLocation": {
+          "line": 2,
+          "displayLogTime": null
+        }
+      },
+      "after": {
+        "present": true,
+        "time": 1793941500000,
+        "timeClose": 1793941800000,
+        "rawOhlc": {
+          "open": "4048.325",
+          "high": "4052.905",
+          "low": "4047.595",
+          "close": "4052.195"
+        },
+        "plan": null,
+        "closeModeEntryEqualsRawClose": null,
+        "firstLoadedBarTime": 1791756000000,
+        "barIndex": 5317,
+        "lastBarIndex": 5318,
+        "sourceLocation": {
+          "line": 2,
+          "displayLogTime": null
+        }
+      }
+    }
+  },
+  "allCapturedSnapshotComparison": {
+    "schema": "data-snapshot-comparison/v1",
+    "status": "CHANGED_OR_MISSING_SNAPSHOTS",
+    "scope": "Only captured rows/fields; missing snapshots are not synthesized. Declared parent hash does not authenticate probe source, settings or TradingView provenance.",
+    "numericComparison": "Exact numeric values; JSON decimal fractions are parsed as Decimal and rendered as strings in detail fields to preserve precision.",
+    "inputs": {
+      "before": {
+        "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-live-unique-derived.log",
+        "sha256": "87b95ea317825bd9d8b68a8ca0ac37c7ee64d31b1f3dd95be011497172217a37",
+        "bytes": 8388,
+        "format": "LOG_TEXT",
+        "snapshotCount": 2
+      },
+      "after": {
+        "path": "/Users/macbook/Documents/Trading2/xauusd-smart-scalper/reports/native-v080/live-reload-2026-11-06/stable-reload-unique-derived.log",
+        "sha256": "438446fd4d948dd7d97d1aa700eb8f1bb9f64573e4adf4db8e1340958cb14890",
+        "bytes": 8391,
+        "format": "LOG_TEXT",
+        "snapshotCount": 2
+      }
+    },
+    "context": {
+      "schema": "data-snapshot/v1",
+      "parentSourceSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowBasis": "BAR_OPEN_TIME"
+    },
+    "counts": {
+      "commonSnapshots": 2,
+      "exactCommonSnapshots": 0,
+      "dataAndStateMatchingCommonSnapshots": 1,
+      "beforeOnlySnapshots": 0,
+      "afterOnlySnapshots": 0
+    },
+    "dataAndStateEqual": false,
+    "allComparedValuesEqual": false,
+    "missingSnapshots": {
+      "beforeOnly": [],
+      "afterOnly": []
+    },
+    "differenceCounts": {
+      "rawOhlc": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "rawMarketContext": {
+        "snapshots": 1,
+        "fields": 1
+      },
+      "derivedContext": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "executionState": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "candidates": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "plan": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "historyBoundary": {
+        "snapshots": 0,
+        "fields": 0
+      },
+      "metadata": {
+        "snapshots": 2,
+        "fields": 2
+      }
+    },
+    "differences": {
+      "rawOhlc": [],
+      "rawMarketContext": [
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "differences": [
+            {
+              "field": "volume",
+              "before": 0,
+              "after": null
+            }
+          ]
+        }
+      ],
+      "derivedContext": [],
+      "executionState": [],
+      "candidates": [],
+      "plan": [],
+      "historyBoundary": [],
+      "metadata": [
+        {
+          "time": 1793941200000,
+          "timeClose": 1793941500000,
+          "differences": [
+            {
+              "field": "lastBarIndex",
+              "before": 5317,
+              "after": 5318,
+              "absoluteDelta": "1"
+            }
+          ]
+        },
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "differences": [
+            {
+              "field": "lastBarIndex",
+              "before": 5317,
+              "after": 5318,
+              "absoluteDelta": "1"
+            }
+          ]
+        }
+      ]
+    },
+    "lastBarIndexMetadata": {
+      "before": [
+        {
+          "time": 1793941200000,
+          "timeClose": 1793941500000,
+          "lastBarIndex": 5317
+        },
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "lastBarIndex": 5317
+        }
+      ],
+      "after": [
+        {
+          "time": 1793941200000,
+          "timeClose": 1793941500000,
+          "lastBarIndex": 5318
+        },
+        {
+          "time": 1793941500000,
+          "timeClose": 1793941800000,
+          "lastBarIndex": 5318
+        }
+      ]
+    },
+    "targetBar": {
+      "requestedBarOpen": 1793941500000,
+      "expectedM5DecisionClose": 1793941800000,
+      "before": {
+        "present": true,
+        "time": 1793941500000,
+        "timeClose": 1793941800000,
+        "rawOhlc": {
+          "open": "4048.325",
+          "high": "4052.905",
+          "low": "4047.595",
+          "close": "4052.195"
+        },
+        "plan": null,
+        "closeModeEntryEqualsRawClose": null,
+        "firstLoadedBarTime": 1791756000000,
+        "barIndex": 5317,
+        "lastBarIndex": 5317,
+        "sourceLocation": {
+          "line": 2,
+          "displayLogTime": null
+        }
+      },
+      "after": {
+        "present": true,
+        "time": 1793941500000,
+        "timeClose": 1793941800000,
+        "rawOhlc": {
+          "open": "4048.325",
+          "high": "4052.905",
+          "low": "4047.595",
+          "close": "4052.195"
+        },
+        "plan": null,
+        "closeModeEntryEqualsRawClose": null,
+        "firstLoadedBarTime": 1791756000000,
+        "barIndex": 5317,
+        "lastBarIndex": 5318,
+        "sourceLocation": {
+          "line": 2,
+          "displayLogTime": null
+        }
+      }
+    }
+  },
+  "actualPlanCountOnLiveBars": 0,
+  "runtimeInputs": {
+    "attribution": "Observed native TradingView input controls, captured UTC chart display; no defaults substituted",
+    "evidenceFiles": [
+      "stable-inputs-top.ax.txt",
+      "stable-inputs-page0.ax.txt",
+      "stable-inputs-page2.ax.txt",
+      "stable-inputs-page3.ax.txt"
+    ],
+    "inputCount": 117,
+    "inputSettings": {
+      "reviewShowBoard": true,
+      "reviewShowGuides": true,
+      "clearSignalView": "Context + levels",
+      "clearLevelBars": 8,
+      "clearPlanLimit": 1,
+      "clearSpaceLabels": false,
+      "clearShowPriceCard": true,
+      "enableA": true,
+      "enableB": true,
+      "enableC": true,
+      "enableD": true,
+      "enableE": true,
+      "enableF": true,
+      "enableG": true,
+      "enableH": true,
+      "crtTF": "15",
+      "turtleAge": 3,
+      "levelTolerance": 0.15,
+      "maxZoneTests": 2,
+      "useEMA50": true,
+      "pullbackDepth": 0.3,
+      "accumulationBars": 12,
+      "accumulationWidth": 3.0,
+      "strategyThresholds": false,
+      "thresholdA": 75,
+      "thresholdB": 75,
+      "thresholdC": 75,
+      "thresholdD": 75,
+      "thresholdE": 75,
+      "thresholdF": 75,
+      "thresholdG": 75,
+      "thresholdH": 75,
+      "useResearchWindow": false,
+      "researchStart": 1767225600000,
+      "researchEnd": 1798761600000,
+      "tradeSide": "Both",
+      "auditLog": true,
+      "swing": 3,
+      "expiry": 20,
+      "threshold": 75,
+      "cooldown": 5,
+      "maxTrades": 5,
+      "maxExposurePct": 90.0,
+      "riskPct": 0.5,
+      "buffer": 0.15,
+      "maxStop": 3.0,
+      "maxDistance": 1.5,
+      "minRR": 2.0,
+      "r1": 1.0,
+      "r2": 2.0,
+      "r3": 3.0,
+      "minDisp": 0.7,
+      "trendFilter": true,
+      "emaFilter": false,
+      "useSession": true,
+      "sessionPreset": "London",
+      "sessionHours": "0800-1700",
+      "sessionZone": "Europe/London",
+      "manualPause": false,
+      "newsStart": 0,
+      "newsEnd": 0,
+      "entryMode": "Close",
+      "pendingBars": 3,
+      "timeExit": 15,
+      "targetMode": "Fixed R",
+      "stopMode": "Structure",
+      "atrStop": 1.5,
+      "breakEven": false,
+      "breakEvenR": 1.0,
+      "trailing": false,
+      "trailingStartR": 2.0,
+      "trailingATR": 1.5,
+      "confluenceLiquidity": false,
+      "confluenceFib": false,
+      "confluencePD": false,
+      "showDaily": false,
+      "showSessionLevels": false,
+      "showFibonacci": false,
+      "showPremiumDiscount": false,
+      "showBreakers": false,
+      "showWyckoff": false,
+      "partial": true,
+      "visualLayout": "Reference",
+      "historyMode": "Off",
+      "historyPlanLimit": 8,
+      "historyLookback": 3000,
+      "showConceptPanel": false,
+      "showSwingLevels": true,
+      "showSupportResistance": true,
+      "showCRTSweeps": false,
+      "showContextSweeps": true,
+      "showEMA55": true,
+      "contextHistory": "Latest only",
+      "contextZoneBars": 60,
+      "contextZoneDistance": 8.0,
+      "contextLabelGap": 8,
+      "zoneExtension": 12,
+      "dashboardSize": "Tiny",
+      "chartLabelSize": "Small",
+      "showDashboard": false,
+      "showPerformance": true,
+      "showUnusedModules": false,
+      "showSwingLabels": false,
+      "maxStructureLabels": 15,
+      "showLastPlan": true,
+      "contextTransparency": 82,
+      "showEMA": true,
+      "showZones": true,
+      "showTrade": true,
+      "showEntryLine": true,
+      "showSLLine": true,
+      "showTP1Line": true,
+      "showTP2Line": true,
+      "showTP3Line": true,
+      "showRiskReward": true,
+      "showOB": true,
+      "showStructure": true
+    },
+    "observedControls": {
+      "clearSignalView": [
+        "444 combo box (settable) Context + levels"
+      ],
+      "clearLevelBars": [
+        "447 text field (settable) 8"
+      ],
+      "clearPlanLimit": [
+        "449 text field (settable) 1"
+      ],
+      "crtTF": [
+        "470 combo box (settable) 15 minutes"
+      ],
+      "turtleAge": [
+        "473 text field (settable) 3"
+      ],
+      "levelTolerance": [
+        "475 text field (settable) 0.15"
+      ],
+      "maxZoneTests": [
+        "477 text field (settable) 2"
+      ],
+      "pullbackDepth": [
+        "480 text field (settable) 0.3"
+      ],
+      "accumulationBars": [
+        "482 text field (settable) 12"
+      ],
+      "accumulationWidth": [
+        "484 text field (settable) 3"
+      ],
+      "thresholdA": [
+        "488 text field (settable) 75"
+      ],
+      "thresholdB": [
+        "490 text field (settable) 75"
+      ],
+      "thresholdC": [
+        "492 text field (settable) 75"
+      ],
+      "thresholdD": [
+        "494 text field (settable) 75"
+      ],
+      "thresholdE": [
+        "496 text field (settable) 75"
+      ],
+      "thresholdF": [
+        "498 text field (settable) 75"
+      ],
+      "thresholdG": [
+        "500 text field (settable) 75"
+      ],
+      "thresholdH": [
+        "502 text field (settable) 75"
+      ],
+      "researchStart": [
+        "506 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+        "507 combo box (settable) 00:00",
+        "509 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+        "510 combo box (settable) 00:00"
+      ],
+      "researchEnd": [
+        "509 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+        "510 combo box (settable) 00:00",
+        "512 combo box (settable) Both"
+      ],
+      "tradeSide": [
+        "512 combo box (settable) Both"
+      ],
+      "swing": [
+        "516 text field (settable) 3"
+      ],
+      "expiry": [
+        "518 text field (settable) 20"
+      ],
+      "threshold": [
+        "520 text field (settable) 75"
+      ],
+      "cooldown": [
+        "522 text field (settable) 5"
+      ],
+      "maxTrades": [
+        "524 text field (settable) 5"
+      ],
+      "maxExposurePct": [
+        "526 text field (settable) 90"
+      ],
+      "riskPct": [
+        "536 text field (settable) 0.5"
+      ],
+      "buffer": [
+        "538 text field (settable) 0.15"
+      ],
+      "maxStop": [
+        "540 text field (settable) 3"
+      ],
+      "maxDistance": [
+        "542 text field (settable) 1.5"
+      ],
+      "minRR": [
+        "544 text field (settable) 2"
+      ],
+      "r1": [
+        "546 text field (settable) 1"
+      ],
+      "r2": [
+        "548 text field (settable) 2"
+      ],
+      "r3": [
+        "530 text field (settable) 3"
+      ],
+      "minDisp": [
+        "532 text field (settable) 0.7"
+      ],
+      "sessionPreset": [
+        "539 combo box (settable) London"
+      ],
+      "sessionHours": [
+        "542 combo box (settable) 08:00",
+        "544 combo box (settable) 17:00",
+        "546 text field (settable) Europe/London"
+      ],
+      "sessionZone": [
+        "546 text field (settable) Europe/London"
+      ],
+      "newsStart": [
+        "486 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "487 combo box (settable) 00:00",
+        "489 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "490 combo box (settable) 00:00"
+      ],
+      "newsEnd": [
+        "489 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+        "490 combo box (settable) 00:00",
+        "492 combo box (settable) Close"
+      ],
+      "entryMode": [
+        "492 combo box (settable) Close"
+      ],
+      "pendingBars": [
+        "495 text field (settable) 3"
+      ],
+      "timeExit": [
+        "497 text field (settable) 15"
+      ],
+      "targetMode": [
+        "528 combo box (settable) Fixed R"
+      ],
+      "stopMode": [
+        "531 combo box (settable) Structure"
+      ],
+      "atrStop": [
+        "534 text field (settable) 1.5"
+      ],
+      "breakEvenR": [
+        "501 text field (settable) 1"
+      ],
+      "trailingStartR": [
+        "504 text field (settable) 2"
+      ],
+      "trailingATR": [
+        "506 text field (settable) 1.5"
+      ],
+      "visualLayout": [
+        "528 combo box (settable) Reference"
+      ],
+      "historyMode": [
+        "553 combo box (settable) Off"
+      ],
+      "historyPlanLimit": [
+        "556 text field (settable) 8"
+      ],
+      "historyLookback": [
+        "530 text field (settable) 3000"
+      ],
+      "contextHistory": [
+        "542 combo box (settable) Latest only"
+      ],
+      "contextZoneBars": [
+        "545 text field (settable) 60"
+      ],
+      "contextZoneDistance": [
+        "547 text field (settable) 8"
+      ],
+      "contextLabelGap": [
+        "549 text field (settable) 8"
+      ],
+      "zoneExtension": [
+        "551 text field (settable) 12"
+      ],
+      "dashboardSize": [
+        "532 combo box (settable) Tiny"
+      ],
+      "chartLabelSize": [
+        "535 combo box (settable) Small"
+      ],
+      "maxStructureLabels": [
+        "545 text field (settable) 15"
+      ],
+      "contextTransparency": [
+        "548 text field (settable) 82"
+      ]
+    }
+  }
+}

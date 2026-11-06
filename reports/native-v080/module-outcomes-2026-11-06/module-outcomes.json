@@ -1,0 +1,5524 @@
+{
+  "schema": "selected-module-partial-aware-outcomes/v1",
+  "status": "DESCRIPTIVE_NATIVE_HISTORICAL_SAMPLE_NOT_OOS",
+  "artifacts": {
+    "raw": {
+      "path": "reports/native-v080/live-reload-2026-11-06/stable-strategy-raw.csv",
+      "sha256": "82f145f6d6617ded2052ac2c71fc3ff1bf5bcbacf07e0c3d0360d84f535ee29b"
+    },
+    "source": {
+      "path": "pine/experiments/strategy_stable_display.pine",
+      "sha256": "ce6c1256bd9d29387f194be4ac715e479bf98f14bdcc0e9c697e5f4110f2aae9"
+    },
+    "nativeCopyBack": {
+      "path": "reports/native-v080/live-reload-2026-11-06/stable-strategy-editor-copy.pine",
+      "sha256": "158fa3d95edf25e2ae85ee170ddd7455332e0dd3d5bf8d7b83036d37e8668c27"
+    },
+    "actualInputs": {
+      "path": "reports/native-v080/live-reload-2026-11-06/strategy-stable-runtime-inputs.json",
+      "sha256": "bc77ee86657f071d2c4fc75824a6dbe55581fa9b55d876b2453794fe2391866b"
+    },
+    "nativeCompile": {
+      "path": "reports/native-v080/live-reload-2026-11-06/stable-strategy-compiled.ax.txt",
+      "sha256": "bf1df41ab36e59169eb94fd005b70a9dab7f5c316b133ba4e49da16abab8b38f"
+    },
+    "actualStrategyProperties": {
+      "path": "reports/native-v080/live-reload-2026-11-06/stable-strategy-properties.ax.txt",
+      "sha256": "cb9b3a0f00f0dbdf5e1028e26ece48442597385cea937c2e43a182f055cc928c"
+    }
+  },
+  "attribution": {
+    "normalizedNativeCopyBackSha256": "ce6c1256bd9d29387f194be4ac715e479bf98f14bdcc0e9c697e5f4110f2aae9",
+    "normalizedCopyMatchesSource": true,
+    "compileAndRuntimeEvidence": "../live-reload-2026-11-06/README.md; stable-strategy-compiled.ax.txt and PNG; all117 native controls",
+    "rawLogContainsSourceHash": false
+  },
+  "context": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "accountCurrency": "USD",
+    "pointValue": 1,
+    "minTick": "0.01",
+    "firstCompletedEntryUTC": "2026-10-12T10:05:00+00:00",
+    "lastCompletedEntryUTC": "2026-11-05T14:20:00+00:00",
+    "researchWindowRestrictionEnabled": false,
+    "timeExitMinutes": 15,
+    "commissionPctPerSide": "0.01",
+    "slippageTicks": 2,
+    "spreadModel": "NOT_CONFIGURED",
+    "allActualInputs": {
+      "reviewShowBoard": true,
+      "reviewShowGuides": true,
+      "clearSignalView": "Context + levels",
+      "clearLevelBars": 8,
+      "clearPlanLimit": 1,
+      "clearSpaceLabels": false,
+      "clearShowPriceCard": true,
+      "enableA": true,
+      "enableB": true,
+      "enableC": true,
+      "enableD": true,
+      "enableE": true,
+      "enableF": true,
+      "enableG": true,
+      "enableH": true,
+      "crtTF": "15",
+      "turtleAge": 3,
+      "levelTolerance": 0.15,
+      "maxZoneTests": 2,
+      "useEMA50": true,
+      "pullbackDepth": 0.3,
+      "accumulationBars": 12,
+      "accumulationWidth": 3.0,
+      "strategyThresholds": false,
+      "thresholdA": 75,
+      "thresholdB": 75,
+      "thresholdC": 75,
+      "thresholdD": 75,
+      "thresholdE": 75,
+      "thresholdF": 75,
+      "thresholdG": 75,
+      "thresholdH": 75,
+      "useResearchWindow": false,
+      "researchStart": 1767225600000,
+      "researchEnd": 1798761600000,
+      "tradeSide": "Both",
+      "auditLog": true,
+      "swing": 3,
+      "expiry": 20,
+      "threshold": 75,
+      "cooldown": 5,
+      "maxTrades": 5,
+      "maxExposurePct": 90.0,
+      "riskPct": 0.5,
+      "buffer": 0.15,
+      "maxStop": 3.0,
+      "maxDistance": 1.5,
+      "minRR": 2.0,
+      "r1": 1.0,
+      "r2": 2.0,
+      "r3": 3.0,
+      "minDisp": 0.7,
+      "trendFilter": true,
+      "emaFilter": false,
+      "useSession": true,
+      "sessionPreset": "London",
+      "sessionHours": "0800-1700",
+      "sessionZone": "Europe/London",
+      "manualPause": false,
+      "newsStart": 0,
+      "newsEnd": 0,
+      "entryMode": "Close",
+      "pendingBars": 3,
+      "timeExit": 15,
+      "targetMode": "Fixed R",
+      "stopMode": "Structure",
+      "atrStop": 1.5,
+      "breakEven": false,
+      "breakEvenR": 1.0,
+      "trailing": false,
+      "trailingStartR": 2.0,
+      "trailingATR": 1.5,
+      "confluenceLiquidity": false,
+      "confluenceFib": false,
+      "confluencePD": false,
+      "showDaily": false,
+      "showSessionLevels": false,
+      "showFibonacci": false,
+      "showPremiumDiscount": false,
+      "showBreakers": false,
+      "showWyckoff": false,
+      "partial": true,
+      "visualLayout": "Reference",
+      "historyMode": "Off",
+      "historyPlanLimit": 8,
+      "historyLookback": 3000,
+      "showConceptPanel": false,
+      "showSwingLevels": true,
+      "showSupportResistance": true,
+      "showCRTSweeps": false,
+      "showContextSweeps": true,
+      "showEMA55": true,
+      "contextHistory": "Latest only",
+      "contextZoneBars": 60,
+      "contextZoneDistance": 8.0,
+      "contextLabelGap": 8,
+      "zoneExtension": 12,
+      "dashboardSize": "Tiny",
+      "chartLabelSize": "Small",
+      "showDashboard": false,
+      "showPerformance": true,
+      "showUnusedModules": false,
+      "showSwingLabels": false,
+      "maxStructureLabels": 15,
+      "showLastPlan": true,
+      "contextTransparency": 82,
+      "showEMA": true,
+      "showZones": true,
+      "showTrade": true,
+      "showEntryLine": true,
+      "showSLLine": true,
+      "showTP1Line": true,
+      "showTP2Line": true,
+      "showTP3Line": true,
+      "showRiskReward": true,
+      "showOB": true,
+      "showStructure": true
+    }
+  },
+  "integrity": {
+    "acceptedPlanCount": 75,
+    "uniqueClosedTradeIndexes": 109,
+    "actualEntryGroups": 75,
+    "incompleteGroups": 0,
+    "missingExitQuantity": 0,
+    "duplicateRecords": 0,
+    "cashSerializationTolerance": "1E-7",
+    "maxRowNetVsGroupNetResidual": "0",
+    "maxPriceMinusCommissionVsNetResidual": "0",
+    "maxActualPriceCommissionVsLoggedCommissionResidual": "0",
+    "existingAnalyzerCrossCheck": "PASS counts, wins/losses and cash net overall and by selected subtype"
+  },
+  "overall": {
+    "completedPositions": 75,
+    "closedTradeRows": 109,
+    "wins": 32,
+    "losses": 43,
+    "flat": 0,
+    "winRate": "0.4266666666666666666666666667",
+    "positiveGrossPositions": 36,
+    "positiveGrossButNegativeNetPositions": 4,
+    "grossPricePnl": "53.245",
+    "commission": "130.7030829",
+    "net": "-77.4580829",
+    "positiveGroupNetSum": "270.4703652",
+    "negativeGroupNetMagnitude": "347.9284481",
+    "groupNetProfitFactor": "0.7773735280256894865849861502",
+    "profitFactorStatus": "FINITE",
+    "meanNet": "-1.032774438666666666666666667",
+    "holdingMinutes": {
+      "mean": "13.93333333333333333333333333",
+      "median": "15",
+      "min": "0",
+      "max": "15",
+      "histogram": {
+        "0": 2,
+        "5": 3,
+        "10": 4,
+        "15": 66
+      }
+    },
+    "finalExitReasons": {
+      "STOP_LOSS_HIT": 9,
+      "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 66
+    },
+    "positionsWithMultipleClosedRows": 24,
+    "positionsWithExitsAtMultipleTimes": 15,
+    "positionsWithAnyTpPartial": 15,
+    "anyExitCommentsOverlapping": {
+      "STOP_LOSS_HIT": 9,
+      "TP1_HIT": 15,
+      "TP2_HIT": 1,
+      "TRADE_CLOSED": 66
+    },
+    "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+  },
+  "byModuleAtoH": {
+    "A": {
+      "completedPositions": 0,
+      "closedTradeRows": 0,
+      "wins": 0,
+      "losses": 0,
+      "flat": 0,
+      "winRate": null,
+      "positiveGrossPositions": 0,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "0",
+      "commission": "0",
+      "net": "0",
+      "positiveGroupNetSum": "0",
+      "negativeGroupNetMagnitude": "0",
+      "groupNetProfitFactor": null,
+      "profitFactorStatus": "NO_POSITIONS",
+      "meanNet": null,
+      "holdingMinutes": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "histogram": {}
+      },
+      "finalExitReasons": {},
+      "positionsWithMultipleClosedRows": 0,
+      "positionsWithExitsAtMultipleTimes": 0,
+      "positionsWithAnyTpPartial": 0,
+      "anyExitCommentsOverlapping": {},
+      "sampleStatus": "NO_SELECTED_COMPLETED_POSITIONS"
+    },
+    "B": {
+      "completedPositions": 45,
+      "closedTradeRows": 68,
+      "wins": 17,
+      "losses": 28,
+      "flat": 0,
+      "winRate": "0.3777777777777777777777777778",
+      "positiveGrossPositions": 20,
+      "positiveGrossButNegativeNetPositions": 3,
+      "grossPricePnl": "-3.037",
+      "commission": "78.2629715",
+      "net": "-81.2999715",
+      "positiveGroupNetSum": "134.1741245",
+      "negativeGroupNetMagnitude": "215.4740960",
+      "groupNetProfitFactor": "0.6226925973505418488912003603",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-1.806666033333333333333333333",
+      "holdingMinutes": {
+        "mean": "14",
+        "median": "15",
+        "min": "0",
+        "max": "15",
+        "histogram": {
+          "0": 1,
+          "5": 1,
+          "10": 4,
+          "15": 39
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 6,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 39
+      },
+      "positionsWithMultipleClosedRows": 16,
+      "positionsWithExitsAtMultipleTimes": 10,
+      "positionsWithAnyTpPartial": 10,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 6,
+        "TP1_HIT": 10,
+        "TP2_HIT": 1,
+        "TRADE_CLOSED": 39
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "C": {
+      "completedPositions": 8,
+      "closedTradeRows": 9,
+      "wins": 6,
+      "losses": 2,
+      "flat": 0,
+      "winRate": "0.75",
+      "positiveGrossPositions": 7,
+      "positiveGrossButNegativeNetPositions": 1,
+      "grossPricePnl": "32.675",
+      "commission": "13.9878403",
+      "net": "18.6871597",
+      "positiveGroupNetSum": "27.0891673",
+      "negativeGroupNetMagnitude": "8.4020076",
+      "groupNetProfitFactor": "3.224130301905463641808655350",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "2.3358949625",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 8
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 8
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 8
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "D": {
+      "completedPositions": 3,
+      "closedTradeRows": 4,
+      "wins": 3,
+      "losses": 0,
+      "flat": 0,
+      "winRate": "1",
+      "positiveGrossPositions": 3,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "32.066",
+      "commission": "5.2850028",
+      "net": "26.7809972",
+      "positiveGroupNetSum": "26.7809972",
+      "negativeGroupNetMagnitude": "0",
+      "groupNetProfitFactor": null,
+      "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+      "meanNet": "8.926999066666666666666666667",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 3
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 3
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 3
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "E": {
+      "completedPositions": 5,
+      "closedTradeRows": 10,
+      "wins": 1,
+      "losses": 4,
+      "flat": 0,
+      "winRate": "0.2",
+      "positiveGrossPositions": 1,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "-6.421",
+      "commission": "8.7458641",
+      "net": "-15.1668641",
+      "positiveGroupNetSum": "19.3406404",
+      "negativeGroupNetMagnitude": "34.5075045",
+      "groupNetProfitFactor": "0.5604763566719233493108723640",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-3.03337282",
+      "holdingMinutes": {
+        "mean": "10",
+        "median": "15",
+        "min": "0",
+        "max": "15",
+        "histogram": {
+          "0": 1,
+          "5": 1,
+          "15": 3
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 2,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 3
+      },
+      "positionsWithMultipleClosedRows": 3,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 2,
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 3
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "F": {
+      "completedPositions": 12,
+      "closedTradeRows": 13,
+      "wins": 4,
+      "losses": 8,
+      "flat": 0,
+      "winRate": "0.3333333333333333333333333333",
+      "positiveGrossPositions": 4,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "-4.320",
+      "commission": "20.9604462",
+      "net": "-25.2804462",
+      "positiveGroupNetSum": "43.9266522",
+      "negativeGroupNetMagnitude": "69.2070984",
+      "groupNetProfitFactor": "0.6347131033599293334916061154",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-2.10670385",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 12
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 12
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 12
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "G": {
+      "completedPositions": 0,
+      "closedTradeRows": 0,
+      "wins": 0,
+      "losses": 0,
+      "flat": 0,
+      "winRate": null,
+      "positiveGrossPositions": 0,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "0",
+      "commission": "0",
+      "net": "0",
+      "positiveGroupNetSum": "0",
+      "negativeGroupNetMagnitude": "0",
+      "groupNetProfitFactor": null,
+      "profitFactorStatus": "NO_POSITIONS",
+      "meanNet": null,
+      "holdingMinutes": {
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "histogram": {}
+      },
+      "finalExitReasons": {},
+      "positionsWithMultipleClosedRows": 0,
+      "positionsWithExitsAtMultipleTimes": 0,
+      "positionsWithAnyTpPartial": 0,
+      "anyExitCommentsOverlapping": {},
+      "sampleStatus": "NO_SELECTED_COMPLETED_POSITIONS"
+    },
+    "H": {
+      "completedPositions": 2,
+      "closedTradeRows": 5,
+      "wins": 1,
+      "losses": 1,
+      "flat": 0,
+      "winRate": "0.5",
+      "positiveGrossPositions": 1,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "2.282",
+      "commission": "3.4609580",
+      "net": "-1.1789580",
+      "positiveGroupNetSum": "19.1587836",
+      "negativeGroupNetMagnitude": "20.3377416",
+      "groupNetProfitFactor": "0.9420310266898070924453086768",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-0.5894790",
+      "holdingMinutes": {
+        "mean": "10",
+        "median": "10",
+        "min": "5",
+        "max": "15",
+        "histogram": {
+          "5": 1,
+          "15": 1
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 1,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 1
+      },
+      "positionsWithMultipleClosedRows": 2,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 1,
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 1
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    }
+  },
+  "bySelectedSubtype": {
+    "B_CRT": {
+      "completedPositions": 45,
+      "closedTradeRows": 68,
+      "wins": 17,
+      "losses": 28,
+      "flat": 0,
+      "winRate": "0.3777777777777777777777777778",
+      "positiveGrossPositions": 20,
+      "positiveGrossButNegativeNetPositions": 3,
+      "grossPricePnl": "-3.037",
+      "commission": "78.2629715",
+      "net": "-81.2999715",
+      "positiveGroupNetSum": "134.1741245",
+      "negativeGroupNetMagnitude": "215.4740960",
+      "groupNetProfitFactor": "0.6226925973505418488912003603",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-1.806666033333333333333333333",
+      "holdingMinutes": {
+        "mean": "14",
+        "median": "15",
+        "min": "0",
+        "max": "15",
+        "histogram": {
+          "0": 1,
+          "5": 1,
+          "10": 4,
+          "15": 39
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 6,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 39
+      },
+      "positionsWithMultipleClosedRows": 16,
+      "positionsWithExitsAtMultipleTimes": 10,
+      "positionsWithAnyTpPartial": 10,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 6,
+        "TP1_HIT": 10,
+        "TP2_HIT": 1,
+        "TRADE_CLOSED": 39
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "C_TURTLE_SOUP": {
+      "completedPositions": 8,
+      "closedTradeRows": 9,
+      "wins": 6,
+      "losses": 2,
+      "flat": 0,
+      "winRate": "0.75",
+      "positiveGrossPositions": 7,
+      "positiveGrossButNegativeNetPositions": 1,
+      "grossPricePnl": "32.675",
+      "commission": "13.9878403",
+      "net": "18.6871597",
+      "positiveGroupNetSum": "27.0891673",
+      "negativeGroupNetMagnitude": "8.4020076",
+      "groupNetProfitFactor": "3.224130301905463641808655350",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "2.3358949625",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 8
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 8
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 8
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "D_SNR": {
+      "completedPositions": 3,
+      "closedTradeRows": 4,
+      "wins": 3,
+      "losses": 0,
+      "flat": 0,
+      "winRate": "1",
+      "positiveGrossPositions": 3,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "32.066",
+      "commission": "5.2850028",
+      "net": "26.7809972",
+      "positiveGroupNetSum": "26.7809972",
+      "negativeGroupNetMagnitude": "0",
+      "groupNetProfitFactor": null,
+      "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+      "meanNet": "8.926999066666666666666666667",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 3
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 3
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 3
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "E_DEMAND": {
+      "completedPositions": 1,
+      "closedTradeRows": 1,
+      "wins": 0,
+      "losses": 1,
+      "flat": 0,
+      "winRate": "0",
+      "positiveGrossPositions": 0,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "-7.833",
+      "commission": "1.7579709",
+      "net": "-9.5909709",
+      "positiveGroupNetSum": "0",
+      "negativeGroupNetMagnitude": "9.5909709",
+      "groupNetProfitFactor": "0E+7",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-9.5909709",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 1
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 1
+      },
+      "positionsWithMultipleClosedRows": 0,
+      "positionsWithExitsAtMultipleTimes": 0,
+      "positionsWithAnyTpPartial": 0,
+      "anyExitCommentsOverlapping": {
+        "TRADE_CLOSED": 1
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "E_SUPPLY": {
+      "completedPositions": 4,
+      "closedTradeRows": 9,
+      "wins": 1,
+      "losses": 3,
+      "flat": 0,
+      "winRate": "0.25",
+      "positiveGrossPositions": 1,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "1.412",
+      "commission": "6.9878932",
+      "net": "-5.5758932",
+      "positiveGroupNetSum": "19.3406404",
+      "negativeGroupNetMagnitude": "24.9165336",
+      "groupNetProfitFactor": "0.7762171380051035670547688062",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-1.3939733",
+      "holdingMinutes": {
+        "mean": "8.75",
+        "median": "10",
+        "min": "0",
+        "max": "15",
+        "histogram": {
+          "0": 1,
+          "5": 1,
+          "15": 2
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 2,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 2
+      },
+      "positionsWithMultipleClosedRows": 3,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 2,
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 2
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "F_TREND_PULLBACK": {
+      "completedPositions": 12,
+      "closedTradeRows": 13,
+      "wins": 4,
+      "losses": 8,
+      "flat": 0,
+      "winRate": "0.3333333333333333333333333333",
+      "positiveGrossPositions": 4,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "-4.320",
+      "commission": "20.9604462",
+      "net": "-25.2804462",
+      "positiveGroupNetSum": "43.9266522",
+      "negativeGroupNetMagnitude": "69.2070984",
+      "groupNetProfitFactor": "0.6347131033599293334916061154",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-2.10670385",
+      "holdingMinutes": {
+        "mean": "15",
+        "median": "15",
+        "min": "15",
+        "max": "15",
+        "histogram": {
+          "15": 12
+        }
+      },
+      "finalExitReasons": {
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 12
+      },
+      "positionsWithMultipleClosedRows": 1,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 12
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    },
+    "H_QUASIMODO": {
+      "completedPositions": 2,
+      "closedTradeRows": 5,
+      "wins": 1,
+      "losses": 1,
+      "flat": 0,
+      "winRate": "0.5",
+      "positiveGrossPositions": 1,
+      "positiveGrossButNegativeNetPositions": 0,
+      "grossPricePnl": "2.282",
+      "commission": "3.4609580",
+      "net": "-1.1789580",
+      "positiveGroupNetSum": "19.1587836",
+      "negativeGroupNetMagnitude": "20.3377416",
+      "groupNetProfitFactor": "0.9420310266898070924453086768",
+      "profitFactorStatus": "FINITE",
+      "meanNet": "-0.5894790",
+      "holdingMinutes": {
+        "mean": "10",
+        "median": "10",
+        "min": "5",
+        "max": "15",
+        "histogram": {
+          "5": 1,
+          "15": 1
+        }
+      },
+      "finalExitReasons": {
+        "STOP_LOSS_HIT": 1,
+        "TIME_EXIT_SOURCE_AND_ID_CONFIRMED": 1
+      },
+      "positionsWithMultipleClosedRows": 2,
+      "positionsWithExitsAtMultipleTimes": 1,
+      "positionsWithAnyTpPartial": 1,
+      "anyExitCommentsOverlapping": {
+        "STOP_LOSS_HIT": 1,
+        "TP1_HIT": 1,
+        "TRADE_CLOSED": 1
+      },
+      "sampleStatus": "DESCRIPTIVE_ONLY_NOT_OOS"
+    }
+  },
+  "timeExitClassification": "Actual final exit comment TRADE_CLOSED plus exact Close entry(s) order <entryId>, observed15-minute hold, captured timeExit15 input, and reviewed source's sole strategy.close call under elapsed-holding condition. Not inferred from duration alone.",
+  "limitations": [
+    "A and G have zero selected completed positions; zero is not proof of faulty detection or no opportunity.",
+    "All modules share one position slot. Highest safe quality wins; ties retain candidate array order; opposing qualified directions suppress entry. Session, H1, quota and cooldown filters also select the sample.",
+    "These are outcomes conditional on selection in the all-modules run, not independent per-module backtests or effectiveness estimates for all candidates.",
+    "Partial closes are combined by actual entry identity. TP1_HIT or a TP2/TP3 exit ID alone does not mean a complete winning trade or a target fill: TP IDs also hold stop legs.",
+    "Net is the sum of already-fee-inclusive group results; commissions are shown once and not deducted twice. Gross price P&L is recomputed from actual emulator prices and quantities at pointValue1.",
+    "Gross price P&L already uses emulator fills with configured two-tick slippage. It is before commission, not frictionless or before all costs; no explicit spread model is configured.",
+    "66 timed positions held15minutes. Two stop positions have0 logged minutes because the emulator entered and stopped within the same M5 timestamp; intrabar exposure and path are unresolved at this granularity.",
+    "The current capture overlaps earlier historical evidence. The previously documented Nov4 recalculation changed one F result by minus0.2640264USD; captures must not be pooled as independent samples.",
+    "Sparse and correlated observations, one symbol/timeframe, observed transaction-cost assumptions and no explicit spread model do not establish OOS performance, profitability or future signal accuracy."
+  ],
+  "positions": [
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1791799500000,
+        1791799500000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": 1,
+      "planTimestamp": 1791799500000,
+      "entryTime": 1791799500000,
+      "exitTime": 1791800400000,
+      "actualEntry": "4173.73",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "3.297",
+      "commission": "1.7532963",
+      "net": "1.5437037",
+      "rowProfitSum": "1.5437037",
+      "commissionFromActualPricesAt001PctPerSide": "1.7532963",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791800400000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 3,
+        "group": 8,
+        "closedRows": [
+          6
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 0,
+          "exitTime": 1791800400000,
+          "actualExit": "4175.30",
+          "size": "2.1",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "1.5437037",
+          "commission": "1.7532963"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "D_SNR",
+        "D_SNR",
+        1791816300000,
+        1791816300000
+      ],
+      "module": "D_SNR",
+      "direction": -1,
+      "planTimestamp": 1791816300000,
+      "entryTime": 1791816300000,
+      "exitTime": 1791817200000,
+      "actualEntry": "4166.27",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "3.843",
+      "commission": "1.7494491",
+      "net": "2.0935509",
+      "rowProfitSum": "2.0935509",
+      "commissionFromActualPricesAt001PctPerSide": "1.7494491",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order D_SNR"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791817200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 10,
+        "group": 15,
+        "closedRows": [
+          13
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 1,
+          "exitTime": 1791817200000,
+          "actualExit": "4164.44",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order D_SNR",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "2.0935509",
+          "commission": "1.7494491"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791818700000,
+        1791818700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1791818700000,
+      "entryTime": 1791818700000,
+      "exitTime": 1791819600000,
+      "actualEntry": "4165.99",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-3.612",
+      "commission": "1.750077",
+      "net": "-5.362077",
+      "rowProfitSum": "-5.362077",
+      "commissionFromActualPricesAt001PctPerSide": "1.7500770",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791819600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 17,
+        "group": 22,
+        "closedRows": [
+          20
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 2,
+          "exitTime": 1791819600000,
+          "actualExit": "4167.71",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-5.362077",
+          "commission": "1.750077"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791820800000,
+        1791820800000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1791820800000,
+      "entryTime": 1791820800000,
+      "exitTime": 1791821700000,
+      "actualEntry": "4165.17",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-0.231",
+      "commission": "1.7493945",
+      "net": "-1.9803945",
+      "rowProfitSum": "-1.9803945",
+      "commissionFromActualPricesAt001PctPerSide": "1.7493945",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791821700000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 24,
+        "group": 29,
+        "closedRows": [
+          27
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 3,
+          "exitTime": 1791821700000,
+          "actualExit": "4165.28",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-1.9803945",
+          "commission": "1.7493945"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791885000000,
+        1791885000000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1791885000000,
+      "entryTime": 1791885000000,
+      "exitTime": 1791885900000,
+      "actualEntry": "4185.00",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "1.407",
+      "commission": "1.7578407",
+      "net": "-0.3508407",
+      "rowProfitSum": "-0.3508407",
+      "commissionFromActualPricesAt001PctPerSide": "1.7578407",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791885900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 31,
+        "group": 36,
+        "closedRows": [
+          34
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 4,
+          "exitTime": 1791885900000,
+          "actualExit": "4185.67",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-0.3508407",
+          "commission": "1.7578407"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791894600000,
+        1791894600000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1791894600000,
+      "entryTime": 1791894600000,
+      "exitTime": 1791895500000,
+      "actualEntry": "4187.00",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-5.859",
+      "commission": "1.7579541",
+      "net": "-7.6169541",
+      "rowProfitSum": "-7.6169541",
+      "commissionFromActualPricesAt001PctPerSide": "1.7579541",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791895500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 38,
+        "group": 43,
+        "closedRows": [
+          41
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 5,
+          "exitTime": 1791895500000,
+          "actualExit": "4184.21",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-7.6169541",
+          "commission": "1.7579541"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791977400000,
+        1791977400000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1791977400000,
+      "entryTime": 1791977400000,
+      "exitTime": 1791978300000,
+      "actualEntry": "4139.29",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-0.651",
+      "commission": "1.7385669",
+      "net": "-2.3895669",
+      "rowProfitSum": "-2.3895669",
+      "commissionFromActualPricesAt001PctPerSide": "1.7385669",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791978300000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 45,
+        "group": 50,
+        "closedRows": [
+          48
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 6,
+          "exitTime": 1791978300000,
+          "actualExit": "4139.60",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-2.3895669",
+          "commission": "1.7385669"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1791992100000,
+        1791992100000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1791992100000,
+      "entryTime": 1791992100000,
+      "exitTime": 1791993000000,
+      "actualEntry": "4089.69",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "15.048",
+      "commission": "1.716165",
+      "net": "13.331835",
+      "rowProfitSum": "13.331835",
+      "commissionFromActualPricesAt001PctPerSide": "1.7161650",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1791992400000,
+        1791993000000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 52,
+        "group": 59,
+        "closedRows": [
+          55,
+          57
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 7,
+          "exitTime": 1791992400000,
+          "actualExit": "4082.51",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "3.817668",
+          "commission": "0.490332"
+        },
+        {
+          "closedTradeIndex": 8,
+          "exitTime": 1791993000000,
+          "actualExit": "4082.53",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "9.514167",
+          "commission": "1.225833"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792055100000,
+        1792055100000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792055100000,
+      "entryTime": 1792055100000,
+      "exitTime": 1792056000000,
+      "actualEntry": "4155.00",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "5.586",
+      "commission": "1.7456586",
+      "net": "3.8403414",
+      "rowProfitSum": "3.8403414",
+      "commissionFromActualPricesAt001PctPerSide": "1.7456586",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792056000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 61,
+        "group": 66,
+        "closedRows": [
+          64
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 9,
+          "exitTime": 1792056000000,
+          "actualExit": "4157.66",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "3.8403414",
+          "commission": "1.7456586"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792061700000,
+        1792061700000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792061700000,
+      "entryTime": 1792061700000,
+      "exitTime": 1792062600000,
+      "actualEntry": "4155.29",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "5.199",
+      "commission": "1.7457417",
+      "net": "3.4532583",
+      "rowProfitSum": "3.4532583",
+      "commissionFromActualPricesAt001PctPerSide": "1.7457417",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792062000000,
+        1792062600000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 68,
+        "group": 75,
+        "closedRows": [
+          71,
+          73
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 10,
+          "exitTime": 1792062000000,
+          "actualExit": "4159.08",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "1.7751378",
+          "commission": "0.4988622"
+        },
+        {
+          "closedTradeIndex": 11,
+          "exitTime": 1792062600000,
+          "actualExit": "4157.24",
+          "size": "1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "1.6781205",
+          "commission": "1.2468795"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1792140900000,
+        1792140900000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1792140900000,
+      "entryTime": 1792140900000,
+      "exitTime": 1792141800000,
+      "actualEntry": "4186.72",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "7.287",
+      "commission": "1.7591511",
+      "net": "5.5278489",
+      "rowProfitSum": "5.5278489",
+      "commissionFromActualPricesAt001PctPerSide": "1.7591511",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792141800000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 77,
+        "group": 82,
+        "closedRows": [
+          80
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 12,
+          "exitTime": 1792141800000,
+          "actualExit": "4190.19",
+          "size": "2.1",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.5278489",
+          "commission": "1.7591511"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1792149600000,
+        1792149600000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": 1,
+      "planTimestamp": 1792149600000,
+      "entryTime": 1792149600000,
+      "exitTime": 1792150500000,
+      "actualEntry": "4177.51",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "1.239",
+      "commission": "1.7546781",
+      "net": "-0.5156781",
+      "rowProfitSum": "-0.5156781",
+      "commissionFromActualPricesAt001PctPerSide": "1.7546781",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792150500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 84,
+        "group": 89,
+        "closedRows": [
+          87
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 13,
+          "exitTime": 1792150500000,
+          "actualExit": "4178.10",
+          "size": "2.1",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-0.5156781",
+          "commission": "1.7546781"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1792153200000,
+        1792153200000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": 1,
+      "planTimestamp": 1792153200000,
+      "entryTime": 1792153200000,
+      "exitTime": 1792154100000,
+      "actualEntry": "4175.83",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "9.921",
+      "commission": "1.7548407",
+      "net": "8.1661593",
+      "rowProfitSum": "8.1661593",
+      "commissionFromActualPricesAt001PctPerSide": "1.7548407",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792153800000,
+        1792154100000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 91,
+        "group": 98,
+        "closedRows": [
+          94,
+          96
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 14,
+          "exitTime": 1792153800000,
+          "actualExit": "4180.54",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "2.3246178",
+          "commission": "0.5013822"
+        },
+        {
+          "closedTradeIndex": 15,
+          "exitTime": 1792154100000,
+          "actualExit": "4180.56",
+          "size": "1.5",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.8415415",
+          "commission": "1.2534585"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "D_SNR",
+        "D_SNR",
+        1792159800000,
+        1792159800000
+      ],
+      "module": "D_SNR",
+      "direction": 1,
+      "planTimestamp": 1792159800000,
+      "entryTime": 1792159800000,
+      "exitTime": 1792160700000,
+      "actualEntry": "4186.49",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "18.147",
+      "commission": "1.7601405",
+      "net": "16.3868595",
+      "rowProfitSum": "16.3868595",
+      "commissionFromActualPricesAt001PctPerSide": "1.7601405",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order D_SNR"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792160400000,
+        1792160700000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 100,
+        "group": 107,
+        "closedRows": [
+          103,
+          105
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 16,
+          "exitTime": 1792160400000,
+          "actualExit": "4195.36",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "4.819089",
+          "commission": "0.502911"
+        },
+        {
+          "closedTradeIndex": 17,
+          "exitTime": 1792160700000,
+          "actualExit": "4195.04",
+          "size": "1.5",
+          "exitId": "Close entry(s) order D_SNR",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "11.5677705",
+          "commission": "1.2572295"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792163400000,
+        1792163400000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792163400000,
+      "entryTime": 1792163400000,
+      "exitTime": 1792163400000,
+      "actualEntry": "4185.95",
+      "initialQty": "2.1",
+      "holdMinutes": "0",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-9.366",
+      "commission": "1.7571624",
+      "net": "-11.1231624",
+      "rowProfitSum": "-11.1231624",
+      "commissionFromActualPricesAt001PctPerSide": "1.7571624",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1792163400000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 109,
+        "group": 117,
+        "closedRows": [
+          112,
+          114,
+          115
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 18,
+          "exitTime": 1792163400000,
+          "actualExit": "4181.49",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.1780464",
+          "commission": "0.5020464"
+        },
+        {
+          "closedTradeIndex": 19,
+          "exitTime": 1792163400000,
+          "actualExit": "4181.49",
+          "size": "0.6",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.1780464",
+          "commission": "0.5020464"
+        },
+        {
+          "closedTradeIndex": 20,
+          "exitTime": 1792163400000,
+          "actualExit": "4181.49",
+          "size": "0.9",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.7670696",
+          "commission": "0.7530696"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "E_DEMAND",
+        "E_DEMAND",
+        1792394700000,
+        1792394700000
+      ],
+      "module": "E_DEMAND",
+      "direction": 1,
+      "planTimestamp": 1792394700000,
+      "entryTime": 1792394700000,
+      "exitTime": 1792395600000,
+      "actualEntry": "4187.51",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.833",
+      "commission": "1.7579709",
+      "net": "-9.5909709",
+      "rowProfitSum": "-9.5909709",
+      "commissionFromActualPricesAt001PctPerSide": "1.7579709",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order E_DEMAND"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792395600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 119,
+        "group": 124,
+        "closedRows": [
+          122
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 21,
+          "exitTime": 1792395600000,
+          "actualExit": "4183.78",
+          "size": "2.1",
+          "exitId": "Close entry(s) order E_DEMAND",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-9.5909709",
+          "commission": "1.7579709"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792397700000,
+        1792397700000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792397700000,
+      "entryTime": 1792397700000,
+      "exitTime": 1792398600000,
+      "actualEntry": "4179.21",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-3.381",
+      "commission": "1.7549301",
+      "net": "-5.1359301",
+      "rowProfitSum": "-5.1359301",
+      "commissionFromActualPricesAt001PctPerSide": "1.7549301",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792398600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 126,
+        "group": 131,
+        "closedRows": [
+          129
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 22,
+          "exitTime": 1792398600000,
+          "actualExit": "4177.60",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-5.1359301",
+          "commission": "1.7549301"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792401300000,
+        1792401300000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792401300000,
+      "entryTime": 1792401300000,
+      "exitTime": 1792401900000,
+      "actualEntry": "4172.12",
+      "initialQty": "2.1",
+      "holdMinutes": "10",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-6.930",
+      "commission": "1.7515974",
+      "net": "-8.6815974",
+      "rowProfitSum": "-8.6815974",
+      "commissionFromActualPricesAt001PctPerSide": "1.7515974",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1792401900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 133,
+        "group": 141,
+        "closedRows": [
+          136,
+          138,
+          139
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 23,
+          "exitTime": 1792401900000,
+          "actualExit": "4168.82",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-2.4804564",
+          "commission": "0.5004564"
+        },
+        {
+          "closedTradeIndex": 24,
+          "exitTime": 1792401900000,
+          "actualExit": "4168.82",
+          "size": "0.6",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-2.4804564",
+          "commission": "0.5004564"
+        },
+        {
+          "closedTradeIndex": 25,
+          "exitTime": 1792401900000,
+          "actualExit": "4168.82",
+          "size": "0.9",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.7206846",
+          "commission": "0.7506846"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1792404300000,
+        1792404300000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1792404300000,
+      "entryTime": 1792404300000,
+      "exitTime": 1792405200000,
+      "actualEntry": "4167.29",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-1.575",
+      "commission": "1.7504193",
+      "net": "-3.3254193",
+      "rowProfitSum": "-3.3254193",
+      "commissionFromActualPricesAt001PctPerSide": "1.7504193",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792405200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 143,
+        "group": 148,
+        "closedRows": [
+          146
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 26,
+          "exitTime": 1792405200000,
+          "actualExit": "4168.04",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-3.3254193",
+          "commission": "1.7504193"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792407900000,
+        1792407900000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1792407900000,
+      "entryTime": 1792407900000,
+      "exitTime": 1792408800000,
+      "actualEntry": "4171.17",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "8.085",
+      "commission": "1.7526999",
+      "net": "6.3323001",
+      "rowProfitSum": "6.3323001",
+      "commissionFromActualPricesAt001PctPerSide": "1.7526999",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792408800000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 150,
+        "group": 155,
+        "closedRows": [
+          153
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 27,
+          "exitTime": 1792408800000,
+          "actualExit": "4175.02",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "6.3323001",
+          "commission": "1.7526999"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792480200000,
+        1792480200000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792480200000,
+      "entryTime": 1792480200000,
+      "exitTime": 1792481100000,
+      "actualEntry": "4131.48",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-4.368",
+      "commission": "1.7356584",
+      "net": "-6.1036584",
+      "rowProfitSum": "-6.1036584",
+      "commissionFromActualPricesAt001PctPerSide": "1.7356584",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792481100000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 157,
+        "group": 162,
+        "closedRows": [
+          160
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 28,
+          "exitTime": 1792481100000,
+          "actualExit": "4133.56",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-6.1036584",
+          "commission": "1.7356584"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792489200000,
+        1792489200000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792489200000,
+      "entryTime": 1792489200000,
+      "exitTime": 1792490100000,
+      "actualEntry": "4119.06",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "11.484",
+      "commission": "1.7288568",
+      "net": "9.7551432",
+      "rowProfitSum": "9.7551432",
+      "commissionFromActualPricesAt001PctPerSide": "1.7288568",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792489800000,
+        1792490100000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 164,
+        "group": 171,
+        "closedRows": [
+          167,
+          169
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 29,
+          "exitTime": 1792489800000,
+          "actualExit": "4112.92",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "3.1900812",
+          "commission": "0.4939188"
+        },
+        {
+          "closedTradeIndex": 30,
+          "exitTime": 1792490100000,
+          "actualExit": "4113.86",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "6.565062",
+          "commission": "1.234938"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792497900000,
+        1792497900000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792497900000,
+      "entryTime": 1792497900000,
+      "exitTime": 1792498800000,
+      "actualEntry": "4122.13",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "4.944",
+      "commission": "1.7308002",
+      "net": "3.2131998",
+      "rowProfitSum": "3.2131998",
+      "commissionFromActualPricesAt001PctPerSide": "1.7308002",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792497900000,
+        1792498800000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 173,
+        "group": 180,
+        "closedRows": [
+          176,
+          178
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 31,
+          "exitTime": 1792497900000,
+          "actualExit": "4116.74",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "2.7396678",
+          "commission": "0.4943322"
+        },
+        {
+          "closedTradeIndex": 32,
+          "exitTime": 1792498800000,
+          "actualExit": "4120.99",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "0.473532",
+          "commission": "1.236468"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792500000000,
+        1792500000000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792500000000,
+      "entryTime": 1792500000000,
+      "exitTime": 1792500900000,
+      "actualEntry": "4114.38",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-6.720",
+      "commission": "1.7287116",
+      "net": "-8.4487116",
+      "rowProfitSum": "-8.4487116",
+      "commissionFromActualPricesAt001PctPerSide": "1.7287116",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792500900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 182,
+        "group": 187,
+        "closedRows": [
+          185
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 33,
+          "exitTime": 1792500900000,
+          "actualExit": "4117.58",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-8.4487116",
+          "commission": "1.7287116"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1792502100000,
+        1792502100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1792502100000,
+      "entryTime": 1792502100000,
+      "exitTime": 1792503000000,
+      "actualEntry": "4114.75",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-16.863",
+      "commission": "1.7298813",
+      "net": "-18.5928813",
+      "rowProfitSum": "-18.5928813",
+      "commissionFromActualPricesAt001PctPerSide": "1.7298813",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792503000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 189,
+        "group": 194,
+        "closedRows": [
+          192
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 34,
+          "exitTime": 1792503000000,
+          "actualExit": "4122.78",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-18.5928813",
+          "commission": "1.7298813"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "E_SUPPLY",
+        "E_SUPPLY",
+        1792566900000,
+        1792566900000
+      ],
+      "module": "E_SUPPLY",
+      "direction": -1,
+      "planTimestamp": 1792566900000,
+      "entryTime": 1792566900000,
+      "exitTime": 1792567200000,
+      "actualEntry": "4114.74",
+      "initialQty": "2.1",
+      "holdMinutes": "5",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-11.130",
+      "commission": "1.7293038",
+      "net": "-12.8593038",
+      "rowProfitSum": "-12.8593038",
+      "commissionFromActualPricesAt001PctPerSide": "1.7293038",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1792567200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 196,
+        "group": 204,
+        "closedRows": [
+          199,
+          201,
+          202
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 35,
+          "exitTime": 1792567200000,
+          "actualExit": "4120.04",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.6740868",
+          "commission": "0.4940868"
+        },
+        {
+          "closedTradeIndex": 36,
+          "exitTime": 1792567200000,
+          "actualExit": "4120.04",
+          "size": "-0.6",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.6740868",
+          "commission": "0.4940868"
+        },
+        {
+          "closedTradeIndex": 37,
+          "exitTime": 1792567200000,
+          "actualExit": "4120.04",
+          "size": "-0.9",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-5.5111302",
+          "commission": "0.7411302"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792571100000,
+        1792571100000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792571100000,
+      "entryTime": 1792571100000,
+      "exitTime": 1792572000000,
+      "actualEntry": "4119.34",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.245",
+      "commission": "1.7308473",
+      "net": "-8.9758473",
+      "rowProfitSum": "-8.9758473",
+      "commissionFromActualPricesAt001PctPerSide": "1.7308473",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792572000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 206,
+        "group": 211,
+        "closedRows": [
+          209
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 38,
+          "exitTime": 1792572000000,
+          "actualExit": "4122.79",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-8.9758473",
+          "commission": "1.7308473"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792572900000,
+        1792572900000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792572900000,
+      "entryTime": 1792572900000,
+      "exitTime": 1792573800000,
+      "actualEntry": "4120.70",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-0.735",
+      "commission": "1.7307675",
+      "net": "-2.4657675",
+      "rowProfitSum": "-2.4657675",
+      "commissionFromActualPricesAt001PctPerSide": "1.7307675",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792573800000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 213,
+        "group": 218,
+        "closedRows": [
+          216
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 39,
+          "exitTime": 1792573800000,
+          "actualExit": "4121.05",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-2.4657675",
+          "commission": "1.7307675"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792574700000,
+        1792574700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792574700000,
+      "entryTime": 1792574700000,
+      "exitTime": 1792575300000,
+      "actualEntry": "4120.52",
+      "initialQty": "2.1",
+      "holdMinutes": "10",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-9.954",
+      "commission": "1.7316138",
+      "net": "-11.6856138",
+      "rowProfitSum": "-11.6856138",
+      "commissionFromActualPricesAt001PctPerSide": "1.7316138",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1792575300000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 220,
+        "group": 228,
+        "closedRows": [
+          223,
+          225,
+          226
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 40,
+          "exitTime": 1792575300000,
+          "actualExit": "4125.26",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.3387468",
+          "commission": "0.4947468"
+        },
+        {
+          "closedTradeIndex": 41,
+          "exitTime": 1792575300000,
+          "actualExit": "4125.26",
+          "size": "-0.6",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.3387468",
+          "commission": "0.4947468"
+        },
+        {
+          "closedTradeIndex": 42,
+          "exitTime": 1792575300000,
+          "actualExit": "4125.26",
+          "size": "-0.9",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-5.0081202",
+          "commission": "0.7421202"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792576500000,
+        1792576500000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792576500000,
+      "entryTime": 1792576500000,
+      "exitTime": 1792577400000,
+      "actualEntry": "4120.57",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "7.287",
+      "commission": "1.7299107",
+      "net": "5.5570893",
+      "rowProfitSum": "5.5570893",
+      "commissionFromActualPricesAt001PctPerSide": "1.7299107",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792577400000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 230,
+        "group": 235,
+        "closedRows": [
+          233
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 43,
+          "exitTime": 1792577400000,
+          "actualExit": "4117.10",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.5570893",
+          "commission": "1.7299107"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792656600000,
+        1792656600000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792656600000,
+      "entryTime": 1792656600000,
+      "exitTime": 1792657500000,
+      "actualEntry": "4083.26",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-15.666",
+      "commission": "1.7165358",
+      "net": "-17.3825358",
+      "rowProfitSum": "-17.3825358",
+      "commissionFromActualPricesAt001PctPerSide": "1.7165358",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792657500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 237,
+        "group": 242,
+        "closedRows": [
+          240
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 44,
+          "exitTime": 1792657500000,
+          "actualExit": "4090.72",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-17.3825358",
+          "commission": "1.7165358"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792658100000,
+        1792658100000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792658100000,
+      "entryTime": 1792658100000,
+      "exitTime": 1792659000000,
+      "actualEntry": "4087.65",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.140",
+      "commission": "1.717527",
+      "net": "-8.857527",
+      "rowProfitSum": "-8.857527",
+      "commissionFromActualPricesAt001PctPerSide": "1.7175270",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792659000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 244,
+        "group": 249,
+        "closedRows": [
+          247
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 45,
+          "exitTime": 1792659000000,
+          "actualExit": "4091.05",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-8.857527",
+          "commission": "1.717527"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "E_SUPPLY",
+        "E_SUPPLY",
+        1792677900000,
+        1792677900000
+      ],
+      "module": "E_SUPPLY",
+      "direction": -1,
+      "planTimestamp": 1792677900000,
+      "entryTime": 1792677900000,
+      "exitTime": 1792678800000,
+      "actualEntry": "4054.07",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "0.000",
+      "commission": "1.7837908",
+      "net": "-1.7837908",
+      "rowProfitSum": "-1.7837908",
+      "commissionFromActualPricesAt001PctPerSide": "1.7837908",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order E_SUPPLY"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792678800000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 251,
+        "group": 256,
+        "closedRows": [
+          254
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 46,
+          "exitTime": 1792678800000,
+          "actualExit": "4054.07",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order E_SUPPLY",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-1.7837908",
+          "commission": "1.7837908"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792681800000,
+        1792681800000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792681800000,
+      "entryTime": 1792681800000,
+      "exitTime": 1792682700000,
+      "actualEntry": "4057.65",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "0.440",
+      "commission": "1.785322",
+      "net": "-1.345322",
+      "rowProfitSum": "-1.345322",
+      "commissionFromActualPricesAt001PctPerSide": "1.7853220",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792682700000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 258,
+        "group": 263,
+        "closedRows": [
+          261
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 47,
+          "exitTime": 1792682700000,
+          "actualExit": "4057.45",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-1.345322",
+          "commission": "1.785322"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1792683600000,
+        1792683600000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1792683600000,
+      "entryTime": 1792683600000,
+      "exitTime": 1792684500000,
+      "actualEntry": "4050.65",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.722",
+      "commission": "1.7830582",
+      "net": "-9.5050582",
+      "rowProfitSum": "-9.5050582",
+      "commissionFromActualPricesAt001PctPerSide": "1.7830582",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792684500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 265,
+        "group": 270,
+        "closedRows": [
+          268
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 48,
+          "exitTime": 1792684500000,
+          "actualExit": "4054.16",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-9.5050582",
+          "commission": "1.7830582"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792751700000,
+        1792751700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792751700000,
+      "entryTime": 1792751700000,
+      "exitTime": 1792752600000,
+      "actualEntry": "4022.15",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.150",
+      "commission": "1.770461",
+      "net": "-8.920461",
+      "rowProfitSum": "-8.920461",
+      "commissionFromActualPricesAt001PctPerSide": "1.7704610",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792752600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 272,
+        "group": 277,
+        "closedRows": [
+          275
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 49,
+          "exitTime": 1792752600000,
+          "actualExit": "4025.40",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-8.920461",
+          "commission": "1.770461"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792755300000,
+        1792755300000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792755300000,
+      "entryTime": 1792755300000,
+      "exitTime": 1792756200000,
+      "actualEntry": "4024.95",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-3.652",
+      "commission": "1.7713432",
+      "net": "-5.4233432",
+      "rowProfitSum": "-5.4233432",
+      "commissionFromActualPricesAt001PctPerSide": "1.7713432",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792756200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 279,
+        "group": 284,
+        "closedRows": [
+          282
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 50,
+          "exitTime": 1792756200000,
+          "actualExit": "4026.61",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-5.4233432",
+          "commission": "1.7713432"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1792760100000,
+        1792760100000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1792760100000,
+      "entryTime": 1792760100000,
+      "exitTime": 1792761000000,
+      "actualEntry": "4026.54",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-5.016",
+      "commission": "1.7721792",
+      "net": "-6.7881792",
+      "rowProfitSum": "-6.7881792",
+      "commissionFromActualPricesAt001PctPerSide": "1.7721792",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792761000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 286,
+        "group": 291,
+        "closedRows": [
+          289
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 51,
+          "exitTime": 1792761000000,
+          "actualExit": "4028.82",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-6.7881792",
+          "commission": "1.7721792"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1792762200000,
+        1792762200000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": -1,
+      "planTimestamp": 1792762200000,
+      "entryTime": 1792762200000,
+      "exitTime": 1792763100000,
+      "actualEntry": "4025.64",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "4.510",
+      "commission": "1.7708306",
+      "net": "2.7391694",
+      "rowProfitSum": "2.7391694",
+      "commissionFromActualPricesAt001PctPerSide": "1.7708306",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1792763100000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 293,
+        "group": 298,
+        "closedRows": [
+          296
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 52,
+          "exitTime": 1792763100000,
+          "actualExit": "4023.59",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "2.7391694",
+          "commission": "1.7708306"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "H_QUASIMODO",
+        "H_QUASIMODO",
+        1793026200000,
+        1793026200000
+      ],
+      "module": "H_QUASIMODO",
+      "direction": -1,
+      "planTimestamp": 1793026200000,
+      "entryTime": 1793026200000,
+      "exitTime": 1793026500000,
+      "actualEntry": "4017.92",
+      "initialQty": "2.2",
+      "holdMinutes": "5",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-18.568",
+      "commission": "1.7697416",
+      "net": "-20.3377416",
+      "rowProfitSum": "-20.3377416",
+      "commissionFromActualPricesAt001PctPerSide": "1.7697416",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1793026500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 300,
+        "group": 308,
+        "closedRows": [
+          303,
+          305,
+          306
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 53,
+          "exitTime": 1793026500000,
+          "actualExit": "4026.36",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-6.4710996",
+          "commission": "0.5630996"
+        },
+        {
+          "closedTradeIndex": 54,
+          "exitTime": 1793026500000,
+          "actualExit": "4026.36",
+          "size": "-0.7",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-6.4710996",
+          "commission": "0.5630996"
+        },
+        {
+          "closedTradeIndex": 55,
+          "exitTime": 1793026500000,
+          "actualExit": "4026.36",
+          "size": "-0.8",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-7.3955424",
+          "commission": "0.6435424"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "E_SUPPLY",
+        "E_SUPPLY",
+        1793088900000,
+        1793088900000
+      ],
+      "module": "E_SUPPLY",
+      "direction": -1,
+      "planTimestamp": 1793088900000,
+      "entryTime": 1793088900000,
+      "exitTime": 1793088900000,
+      "actualEntry": "3996.79",
+      "initialQty": "2.2",
+      "holdMinutes": "0",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-8.514",
+      "commission": "1.7594390",
+      "net": "-10.273439",
+      "rowProfitSum": "-10.2734390",
+      "commissionFromActualPricesAt001PctPerSide": "1.7594390",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1793088900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 310,
+        "group": 318,
+        "closedRows": [
+          313,
+          315,
+          316
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 56,
+          "exitTime": 1793088900000,
+          "actualExit": "4000.66",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.2688215",
+          "commission": "0.5598215"
+        },
+        {
+          "closedTradeIndex": 57,
+          "exitTime": 1793088900000,
+          "actualExit": "4000.66",
+          "size": "-0.7",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.2688215",
+          "commission": "0.5598215"
+        },
+        {
+          "closedTradeIndex": 58,
+          "exitTime": 1793088900000,
+          "actualExit": "4000.66",
+          "size": "-0.8",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.735796",
+          "commission": "0.639796"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1793095800000,
+        1793095800000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": -1,
+      "planTimestamp": 1793095800000,
+      "entryTime": 1793095800000,
+      "exitTime": 1793096700000,
+      "actualEntry": "3998.30",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "6.842",
+      "commission": "1.7585678",
+      "net": "5.0834322",
+      "rowProfitSum": "5.0834322",
+      "commissionFromActualPricesAt001PctPerSide": "1.7585678",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793096700000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 320,
+        "group": 325,
+        "closedRows": [
+          323
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 59,
+          "exitTime": 1793096700000,
+          "actualExit": "3995.19",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.0834322",
+          "commission": "1.7585678"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793098500000,
+        1793098500000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793098500000,
+      "entryTime": 1793098500000,
+      "exitTime": 1793099400000,
+      "actualEntry": "4004.58",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-17.754",
+      "commission": "1.7637906",
+      "net": "-19.5177906",
+      "rowProfitSum": "-19.5177906",
+      "commissionFromActualPricesAt001PctPerSide": "1.7637906",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793099400000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 327,
+        "group": 332,
+        "closedRows": [
+          330
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 60,
+          "exitTime": 1793099400000,
+          "actualExit": "4012.65",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-19.5177906",
+          "commission": "1.7637906"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793101200000,
+        1793101200000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793101200000,
+      "entryTime": 1793101200000,
+      "exitTime": 1793102100000,
+      "actualEntry": "4010.38",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-2.794",
+      "commission": "1.7648466",
+      "net": "-4.5588466",
+      "rowProfitSum": "-4.5588466",
+      "commissionFromActualPricesAt001PctPerSide": "1.7648466",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793102100000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 334,
+        "group": 339,
+        "closedRows": [
+          337
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 61,
+          "exitTime": 1793102100000,
+          "actualExit": "4011.65",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-4.5588466",
+          "commission": "1.7648466"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793105700000,
+        1793105700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793105700000,
+      "entryTime": 1793105700000,
+      "exitTime": 1793106000000,
+      "actualEntry": "4020.68",
+      "initialQty": "2.2",
+      "holdMinutes": "5",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-13.464",
+      "commission": "1.7704456",
+      "net": "-15.2344456",
+      "rowProfitSum": "-15.2344456",
+      "commissionFromActualPricesAt001PctPerSide": "1.7704456",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1793106000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 341,
+        "group": 349,
+        "closedRows": [
+          344,
+          346,
+          347
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 62,
+          "exitTime": 1793106000000,
+          "actualExit": "4026.80",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.8473236",
+          "commission": "0.5633236"
+        },
+        {
+          "closedTradeIndex": 63,
+          "exitTime": 1793106000000,
+          "actualExit": "4026.80",
+          "size": "-0.7",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.8473236",
+          "commission": "0.5633236"
+        },
+        {
+          "closedTradeIndex": 64,
+          "exitTime": 1793106000000,
+          "actualExit": "4026.80",
+          "size": "-0.8",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-5.5397984",
+          "commission": "0.6437984"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793184300000,
+        1793184300000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793184300000,
+      "entryTime": 1793184300000,
+      "exitTime": 1793184900000,
+      "actualEntry": "4047.58",
+      "initialQty": "2.1",
+      "holdMinutes": "10",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-6.573",
+      "commission": "1.6993263",
+      "net": "-8.2723263",
+      "rowProfitSum": "-8.2723263",
+      "commissionFromActualPricesAt001PctPerSide": "1.6993263",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1793184900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 351,
+        "group": 359,
+        "closedRows": [
+          354,
+          356,
+          357
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 65,
+          "exitTime": 1793184900000,
+          "actualExit": "4044.45",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-2.3635218",
+          "commission": "0.4855218"
+        },
+        {
+          "closedTradeIndex": 66,
+          "exitTime": 1793184900000,
+          "actualExit": "4044.45",
+          "size": "0.6",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-2.3635218",
+          "commission": "0.4855218"
+        },
+        {
+          "closedTradeIndex": 67,
+          "exitTime": 1793184900000,
+          "actualExit": "4044.45",
+          "size": "0.9",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-3.5452827",
+          "commission": "0.7282827"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793186100000,
+        1793186100000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793186100000,
+      "entryTime": 1793186100000,
+      "exitTime": 1793187000000,
+      "actualEntry": "4046.71",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "1.071",
+      "commission": "1.6997253",
+      "net": "-0.6287253",
+      "rowProfitSum": "-0.6287253",
+      "commissionFromActualPricesAt001PctPerSide": "1.6997253",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793187000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 361,
+        "group": 366,
+        "closedRows": [
+          364
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 68,
+          "exitTime": 1793187000000,
+          "actualExit": "4047.22",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-0.6287253",
+          "commission": "1.6997253"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793189400000,
+        1793189400000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793189400000,
+      "entryTime": 1793189400000,
+      "exitTime": 1793190300000,
+      "actualEntry": "4048.95",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 3,
+      "grossPricePnl": "17.427",
+      "commission": "1.7023017",
+      "net": "15.7246983",
+      "rowProfitSum": "15.7246983",
+      "commissionFromActualPricesAt001PctPerSide": "1.7023017",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TP2_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793189700000,
+        1793190000000,
+        1793190300000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 368,
+        "group": 377,
+        "closedRows": [
+          371,
+          373,
+          375
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 69,
+          "exitTime": 1793189700000,
+          "actualExit": "4053.84",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "2.4478326",
+          "commission": "0.4861674"
+        },
+        {
+          "closedTradeIndex": 70,
+          "exitTime": 1793190000000,
+          "actualExit": "4058.75",
+          "size": "0.6",
+          "exitId": "TP2",
+          "exitComment": "TP2_HIT",
+          "profit": "5.393538",
+          "commission": "0.486462"
+        },
+        {
+          "closedTradeIndex": 71,
+          "exitTime": 1793190300000,
+          "actualExit": "4058.52",
+          "size": "0.9",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "7.8833277",
+          "commission": "0.7296723"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793261700000,
+        1793261700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793261700000,
+      "entryTime": 1793261700000,
+      "exitTime": 1793262600000,
+      "actualEntry": "4029.20",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-3.591",
+      "commission": "1.6926231",
+      "net": "-5.2836231",
+      "rowProfitSum": "-5.2836231",
+      "commissionFromActualPricesAt001PctPerSide": "1.6926231",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793262600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 379,
+        "group": 384,
+        "closedRows": [
+          382
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 72,
+          "exitTime": 1793262600000,
+          "actualExit": "4030.91",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-5.2836231",
+          "commission": "1.6926231"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793266500000,
+        1793266500000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1793266500000,
+      "entryTime": 1793266500000,
+      "exitTime": 1793267400000,
+      "actualEntry": "4024.66",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-3.633",
+      "commission": "1.6907205",
+      "net": "-5.3237205",
+      "rowProfitSum": "-5.3237205",
+      "commissionFromActualPricesAt001PctPerSide": "1.6907205",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793267400000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 386,
+        "group": 391,
+        "closedRows": [
+          389
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 73,
+          "exitTime": 1793267400000,
+          "actualExit": "4026.39",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-5.3237205",
+          "commission": "1.6907205"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1793274000000,
+        1793274000000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": -1,
+      "planTimestamp": 1793274000000,
+      "entryTime": 1793274000000,
+      "exitTime": 1793274900000,
+      "actualEntry": "4028.50",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "8.421",
+      "commission": "1.6911279",
+      "net": "6.7298721",
+      "rowProfitSum": "6.7298721",
+      "commissionFromActualPricesAt001PctPerSide": "1.6911279",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793274900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 393,
+        "group": 398,
+        "closedRows": [
+          396
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 74,
+          "exitTime": 1793274900000,
+          "actualExit": "4024.49",
+          "size": "-2.1",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "6.7298721",
+          "commission": "1.6911279"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "H_QUASIMODO",
+        "H_QUASIMODO",
+        1793281200000,
+        1793281200000
+      ],
+      "module": "H_QUASIMODO",
+      "direction": -1,
+      "planTimestamp": 1793281200000,
+      "entryTime": 1793281200000,
+      "exitTime": 1793282100000,
+      "actualEntry": "4031.67",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "20.850",
+      "commission": "1.6912164",
+      "net": "19.1587836",
+      "rowProfitSum": "19.1587836",
+      "commissionFromActualPricesAt001PctPerSide": "1.6912164",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order H_QUASIMODO"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793281200000,
+        1793282100000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 400,
+        "group": 407,
+        "closedRows": [
+          403,
+          405
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 75,
+          "exitTime": 1793281200000,
+          "actualExit": "4022.97",
+          "size": "-0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "4.7367216",
+          "commission": "0.4832784"
+        },
+        {
+          "closedTradeIndex": 76,
+          "exitTime": 1793282100000,
+          "actualExit": "4021.25",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order H_QUASIMODO",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "14.422062",
+          "commission": "1.207938"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1793286000000,
+        1793286000000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": -1,
+      "planTimestamp": 1793286000000,
+      "entryTime": 1793286000000,
+      "exitTime": 1793286900000,
+      "actualEntry": "4026.43",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "4.598",
+      "commission": "1.7711694",
+      "net": "2.8268306",
+      "rowProfitSum": "2.8268306",
+      "commissionFromActualPricesAt001PctPerSide": "1.7711694",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793286900000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 409,
+        "group": 414,
+        "closedRows": [
+          412
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 77,
+          "exitTime": 1793286900000,
+          "actualExit": "4024.34",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "2.8268306",
+          "commission": "1.7711694"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793355000000,
+        1793355000000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793355000000,
+      "entryTime": 1793355000000,
+      "exitTime": 1793355900000,
+      "actualEntry": "3987.89",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "11.216",
+      "commission": "1.7535500",
+      "net": "9.46245",
+      "rowProfitSum": "9.4624500",
+      "commissionFromActualPricesAt001PctPerSide": "1.7535500",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793355300000,
+        1793355900000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 416,
+        "group": 423,
+        "closedRows": [
+          419,
+          421
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 78,
+          "exitTime": 1793355300000,
+          "actualExit": "3982.26",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "3.3830895",
+          "commission": "0.5579105"
+        },
+        {
+          "closedTradeIndex": 79,
+          "exitTime": 1793355900000,
+          "actualExit": "3983.04",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "6.0793605",
+          "commission": "1.1956395"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793360700000,
+        1793360700000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793360700000,
+      "entryTime": 1793360700000,
+      "exitTime": 1793361600000,
+      "actualEntry": "3971.21",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "10.252",
+      "commission": "1.7463072",
+      "net": "8.5056928",
+      "rowProfitSum": "8.5056928",
+      "commissionFromActualPricesAt001PctPerSide": "1.7463072",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793361600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 425,
+        "group": 430,
+        "closedRows": [
+          428
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 80,
+          "exitTime": 1793361600000,
+          "actualExit": "3966.55",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "8.5056928",
+          "commission": "1.7463072"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793373300000,
+        1793373300000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793373300000,
+      "entryTime": 1793373300000,
+      "exitTime": 1793374200000,
+      "actualEntry": "3910.57",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "6.974",
+      "commission": "1.7199534",
+      "net": "5.2540466",
+      "rowProfitSum": "5.2540466",
+      "commissionFromActualPricesAt001PctPerSide": "1.7199534",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793374200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 432,
+        "group": 437,
+        "closedRows": [
+          435
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 81,
+          "exitTime": 1793374200000,
+          "actualExit": "3907.40",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.2540466",
+          "commission": "1.7199534"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "E_SUPPLY",
+        "E_SUPPLY",
+        1793606700000,
+        1793606700000
+      ],
+      "module": "E_SUPPLY",
+      "direction": -1,
+      "planTimestamp": 1793606700000,
+      "entryTime": 1793606700000,
+      "exitTime": 1793607600000,
+      "actualEntry": "3903.33",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "21.056",
+      "commission": "1.7153596",
+      "net": "19.3406404",
+      "rowProfitSum": "19.3406404",
+      "commissionFromActualPricesAt001PctPerSide": "1.7153596",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order E_SUPPLY"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793607000000,
+        1793607600000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 439,
+        "group": 446,
+        "closedRows": [
+          442,
+          444
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 82,
+          "exitTime": 1793607000000,
+          "actualExit": "3897.25",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "3.7099594",
+          "commission": "0.5460406"
+        },
+        {
+          "closedTradeIndex": 83,
+          "exitTime": 1793607600000,
+          "actualExit": "3892.13",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order E_SUPPLY",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "15.630681",
+          "commission": "1.169319"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793615100000,
+        1793615100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1793615100000,
+      "entryTime": 1793615100000,
+      "exitTime": 1793616000000,
+      "actualEntry": "3896.49",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-9.218",
+      "commission": "1.7153774",
+      "net": "-10.9333774",
+      "rowProfitSum": "-10.9333774",
+      "commissionFromActualPricesAt001PctPerSide": "1.7153774",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793616000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 448,
+        "group": 453,
+        "closedRows": [
+          451
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 84,
+          "exitTime": 1793616000000,
+          "actualExit": "3900.68",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-10.9333774",
+          "commission": "1.7153774"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793620800000,
+        1793620800000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793620800000,
+      "entryTime": 1793620800000,
+      "exitTime": 1793621700000,
+      "actualEntry": "3901.36",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.986",
+      "commission": "1.717397",
+      "net": "-9.703397",
+      "rowProfitSum": "-9.703397",
+      "commissionFromActualPricesAt001PctPerSide": "1.7173970",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793621700000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 455,
+        "group": 460,
+        "closedRows": [
+          458
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 85,
+          "exitTime": 1793621700000,
+          "actualExit": "3904.99",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-9.703397",
+          "commission": "1.717397"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793622600000,
+        1793622600000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793622600000,
+      "entryTime": 1793622600000,
+      "exitTime": 1793623500000,
+      "actualEntry": "3903.45",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "4.540",
+      "commission": "1.7170640",
+      "net": "2.822936",
+      "rowProfitSum": "2.8229360",
+      "commissionFromActualPricesAt001PctPerSide": "1.7170640",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793622600000,
+        1793623500000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 462,
+        "group": 469,
+        "closedRows": [
+          465,
+          467
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 86,
+          "exitTime": 1793622600000,
+          "actualExit": "3899.90",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "1.9387655",
+          "commission": "0.5462345"
+        },
+        {
+          "closedTradeIndex": 87,
+          "exitTime": 1793623500000,
+          "actualExit": "3902.08",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "0.8841705",
+          "commission": "1.1708295"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793636100000,
+        1793636100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1793636100000,
+      "entryTime": 1793636100000,
+      "exitTime": 1793637000000,
+      "actualEntry": "3960.65",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "7.150",
+      "commission": "1.743401",
+      "net": "5.406599",
+      "rowProfitSum": "5.406599",
+      "commissionFromActualPricesAt001PctPerSide": "1.7434010",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793637000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 471,
+        "group": 476,
+        "closedRows": [
+          474
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 88,
+          "exitTime": 1793637000000,
+          "actualExit": "3963.90",
+          "size": "2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "5.406599",
+          "commission": "1.743401"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793693100000,
+        1793693100000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793693100000,
+      "entryTime": 1793693100000,
+      "exitTime": 1793694000000,
+      "actualEntry": "3905.56",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-7.942",
+      "commission": "1.7192406",
+      "net": "-9.6612406",
+      "rowProfitSum": "-9.6612406",
+      "commissionFromActualPricesAt001PctPerSide": "1.7192406",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793694000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 478,
+        "group": 483,
+        "closedRows": [
+          481
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 89,
+          "exitTime": 1793694000000,
+          "actualExit": "3909.17",
+          "size": "-2.2",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-9.6612406",
+          "commission": "1.7192406"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793695200000,
+        1793695200000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": -1,
+      "planTimestamp": 1793695200000,
+      "entryTime": 1793695200000,
+      "exitTime": 1793696100000,
+      "actualEntry": "3906.82",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "18.161",
+      "commission": "1.7171847",
+      "net": "16.4438153",
+      "rowProfitSum": "16.4438153",
+      "commissionFromActualPricesAt001PctPerSide": "1.7171847",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793695500000,
+        1793696100000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 485,
+        "group": 492,
+        "closedRows": [
+          488,
+          490
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 90,
+          "exitTime": 1793695500000,
+          "actualExit": "3898.94",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "4.9695968",
+          "commission": "0.5464032"
+        },
+        {
+          "closedTradeIndex": 91,
+          "exitTime": 1793696100000,
+          "actualExit": "3898.39",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "11.4742185",
+          "commission": "1.1707815"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793707500000,
+        1793707500000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793707500000,
+      "entryTime": 1793707500000,
+      "exitTime": 1793708100000,
+      "actualEntry": "3902.33",
+      "initialQty": "2.2",
+      "holdMinutes": "10",
+      "closedTradeRows": 3,
+      "grossPricePnl": "-11.858",
+      "commission": "1.7182110",
+      "net": "-13.576211",
+      "rowProfitSum": "-13.5762110",
+      "commissionFromActualPricesAt001PctPerSide": "1.7182110",
+      "finalExitReason": "STOP_LOSS_HIT",
+      "finalExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "finalExitIds": [
+        "TP1",
+        "TP2",
+        "TP3"
+      ],
+      "uniqueExitComments": [
+        "STOP_LOSS_HIT"
+      ],
+      "actualExitTimes": [
+        1793708100000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 494,
+        "group": 502,
+        "closedRows": [
+          497,
+          499,
+          500
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 92,
+          "exitTime": 1793708100000,
+          "actualExit": "3907.72",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.3197035",
+          "commission": "0.5467035"
+        },
+        {
+          "closedTradeIndex": 93,
+          "exitTime": 1793708100000,
+          "actualExit": "3907.72",
+          "size": "-0.7",
+          "exitId": "TP2",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.3197035",
+          "commission": "0.5467035"
+        },
+        {
+          "closedTradeIndex": 94,
+          "exitTime": 1793708100000,
+          "actualExit": "3907.72",
+          "size": "-0.8",
+          "exitId": "TP3",
+          "exitComment": "STOP_LOSS_HIT",
+          "profit": "-4.936804",
+          "commission": "0.624804"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793714400000,
+        1793714400000
+      ],
+      "module": "B_CRT",
+      "direction": -1,
+      "planTimestamp": 1793714400000,
+      "entryTime": 1793714400000,
+      "exitTime": 1793715300000,
+      "actualEntry": "3960.95",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "25.370",
+      "commission": "1.740281",
+      "net": "23.629719",
+      "rowProfitSum": "23.629719",
+      "commissionFromActualPricesAt001PctPerSide": "1.7402810",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793715000000,
+        1793715300000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 504,
+        "group": 511,
+        "closedRows": [
+          507,
+          509
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 95,
+          "exitTime": 1793715000000,
+          "actualExit": "3949.65",
+          "size": "-0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "7.356258",
+          "commission": "0.553742"
+        },
+        {
+          "closedTradeIndex": 96,
+          "exitTime": 1793715300000,
+          "actualExit": "3949.31",
+          "size": "-1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "16.273461",
+          "commission": "1.186539"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "D_SNR",
+        "D_SNR",
+        1793780700000,
+        1793780700000
+      ],
+      "module": "D_SNR",
+      "direction": 1,
+      "planTimestamp": 1793780700000,
+      "entryTime": 1793780700000,
+      "exitTime": 1793781600000,
+      "actualEntry": "4032.74",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "10.076",
+      "commission": "1.7754132",
+      "net": "8.3005868",
+      "rowProfitSum": "8.3005868",
+      "commissionFromActualPricesAt001PctPerSide": "1.7754132",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order D_SNR"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793781600000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 513,
+        "group": 518,
+        "closedRows": [
+          516
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 97,
+          "exitTime": 1793781600000,
+          "actualExit": "4037.32",
+          "size": "2.2",
+          "exitId": "Close entry(s) order D_SNR",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "8.3005868",
+          "commission": "1.7754132"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793783100000,
+        1793783100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1793783100000,
+      "entryTime": 1793783100000,
+      "exitTime": 1793784000000,
+      "actualEntry": "4035.86",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "18.326",
+      "commission": "1.777611",
+      "net": "16.548389",
+      "rowProfitSum": "16.548389",
+      "commissionFromActualPricesAt001PctPerSide": "1.7776110",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793784000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 520,
+        "group": 525,
+        "closedRows": [
+          523
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 98,
+          "exitTime": 1793784000000,
+          "actualExit": "4044.19",
+          "size": "2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "16.548389",
+          "commission": "1.777611"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793786100000,
+        1793786100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1793786100000,
+      "entryTime": 1793786100000,
+      "exitTime": 1793787000000,
+      "actualEntry": "4044.91",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-0.770",
+      "commission": "1.7796834",
+      "net": "-2.5496834",
+      "rowProfitSum": "-2.5496834",
+      "commissionFromActualPricesAt001PctPerSide": "1.7796834",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793787000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 527,
+        "group": 532,
+        "closedRows": [
+          530
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 99,
+          "exitTime": 1793787000000,
+          "actualExit": "4044.56",
+          "size": "2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-2.5496834",
+          "commission": "1.7796834"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793787600000,
+        1793787600000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1793787600000,
+      "entryTime": 1793787600000,
+      "exitTime": 1793788500000,
+      "actualEntry": "4046.68",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-8.470",
+      "commission": "1.7796922",
+      "net": "-10.2496922",
+      "rowProfitSum": "-10.2496922",
+      "commissionFromActualPricesAt001PctPerSide": "1.7796922",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793788500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 534,
+        "group": 539,
+        "closedRows": [
+          537
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 100,
+          "exitTime": 1793788500000,
+          "actualExit": "4042.83",
+          "size": "2.2",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-10.2496922",
+          "commission": "1.7796922"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793789700000,
+        1793789700000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793789700000,
+      "entryTime": 1793789700000,
+      "exitTime": 1793790600000,
+      "actualEntry": "4042.56",
+      "initialQty": "2.2",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "2.176",
+      "commission": "1.778944",
+      "net": "0.397056",
+      "rowProfitSum": "0.397056",
+      "commissionFromActualPricesAt001PctPerSide": "1.7789440",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793789700000,
+        1793790600000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 541,
+        "group": 548,
+        "closedRows": [
+          544,
+          546
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 101,
+          "exitTime": 1793789700000,
+          "actualExit": "4046.14",
+          "size": "0.7",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "1.939791",
+          "commission": "0.566209"
+        },
+        {
+          "closedTradeIndex": 102,
+          "exitTime": 1793790600000,
+          "actualExit": "4042.34",
+          "size": "1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-1.542735",
+          "commission": "1.212735"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "C_TURTLE_SOUP",
+        "C_TURTLE_SOUP",
+        1793866200000,
+        1793866200000
+      ],
+      "module": "C_TURTLE_SOUP",
+      "direction": 1,
+      "planTimestamp": 1793866200000,
+      "entryTime": 1793866200000,
+      "exitTime": 1793867100000,
+      "actualEntry": "4128.44",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-6.153",
+      "commission": "1.7333295",
+      "net": "-7.8863295",
+      "rowProfitSum": "-7.8863295",
+      "commissionFromActualPricesAt001PctPerSide": "1.7333295",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order C_TURTLE_SOUP"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793867100000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 550,
+        "group": 555,
+        "closedRows": [
+          553
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 103,
+          "exitTime": 1793867100000,
+          "actualExit": "4125.51",
+          "size": "2.1",
+          "exitId": "Close entry(s) order C_TURTLE_SOUP",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-7.8863295",
+          "commission": "1.7333295"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793868600000,
+        1793868600000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793868600000,
+      "entryTime": 1793868600000,
+      "exitTime": 1793869500000,
+      "actualEntry": "4126.69",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "6.468",
+      "commission": "1.7338566",
+      "net": "4.7341434",
+      "rowProfitSum": "4.7341434",
+      "commissionFromActualPricesAt001PctPerSide": "1.7338566",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793869500000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 557,
+        "group": 562,
+        "closedRows": [
+          560
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 104,
+          "exitTime": 1793869500000,
+          "actualExit": "4129.77",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "4.7341434",
+          "commission": "1.7338566"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "F_TREND_PULLBACK",
+        "F_TREND_PULLBACK",
+        1793876100000,
+        1793876100000
+      ],
+      "module": "F_TREND_PULLBACK",
+      "direction": 1,
+      "planTimestamp": 1793876100000,
+      "entryTime": 1793876100000,
+      "exitTime": 1793877000000,
+      "actualEntry": "4130.87",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "-6.993",
+      "commission": "1.7342661",
+      "net": "-8.7272661",
+      "rowProfitSum": "-8.7272661",
+      "commissionFromActualPricesAt001PctPerSide": "1.7342661",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order F_TREND_PULLBACK"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793877000000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 564,
+        "group": 569,
+        "closedRows": [
+          567
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 105,
+          "exitTime": 1793877000000,
+          "actualExit": "4127.54",
+          "size": "2.1",
+          "exitId": "Close entry(s) order F_TREND_PULLBACK",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "-8.7272661",
+          "commission": "1.7342661"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793886300000,
+        1793886300000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793886300000,
+      "entryTime": 1793886300000,
+      "exitTime": 1793887200000,
+      "actualEntry": "4121.79",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 1,
+      "grossPricePnl": "8.484",
+      "commission": "1.7320002",
+      "net": "6.7519998",
+      "rowProfitSum": "6.7519998",
+      "commissionFromActualPricesAt001PctPerSide": "1.7320002",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793887200000
+      ],
+      "anyTpPartial": false,
+      "rawCsvRecords": {
+        "plan": 571,
+        "group": 576,
+        "closedRows": [
+          574
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 106,
+          "exitTime": 1793887200000,
+          "actualExit": "4125.83",
+          "size": "2.1",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "6.7519998",
+          "commission": "1.7320002"
+        }
+      ]
+    },
+    {
+      "identity": [
+        "FOREXCOM:XAUUSD",
+        "5",
+        "B_CRT",
+        "B_CRT",
+        1793888400000,
+        1793888400000
+      ],
+      "module": "B_CRT",
+      "direction": 1,
+      "planTimestamp": 1793888400000,
+      "entryTime": 1793888400000,
+      "exitTime": 1793889300000,
+      "actualEntry": "4127.31",
+      "initialQty": "2.1",
+      "holdMinutes": "15",
+      "closedTradeRows": 2,
+      "grossPricePnl": "13.143",
+      "commission": "1.7347845",
+      "net": "11.4082155",
+      "rowProfitSum": "11.4082155",
+      "commissionFromActualPricesAt001PctPerSide": "1.7347845",
+      "finalExitReason": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED",
+      "finalExitComments": [
+        "TRADE_CLOSED"
+      ],
+      "finalExitIds": [
+        "Close entry(s) order B_CRT"
+      ],
+      "uniqueExitComments": [
+        "TP1_HIT",
+        "TRADE_CLOSED"
+      ],
+      "actualExitTimes": [
+        1793889000000,
+        1793889300000
+      ],
+      "anyTpPartial": true,
+      "rawCsvRecords": {
+        "plan": 578,
+        "group": 585,
+        "closedRows": [
+          581,
+          583
+        ]
+      },
+      "exitRows": [
+        {
+          "closedTradeIndex": 107,
+          "exitTime": 1793889000000,
+          "actualExit": "4134.79",
+          "size": "0.6",
+          "exitId": "TP1",
+          "exitComment": "TP1_HIT",
+          "profit": "3.992274",
+          "commission": "0.495726"
+        },
+        {
+          "closedTradeIndex": 108,
+          "exitTime": 1793889300000,
+          "actualExit": "4133.08",
+          "size": "1.5",
+          "exitId": "Close entry(s) order B_CRT",
+          "exitComment": "TRADE_CLOSED",
+          "profit": "7.4159415",
+          "commission": "1.2390585"
+        }
+      ]
+    }
+  ]
+}

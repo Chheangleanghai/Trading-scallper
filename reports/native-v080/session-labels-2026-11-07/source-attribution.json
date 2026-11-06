@@ -1,0 +1,9 @@
+{
+  "sha256": "134c6abb04c7805b4e02dcaebe612784aa5faaedf50382c17cef679735940717",
+  "rawSha256": "f9078ebf0d4cc516fb4c3c326d998eb0f373d2b950bd265fabd01b0c7f0dd403",
+  "rawFile": "indicator-copy-attempt.pine",
+  "normalizedFile": "indicator-editor-copy.pine",
+  "lines": 1655,
+  "method": "Pine Editor Select All/Copy, pasted into new plain-text TextEdit; full native selected text preserved. Only CRLF/CR line endings normalized.",
+  "normalizedExact": true
+}

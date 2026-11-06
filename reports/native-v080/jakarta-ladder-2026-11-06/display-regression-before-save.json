@@ -1,0 +1,20 @@
+{
+  "tolerance": 0,
+  "oldMessages": 330,
+  "newMessages": 338,
+  "oldPlans": 76,
+  "newPlans": 78,
+  "commonPlans": 76,
+  "differingPlans": [],
+  "missingOldPlanTimes": [],
+  "additionalPlanTimes": [
+    1793979000000,
+    1793982900000
+  ],
+  "missingOldMessages": 0,
+  "additionalMessages": 8,
+  "sha256": {
+    "reports/native-v080/qualified-plan-2026-11-06/indicator-paired-raw.csv": "b7bda756ed58a028a2a599db4c78582fd29b435fea56e64ecdf7130781963273",
+    "reports/native-v080/jakarta-ladder-2026-11-06/indicator-before-save-raw.csv": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55"
+  }
+}

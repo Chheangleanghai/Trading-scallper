@@ -1,0 +1,36 @@
+{
+  "status": "ISOLATED_NATIVE_COVERAGE_OBSERVED",
+  "aOnlyRecords": 14,
+  "aCompletedPositions": 2,
+  "aExactCashChecks": [
+    {
+      "planTimestamp": 1791802500000,
+      "gross": "-11.907",
+      "commission": "1.7533593",
+      "net": "-13.6603593",
+      "holdMinutes": 15,
+      "exitClassification": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED"
+    },
+    {
+      "planTimestamp": 1793870400000,
+      "gross": "0.693",
+      "commission": "1.7343375",
+      "net": "-1.0413375",
+      "holdMinutes": 15,
+      "exitClassification": "TIME_EXIT_SOURCE_AND_ID_CONFIRMED"
+    }
+  ],
+  "gOnly": {
+    "nativeReport": "No trades with current settings",
+    "nativeLogs": "Waiting on logs",
+    "downloadLogsDisabled": true,
+    "rawCSVAvailable": false,
+    "syntheticEmptyCSVCreated": false
+  },
+  "limits": [
+    "Observed historical M5 coverage only; no OOS or future-frequency conclusion.",
+    "A/G module settings differ intentionally from the combined run; do not pool these as independent samples.",
+    "G had no accepted trade; this does not prove no candidate detection or a coding defect.",
+    "G top53 controls observed plus action continuity; remaining64 not independently recaptured."
+  ]
+}

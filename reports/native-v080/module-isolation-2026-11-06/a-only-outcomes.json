@@ -1,0 +1,211 @@
+{
+  "schema": "plan-outcomes-descriptive/v1",
+  "status": "SCORE_CALIBRATION_INCONCLUSIVE",
+  "input": {
+    "name": "Native A-only CSV Message column decoded in memory",
+    "sha256": "ee490cffe98c77c4c8457ab8b91edc09018ab9559d9e1019ae26c9289c0c4c05"
+  },
+  "context": {
+    "scriptVersion": "0.8.0",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "accountCurrency": "USD",
+    "sourceAndSettingsAuthenticatedByThisTool": false
+  },
+  "counts": {
+    "plans": 2,
+    "completedPositions": 2,
+    "incompletePositions": 0,
+    "plansWithoutExitRows": 0
+  },
+  "overall": {
+    "completePositions": 2,
+    "actualExitRows": 2,
+    "wins": 0,
+    "losses": 2,
+    "breakevens": 0,
+    "winRate": 0,
+    "winRateWilson95IID": {
+      "lower": 0,
+      "upper": 0.6576197724933469
+    },
+    "grossBeforeCommission": -11.214,
+    "commission": 3.4876968,
+    "net": -14.7016968,
+    "meanNetPerCompletePosition": -7.3508484,
+    "meanNetRToPlannedInitialCashRisk": -0.5143577371541502,
+    "meanWin": null,
+    "meanLoss": -7.3508484,
+    "positionProfitFactor": 0,
+    "profitFactorStatus": "FINITE",
+    "sparseDescriptiveSample": true,
+    "positionsWithExitComment": {
+      "TRADE_CLOSED": 2
+    }
+  },
+  "byScore": {
+    "100": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 0,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0,
+      "winRateWilson95IID": {
+        "lower": 0,
+        "upper": 0.6576197724933469
+      },
+      "grossBeforeCommission": -11.214,
+      "commission": 3.4876968,
+      "net": -14.7016968,
+      "meanNetPerCompletePosition": -7.3508484,
+      "meanNetRToPlannedInitialCashRisk": -0.5143577371541502,
+      "meanWin": null,
+      "meanLoss": -7.3508484,
+      "positionProfitFactor": 0,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    }
+  },
+  "byModule": {
+    "A_SWEEP_MSS_FVG": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 0,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0,
+      "winRateWilson95IID": {
+        "lower": 0,
+        "upper": 0.6576197724933469
+      },
+      "grossBeforeCommission": -11.214,
+      "commission": 3.4876968,
+      "net": -14.7016968,
+      "meanNetPerCompletePosition": -7.3508484,
+      "meanNetRToPlannedInitialCashRisk": -0.5143577371541502,
+      "meanWin": null,
+      "meanLoss": -7.3508484,
+      "positionProfitFactor": 0,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    }
+  },
+  "byModuleAndScore": {
+    "A_SWEEP_MSS_FVG|100": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 0,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0,
+      "winRateWilson95IID": {
+        "lower": 0,
+        "upper": 0.6576197724933469
+      },
+      "grossBeforeCommission": -11.214,
+      "commission": 3.4876968,
+      "net": -14.7016968,
+      "meanNetPerCompletePosition": -7.3508484,
+      "meanNetRToPlannedInitialCashRisk": -0.5143577371541502,
+      "meanWin": null,
+      "meanLoss": -7.3508484,
+      "positionProfitFactor": 0,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    }
+  },
+  "byDirection": {
+    "LONG": {
+      "completePositions": 2,
+      "actualExitRows": 2,
+      "wins": 0,
+      "losses": 2,
+      "breakevens": 0,
+      "winRate": 0,
+      "winRateWilson95IID": {
+        "lower": 0,
+        "upper": 0.6576197724933469
+      },
+      "grossBeforeCommission": -11.214,
+      "commission": 3.4876968,
+      "net": -14.7016968,
+      "meanNetPerCompletePosition": -7.3508484,
+      "meanNetRToPlannedInitialCashRisk": -0.5143577371541502,
+      "meanWin": null,
+      "meanLoss": -7.3508484,
+      "positionProfitFactor": 0,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": true,
+      "positionsWithExitComment": {
+        "TRADE_CLOSED": 2
+      }
+    }
+  },
+  "scoreSupportByModule": {
+    "A_SWEEP_MSS_FVG": [
+      100
+    ]
+  },
+  "modulesWithMultipleScores": [],
+  "scoreAndModuleFullyConfoundedInThisSample": true,
+  "incompletePositions": [],
+  "plansWithoutExitRows": [],
+  "positions": [
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1791802500000,\"A_SWEEP_MSS_FVG\"]",
+      "planTimestamp": 1791802500000,
+      "entryTime": 1791802500000,
+      "exitTime": 1791803400000,
+      "module": "A_SWEEP_MSS_FVG",
+      "quality": 100,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 13.86,
+      "net": -13.6603593,
+      "commission": 1.7533593,
+      "grossBeforeCommission": -11.907,
+      "netRToPlannedInitialCashRisk": -0.9855959090909091,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793870400000,\"A_SWEEP_MSS_FVG\"]",
+      "planTimestamp": 1793870400000,
+      "entryTime": 1793870400000,
+      "exitTime": 1793871300000,
+      "module": "A_SWEEP_MSS_FVG",
+      "quality": 100,
+      "direction": 1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 24.150000000000002,
+      "net": -1.0413375,
+      "commission": 1.7343375,
+      "grossBeforeCommission": 0.6930000000000001,
+      "netRToPlannedInitialCashRisk": -0.043119565217391305,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    }
+  ],
+  "limitations": [
+    "Descriptive already-inspected historical sample, not untouched OOS, probability calibration or causal inference.",
+    "Score/module associations do not identify a score effect; module selection and state histories can confound outcomes.",
+    "Wilson intervals assume IID Bernoulli outcomes; serially correlated trades and small samples limit that interpretation.",
+    "Partial exit rows are aggregated into complete positions. Reported net already includes commission; it is not subtracted twice.",
+    "Net R uses logged planned account risk per unit times initial quantity, not a guaranteed maximum loss or actual-fill stop risk.",
+    "Missing/open/rejected plans are separately retained and excluded from closed-position summaries, never assigned zero P&L.",
+    "Observed win rate is not the quality score divided by 100; no threshold, module or trading rule is recommended from this sample.",
+    "Fewer than 30 positions is marked sparse descriptively; 30 does not establish statistical power or independence."
+  ]
+}

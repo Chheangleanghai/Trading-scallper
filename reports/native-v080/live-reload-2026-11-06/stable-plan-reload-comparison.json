@@ -1,0 +1,9 @@
+{
+  "scope": "Same stable-live probe Indicator historical plans; not Indicator/Strategy parity or a qualified live-entry observation. Every original PLAN_AUDIT JSON field compared exactly.",
+  "beforeFile": "stable-live-final-raw.csv",
+  "afterFile": "stable-after-reload-raw.csv",
+  "beforeRows": 330,
+  "afterRows": 325,
+  "plansEach": 74,
+  "allPlansExactlyEqual": true
+}

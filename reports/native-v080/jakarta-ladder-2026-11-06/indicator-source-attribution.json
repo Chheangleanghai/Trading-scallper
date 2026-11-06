@@ -1,0 +1,10 @@
+{
+  "sourceFile": "pine/experiments/indicator_jakarta_ladder.pine",
+  "sourceSha256": "2e2495d846d4e2f49f13c649e59aef45f203079786e358aa951ce31bb02a4e5f",
+  "copyBack": "indicator-editor-copy.pine",
+  "copyBackSha256": "2e2495d846d4e2f49f13c649e59aef45f203079786e358aa951ce31bb02a4e5f",
+  "lines": 1595,
+  "exact": true,
+  "captureMethod": "Full Pine Editor selected/copy buffer pasted into new plain-text TextEdit document; full selected source read via native AX and saved without rewriting from local source. TextEdit Save panel was disabled; selected native copy still matches exactly.",
+  "draftContinuity": "No source edits between copy-back and native compile request."
+}

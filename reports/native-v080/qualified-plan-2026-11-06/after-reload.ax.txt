@@ -1,0 +1,256 @@
+Window: "XAUUSD 4,073.15 ▼ −0.38% Unnamed", App: Google Chrome.
+0 standard window XAUUSD 4,073.15 ▼ −0.38% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Secondary Actions: Raise
+	1 container XAUUSD 4,073.15 ▼ −0.38% Unnamed - Google Chrome - Chheang, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+		2 container
+			3 container
+				4 scroll area
+					5 HTML content XAUUSD 4,073.15 ▼ −0.38% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+						6 container
+							7 container
+								8 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+								9 text 3
+								10 toolbar
+									11 container
+										12 button XAUUSD, Help: Symbol search
+										13 button Switch data type
+										14 pop up button Compare symbols
+										15 pop up button 5 minutes
+											16 container
+												17 text 5 m
+										18 pop up button Candles
+										19 button Indicators, metrics, and strategies
+										20 pop up button Favorite indicators and indicators templates
+										21 button Create alert
+										22 toggle button Bar replay, Value: 0
+										23 pop up button Layout setup
+										24 button (disabled) All changes saved
+										25 pop up button Manage layouts
+										26 button Quick search
+										27 button Settings
+										28 button Fullscreen mode
+										29 pop up button Take a snapshot
+									30 pop up button Share your idea with the trade community
+									31 container
+										32 button Trade
+									33 container
+										34 button Upgrade
+								35 toolbar
+									36 container
+										37 container
+											38 button Cross
+											39 toggle button Cursors, Value: 1
+										40 container
+											41 button Trendline
+											42 toggle button Trend tools, Value: 0
+										43 container
+											44 button Fib retracement
+											45 toggle button Gann and Fibonacci tools, Value: 0
+										46 container
+											47 button XABCD pattern
+											48 toggle button Patterns, Value: 0
+										49 container
+											50 button Long position
+											51 toggle button Forecasting and measurement tools, Value: 0
+										52 container
+											53 button Brush
+											54 toggle button Geometric shapes, Value: 0
+										55 container
+											56 button Text
+											57 toggle button Annotation tools, Value: 0
+										58 container
+											59 button Icon
+											60 toggle button Icons, Value: 0
+										61 button Measure
+										62 button Zoom in
+										63 container
+											64 toggle button Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+											65 toggle button Magnets, Value: 0
+										66 toggle button Keep drawing, Value: 0
+										67 container
+											68 toggle button Lock drawings and indicators, Value: 0
+											69 toggle button Lock options, Value: 0
+										70 container
+											71 toggle button Hide all drawings, Value: 0
+											72 toggle button Hide options, Value: 0
+										73 container
+											74 button Remove objects
+											75 button Remove options
+								76 container Chart #1
+									77 container
+										78 toolbar
+											79 container
+												80 container Change symbol
+													81 container
+														82 Unlabeled image To get missing image descriptions, open the context menu.
+														83 text X
+													84 button Change symbol
+												85 container Change interval
+													86 text ·
+													87 button Change interval
+												88 text ·
+												89 text FOREX.com
+											90 container
+												91 button Unflag symbol
+													92 image
+												93 button More
+											94 button Market open · Data updates once per second
+											95 container
+												96 text O 4,071.04 H 4,073.35 L 4,070.02 C 4,073.15 +2.11 (+0.05%)
+										97 container
+											98 text 4,072.83 SELL
+											99 text 62
+											100 text 4,073.45 BUY
+										101 container
+											102 button Show indicators legend
+										103 image Chart for FOREXCOM:XAUUSD, 5 minutes
+									104 container
+								105 toolbar
+									106 container
+										107 button 1 day in 1 minute intervals
+										108 button 5 days in 5 minutes intervals
+										109 button 1 month in 30 minutes intervals
+										110 button 3 months in 1 hour intervals
+										111 button 6 months in 2 hours intervals
+										112 button Year to day in 1 day intervals
+										113 button 1 year in 1 day intervals
+										114 button 5 years in 1 week intervals
+										115 button All data in 1 month intervals
+										116 button Go to
+									117 button Timezone
+								118 container
+									119 toolbar
+										120 toggle button Watchlist, details, and news, Value: 0
+										121 toggle button Alerts, Value: 0
+										122 toggle button Object tree and data window, Value: 0
+										123 toggle button AI Copilot, Value: 0
+										124 toggle button Screeners, Value: 0
+										125 toggle button (disabled) Pine Editor, Value: 1
+										126 toggle button Calendars, Value: 0
+										127 toggle button Community, Value: 0
+										128 toggle button Notifications, Value: 0
+										129 toggle button Chats, Value: 0
+										130 pop up button Products
+										131 toggle button Help Center, Value: 0
+									132 container
+										133 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+										134 pop up button Settings
+									135 image
+								136 container Trading panel
+							137 container
+								138 button Move split-view to overlay
+								139 text Pine Editor
+								140 button Collapse panel
+								141 button Fullscreen mode
+								142 button Close
+								143 container
+									144 pop up button Untitled script
+										145 heading Untitled script, Value: 2
+											146 text Untitled script
+									147 button Add to chart
+									148 button Save script
+									149 button Share your script with the community
+									150 pop up button More
+									151 container
+										152 editor (settable) Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Stable display review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then n
+									153 container
+										154 container 12:12:30 PM
+											155 text 12:12:30 PM
+										156 container Script version changed from 0.32 to 0.26
+											157 text Script version changed from 0.32 to 0.26
+										158 container 12:13:08 PM
+											159 text 12:13:08 PM
+										160 container Compiling...
+											161 text Compiling...
+										162 container 12:13:10 PM
+											163 text 12:13:10 PM
+										164 container Compiled.
+											165 text Compiled.
+										166 container 12:13:10 PM
+											167 text 12:13:10 PM
+										168 container Updated on chart.
+											169 text Updated on chart.
+										170 container 12:16:57 PM
+											171 text 12:16:57 PM
+										172 container Compiling...
+											173 text Compiling...
+										174 container 12:17:26 PM
+											175 text 12:17:26 PM
+										176 container Compiled.
+											177 text Compiled.
+										178 container 12:17:26 PM
+											179 text 12:17:26 PM
+										180 container Updated on chart.
+											181 text Updated on chart.
+										182 container 12:19:34 PM
+											183 text 12:19:34 PM
+										184 container Compiling...
+											185 text Compiling...
+										186 container 12:20:11 PM
+											187 text 12:20:11 PM
+										188 container Compiled.
+											189 text Compiled.
+										190 container 12:20:11 PM
+											191 text 12:20:11 PM
+										192 container Updated on chart.
+											193 text Updated on chart.
+										194 container 12:50:36 PM
+											195 text 12:50:36 PM
+										196 container Compiling...
+											197 text Compiling...
+										198 container 12:50:38 PM
+											199 text 12:50:38 PM
+										200 container Compiled.
+											201 text Compiled.
+										202 container 12:50:38 PM
+											203 text 12:50:38 PM
+										204 container Added to chart.
+											205 text Added to chart.
+									206 button
+									207 button Line 1, Col 1
+		208 container
+			209 pop up button Tab search
+			210 tab group
+				211 tab (selected, settable, boolean) XAUUSD 4,073.15 ▼ −0.38% Unnamed, Value: on
+					212 button Close
+			213 button New Tab
+			214 button Open Gemini in Chrome
+		215 container
+			216 toolbar
+				217 button Back
+				218 button (disabled) Forward
+				219 button Reload
+				220 container
+					221 pop up button View site information
+					222 text field (settable) Address and search bar, Value: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD, Placeholder: Ask Google or type a URL
+					223 button Bookmark this tab
+				224 container
+					225 pop up button Use the new ChatGPT side chat feature. Open the ChatGPT extension to continue.
+Has access to this site
+					226 pop up button Extensions
+				227 checkbox New download available, Value: 0
+				228 button Chheang
+				229 pop up button Chrome
+	230 container
+		231 close button
+		232 zoom button
+233 menu bar
+	234 Chrome
+	235 File
+	236 Edit
+	237 View
+	238 History
+	239 Bookmarks
+	240 Profiles
+	241 Tab
+	242 Window
+	243 Help
+
+The focused UI element is 152 editor (settable) Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Stable display review", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=200, max_lines_count=150, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then n

@@ -1,0 +1,3910 @@
+{
+  "attribution": "117 native Strategy inputs captured; Indicator uses prior117-control capture and saved-instance continuity, not a fresh full second recapture.",
+  "source": {
+    "path": "pine/experiments/strategy_stable_display.pine",
+    "sha256": "ce6c1256bd9d29387f194be4ac715e479bf98f14bdcc0e9c697e5f4110f2aae9"
+  },
+  "timeInputDisplayZone": "UTC per capture;00:00 date controls match prior UTC epochs",
+  "inputCount": 117,
+  "inputSettings": {
+    "reviewShowBoard": true,
+    "reviewShowGuides": true,
+    "clearSignalView": "Context + levels",
+    "clearLevelBars": 8,
+    "clearPlanLimit": 1,
+    "clearSpaceLabels": false,
+    "clearShowPriceCard": true,
+    "enableA": true,
+    "enableB": true,
+    "enableC": true,
+    "enableD": true,
+    "enableE": true,
+    "enableF": true,
+    "enableG": true,
+    "enableH": true,
+    "crtTF": "15",
+    "turtleAge": 3,
+    "levelTolerance": 0.15,
+    "maxZoneTests": 2,
+    "useEMA50": true,
+    "pullbackDepth": 0.3,
+    "accumulationBars": 12,
+    "accumulationWidth": 3.0,
+    "strategyThresholds": false,
+    "thresholdA": 75,
+    "thresholdB": 75,
+    "thresholdC": 75,
+    "thresholdD": 75,
+    "thresholdE": 75,
+    "thresholdF": 75,
+    "thresholdG": 75,
+    "thresholdH": 75,
+    "useResearchWindow": false,
+    "researchStart": 1767225600000,
+    "researchEnd": 1798761600000,
+    "tradeSide": "Both",
+    "auditLog": true,
+    "swing": 3,
+    "expiry": 20,
+    "threshold": 75,
+    "cooldown": 5,
+    "maxTrades": 5,
+    "maxExposurePct": 90.0,
+    "riskPct": 0.5,
+    "buffer": 0.15,
+    "maxStop": 3.0,
+    "maxDistance": 1.5,
+    "minRR": 2.0,
+    "r1": 1.0,
+    "r2": 2.0,
+    "r3": 3.0,
+    "minDisp": 0.7,
+    "trendFilter": true,
+    "emaFilter": false,
+    "useSession": true,
+    "sessionPreset": "London",
+    "sessionHours": "0800-1700",
+    "sessionZone": "Europe/London",
+    "manualPause": false,
+    "newsStart": 0,
+    "newsEnd": 0,
+    "entryMode": "Close",
+    "pendingBars": 3,
+    "timeExit": 15,
+    "targetMode": "Fixed R",
+    "stopMode": "Structure",
+    "atrStop": 1.5,
+    "breakEven": false,
+    "breakEvenR": 1.0,
+    "trailing": false,
+    "trailingStartR": 2.0,
+    "trailingATR": 1.5,
+    "confluenceLiquidity": false,
+    "confluenceFib": false,
+    "confluencePD": false,
+    "showDaily": false,
+    "showSessionLevels": false,
+    "showFibonacci": false,
+    "showPremiumDiscount": false,
+    "showBreakers": false,
+    "showWyckoff": false,
+    "partial": true,
+    "visualLayout": "Reference",
+    "historyMode": "Off",
+    "historyPlanLimit": 8,
+    "historyLookback": 3000,
+    "showConceptPanel": false,
+    "showSwingLevels": true,
+    "showSupportResistance": true,
+    "showCRTSweeps": false,
+    "showContextSweeps": true,
+    "showEMA55": true,
+    "contextHistory": "Latest only",
+    "contextZoneBars": 60,
+    "contextZoneDistance": 8.0,
+    "contextLabelGap": 8,
+    "zoneExtension": 12,
+    "dashboardSize": "Tiny",
+    "chartLabelSize": "Small",
+    "showDashboard": false,
+    "showPerformance": true,
+    "showUnusedModules": false,
+    "showSwingLabels": false,
+    "maxStructureLabels": 15,
+    "showLastPlan": true,
+    "contextTransparency": 82,
+    "showEMA": true,
+    "showZones": true,
+    "showTrade": true,
+    "showEntryLine": true,
+    "showSLLine": true,
+    "showTP1Line": true,
+    "showTP2Line": true,
+    "showTP3Line": true,
+    "showRiskReward": true,
+    "showOB": true,
+    "showStructure": true
+  },
+  "missingInputs": [],
+  "differencesFromPriorSavedIndicator": [],
+  "indicatorComparisonArtifact": "reports/native-v080/live-reload-2026-11-06/indicator-restored-runtime-inputs.json",
+  "observedControls": {
+    "reviewShowBoard": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "674 checkbox Show A\u2013H confirmation board, Value: 1"
+      }
+    ],
+    "reviewShowGuides": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "676 checkbox Show candidate zones / triggers (setup only), Value: 1"
+      }
+    ],
+    "clearSignalView": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "678 combo box (settable) Context + levels"
+        ],
+        "displayed": [
+          "Context + levels"
+        ]
+      }
+    ],
+    "clearLevelBars": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "681 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "clearPlanLimit": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "683 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "clearSpaceLabels": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "684 checkbox Separate overlapping price labels with connectors, Value: 0"
+      }
+    ],
+    "clearShowPriceCard": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "686 checkbox Show compact status and price card, Value: 1"
+      }
+    ],
+    "enableA": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "688 checkbox A: Sweep + MSS + FVG, Value: 1"
+      }
+    ],
+    "enableB": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "690 checkbox B: CRT, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "673 checkbox B: CRT, Value: 1"
+      }
+    ],
+    "enableC": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "692 checkbox C: Confirmed-pivot Turtle Soup, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "675 checkbox C: Confirmed-pivot Turtle Soup, Value: 1"
+      }
+    ],
+    "enableD": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "694 checkbox D: K-SNR (confirmed support/resistance), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "677 checkbox D: K-SNR (confirmed support/resistance), Value: 1"
+      }
+    ],
+    "enableE": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "696 checkbox E: Supply/demand, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "679 checkbox E: Supply/demand, Value: 1"
+      }
+    ],
+    "enableF": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "698 checkbox F: Structural trend pullback, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "681 checkbox F: Structural trend pullback, Value: 1"
+      }
+    ],
+    "enableG": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "700 checkbox G: AMD range approximation, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "683 checkbox G: AMD range approximation, Value: 1"
+      }
+    ],
+    "enableH": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "702 checkbox H: Confirmed Quasimodo approximation, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "685 checkbox H: Confirmed Quasimodo approximation, Value: 1"
+      }
+    ],
+    "crtTF": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "704 combo box (settable) 15 minutes"
+        ],
+        "displayed": [
+          "15 minutes"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "687 combo box (settable) 15 minutes"
+        ],
+        "displayed": [
+          "15 minutes"
+        ]
+      }
+    ],
+    "turtleAge": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "707 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "690 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "levelTolerance": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "709 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "692 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      }
+    ],
+    "maxZoneTests": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "711 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "694 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "useEMA50": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "712 checkbox Trend pullback: require EMA50, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "695 checkbox Trend pullback: require EMA50, Value: 1"
+      }
+    ],
+    "pullbackDepth": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "714 text field (settable) 0.3"
+        ],
+        "displayed": [
+          "0.3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "697 text field (settable) 0.3"
+        ],
+        "displayed": [
+          "0.3"
+        ]
+      }
+    ],
+    "accumulationBars": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "716 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "699 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      }
+    ],
+    "accumulationWidth": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "718 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "strategyThresholds": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "720 checkbox Use strategy-specific quality thresholds, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "703 checkbox Use strategy-specific quality thresholds, Value: 0"
+      }
+    ],
+    "thresholdA": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "722 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "705 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdB": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "724 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "707 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdC": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "726 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "709 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdD": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "728 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "711 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdE": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "730 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "713 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdF": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "732 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "715 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdG": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "734 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "717 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "thresholdH": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "736 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "719 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "useResearchWindow": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "738 checkbox Restrict new plans to date window, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "721 checkbox Restrict new plans to date window, Value: 0"
+      }
+    ],
+    "researchStart": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "740 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+          "741 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "2026-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "723 text field (settable) Value: 2026-01-01, Placeholder: YYYY-MM-DD",
+          "724 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "2026-01-01",
+          "00:00"
+        ]
+      }
+    ],
+    "researchEnd": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "743 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+          "744 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "2027-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "726 text field (settable) Value: 2027-01-01, Placeholder: YYYY-MM-DD",
+          "727 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "2027-01-01",
+          "00:00"
+        ]
+      }
+    ],
+    "tradeSide": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "746 combo box (settable) Both"
+        ],
+        "displayed": [
+          "Both"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "729 combo box (settable) Both"
+        ],
+        "displayed": [
+          "Both"
+        ]
+      }
+    ],
+    "auditLog": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "control": "748 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "731 checkbox Log qualified plans and lifecycle events (research only), Value: 1"
+      }
+    ],
+    "swing": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "750 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "733 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "expiry": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "752 text field (settable) 20"
+        ],
+        "displayed": [
+          "20"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "735 text field (settable) 20"
+        ],
+        "displayed": [
+          "20"
+        ]
+      }
+    ],
+    "threshold": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "754 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "737 text field (settable) 75"
+        ],
+        "displayed": [
+          "75"
+        ]
+      }
+    ],
+    "cooldown": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "756 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "739 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      }
+    ],
+    "maxTrades": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "758 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "741 text field (settable) 5"
+        ],
+        "displayed": [
+          "5"
+        ]
+      }
+    ],
+    "maxExposurePct": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "760 text field (settable) 90"
+        ],
+        "displayed": [
+          "90"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "743 text field (settable) 90"
+        ],
+        "displayed": [
+          "90"
+        ]
+      }
+    ],
+    "riskPct": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "770 text field (settable) 0.5"
+        ],
+        "displayed": [
+          "0.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "753 text field (settable) 0.5"
+        ],
+        "displayed": [
+          "0.5"
+        ]
+      }
+    ],
+    "buffer": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "772 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "755 text field (settable) 0.15"
+        ],
+        "displayed": [
+          "0.15"
+        ]
+      }
+    ],
+    "maxStop": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "774 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "757 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "675 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "maxDistance": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "776 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "759 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "677 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "minRR": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "778 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "761 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "679 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "r1": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "780 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "763 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "681 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "r2": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "782 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "765 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "683 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "r3": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "767 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "685 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "minDisp": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "769 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "687 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "675 text field (settable) 0.7"
+        ],
+        "displayed": [
+          "0.7"
+        ]
+      }
+    ],
+    "trendFilter": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "770 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "688 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "676 checkbox Require H1 alignment, Value: 1"
+      }
+    ],
+    "emaFilter": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "772 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "690 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "678 checkbox Require EMA 9/21 alignment, Value: 0"
+      }
+    ],
+    "useSession": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "control": "774 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "692 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "680 checkbox Session filter, Value: 1"
+      }
+    ],
+    "sessionPreset": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "776 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "694 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "682 combo box (settable) London"
+        ],
+        "displayed": [
+          "London"
+        ]
+      }
+    ],
+    "sessionHours": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "779 combo box (settable) 08:00",
+          "781 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "697 combo box (settable) 08:00",
+          "699 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "685 combo box (settable) 08:00",
+          "687 combo box (settable) 17:00"
+        ],
+        "displayed": [
+          "08:00",
+          "17:00"
+        ]
+      }
+    ],
+    "sessionZone": [
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "783 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "701 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "689 text field (settable) Europe/London"
+        ],
+        "displayed": [
+          "Europe/London"
+        ]
+      }
+    ],
+    "manualPause": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "702 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "690 checkbox Manual news pause, Value: 0"
+      }
+    ],
+    "newsStart": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "704 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "705 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "692 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "693 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      }
+    ],
+    "newsEnd": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "707 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "708 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "695 text field (settable) Value: 1970-01-01, Placeholder: YYYY-MM-DD",
+          "696 combo box (settable) 00:00"
+        ],
+        "displayed": [
+          "1970-01-01",
+          "00:00"
+        ]
+      }
+    ],
+    "entryMode": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "710 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "698 combo box (settable) Close"
+        ],
+        "displayed": [
+          "Close"
+        ]
+      }
+    ],
+    "pendingBars": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "713 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "701 text field (settable) 3"
+        ],
+        "displayed": [
+          "3"
+        ]
+      }
+    ],
+    "timeExit": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "715 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "703 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      }
+    ],
+    "targetMode": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "762 combo box (settable) Fixed R"
+        ],
+        "displayed": [
+          "Fixed R"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "745 combo box (settable) Fixed R"
+        ],
+        "displayed": [
+          "Fixed R"
+        ]
+      }
+    ],
+    "stopMode": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "765 combo box (settable) Structure"
+        ],
+        "displayed": [
+          "Structure"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "748 combo box (settable) Structure"
+        ],
+        "displayed": [
+          "Structure"
+        ]
+      }
+    ],
+    "atrStop": [
+      {
+        "file": "paired-runtime-page0.ax.txt",
+        "controls": [
+          "768 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page1.ax.txt",
+        "controls": [
+          "751 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "breakEven": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "717 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "705 checkbox Move stop to filled entry after trigger R, Value: 0"
+      }
+    ],
+    "breakEvenR": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "719 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "707 text field (settable) 1"
+        ],
+        "displayed": [
+          "1"
+        ]
+      }
+    ],
+    "trailing": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "720 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "708 checkbox ATR trailing stop after trigger R, Value: 0"
+      }
+    ],
+    "trailingStartR": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "722 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "710 text field (settable) 2"
+        ],
+        "displayed": [
+          "2"
+        ]
+      }
+    ],
+    "trailingATR": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "724 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "712 text field (settable) 1.5"
+        ],
+        "displayed": [
+          "1.5"
+        ]
+      }
+    ],
+    "confluenceLiquidity": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "726 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "714 checkbox Score optional liquidity (category cap 20), Value: 0"
+      }
+    ],
+    "confluenceFib": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "728 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "716 checkbox Require optional 50\u201361.8% swing retracement, Value: 0"
+      }
+    ],
+    "confluencePD": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "730 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "718 checkbox Require optional premium/discount location, Value: 0"
+      }
+    ],
+    "showDaily": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "732 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "720 checkbox Show previous day/week levels, Value: 0"
+      }
+    ],
+    "showSessionLevels": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "734 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "722 checkbox Show session high/low, Value: 0"
+      }
+    ],
+    "showFibonacci": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "736 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "724 checkbox Show confirmed swing Fibonacci, Value: 0"
+      }
+    ],
+    "showPremiumDiscount": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "738 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "726 checkbox Show confirmed swing midpoint, Value: 0"
+      }
+    ],
+    "showBreakers": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "740 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "728 checkbox Show breaker-level heuristics, Value: 0"
+      }
+    ],
+    "showWyckoff": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "742 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "730 checkbox Show spring/upthrust candidates, Value: 0"
+      }
+    ],
+    "partial": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "744 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "732 checkbox Partial TP: 33% / 33% / 34% (strategy), Value: 1"
+      }
+    ],
+    "visualLayout": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "746 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "734 combo box (settable) Reference"
+        ],
+        "displayed": [
+          "Reference"
+        ]
+      }
+    ],
+    "historyMode": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "771 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "759 combo box (settable) Off"
+        ],
+        "displayed": [
+          "Off"
+        ]
+      }
+    ],
+    "historyPlanLimit": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "774 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "762 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "historyLookback": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "776 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "764 text field (settable) 3000"
+        ],
+        "displayed": [
+          "3000"
+        ]
+      }
+    ],
+    "showConceptPanel": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "748 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "736 checkbox Show compact analysis context, Value: 0"
+      }
+    ],
+    "showSwingLevels": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "750 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "738 checkbox Show confirmed swing levels and right labels, Value: 1"
+      }
+    ],
+    "showSupportResistance": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "752 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "740 checkbox Show confirmed support/resistance zones, Value: 1"
+      }
+    ],
+    "showCRTSweeps": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "754 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "742 checkbox Show completed-reference CRT sweeps (context only), Value: 0"
+      }
+    ],
+    "showContextSweeps": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "756 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "744 checkbox Show confirmed-pivot liquidity sweeps (context only), Value: 1"
+      }
+    ],
+    "showEMA55": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "758 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "746 checkbox Show visual EMA 55 (does not change strategy EMA 50), Value: 1"
+      }
+    ],
+    "contextHistory": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "760 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "748 combo box (settable) Latest only"
+        ],
+        "displayed": [
+          "Latest only"
+        ]
+      }
+    ],
+    "contextZoneBars": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "763 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "751 text field (settable) 60"
+        ],
+        "displayed": [
+          "60"
+        ]
+      }
+    ],
+    "contextZoneDistance": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "765 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "753 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "contextLabelGap": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "767 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "755 text field (settable) 8"
+        ],
+        "displayed": [
+          "8"
+        ]
+      }
+    ],
+    "zoneExtension": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "769 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "757 text field (settable) 12"
+        ],
+        "displayed": [
+          "12"
+        ]
+      }
+    ],
+    "dashboardSize": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "778 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "766 combo box (settable) Tiny"
+        ],
+        "displayed": [
+          "Tiny"
+        ]
+      }
+    ],
+    "chartLabelSize": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "781 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "769 combo box (settable) Small"
+        ],
+        "displayed": [
+          "Small"
+        ]
+      }
+    ],
+    "showDashboard": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "783 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "771 checkbox Show signal dashboard, Value: 0"
+      }
+    ],
+    "showPerformance": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "785 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "773 checkbox Show backtest results table, Value: 1"
+      }
+    ],
+    "showUnusedModules": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "787 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "775 checkbox Show strategies with no completed trades, Value: 0"
+      }
+    ],
+    "showSwingLabels": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "789 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "777 checkbox Show detailed swing labels, Value: 0"
+      }
+    ],
+    "maxStructureLabels": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "791 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "779 text field (settable) 15"
+        ],
+        "displayed": [
+          "15"
+        ]
+      }
+    ],
+    "showLastPlan": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "control": "792 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "780 checkbox Show previous trade prices when no current plan, Value: 1"
+      }
+    ],
+    "contextTransparency": [
+      {
+        "file": "paired-runtime-page2.ax.txt",
+        "controls": [
+          "794 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "controls": [
+          "782 text field (settable) 82"
+        ],
+        "displayed": [
+          "82"
+        ]
+      }
+    ],
+    "showEMA": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "783 checkbox Show EMAs, Value: 1"
+      }
+    ],
+    "showZones": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "785 checkbox Show latest FVG, Value: 1"
+      }
+    ],
+    "showTrade": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "787 checkbox Show latest trade levels and boxes, Value: 1"
+      }
+    ],
+    "showEntryLine": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "789 checkbox Entry line/price, Value: 1"
+      }
+    ],
+    "showSLLine": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "791 checkbox SL line/price, Value: 1"
+      }
+    ],
+    "showTP1Line": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "793 checkbox TP1 line/price, Value: 1"
+      }
+    ],
+    "showTP2Line": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "795 checkbox TP2 line/price, Value: 1"
+      }
+    ],
+    "showTP3Line": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "797 checkbox TP3 line/price, Value: 1"
+      }
+    ],
+    "showRiskReward": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "799 checkbox Risk/reward boxes, Value: 1"
+      }
+    ],
+    "showOB": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "801 checkbox Show latest displacement order block heuristic, Value: 1"
+      }
+    ],
+    "showStructure": [
+      {
+        "file": "paired-runtime-page3.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page4.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page5.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page6.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page7.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      },
+      {
+        "file": "paired-runtime-page8.ax.txt",
+        "control": "803 checkbox Show structure and sweeps, Value: 1"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "paired-runtime-page0.ax.txt",
+      "sha256": "e327d562af5a648a2ad266960394834782596bfd1304b4ad18262d96e292468b"
+    },
+    {
+      "path": "paired-runtime-page1.ax.txt",
+      "sha256": "c25f28d0c155bb95a9fa1f9433f3a614c44bb80172a90b05f1c10d120e10d2c1"
+    },
+    {
+      "path": "paired-runtime-page2.ax.txt",
+      "sha256": "8bcf9267c4b70608733f0e0d04bcf79b1a4b87762aaef26d1ffb923b2f8ada23"
+    },
+    {
+      "path": "paired-runtime-page3.ax.txt",
+      "sha256": "360433187f00fb799618a031b30642d4240d195dbc79826c953a83bcf6dc7d13"
+    },
+    {
+      "path": "paired-runtime-page4.ax.txt",
+      "sha256": "a83c38f56dc4995b6429faea5dcc22b855ac4ad83ebccc50269ee081002f90a7"
+    },
+    {
+      "path": "paired-runtime-page5.ax.txt",
+      "sha256": "37524accbca520be317c02125944aaf600daaa6f2f2c3eba0b5768ef724a748f"
+    },
+    {
+      "path": "paired-runtime-page6.ax.txt",
+      "sha256": "c7ae4bfaac0f589367e9415c9da8f03a9fcc6acfa8a344e9eb2a2f78a54a5ca1"
+    },
+    {
+      "path": "paired-runtime-page7.ax.txt",
+      "sha256": "bc0b2bd33b99170ca6ee8c7d00792982746c47027badf8deb8275c571c33350b"
+    },
+    {
+      "path": "paired-runtime-page8.ax.txt",
+      "sha256": "18dd7a188aa4010fd52d5fdc3a2cf52176609301ba298bf89cc947ab2e125ab9"
+    }
+  ]
+}
