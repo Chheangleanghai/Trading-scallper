@@ -31,6 +31,8 @@ for (const name of [
   "experiments/strategy_session_labels.pine",
   "experiments/indicator_signal_clarity.pine",
   "experiments/strategy_signal_clarity.pine",
+  "experiments/indicator_signal_diagnostics.pine",
+  "experiments/strategy_signal_diagnostics.pine",
 ]) {
   const result = canTranspilePineScript(
     readFileSync(new URL(`../pine/${name}`, import.meta.url), "utf8"),
