@@ -1,0 +1,192 @@
+{
+  "source": "reports/native-v080/jakarta-ladder-2026-11-06/indicator-after-reload-raw.csv",
+  "rawSha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+  "scope": "Preserved genuine Indicator sample only; execution estimates, not actual broker fills",
+  "picturedPlan": {
+    "timestamp": 1793982900000,
+    "confirmedWIB": "2026-11-06T23:35:00+07:00",
+    "entry": 4059.76,
+    "sl": 4068.08,
+    "closedWIB": "2026-11-06T23:50:00+07:00",
+    "reportedCloseReason": "TIME_EXIT",
+    "slEventInCapture": false,
+    "events": [
+      {
+        "rawPrefix": "2026-11-06T23:30:00.000+07:00",
+        "type": "SELL_SIGNAL",
+        "payload": {
+          "eventId": "FOREXCOM:XAUUSD:5:1793982900000:-1:B_CRT:SELL_SIGNAL",
+          "eventType": "SELL_SIGNAL",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "direction": "SELL",
+          "strategy": "B_CRT",
+          "entry": 4059.76,
+          "sl": 4068.08,
+          "tp1": 4051.44,
+          "tp2": 4043.12,
+          "tp3": 4034.8,
+          "reason": "Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100",
+          "setupProgress": "Entry triggered (simulated)",
+          "alignment": "ALIGNED",
+          "scriptVersion": "0.8.0",
+          "quality": 90,
+          "timestamp": 1793982900000,
+          "h1Trend": "Bearish",
+          "targetSource": "Fixed R projection",
+          "setupTimestamp": 1793982000000,
+          "invalidation": 4067.26,
+          "eventTimestamp": 1793982900000,
+          "status": "ENTRY_TRIGGERED",
+          "entryMode": "Close",
+          "managedSl": 4068.08,
+          "signalPrice": 4059.76,
+          "executionModel": "INDICATOR_ESTIMATE",
+          "filledEntry": 4059.76
+        }
+      },
+      {
+        "rawPrefix": "2026-11-06T23:30:00.000+07:00",
+        "type": "ENTRY_TRIGGERED",
+        "payload": {
+          "eventId": "FOREXCOM:XAUUSD:5:1793982900000:-1:B_CRT:ENTRY_TRIGGERED",
+          "eventType": "ENTRY_TRIGGERED",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "direction": "SELL",
+          "strategy": "B_CRT",
+          "entry": 4059.76,
+          "sl": 4068.08,
+          "tp1": 4051.44,
+          "tp2": 4043.12,
+          "tp3": 4034.8,
+          "reason": "Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100",
+          "setupProgress": "Entry triggered (simulated)",
+          "alignment": "ALIGNED",
+          "scriptVersion": "0.8.0",
+          "quality": 90,
+          "timestamp": 1793982900000,
+          "h1Trend": "Bearish",
+          "targetSource": "Fixed R projection",
+          "setupTimestamp": 1793982000000,
+          "invalidation": 4067.26,
+          "eventTimestamp": 1793982900000,
+          "status": "ENTRY_TRIGGERED",
+          "entryMode": "Close",
+          "managedSl": 4068.08,
+          "signalPrice": 4059.76,
+          "executionModel": "INDICATOR_ESTIMATE",
+          "filledEntry": 4059.76
+        }
+      },
+      {
+        "rawPrefix": "2026-11-06T23:30:00.000+07:00",
+        "type": "PLAN_AUDIT",
+        "payload": {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "B_CRT",
+          "timestamp": 1793982900000,
+          "setupTimestamp": 1793982000000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 4059.76,
+          "sl": 4068.08,
+          "tp1": 4051.44,
+          "tp2": 4043.12,
+          "tp3": 4034.8,
+          "quality": 90,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        }
+      },
+      {
+        "rawPrefix": "2026-11-06T23:45:00.000+07:00",
+        "type": "TRADE_CLOSED",
+        "payload": {
+          "eventId": "FOREXCOM:XAUUSD:5:1793982900000:-1:B_CRT:TRADE_CLOSED",
+          "eventType": "TRADE_CLOSED",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "direction": "SELL",
+          "strategy": "B_CRT",
+          "entry": 4059.76,
+          "sl": 4068.08,
+          "tp1": 4051.44,
+          "tp2": 4043.12,
+          "tp3": 4034.8,
+          "reason": "Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100",
+          "setupProgress": "Previous trade closed",
+          "alignment": "ALIGNED",
+          "scriptVersion": "0.8.0",
+          "quality": 90,
+          "timestamp": 1793982900000,
+          "h1Trend": "Bearish",
+          "targetSource": "Fixed R projection",
+          "setupTimestamp": 1793982000000,
+          "invalidation": 4067.26,
+          "eventTimestamp": 1793983800000,
+          "status": "CLOSED",
+          "entryMode": "Close",
+          "managedSl": 4068.08,
+          "signalPrice": 4059.76,
+          "executionModel": "INDICATOR_ESTIMATE",
+          "filledEntry": 4059.76,
+          "closeReason": "TIME_EXIT",
+          "closedAt": 1793983800000
+        }
+      }
+    ]
+  },
+  "observedSetupToPlanDelay": {
+    "B_CRT": {
+      "plans": 46,
+      "medianMinutes": 7.5,
+      "minMinutes": 5.0,
+      "maxMinutes": 60.0
+    },
+    "C_TURTLE_SOUP": {
+      "plans": 9,
+      "medianMinutes": 10.0,
+      "minMinutes": 5.0,
+      "maxMinutes": 20.0
+    },
+    "D_SNR": {
+      "plans": 3,
+      "medianMinutes": 15.0,
+      "minMinutes": 15.0,
+      "maxMinutes": 25.0
+    },
+    "E_DEMAND": {
+      "plans": 1,
+      "medianMinutes": 5.0,
+      "minMinutes": 5.0,
+      "maxMinutes": 5.0
+    },
+    "E_SUPPLY": {
+      "plans": 4,
+      "medianMinutes": 20.0,
+      "minMinutes": 5.0,
+      "maxMinutes": 35.0
+    },
+    "F_TREND_PULLBACK": {
+      "plans": 13,
+      "medianMinutes": 10.0,
+      "minMinutes": 5.0,
+      "maxMinutes": 85.0
+    },
+    "H_QUASIMODO": {
+      "plans": 2,
+      "medianMinutes": 35.0,
+      "minMinutes": 10.0,
+      "maxMinutes": 60.0
+    }
+  },
+  "limitations": [
+    "No actual exit price or realized PnL in this Indicator row",
+    "Delay distribution uses accepted plans only; not all rejected setups",
+    "No future signal frequency or outcome guarantee",
+    "No thresholds or confirmation rules adjusted to this losing-looking example"
+  ]
+}

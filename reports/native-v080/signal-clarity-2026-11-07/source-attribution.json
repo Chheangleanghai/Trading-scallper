@@ -1,0 +1,7 @@
+{
+  "source": "pine/experiments/indicator_signal_clarity.pine",
+  "sha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+  "lines": 1685,
+  "normalizedEditorMatch": true,
+  "method": "Native Pine Editor Select All Copy; paste into plain TextEdit; full selected text read from accessibility; CRLF normalized. No source edit between copy-back and compile."
+}

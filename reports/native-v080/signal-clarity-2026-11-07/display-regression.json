@@ -1,0 +1,27 @@
+{
+  "type": "SAME_MODEL_DISPLAY_REGRESSION",
+  "tolerance": 0,
+  "beforePlanCount": 78,
+  "afterPlanCount": 78,
+  "beforeMessageCount": 338,
+  "afterMessageCount": 338,
+  "fullOrderedMessagesIdentical": true,
+  "allPlanPayloadsIdentical": true,
+  "crossModelParity": "Not tested by this comparison",
+  "artifacts": [
+    {
+      "path": "indicator-before-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "rows": 338,
+      "firstDate": "2026-10-12T17:00:00.000+07:00",
+      "lastDate": "2026-11-06T23:45:00.000+07:00"
+    },
+    {
+      "path": "indicator-after-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "rows": 338,
+      "firstDate": "2026-10-12T17:00:00.000+07:00",
+      "lastDate": "2026-11-06T23:45:00.000+07:00"
+    }
+  ]
+}

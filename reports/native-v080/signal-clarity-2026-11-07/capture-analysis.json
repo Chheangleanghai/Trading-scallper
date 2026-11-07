@@ -1,0 +1,59 @@
+{
+  "status": "SAME_MODEL_DISPLAY_AND_ONE_RELOAD_MATCH",
+  "tolerance": 0,
+  "fullOrderedStreamsEqual": true,
+  "runs": [
+    {
+      "file": "indicator-before-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "firstLogPrefix": "2026-10-12T17:00:00.000+07:00",
+      "lastLogPrefix": "2026-11-06T23:45:00.000+07:00"
+    },
+    {
+      "file": "indicator-after-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "firstLogPrefix": "2026-10-12T17:00:00.000+07:00",
+      "lastLogPrefix": "2026-11-06T23:45:00.000+07:00"
+    },
+    {
+      "file": "indicator-reload-download-verified.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "firstLogPrefix": "2026-10-12T17:00:00.000+07:00",
+      "lastLogPrefix": "2026-11-06T23:45:00.000+07:00"
+    }
+  ],
+  "indicatorSourceSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+  "normalizedEditorCopyMatch": true,
+  "actualInputsCaptured": 127,
+  "previousSharedInputChanges": [],
+  "estimatedClosedPlans": 78,
+  "estimatedCloseReasons": {
+    "TIME_EXIT": 69,
+    "STOP": 9
+  },
+  "stopEventsByModule": {
+    "B_CRT": 6,
+    "E_SUPPLY": 2,
+    "H_QUASIMODO": 1
+  },
+  "picturedPlanCloseReason": "TIME_EXIT",
+  "picturedPlanStopEvent": false,
+  "baselineHashesUnchanged": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0"
+  },
+  "limits": [
+    "Indicator OHLC estimates only; no actual exit price, realized PnL or broker fill conclusion.",
+    "One closed-market historical reload is not candle-by-candle Replay or full non-repainting proof.",
+    "Same-model display regression is not Indicator/Strategy cross-model parity.",
+    "No change in confirmed-entry timing, future frequency, win rate or profitability is established.",
+    "127 inputs were captured before reload. The final full post-reload input recapture was interrupted.",
+    "Matching Strategy revision has local generation/parser checks only, not native compilation."
+  ]
+}

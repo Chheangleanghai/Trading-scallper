@@ -1,0 +1,28 @@
+{
+  "status": "MATCH",
+  "scope": "Same-model closed-market historical reload; not Bar Replay or complete non-repainting verification",
+  "tolerance": 0,
+  "runs": [
+    {
+      "file": "indicator-before-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "sameOrderedMessagesAsBefore": true
+    },
+    {
+      "file": "indicator-after-clarity-raw.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "sameOrderedMessagesAsBefore": true
+    },
+    {
+      "file": "indicator-reload-download-verified.csv",
+      "sha256": "6cae46557a6ff0350f5656d9d3453da9e4ed94c9f4736f56c7abcdb0131f8e55",
+      "messages": 338,
+      "plans": 78,
+      "sameOrderedMessagesAsBefore": true
+    }
+  ]
+}
