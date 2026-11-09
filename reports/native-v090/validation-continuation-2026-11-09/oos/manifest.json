@@ -1,0 +1,22 @@
+{
+  "README.md": {
+    "bytes": 6717,
+    "sha256": "01b45ace316fb0bd2639c7299bdcb1e1a9e035833de5040abc497d5c6ec5095d"
+  },
+  "audit-oos.py": {
+    "bytes": 9370,
+    "sha256": "5e3795bc569f4b78a402a2de21be4ee24d7a4cdd234b9e8bce0701372f66c386"
+  },
+  "existing-strategy-outcomes.json": {
+    "bytes": 61906,
+    "sha256": "9d5fc6d9fafd59830f81109f22dce694f72d92af7a286661b36af6897cb3a21e"
+  },
+  "exploratory-protocol-overlap.json": {
+    "bytes": 5469,
+    "sha256": "71c7cec727f66388648a1771e0c940c87e78ea222414ceb7d98bef4988052b61"
+  },
+  "protocol-and-coverage-audit.json": {
+    "bytes": 5078,
+    "sha256": "8bdaf45139bbbc174eea6f4d685fa91195ee7bf71536d4806901fd48bc4c6062"
+  }
+}

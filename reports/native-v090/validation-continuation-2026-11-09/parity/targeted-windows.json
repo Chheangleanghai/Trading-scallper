@@ -1,0 +1,93 @@
+{
+  "symbol": "FOREXCOM:XAUUSD",
+  "timeframe": "5",
+  "configurationRule": "Change diagnostic logging window only. Preserve all trading inputs, useResearchWindow setting, full loaded history, execution Properties, and source hashes. Use a new capture identity per model/run and verify actual completeness; never assume budget suffices.",
+  "windows": [
+    {
+      "name": "oct19",
+      "startUTC": "2026-10-19T09:00:00+00:00",
+      "endUTCExclusive": "2026-10-19T11:30:00+00:00",
+      "startWIB": "2026-10-19T16:00:00+07:00",
+      "endWIBExclusive": "2026-10-19T18:30:00+07:00",
+      "startTimestamp": 1792400400000,
+      "endTimestamp": 1792409400000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1792406100000,
+        1792407900000
+      ],
+      "purpose": "prior F close observation, later F selection, downstream B quota"
+    },
+    {
+      "name": "oct22-morning",
+      "startUTC": "2026-10-22T08:00:00+00:00",
+      "endUTCExclusive": "2026-10-22T09:00:00+00:00",
+      "startWIB": "2026-10-22T15:00:00+07:00",
+      "endWIBExclusive": "2026-10-22T16:00:00+07:00",
+      "startTimestamp": 1792656000000,
+      "endTimestamp": 1792659600000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1792658100000
+      ],
+      "purpose": "prior B close, candidate replacement, Strategy-only B"
+    },
+    {
+      "name": "oct22-afternoon",
+      "startUTC": "2026-10-22T14:45:00+00:00",
+      "endUTCExclusive": "2026-10-22T16:05:00+00:00",
+      "startWIB": "2026-10-22T21:45:00+07:00",
+      "endWIBExclusive": "2026-10-22T23:05:00+07:00",
+      "startTimestamp": 1792680300000,
+      "endTimestamp": 1792685100000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1792683600000
+      ],
+      "purpose": "prior B close and common F setupTimestamp split"
+    },
+    {
+      "name": "nov03",
+      "startUTC": "2026-11-03T07:30:00+00:00",
+      "endUTCExclusive": "2026-11-03T09:10:00+00:00",
+      "startWIB": "2026-11-03T14:30:00+07:00",
+      "endWIBExclusive": "2026-11-03T16:10:00+07:00",
+      "startTimestamp": 1793691000000,
+      "endTimestamp": 1793697000000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1793695200000
+      ],
+      "purpose": "prior B setup/close and common F setupTimestamp split"
+    },
+    {
+      "name": "nov04",
+      "startUTC": "2026-11-04T09:30:00+00:00",
+      "endUTCExclusive": "2026-11-04T10:45:00+00:00",
+      "startWIB": "2026-11-04T16:30:00+07:00",
+      "endWIBExclusive": "2026-11-04T17:45:00+07:00",
+      "startTimestamp": 1793784600000,
+      "endTimestamp": 1793789100000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1793787600000
+      ],
+      "purpose": "prior F close, B versus F arbitration"
+    },
+    {
+      "name": "nov05-priority",
+      "startUTC": "2026-11-05T10:30:00+00:00",
+      "endUTCExclusive": "2026-11-05T14:45:00+00:00",
+      "startWIB": "2026-11-05T17:30:00+07:00",
+      "endWIBExclusive": "2026-11-05T21:45:00+07:00",
+      "startTimestamp": 1793874600000,
+      "endTimestamp": 1793889900000,
+      "diagnosticBudget": 6000,
+      "mismatchTimestamps": [
+        1793880900000,
+        1793888400000
+      ],
+      "purpose": "unexplained F candidate originating11:10, confirmation12:15, downstream quota14:20"
+    }
+  ]
+}

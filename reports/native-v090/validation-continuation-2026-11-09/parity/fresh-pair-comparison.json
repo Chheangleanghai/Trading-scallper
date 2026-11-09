@@ -1,0 +1,778 @@
+{
+  "schema": "fresh-native-pair-comparison/v1",
+  "artifacts": {
+    "indicator": {
+      "path": "reports/native-v090/indicator-install-2026-11-09/indicator-native-logs.csv",
+      "sha256": "9ec927afd475e5a30e16996a3750a9e83e3e39245b598989b4d2943da5cffee3"
+    },
+    "strategy": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-common-window.csv",
+      "sha256": "8ec3dfb885cc66889bffc650c81ab7618371d14dad29652c6a34a41cbe2172f6"
+    },
+    "priorStrategy": {
+      "path": "reports/native-v090/tradingview-strategy-diagnostics-2026-11-08-repeat.csv",
+      "sha256": "a05d294dc820d78d0ca1ffac71c1e5c8f4ddf194d65884fcd0564287e0e3b0bd"
+    },
+    "indicatorNov5": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-nov5.csv",
+      "sha256": "adc3c166600ce762ce4ec0f1f15a23988e73d946be5d60a8d239ebfcff9f3abb"
+    },
+    "strategyNov5": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-nov5.csv",
+      "sha256": "e9a6a82e656697ef7f4277921d1df372ea2300b684452afc0d2984b87265a42f"
+    }
+  },
+  "fullAvailableHistory": {
+    "counts": {
+      "left": 78,
+      "right": 79,
+      "common": 76,
+      "exactCommon": 73
+    },
+    "parity": false,
+    "indicatorPlans": 78,
+    "strategyPlans": 79,
+    "tolerance": 0,
+    "mismatches": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792406100000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792683600000",
+        "field": "setupTimestamp",
+        "indicator": 1792682700000,
+        "strategy": 1792683000000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793695200000",
+        "field": "setupTimestamp",
+        "indicator": 1793694000000,
+        "strategy": 1793694300000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "setupTimestamp",
+        "indicator": 1793787000000,
+        "strategy": 1793787300000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "strategy",
+        "indicator": "B_CRT",
+        "strategy": "F_TREND_PULLBACK"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "quality",
+        "indicator": 90,
+        "strategy": 80
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "sl",
+        "indicator": 4040.39,
+        "strategy": 4040.37,
+        "delta": 0.01999999999998181,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp1",
+        "indicator": 4052.93,
+        "strategy": 4052.95,
+        "delta": 0.01999999999998181,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp2",
+        "indicator": 4059.2,
+        "strategy": 4059.24,
+        "delta": 0.03999999999996362,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp3",
+        "indicator": 4065.47,
+        "strategy": 4065.53,
+        "delta": 0.06000000000040018,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793880900000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792407900000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792658100000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793888400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      }
+    ],
+    "executionDifferences": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791799500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791816300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791818700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791820800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791885000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791894600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791977400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791992100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792055100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792061700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792140900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792149600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792153200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792159800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792163400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792394700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792397700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792401300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792404300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792480200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792489200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792497900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792500000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792502100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792566900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792571100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792572900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792574700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792576500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792656600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792677900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792681800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792683600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792751700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792755300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792760100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792762200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793026200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793088900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793095800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793098500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793101200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793105700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793184300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793186100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793189400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793261700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793266500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793274000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793281200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793286000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793355000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793360700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793373300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793606700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793615100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793620800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793622600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793636100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793693100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793695200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793707500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793714400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793780700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793783100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793786100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793789700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793866200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793868600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793876100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793886300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793964000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793967300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793979000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793982900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      }
+    ]
+  },
+  "strategyRepeatability": {
+    "counts": {
+      "left": 79,
+      "right": 79,
+      "common": 79,
+      "exactCommon": 79
+    },
+    "parity": true,
+    "indicatorPlans": 79,
+    "strategyPlans": 79,
+    "tolerance": 0,
+    "mismatches": [],
+    "executionDifferences": []
+  },
+  "commonWindow": {
+    "counts": {
+      "left": 2,
+      "right": 2,
+      "common": 2,
+      "exactCommon": 2
+    },
+    "parity": true,
+    "indicatorPlans": 2,
+    "strategyPlans": 2,
+    "tolerance": 0,
+    "mismatches": [],
+    "executionDifferences": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793979000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793982900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      }
+    ]
+  },
+  "nov5Window": {
+    "counts": {
+      "left": 3,
+      "right": 3,
+      "common": 2,
+      "exactCommon": 2
+    },
+    "parity": false,
+    "indicatorPlans": 3,
+    "strategyPlans": 3,
+    "tolerance": 0,
+    "mismatches": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793880900000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793888400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      }
+    ],
+    "executionDifferences": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793876100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793886300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      }
+    ]
+  },
+  "captures": {
+    "indicator": {
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-indicator-2026-11-09",
+        "captureId": "indicator-xauusd-m5-20261109-01:1794199386573",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1793984400000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 452,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "strategy": {
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-pair-2026-11-09",
+        "captureId": "strategy-xauusd-m5-20261109-01:1794201399559",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1793984400000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 447,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "indicatorNov5": {
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "indicator-xauusd-m5-20261109-02:1794202368089",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793874600000,
+        "windowEnd": 1793889900000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 655,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "strategyNov5": {
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "strategy-xauusd-m5-20261109-02:1794202248127",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793874600000,
+        "windowEnd": 1793889900000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 672,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    }
+  },
+  "nativeSourceIdentity": {
+    "strategy": {
+      "copyBackPath": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-editor-copy-back.pine",
+      "copyBackSha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+      "localSha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d"
+    },
+    "indicator": {
+      "copyBackPath": "reports/native-v090/indicator-install-2026-11-09/indicator-editor-copy-back.pine",
+      "copyBackSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+      "localSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852"
+    }
+  },
+  "inputComparison": {
+    "path": "fresh-input-comparison.json",
+    "commonTradingInputVariables": 69,
+    "differences": 0
+  },
+  "strategyPropertiesEvidence": {
+    "path": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-properties-ax.txt",
+    "actual": {
+      "initialCapital": 10000,
+      "currency": "USD",
+      "defaultOrderSize": 100,
+      "defaultOrderSizeType": "% of equity",
+      "pyramiding": 0,
+      "barDetail": "Default (4 ticks per bar)",
+      "scriptExecution": "On bar close",
+      "commission": 0.01,
+      "commissionType": "Percent",
+      "longLeverage": "1x",
+      "shortLeverage": "1x",
+      "slippageTicks": 2,
+      "limitOrderExecution": "Requested price",
+      "orderExecutionDelay": "One tick"
+    },
+    "note": "Values read from the native Properties dialog; default size is overridden by explicit qty in strategy.entry. Screenshot also preserved. No properties were changed for these tests."
+  }
+}

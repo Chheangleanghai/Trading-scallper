@@ -1,0 +1,600 @@
+{
+  "schema": "native-indicator-comparison/v1",
+  "freshIndicator": {
+    "path": "reports/native-v090/indicator-install-2026-11-09/indicator-native-logs.csv",
+    "sha256": "9ec927afd475e5a30e16996a3750a9e83e3e39245b598989b4d2943da5cffee3",
+    "sourceCopyBackSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+    "sourceOnDiskSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+    "sourceCopyBackMatches": true,
+    "capture": {
+      "schema": "signal-diagnostics/v2",
+      "runTag": "native-indicator-2026-11-09",
+      "captureId": "indicator-xauusd-m5-20261109-01:1794199386573",
+      "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+      "model": "INDICATOR_ESTIMATE",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowStart": 1793973600000,
+      "windowEnd": 1793984400000,
+      "firstDataTime": 1791756000000
+    },
+    "status": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+    "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+    "completenessProblems": [],
+    "eventCount": 452,
+    "kindCounts": {
+      "BAR": 36,
+      "CANDIDATE_CLEARED": 1,
+      "CAPTURE_END": 1,
+      "CAPTURE_START": 1,
+      "CHECKS": 8,
+      "CONFIRMATION_PASSED": 8,
+      "ENGINE": 36,
+      "ESTIMATE_FILLED": 2,
+      "ESTIMATE_TRADE_CLOSED": 2,
+      "EXPIRED": 1,
+      "INVALIDATED": 6,
+      "QUALIFIED_PLAN": 2,
+      "SELECTED": 2,
+      "SETUP_DETECTED": 11,
+      "STAGE_REACHED": 11,
+      "STATE": 324
+    },
+    "moduleCounts": {
+      "A": {
+        "detectedCandidates": 1,
+        "stageTransitions": {
+          "1": 1
+        },
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 1,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "B": {
+        "detectedCandidates": 5,
+        "stageTransitions": {
+          "1": 5
+        },
+        "confirmationCandidates": 2,
+        "confirmationPassBars": 2,
+        "invalidated": 3,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 2,
+        "estimatedClosures": 2,
+        "slotBlockedBarObservations": 4
+      },
+      "C": {
+        "detectedCandidates": 1,
+        "stageTransitions": {
+          "1": 1
+        },
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 1,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "D": {
+        "detectedCandidates": 0,
+        "stageTransitions": {},
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 0,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "E": {
+        "detectedCandidates": 0,
+        "stageTransitions": {},
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 0,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "F": {
+        "detectedCandidates": 2,
+        "stageTransitions": {
+          "1": 2
+        },
+        "confirmationCandidates": 2,
+        "confirmationPassBars": 6,
+        "invalidated": 0,
+        "expired": 1,
+        "firstBlockers": {
+          "STOP_DISTANCE": 4,
+          "H1_ALIGNMENT": 2
+        },
+        "allFailedChecks": {
+          "STOP_DISTANCE": 6,
+          "ENTRY_DISTANCE": 6,
+          "H1_ALIGNMENT": 2,
+          "COOLDOWN": 1,
+          "QUALITY": 2
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "G": {
+        "detectedCandidates": 2,
+        "stageTransitions": {
+          "1": 2
+        },
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 1,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "H": {
+        "detectedCandidates": 0,
+        "stageTransitions": {},
+        "confirmationCandidates": 0,
+        "confirmationPassBars": 0,
+        "invalidated": 0,
+        "expired": 0,
+        "firstBlockers": {},
+        "allFailedChecks": {},
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      }
+    },
+    "latencies": [
+      {
+        "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793979000000",
+        "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793978400000",
+        "module": "B_CRT",
+        "setupBar": 5439,
+        "confirmationBar": 5441,
+        "qualifiedBar": 5441,
+        "orderBar": null,
+        "firstActualFillBar": null,
+        "lastActualFillBar": null,
+        "setupToConfirmationBars": 2,
+        "confirmationToQualificationBars": 0,
+        "confirmationToOrderBars": null,
+        "orderToFirstFillBars": null,
+        "orderToFirstFillMilliseconds": null,
+        "reportedFilledQuantity": 0,
+        "observedBlockHistory": [],
+        "limits": []
+      },
+      {
+        "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793982900000",
+        "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793982000000",
+        "module": "B_CRT",
+        "setupBar": 5451,
+        "confirmationBar": 5454,
+        "qualifiedBar": 5454,
+        "orderBar": null,
+        "firstActualFillBar": null,
+        "lastActualFillBar": null,
+        "setupToConfirmationBars": 3,
+        "confirmationToQualificationBars": 0,
+        "confirmationToOrderBars": null,
+        "orderToFirstFillBars": null,
+        "orderToFirstFillMilliseconds": null,
+        "reportedFilledQuantity": 0,
+        "observedBlockHistory": [],
+        "limits": []
+      }
+    ]
+  },
+  "priorStrategy": {
+    "path": "reports/native-v090/tradingview-strategy-diagnostics-2026-11-08-repeat.csv",
+    "sha256": "a05d294dc820d78d0ca1ffac71c1e5c8f4ddf194d65884fcd0564287e0e3b0bd",
+    "capture": {
+      "schema": "signal-diagnostics/v2",
+      "runTag": "native-pair-2026-11-08",
+      "captureId": "indicator-xauusd-m5-20261108-01:1794151806658",
+      "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+      "model": "STRATEGY_EMULATOR",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowStart": 1793973600000,
+      "windowEnd": 1793984400000,
+      "firstDataTime": 1791756000000
+    },
+    "status": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+    "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+    "eventCount": 447,
+    "positions": [
+      {
+        "positionId": "FOREXCOM:XAUUSD:5:B_CRT:1793979000000:1793979000000",
+        "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793979000000",
+        "module": "B_CRT",
+        "gross": -2.2439999999999602,
+        "commission": 1.782022,
+        "net": -4.02602199999996,
+        "exitRows": 1,
+        "cause": "TIME_EXIT",
+        "causeAttribution": "INSTRUMENTATION_REPORTED_WITH_EXIT_ROW_CONSISTENCY",
+        "realizedRToPlannedRisk": -0.2024347345132732,
+        "hypotheticalAdditionalSpreadPerSide": 0,
+        "hypotheticalAdditionalSpreadCost": 0,
+        "hypotheticalNetAfterAdditionalSpread": -4.02602199999996,
+        "targetRows": 0,
+        "partialTargetRows": 0,
+        "targetRowsWithUnknownInitialQuantity": 0
+      },
+      {
+        "positionId": "FOREXCOM:XAUUSD:5:B_CRT:1793982900000:1793982900000",
+        "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793982900000",
+        "module": "B_CRT",
+        "gross": -8.063999999999353,
+        "commission": 1.7058972,
+        "net": -9.769897199999352,
+        "exitRows": 1,
+        "cause": "TIME_EXIT",
+        "causeAttribution": "INSTRUMENTATION_REPORTED_WITH_EXIT_ROW_CONSISTENCY",
+        "realizedRToPlannedRisk": -0.5591745192307517,
+        "hypotheticalAdditionalSpreadPerSide": 0,
+        "hypotheticalAdditionalSpreadCost": 0,
+        "hypotheticalNetAfterAdditionalSpread": -9.769897199999352,
+        "targetRows": 0,
+        "partialTargetRows": 0,
+        "targetRowsWithUnknownInitialQuantity": 0
+      }
+    ],
+    "costs": {
+      "positions": 2,
+      "wins": 0,
+      "losses": 2,
+      "exitRows": 2,
+      "gross": -10.307999999999314,
+      "commission": 3.4879192,
+      "net": -13.795919199999313,
+      "netProfitFactor": 0,
+      "netExpectancy": -6.897959599999656
+    },
+    "kindCounts": {
+      "BAR": 36,
+      "CANDIDATE_CLEARED": 1,
+      "CAPTURE_END": 1,
+      "CAPTURE_START": 1,
+      "CHECKS": 6,
+      "CONFIRMATION_PASSED": 6,
+      "ENGINE": 36,
+      "EXIT_ROW": 2,
+      "EXPIRED": 1,
+      "FILLED": 2,
+      "INVALIDATED": 5,
+      "ORDER_SUBMITTED": 2,
+      "POSITION_CLOSED": 2,
+      "QUALIFIED_PLAN": 2,
+      "SELECTED": 2,
+      "SETUP_DETECTED": 9,
+      "STAGE_REACHED": 9,
+      "STATE": 324
+    }
+  },
+  "contextComparison": {
+    "symbol": {
+      "indicator": "FOREXCOM:XAUUSD",
+      "strategy": "FOREXCOM:XAUUSD",
+      "match": true
+    },
+    "timeframe": {
+      "indicator": "5",
+      "strategy": "5",
+      "match": true
+    },
+    "windowStart": {
+      "indicator": 1793973600000,
+      "strategy": 1793973600000,
+      "match": true
+    },
+    "windowEnd": {
+      "indicator": 1793984400000,
+      "strategy": 1793984400000,
+      "match": true
+    },
+    "firstDataTime": {
+      "indicator": 1791756000000,
+      "strategy": 1791756000000,
+      "match": true
+    }
+  },
+  "boundedPlanComparison": {
+    "parity": true,
+    "indicatorPlans": 2,
+    "strategyPlans": 2,
+    "tolerance": 0,
+    "mismatches": [],
+    "executionDifferences": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793979000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793982900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      }
+    ]
+  },
+  "indicatorPlans": [
+    {
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "strategy": "B_CRT",
+      "timestamp": 1793979000000,
+      "setupTimestamp": 1793978400000,
+      "direction": -1,
+      "entryMode": "Close",
+      "entry": 4049.56,
+      "sl": 4058.6,
+      "tp1": 4040.52,
+      "tp2": 4031.48,
+      "tp3": 4022.44,
+      "quality": 90,
+      "executionAccepted": true,
+      "executionModel": "INDICATOR_ESTIMATE"
+    },
+    {
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "strategy": "B_CRT",
+      "timestamp": 1793982900000,
+      "setupTimestamp": 1793982000000,
+      "direction": -1,
+      "entryMode": "Close",
+      "entry": 4059.76,
+      "sl": 4068.08,
+      "tp1": 4051.44,
+      "tp2": 4043.12,
+      "tp3": 4034.8,
+      "quality": 90,
+      "executionAccepted": true,
+      "executionModel": "INDICATOR_ESTIMATE"
+    }
+  ],
+  "strategyPlans": [
+    {
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "strategy": "B_CRT",
+      "timestamp": 1793979000000,
+      "setupTimestamp": 1793978400000,
+      "direction": -1,
+      "entryMode": "Close",
+      "entry": 4049.56,
+      "sl": 4058.6,
+      "tp1": 4040.52,
+      "tp2": 4031.48,
+      "tp3": 4022.44,
+      "quality": 90,
+      "executionAccepted": true,
+      "executionModel": "STRATEGY_EMULATOR"
+    },
+    {
+      "scriptVersion": "0.8.0",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "strategy": "B_CRT",
+      "timestamp": 1793982900000,
+      "setupTimestamp": 1793982000000,
+      "direction": -1,
+      "entryMode": "Close",
+      "entry": 4059.76,
+      "sl": 4068.08,
+      "tp1": 4051.44,
+      "tp2": 4043.12,
+      "tp3": 4034.8,
+      "quality": 90,
+      "executionAccepted": true,
+      "executionModel": "STRATEGY_EMULATOR"
+    }
+  ],
+  "selectedIdentityMatch": true,
+  "selectedIndicator": [
+    {
+      "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793978400000",
+      "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793979000000"
+    },
+    {
+      "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793982000000",
+      "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793982900000"
+    }
+  ],
+  "selectedStrategy": [
+    {
+      "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793978400000",
+      "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793979000000"
+    },
+    {
+      "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1793982000000",
+      "planId": "FOREXCOM:XAUUSD:5:B_CRT:1793982900000"
+    }
+  ],
+  "candidateDetectionComparison": {
+    "common": [
+      "FOREXCOM:XAUUSD:5:B_CRT:1:1793975100000",
+      "FOREXCOM:XAUUSD:5:G_AMD:-1:1793977200000",
+      "FOREXCOM:XAUUSD:5:B_CRT:-1:1793977500000",
+      "FOREXCOM:XAUUSD:5:B_CRT:-1:1793978400000",
+      "FOREXCOM:XAUUSD:5:B_CRT:-1:1793982000000",
+      "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1:1793982900000",
+      "FOREXCOM:XAUUSD:5:C_TURTLE_SOUP:-1:1793984100000",
+      "FOREXCOM:XAUUSD:5:A_SWEEP_MSS_FVG:-1:1793984100000",
+      "FOREXCOM:XAUUSD:5:G_AMD:-1:1793984400000"
+    ],
+    "indicatorOnly": [
+      "FOREXCOM:XAUUSD:5:B_CRT:-1:1793983800000",
+      "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1:1793983800000"
+    ],
+    "strategyOnly": []
+  },
+  "previousIndicatorComparison": {
+    "path": "reports/native-v090/tradingview-indicator-signal-diag-2026-11-08-repeat2.csv",
+    "eventCount": 452,
+    "identityFieldsExcluded": [
+      "runTag",
+      "captureId",
+      "eventId"
+    ],
+    "otherEventFieldsExactlyMatch": true,
+    "differingSequencePositions": []
+  },
+  "limitations": [
+    "Bounded two-plan planned-field match only; executionModel differences are expected.",
+    "Fresh Indicator exact editor copy-back and full input AX capture exist. Prior Strategy settings are UI-observed in the Nov 8 report, not a signed or complete machine-readable runtime settings export.",
+    "Different capture dates/run tags; same declared symbol/timeframe/window/first loaded data time. Price feed historical revisions cannot be independently excluded.",
+    "Indicator has estimated lifecycle events and no authoritative broker-emulator positions/costs. Strategy rows are from the prior preserved native capture.",
+    "Native parity across all historical plans, no-repainting and OOS profitability are not established."
+  ],
+  "candidateDifferenceClassification": {
+    "classification": "EXECUTION_STATE_DIVERGENCE_WITH_DIRECT_ENGINE_EVIDENCE",
+    "indicatorOnlySetupBar": 5457,
+    "setupObservedAt": 1793983800000,
+    "indicator": {
+      "estimatedClosureObserved": true,
+      "active": false,
+      "pending": false,
+      "brokerBusy": false,
+      "slotAvailable": true
+    },
+    "strategyOnSameBar": {
+      "active": true,
+      "pending": false,
+      "brokerBusy": true,
+      "slotAvailable": false
+    },
+    "strategyClosure": {
+      "observationBar": 5458,
+      "observedAt": 1793984100000,
+      "actualExitTime": 1793983800000,
+      "exitId": "Close entry(s) order B_CRT",
+      "exitComment": "TRADE_CLOSED"
+    },
+    "impact": "Two additional informational setup candidates only; no extra qualified or selected plan in capture."
+  }
+}

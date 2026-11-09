@@ -1,0 +1,1433 @@
+{
+  "schema": "native-input-correspondence/v1",
+  "method": "Native AX snapshots matched by source input label. Separate date/time and session controls remain arrays. Presentation-only inputs are excluded from trading-equivalence comparison.",
+  "paths": {
+    "indicator": "reports/native-v090/indicator-install-2026-11-09/capture-inputs-ax.txt",
+    "strategy": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-common-window-inputs-ax.txt",
+    "indicatorNov5": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-nov5-inputs-ax.txt",
+    "strategyNov5": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-nov5-inputs-ax.txt"
+  },
+  "unmapped": {
+    "indicator": [],
+    "strategy": [],
+    "indicatorNov5": [],
+    "strategyNov5": []
+  },
+  "commonTradingInputVariables": 69,
+  "comparisons": {
+    "commonWindow": {
+      "compared": 69,
+      "missing": [],
+      "differences": [],
+      "rows": [
+        {
+          "variable": "enableA",
+          "label": "A: Sweep + MSS + FVG",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableB",
+          "label": "B: CRT",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableC",
+          "label": "C: Confirmed-pivot Turtle Soup",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableD",
+          "label": "D: K-SNR (confirmed support/resistance)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableE",
+          "label": "E: Supply/demand",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableF",
+          "label": "F: Structural trend pullback",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableG",
+          "label": "G: AMD range approximation",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableH",
+          "label": "H: Confirmed Quasimodo approximation",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "crtTF",
+          "label": "CRT reference timeframe",
+          "left": [
+            "15 minutes"
+          ],
+          "right": [
+            "15 minutes"
+          ]
+        },
+        {
+          "variable": "turtleAge",
+          "label": "Turtle Soup minimum bars since pivot confirmation",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "levelTolerance",
+          "label": "Level/zone tolerance ATR",
+          "left": [
+            "0.15"
+          ],
+          "right": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxZoneTests",
+          "label": "S/D maximum tested bars",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "useEMA50",
+          "label": "Trend pullback: require EMA50",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "pullbackDepth",
+          "label": "Trend pullback: maximum EMA21 overshoot ATR",
+          "left": [
+            "0.3"
+          ],
+          "right": [
+            "0.3"
+          ]
+        },
+        {
+          "variable": "accumulationBars",
+          "label": "AMD prior accumulation bars",
+          "left": [
+            "12"
+          ],
+          "right": [
+            "12"
+          ]
+        },
+        {
+          "variable": "accumulationWidth",
+          "label": "AMD maximum prior range ATR",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "strategyThresholds",
+          "label": "Use strategy-specific quality thresholds",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "thresholdA",
+          "label": "A quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdB",
+          "label": "B quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdC",
+          "label": "C quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdD",
+          "label": "D quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdE",
+          "label": "E quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdF",
+          "label": "F quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdG",
+          "label": "G quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdH",
+          "label": "H quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "useResearchWindow",
+          "label": "Restrict new plans to date window",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "researchStart",
+          "label": "Window start (inclusive)",
+          "left": [
+            "2026-01-01",
+            "07:00"
+          ],
+          "right": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "researchEnd",
+          "label": "Window end (exclusive)",
+          "left": [
+            "2027-01-01",
+            "07:00"
+          ],
+          "right": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "tradeSide",
+          "label": "Allowed direction",
+          "left": [
+            "Both"
+          ],
+          "right": [
+            "Both"
+          ]
+        },
+        {
+          "variable": "auditLog",
+          "label": "Log qualified plans and lifecycle events (research only)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "swing",
+          "label": "Confirmed pivot strength",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "expiry",
+          "label": "Setup expiry bars",
+          "left": [
+            "20"
+          ],
+          "right": [
+            "20"
+          ]
+        },
+        {
+          "variable": "threshold",
+          "label": "Minimum heuristic quality",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "cooldown",
+          "label": "Signal cooldown bars",
+          "left": [
+            "5"
+          ],
+          "right": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxTrades",
+          "label": "Maximum entries per session",
+          "left": [
+            "5"
+          ],
+          "right": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxExposurePct",
+          "label": "Maximum simulated notional / equity % (align with margin properties)",
+          "left": [
+            "90"
+          ],
+          "right": [
+            "90"
+          ]
+        },
+        {
+          "variable": "riskPct",
+          "label": "Simulation risk %",
+          "left": [
+            "0.5"
+          ],
+          "right": [
+            "0.5"
+          ]
+        },
+        {
+          "variable": "buffer",
+          "label": "ATR stop buffer",
+          "left": [
+            "0.15"
+          ],
+          "right": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxStop",
+          "label": "Maximum stop ATR",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "maxDistance",
+          "label": "Maximum entry distance from FVG ATR",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "minRR",
+          "label": "Minimum TP2 reward/risk",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r1",
+          "label": "TP1 fixed R projection",
+          "left": [
+            "1"
+          ],
+          "right": [
+            "1"
+          ]
+        },
+        {
+          "variable": "r2",
+          "label": "TP2 fixed R projection",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r3",
+          "label": "TP3 fixed R projection",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "minDisp",
+          "label": "MSS body minimum ATR",
+          "left": [
+            "0.7"
+          ],
+          "right": [
+            "0.7"
+          ]
+        },
+        {
+          "variable": "trendFilter",
+          "label": "Require H1 alignment",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "emaFilter",
+          "label": "Require EMA 9/21 alignment",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "useSession",
+          "label": "Session filter",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "sessionPreset",
+          "label": "Session preset",
+          "left": [
+            "London"
+          ],
+          "right": [
+            "London"
+          ]
+        },
+        {
+          "variable": "sessionHours",
+          "label": "Trading session",
+          "left": [
+            "08:00",
+            "17:00"
+          ],
+          "right": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "variable": "sessionZone",
+          "label": "IANA session timezone (handles DST)",
+          "left": [
+            "Europe/London"
+          ],
+          "right": [
+            "Europe/London"
+          ]
+        },
+        {
+          "variable": "manualPause",
+          "label": "Manual news pause",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "newsStart",
+          "label": "Manual exclusion start",
+          "left": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "right": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "newsEnd",
+          "label": "Manual exclusion end",
+          "left": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "right": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "entryMode",
+          "label": "Entry mode",
+          "left": [
+            "Close"
+          ],
+          "right": [
+            "Close"
+          ]
+        },
+        {
+          "variable": "pendingBars",
+          "label": "Pending entry expiry bars",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "timeExit",
+          "label": "Maximum holding minutes (0 disables)",
+          "left": [
+            "15"
+          ],
+          "right": [
+            "15"
+          ]
+        },
+        {
+          "variable": "targetMode",
+          "label": "Target mode",
+          "left": [
+            "Fixed R"
+          ],
+          "right": [
+            "Fixed R"
+          ]
+        },
+        {
+          "variable": "stopMode",
+          "label": "Stop mode",
+          "left": [
+            "Structure"
+          ],
+          "right": [
+            "Structure"
+          ]
+        },
+        {
+          "variable": "atrStop",
+          "label": "ATR stop multiplier",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "breakEven",
+          "label": "Move stop to filled entry after trigger R",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "breakEvenR",
+          "label": "Break-even trigger R",
+          "left": [
+            "1"
+          ],
+          "right": [
+            "1"
+          ]
+        },
+        {
+          "variable": "trailing",
+          "label": "ATR trailing stop after trigger R",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "trailingStartR",
+          "label": "Trailing activation R",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "trailingATR",
+          "label": "Trailing ATR distance",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "confluenceLiquidity",
+          "label": "Score optional liquidity (category cap 20)",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "confluenceFib",
+          "label": "Require optional 50–61.8% swing retracement",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "confluencePD",
+          "label": "Require optional premium/discount location",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "partial",
+          "label": "Partial TP: 33% / 33% / 34% (strategy)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        }
+      ]
+    },
+    "nov5Window": {
+      "compared": 69,
+      "missing": [],
+      "differences": [],
+      "rows": [
+        {
+          "variable": "enableA",
+          "label": "A: Sweep + MSS + FVG",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableB",
+          "label": "B: CRT",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableC",
+          "label": "C: Confirmed-pivot Turtle Soup",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableD",
+          "label": "D: K-SNR (confirmed support/resistance)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableE",
+          "label": "E: Supply/demand",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableF",
+          "label": "F: Structural trend pullback",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableG",
+          "label": "G: AMD range approximation",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "enableH",
+          "label": "H: Confirmed Quasimodo approximation",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "crtTF",
+          "label": "CRT reference timeframe",
+          "left": [
+            "15 minutes"
+          ],
+          "right": [
+            "15 minutes"
+          ]
+        },
+        {
+          "variable": "turtleAge",
+          "label": "Turtle Soup minimum bars since pivot confirmation",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "levelTolerance",
+          "label": "Level/zone tolerance ATR",
+          "left": [
+            "0.15"
+          ],
+          "right": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxZoneTests",
+          "label": "S/D maximum tested bars",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "useEMA50",
+          "label": "Trend pullback: require EMA50",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "pullbackDepth",
+          "label": "Trend pullback: maximum EMA21 overshoot ATR",
+          "left": [
+            "0.3"
+          ],
+          "right": [
+            "0.3"
+          ]
+        },
+        {
+          "variable": "accumulationBars",
+          "label": "AMD prior accumulation bars",
+          "left": [
+            "12"
+          ],
+          "right": [
+            "12"
+          ]
+        },
+        {
+          "variable": "accumulationWidth",
+          "label": "AMD maximum prior range ATR",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "strategyThresholds",
+          "label": "Use strategy-specific quality thresholds",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "thresholdA",
+          "label": "A quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdB",
+          "label": "B quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdC",
+          "label": "C quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdD",
+          "label": "D quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdE",
+          "label": "E quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdF",
+          "label": "F quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdG",
+          "label": "G quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdH",
+          "label": "H quality threshold",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "useResearchWindow",
+          "label": "Restrict new plans to date window",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "researchStart",
+          "label": "Window start (inclusive)",
+          "left": [
+            "2026-01-01",
+            "07:00"
+          ],
+          "right": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "researchEnd",
+          "label": "Window end (exclusive)",
+          "left": [
+            "2027-01-01",
+            "07:00"
+          ],
+          "right": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "tradeSide",
+          "label": "Allowed direction",
+          "left": [
+            "Both"
+          ],
+          "right": [
+            "Both"
+          ]
+        },
+        {
+          "variable": "auditLog",
+          "label": "Log qualified plans and lifecycle events (research only)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "swing",
+          "label": "Confirmed pivot strength",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "expiry",
+          "label": "Setup expiry bars",
+          "left": [
+            "20"
+          ],
+          "right": [
+            "20"
+          ]
+        },
+        {
+          "variable": "threshold",
+          "label": "Minimum heuristic quality",
+          "left": [
+            "75"
+          ],
+          "right": [
+            "75"
+          ]
+        },
+        {
+          "variable": "cooldown",
+          "label": "Signal cooldown bars",
+          "left": [
+            "5"
+          ],
+          "right": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxTrades",
+          "label": "Maximum entries per session",
+          "left": [
+            "5"
+          ],
+          "right": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxExposurePct",
+          "label": "Maximum simulated notional / equity % (align with margin properties)",
+          "left": [
+            "90"
+          ],
+          "right": [
+            "90"
+          ]
+        },
+        {
+          "variable": "riskPct",
+          "label": "Simulation risk %",
+          "left": [
+            "0.5"
+          ],
+          "right": [
+            "0.5"
+          ]
+        },
+        {
+          "variable": "buffer",
+          "label": "ATR stop buffer",
+          "left": [
+            "0.15"
+          ],
+          "right": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxStop",
+          "label": "Maximum stop ATR",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "maxDistance",
+          "label": "Maximum entry distance from FVG ATR",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "minRR",
+          "label": "Minimum TP2 reward/risk",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r1",
+          "label": "TP1 fixed R projection",
+          "left": [
+            "1"
+          ],
+          "right": [
+            "1"
+          ]
+        },
+        {
+          "variable": "r2",
+          "label": "TP2 fixed R projection",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r3",
+          "label": "TP3 fixed R projection",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "minDisp",
+          "label": "MSS body minimum ATR",
+          "left": [
+            "0.7"
+          ],
+          "right": [
+            "0.7"
+          ]
+        },
+        {
+          "variable": "trendFilter",
+          "label": "Require H1 alignment",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "emaFilter",
+          "label": "Require EMA 9/21 alignment",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "useSession",
+          "label": "Session filter",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        },
+        {
+          "variable": "sessionPreset",
+          "label": "Session preset",
+          "left": [
+            "London"
+          ],
+          "right": [
+            "London"
+          ]
+        },
+        {
+          "variable": "sessionHours",
+          "label": "Trading session",
+          "left": [
+            "08:00",
+            "17:00"
+          ],
+          "right": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "variable": "sessionZone",
+          "label": "IANA session timezone (handles DST)",
+          "left": [
+            "Europe/London"
+          ],
+          "right": [
+            "Europe/London"
+          ]
+        },
+        {
+          "variable": "manualPause",
+          "label": "Manual news pause",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "newsStart",
+          "label": "Manual exclusion start",
+          "left": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "right": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "newsEnd",
+          "label": "Manual exclusion end",
+          "left": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "right": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "entryMode",
+          "label": "Entry mode",
+          "left": [
+            "Close"
+          ],
+          "right": [
+            "Close"
+          ]
+        },
+        {
+          "variable": "pendingBars",
+          "label": "Pending entry expiry bars",
+          "left": [
+            "3"
+          ],
+          "right": [
+            "3"
+          ]
+        },
+        {
+          "variable": "timeExit",
+          "label": "Maximum holding minutes (0 disables)",
+          "left": [
+            "15"
+          ],
+          "right": [
+            "15"
+          ]
+        },
+        {
+          "variable": "targetMode",
+          "label": "Target mode",
+          "left": [
+            "Fixed R"
+          ],
+          "right": [
+            "Fixed R"
+          ]
+        },
+        {
+          "variable": "stopMode",
+          "label": "Stop mode",
+          "left": [
+            "Structure"
+          ],
+          "right": [
+            "Structure"
+          ]
+        },
+        {
+          "variable": "atrStop",
+          "label": "ATR stop multiplier",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "breakEven",
+          "label": "Move stop to filled entry after trigger R",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "breakEvenR",
+          "label": "Break-even trigger R",
+          "left": [
+            "1"
+          ],
+          "right": [
+            "1"
+          ]
+        },
+        {
+          "variable": "trailing",
+          "label": "ATR trailing stop after trigger R",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "trailingStartR",
+          "label": "Trailing activation R",
+          "left": [
+            "2"
+          ],
+          "right": [
+            "2"
+          ]
+        },
+        {
+          "variable": "trailingATR",
+          "label": "Trailing ATR distance",
+          "left": [
+            "1.5"
+          ],
+          "right": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "confluenceLiquidity",
+          "label": "Score optional liquidity (category cap 20)",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "confluenceFib",
+          "label": "Require optional 50–61.8% swing retracement",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "confluencePD",
+          "label": "Require optional premium/discount location",
+          "left": [
+            false
+          ],
+          "right": [
+            false
+          ]
+        },
+        {
+          "variable": "partial",
+          "label": "Partial TP: 33% / 33% / 34% (strategy)",
+          "left": [
+            true
+          ],
+          "right": [
+            true
+          ]
+        }
+      ]
+    }
+  }
+}

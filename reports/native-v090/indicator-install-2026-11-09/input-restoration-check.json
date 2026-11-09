@@ -1,0 +1,29 @@
+{
+  "initialControls": 140,
+  "captureControls": 140,
+  "finalControls": 140,
+  "restoredExactly": true,
+  "captureInputChanges": [
+    {
+      "index": 48,
+      "before": "checkbox (settable, integer) Description: Log qualified plans and lifecycle events (research only), Value: 0",
+      "capture": "checkbox (settable, integer) Description: Log qualified plans and lifecycle events (research only), Value: 1"
+    },
+    {
+      "index": 132,
+      "before": "combo box (collapsed) Value: Off, ID: in_127, Secondary Actions: Expand",
+      "capture": "combo box (collapsed) Value: Events, ID: in_127, Secondary Actions: Expand"
+    },
+    {
+      "index": 133,
+      "before": "text field (settable) research-1",
+      "capture": "text field (settable) native-indicator-2026-11-09"
+    },
+    {
+      "index": 134,
+      "before": "text field (settable) capture-2026-11-07-01",
+      "capture": "text field (settable) indicator-xauusd-m5-20261109-01"
+    }
+  ],
+  "sourceSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852"
+}

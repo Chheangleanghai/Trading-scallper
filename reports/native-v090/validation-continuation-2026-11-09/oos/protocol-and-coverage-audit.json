@@ -1,0 +1,92 @@
+{
+  "schema": "prospective-oos-coverage-audit/v1",
+  "auditedAtUTC": "2026-11-09T04:56:01.780601+00:00",
+  "status": "INCOMPLETE_FUTURE_WINDOW_AND_NATIVE_PROTOCOL_RUN_MISSING",
+  "protocolPath": "reports/native-v080/continuation-2026-11-05/prospective-oos-protocol.json",
+  "protocolSha256": "f80e952d239d68ee43ea7941fdb488f13d0342ed138a437aa67f35e20e2b704c",
+  "protocolPreparedAtUTC": "2026-11-05T01:26:23.182856+00:00",
+  "protocolRuntimeAppliedClaim": false,
+  "independentlyRegistered": false,
+  "frozenSource": {
+    "path": "pine/experiments/strategy_quantity_units.pine",
+    "sha256": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+    "matchesProtocol": true
+  },
+  "referenceHashChecks": [
+    {
+      "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-top.ax.txt",
+      "expectedSha256": "2682e61d2fdaaa479b8d5411520d7edb1aac4ad9505f783238a3cd93f2e09b60",
+      "actualSha256": "2682e61d2fdaaa479b8d5411520d7edb1aac4ad9505f783238a3cd93f2e09b60",
+      "match": true
+    },
+    {
+      "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-middle.ax.txt",
+      "expectedSha256": "16635f220e4db4063ad2f773c5abeb7bdf750ab02735d2a6bb82fc1198a1bfe8",
+      "actualSha256": "16635f220e4db4063ad2f773c5abeb7bdf750ab02735d2a6bb82fc1198a1bfe8",
+      "match": true
+    },
+    {
+      "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-inputs-bottom.ax.txt",
+      "expectedSha256": "20211c8b810e71ed21d6fe4b59fdf805fe81032a24d8a08b34667fe30e44bf34",
+      "actualSha256": "20211c8b810e71ed21d6fe4b59fdf805fe81032a24d8a08b34667fe30e44bf34",
+      "match": true
+    },
+    {
+      "path": "reports/native-v080/continuation-2026-11-05/matrix-window-final-properties.ax.txt",
+      "expectedSha256": "5a69048184def7a9c5ba54fc521c7cd8dd90900a2aa4d51c13133b614b3ffdfa",
+      "actualSha256": "5a69048184def7a9c5ba54fc521c7cd8dd90900a2aa4d51c13133b614b3ffdfa",
+      "match": true
+    }
+  ],
+  "plannedWindowUTC": {
+    "startInclusive": "2026-11-06T00:00:00+00:00",
+    "endExclusive": "2026-11-20T00:00:00+00:00",
+    "startMs": 1793923200000,
+    "endMs": 1795132800000
+  },
+  "windowEndIsFutureAtAudit": true,
+  "latestNativeStrategyCoverage": {
+    "path": "reports/native-v090/tradingview-strategy-diagnostics-2026-11-08-repeat.csv",
+    "sha256": "a05d294dc820d78d0ca1ffac71c1e5c8f4ddf194d65884fcd0564287e0e3b0bd",
+    "actualSourcePath": "pine/experiments/strategy_signal_diagnostics.pine",
+    "actualSourceSha256OnDisk": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+    "firstEntryUTC": "2026-10-12T10:05:00+00:00",
+    "lastExitUTC": "2026-11-06T16:50:00+00:00",
+    "firstPlanUTC": "2026-10-12T10:05:00+00:00",
+    "lastPlanUTC": "2026-11-06T16:35:00+00:00",
+    "completePositions": 79,
+    "actualExitRows": 115,
+    "preProtocolPlans": 75,
+    "protocolAdmissionWindowApplied": false,
+    "admissionWindowEvidence": "Native PLAN_AUDIT records before Nov6 start; not inferred merely from source defaults.",
+    "newUntouchedOosPositionsEstablished": 0,
+    "newUntouchedOosPositionsStatus": "NOT_ESTABLISHED; zero is not a claim that no future trades occur.",
+    "boundedDiagnosticBars": 36,
+    "firstLoadedBarTimeUTC": "2026-10-11T22:00:00+00:00",
+    "completePreWindowWarmupBarCount": null,
+    "warmupStatus": "FIRST_DATA_TIME_BEFORE_START_BUT_1000_ACTUAL_PRE_WINDOW_BARS_NOT_EXPORTED_OR_COUNTED"
+  },
+  "prospectiveAvailability": {
+    "originalProtocol": "Can only be completed after Nov20 UTC and after any carried position closes; full runtime settings and every admitted/missing/open plan remain required.",
+    "untouchedFutureTailCandidate": {
+      "startInclusiveUTC": "2026-11-10T00:00:00+00:00",
+      "endExclusiveUTC": "2026-11-20T00:00:00+00:00",
+      "status": "FUTURE_AT_AUDIT_NOT_EXECUTED_NOT_A_REPLACEMENT_PROTOCOL",
+      "conditions": "Keep the existing frozen source/inputs/properties; disclose this as a new continuation if used. Do not substitute it silently for Nov6-Nov20 or claim an outcome before bars exist."
+    }
+  },
+  "missingEvidence": [
+    "Native run of exact protocol source bf6dd641... with Nov6-Nov20 research admission restriction actually applied and full source copy-back, all Inputs and Strategy Properties captured.",
+    "At least 1000 preceding actual M5 calculation bars, verified by a counted history/bar export or bounded diagnostic trace; firstDataTime alone is insufficient.",
+    "Remaining future market bars through Nov20 and all plan/order/fill/exit records, including open or unmatched positions and cross-end closure follow-up.",
+    "Adequate independent chronological sample. Protocol labels fewer than 30 complete positions inconclusive; 30 is not a power guarantee.",
+    "Separate intratrade and closed-position drawdown evidence; existing position summaries only reconstruct the latter."
+  ],
+  "safety": {
+    "sourcesChanged": false,
+    "parametersRetuned": false,
+    "syntheticBarsCreated": false,
+    "alternateFeedFetched": false,
+    "automationCreated": false
+  }
+}

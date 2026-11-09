@@ -1,0 +1,153 @@
+{
+  "status": "EXPLORATORY_ALREADY_INSPECTED_SUBSET_NOT_OOS",
+  "rawPath": "reports/native-v090/tradingview-strategy-diagnostics-2026-11-08-repeat.csv",
+  "rawSha256": "a05d294dc820d78d0ca1ffac71c1e5c8f4ddf194d65884fcd0564287e0e3b0bd",
+  "selection": "Actual entryTime >= original protocol start and < original protocol end; this is a slice of an all-history run, not a new window-restricted run.",
+  "summary": {
+    "completePositions": 4,
+    "actualExitRows": 6,
+    "wins": 1,
+    "losses": 3,
+    "breakevens": 0,
+    "grossBeforeCommission": -11.655,
+    "commission": 6.9050137000000005,
+    "net": -18.5600137,
+    "meanNet": -4.640003425,
+    "netPositionProfitFactor": 0.35548997315899,
+    "closedPositionDrawdownFromZero": 28.7970907,
+    "intratradeDrawdown": null,
+    "intratradeDrawdownStatus": "UNAVAILABLE_FROM_POSITION_SUMMARY",
+    "sparseSample": true,
+    "positionsByModule": {
+      "C_TURTLE_SOUP": 1,
+      "B_CRT": 3
+    },
+    "costTreatment": "Net already includes commission. Slippage is embedded in native fills; no second deduction. No spread assumed."
+  },
+  "byModule": {
+    "B_CRT": {
+      "completePositions": 3,
+      "actualExitRows": 3,
+      "wins": 0,
+      "losses": 3,
+      "breakevens": 0,
+      "grossBeforeCommission": -23.601,
+      "commission": 5.1960907,
+      "net": -28.7970907,
+      "meanNet": -9.599030233333332,
+      "netPositionProfitFactor": 0.0,
+      "closedPositionDrawdownFromZero": 28.7970907,
+      "intratradeDrawdown": null,
+      "intratradeDrawdownStatus": "UNAVAILABLE_FROM_POSITION_SUMMARY",
+      "sparseSample": true,
+      "positionsByModule": {
+        "B_CRT": 3
+      },
+      "costTreatment": "Net already includes commission. Slippage is embedded in native fills; no second deduction. No spread assumed."
+    },
+    "C_TURTLE_SOUP": {
+      "completePositions": 1,
+      "actualExitRows": 3,
+      "wins": 1,
+      "losses": 0,
+      "breakevens": 0,
+      "grossBeforeCommission": 11.946,
+      "commission": 1.708923,
+      "net": 10.237077,
+      "meanNet": 10.237077,
+      "netPositionProfitFactor": null,
+      "closedPositionDrawdownFromZero": 0,
+      "intratradeDrawdown": null,
+      "intratradeDrawdownStatus": "UNAVAILABLE_FROM_POSITION_SUMMARY",
+      "sparseSample": true,
+      "positionsByModule": {
+        "C_TURTLE_SOUP": 1
+      },
+      "costTreatment": "Net already includes commission. Slippage is embedded in native fills; no second deduction. No spread assumed."
+    }
+  },
+  "positions": [
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793964000000,\"C_TURTLE_SOUP\"]",
+      "planTimestamp": 1793964000000,
+      "entryTime": 1793964000000,
+      "exitTime": 1793964900000,
+      "module": "C_TURTLE_SOUP",
+      "quality": 90,
+      "direction": 1,
+      "actualExitRows": 3,
+      "plannedInitialCashRisk": 7.014,
+      "net": 10.237077,
+      "commission": 1.708923,
+      "grossBeforeCommission": 11.946,
+      "netRToPlannedInitialCashRisk": 1.4595205303678356,
+      "exitComments": [
+        "TP1_HIT",
+        "TP2_HIT",
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793967300000,\"B_CRT\"]",
+      "planTimestamp": 1793967300000,
+      "entryTime": 1793967300000,
+      "exitTime": 1793968200000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 20.307000000000002,
+      "net": -15.0011715,
+      "commission": 1.7081715,
+      "grossBeforeCommission": -13.293,
+      "netRToPlannedInitialCashRisk": -0.738719234746639,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793979000000,\"B_CRT\"]",
+      "planTimestamp": 1793979000000,
+      "entryTime": 1793979000000,
+      "exitTime": 1793979900000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 19.887999999999998,
+      "net": -4.026022,
+      "commission": 1.782022,
+      "grossBeforeCommission": -2.244,
+      "netRToPlannedInitialCashRisk": -0.20243473451327437,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    },
+    {
+      "key": "[\"FOREXCOM:XAUUSD\",\"5\",1793982900000,\"B_CRT\"]",
+      "planTimestamp": 1793982900000,
+      "entryTime": 1793982900000,
+      "exitTime": 1793983800000,
+      "module": "B_CRT",
+      "quality": 90,
+      "direction": -1,
+      "actualExitRows": 1,
+      "plannedInitialCashRisk": 17.472,
+      "net": -9.7698972,
+      "commission": 1.7058972,
+      "grossBeforeCommission": -8.064,
+      "netRToPlannedInitialCashRisk": -0.5591745192307692,
+      "exitComments": [
+        "TRADE_CLOSED"
+      ]
+    }
+  ],
+  "incompletePositionsInFullCapture": [],
+  "plansWithoutExitRowsInFullCapture": [],
+  "limitations": [
+    "These Nov6 observations were already examined in Tester/diagnostic work. They are not a newly untouched holdout.",
+    "Pre-Nov6 admitted plans demonstrate that this run did not apply the protocol admission window. Carry-in equity, session quota and active/pending state can change later sizing and selections.",
+    "Exact frozen protocol source is strategy_quantity_units.pine; latest native CSV was the diagnostics wrapper. Static similarity does not supply missing native source/settings provenance.",
+    "The 4 positions do not establish module efficacy, statistical power, or future profitability; no parameters are selected from their outcomes."
+  ]
+}

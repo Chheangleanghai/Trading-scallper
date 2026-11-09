@@ -1,0 +1,74 @@
+{
+  "indicator": {
+    "source": "pine/experiments/indicator_signal_diagnostics.pine",
+    "sha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+    "requestSecurityCalls": [
+      {
+        "line": 156,
+        "source": "[hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 262,
+        "source": "mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 527,
+        "source": "[crtHigh, crtLow, crtTime] = request.security(syminfo.tickerid, crtTF, [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 543,
+        "source": "[pdh, pdl] = request.security(syminfo.tickerid, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 544,
+        "source": "[pwh, pwl] = request.security(syminfo.tickerid, 'W', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+      }
+    ],
+    "allRequestsUsePreviousCompletedValues": true,
+    "mainEngineConfirmedLine": 868,
+    "currentWrapperHasVolumeReference": false,
+    "currentWrapperHasVarip": false,
+    "hasViewportDependency": false,
+    "timenowReferences": [
+      366,
+      368
+    ],
+    "diagnosticsRecordsRealtimeOrHistoryFlags": false
+  },
+  "strategy": {
+    "source": "pine/experiments/strategy_signal_diagnostics.pine",
+    "sha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+    "requestSecurityCalls": [
+      {
+        "line": 120,
+        "source": "[hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 226,
+        "source": "mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 491,
+        "source": "[crtHigh, crtLow, crtTime] = request.security(syminfo.tickerid, crtTF, [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 507,
+        "source": "[pdh, pdl] = request.security(syminfo.tickerid, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+      },
+      {
+        "line": 508,
+        "source": "[pwh, pwl] = request.security(syminfo.tickerid, 'W', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+      }
+    ],
+    "allRequestsUsePreviousCompletedValues": true,
+    "mainEngineConfirmedLine": 891,
+    "currentWrapperHasVolumeReference": false,
+    "currentWrapperHasVarip": false,
+    "hasViewportDependency": false,
+    "timenowReferences": [
+      330,
+      332
+    ],
+    "diagnosticsRecordsRealtimeOrHistoryFlags": false
+  }
+}

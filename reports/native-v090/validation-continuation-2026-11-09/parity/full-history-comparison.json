@@ -1,0 +1,3030 @@
+{
+  "schema": "full-history-plan-parity-evidence/v1",
+  "status": "STRICT_PLAN_PARITY_FAILED",
+  "scope": "All PLAN_AUDIT records in the two preserved exports; no date-window filtering and no mismatch normalization.",
+  "artifacts": {
+    "indicator": {
+      "path": "reports/native-v090/indicator-install-2026-11-09/indicator-native-logs.csv",
+      "sha256": "9ec927afd475e5a30e16996a3750a9e83e3e39245b598989b4d2943da5cffee3"
+    },
+    "strategy": {
+      "path": "reports/native-v090/tradingview-strategy-diagnostics-2026-11-08-repeat.csv",
+      "sha256": "a05d294dc820d78d0ca1ffac71c1e5c8f4ddf194d65884fcd0564287e0e3b0bd"
+    },
+    "previousIndicator": {
+      "path": "reports/native-v090/tradingview-indicator-signal-diag-2026-11-08-repeat2.csv",
+      "sha256": "32097a3aebc5b403fa0fcfd773528f092d7cfbfe57866ef802c88071d7590df7"
+    },
+    "supportingPriorReview": {
+      "path": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+      "sha256": "0e211f761e7e5214fed93be97792a1faa8ca9038c8dd493cd9bf8e33fdea7634"
+    }
+  },
+  "counts": {
+    "indicatorPlans": 78,
+    "strategyPlans": 79,
+    "commonPlans": 76,
+    "exactCommonPlans": 73,
+    "differingCommonPlans": 3,
+    "indicatorOnlyPlans": 2,
+    "strategyOnlyPlans": 3,
+    "mismatchPlanKeys": 8,
+    "fieldOrMissingPlanMismatches": 14
+  },
+  "planRange": {
+    "indicator": {
+      "first": "2026-10-12T10:05:00.000Z",
+      "last": "2026-11-06T16:35:00.000Z"
+    },
+    "strategy": {
+      "first": "2026-10-12T10:05:00.000Z",
+      "last": "2026-11-06T16:35:00.000Z"
+    }
+  },
+  "diagnosticCoverage": {
+    "indicator": {
+      "diagnosticEvents": 452,
+      "windowStart": 1793973600000,
+      "windowEnd": 1793984400000,
+      "firstDataTime": 1791756000000
+    },
+    "strategy": {
+      "diagnosticEvents": 447,
+      "windowStart": 1793973600000,
+      "windowEnd": 1793984400000,
+      "firstDataTime": 1791756000000
+    }
+  },
+  "comparison": {
+    "parity": false,
+    "indicatorPlans": 78,
+    "strategyPlans": 79,
+    "tolerance": 0,
+    "mismatches": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792406100000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792683600000",
+        "field": "setupTimestamp",
+        "indicator": 1792682700000,
+        "strategy": 1792683000000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793695200000",
+        "field": "setupTimestamp",
+        "indicator": 1793694000000,
+        "strategy": 1793694300000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "setupTimestamp",
+        "indicator": 1793787000000,
+        "strategy": 1793787300000
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "strategy",
+        "indicator": "B_CRT",
+        "strategy": "F_TREND_PULLBACK"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "quality",
+        "indicator": 90,
+        "strategy": 80
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "sl",
+        "indicator": 4040.39,
+        "strategy": 4040.37,
+        "delta": 0.01999999999998181,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp1",
+        "indicator": 4052.93,
+        "strategy": 4052.95,
+        "delta": 0.01999999999998181,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp2",
+        "indicator": 4059.2,
+        "strategy": 4059.24,
+        "delta": 0.03999999999996362,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "tp3",
+        "indicator": 4065.47,
+        "strategy": 4065.53,
+        "delta": 0.06000000000040018,
+        "tolerance": 0
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793880900000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792407900000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792658100000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793888400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      }
+    ],
+    "executionDifferences": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791799500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791816300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791818700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791820800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791885000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791894600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791977400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1791992100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792055100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792061700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792140900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792149600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792153200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792159800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792163400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792394700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792397700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792401300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792404300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792480200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792489200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792497900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792500000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792502100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792566900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792571100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792572900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792574700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792576500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792656600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792677900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792681800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792683600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792751700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792755300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792760100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1792762200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793026200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793088900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793095800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793098500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793101200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793105700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793184300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793186100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793189400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793261700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793266500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793274000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793281200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793286000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793355000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793360700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793373300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793606700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793615100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793620800000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793622600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793636100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793693100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793695200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793707500000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793714400000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793780700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793783100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793786100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793787600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793789700000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793866200000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793868600000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793876100000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793886300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793964000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793967300000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793979000000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793982900000",
+        "field": "executionModel",
+        "indicator": "INDICATOR_ESTIMATE",
+        "strategy": "STRATEGY_EMULATOR"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "timestamp": 1792406100000,
+      "utc": "2026-10-19T10:35:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1792406100000",
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        }
+      ],
+      "indicatorPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1792406100000,
+        "setupTimestamp": 1792405200000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 4166.48,
+        "sl": 4173.19,
+        "tp1": 4159.77,
+        "tp2": 4153.06,
+        "tp3": 4146.35,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "INDICATOR_ESTIMATE"
+      },
+      "strategyPlan": null,
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 4,
+        "strategy": 4
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 78,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "eventTimestamp": 1792402200000,
+            "closedAt": 1792402200000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "STOP",
+            "entry": 4172.1,
+            "sl": 4168.84,
+            "tp1": 4175.36,
+            "tp2": 4178.62,
+            "tp3": 4181.88,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 81,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "direction": -1,
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 82,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "eventTimestamp": 1792405200000,
+            "closedAt": 1792405200000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 85,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792406100000,
+            "setupTimestamp": 1792405200000,
+            "direction": -1,
+            "entry": 4166.48,
+            "sl": 4173.19,
+            "tp1": 4159.77,
+            "tp2": 4153.06,
+            "tp3": 4146.35,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 86,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792406100000,
+            "setupTimestamp": 1792405200000,
+            "eventTimestamp": 1792407000000,
+            "closedAt": 1792407000000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4166.48,
+            "sl": 4173.19,
+            "tp1": 4159.77,
+            "tp2": 4153.06,
+            "tp3": 4146.35,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 135,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "entryTime": 1792401300000,
+            "exitTime": 1792401900000,
+            "direction": 1,
+            "exitId": "TP1",
+            "exitComment": "STOP_LOSS_HIT",
+            "tp1": 4175.36,
+            "tp2": 4178.62,
+            "tp3": 4181.88,
+            "actualEntry": 4172.12,
+            "actualExit": 4168.82,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 137,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "entryTime": 1792401300000,
+            "exitTime": 1792401900000,
+            "direction": 1,
+            "exitId": "TP2",
+            "exitComment": "STOP_LOSS_HIT",
+            "tp1": 4175.36,
+            "tp2": 4178.62,
+            "tp3": 4181.88,
+            "actualEntry": 4172.12,
+            "actualExit": 4168.82,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 138,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "entryTime": 1792401300000,
+            "exitTime": 1792401900000,
+            "direction": 1,
+            "exitId": "TP3",
+            "exitComment": "STOP_LOSS_HIT",
+            "tp1": 4175.36,
+            "tp2": 4178.62,
+            "tp3": 4181.88,
+            "actualEntry": 4172.12,
+            "actualExit": 4168.82,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 139,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "eventTimestamp": 1792402200000,
+            "closedAt": 1792401900000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "STOP",
+            "entry": 4172.1,
+            "sl": 4168.84,
+            "tp1": 4175.36,
+            "tp2": 4178.62,
+            "tp3": 4181.88,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 140,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792401300000,
+            "setupTimestamp": 1792400700000,
+            "entryTime": 1792401300000,
+            "exitTime": 1792401900000,
+            "direction": 1,
+            "actualEntry": 4172.12,
+            "initialQty": 2.1,
+            "netProfitDelta": -8.6815974
+          },
+          {
+            "messageIndex": 142,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "direction": -1,
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 145,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "entryTime": 1792404300000,
+            "exitTime": 1792405200000,
+            "direction": -1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "actualEntry": 4167.29,
+            "actualExit": 4168.04,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 146,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "eventTimestamp": 1792405500000,
+            "closedAt": 1792405200000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 147,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "entryTime": 1792404300000,
+            "exitTime": 1792405200000,
+            "direction": -1,
+            "actualEntry": 4167.29,
+            "initialQty": 2.1,
+            "netProfitDelta": -3.3254193
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1792404300000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1792404300000,
+              "setupTimestamp": 1792403700000,
+              "eventTimestamp": 1792405200000,
+              "closedAt": 1792405200000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4167.31,
+              "sl": 4173.21,
+              "tp1": 4161.41,
+              "tp2": 4155.51,
+              "tp3": 4149.61,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1792404300000,
+              "setupTimestamp": 1792403700000,
+              "eventTimestamp": 1792405500000,
+              "closedAt": 1792405200000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4167.31,
+              "sl": 4173.21,
+              "tp1": 4161.41,
+              "tp2": 4155.51,
+              "tp3": 4149.61,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED",
+        "explanation": "F setup at10:20 versus10:25, then trigger4167.79 versus4164.96; archived traces directly show the slot difference."
+      }
+    },
+    {
+      "timestamp": 1792407900000,
+      "utc": "2026-10-19T11:05:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1792407900000",
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        }
+      ],
+      "indicatorPlan": null,
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "B_CRT",
+        "timestamp": 1792407900000,
+        "setupTimestamp": 1792407000000,
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": 4171.15,
+        "sl": 4161.85,
+        "tp1": 4180.45,
+        "tp2": 4189.75,
+        "tp3": 4199.05,
+        "quality": 90,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 5,
+        "strategy": 4
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 81,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "direction": -1,
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 82,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "eventTimestamp": 1792405200000,
+            "closedAt": 1792405200000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 85,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792406100000,
+            "setupTimestamp": 1792405200000,
+            "direction": -1,
+            "entry": 4166.48,
+            "sl": 4173.19,
+            "tp1": 4159.77,
+            "tp2": 4153.06,
+            "tp3": 4146.35,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 86,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792406100000,
+            "setupTimestamp": 1792405200000,
+            "eventTimestamp": 1792407000000,
+            "closedAt": 1792407000000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4166.48,
+            "sl": 4173.19,
+            "tp1": 4159.77,
+            "tp2": 4153.06,
+            "tp3": 4146.35,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 142,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "direction": -1,
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 145,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "entryTime": 1792404300000,
+            "exitTime": 1792405200000,
+            "direction": -1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "actualEntry": 4167.29,
+            "actualExit": 4168.04,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 146,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "eventTimestamp": 1792405500000,
+            "closedAt": 1792405200000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4167.31,
+            "sl": 4173.21,
+            "tp1": 4161.41,
+            "tp2": 4155.51,
+            "tp3": 4149.61,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 147,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792404300000,
+            "setupTimestamp": 1792403700000,
+            "entryTime": 1792404300000,
+            "exitTime": 1792405200000,
+            "direction": -1,
+            "actualEntry": 4167.29,
+            "initialQty": 2.1,
+            "netProfitDelta": -3.3254193
+          },
+          {
+            "messageIndex": 149,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792407900000,
+            "setupTimestamp": 1792407000000,
+            "direction": 1,
+            "entry": 4171.15,
+            "sl": 4161.85,
+            "tp1": 4180.45,
+            "tp2": 4189.75,
+            "tp3": 4199.05,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 152,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792407900000,
+            "setupTimestamp": 1792407000000,
+            "entryTime": 1792407900000,
+            "exitTime": 1792408800000,
+            "direction": 1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4180.45,
+            "tp2": 4189.75,
+            "tp3": 4199.05,
+            "actualEntry": 4171.17,
+            "actualExit": 4175.02,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 153,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792407900000,
+            "setupTimestamp": 1792407000000,
+            "eventTimestamp": 1792409100000,
+            "closedAt": 1792408800000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4171.15,
+            "sl": 4161.85,
+            "tp1": 4180.45,
+            "tp2": 4189.75,
+            "tp3": 4199.05,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 154,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792407900000,
+            "setupTimestamp": 1792407000000,
+            "entryTime": 1792407900000,
+            "exitTime": 1792408800000,
+            "direction": 1,
+            "actualEntry": 4171.17,
+            "initialQty": 2.1,
+            "netProfitDelta": 6.3323001
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1792404300000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1792404300000,
+              "setupTimestamp": 1792403700000,
+              "eventTimestamp": 1792405200000,
+              "closedAt": 1792405200000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4167.31,
+              "sl": 4173.21,
+              "tp1": 4161.41,
+              "tp2": 4155.51,
+              "tp3": 4149.61,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1792404300000,
+              "setupTimestamp": 1792403700000,
+              "eventTimestamp": 1792405500000,
+              "closedAt": 1792405200000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4167.31,
+              "sl": 4173.21,
+              "tp1": 4161.41,
+              "tp2": 4155.51,
+              "tp3": 4149.61,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_PLAN_COUNTS_CONSISTENT_WITH_QUOTA_BLOCK",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "QUOTA_BLOCK_ESTABLISHED",
+        "explanation": "Indicator has five accepted plans after its10:35 F; Strategy has four and can take11:05 B."
+      }
+    },
+    {
+      "timestamp": 1792658100000,
+      "utc": "2026-10-22T08:35:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1792658100000",
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        }
+      ],
+      "indicatorPlan": null,
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "B_CRT",
+        "timestamp": 1792658100000,
+        "setupTimestamp": 1792657800000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 4087.67,
+        "sl": 4094.89,
+        "tp1": 4080.45,
+        "tp2": 4073.23,
+        "tp3": 4066.01,
+        "quality": 90,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 1,
+        "strategy": 1
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 133,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "direction": -1,
+            "entry": 4083.28,
+            "sl": 4093.34,
+            "tp1": 4073.22,
+            "tp2": 4063.16,
+            "tp3": 4053.1,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 134,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "eventTimestamp": 1792657500000,
+            "closedAt": 1792657500000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4083.28,
+            "sl": 4093.34,
+            "tp1": 4073.22,
+            "tp2": 4063.16,
+            "tp3": 4053.1,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 236,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "direction": -1,
+            "entry": 4083.28,
+            "sl": 4093.34,
+            "tp1": 4073.22,
+            "tp2": 4063.16,
+            "tp3": 4053.1,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 239,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "entryTime": 1792656600000,
+            "exitTime": 1792657500000,
+            "direction": -1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4073.22,
+            "tp2": 4063.16,
+            "tp3": 4053.1,
+            "actualEntry": 4083.26,
+            "actualExit": 4090.72,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 240,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "eventTimestamp": 1792657800000,
+            "closedAt": 1792657500000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4083.28,
+            "sl": 4093.34,
+            "tp1": 4073.22,
+            "tp2": 4063.16,
+            "tp3": 4053.1,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 241,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792656600000,
+            "setupTimestamp": 1792656300000,
+            "entryTime": 1792656600000,
+            "exitTime": 1792657500000,
+            "direction": -1,
+            "actualEntry": 4083.26,
+            "initialQty": 2.1,
+            "netProfitDelta": -17.3825358
+          },
+          {
+            "messageIndex": 243,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792658100000,
+            "setupTimestamp": 1792657800000,
+            "direction": -1,
+            "entry": 4087.67,
+            "sl": 4094.89,
+            "tp1": 4080.45,
+            "tp2": 4073.23,
+            "tp3": 4066.01,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 246,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792658100000,
+            "setupTimestamp": 1792657800000,
+            "entryTime": 1792658100000,
+            "exitTime": 1792659000000,
+            "direction": -1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4080.45,
+            "tp2": 4073.23,
+            "tp3": 4066.01,
+            "actualEntry": 4087.65,
+            "actualExit": 4091.05,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 247,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792658100000,
+            "setupTimestamp": 1792657800000,
+            "eventTimestamp": 1792659300000,
+            "closedAt": 1792659000000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4087.67,
+            "sl": 4094.89,
+            "tp1": 4080.45,
+            "tp2": 4073.23,
+            "tp3": 4066.01,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 248,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792658100000,
+            "setupTimestamp": 1792657800000,
+            "entryTime": 1792658100000,
+            "exitTime": 1792659000000,
+            "direction": -1,
+            "actualEntry": 4087.65,
+            "initialQty": 2.1,
+            "netProfitDelta": -8.857527
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1792656600000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1792656600000,
+              "setupTimestamp": 1792656300000,
+              "eventTimestamp": 1792657500000,
+              "closedAt": 1792657500000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4083.28,
+              "sl": 4093.34,
+              "tp1": 4073.22,
+              "tp2": 4063.16,
+              "tp3": 4053.1,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1792656600000,
+              "setupTimestamp": 1792656300000,
+              "eventTimestamp": 1792657800000,
+              "closedAt": 1792657500000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4083.28,
+              "sl": 4093.34,
+              "tp1": 4073.22,
+              "tp2": 4063.16,
+              "tp3": 4053.1,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED",
+        "explanation": "Indicator creates B at08:25 and it invalidates; Strategy is busy until08:30, creates a different later B, then triggers08:35."
+      }
+    },
+    {
+      "timestamp": 1792683600000,
+      "utc": "2026-10-22T15:40:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1792683600000",
+          "field": "setupTimestamp",
+          "indicator": 1792682700000,
+          "strategy": 1792683000000
+        }
+      ],
+      "indicatorPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1792683600000,
+        "setupTimestamp": 1792682700000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 4050.67,
+        "sl": 4065.87,
+        "tp1": 4035.47,
+        "tp2": 4020.27,
+        "tp3": 4005.07,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "INDICATOR_ESTIMATE"
+      },
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1792683600000,
+        "setupTimestamp": 1792683000000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 4050.67,
+        "sl": 4065.87,
+        "tp1": 4035.47,
+        "tp2": 4020.27,
+        "tp3": 4005.07,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 3,
+        "strategy": 4
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 141,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "direction": -1,
+            "entry": 4057.67,
+            "sl": 4064.17,
+            "tp1": 4051.17,
+            "tp2": 4044.67,
+            "tp3": 4038.17,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 142,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "eventTimestamp": 1792682700000,
+            "closedAt": 1792682700000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4057.67,
+            "sl": 4064.17,
+            "tp1": 4051.17,
+            "tp2": 4044.67,
+            "tp3": 4038.17,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 145,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792683600000,
+            "setupTimestamp": 1792682700000,
+            "direction": -1,
+            "entry": 4050.67,
+            "sl": 4065.87,
+            "tp1": 4035.47,
+            "tp2": 4020.27,
+            "tp3": 4005.07,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 146,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792683600000,
+            "setupTimestamp": 1792682700000,
+            "eventTimestamp": 1792684500000,
+            "closedAt": 1792684500000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4050.67,
+            "sl": 4065.87,
+            "tp1": 4035.47,
+            "tp2": 4020.27,
+            "tp3": 4005.07,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 254,
+            "kind": "TRADE_CLOSED",
+            "strategy": "E_SUPPLY",
+            "timestamp": 1792677900000,
+            "setupTimestamp": 1792677300000,
+            "eventTimestamp": 1792679100000,
+            "closedAt": 1792678800000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4054.09,
+            "sl": 4068.61,
+            "tp1": 4039.57,
+            "tp2": 4025.05,
+            "tp3": 4010.53,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 257,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "direction": -1,
+            "entry": 4057.67,
+            "sl": 4064.17,
+            "tp1": 4051.17,
+            "tp2": 4044.67,
+            "tp3": 4038.17,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 260,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "entryTime": 1792681800000,
+            "exitTime": 1792682700000,
+            "direction": -1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4051.17,
+            "tp2": 4044.67,
+            "tp3": 4038.17,
+            "actualEntry": 4057.65,
+            "actualExit": 4057.45,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 261,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "eventTimestamp": 1792683000000,
+            "closedAt": 1792682700000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4057.67,
+            "sl": 4064.17,
+            "tp1": 4051.17,
+            "tp2": 4044.67,
+            "tp3": 4038.17,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 262,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1792681800000,
+            "setupTimestamp": 1792681200000,
+            "entryTime": 1792681800000,
+            "exitTime": 1792682700000,
+            "direction": -1,
+            "actualEntry": 4057.65,
+            "initialQty": 2.2,
+            "netProfitDelta": -1.345322
+          },
+          {
+            "messageIndex": 264,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792683600000,
+            "setupTimestamp": 1792683000000,
+            "direction": -1,
+            "entry": 4050.67,
+            "sl": 4065.87,
+            "tp1": 4035.47,
+            "tp2": 4020.27,
+            "tp3": 4005.07,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 267,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792683600000,
+            "setupTimestamp": 1792683000000,
+            "entryTime": 1792683600000,
+            "exitTime": 1792684500000,
+            "direction": -1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4035.47,
+            "tp2": 4020.27,
+            "tp3": 4005.07,
+            "actualEntry": 4050.65,
+            "actualExit": 4054.16,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 268,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1792683600000,
+            "setupTimestamp": 1792683000000,
+            "eventTimestamp": 1792684800000,
+            "closedAt": 1792684500000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4050.67,
+            "sl": 4065.87,
+            "tp1": 4035.47,
+            "tp2": 4020.27,
+            "tp3": 4005.07,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 269,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1792683600000,
+            "setupTimestamp": 1792683000000,
+            "entryTime": 1792683600000,
+            "exitTime": 1792684500000,
+            "direction": -1,
+            "actualEntry": 4050.65,
+            "initialQty": 2.2,
+            "netProfitDelta": -9.5050582
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1792681800000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1792681800000,
+              "setupTimestamp": 1792681200000,
+              "eventTimestamp": 1792682700000,
+              "closedAt": 1792682700000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4057.67,
+              "sl": 4064.17,
+              "tp1": 4051.17,
+              "tp2": 4044.67,
+              "tp3": 4038.17,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1792681800000,
+              "setupTimestamp": 1792681200000,
+              "eventTimestamp": 1792683000000,
+              "closedAt": 1792682700000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4057.67,
+              "sl": 4064.17,
+              "tp1": 4051.17,
+              "tp2": 4044.67,
+              "tp3": 4038.17,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED",
+        "explanation": "F setupTimestamp15:25 versus15:30 matches prior-position close observation difference."
+      }
+    },
+    {
+      "timestamp": 1793695200000,
+      "utc": "2026-11-03T08:40:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793695200000",
+          "field": "setupTimestamp",
+          "indicator": 1793694000000,
+          "strategy": 1793694300000
+        }
+      ],
+      "indicatorPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1793695200000,
+        "setupTimestamp": 1793694000000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 3906.84,
+        "sl": 3914.74,
+        "tp1": 3898.94,
+        "tp2": 3891.04,
+        "tp3": 3883.14,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "INDICATOR_ESTIMATE"
+      },
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1793695200000,
+        "setupTimestamp": 1793694300000,
+        "direction": -1,
+        "entryMode": "Close",
+        "entry": 3906.84,
+        "sl": 3914.74,
+        "tp1": 3898.94,
+        "tp2": 3891.04,
+        "tp3": 3883.14,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 1,
+        "strategy": 1
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 263,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "direction": -1,
+            "entry": 3905.58,
+            "sl": 3914.77,
+            "tp1": 3896.39,
+            "tp2": 3887.2,
+            "tp3": 3878.01,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 264,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "eventTimestamp": 1793694000000,
+            "closedAt": 1793694000000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 3905.58,
+            "sl": 3914.77,
+            "tp1": 3896.39,
+            "tp2": 3887.2,
+            "tp3": 3878.01,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 267,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793695200000,
+            "setupTimestamp": 1793694000000,
+            "direction": -1,
+            "entry": 3906.84,
+            "sl": 3914.74,
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 269,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793695200000,
+            "setupTimestamp": 1793694000000,
+            "eventTimestamp": 1793696100000,
+            "closedAt": 1793696100000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 3906.84,
+            "sl": 3914.74,
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 477,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "direction": -1,
+            "entry": 3905.58,
+            "sl": 3914.77,
+            "tp1": 3896.39,
+            "tp2": 3887.2,
+            "tp3": 3878.01,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 480,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "entryTime": 1793693100000,
+            "exitTime": 1793694000000,
+            "direction": -1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 3896.39,
+            "tp2": 3887.2,
+            "tp3": 3878.01,
+            "actualEntry": 3905.56,
+            "actualExit": 3909.17,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 481,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "eventTimestamp": 1793694300000,
+            "closedAt": 1793694000000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 3905.58,
+            "sl": 3914.77,
+            "tp1": 3896.39,
+            "tp2": 3887.2,
+            "tp3": 3878.01,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 482,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793693100000,
+            "setupTimestamp": 1793691300000,
+            "entryTime": 1793693100000,
+            "exitTime": 1793694000000,
+            "direction": -1,
+            "actualEntry": 3905.56,
+            "initialQty": 2.2,
+            "netProfitDelta": -9.6612406
+          },
+          {
+            "messageIndex": 484,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793695200000,
+            "setupTimestamp": 1793694300000,
+            "direction": -1,
+            "entry": 3906.84,
+            "sl": 3914.74,
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 487,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793695200000,
+            "setupTimestamp": 1793694300000,
+            "entryTime": 1793695200000,
+            "exitTime": 1793695500000,
+            "direction": -1,
+            "exitId": "TP1",
+            "exitComment": "TP1_HIT",
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "actualEntry": 3906.82,
+            "actualExit": 3898.94,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 489,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793695200000,
+            "setupTimestamp": 1793694300000,
+            "entryTime": 1793695200000,
+            "exitTime": 1793696100000,
+            "direction": -1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "actualEntry": 3906.82,
+            "actualExit": 3898.39,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 490,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793695200000,
+            "setupTimestamp": 1793694300000,
+            "eventTimestamp": 1793696400000,
+            "closedAt": 1793696100000,
+            "direction": "SELL",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 3906.84,
+            "sl": 3914.74,
+            "tp1": 3898.94,
+            "tp2": 3891.04,
+            "tp3": 3883.14,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 491,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793695200000,
+            "setupTimestamp": 1793694300000,
+            "entryTime": 1793695200000,
+            "exitTime": 1793696100000,
+            "direction": -1,
+            "actualEntry": 3906.82,
+            "initialQty": 2.2,
+            "netProfitDelta": 16.4438153
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1793693100000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1793693100000,
+              "setupTimestamp": 1793691300000,
+              "eventTimestamp": 1793694000000,
+              "closedAt": 1793694000000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 3905.58,
+              "sl": 3914.77,
+              "tp1": 3896.39,
+              "tp2": 3887.2,
+              "tp3": 3878.01,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1793693100000,
+              "setupTimestamp": 1793691300000,
+              "eventTimestamp": 1793694300000,
+              "closedAt": 1793694000000,
+              "direction": "SELL",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 3905.58,
+              "sl": 3914.77,
+              "tp1": 3896.39,
+              "tp2": 3887.2,
+              "tp3": 3878.01,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED",
+        "explanation": "F setupTimestamp08:20 versus08:25 matches prior-position close observation difference."
+      }
+    },
+    {
+      "timestamp": 1793787600000,
+      "utc": "2026-11-04T10:20:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "setupTimestamp",
+          "indicator": 1793787000000,
+          "strategy": 1793787300000
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "strategy",
+          "indicator": "B_CRT",
+          "strategy": "F_TREND_PULLBACK"
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "quality",
+          "indicator": 90,
+          "strategy": 80
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "sl",
+          "indicator": 4040.39,
+          "strategy": 4040.37,
+          "delta": 0.01999999999998181,
+          "tolerance": 0
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "tp1",
+          "indicator": 4052.93,
+          "strategy": 4052.95,
+          "delta": 0.01999999999998181,
+          "tolerance": 0
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "tp2",
+          "indicator": 4059.2,
+          "strategy": 4059.24,
+          "delta": 0.03999999999996362,
+          "tolerance": 0
+        },
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793787600000",
+          "field": "tp3",
+          "indicator": 4065.47,
+          "strategy": 4065.53,
+          "delta": 0.06000000000040018,
+          "tolerance": 0
+        }
+      ],
+      "indicatorPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "B_CRT",
+        "timestamp": 1793787600000,
+        "setupTimestamp": 1793787000000,
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": 4046.66,
+        "sl": 4040.39,
+        "tp1": 4052.93,
+        "tp2": 4059.2,
+        "tp3": 4065.47,
+        "quality": 90,
+        "executionAccepted": true,
+        "executionModel": "INDICATOR_ESTIMATE"
+      },
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1793787600000,
+        "setupTimestamp": 1793787300000,
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": 4046.66,
+        "sl": 4040.37,
+        "tp1": 4052.95,
+        "tp2": 4059.24,
+        "tp3": 4065.53,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 3,
+        "strategy": 3
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 286,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "direction": 1,
+            "entry": 4035.84,
+            "sl": 4019.62,
+            "tp1": 4052.06,
+            "tp2": 4068.28,
+            "tp3": 4084.5,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 287,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "eventTimestamp": 1793784000000,
+            "closedAt": 1793784000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4035.84,
+            "sl": 4019.62,
+            "tp1": 4052.06,
+            "tp2": 4068.28,
+            "tp3": 4084.5,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 290,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "direction": 1,
+            "entry": 4044.89,
+            "sl": 4031.97,
+            "tp1": 4057.81,
+            "tp2": 4070.73,
+            "tp3": 4083.65,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 291,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "eventTimestamp": 1793787000000,
+            "closedAt": 1793787000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4044.89,
+            "sl": 4031.97,
+            "tp1": 4057.81,
+            "tp2": 4070.73,
+            "tp3": 4083.65,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 294,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793787600000,
+            "setupTimestamp": 1793787000000,
+            "direction": 1,
+            "entry": 4046.66,
+            "sl": 4040.39,
+            "tp1": 4052.93,
+            "tp2": 4059.2,
+            "tp3": 4065.47,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 295,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793787600000,
+            "setupTimestamp": 1793787000000,
+            "eventTimestamp": 1793788500000,
+            "closedAt": 1793788500000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4046.66,
+            "sl": 4040.39,
+            "tp1": 4052.93,
+            "tp2": 4059.2,
+            "tp3": 4065.47,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 519,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "direction": 1,
+            "entry": 4035.84,
+            "sl": 4019.62,
+            "tp1": 4052.06,
+            "tp2": 4068.28,
+            "tp3": 4084.5,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 522,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "entryTime": 1793783100000,
+            "exitTime": 1793784000000,
+            "direction": 1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4052.06,
+            "tp2": 4068.28,
+            "tp3": 4084.5,
+            "actualEntry": 4035.86,
+            "actualExit": 4044.19,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 523,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "eventTimestamp": 1793784300000,
+            "closedAt": 1793784000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4035.84,
+            "sl": 4019.62,
+            "tp1": 4052.06,
+            "tp2": 4068.28,
+            "tp3": 4084.5,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 524,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793783100000,
+            "setupTimestamp": 1793782800000,
+            "entryTime": 1793783100000,
+            "exitTime": 1793784000000,
+            "direction": 1,
+            "actualEntry": 4035.86,
+            "initialQty": 2.2,
+            "netProfitDelta": 16.548389
+          },
+          {
+            "messageIndex": 526,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "direction": 1,
+            "entry": 4044.89,
+            "sl": 4031.97,
+            "tp1": 4057.81,
+            "tp2": 4070.73,
+            "tp3": 4083.65,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 529,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "entryTime": 1793786100000,
+            "exitTime": 1793787000000,
+            "direction": 1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4057.81,
+            "tp2": 4070.73,
+            "tp3": 4083.65,
+            "actualEntry": 4044.91,
+            "actualExit": 4044.56,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 530,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "eventTimestamp": 1793787300000,
+            "closedAt": 1793787000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4044.89,
+            "sl": 4031.97,
+            "tp1": 4057.81,
+            "tp2": 4070.73,
+            "tp3": 4083.65,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 531,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793786100000,
+            "setupTimestamp": 1793785500000,
+            "entryTime": 1793786100000,
+            "exitTime": 1793787000000,
+            "direction": 1,
+            "actualEntry": 4044.91,
+            "initialQty": 2.2,
+            "netProfitDelta": -2.5496834
+          },
+          {
+            "messageIndex": 533,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793787600000,
+            "setupTimestamp": 1793787300000,
+            "direction": 1,
+            "entry": 4046.66,
+            "sl": 4040.37,
+            "tp1": 4052.95,
+            "tp2": 4059.24,
+            "tp3": 4065.53,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 536,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793787600000,
+            "setupTimestamp": 1793787300000,
+            "entryTime": 1793787600000,
+            "exitTime": 1793788500000,
+            "direction": 1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4052.95,
+            "tp2": 4059.24,
+            "tp3": 4065.53,
+            "actualEntry": 4046.68,
+            "actualExit": 4042.83,
+            "initialQty": 2.2
+          },
+          {
+            "messageIndex": 537,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793787600000,
+            "setupTimestamp": 1793787300000,
+            "eventTimestamp": 1793788800000,
+            "closedAt": 1793788500000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4046.66,
+            "sl": 4040.37,
+            "tp1": 4052.95,
+            "tp2": 4059.24,
+            "tp3": 4065.53,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 538,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793787600000,
+            "setupTimestamp": 1793787300000,
+            "entryTime": 1793787600000,
+            "exitTime": 1793788500000,
+            "direction": 1,
+            "actualEntry": 4046.68,
+            "initialQty": 2.2,
+            "netProfitDelta": -10.2496922
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1793786100000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1793786100000,
+              "setupTimestamp": 1793785500000,
+              "eventTimestamp": 1793787000000,
+              "closedAt": 1793787000000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4044.89,
+              "sl": 4031.97,
+              "tp1": 4057.81,
+              "tp2": 4070.73,
+              "tp3": 4083.65,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1793786100000,
+              "setupTimestamp": 1793785500000,
+              "eventTimestamp": 1793787300000,
+              "closedAt": 1793787000000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4044.89,
+              "sl": 4031.97,
+              "tp1": 4057.81,
+              "tp2": 4070.73,
+              "tp3": 4083.65,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXECUTION_DEPENDENT_MODULE_ARBITRATION_SUPPORTED",
+        "explanation": "Indicator creates B/F at10:10 and selects B90 over F80; Strategy busy until10:15 misses that B and later selects F80."
+      }
+    },
+    {
+      "timestamp": 1793880900000,
+      "utc": "2026-11-05T12:15:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793880900000",
+          "field": "missing-plan",
+          "missingFrom": "strategy"
+        }
+      ],
+      "indicatorPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "F_TREND_PULLBACK",
+        "timestamp": 1793880900000,
+        "setupTimestamp": 1793877000000,
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": 4130.3,
+        "sl": 4121.69,
+        "tp1": 4138.91,
+        "tp2": 4147.52,
+        "tp3": 4156.13,
+        "quality": 80,
+        "executionAccepted": true,
+        "executionModel": "INDICATOR_ESTIMATE"
+      },
+      "strategyPlan": null,
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 3,
+        "strategy": 3
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 312,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793876100000,
+            "setupTimestamp": 1793875800000,
+            "eventTimestamp": 1793877000000,
+            "closedAt": 1793877000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4130.85,
+            "sl": 4121.71,
+            "tp1": 4139.99,
+            "tp2": 4149.13,
+            "tp3": 4158.27,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 315,
+            "kind": "PLAN_AUDIT",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793880900000,
+            "setupTimestamp": 1793877000000,
+            "direction": 1,
+            "entry": 4130.3,
+            "sl": 4121.69,
+            "tp1": 4138.91,
+            "tp2": 4147.52,
+            "tp3": 4156.13,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 316,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793880900000,
+            "setupTimestamp": 1793877000000,
+            "eventTimestamp": 1793881800000,
+            "closedAt": 1793881800000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4130.3,
+            "sl": 4121.69,
+            "tp1": 4138.91,
+            "tp2": 4147.52,
+            "tp3": 4156.13,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 566,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793876100000,
+            "setupTimestamp": 1793875800000,
+            "entryTime": 1793876100000,
+            "exitTime": 1793877000000,
+            "direction": 1,
+            "exitId": "Close entry(s) order F_TREND_PULLBACK",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4139.99,
+            "tp2": 4149.13,
+            "tp3": 4158.27,
+            "actualEntry": 4130.87,
+            "actualExit": 4127.54,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 567,
+            "kind": "TRADE_CLOSED",
+            "strategy": "F_TREND_PULLBACK",
+            "timestamp": 1793876100000,
+            "setupTimestamp": 1793875800000,
+            "eventTimestamp": 1793877300000,
+            "closedAt": 1793877000000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4130.85,
+            "sl": 4121.71,
+            "tp1": 4139.99,
+            "tp2": 4149.13,
+            "tp3": 4158.27,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 568,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "F_TREND_PULLBACK",
+            "planTimestamp": 1793876100000,
+            "setupTimestamp": 1793875800000,
+            "entryTime": 1793876100000,
+            "exitTime": 1793877000000,
+            "direction": 1,
+            "actualEntry": 4130.87,
+            "initialQty": 2.1,
+            "netProfitDelta": -8.7272661
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1793876100000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1793876100000,
+              "setupTimestamp": 1793875800000,
+              "eventTimestamp": 1793877000000,
+              "closedAt": 1793877000000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4130.85,
+              "sl": 4121.71,
+              "tp1": 4139.99,
+              "tp2": 4149.13,
+              "tp3": 4158.27,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "F_TREND_PULLBACK",
+              "timestamp": 1793876100000,
+              "setupTimestamp": 1793875800000,
+              "eventTimestamp": 1793877300000,
+              "closedAt": 1793877000000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4130.85,
+              "sl": 4121.71,
+              "tp1": 4139.99,
+              "tp2": 4149.13,
+              "tp3": 4158.27,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_LIFECYCLE_SUPPORTS_EXECUTION_STATE_DIVERGENCE",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "EXACT_CANDIDATE_CAUSE_UNVERIFIED",
+        "explanation": "Indicator F originates11:10 while Strategy is busy until11:15; no Nov5 candidate trace proves which later F state failed."
+      }
+    },
+    {
+      "timestamp": 1793888400000,
+      "utc": "2026-11-05T14:20:00.000Z",
+      "mismatches": [
+        {
+          "key": "FOREXCOM:XAUUSD|5|1793888400000",
+          "field": "missing-plan",
+          "missingFrom": "indicator"
+        }
+      ],
+      "indicatorPlan": null,
+      "strategyPlan": {
+        "scriptVersion": "0.8.0",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "strategy": "B_CRT",
+        "timestamp": 1793888400000,
+        "setupTimestamp": 1793888100000,
+        "direction": 1,
+        "entryMode": "Close",
+        "entry": 4127.29,
+        "sl": 4119.79,
+        "tp1": 4134.79,
+        "tp2": 4142.29,
+        "tp3": 4149.79,
+        "quality": 90,
+        "executionAccepted": true,
+        "executionModel": "STRATEGY_EMULATOR"
+      },
+      "acceptedPlansEarlierOnSameLondonSessionDate": {
+        "indicator": 5,
+        "strategy": 4
+      },
+      "currentTimeline": {
+        "indicator": [
+          {
+            "messageIndex": 319,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "direction": 1,
+            "entry": 4121.77,
+            "sl": 4112.59,
+            "tp1": 4130.95,
+            "tp2": 4140.13,
+            "tp3": 4149.31,
+            "executionAccepted": true,
+            "executionModel": "INDICATOR_ESTIMATE"
+          },
+          {
+            "messageIndex": 320,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "eventTimestamp": 1793887200000,
+            "closedAt": 1793887200000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4121.77,
+            "sl": 4112.59,
+            "tp1": 4130.95,
+            "tp2": 4140.13,
+            "tp3": 4149.31,
+            "executionModel": "INDICATOR_ESTIMATE"
+          }
+        ],
+        "strategy": [
+          {
+            "messageIndex": 570,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "direction": 1,
+            "entry": 4121.77,
+            "sl": 4112.59,
+            "tp1": 4130.95,
+            "tp2": 4140.13,
+            "tp3": 4149.31,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 573,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "entryTime": 1793886300000,
+            "exitTime": 1793887200000,
+            "direction": 1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4130.95,
+            "tp2": 4140.13,
+            "tp3": 4149.31,
+            "actualEntry": 4121.79,
+            "actualExit": 4125.83,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 574,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "eventTimestamp": 1793887500000,
+            "closedAt": 1793887200000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4121.77,
+            "sl": 4112.59,
+            "tp1": 4130.95,
+            "tp2": 4140.13,
+            "tp3": 4149.31,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 575,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793886300000,
+            "setupTimestamp": 1793886000000,
+            "entryTime": 1793886300000,
+            "exitTime": 1793887200000,
+            "direction": 1,
+            "actualEntry": 4121.79,
+            "initialQty": 2.1,
+            "netProfitDelta": 6.7519998
+          },
+          {
+            "messageIndex": 577,
+            "kind": "PLAN_AUDIT",
+            "strategy": "B_CRT",
+            "timestamp": 1793888400000,
+            "setupTimestamp": 1793888100000,
+            "direction": 1,
+            "entry": 4127.29,
+            "sl": 4119.79,
+            "tp1": 4134.79,
+            "tp2": 4142.29,
+            "tp3": 4149.79,
+            "executionAccepted": true,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 580,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793888400000,
+            "setupTimestamp": 1793888100000,
+            "entryTime": 1793888400000,
+            "exitTime": 1793889000000,
+            "direction": 1,
+            "exitId": "TP1",
+            "exitComment": "TP1_HIT",
+            "tp1": 4134.79,
+            "tp2": 4142.29,
+            "tp3": 4149.79,
+            "actualEntry": 4127.31,
+            "actualExit": 4134.79,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 582,
+            "kind": "TRADE_EXIT_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793888400000,
+            "setupTimestamp": 1793888100000,
+            "entryTime": 1793888400000,
+            "exitTime": 1793889300000,
+            "direction": 1,
+            "exitId": "Close entry(s) order B_CRT",
+            "exitComment": "TRADE_CLOSED",
+            "tp1": 4134.79,
+            "tp2": 4142.29,
+            "tp3": 4149.79,
+            "actualEntry": 4127.31,
+            "actualExit": 4133.08,
+            "initialQty": 2.1
+          },
+          {
+            "messageIndex": 583,
+            "kind": "TRADE_CLOSED",
+            "strategy": "B_CRT",
+            "timestamp": 1793888400000,
+            "setupTimestamp": 1793888100000,
+            "eventTimestamp": 1793889600000,
+            "closedAt": 1793889300000,
+            "direction": "BUY",
+            "status": "CLOSED",
+            "closeReason": "TIME_EXIT",
+            "entry": 4127.29,
+            "sl": 4119.79,
+            "tp1": 4134.79,
+            "tp2": 4142.29,
+            "tp3": 4149.79,
+            "executionModel": "STRATEGY_EMULATOR"
+          },
+          {
+            "messageIndex": 584,
+            "kind": "TRADE_GROUP_AUDIT",
+            "module": "B_CRT",
+            "planTimestamp": 1793888400000,
+            "setupTimestamp": 1793888100000,
+            "entryTime": 1793888400000,
+            "exitTime": 1793889300000,
+            "direction": 1,
+            "actualEntry": 4127.31,
+            "initialQty": 2.1,
+            "netProfitDelta": 11.4082155
+          }
+        ]
+      },
+      "currentDiagnosticEngineEvidence": [],
+      "currentLifecycleFacts": {
+        "precedingSharedPlanTimestamp": 1793886300000,
+        "precedingClosures": {
+          "indicator": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1793886300000,
+              "setupTimestamp": 1793886000000,
+              "eventTimestamp": 1793887200000,
+              "closedAt": 1793887200000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4121.77,
+              "sl": 4112.59,
+              "tp1": 4130.95,
+              "tp2": 4140.13,
+              "tp3": 4149.31,
+              "executionModel": "INDICATOR_ESTIMATE"
+            }
+          ],
+          "strategy": [
+            {
+              "strategy": "B_CRT",
+              "timestamp": 1793886300000,
+              "setupTimestamp": 1793886000000,
+              "eventTimestamp": 1793887500000,
+              "closedAt": 1793887200000,
+              "direction": "BUY",
+              "status": "CLOSED",
+              "closeReason": "TIME_EXIT",
+              "entry": 4121.77,
+              "sl": 4112.59,
+              "tp1": 4130.95,
+              "tp2": 4140.13,
+              "tp3": 4149.31,
+              "executionModel": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "strategyMinusIndicatorClosureObservationMilliseconds": 300000
+      },
+      "classification": "CURRENT_PLAN_COUNTS_CONSISTENT_WITH_QUOTA_BLOCK",
+      "candidateCausalStatus": "NOT_FULLY_PROVEN_WITHOUT_CURRENT_ENGINE_AND_CHECKS_AT_SETUP_ORIGIN",
+      "archivedSupportingAssessment": {
+        "source": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+        "assessment": "QUOTA_BLOCK_ESTABLISHED",
+        "explanation": "Indicator already used five plans including12:15 F and13:45 B; Strategy used four and accepts its fifth at14:20."
+      }
+    }
+  ],
+  "availableHistoryIndicatorRepeatability": {
+    "previousPath": "reports/native-v090/tradingview-indicator-signal-diag-2026-11-08-repeat2.csv",
+    "parity": true,
+    "indicatorPlans": 78,
+    "strategyPlans": 78,
+    "tolerance": 0,
+    "mismatches": [],
+    "executionDifferences": [],
+    "interpretation": "Exact plan repeatability of available exports only; not a controlled replay/reload or non-repainting certification."
+  },
+  "limitations": [
+    "Native diagnostic ENGINE/CHECKS coverage is only Nov6 14:00–17:00 UTC; all strict full-history mismatch keys are outside that window. Missing ENGINE events outside the window are unavailable evidence, not zero failures.",
+    "Prior source/trace variants support an execution-state mechanism but do not prove identity of inputs, candles and engine state for the current mismatches.",
+    "Plan records are genuine observed export data; the full-history PLAN_AUDIT stream has no capture-boundary/sequence contract, so omitted earlier plans cannot be excluded from the plan stream alone.",
+    "The fresh Indicator has exact source copy-back/full Inputs evidence; the preserved Strategy has prior source copy-back and partial UI-observed settings context, not a new complete settings/Properties capture.",
+    "No rule change is justified from these mismatches without equivalent-state evidence. Full-history strict parity is not passed."
+  ]
+}

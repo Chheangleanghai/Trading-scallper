@@ -1,0 +1,331 @@
+Browser tab: 1346738026, Title: "XAUUSD 4,125.28 ▲ +1.32% Unnamed", URL: "https://www.tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD".
+0 AXWebArea XAUUSD 4,125.28 ▲ +1.32% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+	1 container
+		2 container
+			3 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+			4 text 4
+			5 toolbar
+				6 container
+					7 button XAUUSD, Help: Symbol search, ID: header-toolbar-symbol-search
+					8 button Description: Switch data type, ID: header-toolbar-switch-data-type
+					9 pop up button Description: Compare symbols, ID: header-toolbar-compare
+					10 pop up button 5 minutes
+						11 container
+							12 text 5 m
+					13 pop up button Candles
+					14 container header-toolbar-indicators
+						15 button Indicators, metrics, and strategies
+							343 text Indicators
+						16 pop up button Favorite indicators and indicators templates
+					17 button Description: Create alert, ID: header-toolbar-alerts
+						344 text Alert
+					18 checkbox Description: Bar replay, Value: 0, ID: header-toolbar-replay
+						345 text Replay
+					19 container header-toolbar-undo-redo
+						20 button Undo change Unique capture ID (change for every run) property
+					21 pop up button Description: Layout setup, ID: header-toolbar-layouts
+					22 container header-toolbar-save-load
+						23 button Save all charts for all symbols and intervals on your layout
+							24 text Unnamed
+							25 text Save
+						26 pop up button Manage layouts
+					27 button Description: Quick search, ID: header-toolbar-quick-search
+					28 button Description: Settings, ID: header-toolbar-properties
+					29 button Description: Fullscreen mode, ID: header-toolbar-fullscreen
+					30 pop up button Take a snapshot
+				31 pop up button Share your idea with the trade community
+				32 container
+					33 button Trade
+						34 text Trade
+				35 container
+					36 button Upgrade
+						37 text Upgrade
+			38 toolbar drawing-toolbar
+				39 container
+					40 container
+						41 button Cross
+						42 checkbox Description: Cursors, Value: 1
+					43 container
+						44 button Trendline
+						45 checkbox Description: Trend tools, Value: 0
+					46 container
+						47 button Fib retracement
+						48 checkbox Description: Gann and Fibonacci tools, Value: 0
+					49 container
+						50 button XABCD pattern
+						51 checkbox Description: Patterns, Value: 0
+					52 container
+						53 button Long position
+						54 checkbox Description: Forecasting and measurement tools, Value: 0
+					55 container
+						56 button Brush
+						57 checkbox Description: Geometric shapes, Value: 0
+					58 container
+						59 button Text
+						60 checkbox Description: Annotation tools, Value: 0
+					61 container
+						62 button Icon
+						63 checkbox Description: Icons, Value: 0
+					64 button Measure
+					65 button Zoom in
+					66 container
+						67 checkbox Description: Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+						68 checkbox Description: Magnets, Value: 0
+					69 checkbox Description: Keep drawing, Value: 0
+					70 container
+						71 checkbox Description: Lock drawings and indicators, Value: 0
+						72 checkbox Description: Lock options, Value: 0
+					73 container
+						74 checkbox Description: Hide all drawings, Value: 0
+						75 checkbox Description: Hide options, Value: 0
+					76 container
+						77 button Remove objects
+						78 button Remove options
+			79 container Chart #1
+				80 container
+					81 toolbar
+						82 container
+							83 container Change symbol
+								84 container
+									85 image
+									86 text X
+								87 button Change symbol
+							88 container Change interval
+								346 text ·
+								90 button Change interval
+							347 text ·
+							92 text FOREX.com
+						93 container
+							94 button Unflag symbol
+							95 button Description: More options for Gold Spot / U.S. Dollar, Help: More
+								96 image
+						97 button Market open · Data updates once per second
+						98 container
+							99 text O 4,125.69 H 4,127.39 L 4,125.08 C 4,125.31 −0.38 (−0.01%)
+					100 container
+						101 text 4,125.10 SELL
+						102 text 51
+						103 text 4,125.61 BUY
+					104 container
+						105 button Hide indicators legend
+						106 toolbar
+							107 container
+								108 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+								109 text Context + levels
+								110 text 8
+								111 text 1
+								112 text 15
+								113 text 3
+								114 text 0.15
+								115 text 2
+								116 text 0.3
+								117 text 12
+								118 text 3
+								119 text 75
+								120 text 75
+								121 text 75
+								122 text 75
+								123 text 75
+								124 text 75
+								125 text 75
+								126 text 75
+								127 text Both
+								128 text 3
+								129 text 20
+								130 text 75
+								131 text 5
+								132 text 5
+								133 text 90
+								134 text 0.5
+								135 text 0.15
+								136 text 3
+								137 text 1.5
+								138 text 2
+								139 text 1
+								140 text 2
+								141 text 3
+								142 text 0.7
+								143 text London
+								144 text 0800-1700
+								145 text Europe/London
+								146 text Close
+								147 text 3
+								148 text 15
+								149 text Fixed R
+								150 text Structure
+								151 text 1.5
+								152 text 1
+								153 text 2
+								154 text 1.5
+								155 text Reference
+								156 text Off
+								157 text 8
+								158 text 3,000
+								159 text Latest only
+								160 text 60
+								161 text 8
+								162 text 8
+								163 text 12
+								164 text Tiny
+								165 text Small
+								166 text 15
+								167 text 82
+							168 container
+								169 button Show
+									170 image
+								171 button Settings
+									172 image
+								173 image
+								174 button Remove
+									175 image
+								176 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Confirmation review, Help: More
+									177 image
+						178 toolbar
+							179 container
+								668 text XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+								669 text 18
+								670 text 8
+								671 text Faded
+								672 text Context + levels
+								673 text 8
+								674 text 1
+								675 text 15
+								676 text 3
+								677 text 0.15
+								678 text 2
+								679 text 0.3
+								680 text 12
+								681 text 3
+								682 text 75
+								683 text 75
+								684 text 75
+								685 text 75
+								686 text 75
+								687 text 75
+								688 text 75
+								689 text 75
+								690 text Both
+								691 text 3
+								692 text 20
+								693 text 75
+								694 text 5
+								695 text 5
+								696 text 90
+								697 text 0.5
+								698 text 0.15
+								699 text 3
+								700 text 1.5
+								701 text 2
+								702 text 1
+								703 text 2
+								704 text 3
+								705 text 0.7
+								706 text London
+								707 text 0800-1700
+								708 text Europe/London
+								709 text Close
+								710 text 3
+								711 text 15
+								712 text Fixed R
+								713 text Structure
+								714 text 1.5
+								715 text 1
+								716 text 2
+								717 text 1.5
+								718 text Reference
+								719 text Off
+								720 text 8
+								721 text 3,000
+								722 text Latest only
+								723 text 60
+								724 text 8
+								725 text 8
+								726 text 12
+								727 text Tiny
+								728 text Small
+								729 text 15
+								730 text 82
+								731 text Off
+								732 text research-1
+								733 text capture-2026-11-07-01
+								734 text 4,000
+							247 container
+								248 button Hide
+									249 image
+								250 button Settings
+									251 image
+								252 button Remove
+									253 image
+								254 button More options for XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+									255 image
+							735 container
+								736 text ∅
+								737 text 4,122.06
+								738 text ∅
+								739 text ∅
+								740 text ∅
+								741 text ∅
+								742 text ∅
+								743 text ∅
+								744 text ∅
+								745 text ∅
+								746 text ∅
+								747 text ∅
+								748 text ∅
+								749 text ∅
+								750 text 0.00
+								751 text 0.00
+								752 text ∅
+								753 text 4,112.19
+								754 text ∅
+								755 text 4,114.39
+					278 image Chart for FOREXCOM:XAUUSD, 5 minutes
+				279 container
+					280 toolbar Navigation
+						281 button Zoom out
+						282 button Zoom in
+						283 button Scroll to the left
+						284 button Scroll to the right
+						285 button Reset chart view
+			286 toolbar
+				287 container
+					288 button 1 day in 1 minute intervals
+						289 text 1D
+					290 button 5 days in 5 minutes intervals
+						291 text 5D
+					292 button 1 month in 30 minutes intervals
+						293 text 1M
+					294 button 3 months in 1 hour intervals
+						295 text 3M
+					296 button 6 months in 2 hours intervals
+						297 text 6M
+					298 button Year to day in 1 day intervals
+						299 text YTD
+					300 button 1 year in 1 day intervals
+						301 text 1Y
+					302 button 5 years in 1 week intervals
+						303 text 5Y
+					304 button All data in 1 month intervals
+						305 text All
+					306 button Go to
+				307 button Timezone
+					308 text 11:46:52 UTC+7
+			309 container
+				348 toolbar
+					349 checkbox Description: Watchlist, details, and news, Value: 0
+					350 checkbox Description: Alerts, Value: 0
+					351 checkbox Description: Object tree and data window, Value: 0
+					352 checkbox Description: AI Copilot, Value: 0
+					353 checkbox Description: Screeners, Value: 0
+					354 checkbox Description: Pine Editor, Value: 0
+					355 checkbox Description: Calendars, Value: 0
+					356 checkbox Description: Community, Value: 0
+					357 checkbox Description: Notifications, Value: 0
+					358 checkbox Description: Chats, Value: 0
+					359 pop up button Products
+					360 checkbox Description: Help Center, Value: 0
+			342 container Trading panel
+		756 container common-tooltip-wrapper
+			757 text Manage layouts
+
+The focused UI element is 0 AXWebArea XAUUSD 4,125.28 ▲ +1.32% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
