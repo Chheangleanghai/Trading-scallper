@@ -1,0 +1,160 @@
+{
+  "schema": "research-evidence-reproduction/v1",
+  "artifacts": {
+    "diagnosticStrategy": {
+      "path": "reports/native-v090/tradingview-strategy-signal-diag-2026-11-08.csv",
+      "sha256": "3f305b2431c6bae0cbdd6acff5aea307441b2ccfea8973aaba564f99504f0e93"
+    },
+    "archivedIndicator": {
+      "path": "reports/native-v080/qualified-plan-2026-11-06/indicator-paired-raw.csv",
+      "sha256": "b7bda756ed58a028a2a599db4c78582fd29b435fea56e64ecdf7130781963273"
+    },
+    "archivedStrategy": {
+      "path": "reports/native-v080/qualified-plan-2026-11-06/strategy-paired-final-raw.csv",
+      "sha256": "2541b80179fe343775957472620c2eb451755d3224a86cd24bd726c21c77048d"
+    },
+    "priorIndicator": {
+      "path": "reports/native-v080/confirmation-review-2026-11-05/indicator-native.log",
+      "sha256": "cfdf860f2444faebe2db9e0cf18c3bf0114d7b31791f01c88891feda35d2adec"
+    },
+    "priorStrategy": {
+      "path": "reports/native-v080/confirmation-review-2026-11-05/strategy-native.log",
+      "sha256": "ee0230d212db959d8514f7c770e33a9d38c3da399faa6f73a739821a5a29e833"
+    },
+    "priorClassification": {
+      "path": "reports/native-v080/recalculation-review-2026-11-05/parity-timelines.json",
+      "sha256": "0e211f761e7e5214fed93be97792a1faa8ca9038c8dd493cd9bf8e33fdea7634"
+    }
+  },
+  "diagnosticCapture": {
+    "status": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+    "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+    "eventCount": 447,
+    "lifecycle": {
+      "selectedPlans": 2,
+      "qualifiedPlanRecords": 2,
+      "submittedOrders": 2,
+      "fills": 2,
+      "exitRows": 2,
+      "completedPositions": 2,
+      "observedGaps": []
+    },
+    "costs": {
+      "positions": 2,
+      "wins": 0,
+      "losses": 2,
+      "exitRows": 2,
+      "gross": -10.307999999999314,
+      "commission": 3.4879192,
+      "net": -13.795919199999313,
+      "netProfitFactor": 0,
+      "netExpectancy": -6.897959599999656
+    }
+  },
+  "archivedPositions": {
+    "plans": 77,
+    "completedPositions": 77,
+    "incompletePositions": 0,
+    "plansWithoutExitRows": 0,
+    "completePositions": 77,
+    "actualExitRows": 113,
+    "wins": 33,
+    "losses": 44,
+    "breakevens": 0,
+    "winRate": 0.42857142857142855,
+    "winRateWilson95IID": {
+      "lower": 0.32403652422604634,
+      "upper": 0.5398946793857298
+    },
+    "grossBeforeCommission": 51.89800000000003,
+    "commission": 134.12017739999996,
+    "net": -82.22217740000012,
+    "meanNetPerCompletePosition": -1.0678204857142872,
+    "meanNetRToPlannedInitialCashRisk": -0.09412981326911223,
+    "meanWin": 8.506286127272725,
+    "meanLoss": -8.248400445454543,
+    "positionProfitFactor": 0.7734486992529832,
+    "profitFactorStatus": "FINITE",
+    "sparseDescriptiveSample": false,
+    "positionsWithExitComment": {
+      "STOP_LOSS_HIT": 9,
+      "TP1_HIT": 16,
+      "TP2_HIT": 2,
+      "TRADE_CLOSED": 68
+    }
+  },
+  "archivedExitCauses": {
+    "TIME_EXIT_SUPPORTED_BY_ASSERTED_SOURCE_CONTEXT": {
+      "positions": 68,
+      "wins": 33,
+      "losses": 35,
+      "exitRows": 86,
+      "gross": 148.255,
+      "commission": 118.4333365,
+      "net": 29.8216635,
+      "netProfitFactor": 1.1188654998881367,
+      "netExpectancy": 0.438553875
+    },
+    "STOP": {
+      "positions": 9,
+      "wins": 0,
+      "losses": 9,
+      "exitRows": 27,
+      "gross": -96.35699999999999,
+      "commission": 15.6868409,
+      "net": -112.0438409,
+      "netProfitFactor": 0,
+      "netExpectancy": -12.449315655555557
+    }
+  },
+  "archivedParity": {
+    "status": "PARITY_FAILED",
+    "indicatorPlans": 76,
+    "strategyPlans": 77,
+    "commonPlans": 74,
+    "exactCommonPlans": 71,
+    "differingCommonPlans": 3,
+    "indicatorOnlyPlans": 2,
+    "strategyOnlyPlans": 3,
+    "assessments": [
+      {
+        "utc": "2026-10-19T10:35:00.000Z",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED"
+      },
+      {
+        "utc": "2026-10-22T15:40:00.000Z",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED"
+      },
+      {
+        "utc": "2026-11-03T08:40:00.000Z",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED"
+      },
+      {
+        "utc": "2026-11-04T10:20:00.000Z",
+        "assessment": "EXECUTION_DEPENDENT_MODULE_ARBITRATION_SUPPORTED"
+      },
+      {
+        "utc": "2026-11-05T12:15:00.000Z",
+        "assessment": "EXACT_CANDIDATE_CAUSE_UNVERIFIED"
+      },
+      {
+        "utc": "2026-10-19T11:05:00.000Z",
+        "assessment": "QUOTA_BLOCK_ESTABLISHED"
+      },
+      {
+        "utc": "2026-10-22T08:35:00.000Z",
+        "assessment": "EXECUTION_DEPENDENT_SETUP_SUPPORTED"
+      },
+      {
+        "utc": "2026-11-05T14:20:00.000Z",
+        "assessment": "QUOTA_BLOCK_ESTABLISHED"
+      }
+    ]
+  },
+  "limits": [
+    "No new native execution is performed by this tool.",
+    "The legacy time-exit/source context is explicitly caller-asserted and supported by its archived report, not authenticated by this tool.",
+    "Inspected historical outcomes cannot serve as untouched out-of-sample results.",
+    "A structurally complete diagnostic export cannot authenticate TradingView provenance or exact active source."
+  ]
+}

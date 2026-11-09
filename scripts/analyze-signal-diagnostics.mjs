@@ -24,6 +24,7 @@ const number = (o, k) => assert(typeof o[k] === 'number' && Number.isFinite(o[k]
 const canonical = v => JSON.stringify(v, (_, x) => x && !Array.isArray(x) && typeof x === 'object' ?
   Object.fromEntries(Object.keys(x).sort().map(k => [k, x[k]])) : x);
 const integer = (o, k) => assert(Number.isSafeInteger(o[k]) && o[k] >= 0, `Invalid integer ${k}`);
+const brokerKinds = new Set(['ORDER_SUBMITTED', 'FILLED', 'EXIT_ROW', 'POSITION_CLOSED']);
 function validateCorrelation(e) {
   const prefix = `${e.symbol}:${e.timeframe}:${e.module}:`;
   if (e.candidateId) {
@@ -75,6 +76,15 @@ function costSummary(positions) {
     netExpectancy: positions.length ? sum(positions.map(p => p.net)) / positions.length : null };
 }
 
+function targetCounts(rows, quantity, initialQuantity) {
+  const targets = rows.filter(r => /^TP[123]_HIT$/.test(r.exitComment));
+  const unknown = targets.filter(r => !(typeof initialQuantity(r) === 'number' && Number.isFinite(initialQuantity(r)) && initialQuantity(r) > 0));
+  return { targetRows: targets.length,
+    partialTargetRows: unknown.length ? null : targets.filter(r => Math.abs(quantity(r)) < initialQuantity(r) &&
+      !near(Math.abs(quantity(r)), initialQuantity(r))).length,
+    targetRowsWithUnknownInitialQuantity: unknown.length };
+}
+
 function legacyCosts(text, options) {
   if (!text.includes('TRADE_GROUP_AUDIT ')) return null;
   const old = analyzePlanOutcomes(text);
@@ -93,7 +103,8 @@ function legacyCosts(text, options) {
     return { planTimestamp: p.planTimestamp, module: p.module, gross: p.grossBeforeCommission, commission: p.commission,
       net: p.net, realizedRToPlannedRisk: p.netRToPlannedInitialCashRisk, exitRows: exits.length, cause,
       holdMinutes: g.holdMinutes, quantity: g.initialQty, pointValue: g.pointValue, accountCurrency: g.accountCurrency,
-      chartCurrency: options.chartCurrency ?? null, grossChart: chartGross, partialTargetRows: exits.filter(r => /^TP[123]_HIT$/.test(r.exitComment)).length };
+      chartCurrency: options.chartCurrency ?? null, grossChart: chartGross,
+      ...targetCounts(exits, r => r.size, () => g.initialQty) };
   });
   return { source: 'Reused analyzePlanOutcomes and actual emulator rows; historical context options are caller-asserted',
     overall: costSummary(positions), byModule: Object.fromEntries([...new Set(positions.map(p => p.module))].sort().map(m => [m, costSummary(positions.filter(p => p.module === m))])),
@@ -122,15 +133,21 @@ export function analyzeSignalDiagnostics(input, options = {}) {
   for (const e of parsed) {
     assert(e.schema === schema && kinds.has(e.kind), 'Mixed/unsupported diagnostic schema or kind');
     assert(contextFields.every(k => e[k] === context[k]), 'Mixed capture/source/model context');
+    for (const k of ['runTag', 'symbol', 'timeframe', ...(schema === 'signal-diagnostics/v2' ? ['captureId'] : [])])
+      assert(typeof e[k] === 'string' && e[k].trim().length > 0, `Missing or empty capture context ${k}`);
     assert(/^[a-f0-9]{64}$/.test(e.parentSha256) && ['STRATEGY_EMULATOR', 'INDICATOR_ESTIMATE'].includes(e.model), 'Invalid source/model');
     for (const k of ['sequence', 'bar', 'barOpen', 'observedAt', 'windowStart', 'windowEnd', 'firstDataTime']) {
       assert(Number.isSafeInteger(e[k]) && e[k] >= 0, `Invalid integer ${k}`);
     }
     assert(e.sequence > 0 && e.windowEnd > e.windowStart && e.observedAt >= e.barOpen, 'Invalid sequence/window/time');
+    assert(e.model !== 'INDICATOR_ESTIMATE' || !brokerKinds.has(e.kind), 'Broker lifecycle event in Indicator estimate capture');
     const expectedEventId = schema === 'signal-diagnostics/v1' ? `${e.runTag}:${e.sequence}` :
       JSON.stringify(['signal-diagnostics/v2', e.captureId, e.symbol, e.timeframe, e.parentSha256, e.runTag, e.sequence]);
     assert(e.eventId === expectedEventId, 'Invalid lifecycle event identity');
     if (e.module) assert(moduleLetter(e.module), 'Invalid A-H module');
+    if (brokerKinds.has(e.kind)) for (const k of ['module', 'candidateId', 'planId',
+      ...(['FILLED', 'EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind) ? ['positionId'] : [])])
+      assert(typeof e[k] === 'string' && e[k].length > 0, `Missing broker correlation identity ${k}`);
     validateCorrelation(e);
     const identityKey = canonical([e.schema, e.captureId ?? '', e.symbol, e.timeframe, e.parentSha256, e.runTag, e.sequence]);
     const prior = identities.get(identityKey);
@@ -144,12 +161,31 @@ export function analyzeSignalDiagnostics(input, options = {}) {
   if (ends.length !== 1 || ends[0] !== events.at(-1)) problems.push('MISSING_OR_INVALID_CAPTURE_END');
   if (events.some((e, i) => e.sequence !== i + 1)) problems.push('SEQUENCE_GAP');
   const bars = events.filter(e => e.kind === 'BAR'), end = ends[0];
+  // An internally complete budget does not establish that the window ended or
+  // that exported records still belong to their declared observation bars.
+  const barByIndex = new Map(bars.map(e => [e.bar, e]));
+  if (!bars.length || barByIndex.size !== bars.length) problems.push('MISSING_OR_DUPLICATE_BAR_RECORD');
+  if (events.some(e => e.kind !== 'CAPTURE_END' && (e.barOpen < context.windowStart || e.barOpen >= context.windowEnd)))
+    problems.push('EVENT_OUTSIDE_CAPTURE_WINDOW');
+  if (events.some((e, i) => i && (e.bar < events[i - 1].bar || e.barOpen < events[i - 1].barOpen || e.observedAt < events[i - 1].observedAt)))
+    problems.push('NON_MONOTONIC_OBSERVATION_TIME');
+  if (events.some(e => {
+    if (e.kind === 'CAPTURE_END') return false;
+    const bar = barByIndex.get(e.bar);
+    return !bar || bar.barOpen !== e.barOpen || bar.observedAt !== e.observedAt;
+  })) problems.push('EVENT_BAR_ASSOCIATION_MISMATCH');
+  if (starts[0] && (starts[0].bar !== bars[0]?.bar || starts[0].barOpen !== bars[0]?.barOpen))
+    problems.push('CAPTURE_START_BAR_MISMATCH');
   if (end) {
     const internalBudgetComplete = end.budgetComplete ?? end.complete;
     if (internalBudgetComplete !== true || !Number.isSafeInteger(end.dropped) || end.dropped !== 0) problems.push('INTERNAL_EVENT_BUDGET_INCOMPLETE');
     if (bars.length !== end.observedBars || bars[0]?.bar !== end.firstBar || bars.at(-1)?.bar !== end.lastBar ||
-        bars.some((b, i) => i && b.bar !== bars[i - 1].bar + 1)) problems.push('MISSING_BAR_COVERAGE');
+        bars.some((b, i) => b.observedAt <= b.barOpen || i && (b.bar !== bars[i - 1].bar + 1 ||
+          b.barOpen <= bars[i - 1].barOpen || b.observedAt <= bars[i - 1].observedAt))) problems.push('MISSING_BAR_COVERAGE');
     if (end.attempted !== events.length - 1 + end.dropped) problems.push('INVALID_EVENT_TOTAL');
+    if (end.barOpen < context.windowEnd || end.bar <= (bars.at(-1)?.bar ?? -1) ||
+        ((schema === 'signal-diagnostics/v2' || end.endReason != null) && end.endReason !== 'WINDOW_END'))
+      problems.push('CAPTURE_END_BEFORE_WINDOW_END_OR_INVALID_REASON');
   }
   if (context.firstDataTime > context.windowStart) problems.push('HISTORY_START_AFTER_REQUESTED_WINDOW');
   const complete = problems.length === 0;
@@ -188,18 +224,33 @@ export function analyzeSignalDiagnostics(input, options = {}) {
   }
   const ordersById = new Map();
   for (const order of events.filter(e => e.kind === 'ORDER_SUBMITTED')) {
+    for (const k of ['quantity', 'price']) number(order, k);
+    for (const k of ['actualTime', 'actualBar']) integer(order, k);
+    assert(order.quantity > 0 && order.actualTime <= order.observedAt && order.actualBar <= order.bar,
+      'Invalid order quantity or future submission');
+    assert(order.planId && order.candidateId && order.orderId, 'Missing submitted order correlation identity');
     assert(!ordersById.has(order.orderId), 'Duplicate submitted order identity');
     ordersById.set(order.orderId, order);
     if (!plans.has(order.planId)) lifecycleGaps.push({ stage: 'QUALIFIED_PLAN_TO_ORDER', planId: order.planId, status: 'PLAN_RECORD_NOT_OBSERVED' });
     else assert(selectedByPlan.get(order.planId) === 1, 'Submitted order lacks selected-plan record');
   }
   for (const fill of events.filter(e => e.kind === 'FILLED')) {
+    for (const k of ['quantity', 'price']) number(fill, k);
+    for (const k of ['actualTime', 'actualBar']) integer(fill, k);
+    assert(fill.quantity > 0 && fill.actualTime <= fill.observedAt && fill.actualBar <= fill.bar,
+      'Invalid fill quantity or future fill');
+    assert(fill.planId && fill.candidateId && fill.orderId && fill.positionId, 'Missing fill correlation identity');
     const order = ordersById.get(fill.orderId);
     if (!order) lifecycleGaps.push({ stage: 'ORDER_TO_FILL', orderId: fill.orderId, positionId: fill.positionId,
       status: fill.actualTime < context.windowStart ? 'ORDER_MAY_PRECEDE_CAPTURE' : 'ORDER_NOT_OBSERVED_IN_CAPTURE' });
-    else assert(order.planId === fill.planId && order.candidateId === fill.candidateId && order.module === fill.module,
-      'Fill/order candidate-plan correlation mismatch');
+    else {
+      assert(order.planId === fill.planId && order.candidateId === fill.candidateId && order.module === fill.module,
+        'Fill/order candidate-plan correlation mismatch');
+      assert(fill.actualBar >= order.actualBar && fill.actualTime >= order.actualTime, 'Fill before submission');
+    }
   }
+  for (const order of ordersById.values()) assert(sum(events.filter(e => e.kind === 'FILLED' && e.orderId === order.orderId)
+    .map(e => e.quantity)) <= order.quantity + 1e-7, 'Filled quantity exceeds submitted order');
   for (const row of events.filter(e => e.kind === 'EXIT_ROW')) {
     const linkedFill = events.some(e => e.kind === 'FILLED' && e.positionId === row.positionId);
     if (!linkedFill) lifecycleGaps.push({ stage: 'POSITION_TO_FILL', positionId: row.positionId,
@@ -210,6 +261,8 @@ export function analyzeSignalDiagnostics(input, options = {}) {
   for (const m of 'ABCDEFGH') {
     const rows = events.filter(e => moduleLetter(e.module) === m), select = k => rows.filter(e => e.kind === k);
     const checks = select('CHECKS'), enabled = starts[0]?.enabled?.[m.charCodeAt(0) - 65];
+    const targets = targetCounts(select('EXIT_ROW'), r => r.signedQuantity,
+      r => events.find(e => e.kind === 'POSITION_CLOSED' && e.positionId === r.positionId)?.initialQuantity);
     const observed = { detectedCandidates: select('SETUP_DETECTED').length,
       stageTransitions: countBy(select('STAGE_REACHED'), e => e.stage),
       confirmationCandidates: new Set(select('CONFIRMATION_PASSED').map(e => e.candidateId)).size,
@@ -221,11 +274,13 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       selectedPlans: select('SELECTED').length, qualifiedPlanRecords: select('QUALIFIED_PLAN').length,
       submittedOrders: select('ORDER_SUBMITTED').length, fills: select('FILLED').length,
       filledPositions: new Set(select('FILLED').map(e => e.positionId)).size, exitRows: select('EXIT_ROW').length,
-      partialTargetExitRows: select('EXIT_ROW').filter(e => /^TP[123]_HIT$/.test(e.exitComment)).length,
+      targetExitRows: targets.targetRows, partialTargetExitRows: targets.partialTargetRows,
+      targetExitRowsWithUnknownInitialQuantity: targets.targetRowsWithUnknownInitialQuantity,
       closedPositions: select('POSITION_CLOSED').length,
       estimatedFills: select('ESTIMATE_FILLED').length, estimatedClosures: select('ESTIMATE_TRADE_CLOSED').length,
       slotBlockedBarObservations: events.filter(e => e.kind === 'ENGINE' && e.slotAvailable === false).length };
-    const modelUnavailable = context.model === 'INDICATOR_ESTIMATE' ? ['submittedOrders', 'fills', 'filledPositions', 'exitRows', 'partialTargetExitRows', 'closedPositions'] : [];
+    const modelUnavailable = context.model === 'INDICATOR_ESTIMATE' ? ['submittedOrders', 'fills', 'filledPositions', 'exitRows',
+      'targetExitRows', 'partialTargetExitRows', 'targetExitRowsWithUnknownInitialQuantity', 'closedPositions'] : [];
     for (const k of modelUnavailable) observed[k] = null;
     modules[m] = { status: enabled === false ? 'DISABLED' : complete ? 'COMPLETE_WITHIN_CAPTURE_WINDOW' : 'INCOMPLETE',
       observed, totals: complete && enabled === true ? observed : null, latestState: select('STATE').at(-1) ?? null };
@@ -237,12 +292,6 @@ export function analyzeSignalDiagnostics(input, options = {}) {
     const orders = events.filter(e => e.kind === 'ORDER_SUBMITTED' && e.planId === pid);
     assert(orders.length <= 1, 'Duplicate order submission');
     const order = orders[0], fills = events.filter(e => e.kind === 'FILLED' && e.planId === pid);
-    if (order) { number(order, 'quantity'); integer(order, 'actualTime'); integer(order, 'actualBar'); assert(order.quantity > 0, 'Invalid order quantity'); }
-    for (const fill of fills) {
-      number(fill, 'quantity'); integer(fill, 'actualTime'); integer(fill, 'actualBar');
-      assert(fill.quantity > 0 && (!order || (fill.actualBar >= order.actualBar && fill.actualTime >= order.actualTime)), 'Fill before submission or invalid quantity');
-    }
-    if (order) assert(sum(fills.map(f => f.quantity)) <= order.quantity + 1e-7, 'Filled quantity exceeds submitted order');
     latencies.push({ planId: pid, candidateId: cid, module: plan.module, setupBar: setup?.setupBar ?? null,
       confirmationBar: confirmation?.bar ?? null, qualifiedBar: qualified?.bar ?? null, orderBar: order?.actualBar ?? null,
       firstActualFillBar: fills[0]?.actualBar ?? null, lastActualFillBar: fills.at(-1)?.actualBar ?? null,
@@ -256,6 +305,9 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       limits: setup ? [] : ['Setup creation outside capture or missing; latency unavailable'] });
   }
   const positionIds = new Set(events.filter(e => ['EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind)).map(e => e.positionId));
+  const accountCurrencies = new Set(events.filter(e => ['EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind)).map(e => e.accountCurrency));
+  assert([...accountCurrencies].every(c => typeof c === 'string' && c.length > 0) && accountCurrencies.size <= 1,
+    'Missing or mixed account currencies cannot be aggregated');
   const globalRows = new Set();
   for (const id of positionIds) {
     const rows = events.filter(e => e.kind === 'EXIT_ROW' && e.positionId === id), groups = events.filter(e => e.kind === 'POSITION_CLOSED' && e.positionId === id);
@@ -264,7 +316,10 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       for (const k of ['rowIndex', 'entryTime', 'entryBar', 'exitTime', 'exitBar']) integer(r, k);
       assert(!globalRows.has(r.rowIndex), 'Duplicate closed-trade row index'); globalRows.add(r.rowIndex);
       for (const k of ['entryPrice', 'exitPrice', 'signedQuantity', 'pointValue', 'net', 'commission', 'grossAccount', 'grossChart']) number(r, k);
-      assert(r.signedQuantity !== 0 && r.pointValue > 0 && r.commission >= 0 && r.exitTime >= r.entryTime, 'Invalid exit quantity/cost/time');
+      assert(r.signedQuantity !== 0 && r.pointValue > 0 && r.commission >= 0 && r.exitTime >= r.entryTime &&
+        r.exitBar >= r.entryBar && r.exitTime <= r.observedAt && r.exitBar <= r.bar, 'Invalid exit quantity/cost/time');
+      const candidateDirection = Number(r.candidateId.slice(`${r.symbol}:${r.timeframe}:${r.module}:`.length).split(':')[0]);
+      assert(Math.sign(r.signedQuantity) === candidateDirection, 'Exit quantity direction contradicts candidate direction');
       assert(near(r.grossAccount - r.commission, r.net), 'Exit gross/fee/net mismatch');
       assert(near((r.exitPrice - r.entryPrice) * r.signedQuantity * r.pointValue, r.grossChart), 'Exit fill-price arithmetic mismatch');
       if (r.chartCurrency === r.accountCurrency) assert(near(r.grossChart, r.grossAccount), 'Same-currency fill/account mismatch');
@@ -273,24 +328,49 @@ export function analyzeSignalDiagnostics(input, options = {}) {
     if (g) for (const k of ['entryTime', 'exitTime', 'exitRows']) integer(g, k);
     if (!g || rows.length !== g.exitRows) { incompletePositions.push({ positionId: id, observedRows: rows.length, expectedRows: g?.exitRows ?? null }); continue; }
     const qty = sum(rows.map(r => Math.abs(r.signedQuantity))), fee = sum(rows.map(r => r.commission)), net = sum(rows.map(r => r.net));
-    assert(rows.every(r => r.planId === g.planId && r.module === g.module && r.entryTime === g.entryTime && r.accountCurrency === g.accountCurrency), 'Position correlation mismatch');
+    assert(rows.every(r => r.planId === g.planId && r.candidateId === g.candidateId && r.module === g.module &&
+      r.entryTime === g.entryTime && r.accountCurrency === g.accountCurrency), 'Position correlation mismatch');
     assert(g.exitTime === Math.max(...rows.map(r => r.exitTime)), 'Position final exit time mismatch');
     assert(g.initialQuantity > 0 && near(qty, g.initialQuantity) && near(qty, g.closedQuantity), 'Incomplete position quantity');
     const fills = events.filter(e => e.kind === 'FILLED' && e.positionId === id);
+    assert(fills.every(f => f.planId === g.planId && f.candidateId === g.candidateId && f.module === g.module),
+      'Fill/position candidate correlation mismatch');
     if (fills.length) assert(near(sum(fills.map(f => f.quantity)), qty), 'Fill and closed position quantity mismatch');
     assert(near(fee, g.commission) && near(net, g.net) && near(g.grossAccount - fee, net), 'Position accounting mismatch');
     assert(g.initialPlannedCashRisk > 0 && near(net / g.initialPlannedCashRisk, g.realizedRToPlannedRisk), 'Realized R mismatch');
+    const last = rows.toSorted((a, b) => a.rowIndex - b.rowIndex).at(-1);
+    const stopped = last.exitComment === 'STOP_LOSS_HIT', targeted = /^TP[123]_HIT$/.test(last.exitComment);
+    assert(['STOP', 'TARGET', 'TIME_EXIT', 'UNCLASSIFIED'].includes(g.cause), 'Unsupported position exit cause');
+    assert((g.cause !== 'STOP' || stopped) && (g.cause !== 'TARGET' || targeted) &&
+      (!stopped || g.cause === 'STOP') && (!targeted || g.cause === 'TARGET'), 'Position exit cause contradicts final exit row');
+    assert(g.cause !== 'TIME_EXIT' || last.exitComment === 'TRADE_CLOSED' &&
+      typeof last.exitId === 'string' && last.exitId.startsWith('Close entry(s) order'),
+    'Time exit cause lacks supporting market-close row');
     const spread = options.spreadPerSide ?? 0;
     assert(Number.isFinite(spread) && spread >= 0, 'Invalid hypothetical spread');
     const sameCurrency = rows.every(r => r.chartCurrency === g.accountCurrency);
     const spreadCost = sameCurrency ? 2 * spread * sum(rows.map(r => Math.abs(r.signedQuantity) * r.pointValue)) : null;
     positions.push({ positionId: id, planId: g.planId, module: g.module, gross: g.grossAccount, commission: fee, net,
-      exitRows: rows.length, cause: g.cause, realizedRToPlannedRisk: g.realizedRToPlannedRisk,
+      exitRows: rows.length, cause: g.cause, causeAttribution: 'INSTRUMENTATION_REPORTED_WITH_EXIT_ROW_CONSISTENCY',
+      realizedRToPlannedRisk: g.realizedRToPlannedRisk,
       hypotheticalAdditionalSpreadPerSide: spread, hypotheticalAdditionalSpreadCost: spreadCost,
       hypotheticalNetAfterAdditionalSpread: spreadCost === null ? null : net - spreadCost,
-      partialTargetRows: rows.filter(r => /^TP[123]_HIT$/.test(r.exitComment)).length });
+      ...targetCounts(rows, r => r.signedQuantity, () => g.initialQuantity) });
   }
   const endBudget = end?.budgetComplete ?? end?.complete;
+  const realizedCostModelAvailable = context.model === 'STRATEGY_EMULATOR';
+  const costBreakdown = realizedCostModelAvailable
+    ? {
+      overall: complete && !incompletePositions.length ? costSummary(positions) : null,
+      observedCompletedSubtotal: costSummary(positions), positions, incompletePositions,
+      fillCorrelationUnavailable: positions.filter(p => !events.some(e => e.kind === 'FILLED' && e.positionId === p.positionId)).map(p => p.positionId),
+      byModule: Object.fromEntries([...new Set(positions.map(p => p.module))].map(m => [m, costSummary(positions.filter(p => p.module === m))])),
+      byExitCause: Object.fromEntries([...new Set(positions.map(p => p.cause))].map(c => [c, costSummary(positions.filter(p => p.cause === c))])),
+    }
+    : {
+      overall: null, observedCompletedSubtotal: null, positions: null, incompletePositions: null,
+      fillCorrelationUnavailable: null, byModule: null, byExitCause: null,
+    };
   return { schema: 'signal-diagnostics-analysis/v2', context,
     captureStatus: complete ? 'COMPLETE_WITHIN_CAPTURE_WINDOW' : 'INCOMPLETE',
     budgetStatus: endBudget === true && end?.dropped === 0 ? 'COMPLETE' : endBudget === false ? 'INCOMPLETE' : 'UNKNOWN',
@@ -299,11 +379,7 @@ export function analyzeSignalDiagnostics(input, options = {}) {
     exportStatus: complete ? 'STRUCTURALLY_COMPLETE_UNAUTHENTICATED' : 'INCOMPLETE_EXPORT',
     exportAuthenticity: 'NOT_AUTHENTICATED',
     completenessProblems: problems, duplicateExportsIgnored: duplicates.length, eventCount: events.length,
-    modules, latencies, costs: { overall: complete && !incompletePositions.length ? costSummary(positions) : null,
-      observedCompletedSubtotal: costSummary(positions), positions, incompletePositions,
-      fillCorrelationUnavailable: positions.filter(p => !events.some(e => e.kind === 'FILLED' && e.positionId === p.positionId)).map(p => p.positionId),
-      byModule: Object.fromEntries([...new Set(positions.map(p => p.module))].map(m => [m, costSummary(positions.filter(p => p.module === m))])),
-      byExitCause: Object.fromEntries([...new Set(positions.map(p => p.cause))].map(c => [c, costSummary(positions.filter(p => p.cause === c))])) },
+    modules, latencies, costs: { availability: realizedCostModelAvailable ? 'STRATEGY_EMULATOR_ROWS' : 'UNAVAILABLE_FOR_INDICATOR_ESTIMATE', ...costBreakdown },
     lifecycleCoverage: { selectedPlans: selectedByPlan.size, qualifiedPlanRecords: plans.size,
       submittedOrders: ordersById.size, fills: events.filter(e => e.kind === 'FILLED').length,
       exitRows: events.filter(e => e.kind === 'EXIT_ROW').length,
@@ -314,6 +390,8 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       'Failed checks are recorded only where the actual engine evaluated them. Busy-state counterfactual setups are not invented.',
       'Fill prices already contain modeled slippage; commission is subtracted once. Spread scenarios are additional hypothetical costs.',
       'Realized R denominator is original planned account-currency cash risk, not a guaranteed maximum loss.',
+      'Exit cause is instrumentation-reported and checked against the final exit row; holding-time settings and source attribution require separate evidence.',
+      'Target rows include full target exits; partial target counts require a known initial position quantity and stay null when a target row lacks it.',
       'Historical diagnostics, tests and complete exports do not establish OOS profitability or non-repainting.'] };
 }
 

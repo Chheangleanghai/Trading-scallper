@@ -2,9 +2,9 @@
 
 Pine Script v6 market analysis and backtesting, with a lightweight Node22/TypeScript Vercel → Telegram relay. All trading calculations stay in Pine. No database, trade execution service, frontend or background polling process is required.
 
-**v0.8.0 adds plan-audit parity tooling and corrects the script version in alert payloads.** The parity utility compares confirmed plan records captured from the indicator and strategy on the same symbol/timeframe/history. A real matched A–H historical comparison has not yet been collected. See [v0.8.0 validation](reports/V080_VALIDATION.md).
+**Current research status — November 8, 2026:** the frozen v0.8.0 sources are preserved. Diagnostic experiments toward v0.9.0 have local regressions, reproducible native-evidence analysis, and a source/evidence manifest for safe review snapshots. The archived independent Indicator/Strategy streams retain differences; current-source native parity, controlled Replay, OOS performance and live readiness remain open. See the [latest implementation and test report](reports/native-v090/local-hardening-2026-11-08.md) and [research snapshot instructions](RESEARCH_PACKAGE.md).
 
-**Historical evidence only:** Pine v0.6.0 compiled and ran in native TradingView, and its saved FOREX.com XAUUSD M5 chart was checked after reload. That does not certify the current v0.8.0 source. The current local source passes 99 automated tests and 206 synthetic assertions; the latter are not a TradingView compile or market replay. See [current verification status](reports/PHASE_2_PROGRESS.md) and [v0.8.0 validation](reports/V080_VALIDATION.md).
+**Original v0.8.0 release record:** v0.8.0 added plan-audit tooling and corrected the alert payload version. At that release stage, 99 automated tests and 206 synthetic assertions were recorded. Those counts and the older v0.6.0 native compilation are historical; current verification and its evidence limits are in the dated report above. See [v0.8.0 validation](reports/V080_VALIDATION.md).
 
 Historical smoke tests cover eight isolated modules on M1/M3/M5/M15: 24 cases lost, seven gained and one had no trade. Displayed results match v0.5.0 across all 32 cases. These are case counts, not trade win rates or proof of profitability. The user confirmed receiving the single authorized manual relay TEST. A native TradingView-origin alert through the deployed chain, genuine OOS and demo forward evaluation remain outstanding. The backend was not redeployed this release.
 
@@ -27,9 +27,7 @@ Use Node22 and Python3 (Python is only for generating standalone Pine files):
 
 ```sh
 npm ci
-npm run typecheck
-npm test
-npm run pine:check
+npm run verify
 ```
 
 Edit `pine/engine.pine.inc` and `pine/modules/*.pine.inc`, then run `npm run pine:generate`. Generated `indicator.pine`, `strategy.pine`, and `validation.pine` are standalone TradingView scripts. No library publishing is needed. `pine:check` detects generated-source drift; it is not a Pine compiler.

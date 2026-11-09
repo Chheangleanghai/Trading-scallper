@@ -124,6 +124,93 @@ def generate(kind):
         assert restored.count(new) == count, new[:120]
         restored = restored.replace(new, old, count)
     assert restored.encode() == raw, 'Instrumentation escaped observer-only additions'
+    return compact_strategy_research_ui(source) if kind == 'strategy' else source
+
+
+def compact_strategy_research_ui(source):
+    """Drop optional chart presentation from the Strategy research copy only.
+
+    The paired diagnostic Indicator retains the complete chart UI. This Strategy
+    keeps the exact decision/order engine and the machine-readable evidence, while
+    removing drawings/tables that substantially increase TradingView's compiled
+    token count. These edits intentionally happen after the frozen-parent round
+    trip assertion above.
+    """
+    def remove_marked(text, begin, end):
+        assert text.count(begin) == 1 and text.count(end) == 1, (begin, end)
+        start = text.index(begin)
+        finish = text.index(end, start) + len(end)
+        return text[:start] + text[finish:]
+
+    # Keep per-position TRADE_GROUP_AUDIT accounting; remove only its chart table.
+    performance = 'var table performance = table.new('
+    badge = '// REVIEW_BADGE_BEGIN'
+    assert source.count(performance) == 1 and source.count(badge) == 1
+    start = source.index(performance)
+    finish = source.index(badge, start)
+    source = source[:start] + source[finish:]
+
+    for begin, end in [
+        ('// REVIEW_INPUTS_BEGIN', '// REVIEW_INPUTS_END'),
+        ('// SESSION_DISPLAY_INPUTS_BEGIN', '// SESSION_DISPLAY_INPUTS_END'),
+        ('// CLARITY_INPUTS_BEGIN', '// CLARITY_INPUTS_END'),
+        ('// CLEAR_SIGNAL_INPUTS_BEGIN', '// CLEAR_SIGNAL_INPUTS_END'),
+        ('// CLARITY_HELPERS_BEGIN', '// CLARITY_HELPERS_END'),
+        ('// REVIEW_DRAWINGS_BEGIN', '// REVIEW_DRAWINGS_END'),
+        ('// REVIEW_BADGE_BEGIN', '// REVIEW_BADGE_END'),
+        ('// REVIEW_CONCEPT_VIEW_BEGIN', '// REVIEW_CONCEPT_VIEW_END'),
+        ('// SESSION_PLAN_LABELS_BEGIN', '// SESSION_PLAN_LABELS_END'),
+    ]:
+        source = remove_marked(source, begin, end)
+
+    # This explanation state is consumed only by the removed presentation panels.
+    source = remove_marked(
+        source,
+        '// Read-only explanation of the most recent confirmed-bar decision. Never opens orders.',
+        '// Presentation-only context. None of these objects or flags feed the trading candidates.',
+    )
+
+    # Historical drawings and the full dashboard precede the production PLAN_AUDIT.
+    history = '// Plan history is a read-only overlay. It starts at the confirmed plan bar and never submits orders or alerts.'
+    audit = "if auditLog and newSignal\n    log.info('PLAN_AUDIT '"
+    assert source.count(history) == 1 and source.count(audit) == 1
+    start = source.index(history)
+    finish = source.index(audit, start)
+    source = source[:start] + source[finish:]
+
+    # Strategy diagnostics remain log-only; the paired Indicator keeps the board.
+    diag_table = 'var table diagnosticTable = table.new('
+    diag_end = '// SIGNAL_DIAGNOSTIC_TAIL_END'
+    assert source.count(diag_table) == 1 and source.count(diag_end) == 1
+    start = source.index(diag_table)
+    finish = source.index(diag_end, start)
+    source = source[:start] + source[finish:]
+    source = source.replace(
+        "options=['Off', 'Events', 'Events + dashboard']",
+        "options=['Off', 'Events']",
+        1,
+    )
+
+    # Remove inputs whose only consumers were the omitted chart panels.
+    visual_inputs = [
+        "showDashboard = input.bool(false, 'Show signal dashboard', group='Readability')\n",
+        "showPerformance = input.bool(true, 'Show backtest results table', group='Readability')\n",
+        "showUnusedModules = input.bool(false, 'Show strategies with no completed trades', group='Readability')\n",
+        "showLastPlan = input.bool(true, 'Show previous trade prices when no current plan', group='Readability')\n",
+        "historyMode = input.string('Off', 'Historical plan drawings', options=['Off', 'Recent plans', 'Full bounded'], group='Historical view')\n",
+        "historyPlanLimit = input.int(8, 'Maximum historical plans', minval=1, maxval=10, group='Historical view')\n",
+        "historyLookback = input.int(3000, 'Full history lookback bars', minval=100, maxval=20000, group='Historical view')\n",
+        "showTrade = input.bool(true, 'Show latest trade levels and boxes')\n",
+        "showEntryLine = input.bool(true, 'Entry line/price', group='Trade visuals')\n",
+        "showSLLine = input.bool(true, 'SL line/price', group='Trade visuals')\n",
+        "showTP1Line = input.bool(true, 'TP1 line/price', group='Trade visuals')\n",
+        "showTP2Line = input.bool(true, 'TP2 line/price', group='Trade visuals')\n",
+        "showTP3Line = input.bool(true, 'TP3 line/price', group='Trade visuals')\n",
+        "showRiskReward = input.bool(true, 'Risk/reward boxes', group='Trade visuals')\n",
+    ]
+    for statement in visual_inputs:
+        assert source.count(statement) == 1, statement
+        source = source.replace(statement, '', 1)
     return source
 
 

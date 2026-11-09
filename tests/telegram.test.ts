@@ -58,6 +58,17 @@ describe("Telegram", () => {
   });
 });
 describe("extended signal metadata", () => {
+  it("keeps a legacy payload's missing execution model unknown while preserving reported fill data", () => {
+    const legacy = validate({ ...sample, filledEntry: 100.1 });
+    const text = formatMessage(legacy);
+    expect(legacy.executionModel).toBeUndefined();
+    expect(text).toContain("Execution model not reported; no broker fill confirmation.");
+    expect(text).toContain("Reported filled entry (model not reported): 100.1");
+    expect(text).not.toContain("Indicator estimate");
+    expect(text).not.toContain("Strategy emulator");
+    expect(formatMessage(validate({ ...sample, executionModel: "INDICATOR_ESTIMATE", filledEntry: 100.1 })))
+      .toContain("Filled entry (Indicator estimate): 100.1");
+  });
   it("distinguishes signal, plan and simulated fill, with managed stop", () => {
     const text = formatMessage(
       validate({

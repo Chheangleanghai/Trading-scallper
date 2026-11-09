@@ -11,11 +11,13 @@
     "typecheck": "tsc --noEmit",
     "pine:generate": "python3 scripts/generate_pine.py",
     "pine:check": "python3 scripts/generate_pine.py --check",
+    "diagnostics:check": "python3 scripts/generate_signal_diagnostics.py --check",
     "pine:parse": "node scripts/check_pine.mjs",
     "audit:compare": "node scripts/compare-plan-audit.mjs",
     "audit:exits": "node scripts/analyze-strategy-exits.mjs",
     "package:share": "python3 scripts/package_share.py --output ../xauusd-smart-scalper-share.zip",
-    "verify": "npm run typecheck && npm test && npm run pine:check && npm run pine:parse"
+    "package:research": "python3 scripts/package_research.py",
+    "verify": "npm run typecheck && npm test && npm run pine:check && npm run diagnostics:check && npm run pine:parse"
   },
   "devDependencies": {
     "@opus-aether-ai/pine-transpiler": "0.4.11",

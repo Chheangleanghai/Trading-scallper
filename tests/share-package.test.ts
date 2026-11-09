@@ -48,3 +48,59 @@ it("builds a share archive with the placeholder template and no local secrets or
   expect(contaminated.stderr).toContain("credential-like value");
   expect(contaminated.stderr).not.toContain("1234567890" + ":");
 });
+
+it("rejects credentials in shared Pine includes and files with unrecognized suffixes", () => {
+  const temp = mkdtempSync(join(tmpdir(), "xauusd-share-include-test-"));
+  roots.push(temp);
+  const project = join(temp, "project");
+  mkdirSync(join(project, "pine"), { recursive: true });
+  writeFileSync(join(project, ".env.example"), "TELEGRAM_BOT_TOKEN=\n");
+  const credential = "1234567890" + ":" + "A".repeat(40);
+  for (const path of ["pine/engine.pine.inc", "capture.dump"]) {
+    const full = join(project, path);
+    writeFileSync(full, `token=${credential}`);
+    const created = spawnSync("python3", [resolve("scripts/package_share.py"), "--root", project,
+      "--output", join(temp, "share.zip")], { encoding: "utf8" });
+    expect(created.status).not.toBe(0);
+    expect(created.stderr).toContain("credential-like value");
+    expect(created.stderr).not.toContain(credential);
+    rmSync(full);
+  }
+});
+
+it("accepts standard JPEG Huffman bytes while scanning metadata, appended text and malformed framing", () => {
+  const temp = mkdtempSync(join(tmpdir(), "xauusd-share-jpeg-test-"));
+  roots.push(temp);
+  const project = join(temp, "project"), output = join(temp, "share.zip");
+  mkdirSync(project);
+  writeFileSync(join(project, ".env.example"), "TELEGRAM_BOT_TOKEN=\n");
+  const jpeg = readFileSync(resolve("tests/fixtures/jpeg-huffman-token-shape.jpg"));
+  // Actual standard AC Huffman symbols contain a sequence matching this token
+  // shape. The fixture is a complete 1x1 baseline JPEG, not arbitrary plaintext.
+  expect(jpeg.toString("latin1")).toMatch(/\b\d{6,12}:[A-Za-z0-9_-]{30,}\b/);
+  const path = join(project, "screenshot.png"); // Detect JPEG magic despite .png.
+  writeFileSync(path, jpeg);
+  const invoke = () => spawnSync("python3", [resolve("scripts/package_share.py"), "--root", project,
+    "--output", output], { encoding: "utf8" });
+  const created = invoke();
+  expect(created.status, created.stderr).toBe(0);
+  const previousArchive = readFileSync(output);
+  const credential = Buffer.from("1234567890" + ":" + "A".repeat(40));
+  const metadata = (marker: number) => Buffer.concat([jpeg.subarray(0, 2),
+    Buffer.from([0xFF, marker, 0, credential.length + 2]), credential, jpeg.subarray(2)]);
+  const malformedLength = Buffer.from(jpeg);
+  malformedLength.writeUInt16BE(0xFFFF, jpeg.indexOf(Buffer.from([0xFF, 0xC4])) + 2);
+  for (const contents of [
+    Buffer.concat([jpeg, Buffer.from("\n"), credential]),
+    metadata(0xE1), metadata(0xFE),
+    malformedLength, jpeg.subarray(0, -2),
+    Buffer.concat([Buffer.from([0xFF, 0xD8]), credential]),
+  ]) {
+    writeFileSync(path, contents);
+    const rejected = invoke();
+    expect(rejected.status).not.toBe(0);
+    expect(rejected.stderr).toContain("credential-like value");
+    expect(rejected.stderr).not.toContain(credential.toString());
+    expect(readFileSync(output)).toEqual(previousArchive);
+  }
+});

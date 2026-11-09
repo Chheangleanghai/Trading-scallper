@@ -1,0 +1,64 @@
+{
+  "schema": "local-verification-receipt/v1",
+  "scope": "Local only. Pine parsing does not certify TradingView compilation, parity, Replay, or performance.",
+  "results": [
+    {
+      "name": "full-verification",
+      "command": [
+        "npm",
+        "run",
+        "verify"
+      ],
+      "startedAt": "2026-11-08T13:32:52.427Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "\n> xauusd-smart-scalper-pro@0.8.0 verify\n> npm run typecheck && npm test && npm run pine:check && npm run diagnostics:check && npm run pine:parse\n\n\n> xauusd-smart-scalper-pro@0.8.0 typecheck\n> tsc --noEmit\n\n\n> xauusd-smart-scalper-pro@0.8.0 test\n> vitest run\n\n\n RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper\n\n\n Test Files  27 passed (27)\n      Tests  236 passed (236)\n   Start at  20:32:54\n   Duration  2.59s (tests 94%, import 3%, transform 1%, worker 1%)\n\n\n> xauusd-smart-scalper-pro@0.8.0 pine:check\n> python3 scripts/generate_pine.py --check\n\n\n> xauusd-smart-scalper-pro@0.8.0 diagnostics:check\n> python3 scripts/generate_signal_diagnostics.py --check\n\nindicator_signal_diagnostics.pine f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852\nstrategy_signal_diagnostics.pine 8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d\n\n> xauusd-smart-scalper-pro@0.8.0 pine:parse\n> node scripts/check_pine.mjs\n\nindicator.pine: independent parse passed\nstrategy.pine: independent parse passed\nvalidation.pine: independent parse passed\nexperiments/strategy_exit_audit.pine: independent parse passed\nexperiments/quantity_rounding_probe.pine: independent parse passed\nexperiments/strategy_quantity_units.pine: independent parse passed\nexperiments/quantity_units_matrix.pine: independent parse passed\nexperiments/indicator_candidate_trace.pine: independent parse passed\nexperiments/strategy_legacy_candidate_trace.pine: independent parse passed\nexperiments/strategy_quantity_candidate_trace.pine: independent parse passed\nexperiments/indicator_clear_levels.pine: independent parse passed\nexperiments/indicator_professional.pine: independent parse passed\nexperiments/strategy_professional.pine: independent parse passed\nexperiments/indicator_confirmation_review.pine: independent parse passed\nexperiments/strategy_confirmation_review.pine: independent parse passed\nexperiments/indicator_data_snapshot.pine: independent parse passed\nexperiments/indicator_nov5_trace.pine: independent parse passed\nexperiments/strategy_nov5_trace.pine: independent parse passed\nexperiments/indicator_live_snapshot.pine: independent parse passed\nexperiments/runtime_state_probe.pine: independent parse passed\nexperiments/indicator_stable_display.pine: independent parse passed\nexperiments/strategy_stable_display.pine: independent parse passed\nexperiments/indicator_stable_live_snapshot.pine: independent parse passed\nexperiments/indicator_jakarta_ladder.pine: independent parse passed\nexperiments/strategy_jakarta_ladder.pine: independent parse passed\nexperiments/indicator_session_labels.pine: independent parse passed\nexperiments/strategy_session_labels.pine: independent parse passed\nexperiments/indicator_signal_clarity.pine: independent parse passed\nexperiments/strategy_signal_clarity.pine: independent parse passed\nexperiments/indicator_signal_diagnostics.pine: independent parse passed\nexperiments/strategy_signal_diagnostics.pine: independent parse passed\nThis independent parser does not certify TradingView compilation or broker-emulator behavior.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "production-audit",
+      "command": [
+        "npm",
+        "audit",
+        "--omit=dev",
+        "--json"
+      ],
+      "startedAt": "2026-11-08T13:32:57.485Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "{\n  \"auditReportVersion\": 2,\n  \"vulnerabilities\": {},\n  \"metadata\": {\n    \"vulnerabilities\": {\n      \"info\": 0,\n      \"low\": 0,\n      \"moderate\": 0,\n      \"high\": 0,\n      \"critical\": 0,\n      \"total\": 0\n    },\n    \"dependencies\": {\n      \"prod\": 1,\n      \"dev\": 64,\n      \"optional\": 27,\n      \"peer\": 37,\n      \"peerOptional\": 0,\n      \"total\": 64\n    }\n  }\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "production-dependencies",
+      "command": [
+        "npm",
+        "ls",
+        "--omit=dev",
+        "--depth=0"
+      ],
+      "startedAt": "2026-11-08T13:32:57.681Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "xauusd-smart-scalper-pro@0.8.0 /Users/macbook/Documents/Trading2/xauusd-smart-scalper\n└── (empty)\n\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "name": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "startedAt": "2026-11-08T13:32:57.872Z",
+      "status": "PASS",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "error": null
+    }
+  ]
+}

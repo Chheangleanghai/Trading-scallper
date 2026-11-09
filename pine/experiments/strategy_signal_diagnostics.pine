@@ -3,32 +3,10 @@ strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics", overla
 bool brokerBusy = strategy.position_size != 0
 bool useBroker = true
 // Shared source: edit this file, then npm run pine:generate.
-// REVIEW_INPUTS_BEGIN
-reviewShowBoard = input.bool(true, 'Show A–H confirmation board', group='Concept review')
-reviewShowGuides = input.bool(true, 'Show candidate zones / triggers (setup only)', group='Concept review')
-// REVIEW_INPUTS_END
-// SESSION_DISPLAY_INPUTS_BEGIN
-showSessionBoundaryMarkers = input.bool(true, 'Show session boundary lines and names', group='Session annotations')
-markAsianSession = input.bool(true, 'Asia / Tokyo (09:00–18:00 Tokyo)', group='Session annotations')
-markLondonSession = input.bool(true, 'London (08:00–17:00 London)', group='Session annotations')
-markNewYorkSession = input.bool(true, 'New York (08:00–17:00 New York)', group='Session annotations')
-showSessionEndMarkers = input.bool(true, 'Show session closing boundaries', group='Session annotations')
-sessionBoundaryLimit = input.int(18, 'Recent session boundaries to keep', minval=6, maxval=42, group='Session annotations')
-showSelectedConceptLabel = input.bool(true, 'Name selected strategy on its confirmation candle', group='Concept review')
-selectedConceptLabelLimit = input.int(8, 'Recent selected-strategy labels to keep', minval=1, maxval=20, group='Concept review')
-// SESSION_DISPLAY_INPUTS_END
-// CLARITY_INPUTS_BEGIN
-closedPlanDisplay = input.string('Faded', 'Closed plan prices', options=['Faded', 'Hide'], group='Clear signal display')
-showSetupWatch = input.bool(true, 'Show next setup and required confirmation price', group='Clear signal display')
-// CLARITY_INPUTS_END
-// CLEAR_SIGNAL_INPUTS_BEGIN
-clearSignalView = input.string('Context + levels', 'Signal display', options=['Clear levels', 'Context + levels'], group='Clear signal display')
-clearLevelBars = input.int(8, 'Level / box extension bars', minval=5, maxval=50, group='Clear signal display')
-clearPlanLimit = input.int(1, 'Recent signal plans to keep', minval=1, maxval=3, group='Clear signal display')
-clearSpaceLabels = input.bool(false, 'Separate overlapping price labels with connectors', group='Clear signal display')
-clearShowPriceCard = input.bool(true, 'Show compact status and price card', group='Clear signal display')
-bool clearOnly = clearSignalView == 'Clear levels'
-// CLEAR_SIGNAL_INPUTS_END
+
+
+
+
 const string SCRIPT_VERSION = '0.8.0'
 enableA = input.bool(true, 'A: Sweep + MSS + FVG', group='Strategies')
 enableB = input.bool(true, 'B: CRT', group='Strategies')
@@ -106,9 +84,6 @@ showBreakers = input.bool(false, 'Show breaker-level heuristics', group='Context
 showWyckoff = input.bool(false, 'Show spring/upthrust candidates', group='Context visuals')
 partial = input.bool(true, 'Partial TP: 33% / 33% / 34% (strategy)')
 visualLayout = input.string('Reference', 'Chart layout', options=['Reference', 'Dashboard'], group='Chart style')
-historyMode = input.string('Off', 'Historical plan drawings', options=['Off', 'Recent plans', 'Full bounded'], group='Historical view')
-historyPlanLimit = input.int(8, 'Maximum historical plans', minval=1, maxval=10, group='Historical view')
-historyLookback = input.int(3000, 'Full history lookback bars', minval=100, maxval=20000, group='Historical view')
 showConceptPanel = input.bool(false, 'Show compact analysis context', group='Chart style')
 showSwingLevels = input.bool(true, 'Show confirmed swing levels and right labels', group='Chart style')
 showSupportResistance = input.bool(true, 'Show confirmed support/resistance zones', group='Chart style')
@@ -122,12 +97,8 @@ contextLabelGap = input.int(8, 'Minimum bars between same-side sweep labels', mi
 zoneExtension = input.int(12, 'Zone / right-label extension bars', minval=3, maxval=50, group='Chart style')
 dashboardSize = input.string('Tiny', 'Dashboard text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
 chartLabelSize = input.string('Small', 'Chart label text size', options=['Tiny', 'Small', 'Normal', 'Large'], group='Readability')
-showDashboard = input.bool(false, 'Show signal dashboard', group='Readability')
-showPerformance = input.bool(true, 'Show backtest results table', group='Readability')
-showUnusedModules = input.bool(false, 'Show strategies with no completed trades', group='Readability')
 showSwingLabels = input.bool(false, 'Show detailed swing labels', group='Readability')
 maxStructureLabels = input.int(15, 'Maximum recent structure labels', minval=5, maxval=100, group='Readability')
-showLastPlan = input.bool(true, 'Show previous trade prices when no current plan', group='Readability')
 contextTransparency = input.int(82, 'Context label background transparency', minval=0, maxval=95, group='Readability')
 panelText = dashboardSize == 'Tiny' ? size.tiny : dashboardSize == 'Large' ? size.large : dashboardSize == 'Small' ? size.small : size.normal
 chartText = chartLabelSize == 'Tiny' ? size.tiny : chartLabelSize == 'Large' ? size.large : chartLabelSize == 'Small' ? size.small : size.normal
@@ -138,13 +109,6 @@ panelMuted = color.rgb(71, 85, 105)
 panelValue = color.rgb(15, 23, 42)
 showEMA = input.bool(true, 'Show EMAs')
 showZones = input.bool(true, 'Show latest FVG')
-showTrade = input.bool(true, 'Show latest trade levels and boxes')
-showEntryLine = input.bool(true, 'Entry line/price', group='Trade visuals')
-showSLLine = input.bool(true, 'SL line/price', group='Trade visuals')
-showTP1Line = input.bool(true, 'TP1 line/price', group='Trade visuals')
-showTP2Line = input.bool(true, 'TP2 line/price', group='Trade visuals')
-showTP3Line = input.bool(true, 'TP3 line/price', group='Trade visuals')
-showRiskReward = input.bool(true, 'Risk/reward boxes', group='Trade visuals')
 showOB = input.bool(true, 'Show latest displacement order block heuristic')
 showStructure = input.bool(true, 'Show structure and sweeps')
 if barstate.isfirst and (not chart.is_standard or not timeframe.isminutes or (timeframe.multiplier != 1 and timeframe.multiplier != 3 and timeframe.multiplier != 5 and timeframe.multiplier != 15) or (enableB and timeframe.in_seconds(crtTF) < timeframe.in_seconds()) or r1 >= r2 or r2 >= r3)
@@ -330,7 +294,7 @@ var array<label> tags = array.new<label>()
 // SIGNAL_DIAGNOSTIC_CORE_BEGIN
 const string DIAGNOSTIC_PARENT_SHA = '8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479'
 // Diagnostic state is separate from every trading Candidate and broker state.
-diagMode = input.string('Off', 'Research diagnostics', options=['Off', 'Events', 'Events + dashboard'], group='Research diagnostics')
+diagMode = input.string('Off', 'Research diagnostics', options=['Off', 'Events'], group='Research diagnostics')
 diagRunTag = input.string('research-1', 'Run tag', group='Research diagnostics')
 diagCaptureInput = input.string('capture-2026-11-07-01', 'Unique capture ID (change for every run)', group='Research diagnostics')
 diagStart = input.time(timestamp('06 Nov 2026 14:00 +0000'), 'Diagnostic window start (bar open, inclusive)', group='Research diagnostics')
@@ -1475,146 +1439,9 @@ if cancelOrder
 if strategy.position_size != 0 and timeExit > 0 and time_close - strategy.opentrades.entry_time(0) >= timeExit * 60000
     strategy.close(selectedStrategy, comment='TRADE_CLOSED', immediately=false)
 
-// CLARITY_HELPERS_BEGIN — read-only presentation; no signal eligibility changes.
-clarityPlanEnding(bool openPlan, string ending) => openPlan ? '' : '\nCLOSED · ' + ending
-clarityPlanHue(bool openPlan, int index) =>
-    not openPlan ? color.rgb(135, 143, 155) : index == 0 ? color.rgb(110, 116, 125) : index == 1 ? color.rgb(239, 68, 68) : color.rgb(76, 175, 80)
-clarityNext(Candidate c, int currentStage) =>
-    str.startswith(c.id, 'A_') ? (currentStage == 1 ? 'MSS close + displacement + FVG' : 'FVG retest + directional close') : str.startswith(c.id, 'G_') ? 'Displaced close beyond frozen range' : str.startswith(c.id, 'E_') or str.startswith(c.id, 'H_') or (str.startswith(c.id, 'D_') and c.mode == 'Breakout retest') ? 'Zone retest + directional close' : 'Later directional trigger close'
-// CLARITY_HELPERS_END
 
-// REVIEW_DRAWINGS_BEGIN — presentation only; the qualified-plan engine is unchanged.
-// Jakarta display formatting only; session and UNIX event timestamps are unchanged.
-const string LADDER_DISPLAY_ZONE = 'Asia/Jakarta'
-var int clearPlanTime = na
-var string clearPlanSide = ''
-var string clearPlanModule = ''
-// Presentation-only rolling range for label spacing; no viewport-triggered reloads.
-float clearVisibleHigh = ta.highest(high, 100)
-float clearVisibleLow = ta.lowest(low, 100)
 
-type ClearSignalPlan
-    array<line> priceLines
-    array<line> connectors
-    array<label> priceLabels
-    array<float> prices
-    box riskArea
-    box rewardArea
-    int startTime
-    int planTimestamp
-    int endTime
-    int direction
-    bool isOpen
-    string module
-    string terminal
 
-var array<ClearSignalPlan> clearPlans = array.new<ClearSignalPlan>()
-
-method clearDelete(ClearSignalPlan view) =>
-    for level in view.priceLines
-        line.delete(level)
-    for connector in view.connectors
-        line.delete(connector)
-    for tag in view.priceLabels
-        label.delete(tag)
-    box.delete(view.riskArea)
-    box.delete(view.rewardArea)
-
-method clearRender(ClearSignalPlan view, float visibleHigh, float visibleLow) =>
-    int stepMs = int(timeframe.in_seconds() * 1000)
-    float top = math.max(nz(visibleHigh, high), array.max(view.prices))
-    float bottom = math.min(nz(visibleLow, low), array.min(view.prices))
-    float gap = clearSpaceLabels ? math.max(syminfo.mintick * 2, (top - bottom) * 0.026) : 0
-    array<float> placed = array.copy(view.prices)
-    array<int> ascending = view.direction == 1 ? array.from(1, 0, 2, 3, 4) : array.from(4, 3, 2, 0, 1)
-    float previousY = na
-    for index in ascending
-        float price = array.get(view.prices, index)
-        float captionY = na(previousY) ? price : math.max(price, previousY + gap)
-        array.set(placed, index, captionY)
-        previousY := captionY
-    // Center the spaced group around the original price range; connectors retain exact levels.
-    float shift = (array.max(placed) - array.max(view.prices)) / 2
-    array<string> names = array.from(reviewModuleName(view.module) + ' · ' + (view.direction == 1 ? 'BUY' : 'SELL') + ' / Entry ', 'SL ', 'TP1 ', 'TP2 ', 'TP3 ')
-    for index = 0 to 4
-        line level = array.get(view.priceLines, index)
-        line connector = array.get(view.connectors, index)
-        label tag = array.get(view.priceLabels, index)
-        float price = array.get(view.prices, index)
-        float captionY = array.get(placed, index) - shift
-        int labelTime = view.endTime
-        line.set_x2(level, view.endTime)
-        line.set_style(level, view.isOpen ? line.style_solid : line.style_dashed)
-        line.set_xy1(connector, view.endTime, price)
-        line.set_xy2(connector, labelTime, captionY)
-        label.set_xy(tag, labelTime, captionY)
-        bool visible = index == 0 ? showEntryLine : index == 1 ? showSLLine : index == 2 ? showTP1Line : index == 3 ? showTP2Line : showTP3Line
-        color levelColor = clarityPlanHue(view.isOpen, index)
-        line.set_color(level, visible ? levelColor : na)
-        line.set_color(connector, visible ? levelColor : na)
-        label.set_color(tag, visible ? levelColor : na)
-        label.set_textcolor(tag, visible ? color.white : na)
-        label.set_size(tag, chartText)
-        string suffix = index == 0 ? clarityPlanEnding(view.isOpen, view.terminal) : not view.isOpen ? ' · previous' : ''
-        label.set_text(tag, array.get(names, index) + priceText(price) + suffix)
-    if not na(view.riskArea)
-        box.set_right(view.riskArea, view.endTime)
-        box.set_right(view.rewardArea, view.endTime)
-        // Keep the reference colors; CLOSED and the outcome card identify past plans.
-        box.set_bgcolor(view.riskArea, view.isOpen ? color.new(color.rgb(239, 68, 68), 88) : color.new(color.gray, 97))
-        box.set_bgcolor(view.rewardArea, view.isOpen ? color.new(color.rgb(76, 175, 80), 90) : color.new(color.gray, 97))
-        box.set_border_color(view.riskArea, view.isOpen ? color.new(color.rgb(239, 68, 68), 55) : color.new(color.gray, 85))
-        box.set_border_color(view.rewardArea, view.isOpen ? color.new(color.rgb(76, 175, 80), 60) : color.new(color.gray, 85))
-
-// Freeze an ended plan instead of stretching yesterday's risk box to the current candle.
-if barstate.isconfirmed and array.size(clearPlans) > 0
-    ClearSignalPlan latestView = array.last(clearPlans)
-    if latestView.isOpen
-        int minimumEnd = latestView.startTime + int(timeframe.in_seconds() * 1000) * clearLevelBars
-        latestView.endTime := math.max(minimumEnd, time_close)
-        if newSignal or not (active or pending)
-            latestView.isOpen := false
-            bool cancelledPlan = not newSignal and (status == 'EXPIRED' or str.startswith(status, 'INVALIDATED'))
-            bool knownClose = reviewOutcome.planTime == latestView.planTimestamp and not na(reviewOutcome.closeTime)
-            // Minimum display width is not holding duration; actual closure stays in the card.
-            latestView.endTime := math.max(minimumEnd, knownClose ? reviewOutcome.closeTime : time_close)
-            latestView.terminal := knownClose ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : cancelledPlan ? statusName(status) : 'Ended; reason unavailable'
-
-if newSignal and showTrade and (active or pending or not useBroker)
-    clearPlanTime := signalTime
-    clearPlanSide := dir == 1 ? 'BUY' : 'SELL'
-    clearPlanModule := selectedStrategy
-    array<float> planPrices = array.from(entry, stop, tp1, tp2, tp3)
-    array<bool> visiblePrices = array.from(showEntryLine, showSLLine, showTP1Line, showTP2Line, showTP3Line)
-    array<line> planLines = array.new<line>()
-    array<line> planConnectors = array.new<line>()
-    array<label> planLabels = array.new<label>()
-    int projectedEnd = time + int(timeframe.in_seconds() * 1000) * clearLevelBars
-    box riskArea = na
-    box rewardArea = na
-    if showRiskReward
-        riskArea := box.new(time, math.max(entry, stop), projectedEnd, math.min(entry, stop), xloc=xloc.bar_time, bgcolor=color.new(color.red, 88), border_color=color.new(color.red, 65))
-        rewardArea := box.new(time, math.max(entry, tp3), projectedEnd, math.min(entry, tp3), xloc=xloc.bar_time, bgcolor=color.new(color.green, 88), border_color=color.new(color.green, 65))
-    for index = 0 to 4
-        float price = array.get(planPrices, index)
-        color levelColor = index == 0 ? color.rgb(110, 116, 125) : index == 1 ? color.rgb(239, 68, 68) : color.rgb(76, 175, 80)
-        bool visible = array.get(visiblePrices, index)
-        array.push(planLines, line.new(time, price, projectedEnd, price, xloc=xloc.bar_time, color=visible ? levelColor : na, width=1))
-        array.push(planConnectors, line.new(projectedEnd, price, projectedEnd, price, xloc=xloc.bar_time, color=visible ? levelColor : na))
-        array.push(planLabels, label.new(projectedEnd, price, '', xloc=xloc.bar_time, style=label.style_label_left, color=visible ? levelColor : na, textcolor=visible ? color.white : na, size=chartText))
-    array.push(clearPlans, ClearSignalPlan.new(planLines, planConnectors, planLabels, planPrices, riskArea, rewardArea, time, signalTime, projectedEnd, dir, active or pending, selectedStrategy, 'ENDED'))
-    if array.size(clearPlans) > clearPlanLimit
-        ClearSignalPlan oldestView = array.shift(clearPlans)
-        oldestView.clearDelete()
-
-if barstate.islast or barstate.islastconfirmedhistory
-    for view in clearPlans
-        bool visiblePlan = view.isOpen or (showLastPlan and closedPlanDisplay == 'Faded')
-        if visiblePlan
-            view.clearRender(clearVisibleHigh, clearVisibleLow)
-        else
-            view.clearDelete()
-// REVIEW_DRAWINGS_END
 plot(showEMA and visualLayout == 'Dashboard' ? ema9 : na, 'EMA 9', color=color.aqua)
 plot(showEMA ? ema21 : na, 'EMA 21', color=color.rgb(228, 163, 46), linewidth=1)
 plot(showEMA and useEMA50 and visualLayout == 'Dashboard' ? ema50 : na, 'Strategy EMA 50', color=color.blue)
@@ -1632,31 +1459,7 @@ plot(showBreakers ? bearBreaker : na, 'Bearish breaker level', color=color.new(c
 plotshape(showWyckoff and barstate.isconfirmed and bullSpring, 'Spring candidate', shape.triangleup, location.belowbar, color.purple, size=size.tiny)
 plotshape(showWyckoff and barstate.isconfirmed and bearUpthrust, 'Upthrust candidate', shape.triangledown, location.abovebar, color.purple, size=size.tiny)
 plot(active ? managedStop : na, 'Managed SL (next bar)', color=color.red, style=plot.style_linebr)
-// Read-only explanation of the most recent confirmed-bar decision. Never opens orders.
-if barstate.isconfirmed
-    decisionState := readinessState(dir, pending, active or brokerBusy, entryTriggered)
-    if pending or active or brokerBusy
-        decisionReason := pending ? 'Qualified plan; waiting for ' + (entryMode == 'Limit' ? 'limit fill' : entryMode == 'Breakout' ? 'breakout fill' : 'emulator market fill') + ' · not executed yet' : signalReason
-        decisionProgress := pending ? 'Setup ✓ → Confirmation ✓ → Risk ✓ → Fill …' : 'Setup ✓ → Confirmation ✓ → Risk ✓ → Entry triggered (sim.)'
-    else
-        string commonBlock = newSignal and status == 'REJECTED: INVALID UNIT SIZE' ? 'Simulation quantity below feed minimum / invalid conversion' : not (enableA or enableB or enableC or enableD or enableE or enableF or enableG or enableH) ? 'All strategies disabled' : cancelOrder ? 'Previous order cancelled; reevaluate on a later bar' : pause ? 'Manual news pause' : not researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close) ? 'Outside research date window' : useSession and not inSession ? 'Outside selected session' : not volOK ? 'ATR filtered / warming up' : sessionTrades >= maxTrades ? 'Session plan limit' : not na(lastSignal) and bar_index - lastSignal < cooldown ? 'Signal cooldown' : ''
-        string effectiveBlock = commonBlock != '' ? commonBlock : validationReason == 'Opposing qualified directions; no trade' ? validationReason : ''
-        decisionReason := effectiveBlock != '' ? effectiveBlock : validationReason
-        decisionProgress := 'No qualified setup → WAIT'
-        if enableA and stage > 0
-            decisionProgress := stage == 1 ? 'Sweep ✓ → MSS … + FVG … → Retest … → Risk …' : 'Sweep ✓ → MSS ✓ + FVG ✓ → Retest … → Risk …'
-            if effectiveBlock == ''
-                decisionReason := stage == 1 ? 'Need a later displaced MSS candle with FVG' : candA.ready ? validationReason : 'Need a later FVG retest and directional close'
-        else
-            for candidate in candidates
-                if candidate.enabled and candidate.stage > 0
-                    decisionProgress := strategyName(candidate.id) + ' → ' + (candidate.ready ? 'Trigger ✓ → risk checks' : 'Setup ✓ → later confirmation …')
-                    if effectiveBlock == ''
-                        decisionReason := candidate.ready ? candidate.rejectionReason : 'Waiting for later setup-specific confirmation'
-                    break
-    if newSignal and useBroker and not pending and not active and status == 'REJECTED: INVALID UNIT SIZE'
-        decisionProgress := 'Setup ✓ → Confirmation ✓ → Execution quantity rejected'
-// Presentation-only context. None of these objects or flags feed the trading candidates.
+
 type HistoricalPlan
     array<line> priceLines
     array<label> priceLabels
@@ -1896,60 +1699,6 @@ if barstate.islast or barstate.islastconfirmedhistory
             table.cell(conceptPanel, 0, row, array.get(captions, row), text_color=color.rgb(71, 85, 105), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
             table.cell(conceptPanel, 1, row, array.get(descriptions, row), text_color=color.rgb(30, 41, 59), text_size=panelText, text_halign=text.align_left, bgcolor=rowColor)
 
-// Plan history is a read-only overlay. It starts at the confirmed plan bar and never submits orders or alerts.
-bool inHistoryWindow = historyMode != 'Full bounded' or bar_index >= last_bar_index - historyLookback
-if barstate.isconfirmed and newSignal and historyMode != 'Off' and inHistoryWindow and (active or pending or not useBroker)
-    createHistoricalPlan(dir, selectedStrategy, entry, stop, tp1, tp2, tp3, historyPlanLimit)
-if barstate.isconfirmed and array.size(historicalPlans) > 0
-    updateHistoricalPlans(active or pending or brokerBusy)
-var table dash = table.new(position.top_right, 2, 19, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
-if barstate.islast or barstate.islastconfirmedhistory
-    table.clear(dash, 0, 0, 1, 18)
-    bool currentPlan = active or pending or brokerBusy
-    string displayStrategy = currentPlan or showLastPlan ? strategyName(selectedStrategy) : 'Waiting for a setup'
-    string displayStatus = statusName(status)
-    string displayQuality = currentPlan or showLastPlan ? str.tostring(quality) + ' / 100' : 'Not scored yet'
-    int displayDirection = currentPlan or showLastPlan ? dir : 0
-    float displayEntry = currentPlan or showLastPlan ? entry : na
-    float displaySL = currentPlan or showLastPlan ? stop : na
-    float display1 = currentPlan or showLastPlan ? tp1 : na
-    float display2 = currentPlan or showLastPlan ? tp2 : na
-    float display3 = currentPlan or showLastPlan ? tp3 : na
-    float displayFill = currentPlan or showLastPlan ? filledEntry : na
-    float displayManaged = currentPlan or showLastPlan ? managedStop : na
-    string displaySource = currentPlan or showLastPlan ? targetSource : 'No current trade plan'
-    if not currentPlan and not str.startswith(status, 'REJECTED')
-        for c in candidates
-            if c.enabled and c.stage > 0
-                displayStrategy := strategyName(c.id)
-                displayStatus := statusName(c.status)
-                displayQuality := c.ready ? str.tostring(c.quality) + ' / 100' : 'Not scored yet'
-                displayDirection := c.direction
-                displayEntry := na
-                displaySL := na
-                display1 := na
-                display2 := na
-                display3 := na
-                displayFill := na
-                displayManaged := na
-                displaySource := c.ready and c.confirmationTime == time_close and c.targetSource != '' ? c.targetSource : 'Targets not calculated yet'
-                break
-    if not currentPlan and displayStrategy == 'Waiting for a setup' and enableA and stage > 0
-        displayStrategy := strategyName('A_')
-        displayStatus := stage == 1 ? 'Sweep found · waiting for reversal' : 'Reversal found · waiting for entry'
-        displayDirection := dir
-    string planCaption = currentPlan ? (pending ? 'CURRENT · ORDER PENDING' : 'CURRENT · SIMULATED TRADE') : showLastPlan ? 'PREVIOUS PLAN / NEW SETUP' : 'NO CURRENT TRADE'
-    float displayRisk = math.abs(displayEntry - displaySL)
-    string rrText = not na(displayRisk) and displayRisk > 0 ? str.tostring(math.abs(display2 - displayEntry) / displayRisk, '#.##') + 'R  |  ' + str.tostring(riskPct) + '% risk' : '—'
-    keys = array.from('SMART SCALPER PRO', 'Chart / execution', '1-hour trend', '15-minute structure', 'Plan information', 'Strategy', 'Setup status', 'Direction', 'Setup score · not win %', 'Session / volatility', 'Planned entry', 'Initial stop loss', 'Take profit 1', 'Take profit 2', 'Take profit 3', 'Target 2 / planned risk', 'Target method', 'Simulated fill price', 'Current stop loss')
-    vals = array.from(syminfo.ticker, timeframe.period + ' min', hTrend == 1 ? 'UPTREND' : hTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', mTrend == 1 ? 'UPTREND' : mTrend == -1 ? 'DOWNTREND' : 'NEUTRAL', planCaption, displayStrategy, displayStatus, displayDirection == 1 ? (currentPlan ? 'BUY' : 'Potential BUY · not an entry') : displayDirection == -1 ? (currentPlan ? 'SELL' : 'Potential SELL · not an entry') : 'No entry', displayQuality, (inSession ? sessionPreset : 'Outside trading hours') + (volOK ? ' / Normal' : ' / Filtered'), priceText(displayEntry), priceText(displaySL), priceText(display1), priceText(display2), priceText(display3), rrText, displaySource, priceText(displayFill), priceText(displayManaged))
-    if showDashboard and visualLayout == 'Dashboard'
-        for i = 0 to 18
-            color rowBackground = i == 0 ? panelHeader : i % 2 == 0 ? panelAlternate : panelBackground
-            color valueColor = i == 7 and displayDirection != 0 ? (displayDirection == 1 ? color.rgb(21, 128, 61) : color.rgb(185, 28, 28)) : i == 4 ? color.rgb(146, 64, 14) : panelValue
-            table.cell(dash, 0, i, array.get(keys, i), text_color=panelMuted, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
-            table.cell(dash, 1, i, array.get(vals, i), text_color=valueColor, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
-
 if auditLog and newSignal
     log.info('PLAN_AUDIT ' + '{"scriptVersion":"' + SCRIPT_VERSION + '","symbol":"' + jsonEscape(syminfo.tickerid) + '","timeframe":"' + timeframe.period + '","strategy":"' + selectedStrategy + '","timestamp":' + str.tostring(signalTime) + ',"setupTimestamp":' + str.tostring(signalSetupTime) + ',"direction":' + str.tostring(dir) + ',"entryMode":"' + entryMode + '","entry":' + str.tostring(entry, format.mintick) + ',"sl":' + str.tostring(stop, format.mintick) + ',"tp1":' + str.tostring(tp1, format.mintick) + ',"tp2":' + str.tostring(tp2, format.mintick) + ',"tp3":' + str.tostring(tp3, format.mintick) + ',"quality":' + str.tostring(quality) + ',"executionAccepted":' + (active or pending ? 'true' : 'false') + ',"executionModel":"' + (useBroker ? 'STRATEGY_EMULATOR' : 'INDICATOR_ESTIMATE') + '"}')
 
@@ -2012,214 +1761,11 @@ if strategy.position_size == 0 and not na(groupedEntryTime)
     groupedLastExit := na
     groupedEntryTime := na
     groupedId := ''
-var table performance = table.new(position.bottom_right, 6, 10, bgcolor=panelBackground, frame_color=color.rgb(71, 85, 105), frame_width=1)
-if barstate.islast or barstate.islastconfirmedhistory
-    table.clear(performance, 0, 0, 5, 9)
-    if showPerformance and visualLayout == 'Dashboard'
-        array<string> headers = array.from('Strategy', 'Closed trades', 'Win rate', 'Profit factor', 'Avg net P&L (' + strategy.account_currency + ')', 'Avg hold')
-        for col = 0 to 5
-            table.cell(performance, col, 0, array.get(headers, col), text_color=panelValue, text_size=panelText, bgcolor=panelHeader)
-        int visibleRow = 1
-        for index = 0 to 7
-            int count = array.get(moduleTrades, index)
-            float losses = array.get(moduleGrossLoss, index)
-            if showUnusedModules or count > 0
-                color rowBackground = visibleRow % 2 == 0 ? panelAlternate : panelBackground
-                table.cell(performance, 0, visibleRow, strategyName(str.substring('ABCDEFGH', index, index + 1) + '_'), text_color=panelValue, text_size=panelText, text_halign=text.align_left, bgcolor=rowBackground)
-                table.cell(performance, 1, visibleRow, str.tostring(count), text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
-                table.cell(performance, 2, visibleRow, count > 0 ? str.tostring(100.0 * array.get(moduleWins, index) / count, '#.##') + '%' : 'No trades', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
-                table.cell(performance, 3, visibleRow, losses > 0 ? str.tostring(array.get(moduleGrossWin, index) / losses, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
-                table.cell(performance, 4, visibleRow, count > 0 ? str.tostring(array.get(moduleNet, index) / count, '#.##') : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
-                table.cell(performance, 5, visibleRow, count > 0 ? str.tostring(array.get(moduleHold, index) / count, '#.#') + ' min' : '—', text_color=panelValue, text_size=panelText, bgcolor=rowBackground)
-                visibleRow += 1
-        if visibleRow == 1
-            table.cell(performance, 0, visibleRow, 'No closed trades yet', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
-            for col = 1 to 5
-                table.cell(performance, col, visibleRow, col == 1 ? '0' : '—', text_color=panelMuted, text_size=panelText, bgcolor=panelBackground)
-            visibleRow += 1
-        table.cell(performance, 0, visibleRow, 'Max drawdown', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
-        table.cell(performance, 1, visibleRow, str.tostring(strategy.max_drawdown, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
-        table.cell(performance, 2, visibleRow, 'Total net P&L', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
-        table.cell(performance, 3, visibleRow, str.tostring(strategy.netprofit, '#.##') + ' ' + strategy.account_currency, text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
-        table.cell(performance, 4, visibleRow, 'Plans / size skips', text_color=panelMuted, text_size=panelText, bgcolor=panelAlternate)
-        table.cell(performance, 5, visibleRow, str.tostring(totalPlans) + ' / ' + str.tostring(rejectedSizes), text_color=panelValue, text_size=panelText, bgcolor=panelAlternate)
 
-// REVIEW_BADGE_BEGIN — never creates plans, orders or alerts.
-var table reviewBadge = table.new(position.top_right, 2, 14, frame_color=color.rgb(100, 116, 139), frame_width=1, bgcolor=color.rgb(42, 48, 60))
-if barstate.islast or barstate.islastconfirmedhistory
-    table.clear(reviewBadge, 0, 0, 1, 13)
-    if clearShowPriceCard
-        bool hasPlan = showTrade and not na(clearPlanTime) and (active or pending or showLastPlan)
-        bool livePlan = hasPlan and (active or pending)
-        bool closedPlan = hasPlan and not livePlan and reviewOutcome.planTime == clearPlanTime
-        string planState = livePlan ? clearPlanSide + (pending ? ' · pending' : useBroker ? ' · simulated' : ' · estimate') : 'NO ACTIVE ENTRY' + (hasPlan ? ' · previous ' + clearPlanSide + ' closed' : '')
-        string closeCaption = closedPlan ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : hasPlan and not livePlan ? 'Ended; reason unavailable' : 'No closed current plan'
-        if closedPlan and useBroker and not na(reviewOutcome.net)
-            closeCaption += ' · ' + (reviewOutcome.net >= 0 ? '+' : '') + str.tostring(reviewOutcome.net, '#.##') + ' ' + reviewOutcome.accountCurrency
-        string execution = pending ? 'Awaiting fill · not executed' : useBroker ? 'Emulator' + (hasPlan ? ' fill ' + priceText(filledEntry) : '') : 'Indicator estimate · no broker fill'
-        string watchCaption = 'No developing concept on last closed bar'
-        string triggerCaption = 'Wait for a new setup; no entry yet'
-        if livePlan
-            watchCaption := reviewModuleName(clearPlanModule) + (pending ? ' · order pending' : ' · active model plan')
-            triggerCaption := pending ? 'Await fill; do not treat pending as executed' : 'Manage existing plan; no additional entry'
-        else if showSetupWatch
-            for c in candidates
-                int watchStage = str.startswith(c.id, 'A_') ? stage : c.stage
-                if c.enabled and watchStage > 0
-                    int watchDirection = str.startswith(c.id, 'A_') ? dir : c.direction
-                    float watchTrigger = str.startswith(c.id, 'A_') ? (watchStage == 1 ? breakLevel : watchDirection == 1 ? gapTop : gapBottom) : str.startswith(c.id, 'E_') or str.startswith(c.id, 'H_') or (str.startswith(c.id, 'D_') and c.mode == 'Breakout retest') ? (watchDirection == 1 ? c.upper : c.lower) : c.trigger
-                    watchCaption := reviewModuleName(c.id) + (watchDirection == 1 ? ' · potential BUY' : ' · potential SELL') + ' · NOT ENTRY'
-                    bool triggerChecked = c.ready and c.confirmationTime == (barstate.isconfirmed ? time_close : time_close[1])
-                    triggerCaption := triggerChecked ? (c.rejectionReason != '' ? 'Trigger confirmed; BLOCKED: ' + c.rejectionReason : 'Trigger checked; ' + decisionReason) : clarityNext(c, watchStage) + (na(watchTrigger) ? '' : (watchDirection == 1 ? ' above ' : ' below ') + priceText(watchTrigger)) + '; then risk checks'
-                    break
-        if not showSetupWatch
-            watchCaption := 'Setup watch disabled'
-            triggerCaption := 'See A–H confirmation board'
-        array<string> keys = array.from('SMART SCALPER · ' + timeframe.period + 'm', 'Why / last close', 'Concept / signal WIB', 'Entry planned', 'Initial SL', 'TP1', 'TP2', 'TP3', 'Target method', 'Last plan outcome', 'Execution model', 'Session / plans', 'Developing setup', 'Next confirmation')
-        array<string> values = array.from(planState, decisionReason, hasPlan ? reviewModuleName(clearPlanModule) + ' · ' + str.format_time(clearPlanTime, 'dd MMM HH:mm', LADDER_DISPLAY_ZONE) : 'Waiting for a confirmed concept', hasPlan and showEntryLine ? priceText(entry) : '—', hasPlan and showSLLine ? priceText(stop) : '—', hasPlan and showTP1Line ? priceText(tp1) : '—', hasPlan and showTP2Line ? priceText(tp2) : '—', hasPlan and showTP3Line ? priceText(tp3) : '—', hasPlan ? targetSource : '—', closeCaption, execution, sessionPreset + (inSession ? ' open' : ' closed') + ' · ' + str.tostring(sessionTrades) + '/' + str.tostring(maxTrades), watchCaption, triggerCaption)
-        for row = 0 to 13
-            color valueColor = not livePlan and row >= 3 and row <= 8 ? color.rgb(153, 163, 178) : row == 4 ? color.rgb(255, 130, 130) : row >= 5 and row <= 7 ? color.rgb(115, 225, 145) : color.white
-            table.cell(reviewBadge, 0, row, (not livePlan and hasPlan and row >= 3 and row <= 7 ? 'Previous ' : '') + array.get(keys, row), text_color=color.rgb(180, 190, 205), text_size=panelText, bgcolor=color.rgb(42, 48, 60), text_halign=text.align_left)
-            table.cell(reviewBadge, 1, row, array.get(values, row), text_color=valueColor, text_size=panelText, bgcolor=row == 0 ? color.rgb(63, 71, 86) : color.rgb(42, 48, 60), text_halign=text.align_right)
-// REVIEW_BADGE_END
 
-// REVIEW_CONCEPT_VIEW_BEGIN — reads candidate state; never confirms or submits a trade.
-reviewNeeded(Candidate c, int currentStage) =>
-    str.startswith(c.id, 'A_') ? (currentStage == 1 ? 'Need later MSS + FVG' : 'Need later FVG retest') : str.startswith(c.id, 'G_') ? 'Need displaced range break' : str.startswith(c.id, 'E_') or str.startswith(c.id, 'H_') or (str.startswith(c.id, 'D_') and c.mode == 'Breakout retest') ? 'Need later directional retest' : 'Need later directional trigger close'
-reviewShort(string value) => str.length(value) > 62 ? str.substring(value, 0, 59) + '…' : value
-var array<box> reviewZones = array.new<box>()
-var array<line> reviewTriggers = array.new<line>()
-var array<line> reviewInvalidations = array.new<line>()
-var array<label> reviewGuideTags = array.new<label>()
-var array<line> reviewQmLines = array.new<line>()
-if barstate.isfirst
-    for index = 0 to 8
-        array.push(reviewZones, box.new(time, close, time, close, xloc=xloc.bar_time, bgcolor=na, border_color=na))
-        array.push(reviewTriggers, line.new(time, close, time, close, xloc=xloc.bar_time, color=na, style=line.style_dashed))
-        array.push(reviewInvalidations, line.new(time, close, time, close, xloc=xloc.bar_time, color=na, style=line.style_dotted))
-        array.push(reviewGuideTags, label.new(time, close, '', xloc=xloc.bar_time, style=label.style_label_left, color=na, textcolor=na, size=size.tiny))
-    for index = 0 to 3
-        array.push(reviewQmLines, line.new(bar_index, close, bar_index, close, color=na, style=line.style_dashed))
 
-var table reviewBoard = table.new(position.bottom_right, 3, 10, frame_color=color.rgb(148, 163, 184), frame_width=1, bgcolor=color.new(color.white, 8))
-var int reviewDecisionTime = na
-if barstate.isconfirmed
-    reviewDecisionTime := time_close
-if barstate.islast or barstate.islastconfirmedhistory
-    table.clear(reviewBoard, 0, 0, 2, 9)
-    for index = 0 to array.size(candidates) - 1
-        Candidate c = array.get(candidates, index)
-        int currentStage = index == 0 ? stage : c.stage
-        bool visibleGuide = reviewShowGuides and c.enabled and currentStage > 0 and not (active or pending or brokerBusy)
-        float lower = index == 0 ? (stage == 1 ? math.min(extreme, breakLevel) : gapBottom) : c.lower
-        float upper = index == 0 ? (stage == 1 ? math.max(extreme, breakLevel) : gapTop) : c.upper
-        float trigger = index == 0 ? (stage == 1 ? breakLevel : dir == 1 ? gapTop : gapBottom) : c.trigger
-        float invalidation = index == 0 ? extreme : c.invalidation
-        int start = index == 0 ? setupTime : c.setupTime
-        color guideColor = index == 0 ? color.teal : index == 1 ? color.orange : index == 2 ? color.purple : index == 3 ? color.blue : index == 4 or index == 5 ? color.rgb(30, 130, 115) : index == 6 ? color.rgb(80, 105, 190) : index == 7 ? color.rgb(130, 85, 170) : color.fuchsia
-        box zone = array.get(reviewZones, index)
-        line triggerLine = array.get(reviewTriggers, index)
-        line invalidLine = array.get(reviewInvalidations, index)
-        label guideTag = array.get(reviewGuideTags, index)
-        bool knownGuide = visibleGuide and not na(start) and not na(lower) and not na(upper) and upper >= lower
-        box.set_bgcolor(zone, knownGuide ? color.new(guideColor, 94) : na)
-        box.set_border_color(zone, knownGuide ? color.new(guideColor, 65) : na)
-        line.set_color(triggerLine, knownGuide and not na(trigger) ? color.new(guideColor, 20) : na)
-        line.set_color(invalidLine, knownGuide and not na(invalidation) ? color.new(color.red, 55) : na)
-        label.set_text(guideTag, knownGuide ? reviewModuleName(c.id) + ' · SETUP ONLY' : '')
-        label.set_textcolor(guideTag, knownGuide ? guideColor : na)
-        label.set_color(guideTag, knownGuide ? color.new(color.white, 18) : na)
-        if knownGuide
-            int right = time_close + int(timeframe.in_seconds() * 1000) * 8
-            box.set_lefttop(zone, start, upper)
-            box.set_rightbottom(zone, right, lower)
-            line.set_xy1(triggerLine, start, trigger)
-            line.set_xy2(triggerLine, right, trigger)
-            line.set_xy1(invalidLine, start, invalidation)
-            line.set_xy2(invalidLine, right, invalidation)
-            label.set_xy(guideTag, right, upper)
-    bool qmKnown = reviewShowGuides and array.size(reviewQmBars) == 5 and array.size(reviewQmPrices) == 5 and (candH.stage > 0 or ((active or pending) and selectedStrategy == 'H_QUASIMODO' and reviewQm.setupTime == signalSetupTime))
-    if qmKnown
-        qmKnown := bar_index - array.get(reviewQmBars, 0) <= 1000
-    for index = 0 to 3
-        line segment = array.get(reviewQmLines, index)
-        line.set_color(segment, qmKnown ? color.new(color.fuchsia, 35) : na)
-        if qmKnown
-            // X coordinates are pivot confirmation bars, not backdated pivot candles.
-            line.set_xy1(segment, array.get(reviewQmBars, index), array.get(reviewQmPrices, index))
-            line.set_xy2(segment, array.get(reviewQmBars, index + 1), array.get(reviewQmPrices, index + 1))
-    if reviewShowBoard
-        array<string> headers = array.from('A–H · last closed bar', 'State', 'Next confirmation / block')
-        for col = 0 to 2
-            table.cell(reviewBoard, col, 0, array.get(headers, col), text_color=color.rgb(30, 41, 59), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240), text_halign=text.align_left)
-        for module = 0 to 7
-            int index = module <= 4 ? module : module + 1
-            Candidate c = array.get(candidates, index)
-            if module == 4 and (candSupply.ready or (candSupply.stage > 0 and candDemand.stage == 0))
-                c := candSupply
-            int currentStage = module == 0 ? stage : c.stage
-            bool selected = (active or pending or brokerBusy) and str.substring(selectedStrategy, 0, 1) == str.substring(c.id, 0, 1)
-            bool checked = c.ready and c.confirmationTime == reviewDecisionTime
-            string stateCaption = not c.enabled ? 'OFF' : selected ? (pending ? 'PLAN PENDING' : 'PLAN ACTIVE') : checked ? (c.rejectionReason == '' ? 'TRIGGER ✓' : 'BLOCKED') : currentStage > 0 ? 'SETUP' : 'WAIT'
-            string detail = not c.enabled ? 'Disabled in inputs' : selected ? signalReason : checked ? (c.rejectionReason == '' ? 'Qualified directions need arbitration' : c.rejectionReason) : currentStage > 0 ? ((active or pending or brokerBusy) ? 'Plan slot occupied' : reviewNeeded(c, currentStage)) : c.status == 'EXPIRED' or c.status == 'INVALIDATED' ? 'Last setup ' + str.lower(c.status) : 'Need a new confirmed setup'
-            color rowBackground = module % 2 == 0 ? color.rgb(250, 252, 255) : color.rgb(241, 245, 249)
-            table.cell(reviewBoard, 0, module + 1, reviewModuleName(c.id), text_color=color.rgb(51, 65, 85), text_size=size.tiny, bgcolor=rowBackground, text_halign=text.align_left)
-            table.cell(reviewBoard, 1, module + 1, stateCaption, text_color=selected ? color.rgb(21, 128, 61) : checked ? color.rgb(146, 64, 14) : color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=rowBackground, text_halign=text.align_left)
-            table.cell(reviewBoard, 2, module + 1, reviewShort(detail), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=rowBackground, text_halign=text.align_left)
-        table.cell(reviewBoard, 0, 9, 'Context ≠ entry', text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240))
-        table.cell(reviewBoard, 1, 9, 'H1 ' + (hTrend == 1 ? '↑' : hTrend == -1 ? '↓' : '—') + ' / M15 ' + (mTrend == 1 ? '↑' : mTrend == -1 ? '↓' : '—'), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240))
-        table.cell(reviewBoard, 2, 9, reviewShort(decisionReason), text_color=color.rgb(71, 85, 105), text_size=size.tiny, bgcolor=color.rgb(226, 232, 240), text_halign=text.align_left)
-// REVIEW_CONCEPT_VIEW_END
 
-// SESSION_PLAN_LABELS_BEGIN — presentation only; no candidate/order/alert mutations.
-var array<line> sessionBoundaryLines = array.new<line>()
-var array<label> sessionBoundaryTags = array.new<label>()
-var array<label> selectedConceptTags = array.new<label>()
 
-drawSessionBoundary(int boundaryTime, string caption, string localZone, color hue) =>
-    line marker = line.new(boundaryTime, low, boundaryTime, high, xloc=xloc.bar_time, extend=extend.both, color=color.new(hue, 72), style=line.style_dotted)
-    string clock = str.format_time(boundaryTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB'
-    label tag = label.new(boundaryTime, high + nz(atr, high - low) * 1.8, caption + '\n' + clock, xloc=xloc.bar_time, style=label.style_label_down, color=color.new(hue, 88), textcolor=hue, size=size.tiny)
-    label.set_tooltip(tag, caption + '\n' + str.format_time(boundaryTime, 'dd MMM yyyy HH:mm', localZone) + ' ' + localZone + '\n' + clock + '\nSession context only; does not enable a trading session or confirm a signal.')
-    array.push(sessionBoundaryLines, marker)
-    array.push(sessionBoundaryTags, tag)
-    if array.size(sessionBoundaryLines) > sessionBoundaryLimit
-        line.delete(array.shift(sessionBoundaryLines))
-        label.delete(array.shift(sessionBoundaryTags))
-    0
-
-drawSessionClocks(bool inside, string caption, string localZone, int openHour, int closeHour, color hue) =>
-    // Only actual boundary candles are marked. Do not turn a data gap into a false session open.
-    bool opens = inside and hour(time, localZone) == openHour and minute(time, localZone) == 0
-    // Draw the close at the last inside candle's close, including the final Friday candle.
-    bool closes = inside and hour(time_close, localZone) == closeHour and minute(time_close, localZone) == 0
-    if opens
-        drawSessionBoundary(time, caption + ' OPEN', localZone, hue)
-    if showSessionEndMarkers and closes
-        drawSessionBoundary(time_close, caption + ' CLOSE', localZone, hue)
-    0
-
-if barstate.isconfirmed and showSessionBoundaryMarkers
-    if markAsianSession
-        drawSessionClocks(asianSession, 'ASIA / TOKYO', 'Asia/Tokyo', 9, 18, color.rgb(126, 87, 194))
-    if markLondonSession
-        drawSessionClocks(londonSession, 'LONDON', 'Europe/London', 8, 17, color.rgb(30, 115, 190))
-    if markNewYorkSession
-        drawSessionClocks(newYorkSession, 'NEW YORK', 'America/New_York', 8, 17, color.rgb(184, 112, 20))
-
-// Label only the selected, risk-checked plan. SETUP/trigger-only candidates are not entry signals.
-if barstate.isconfirmed and showSelectedConceptLabel and showTrade and newSignal and (active or pending or not useBroker)
-    color conceptHue = dir == 1 ? color.rgb(21, 128, 61) : color.rgb(185, 28, 28)
-    string planStateCaption = pending ? ' plan pending' : ' plan confirmed'
-    string conceptText = reviewModuleName(selectedStrategy) + ' · ' + (dir == 1 ? 'BUY' : 'SELL') + ' plan recorded'
-    string planClock = str.format_time(signalTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB'
-    float conceptY = dir == 1 ? low - nz(atr, high - low) * 0.6 : high + nz(atr, high - low) * 0.6
-    label conceptTag = label.new(time, conceptY, conceptText + '\n' + timeframe.period + 'm · ' + planClock, xloc=xloc.bar_time, style=dir == 1 ? label.style_label_up : label.style_label_down, color=color.new(conceptHue, 88), textcolor=conceptHue, size=size.tiny)
-    label.set_tooltip(conceptTag, selectedStrategy + '\n' + signalReason + '\nPlan confirmed at ' + str.format_time(signalTime, 'dd MMM yyyy HH:mm', LADDER_DISPLAY_ZONE) + ' WIB\nEntry ' + priceText(entry) + ' | SL ' + priceText(stop) + '\nTP1 ' + priceText(tp1) + ' | TP2 ' + priceText(tp2) + ' | TP3 ' + priceText(tp3) + '\nQualified plan; broker execution is a separate event.')
-    array.push(selectedConceptTags, conceptTag)
-    if array.size(selectedConceptTags) > selectedConceptLabelLimit
-        label.delete(array.shift(selectedConceptTags))
-// SESSION_PLAN_LABELS_END
 
 // SIGNAL_DIAGNOSTIC_TAIL_BEGIN
 if barstate.isconfirmed
@@ -2227,21 +1773,4 @@ if barstate.isconfirmed
         diagEmit('QUALIFIED_PLAN', selectedStrategy, diagCandidateId(selectedStrategy, dir, signalSetupTime), ',"planId":' + diagQ(diagPlanId(selectedStrategy, signalTime)) + ',"executionAccepted":' + diagBool(active or pending) + ',"status":' + diagQ(status))
     diagState('END_BAR', cancelOrder)
     diagFinish()
-var table diagnosticTable = table.new(position.middle_left, 4, 11, bgcolor=color.new(color.white, 8))
-if barstate.islast or barstate.islastconfirmedhistory
-    table.clear(diagnosticTable, 0, 0, 3, 10)
-    if diagMode == 'Events + dashboard'
-        table.cell(diagnosticTable, 0, 0, 'RESEARCH ONLY', text_size=size.tiny)
-        table.cell(diagnosticTable, 1, 0, diagnosticLedger.ended and diagnosticLedger.dropped == 0 ? 'Window ended; verify exported stream' : 'INCOMPLETE / window pending', text_size=size.tiny)
-        for index = 0 to array.size(candidates) - 1
-            Candidate c = array.get(candidates, index)
-            int st = index == 0 ? stage : c.stage
-            float trigger = st > 0 ? (index == 0 ? (stage == 1 ? breakLevel : dir == 1 ? gapTop : gapBottom) : c.trigger) : na
-            float invalidation = st > 0 ? (index == 0 ? extreme : c.invalidation) : na
-            table.cell(diagnosticTable, 0, index + 1, c.id, text_size=size.tiny)
-            table.cell(diagnosticTable, 1, index + 1, not c.enabled ? 'OFF' : 'Stage ' + str.tostring(st) + ' / ' + (c.ready ? 'trigger passed' : 'not entry'), text_size=size.tiny)
-            table.cell(diagnosticTable, 2, index + 1, st > 0 ? 'Trigger ' + diagNum(trigger) + ' / invalid ' + diagNum(invalidation) : 'No active candidate', text_size=size.tiny)
-            table.cell(diagnosticTable, 3, index + 1, array.get(diagnosticLastBlock, index), text_size=size.tiny)
-        table.cell(diagnosticTable, 0, 10, 'Events ' + str.tostring(diagnosticLedger.sequence), text_size=size.tiny)
-        table.cell(diagnosticTable, 1, 10, 'Dropped ' + str.tostring(diagnosticLedger.dropped), text_size=size.tiny)
 // SIGNAL_DIAGNOSTIC_TAIL_END

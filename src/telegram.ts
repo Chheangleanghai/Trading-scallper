@@ -26,7 +26,12 @@ export function formatMessage(s: Signal): string {
   const model =
     s.executionModel === "STRATEGY_EMULATOR"
       ? "Strategy emulator"
-      : "Indicator estimate";
+      : s.executionModel === "INDICATOR_ESTIMATE"
+        ? "Indicator estimate"
+        : "Execution model not reported";
+  const fillLabel = s.executionModel
+    ? `Filled entry (${model})`
+    : "Reported filled entry (model not reported)";
   const details = [
     s.scriptVersion ? `Script: ${escapeHtml(s.scriptVersion)}` : "",
     s.reason ? `Why: ${escapeHtml(s.reason)}` : "",
@@ -36,7 +41,7 @@ export function formatMessage(s: Signal): string {
     s.status ? `Status: ${escapeHtml(s.status)}` : "",
     s.signalPrice !== undefined ? `Signal close: ${s.signalPrice}` : "",
     s.filledEntry != null
-      ? `Filled entry (${model}): ${s.filledEntry}`
+      ? `${fillLabel}: ${s.filledEntry}`
       : "Filled entry: not reported",
     s.managedSl !== undefined ? `Managed SL: ${s.managedSl}` : "",
     s.targetSource ? `Targets: ${escapeHtml(s.targetSource)}` : "",
