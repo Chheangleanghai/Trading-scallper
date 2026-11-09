@@ -1,0 +1,1290 @@
+Browser tab: 1346738026, Title: "XAUUSD 4,124.06 ▲ +1.29% Unnamed", URL: "https://www.tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD".
+0 AXWebArea XAUUSD 4,124.06 ▲ +1.29% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+	1 container
+		2 container
+			3 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+			4 text 6
+			5 toolbar
+				6 container
+					7 button XAUUSD, Help: Symbol search, ID: header-toolbar-symbol-search
+					8 button Description: Switch data type, ID: header-toolbar-switch-data-type
+					9 pop up button Description: Compare symbols, ID: header-toolbar-compare
+					10 pop up button 5 minutes
+						11 container
+							12 text 5 m
+					13 pop up button Candles
+					14 container header-toolbar-indicators
+						15 button Indicators, metrics, and strategies
+							16 text Indicators
+						17 pop up button Favorite indicators and indicators templates
+					18 button Description: Create alert, ID: header-toolbar-alerts
+						19 text Alert
+					20 checkbox Description: Bar replay, Value: 0, ID: header-toolbar-replay
+						21 text Replay
+					22 container header-toolbar-undo-redo
+						23 button Undo change Unique capture ID (change for every run) property
+					24 pop up button Description: Layout setup, ID: header-toolbar-layouts
+					25 container header-toolbar-save-load
+						26 button Save all charts for all symbols and intervals on your layout
+							27 text Unnamed
+							28 text Save
+						29 pop up button Manage layouts
+					30 button Description: Quick search, ID: header-toolbar-quick-search
+					31 button Description: Settings, ID: header-toolbar-properties
+					32 button Description: Fullscreen mode, ID: header-toolbar-fullscreen
+					33 pop up button Take a snapshot
+				34 pop up button Share your idea with the trade community
+				35 container
+					36 button Trade
+						37 text Trade
+				38 container
+					39 button Upgrade
+						40 text Upgrade
+			41 toolbar drawing-toolbar
+				42 container
+					43 container
+						44 button Cross
+						45 checkbox Description: Cursors, Value: 1
+					46 container
+						47 button Trendline
+						48 checkbox Description: Trend tools, Value: 0
+					49 container
+						50 button Fib retracement
+						51 checkbox Description: Gann and Fibonacci tools, Value: 0
+					52 container
+						53 button XABCD pattern
+						54 checkbox Description: Patterns, Value: 0
+					55 container
+						56 button Long position
+						57 checkbox Description: Forecasting and measurement tools, Value: 0
+					58 container
+						59 button Brush
+						60 checkbox Description: Geometric shapes, Value: 0
+					61 container
+						62 button Text
+						63 checkbox Description: Annotation tools, Value: 0
+					64 container
+						65 button Icon
+						66 checkbox Description: Icons, Value: 0
+					67 button Measure
+					68 button Zoom in
+					69 container
+						70 checkbox Description: Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+						71 checkbox Description: Magnets, Value: 0
+					72 checkbox Description: Keep drawing, Value: 0
+					73 container
+						74 checkbox Description: Lock drawings and indicators, Value: 0
+						75 checkbox Description: Lock options, Value: 0
+					76 container
+						77 checkbox Description: Hide all drawings, Value: 0
+						78 checkbox Description: Hide options, Value: 0
+					79 container
+						80 button Remove objects
+						81 button Remove options
+			82 container Chart #1
+				83 container
+					84 toolbar
+						85 container
+							440 container Change symbol
+								441 container
+									442 image
+									443 text X
+								444 button Change symbol
+							445 container Change interval
+								1028 text ·
+								447 button Change interval
+							1029 text ·
+							449 text FOREX.com
+						96 container
+							97 button Unflag symbol
+							98 button Description: More options for Gold Spot / U.S. Dollar, Help: More
+								99 image
+						100 button Market open · Data updates once per second
+						450 container
+							451 text O 4,124.25 H 4,124.25 L 4,122.87 C 4,124.06 −0.18 (−0.00%)
+					103 container
+						104 text 4,123.12 SELL
+						105 text 71
+						106 text 4,123.83 BUY
+					107 container
+						108 button Hide indicators legend
+						109 toolbar
+							110 container
+								111 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+								112 text Context + levels
+								113 text 8
+								114 text 1
+								115 text 15
+								116 text 3
+								117 text 0.15
+								118 text 2
+								119 text 0.3
+								120 text 12
+								121 text 3
+								122 text 75
+								123 text 75
+								124 text 75
+								125 text 75
+								126 text 75
+								127 text 75
+								128 text 75
+								129 text 75
+								130 text Both
+								131 text 3
+								132 text 20
+								133 text 75
+								134 text 5
+								135 text 5
+								136 text 90
+								137 text 0.5
+								138 text 0.15
+								139 text 3
+								140 text 1.5
+								141 text 2
+								142 text 1
+								143 text 2
+								144 text 3
+								145 text 0.7
+								146 text London
+								147 text 0800-1700
+								148 text Europe/London
+								149 text Close
+								150 text 3
+								151 text 15
+								152 text Fixed R
+								153 text Structure
+								154 text 1.5
+								155 text 1
+								156 text 2
+								157 text 1.5
+								158 text Reference
+								159 text Off
+								160 text 8
+								161 text 3,000
+								162 text Latest only
+								163 text 60
+								164 text 8
+								165 text 8
+								166 text 12
+								167 text Tiny
+								168 text Small
+								169 text 15
+								170 text 82
+							171 container
+								172 button Show
+									173 image
+								174 button Settings
+									175 image
+								176 button Remove
+									177 image
+								178 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Confirmation review, Help: More
+									179 image
+						180 toolbar
+							181 container
+								1335 text XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+								1336 text 18
+								1337 text 8
+								1338 text Faded
+								1339 text Context + levels
+								1340 text 8
+								1341 text 1
+								1342 text 15
+								1343 text 3
+								1344 text 0.15
+								1345 text 2
+								1346 text 0.3
+								1347 text 12
+								1348 text 3
+								1349 text 75
+								1350 text 75
+								1351 text 75
+								1352 text 75
+								1353 text 75
+								1354 text 75
+								1355 text 75
+								1356 text 75
+								1357 text Both
+								1358 text 3
+								1359 text 20
+								1360 text 75
+								1361 text 5
+								1362 text 5
+								1363 text 90
+								1364 text 0.5
+								1365 text 0.15
+								1366 text 3
+								1367 text 1.5
+								1368 text 2
+								1369 text 1
+								1370 text 2
+								1371 text 3
+								1372 text 0.7
+								1373 text London
+								1374 text 0800-1700
+								1375 text Europe/London
+								1376 text Close
+								1377 text 3
+								1378 text 15
+								1379 text Fixed R
+								1380 text Structure
+								1381 text 1.5
+								1382 text 1
+								1383 text 2
+								1384 text 1.5
+								1385 text Reference
+								1386 text Off
+								1387 text 8
+								1388 text 3,000
+								1389 text Latest only
+								1390 text 60
+								1391 text 8
+								1392 text 8
+								1393 text 12
+								1394 text Tiny
+								1395 text Small
+								1396 text 15
+								1397 text 82
+								1398 text Events
+								1399 text native-difference-2026-11-09
+								1400 text indicator-xauusd-m5-20261109-05
+								1401 text 6,000
+							249 container
+								250 button Hide
+									251 image
+								252 button Settings
+									253 image
+								254 image
+								255 button Remove
+									256 image
+								257 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Research diagnostics, Help: More
+									258 image
+							1402 container
+								1403 text ∅
+								1404 text 4,123.07
+								1405 text ∅
+								1406 text ∅
+								1407 text ∅
+								1408 text ∅
+								1409 text ∅
+								1410 text ∅
+								1411 text ∅
+								1412 text ∅
+								1413 text ∅
+								1414 text ∅
+								1415 text ∅
+								1416 text ∅
+								1417 text 0.00
+								1418 text 0.00
+								1419 text ∅
+								1420 text 4,116.12
+								1421 text ∅
+								1422 text 4,120.02
+						260 toolbar
+							261 container
+								1424 text XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+								1425 text 15
+								1426 text 3
+								1427 text 0.15
+								1428 text 2
+								1429 text 0.3
+								1430 text 12
+								1431 text 3
+								1432 text 75
+								1433 text 75
+								1434 text 75
+								1435 text 75
+								1436 text 75
+								1437 text 75
+								1438 text 75
+								1439 text 75
+								1440 text Both
+								1441 text 3
+								1442 text 20
+								1443 text 75
+								1444 text 5
+								1445 text 5
+								1446 text 90
+								1447 text 0.5
+								1448 text 0.15
+								1449 text 3
+								1450 text 1.5
+								1451 text 2
+								1452 text 1
+								1453 text 2
+								1454 text 3
+								1455 text 0.7
+								1456 text London
+								1457 text 0800-1700
+								1458 text Europe/London
+								1459 text Close
+								1460 text 3
+								1461 text 15
+								1462 text Fixed R
+								1463 text Structure
+								1464 text 1.5
+								1465 text 1
+								1466 text 2
+								1467 text 1.5
+								1468 text Reference
+								1469 text Latest only
+								1470 text 60
+								1471 text 8
+								1472 text 8
+								1473 text 12
+								1474 text Tiny
+								1475 text Small
+								1476 text 15
+								1477 text 82
+								1478 text Events
+								1479 text native-difference-2026-11-09
+								1480 text strategy-xauusd-m5-20261109-05
+								1481 text 6,000
+							320 container
+								321 button Hide
+									322 image
+								323 button Settings
+									324 image
+								325 image
+								326 button Remove
+									327 image
+								328 button Description: More options for XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics, Help: More
+									329 image
+							474 button Active strategy · Opened in Pine Editor
+							514 container
+								515 text ∅
+								516 text 4,123.08
+								517 text ∅
+								518 text ∅
+								519 text ∅
+								520 text ∅
+								521 text ∅
+								522 text ∅
+								523 text ∅
+								524 text ∅
+								525 text ∅
+								526 text ∅
+								527 text ∅
+								528 text ∅
+								529 text 0.00
+								530 text 0.00
+								531 text ∅
+								532 text 4,115.86
+								533 text ∅
+								534 text 4,120.02
+					330 image Chart for FOREXCOM:XAUUSD, 5 minutes
+				331 container
+					332 toolbar Navigation
+						333 button Zoom out
+						334 button Zoom in
+						335 button Scroll to the left
+						336 button Scroll to the right
+						337 button Reset chart view
+			338 toolbar
+				339 container
+					340 button 1 day in 1 minute intervals
+						341 text 1D
+					342 button 5 days in 5 minutes intervals
+						343 text 5D
+					344 button 1 month in 30 minutes intervals
+						345 text 1M
+					346 button 3 months in 1 hour intervals
+						347 text 3M
+					348 button 6 months in 2 hours intervals
+						349 text 6M
+					350 button Year to day in 1 day intervals
+						351 text YTD
+					352 button 1 year in 1 day intervals
+						353 text 1Y
+					354 button 5 years in 1 week intervals
+						355 text 5Y
+					356 button All data in 1 month intervals
+						357 text All
+					358 button Go to
+				359 button Timezone
+					360 text 21:35:22 UTC+7
+			361 container
+				1014 toolbar
+					1015 checkbox Description: Watchlist, details, and news, Value: 0
+					1016 checkbox Description: Alerts, Value: 0
+					1017 checkbox Description: Object tree and data window, Value: 0
+					1018 checkbox Description: AI Copilot, Value: 0
+					1019 checkbox Description: Screeners, Value: 0
+					1020 checkbox (disabled) Description: Pine Editor, Value: 1
+					1021 checkbox Description: Calendars, Value: 0
+					1022 checkbox Description: Community, Value: 0
+					1023 checkbox Description: Notifications, Value: 0
+					1024 checkbox Description: Chats, Value: 0
+					1025 pop up button Products
+					1026 checkbox Description: Help Center, Value: 0
+				375 container
+					488 button XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+					377 pop up button (collapsed) ID: :r1k:, Secondary Actions: Expand
+					1320 container
+						1321 container
+							1322 container
+								1323 text [2026-11-02T19:15:00.000+07:00]: TRADE_EXIT_AUDIT {"scriptVersion":"0.8.0","symbol":"FOREXCOM:XAUUSD","timeframe":"5","planTimestamp":1793620800000,"setupTimestamp":1793619900000,"direction":-1,"module":"B_CRT","closedTradeIndex":85,"entryId":"B_CRT","entryTime":1793620800000,"entryBar":4296,"actualEntry":3901.36,"exitId":"Close entry(s) order B_CRT","exitComment":"TRADE_CLOSED","exitTime":1793621700000,"exitBar":4299,"actualExit":3904.99,"size":-2.2,"profit":-9.703397,"commission":1.717397,"profitPercent":-0.113042477,"maxRunup":5.0157008,"maxDrawdown":11.9462992,"plannedEntry":3901.38,"initialStop":3906.79,"managedStopAtObservation":3906.79,"tp1":3895.97,"tp2":3890.56,"tp3":3885.15,"initialQty":2.2,"accountCurrency":"USD","priceRMultiple":-0.66850829}
+							1324 container
+								1325 text [2026-11-02T19:15:00.000+07:00]: {"eventId":"FOREXCOM:XAUUSD:5:1793620800000:-1:B_CRT:TRADE_CLOSED","eventType":"TRADE_CLOSED","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":3901.38,"sl":3906.79,"tp1":3895.97,"tp2":3890.56,"tp3":3885.15,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Previous trade closed","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":1793620800000,"h1Trend":"Bearish","targetSource":"Fixed R projection","setupTimestamp":1793619900000,"invalidation":3906.36,"eventTimestamp":1793622000000,"status":"CLOSED","entryMode":"Close","managedSl":3906.79,"signalPrice":3901.38,"executionModel":"STRATEGY_EMULATOR","filledEntry":3901.36,"closeReason":"TIME_EXIT","closedAt":1793621700000,"exitPrice":3904.99,"realizedNet":-9.703397,"realizedCurrency":"USD"}
+							1326 container
+								1327 text [2026-11-02T19:15:00.000+07:00]: TRADE_GROUP_AUDIT {"scriptVersion":"0.8.0","symbol":"FOREXCOM:XAUUSD","timeframe":"5","planTimestamp":1793620800000,"setupTimestamp":1793619900000,"module":"B_CRT","direction":-1,"entryTime":1793620800000,"exitTime":1793621700000,"holdMinutes":15,"plannedEntry":3901.38,"actualEntry":3901.36,"initialStop":3906.79,"initialQty":2.2,"sizingEquity":9888.4522771,"accountRiskPerUnit":5.41,"unitNotional":3901.38,"riskQty":9.1390501637,"exposureQty":2.2811433517,"rawQty":2.2811433517,"sizedQty":2.2,"riskPctInput":0.5,"maxExposurePctInput":90,"partialInput":true,"minContract":0.1,"minTick":0.01,"pointValue":1,"netProfitDelta":-9.703397,"accountCurrency":"USD"}
+							1328 container
+								1329 text [2026-11-02T19:25:00.000+07:00]: QUANTITY_AUDIT {"experiment":"QTY_UNITS_1","timestamp":1793622600000,"module":"B_CRT","initialQty":2.2000000000000000,"step":0.1000000000000000,"partial":true,"q1":0.7000000000000001,"q2":0.7000000000000001,"q3":0.8000000000000000}
+							1330 container
+								1331 text [2026-11-02T19:25:00.000+07:00]: PLAN_AUDIT {"scriptVersion":"0.8.0","symbol":"FOREXCOM:XAUUSD","timeframe":"5","strategy":"B_CRT","timestamp":1793622600000,"setupTimestamp":1793622300000,"direction":-1,"entryMode":"Close","entry":3903.47,"sl":3907.04,"tp1":3899.90,"tp2":3896.33,"tp3":3892.76,"quality":90,"executionAccepted":true,"executionModel":"STRATEGY_EMULATOR"}
+							1332 container
+								1333 text [2026-11-02T19:30:00.000+07:00]: {"eventId":"FOREXCOM:XAUUSD:5:1793622600000:-1:B_CRT:SELL_SIGNAL","eventType":"SELL_SIGNAL","symbol":"FOREXCOM:XAUUSD","timeframe":"5","direction":"SELL","strategy":"B_CRT","entry":3903.47,"sl":3907.04,"tp1":3899.90,"tp2":3896.33,"tp3":3892.76,"reason":"Completed range reclaimed; later reversal close | H1 aligned | TP2 2R | Quality 90/100","setupProgress":"Entry triggered (simulated)","alignment":"ALIGNED","scriptVersion":"0.8.0","quality":90,"timestamp":1793622600000,"h1Trend":"Bearish","targetSource":"Fixed R projection","setupTimestamp":1793622300000,"invalidation":3906.57,"eventTimestamp":1793622900000,"status":"ENTRY_TRIGGERED","entryMode":"Close","managedSl":3907.04,"signalPrice":3903.47,"executionModel":"STRATEGY_EMULATOR","filledEntry":3903.45}
+						1334 button Scroll down
+			489 toolbar footer-chart-panel
+				490 container
+					491 button Collapse strategy report
+						492 text XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+					493 pop up button (collapsed) Description: Manage strategy, ID: :r3g:, Secondary Actions: Expand
+				494 button Collapse panel
+				495 button Maximize panel
+			496 container bottom-area
+				497 container
+					535 tab group report-tabs
+						536 tab (selectable, settable, boolean) Value: 0, ID: Strategy report
+						537 tab (selected, settable, boolean) Value: 1, ID: List of Trades
+					498 button (collapsed) Description: Oct 12, 2026 — Nov 9, 2026, Secondary Actions: Expand
+						499 text Oct 12, 2026 — Nov 9, 2026
+					500 button (collapsed) Description: 10 K, Secondary Actions: Expand
+						501 container
+							502 text 10 K USD
+					503 button (collapsed) Description: Default detalization, Secondary Actions: Expand
+						504 text Default detalization
+					508 button Settings
+					509 button Add alert
+					538 text List of trades
+					539 button Download .csv
+					540 pop up button (collapsed) Description: Column setup, ID: :r4b:, Secondary Actions: Expand
+					541 table
+						542 row
+							543 cell tradeNumber
+								544 container
+									545 text Trade number
+									546 image Capa_1
+							547 cell type
+								548 text Type
+							549 cell datetime
+								550 text Date and time
+							551 cell signal
+								552 text Signal
+							553 cell price
+								554 text Price
+							555 cell positionSize
+								556 text Size
+							557 cell profit
+								558 text Net PnL
+							559 cell return
+								560 text Return
+						561 row
+							562 cell
+								563 container
+									564 text 1 Long
+							565 cell
+								566 button Show on chart
+								567 button Show on chart
+							568 cell
+								569 text Exit
+								570 text Entry
+							571 cell
+								572 text Oct 12, 2026, 17:20
+								573 text Oct 12, 2026, 17:05
+							574 cell
+								575 text TRADE_CLOSED
+								576 text C_TURTLE_SOUP
+							577 cell
+								578 container
+									579 text 4,175.30 USD
+								580 text 4,173.73
+								581 text USD
+							582 cell
+								583 text 2.1
+								584 container
+									585 text 8.76 K USD
+							586 cell
+								587 text +1.54
+								588 text USD
+							589 cell
+								590 text +0.02%
+						591 row
+							592 cell
+								593 container
+									594 text 2 Short
+							595 cell
+								596 button Show on chart
+								597 button Show on chart
+							598 cell
+								599 text Exit
+								600 text Entry
+							601 cell
+								602 text Oct 12, 2026, 22:00
+								603 text Oct 12, 2026, 21:45
+							604 cell
+								605 text TRADE_CLOSED
+								606 text D_SNR
+							607 cell
+								608 container
+									609 text 4,164.44 USD
+								610 text 4,166.27
+								611 text USD
+							612 cell
+								613 text 2.1
+								614 container
+									615 text 8.75 K USD
+							616 cell
+								617 text +2.09
+								618 text USD
+							619 cell
+								620 text +0.02%
+						621 row
+							622 cell
+								623 container
+									624 text 3 Short
+							625 cell
+								626 button Show on chart
+								627 button Show on chart
+							628 cell
+								629 text Exit
+								630 text Entry
+							631 cell
+								632 text Oct 12, 2026, 22:40
+								633 text Oct 12, 2026, 22:25
+							634 cell
+								635 text TRADE_CLOSED
+								636 text B_CRT
+							637 cell
+								638 container
+									639 text 4,167.71 USD
+								640 text 4,165.99
+								641 text USD
+							642 cell
+								643 text 2.1
+								644 container
+									645 text 8.75 K USD
+							646 cell
+								647 text −5.36
+								648 text USD
+							649 cell
+								650 text −0.06%
+						651 row
+							652 cell
+								653 container
+									654 text 4 Short
+							655 cell
+								656 button Show on chart
+								657 button Show on chart
+							658 cell
+								659 text Exit
+								660 text Entry
+							661 cell
+								662 text Oct 12, 2026, 23:15
+								663 text Oct 12, 2026, 23:00
+							664 cell
+								665 text TRADE_CLOSED
+								666 text B_CRT
+							667 cell
+								668 container
+									669 text 4,165.28 USD
+								670 text 4,165.17
+								671 text USD
+							672 cell
+								673 text 2.1
+								674 container
+									675 text 8.75 K USD
+							676 cell
+								677 text −1.98
+								678 text USD
+							679 cell
+								680 text −0.02%
+						681 row
+							682 cell
+								683 container
+									684 text 5 Long
+							685 cell
+								686 button Show on chart
+								687 button Show on chart
+							688 cell
+								689 text Exit
+								690 text Entry
+							691 cell
+								692 text Oct 13, 2026, 17:05
+								693 text Oct 13, 2026, 16:50
+							694 cell
+								695 text TRADE_CLOSED
+								696 text B_CRT
+							697 cell
+								698 container
+									699 text 4,185.67 USD
+								700 text 4,185.00
+								701 text USD
+							702 cell
+								703 text 2.1
+								704 container
+									705 text 8.79 K USD
+							706 cell
+								707 text −0.35
+								708 text USD
+							709 cell
+								710 text 0.00%
+						711 row
+							712 cell
+								713 container
+									714 text 6 Long
+							715 cell
+								716 button Show on chart
+								717 button Show on chart
+							718 cell
+								719 text Exit
+								720 text Entry
+							721 cell
+								722 text Oct 13, 2026, 19:45
+								723 text Oct 13, 2026, 19:30
+							724 cell
+								725 text TRADE_CLOSED
+								726 text B_CRT
+							727 cell
+								728 container
+									729 text 4,184.21 USD
+								730 text 4,187.00
+								731 text USD
+							732 cell
+								733 text 2.1
+								734 container
+									735 text 8.79 K USD
+							736 cell
+								737 text −7.62
+								738 text USD
+							739 cell
+								740 text −0.09%
+						741 row
+							742 cell
+								743 container
+									744 text 7 Short
+							745 cell
+								746 button Show on chart
+								747 button Show on chart
+							748 cell
+								749 text Exit
+								750 text Entry
+							751 cell
+								752 text Oct 14, 2026, 18:45
+								753 text Oct 14, 2026, 18:30
+							754 cell
+								755 text TRADE_CLOSED
+								756 text B_CRT
+							757 cell
+								758 container
+									759 text 4,139.60 USD
+								760 text 4,139.29
+								761 text USD
+							762 cell
+								763 text 2.1
+								764 container
+									765 text 8.69 K USD
+							766 cell
+								767 text −2.39
+								768 text USD
+							769 cell
+								770 text −0.03%
+						771 row
+							772 cell
+								773 container
+									774 text 8 Short
+							775 cell
+								776 button Show on chart
+								777 button Show on chart
+							778 cell
+								779 text Exit
+								780 text Entry
+							781 cell
+								782 text Oct 14, 2026, 22:40
+								783 text Oct 14, 2026, 22:35
+							784 cell
+								785 text TP1_HIT
+								786 text B_CRT
+							787 cell
+								788 container
+									789 text 4,082.51 USD
+								790 text 4,089.69
+								791 text USD
+							792 cell
+								793 text 0.6
+								794 container
+									795 text 2.45 K USD
+							796 cell
+								797 text +3.82
+								798 text USD
+							799 cell
+								800 text +0.16%
+						801 row
+							802 cell
+								803 container
+									804 text 9 Short
+							805 cell
+								806 button Show on chart
+								807 button Show on chart
+							808 cell
+								809 text Exit
+								810 text Entry
+							811 cell
+								812 text Oct 14, 2026, 22:50
+								813 text Oct 14, 2026, 22:35
+							814 cell
+								815 text TRADE_CLOSED
+								816 text B_CRT
+							817 cell
+								818 container
+									819 text 4,082.53 USD
+								820 text 4,089.69
+								821 text USD
+							822 cell
+								823 text 1.5
+								824 container
+									825 text 6.13 K USD
+							826 cell
+								827 text +9.51
+								828 text USD
+							829 cell
+								830 text +0.16%
+						831 row
+							832 cell
+								833 container
+									834 text 10 Long
+							835 cell
+								836 button Show on chart
+								837 button Show on chart
+							838 cell
+								839 text Exit
+								840 text Entry
+							841 cell
+								842 text Oct 15, 2026, 16:20
+								843 text Oct 15, 2026, 16:05
+							844 cell
+								845 text TRADE_CLOSED
+								846 text B_CRT
+							847 cell
+								848 container
+									849 text 4,157.66 USD
+								850 text 4,155.00
+								851 text USD
+							852 cell
+								853 text 2.1
+								854 container
+									855 text 8.73 K USD
+							856 cell
+								857 text +3.84
+								858 text USD
+							859 cell
+								860 text +0.04%
+						861 row
+							862 cell
+								863 container
+									864 text 11 Long
+							865 cell
+								866 button Show on chart
+								867 button Show on chart
+							868 cell
+								869 text Exit
+								870 text Entry
+							871 cell
+								872 text Oct 15, 2026, 18:00
+								873 text Oct 15, 2026, 17:55
+							874 cell
+								875 text TP1_HIT
+								876 text B_CRT
+							877 cell
+								878 container
+									879 text 4,159.08 USD
+								880 text 4,155.29
+								881 text USD
+							882 cell
+								883 text 0.6
+								884 container
+									885 text 2.49 K USD
+							886 cell
+								887 text +1.78
+								888 text USD
+							889 cell
+								890 text +0.07%
+						891 row
+							892 cell
+								893 container
+									894 text 12 Long
+							895 cell
+								896 button Show on chart
+								897 button Show on chart
+							898 cell
+								899 text Exit
+								900 text Entry
+							901 cell
+								902 text Oct 15, 2026, 18:10
+								903 text Oct 15, 2026, 17:55
+							904 cell
+								905 text TRADE_CLOSED
+								906 text B_CRT
+							907 cell
+								908 container
+									909 text 4,157.24 USD
+								910 text 4,155.29
+								911 text USD
+							912 cell
+								913 text 1.5
+								914 container
+									915 text 6.23 K USD
+							916 cell
+								917 text +1.68
+								918 text USD
+							919 cell
+								920 text +0.03%
+						921 row
+							922 cell
+								923 container
+									924 text 13 Long
+							925 cell
+								926 button Show on chart
+								927 button Show on chart
+							928 cell
+								929 text Exit
+								930 text Entry
+							931 cell
+								932 text Oct 16, 2026, 16:10
+								933 text Oct 16, 2026, 15:55
+							934 cell
+								935 text TRADE_CLOSED
+								936 text F_TREND_PULLBACK
+							937 cell
+								938 container
+									939 text 4,190.19 USD
+								940 text 4,186.72
+								941 text USD
+							942 cell
+								943 text 2.1
+								944 container
+									945 text 8.79 K USD
+							946 cell
+								947 text +5.53
+								948 text USD
+							949 cell
+								950 text +0.06%
+						951 row
+							952 cell
+								953 container
+									954 text 14 Long
+							955 cell
+								956 button Show on chart
+								957 button Show on chart
+							958 cell
+								959 text Exit
+								960 text Entry
+							961 cell
+								962 text Oct 16, 2026, 18:35
+								963 text Oct 16, 2026, 18:20
+							964 cell
+								965 text TRADE_CLOSED
+								966 text C_TURTLE_SOUP
+							967 cell
+								968 container
+									969 text 4,178.10 USD
+								970 text 4,177.51
+								971 text USD
+							972 cell
+								973 text 2.1
+								974 container
+									975 text 8.77 K USD
+							976 cell
+								977 text −0.52
+								978 text USD
+							979 cell
+								980 text −0.01%
+			379 container Trading panel
+		380 container
+			381 button Move split-view to overlay
+			382 text Pine Editor
+			383 button Collapse panel
+			384 button Fullscreen mode
+			385 button Close
+			386 container pine-editor-dialog
+				387 pop up button (collapsed) Untitled script, ID: :r18:, Secondary Actions: Expand
+					388 heading Untitled script, Value: 2
+						389 text Untitled script
+				390 button (disabled) Update on chart
+				391 button Save script
+				392 button Share your script with the community
+				393 container
+					394 pop up button (collapsed) Description: More, ID: :r1c:, Secondary Actions: Expand
+				395 container
+					396 editor (settable) Description: Editor content;Press Alt+F1 for Accessibility Options., Value: //@version=6
+strategy("XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=300, max_lines_count=250, max_boxes_count=60)
+bool brokerBusy = strategy.position_size != 0
+bool useBroker = true
+// Shared source: edit this file, then npm run pine:generate.
+
+
+
+
+const string SCRIPT_VERSION = '0.8.0'
+…if barstate.isconfirmed
+    if newSignal
+        diagEmit('QUALIFIED_PLAN', selectedStrategy, diagCandidateId(selectedStrategy, dir, signalSetupTime), ',"planId":' + diagQ(diagPlanId(selectedStrategy, signalTime)) + ',"executionAccepted":' + diagBool(active or pending) + ',"status":' + diagQ(status))
+    diagState('END_BAR', cancelOrder)
+    diagFinish()
+// SIGNAL_DIAGNOSTIC_TAIL_END
+
+				397 container
+					398 container
+						399 container 11:57:29 AM
+							400 text 11:57:29 AM
+						401 container "Untitled script" opened
+							402 text "Untitled script" opened
+						403 container 11:59:03 AM
+							404 text 11:59:03 AM
+						405 container Compiling...
+							406 text Compiling...
+						407 container 11:59:05 AM
+							408 text 11:59:05 AM
+						409 container Compiled.
+							410 text Compiled.
+						411 container 11:59:05 AM
+							412 text 11:59:05 AM
+						413 container Added to chart.
+							414 text Added to chart.
+				415 container
+					416 button
+					417 button Line 1777, Col 1
+						418 text Line
+						419 text 1777
+						420 text , 
+						421 text Col
+						422 text 1
+		982 container common-tooltip-wrapper
+			983 text Settings
+		423 container overlap-manager-root
+			424 container
+				425 content list :rj:
+					426 container
+						427 button Close ad
+						428 container Description: Advertisement, Help: 3rd party ad content, ID: google_ads_iframe_/21803441042/native_ad_unit_0
+							429 AXWebArea SafeFrame Container, URL: 25fb86cf4d0dede88234582cd82d5693.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html
+								430 container
+									431 container adunit
+										432 link adclick.g.doubleclick.net/pcs/click?xai=AKAOjssSAluyCveoAb2VAI5nheQ0dcyW0wMmlszNUG5Tw0nsa42Se9NfdgjDxKfLiv0-GqNP4wL-eU8f9F5_0V-vSR56p4V5NzZVWMNJolZ4VrPxwoDQBoD5qj6idaEeoCPccjEw9DWWl-DhRy1ohpSq4zlH-__EYbv-i7Cgx2V1UCJOOf49lfiaPwvupmEiBCT29DFyCngKCtJbObySB6fKssg6xaaE-YKiCjJhDgRXOUGjdRYMtqzosb6ay6ttvBOOlb8l2nVlD0cu9UNDFCYUDgIWzVJOnSlEPt7jjR6rBBRqKmfITGRr9IlmhZPn7ZK8xLLB63A_xPwTS-aIicjk87WnkeRSzlTwM0MGD65VD-n8xXxJ2CmxlkK3Kti8G5RisqhkBDyvi8WAm6FMAEjZ1ybPQHe28bsYbETxs__OPahwDVRt7MKdmgI&sai=AMfl-YTzMuJOT79x-I39ErrbVYI3LoO_BJRQkDMcg8-8QtHCJLiC-XGea-kwdQLFkILDSqQiTSfv6vbipq6-RijFHUMJCy3TKQ7Rg0aTsxT0Md6n-IPFeWp6_4Ru73HIK3CSOm422Fk9QYnQmZBR9p6_sd3X964EvCmucIDrtJjaLRVHJXb3dEGc9aV4hKGWr9SZSu8Bbvm-NeXjP8ds2g6_kt4o4zExG1gBSG9W8VyiJX_va9l11-07LtDNwPZ_KMdzcI6nLzv5EizLwn5kyjtZlKtFW33d_CaSo0wlYTve8GLgrfar73iIjP9U3e_pbCcLDFddz0gI9s_XD27WfjLf7pyHZVBBN6QrVdtkIvNwwDElRJcYeZI_nio&sig=Cg0ArKJSzG0jceV9DntvEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+										433 link Description: Time to upgrade?, Value: adclick.g.doubleclick.net/pcs/click?xai=AKAOjssSAluyCveoAb2VAI5nheQ0dcyW0wMmlszNUG5Tw0nsa42Se9NfdgjDxKfLiv0-GqNP4wL-eU8f9F5_0V-vSR56p4V5NzZVWMNJolZ4VrPxwoDQBoD5qj6idaEeoCPccjEw9DWWl-DhRy1ohpSq4zlH-__EYbv-i7Cgx2V1UCJOOf49lfiaPwvupmEiBCT29DFyCngKCtJbObySB6fKssg6xaaE-YKiCjJhDgRXOUGjdRYMtqzosb6ay6ttvBOOlb8l2nVlD0cu9UNDFCYUDgIWzVJOnSlEPt7jjR6rBBRqKmfITGRr9IlmhZPn7ZK8xLLB63A_xPwTS-aIicjk87WnkeRSzlTwM0MGD65VD-n8xXxJ2CmxlkK3Kti8G5RisqhkBDyvi8WAm6FMAEjZ1ybPQHe28bsYbETxs__OPahwDVRt7MKdmgI&sai=AMfl-YTzMuJOT79x-I39ErrbVYI3LoO_BJRQkDMcg8-8QtHCJLiC-XGea-kwdQLFkILDSqQiTSfv6vbipq6-RijFHUMJCy3TKQ7Rg0aTsxT0Md6n-IPFeWp6_4Ru73HIK3CSOm422Fk9QYnQmZBR9p6_sd3X964EvCmucIDrtJjaLRVHJXb3dEGc9aV4hKGWr9SZSu8Bbvm-NeXjP8ds2g6_kt4o4zExG1gBSG9W8VyiJX_va9l11-07LtDNwPZ_KMdzcI6nLzv5EizLwn5kyjtZlKtFW33d_CaSo0wlYTve8GLgrfar73iIjP9U3e_pbCcLDFddz0gI9s_XD27WfjLf7pyHZVBBN6QrVdtkIvNwwDElRJcYeZI_nio&sig=Cg0ArKJSzG0jceV9DntvEAE&fbs_aeid=%5Bgw_fbsaeid%5D&urlfix=1&adurl=https://www.tradingview.com/gopro/%3Fsource%3Dcpm_promo_web%26feature%3DBuy%2520Pro
+										434 link Description: Remember, the more tools and data you have, the easier it is to make better market decisions., Value: …
+										435 text AD
+										436 link Description: Explore our plans, Value: …
+										437 link Description: TradingView, Value: …
+			1423 container
+				1482 container XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+					1483 text XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+					1484 button Close menu
+					1485 tab group indicator-properties-dialog-tabs
+						1486 tab (selected, settable, boolean) Inputs, Value: 1, ID: inputs
+						1487 tab (selectable, settable, boolean) Properties, Value: 0, ID: properties
+						1488 tab (selectable, settable, boolean) Style, Value: 0, ID: style
+						1489 tab (selectable, settable, boolean) Visibility, Value: 0, ID: visibilities
+					1490 container
+						1491 text STRATEGIES
+						1492 checkbox (settable, integer) Description: A: Sweep + MSS + FVG, Value: 1
+						1493 text A: Sweep + MSS + FVG
+						1494 checkbox (settable, integer) Description: B: CRT, Value: 1
+						1495 text B: CRT
+						1496 checkbox (settable, integer) Description: C: Confirmed-pivot Turtle Soup, Value: 1
+						1497 text C: Confirmed-pivot Turtle Soup
+						1498 checkbox (settable, integer) Description: D: K-SNR (confirmed support/resistance), Value: 1
+						1499 text D: K-SNR (confirmed support/resistance)
+						1500 checkbox (settable, integer) Description: E: Supply/demand, Value: 1
+						1501 text E: Supply/demand
+						1502 checkbox (settable, integer) Description: F: Structural trend pullback, Value: 1
+						1503 text F: Structural trend pullback
+						1504 checkbox (settable, integer) Description: G: AMD range approximation, Value: 1
+						1505 text G: AMD range approximation
+						1506 checkbox (settable, integer) Description: H: Confirmed Quasimodo approximation, Value: 1
+						1507 text H: Confirmed Quasimodo approximation MODULES CRT reference timeframe
+						1508 combo box (collapsed) Value: 15 minutes, ID: in_8, Secondary Actions: Expand
+							1509 text 15 minutes
+						1510 text Turtle Soup minimum bars since pivot confirmation
+						1511 text field (settable) 3
+						1512 text Level/zone tolerance ATR
+						1513 text field (settable) 0.15
+						1514 text S/D maximum tested bars
+						1515 text field (settable) 2
+						1516 checkbox (settable, integer) Description: Trend pullback: require EMA50, Value: 1
+						1517 text Trend pullback: require EMA50 Trend pullback: maximum EMA21 overshoot ATR
+						1518 text field (settable) 0.3
+						1519 text AMD prior accumulation bars
+						1520 text field (settable) 12
+						1521 text AMD maximum prior range ATR
+						1522 text field (settable) 3
+						1523 text QUALITY
+						1524 checkbox (settable, integer) Description: Use strategy-specific quality thresholds, Value: 0
+						1525 text Use strategy-specific quality thresholds A quality threshold
+						1526 text field (settable) 75
+						1527 text B quality threshold
+						1528 text field (settable) 75
+						1529 text C quality threshold
+						1530 text field (settable) 75
+						1531 text D quality threshold
+						1532 text field (settable) 75
+						1533 text E quality threshold
+						1534 text field (settable) 75
+						1535 text F quality threshold
+						1536 text field (settable) 75
+						1537 text G quality threshold
+						1538 text field (settable) 75
+						1539 text H quality threshold
+						1540 text field (settable) 75
+						1541 text RESEARCH
+						1542 checkbox (settable, integer) Description: Restrict new plans to date window, Value: 0
+						1543 text Restrict new plans to date window Window start (inclusive)
+						1544 text field (settable) 2026-01-01
+						1545 combo box (settable) 07:00
+						1546 text Window end (exclusive)
+						1547 text field (settable) 2027-01-01
+						1548 combo box (settable) 07:00
+						1549 text Allowed direction
+						1550 combo box (collapsed) Value: Both, ID: in_28, Secondary Actions: Expand
+							1551 text Both
+						1552 checkbox (settable, integer) Description: Log qualified plans and lifecycle events (research only), Value: 1
+						1553 text Log qualified plans and lifecycle events (research only) Confirmed pivot strength
+						1554 text field (settable) 3
+						1555 text Setup expiry bars
+						1556 text field (settable) 20
+						1557 text Minimum heuristic quality
+						1558 text field (settable) 75
+						1559 text Signal cooldown bars
+						1560 text field (settable) 5
+						1561 text Maximum entries per session
+						1562 text field (settable) 5
+						1563 text RISK Maximum simulated notional / equity % (align with margin properties)
+						1564 text field (settable) 90
+						1565 text Target mode
+						1566 combo box (collapsed) Value: Fixed R, ID: in_57, Secondary Actions: Expand
+							1567 text Fixed R
+						1568 text Stop mode
+						1569 combo box (collapsed) Value: Structure, ID: in_58, Secondary Actions: Expand
+							1570 text Structure
+						1571 text ATR stop multiplier
+						1572 text field (settable) 1.5
+						1573 text Simulation risk %
+						1574 text field (settable) 0.5
+						1575 text ATR stop buffer
+						1576 text field (settable) 0.15
+						1577 text Maximum stop ATR
+						1578 text field (settable) 3
+						1579 text Maximum entry distance from FVG ATR
+						1580 text field (settable) 1.5
+						1581 text Minimum TP2 reward/risk
+						1582 text field (settable) 2
+						1583 text TP1 fixed R projection
+						1584 text field (settable) 1
+						1585 text TP2 fixed R projection
+						1586 text field (settable) 2
+						1587 text TP3 fixed R projection
+						1588 text field (settable) 3
+						1589 text MSS body minimum ATR
+						1590 text field (settable) 0.7
+						1591 checkbox (settable, integer) Description: Require H1 alignment, Value: 1
+						1592 text Require H1 alignment
+						1593 checkbox (settable, integer) Description: Require EMA 9/21 alignment, Value: 0
+						1594 text Require EMA 9/21 alignment
+						1595 checkbox (settable, integer) Description: Session filter, Value: 1
+						1596 text Session filter Session preset
+						1597 combo box (collapsed) Value: London, ID: in_48, Secondary Actions: Expand
+							1598 text London
+						1599 text Trading session
+						1600 combo box (settable) 08:00
+						1601 text  — 
+						1602 combo box (settable) 17:00
+						1603 text IANA session timezone (handles DST)
+						1604 text field (settable) Europe/London
+						1605 checkbox (settable, integer) Description: Manual news pause, Value: 0
+						1606 text Manual news pause Manual exclusion start
+						1607 text field (settable) 1970-01-01
+						1608 combo box (settable) 07:00
+						1609 text Manual exclusion end
+						1610 text field (settable) 1970-01-01
+						1611 combo box (settable) 07:00
+						1612 text Entry mode
+						1613 combo box (collapsed) Value: Close, ID: in_54, Secondary Actions: Expand
+							1614 text Close
+						1615 text Pending entry expiry bars
+						1616 text field (settable) 3
+						1617 text Maximum holding minutes (0 disables)
+						1618 text field (settable) 15
+						1619 text MANAGEMENT
+						1620 checkbox (settable, integer) Description: Move stop to filled entry after trigger R, Value: 0
+						1621 text Move stop to filled entry after trigger R Break-even trigger R
+						1622 text field (settable) 1
+						1623 checkbox (settable, integer) Description: ATR trailing stop after trigger R, Value: 0
+						1624 text ATR trailing stop after trigger R Trailing activation R
+						1625 text field (settable) 2
+						1626 text Trailing ATR distance
+						1627 text field (settable) 1.5
+						1628 text CONFLUENCE
+						1629 checkbox (settable, integer) Description: Score optional liquidity (category cap 20), Value: 0
+						1630 text Score optional liquidity (category cap 20)
+						1631 checkbox (settable, integer) Description: Require optional 50–61.8% swing retracement, Value: 0
+						1632 text Require optional 50–61.8% swing retracement
+						1633 checkbox (settable, integer) Description: Require optional premium/discount location, Value: 0
+						1634 text Require optional premium/discount location CONTEXT VISUALS
+						1635 checkbox (settable, integer) Description: Show previous day/week levels, Value: 0
+						1636 text Show previous day/week levels
+						1637 checkbox (settable, integer) Description: Show session high/low, Value: 0
+						1638 text Show session high/low
+						1639 checkbox (settable, integer) Description: Show confirmed swing Fibonacci, Value: 0
+						1640 text Show confirmed swing Fibonacci
+						1641 checkbox (settable, integer) Description: Show confirmed swing midpoint, Value: 0
+						1642 text Show confirmed swing midpoint
+						1643 checkbox (settable, integer) Description: Show breaker-level heuristics, Value: 0
+						1644 text Show breaker-level heuristics
+						1645 checkbox (settable, integer) Description: Show spring/upthrust candidates, Value: 0
+						1646 text Show spring/upthrust candidates
+						1647 checkbox (settable, integer) Description: Partial TP: 33% / 33% / 34% (strategy), Value: 1
+						1648 text Partial TP: 33% / 33% / 34% (strategy) CHART STYLE Chart layout
+						1649 combo box (collapsed) Value: Reference, ID: in_75, Secondary Actions: Expand
+							1650 text Reference
+						1651 checkbox (settable, integer) Description: Show compact analysis context, Value: 0
+						1652 text Show compact analysis context
+						1653 checkbox (settable, integer) Description: Show confirmed swing levels and right labels, Value: 1
+						1654 text Show confirmed swing levels and right labels
+						1655 checkbox (settable, integer) Description: Show confirmed support/resistance zones, Value: 1
+						1656 text Show confirmed support/resistance zones
+						1657 checkbox (settable, integer) Description: Show completed-reference CRT sweeps (context only), Value: 0
+						1658 text Show completed-reference CRT sweeps (context only)
+						1659 checkbox (settable, integer) Description: Show confirmed-pivot liquidity sweeps (context only), Value: 1
+						1660 text Show confirmed-pivot liquidity sweeps (context only)
+						1661 checkbox (settable, integer) Description: Show visual EMA 55 (does not change strategy EMA 50), Value: 1
+						1662 text Show visual EMA 55 (does not change strategy EMA 50) Context annotation history
+						1663 combo box (collapsed) Value: Latest only, ID: in_82, Secondary Actions: Expand
+							1664 text Latest only
+						1665 text Maximum context zone age bars
+						1666 text field (settable) 60
+						1667 text Maximum context zone distance ATR
+						1668 text field (settable) 8
+						1669 text Minimum bars between same-side sweep labels
+						1670 text field (settable) 8
+						1671 text Zone / right-label extension bars
+						1672 text field (settable) 12
+						1673 text READABILITY Dashboard text size
+						1674 combo box (collapsed) Value: Tiny, ID: in_87, Secondary Actions: Expand
+							1675 text Tiny
+						1676 text Chart label text size
+						1677 combo box (collapsed) Value: Small, ID: in_88, Secondary Actions: Expand
+							1678 text Small
+						1679 checkbox (settable, integer) Description: Show detailed swing labels, Value: 0
+						1680 text Show detailed swing labels Maximum recent structure labels
+						1681 text field (settable) 15
+						1682 text Context label background transparency
+						1683 text field (settable) 82
+						1684 checkbox (settable, integer) Description: Show EMAs, Value: 1
+						1685 text Show EMAs
+						1686 checkbox (settable, integer) Description: Show latest FVG, Value: 1
+						1687 text Show latest FVG
+						1688 checkbox (settable, integer) Description: Show latest displacement order block heuristic, Value: 1
+						1689 text Show latest displacement order block heuristic
+						1690 checkbox (settable, integer) Description: Show structure and sweeps, Value: 1
+						1691 text Show structure and sweeps RESEARCH DIAGNOSTICS Research diagnostics
+						1692 combo box (collapsed) Value: Events, ID: in_96, Secondary Actions: Expand
+							1693 text Events
+						1694 text Run tag
+						1695 text field (settable) native-difference-2026-11-09
+						1696 text Unique capture ID (change for every run)
+						1697 text field (settable) strategy-xauusd-m5-20261109-05
+						1698 text Diagnostic window start (bar open, inclusive)
+						1699 text field (settable) 2026-10-22
+						1700 combo box (settable) 21:45
+						1701 text Diagnostic window end (bar open, exclusive)
+						1702 text field (settable) 2026-10-22
+						1703 combo box (settable) 23:05
+						1704 text Maximum diagnostic events (plus end record)
+						1705 text field (settable) 6000
+					1706 pop up button (collapsed) Defaults, ID: property-actions, Secondary Actions: Expand
+					1707 container
+						1708 button Cancel
+						1709 button Ok
+				1710 container
+					1711 button Previous month, September 2026
+					1712 button Switch to months, 2026
+					1713 button Next month, November 2026
+					1714 table
+						1715 row Thursday 1 October 2026 Friday 2 October 2026 Saturday 3 October 2026 Sunday 4 October 2026
+							1716 cell (selectable) Description: Thursday 1 October 2026, Value: 1
+							1717 cell (selectable) Description: Friday 2 October 2026, Value: 2
+							1718 cell (selectable) Description: Saturday 3 October 2026, Value: 3
+							1719 cell (selectable) Description: Sunday 4 October 2026, Value: 4
+						1720 row Monday 5 October 2026 Tuesday 6 October 2026 Wednesday 7 October 2026 Thursday 8 October 2026 Friday 9 October 2026 Saturday 10 October 2026 Sunday 11 October 2026
+							1721 cell (selectable) Description: Monday 5 October 2026, Value: 5
+							1722 cell (selectable) Description: Tuesday 6 October 2026, Value: 6
+							1723 cell (selectable) Description: Wednesday 7 October 2026, Value: 7
+							1724 cell (selectable) Description: Thursday 8 October 2026, Value: 8
+							1725 cell (selectable) Description: Friday 9 October 2026, Value: 9
+							1726 cell (selectable) Description: Saturday 10 October 2026, Value: 10
+							1727 cell (selectable) Description: Sunday 11 October 2026, Value: 11
+						1728 row Monday 12 October 2026 Tuesday 13 October 2026 Wednesday 14 October 2026 Thursday 15 October 2026 Friday 16 October 2026 Saturday 17 October 2026 Sunday 18 October 2026
+							1729 cell (selectable) Description: Monday 12 October 2026, Value: 12
+							1730 cell (selectable) Description: Tuesday 13 October 2026, Value: 13
+							1731 cell (selectable) Description: Wednesday 14 October 2026, Value: 14
+							1732 cell (selectable) Description: Thursday 15 October 2026, Value: 15
+							1733 cell (selectable) Description: Friday 16 October 2026, Value: 16
+							1734 cell (selectable) Description: Saturday 17 October 2026, Value: 17
+							1735 cell (selectable) Description: Sunday 18 October 2026, Value: 18
+						1736 row Monday 19 October 2026 Tuesday 20 October 2026 Wednesday 21 October 2026 Thursday 22 October 2026 Friday 23 October 2026 Saturday 24 October 2026 Sunday 25 October 2026
+							1737 cell (selectable) Description: Monday 19 October 2026, Value: 19
+							1738 cell (selectable) Description: Tuesday 20 October 2026, Value: 20
+							1739 cell (selectable) Description: Wednesday 21 October 2026, Value: 21
+							1740 cell (selected) Description: Thursday 22 October 2026, Value: 22
+							1741 cell (selectable) Description: Friday 23 October 2026, Value: 23
+							1742 cell (selectable) Description: Saturday 24 October 2026, Value: 24
+							1743 cell (selectable) Description: Sunday 25 October 2026, Value: 25
+						1744 row Monday 26 October 2026 Tuesday 27 October 2026 Wednesday 28 October 2026 Thursday 29 October 2026 Friday 30 October 2026 Saturday 31 October 2026
+							1745 cell (selectable) Description: Monday 26 October 2026, Value: 26
+							1746 cell (selectable) Description: Tuesday 27 October 2026, Value: 27
+							1747 cell (selectable) Description: Wednesday 28 October 2026, Value: 28
+							1748 cell (selectable) Description: Thursday 29 October 2026, Value: 29
+							1749 cell (selectable) Description: Friday 30 October 2026, Value: 30
+							1750 cell (selectable) Description: Saturday 31 October 2026, Value: 31
+				1751 container
+					1752 button Previous month, September 2026
+					1753 button Switch to months, 2026
+					1754 button Next month, November 2026
+					1755 table
+						1756 row Thursday 1 October 2026 Friday 2 October 2026 Saturday 3 October 2026 Sunday 4 October 2026
+							1757 cell (selectable) Description: Thursday 1 October 2026, Value: 1
+							1758 cell (selectable) Description: Friday 2 October 2026, Value: 2
+							1759 cell (selectable) Description: Saturday 3 October 2026, Value: 3
+							1760 cell (selectable) Description: Sunday 4 October 2026, Value: 4
+						1761 row Monday 5 October 2026 Tuesday 6 October 2026 Wednesday 7 October 2026 Thursday 8 October 2026 Friday 9 October 2026 Saturday 10 October 2026 Sunday 11 October 2026
+							1762 cell (selectable) Description: Monday 5 October 2026, Value: 5
+							1763 cell (selectable) Description: Tuesday 6 October 2026, Value: 6
+							1764 cell (selectable) Description: Wednesday 7 October 2026, Value: 7
+							1765 cell (selectable) Description: Thursday 8 October 2026, Value: 8
+							1766 cell (selectable) Description: Friday 9 October 2026, Value: 9
+							1767 cell (selectable) Description: Saturday 10 October 2026, Value: 10
+							1768 cell (selectable) Description: Sunday 11 October 2026, Value: 11
+						1769 row Monday 12 October 2026 Tuesday 13 October 2026 Wednesday 14 October 2026 Thursday 15 October 2026 Friday 16 October 2026 Saturday 17 October 2026 Sunday 18 October 2026
+							1770 cell (selectable) Description: Monday 12 October 2026, Value: 12
+							1771 cell (selectable) Description: Tuesday 13 October 2026, Value: 13
+							1772 cell (selectable) Description: Wednesday 14 October 2026, Value: 14
+							1773 cell (selectable) Description: Thursday 15 October 2026, Value: 15
+							1774 cell (selectable) Description: Friday 16 October 2026, Value: 16
+							1775 cell (selectable) Description: Saturday 17 October 2026, Value: 17
+							1776 cell (selectable) Description: Sunday 18 October 2026, Value: 18
+						1777 row Monday 19 October 2026 Tuesday 20 October 2026 Wednesday 21 October 2026 Thursday 22 October 2026 Friday 23 October 2026 Saturday 24 October 2026 Sunday 25 October 2026
+							1778 cell (selectable) Description: Monday 19 October 2026, Value: 19
+							1779 cell (selectable) Description: Tuesday 20 October 2026, Value: 20
+							1780 cell (selectable) Description: Wednesday 21 October 2026, Value: 21
+							1781 cell (selected) Description: Thursday 22 October 2026, Value: 22
+							1782 cell (selectable) Description: Friday 23 October 2026, Value: 23
+							1783 cell (selectable) Description: Saturday 24 October 2026, Value: 24
+							1784 cell (selectable) Description: Sunday 25 October 2026, Value: 25
+						1785 row Monday 26 October 2026 Tuesday 27 October 2026 Wednesday 28 October 2026 Thursday 29 October 2026 Friday 30 October 2026 Saturday 31 October 2026
+							1786 cell (selectable) Description: Monday 26 October 2026, Value: 26
+							1787 cell (selectable) Description: Tuesday 27 October 2026, Value: 27
+							1788 cell (selectable) Description: Wednesday 28 October 2026, Value: 28
+							1789 cell (selectable) Description: Thursday 29 October 2026, Value: 29
+							1790 cell (selectable) Description: Friday 30 October 2026, Value: 30
+							1791 cell (selectable) Description: Saturday 31 October 2026, Value: 31
+
+The focused UI element is 1699 text field (settable) 2026-10-22
