@@ -1,0 +1,27 @@
+{
+  "result": "FRESH_ID_HISTORICAL_REPEAT_MATCH",
+  "scope": "FOREXCOM:XAUUSD M5, 2026-11-11 10:00–12:05 UTC, same loaded-history start",
+  "original": {
+    "file": "indicator-nov11.csv",
+    "sha256": "cd98472db1d736a08c37cef1a7269d442c46bf6f60088bdd063fde4bc3638379",
+    "captureId": "indicator-xauusd-m5-20261113-05:1794567470578",
+    "eventCount": 328,
+    "planCountThroughEnd": 74
+  },
+  "repeat": {
+    "file": "indicator-nov11-repeat-fresh.csv",
+    "sha256": "f242923cfde1c4f9661e44b1bddda33a2ac55139b94a7c1d4b085869d3c104b1",
+    "captureId": "indicator-xauusd-m5-20261113-05-repeat-fresh:1794587457360",
+    "eventCount": 328,
+    "planCountThroughEnd": 74
+  },
+  "substantiveDiagnosticEventsMatch": true,
+  "completeWithinWindow": true,
+  "planParityThroughEnd": true,
+  "planParityInWindow": true,
+  "limits": [
+    "Structural export completeness is not independently authenticated.",
+    "One historical rerun does not prove general non-repainting or live first appearance.",
+    "Later plans outside the endpoint are excluded because the chart kept advancing."
+  ]
+}

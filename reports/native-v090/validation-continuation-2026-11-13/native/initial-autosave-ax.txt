@@ -1,0 +1,238 @@
+Browser tab: 1346738801, Title: "XAUUSD 3,893.75 ▲ +0.42% Unnamed", URL: "https://www.tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD".
+0 AXWebArea XAUUSD 3,893.75 ▲ +0.42% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+	1 container
+		2 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+		3 text 9
+		4 toolbar
+			5 container
+				6 button XAUUSD, ID: header-toolbar-symbol-search
+				7 button Description: Switch data type, ID: header-toolbar-switch-data-type
+				8 pop up button Description: Compare symbols, ID: header-toolbar-compare
+				9 pop up button 5 minutes
+					10 container
+						11 text 5 m
+				12 container header-toolbar-chart-styles
+					13 radio button Description: Line, Value: 0
+					14 radio button Description: Candles, Value: 1
+					15 pop up button Bar's style
+				16 container header-toolbar-indicators
+					17 button Indicators, metrics, and strategies
+						18 text Indicators
+					19 pop up button Favorite indicators and indicators templates
+				20 button Description: Create alert, ID: header-toolbar-alerts
+					21 text Alert
+				22 checkbox Description: Bar replay, Value: 0, ID: header-toolbar-replay
+					23 text Replay
+				24 container header-toolbar-undo-redo
+					25 button Undo hide Nokor Traders CRT + CHoCH By Lors Housann
+				26 pop up button Description: Layout setup, ID: header-toolbar-layouts
+				27 container header-toolbar-save-load
+					28 button (disabled) All changes saved
+						29 text Unnamed
+						30 text Save
+					31 pop up button Manage layouts
+				32 button Description: Quick search, ID: header-toolbar-quick-search
+				33 button Description: Settings, ID: header-toolbar-properties
+				34 button Description: Fullscreen mode, ID: header-toolbar-fullscreen
+				35 pop up button Take a snapshot
+			36 pop up button Share your idea with the trade community
+			37 container
+				38 button Trade
+					39 text Trade
+			40 container
+				41 button Upgrade
+					42 text Upgrade
+		43 toolbar drawing-toolbar
+			44 container
+				45 container
+					46 button Cross
+					47 checkbox Description: Cursors, Value: 1
+				48 container
+					49 button Trendline
+					50 checkbox Description: Trend tools, Value: 0
+				51 container
+					52 button Fib retracement
+					53 checkbox Description: Gann and Fibonacci tools, Value: 0
+				54 container
+					55 button XABCD pattern
+					56 checkbox Description: Patterns, Value: 0
+				57 container
+					58 button Long position
+					59 checkbox Description: Forecasting and measurement tools, Value: 0
+				60 container
+					61 button Brush
+					62 checkbox Description: Geometric shapes, Value: 0
+				63 container
+					64 button Text
+					65 checkbox Description: Annotation tools, Value: 0
+				66 container
+					67 button Icon
+					68 checkbox Description: Icons, Value: 0
+				69 button Measure
+				70 button Zoom in
+				71 container
+					72 checkbox Description: Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+					73 checkbox Description: Magnets, Value: 0
+				74 checkbox Description: Keep drawing, Value: 0
+				75 container
+					76 checkbox Description: Lock drawings and indicators, Value: 0
+					77 checkbox Description: Lock options, Value: 0
+				78 container
+					79 checkbox Description: Hide all drawings, Value: 0
+					80 checkbox Description: Hide options, Value: 0
+				81 container
+					82 button Remove objects
+					83 button Remove options
+				84 checkbox Description: Show Favorite Drawing Tools Toolbar, Value: 1, ID: drawing-toolbar-favorite-drawings
+		85 container Chart #1
+			86 container
+				87 container
+					88 button Hide indicators legend
+					89 toolbar
+						90 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+						91 container
+							92 button Show
+								93 image
+							94 button Settings
+								95 image
+							96 button Remove
+								97 image
+							98 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Confirmation review, Help: More
+								99 image
+					100 toolbar
+						101 text XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+						102 container
+							103 button Hide
+								104 image
+							105 button Settings
+								106 image
+							107 button Remove
+								108 image
+							109 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Research diagnostics, Help: More
+								110 image
+					111 toolbar
+						112 text XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+						113 container
+							114 button Show
+								115 image
+							116 button Settings
+								117 image
+							118 button Remove
+								119 image
+							120 button Description: More options for XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics, Help: More
+								121 image
+					122 toolbar
+						123 text Asian Session Range
+						124 container
+							125 button Show
+								126 image
+							127 button Settings
+								128 image
+							129 image
+							130 button Remove
+								131 image
+							132 button More options for Asian Session Range
+								133 image
+					134 toolbar
+						135 text Nokor Traders CRT + CHoCH By Lors Housann
+						136 container
+							137 button Show
+								138 image
+							139 button Settings
+								140 image
+							141 image
+							142 button Remove
+								143 image
+							144 button More options for Nokor Traders CRT + CHoCH By Lors Housann
+								145 image
+				146 image Chart for FOREXCOM:XAUUSD, 5 minutes
+			147 container
+				148 toolbar Navigation
+					149 button Zoom out
+					150 button Zoom in
+					151 button Scroll to the left
+					152 button Scroll to the right
+					153 button Reset chart view
+		154 toolbar
+			155 container
+				156 button 1 day in 1 minute intervals
+					157 text 1D
+				158 button 5 days in 5 minutes intervals
+					159 text 5D
+				160 button 1 month in 30 minutes intervals
+					161 text 1M
+				162 button 3 months in 1 hour intervals
+					163 text 3M
+				164 button 6 months in 2 hours intervals
+					165 text 6M
+				166 button Year to day in 1 day intervals
+					167 text YTD
+				168 button 1 year in 1 day intervals
+					169 text 1Y
+				170 button 5 years in 1 week intervals
+					171 text 5Y
+				172 button All data in 1 month intervals
+					173 text All
+				174 button Go to
+			175 button Timezone
+				176 text 17:39:25 UTC+7
+		177 container
+			178 toolbar
+				179 checkbox Description: Watchlist, details, and news, Value: 0
+				180 checkbox Description: Alerts, Value: 0
+				181 checkbox Description: Object tree and data window, Value: 0
+				182 checkbox Description: AI Copilot, Value: 0
+				183 checkbox Description: Screeners, Value: 0
+				184 checkbox Description: Pine Editor, Value: 0
+				185 checkbox Description: Calendars, Value: 0
+				186 checkbox Description: Community, Value: 0
+				187 checkbox Description: Notifications, Value: 0
+				188 checkbox Description: Chats, Value: 0
+				189 pop up button Products
+				190 checkbox Description: Help Center, Value: 0
+		191 container Trading panel
+	192 container common-tooltip-wrapper
+		193 text Manage layouts
+	194 container overlap-manager-root
+		195 container
+			196 table
+				197 row (disabled) Save layout
+					198 cell
+						199 text Save layout
+					200 text ⌘ S
+				201 row Autosave
+					202 cell
+						203 text Autosave
+				204 row Share layout
+					205 cell
+						206 text Share layout
+					207 cell
+						208 container Everyone with the link can view and copy
+				209 row Make a copy
+					210 cell
+						211 text Make a copy…
+				212 row Rename
+					213 cell
+						214 text Rename…
+				215 row Download chart data
+					216 cell
+						217 text Download chart data…
+				218 row Create new layout
+					219 cell
+						220 text Create new layout…
+				225 row Recently used
+					226 cell
+						227 text RECENTLY USED
+				228 container RECENTLY USED, ID: :r17:
+					229 row Unnamed XAUUSD, 5 Add to favorites
+						230 cell
+							231 text Unnamed
+						232 text XAUUSD, 5
+						233 cell
+							234 button Add to favorites
+				221 row Open layout
+					222 cell
+						223 text Open layout…
+					224 text Dot
+
+The focused UI element is 196 table

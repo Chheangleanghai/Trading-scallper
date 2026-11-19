@@ -1,0 +1,2432 @@
+{
+  "schema": "native-october-parity-causality/v1",
+  "reviewedOn": "2026-11-13",
+  "sourceIdentity": {
+    "indicator": {
+      "sourcePath": "pine/experiments/indicator_signal_diagnostics.pine",
+      "sourceSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+      "copyBackPath": "reports/native-v090/indicator-install-2026-11-09/indicator-editor-copy-back.pine",
+      "copyBackSha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852"
+    },
+    "strategy": {
+      "sourcePath": "pine/experiments/strategy_signal_diagnostics.pine",
+      "sourceSha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+      "copyBackPath": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-editor-copy-back.pine",
+      "copyBackSha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d"
+    }
+  },
+  "captures": {
+    "indicator-oct19": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-oct19.csv",
+      "sha256": "e9caf58741c1006ad074d27a583fd8f8879d1baf88fc4e806dbdf1e02f4477b3",
+      "inputsPath": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-oct19-inputs-ax.txt",
+      "inputsSha256": "7d7d756bae9a99a6cf6e86c30497483faf577123ca431ea1878ea378b83c084d",
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1792400400000,
+        "windowEnd": 1792409400000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 412,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "strategy-oct19": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-oct19.csv",
+      "sha256": "5457a94b8e5b1d36a95ac6bc5afd477cad9a48a30eab2422737aee8341ac5c04",
+      "inputsPath": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-oct19-inputs-ax.txt",
+      "inputsSha256": "ec9807359d3254423563630a6828feca10a15085593b65b850b6ff08e52081cb",
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1792400400000,
+        "windowEnd": 1792409400000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 417,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "indicator-oct22-am": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-oct22-am.csv",
+      "sha256": "dfb835882316090f1debfc0acbab27ee0f83a4a493999779cf8f71c18d23cac0",
+      "inputsPath": "reports/native-v090/validation-continuation-2026-11-09/native/indicator-oct22-am-inputs-ax.txt",
+      "inputsSha256": "6e934d0929f5d854d8b08e904e0d2f6d205061a98e8444dd8811fec541affa53",
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1792656000000,
+        "windowEnd": 1792659600000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 156,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    },
+    "strategy-oct22-am": {
+      "path": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-oct22-am.csv",
+      "sha256": "381251b42cc96914f31778e2f56fee22b9b154f83640ae052ef742cae43a20b5",
+      "inputsPath": "reports/native-v090/validation-continuation-2026-11-09/native/strategy-oct22-am-inputs-ax.txt",
+      "inputsSha256": "7228b51f74d8e862386c9d99ca46a3e8cf236b08baa9dd452faae2987aedcbb4",
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "native-difference-2026-11-09",
+        "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1792656000000,
+        "windowEnd": 1792659600000,
+        "firstDataTime": 1791756000000
+      },
+      "eventCount": 165,
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "exportStatus": "STRUCTURALLY_COMPLETE_UNAUTHENTICATED",
+      "completenessProblems": []
+    }
+  },
+  "comparisons": {
+    "oct19": {
+      "contextKeys": [
+        "symbol",
+        "timeframe",
+        "windowStart",
+        "windowEnd",
+        "firstDataTime"
+      ],
+      "equivalentContext": true,
+      "comparedTradingInputs": 69,
+      "tradingInputDifferences": [],
+      "inputs": [
+        {
+          "variable": "enableA",
+          "label": "A: Sweep + MSS + FVG",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableB",
+          "label": "B: CRT",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableC",
+          "label": "C: Confirmed-pivot Turtle Soup",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableD",
+          "label": "D: K-SNR (confirmed support/resistance)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableE",
+          "label": "E: Supply/demand",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableF",
+          "label": "F: Structural trend pullback",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableG",
+          "label": "G: AMD range approximation",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableH",
+          "label": "H: Confirmed Quasimodo approximation",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "crtTF",
+          "label": "CRT reference timeframe",
+          "indicator": [
+            "15 minutes"
+          ],
+          "strategy": [
+            "15 minutes"
+          ]
+        },
+        {
+          "variable": "turtleAge",
+          "label": "Turtle Soup minimum bars since pivot confirmation",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "levelTolerance",
+          "label": "Level/zone tolerance ATR",
+          "indicator": [
+            "0.15"
+          ],
+          "strategy": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxZoneTests",
+          "label": "S/D maximum tested bars",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "useEMA50",
+          "label": "Trend pullback: require EMA50",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "pullbackDepth",
+          "label": "Trend pullback: maximum EMA21 overshoot ATR",
+          "indicator": [
+            "0.3"
+          ],
+          "strategy": [
+            "0.3"
+          ]
+        },
+        {
+          "variable": "accumulationBars",
+          "label": "AMD prior accumulation bars",
+          "indicator": [
+            "12"
+          ],
+          "strategy": [
+            "12"
+          ]
+        },
+        {
+          "variable": "accumulationWidth",
+          "label": "AMD maximum prior range ATR",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "strategyThresholds",
+          "label": "Use strategy-specific quality thresholds",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "thresholdA",
+          "label": "A quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdB",
+          "label": "B quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdC",
+          "label": "C quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdD",
+          "label": "D quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdE",
+          "label": "E quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdF",
+          "label": "F quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdG",
+          "label": "G quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdH",
+          "label": "H quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "useResearchWindow",
+          "label": "Restrict new plans to date window",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "researchStart",
+          "label": "Window start (inclusive)",
+          "indicator": [
+            "2026-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "researchEnd",
+          "label": "Window end (exclusive)",
+          "indicator": [
+            "2027-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "tradeSide",
+          "label": "Allowed direction",
+          "indicator": [
+            "Both"
+          ],
+          "strategy": [
+            "Both"
+          ]
+        },
+        {
+          "variable": "auditLog",
+          "label": "Log qualified plans and lifecycle events (research only)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "swing",
+          "label": "Confirmed pivot strength",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "expiry",
+          "label": "Setup expiry bars",
+          "indicator": [
+            "20"
+          ],
+          "strategy": [
+            "20"
+          ]
+        },
+        {
+          "variable": "threshold",
+          "label": "Minimum heuristic quality",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "cooldown",
+          "label": "Signal cooldown bars",
+          "indicator": [
+            "5"
+          ],
+          "strategy": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxTrades",
+          "label": "Maximum entries per session",
+          "indicator": [
+            "5"
+          ],
+          "strategy": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxExposurePct",
+          "label": "Maximum simulated notional / equity % (align with margin properties)",
+          "indicator": [
+            "90"
+          ],
+          "strategy": [
+            "90"
+          ]
+        },
+        {
+          "variable": "riskPct",
+          "label": "Simulation risk %",
+          "indicator": [
+            "0.5"
+          ],
+          "strategy": [
+            "0.5"
+          ]
+        },
+        {
+          "variable": "buffer",
+          "label": "ATR stop buffer",
+          "indicator": [
+            "0.15"
+          ],
+          "strategy": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxStop",
+          "label": "Maximum stop ATR",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "maxDistance",
+          "label": "Maximum entry distance from FVG ATR",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "minRR",
+          "label": "Minimum TP2 reward/risk",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r1",
+          "label": "TP1 fixed R projection",
+          "indicator": [
+            "1"
+          ],
+          "strategy": [
+            "1"
+          ]
+        },
+        {
+          "variable": "r2",
+          "label": "TP2 fixed R projection",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r3",
+          "label": "TP3 fixed R projection",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "minDisp",
+          "label": "MSS body minimum ATR",
+          "indicator": [
+            "0.7"
+          ],
+          "strategy": [
+            "0.7"
+          ]
+        },
+        {
+          "variable": "trendFilter",
+          "label": "Require H1 alignment",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "emaFilter",
+          "label": "Require EMA 9/21 alignment",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "useSession",
+          "label": "Session filter",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "sessionPreset",
+          "label": "Session preset",
+          "indicator": [
+            "London"
+          ],
+          "strategy": [
+            "London"
+          ]
+        },
+        {
+          "variable": "sessionHours",
+          "label": "Trading session",
+          "indicator": [
+            "08:00",
+            "17:00"
+          ],
+          "strategy": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "variable": "sessionZone",
+          "label": "IANA session timezone (handles DST)",
+          "indicator": [
+            "Europe/London"
+          ],
+          "strategy": [
+            "Europe/London"
+          ]
+        },
+        {
+          "variable": "manualPause",
+          "label": "Manual news pause",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "newsStart",
+          "label": "Manual exclusion start",
+          "indicator": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "newsEnd",
+          "label": "Manual exclusion end",
+          "indicator": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "entryMode",
+          "label": "Entry mode",
+          "indicator": [
+            "Close"
+          ],
+          "strategy": [
+            "Close"
+          ]
+        },
+        {
+          "variable": "pendingBars",
+          "label": "Pending entry expiry bars",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "timeExit",
+          "label": "Maximum holding minutes (0 disables)",
+          "indicator": [
+            "15"
+          ],
+          "strategy": [
+            "15"
+          ]
+        },
+        {
+          "variable": "targetMode",
+          "label": "Target mode",
+          "indicator": [
+            "Fixed R"
+          ],
+          "strategy": [
+            "Fixed R"
+          ]
+        },
+        {
+          "variable": "stopMode",
+          "label": "Stop mode",
+          "indicator": [
+            "Structure"
+          ],
+          "strategy": [
+            "Structure"
+          ]
+        },
+        {
+          "variable": "atrStop",
+          "label": "ATR stop multiplier",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "breakEven",
+          "label": "Move stop to filled entry after trigger R",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "breakEvenR",
+          "label": "Break-even trigger R",
+          "indicator": [
+            "1"
+          ],
+          "strategy": [
+            "1"
+          ]
+        },
+        {
+          "variable": "trailing",
+          "label": "ATR trailing stop after trigger R",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "trailingStartR",
+          "label": "Trailing activation R",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "trailingATR",
+          "label": "Trailing ATR distance",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "confluenceLiquidity",
+          "label": "Score optional liquidity (category cap 20)",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "confluenceFib",
+          "label": "Require optional 50–61.8% swing retracement",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "confluencePD",
+          "label": "Require optional premium/discount location",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "partial",
+          "label": "Partial TP: 33% / 33% / 34% (strategy)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        }
+      ],
+      "comparison": {
+        "parity": false,
+        "indicatorPlans": 3,
+        "strategyPlans": 3,
+        "tolerance": 0,
+        "mismatches": [
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792406100000",
+            "field": "missing-plan",
+            "missingFrom": "strategy"
+          },
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792407900000",
+            "field": "missing-plan",
+            "missingFrom": "indicator"
+          }
+        ],
+        "executionDifferences": [
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792401300000",
+            "field": "executionModel",
+            "indicator": "INDICATOR_ESTIMATE",
+            "strategy": "STRATEGY_EMULATOR"
+          },
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792404300000",
+            "field": "executionModel",
+            "indicator": "INDICATOR_ESTIMATE",
+            "strategy": "STRATEGY_EMULATOR"
+          }
+        ]
+      }
+    },
+    "oct22-am": {
+      "contextKeys": [
+        "symbol",
+        "timeframe",
+        "windowStart",
+        "windowEnd",
+        "firstDataTime"
+      ],
+      "equivalentContext": true,
+      "comparedTradingInputs": 69,
+      "tradingInputDifferences": [],
+      "inputs": [
+        {
+          "variable": "enableA",
+          "label": "A: Sweep + MSS + FVG",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableB",
+          "label": "B: CRT",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableC",
+          "label": "C: Confirmed-pivot Turtle Soup",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableD",
+          "label": "D: K-SNR (confirmed support/resistance)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableE",
+          "label": "E: Supply/demand",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableF",
+          "label": "F: Structural trend pullback",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableG",
+          "label": "G: AMD range approximation",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "enableH",
+          "label": "H: Confirmed Quasimodo approximation",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "crtTF",
+          "label": "CRT reference timeframe",
+          "indicator": [
+            "15 minutes"
+          ],
+          "strategy": [
+            "15 minutes"
+          ]
+        },
+        {
+          "variable": "turtleAge",
+          "label": "Turtle Soup minimum bars since pivot confirmation",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "levelTolerance",
+          "label": "Level/zone tolerance ATR",
+          "indicator": [
+            "0.15"
+          ],
+          "strategy": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxZoneTests",
+          "label": "S/D maximum tested bars",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "useEMA50",
+          "label": "Trend pullback: require EMA50",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "pullbackDepth",
+          "label": "Trend pullback: maximum EMA21 overshoot ATR",
+          "indicator": [
+            "0.3"
+          ],
+          "strategy": [
+            "0.3"
+          ]
+        },
+        {
+          "variable": "accumulationBars",
+          "label": "AMD prior accumulation bars",
+          "indicator": [
+            "12"
+          ],
+          "strategy": [
+            "12"
+          ]
+        },
+        {
+          "variable": "accumulationWidth",
+          "label": "AMD maximum prior range ATR",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "strategyThresholds",
+          "label": "Use strategy-specific quality thresholds",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "thresholdA",
+          "label": "A quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdB",
+          "label": "B quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdC",
+          "label": "C quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdD",
+          "label": "D quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdE",
+          "label": "E quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdF",
+          "label": "F quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdG",
+          "label": "G quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "thresholdH",
+          "label": "H quality threshold",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "useResearchWindow",
+          "label": "Restrict new plans to date window",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "researchStart",
+          "label": "Window start (inclusive)",
+          "indicator": [
+            "2026-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "2026-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "researchEnd",
+          "label": "Window end (exclusive)",
+          "indicator": [
+            "2027-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "2027-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "tradeSide",
+          "label": "Allowed direction",
+          "indicator": [
+            "Both"
+          ],
+          "strategy": [
+            "Both"
+          ]
+        },
+        {
+          "variable": "auditLog",
+          "label": "Log qualified plans and lifecycle events (research only)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "swing",
+          "label": "Confirmed pivot strength",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "expiry",
+          "label": "Setup expiry bars",
+          "indicator": [
+            "20"
+          ],
+          "strategy": [
+            "20"
+          ]
+        },
+        {
+          "variable": "threshold",
+          "label": "Minimum heuristic quality",
+          "indicator": [
+            "75"
+          ],
+          "strategy": [
+            "75"
+          ]
+        },
+        {
+          "variable": "cooldown",
+          "label": "Signal cooldown bars",
+          "indicator": [
+            "5"
+          ],
+          "strategy": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxTrades",
+          "label": "Maximum entries per session",
+          "indicator": [
+            "5"
+          ],
+          "strategy": [
+            "5"
+          ]
+        },
+        {
+          "variable": "maxExposurePct",
+          "label": "Maximum simulated notional / equity % (align with margin properties)",
+          "indicator": [
+            "90"
+          ],
+          "strategy": [
+            "90"
+          ]
+        },
+        {
+          "variable": "riskPct",
+          "label": "Simulation risk %",
+          "indicator": [
+            "0.5"
+          ],
+          "strategy": [
+            "0.5"
+          ]
+        },
+        {
+          "variable": "buffer",
+          "label": "ATR stop buffer",
+          "indicator": [
+            "0.15"
+          ],
+          "strategy": [
+            "0.15"
+          ]
+        },
+        {
+          "variable": "maxStop",
+          "label": "Maximum stop ATR",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "maxDistance",
+          "label": "Maximum entry distance from FVG ATR",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "minRR",
+          "label": "Minimum TP2 reward/risk",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r1",
+          "label": "TP1 fixed R projection",
+          "indicator": [
+            "1"
+          ],
+          "strategy": [
+            "1"
+          ]
+        },
+        {
+          "variable": "r2",
+          "label": "TP2 fixed R projection",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "r3",
+          "label": "TP3 fixed R projection",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "minDisp",
+          "label": "MSS body minimum ATR",
+          "indicator": [
+            "0.7"
+          ],
+          "strategy": [
+            "0.7"
+          ]
+        },
+        {
+          "variable": "trendFilter",
+          "label": "Require H1 alignment",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "emaFilter",
+          "label": "Require EMA 9/21 alignment",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "useSession",
+          "label": "Session filter",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        },
+        {
+          "variable": "sessionPreset",
+          "label": "Session preset",
+          "indicator": [
+            "London"
+          ],
+          "strategy": [
+            "London"
+          ]
+        },
+        {
+          "variable": "sessionHours",
+          "label": "Trading session",
+          "indicator": [
+            "08:00",
+            "17:00"
+          ],
+          "strategy": [
+            "08:00",
+            "17:00"
+          ]
+        },
+        {
+          "variable": "sessionZone",
+          "label": "IANA session timezone (handles DST)",
+          "indicator": [
+            "Europe/London"
+          ],
+          "strategy": [
+            "Europe/London"
+          ]
+        },
+        {
+          "variable": "manualPause",
+          "label": "Manual news pause",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "newsStart",
+          "label": "Manual exclusion start",
+          "indicator": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "newsEnd",
+          "label": "Manual exclusion end",
+          "indicator": [
+            "1970-01-01",
+            "07:00"
+          ],
+          "strategy": [
+            "1970-01-01",
+            "07:00"
+          ]
+        },
+        {
+          "variable": "entryMode",
+          "label": "Entry mode",
+          "indicator": [
+            "Close"
+          ],
+          "strategy": [
+            "Close"
+          ]
+        },
+        {
+          "variable": "pendingBars",
+          "label": "Pending entry expiry bars",
+          "indicator": [
+            "3"
+          ],
+          "strategy": [
+            "3"
+          ]
+        },
+        {
+          "variable": "timeExit",
+          "label": "Maximum holding minutes (0 disables)",
+          "indicator": [
+            "15"
+          ],
+          "strategy": [
+            "15"
+          ]
+        },
+        {
+          "variable": "targetMode",
+          "label": "Target mode",
+          "indicator": [
+            "Fixed R"
+          ],
+          "strategy": [
+            "Fixed R"
+          ]
+        },
+        {
+          "variable": "stopMode",
+          "label": "Stop mode",
+          "indicator": [
+            "Structure"
+          ],
+          "strategy": [
+            "Structure"
+          ]
+        },
+        {
+          "variable": "atrStop",
+          "label": "ATR stop multiplier",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "breakEven",
+          "label": "Move stop to filled entry after trigger R",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "breakEvenR",
+          "label": "Break-even trigger R",
+          "indicator": [
+            "1"
+          ],
+          "strategy": [
+            "1"
+          ]
+        },
+        {
+          "variable": "trailing",
+          "label": "ATR trailing stop after trigger R",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "trailingStartR",
+          "label": "Trailing activation R",
+          "indicator": [
+            "2"
+          ],
+          "strategy": [
+            "2"
+          ]
+        },
+        {
+          "variable": "trailingATR",
+          "label": "Trailing ATR distance",
+          "indicator": [
+            "1.5"
+          ],
+          "strategy": [
+            "1.5"
+          ]
+        },
+        {
+          "variable": "confluenceLiquidity",
+          "label": "Score optional liquidity (category cap 20)",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "confluenceFib",
+          "label": "Require optional 50–61.8% swing retracement",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "confluencePD",
+          "label": "Require optional premium/discount location",
+          "indicator": [
+            false
+          ],
+          "strategy": [
+            false
+          ]
+        },
+        {
+          "variable": "partial",
+          "label": "Partial TP: 33% / 33% / 34% (strategy)",
+          "indicator": [
+            true
+          ],
+          "strategy": [
+            true
+          ]
+        }
+      ],
+      "comparison": {
+        "parity": false,
+        "indicatorPlans": 1,
+        "strategyPlans": 2,
+        "tolerance": 0,
+        "mismatches": [
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792658100000",
+            "field": "missing-plan",
+            "missingFrom": "indicator"
+          }
+        ],
+        "executionDifferences": [
+          {
+            "key": "FOREXCOM:XAUUSD|5|1792656600000",
+            "field": "executionModel",
+            "indicator": "INDICATOR_ESTIMATE",
+            "strategy": "STRATEGY_EMULATOR"
+          }
+        ]
+      }
+    }
+  },
+  "findings": [
+    {
+      "planTimestamp": 1792406100000,
+      "classification": "EXECUTION_STATE_FROZEN_TRIGGER_DIVERGENCE_ESTABLISHED",
+      "mechanism": "Indicator closes its estimate at10:20 and creates a short F trigger4167.785. Strategy remains busy and observes its actual10:20 exit at10:25, then creates a different F trigger4164.96. At10:35 the shared Close-entry price4166.48 lies between those triggers. Indicator passes every check and selects F. Strategy remains unconfirmed. Its later10:50 confirmation fails STOP_DISTANCE and ENTRY_DISTANCE, then invalidates11:05.",
+      "evidence": {
+        "indicatorClosed": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 208,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",208]",
+          "kind": "ESTIMATE_TRADE_CLOSED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792403700000",
+          "bar": 1527,
+          "barOpen": 1792404900000,
+          "observedAt": 1792405200000,
+          "planId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1792404300000"
+        },
+        "indicatorEngine": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 209,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",209]",
+          "kind": "ENGINE",
+          "module": "",
+          "candidateId": "",
+          "bar": 1527,
+          "barOpen": 1792404900000,
+          "observedAt": 1792405200000,
+          "phase": "BEFORE_UPDATE",
+          "active": false,
+          "pending": false,
+          "brokerBusy": false,
+          "cancelling": false,
+          "slotAvailable": true,
+          "sessionPlans": 4,
+          "lastSignalBar": 1524
+        },
+        "strategyEngine": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 212,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",212]",
+          "kind": "ENGINE",
+          "module": "",
+          "candidateId": "",
+          "bar": 1527,
+          "barOpen": 1792404900000,
+          "observedAt": 1792405200000,
+          "phase": "BEFORE_UPDATE",
+          "active": true,
+          "pending": false,
+          "brokerBusy": true,
+          "cancelling": false,
+          "slotAvailable": false,
+          "sessionPlans": 4,
+          "lastSignalBar": 1524
+        },
+        "indicatorSetup": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 210,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",210]",
+          "kind": "SETUP_DETECTED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405200000",
+          "bar": 1527,
+          "barOpen": 1792404900000,
+          "observedAt": 1792405200000,
+          "setupTime": 1792405200000,
+          "setupBar": 1527,
+          "direction": -1,
+          "trigger": 4167.785,
+          "invalidation": 4172.8
+        },
+        "strategyClosed": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 224,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",224]",
+          "kind": "POSITION_CLOSED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792403700000",
+          "bar": 1528,
+          "barOpen": 1792405200000,
+          "observedAt": 1792405500000,
+          "planId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1792404300000",
+          "positionId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1792404300000:1792404300000",
+          "entryTime": 1792404300000,
+          "exitTime": 1792405200000,
+          "initialQuantity": 2.1,
+          "closedQuantity": 2.1,
+          "exitRows": 1,
+          "grossAccount": -1.5750000000000006,
+          "commission": 1.7504193,
+          "net": -3.3254193000000005,
+          "initialPlannedCashRisk": 12.389999999999237,
+          "realizedRToPlannedRisk": -0.2683954237288301,
+          "cause": "TIME_EXIT",
+          "accountCurrency": "USD"
+        },
+        "strategySetup": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 226,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",226]",
+          "kind": "SETUP_DETECTED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405500000",
+          "bar": 1528,
+          "barOpen": 1792405200000,
+          "observedAt": 1792405500000,
+          "setupTime": 1792405500000,
+          "setupBar": 1528,
+          "direction": -1,
+          "trigger": 4164.96,
+          "invalidation": 4172.8
+        },
+        "indicatorCooldown": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 224,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",224]",
+          "kind": "CHECKS",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405200000",
+          "bar": 1528,
+          "barOpen": 1792405200000,
+          "observedAt": 1792405500000,
+          "checksEvaluated": true,
+          "decisionConsistent": true,
+          "firstBlocker": "COOLDOWN",
+          "firstBlockerMessage": "Signal cooldown",
+          "failedChecks": [
+            "COOLDOWN"
+          ],
+          "quality": 80,
+          "plannedEntry": 4165.72,
+          "sl": 4173.19,
+          "tp1": 4158.25,
+          "tp2": 4150.78,
+          "tp3": 4143.31
+        },
+        "indicatorChecks": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 250,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",250]",
+          "kind": "CHECKS",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405200000",
+          "bar": 1530,
+          "barOpen": 1792405800000,
+          "observedAt": 1792406100000,
+          "checksEvaluated": true,
+          "decisionConsistent": true,
+          "firstBlocker": null,
+          "firstBlockerMessage": "",
+          "failedChecks": [],
+          "quality": 80,
+          "plannedEntry": 4166.48,
+          "sl": 4173.19,
+          "tp1": 4159.77,
+          "tp2": 4153.06,
+          "tp3": 4146.35
+        },
+        "indicatorSelection": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 251,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",251]",
+          "kind": "SELECTED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405200000",
+          "bar": 1530,
+          "barOpen": 1792405800000,
+          "observedAt": 1792406100000,
+          "planId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1792406100000"
+        },
+        "strategyState": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 258,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",258]",
+          "kind": "STATE",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405500000",
+          "bar": 1530,
+          "barOpen": 1792405800000,
+          "observedAt": 1792406100000,
+          "stage": 1,
+          "setupTime": 1792405500000,
+          "setupBar": 1528,
+          "direction": -1,
+          "trigger": 4164.96,
+          "invalidation": 4172.8,
+          "expiryBarInclusive": 1548,
+          "nextConfirmation": "Need later directional trigger close",
+          "active": false,
+          "pending": false,
+          "slotAvailable": true,
+          "currentSlotBusy": false,
+          "detectionEvaluated": true,
+          "checksEvaluated": false,
+          "firstBlocker": null,
+          "selectionOutcome": "NOT_EVALUATED",
+          "selectionBlocker": null,
+          "lastPlanId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:1792404300000"
+        },
+        "strategyLaterChecks": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 299,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",299]",
+          "kind": "CHECKS",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405500000",
+          "bar": 1533,
+          "barOpen": 1792406700000,
+          "observedAt": 1792407000000,
+          "checksEvaluated": true,
+          "decisionConsistent": true,
+          "firstBlocker": "STOP_DISTANCE",
+          "firstBlockerMessage": "Stop distance invalid",
+          "failedChecks": [
+            "STOP_DISTANCE",
+            "ENTRY_DISTANCE"
+          ],
+          "quality": 80,
+          "plannedEntry": 4163.27,
+          "sl": 4173.27,
+          "tp1": 4153.27,
+          "tp2": 4143.27,
+          "tp3": 4133.27
+        },
+        "strategyInvalidation": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792400400000,
+          "windowEnd": 1792409400000,
+          "firstDataTime": 1791756000000,
+          "sequence": 336,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",336]",
+          "kind": "INVALIDATED",
+          "module": "F_TREND_PULLBACK",
+          "candidateId": "FOREXCOM:XAUUSD:5:F_TREND_PULLBACK:-1:1792405500000",
+          "bar": 1536,
+          "barOpen": 1792407600000,
+          "observedAt": 1792407900000,
+          "reason": "Invalidation breached"
+        }
+      }
+    },
+    {
+      "planTimestamp": 1792407900000,
+      "classification": "QUOTA_BLOCK_ESTABLISHED_BY_ACTUAL_CHECKS",
+      "mechanism": "Both models detect the same10:50 B candidate and confirm11:05. Indicator has5 session plans and fails only QUOTA. Strategy has4 and selects B with no failed checks. The extra Indicator10:35 F accounts for the one-plan quota difference.",
+      "evidence": {
+        "indicator": {
+          "setup": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+            "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+            "model": "INDICATOR_ESTIMATE",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 289,
+            "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",289]",
+            "kind": "SETUP_DETECTED",
+            "module": "B_CRT",
+            "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:1:1792407000000",
+            "bar": 1533,
+            "barOpen": 1792406700000,
+            "observedAt": 1792407000000,
+            "setupTime": 1792407000000,
+            "setupBar": 1533,
+            "direction": 1,
+            "trigger": 4165.75,
+            "invalidation": 4162.345
+          },
+          "engine": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+            "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+            "model": "INDICATOR_ESTIMATE",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 329,
+            "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",329]",
+            "kind": "ENGINE",
+            "module": "",
+            "candidateId": "",
+            "bar": 1536,
+            "barOpen": 1792407600000,
+            "observedAt": 1792407900000,
+            "phase": "BEFORE_UPDATE",
+            "active": false,
+            "pending": false,
+            "brokerBusy": false,
+            "cancelling": false,
+            "slotAvailable": true,
+            "sessionPlans": 5,
+            "lastSignalBar": 1530
+          },
+          "checks": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "indicator-xauusd-m5-20261109-03:1794202528185",
+            "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+            "model": "INDICATOR_ESTIMATE",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 332,
+            "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-03:1794202528185\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",332]",
+            "kind": "CHECKS",
+            "module": "B_CRT",
+            "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:1:1792407000000",
+            "bar": 1536,
+            "barOpen": 1792407600000,
+            "observedAt": 1792407900000,
+            "checksEvaluated": true,
+            "decisionConsistent": true,
+            "firstBlocker": "QUOTA",
+            "firstBlockerMessage": "Session plan limit",
+            "failedChecks": [
+              "QUOTA"
+            ],
+            "quality": 90,
+            "plannedEntry": 4171.15,
+            "sl": 4161.85,
+            "tp1": 4180.45,
+            "tp2": 4189.75,
+            "tp3": 4199.05
+          }
+        },
+        "strategy": {
+          "setup": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+            "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+            "model": "STRATEGY_EMULATOR",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 296,
+            "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",296]",
+            "kind": "SETUP_DETECTED",
+            "module": "B_CRT",
+            "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:1:1792407000000",
+            "bar": 1533,
+            "barOpen": 1792406700000,
+            "observedAt": 1792407000000,
+            "setupTime": 1792407000000,
+            "setupBar": 1533,
+            "direction": 1,
+            "trigger": 4165.75,
+            "invalidation": 4162.345
+          },
+          "engine": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+            "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+            "model": "STRATEGY_EMULATOR",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 334,
+            "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",334]",
+            "kind": "ENGINE",
+            "module": "",
+            "candidateId": "",
+            "bar": 1536,
+            "barOpen": 1792407600000,
+            "observedAt": 1792407900000,
+            "phase": "BEFORE_UPDATE",
+            "active": false,
+            "pending": false,
+            "brokerBusy": false,
+            "cancelling": false,
+            "slotAvailable": true,
+            "sessionPlans": 4,
+            "lastSignalBar": 1524
+          },
+          "checks": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+            "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+            "model": "STRATEGY_EMULATOR",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 338,
+            "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",338]",
+            "kind": "CHECKS",
+            "module": "B_CRT",
+            "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:1:1792407000000",
+            "bar": 1536,
+            "barOpen": 1792407600000,
+            "observedAt": 1792407900000,
+            "checksEvaluated": true,
+            "decisionConsistent": true,
+            "firstBlocker": null,
+            "firstBlockerMessage": "",
+            "failedChecks": [],
+            "quality": 90,
+            "plannedEntry": 4171.15,
+            "sl": 4161.85,
+            "tp1": 4180.45,
+            "tp2": 4189.75,
+            "tp3": 4199.05
+          },
+          "selected": {
+            "schema": "signal-diagnostics/v2",
+            "runTag": "native-difference-2026-11-09",
+            "captureId": "strategy-xauusd-m5-20261109-03:1794202578806",
+            "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+            "model": "STRATEGY_EMULATOR",
+            "symbol": "FOREXCOM:XAUUSD",
+            "timeframe": "5",
+            "windowStart": 1792400400000,
+            "windowEnd": 1792409400000,
+            "firstDataTime": 1791756000000,
+            "sequence": 339,
+            "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-03:1794202578806\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",339]",
+            "kind": "SELECTED",
+            "module": "B_CRT",
+            "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:1:1792407000000",
+            "bar": 1536,
+            "barOpen": 1792407600000,
+            "observedAt": 1792407900000,
+            "planId": "FOREXCOM:XAUUSD:5:B_CRT:1792407900000"
+          }
+        }
+      }
+    },
+    {
+      "planTimestamp": 1792658100000,
+      "classification": "EXECUTION_STATE_CANDIDATE_AND_REFERENCE_CONSUMPTION_DIVERGENCE_ESTABLISHED",
+      "mechanism": "Indicator frees its slot at08:25 and creates B with invalidation4093.25. Strategy is still busy then. At08:30 Indicator invalidates that candidate while Strategy observes its actual08:25 position exit, creates a new B with invalidation4094.165 and trigger4090.045, and selects it08:35 after all checks pass. Indicator has no B candidate at08:35. The source consumes each completed CRT reference on setup creation. Both setup bars (08:20 and08:25 opens) share the08:00 completed M15 reference, so the Indicator cannot reuse that consumed reference after invalidation.",
+      "inferenceBoundary": "ENGINE, setup identities, invalidation, empty Indicator state and Strategy checks/selection are native observations. The completed-reference08:00 identity and no-rearm explanation are derived from source request.security(crtTF,[high[1],low[1],time[1]],lookahead_on), actual15-minute CRT input, setup bar opens and memory.crtUsed assignment. The capture does not separately log memory.crtUsed.",
+      "evidence": {
+        "indicatorClosed": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 59,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-04:1794234689639\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",59]",
+          "kind": "ESTIMATE_TRADE_CLOSED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792656300000",
+          "bar": 2332,
+          "barOpen": 1792657200000,
+          "observedAt": 1792657500000,
+          "planId": "FOREXCOM:XAUUSD:5:B_CRT:1792656600000"
+        },
+        "indicatorEngine": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 60,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-04:1794234689639\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",60]",
+          "kind": "ENGINE",
+          "module": "",
+          "candidateId": "",
+          "bar": 2332,
+          "barOpen": 1792657200000,
+          "observedAt": 1792657500000,
+          "phase": "BEFORE_UPDATE",
+          "active": false,
+          "pending": false,
+          "brokerBusy": false,
+          "cancelling": false,
+          "slotAvailable": true,
+          "sessionPlans": 1,
+          "lastSignalBar": 2329
+        },
+        "strategyEngine": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 60,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-04:1794234834205\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",60]",
+          "kind": "ENGINE",
+          "module": "",
+          "candidateId": "",
+          "bar": 2332,
+          "barOpen": 1792657200000,
+          "observedAt": 1792657500000,
+          "phase": "BEFORE_UPDATE",
+          "active": true,
+          "pending": false,
+          "brokerBusy": true,
+          "cancelling": false,
+          "slotAvailable": false,
+          "sessionPlans": 1,
+          "lastSignalBar": 2329
+        },
+        "indicatorSetup": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 61,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-04:1794234689639\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",61]",
+          "kind": "SETUP_DETECTED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792657500000",
+          "bar": 2332,
+          "barOpen": 1792657200000,
+          "observedAt": 1792657500000,
+          "setupTime": 1792657500000,
+          "setupBar": 2332,
+          "direction": -1,
+          "trigger": 4088.695,
+          "invalidation": 4093.25
+        },
+        "indicatorInvalidation": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 77,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-04:1794234689639\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",77]",
+          "kind": "INVALIDATED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792657500000",
+          "bar": 2333,
+          "barOpen": 1792657500000,
+          "observedAt": 1792657800000,
+          "reason": "Invalidation breached"
+        },
+        "strategyClosed": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 72,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-04:1794234834205\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",72]",
+          "kind": "POSITION_CLOSED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792656300000",
+          "bar": 2333,
+          "barOpen": 1792657500000,
+          "observedAt": 1792657800000,
+          "planId": "FOREXCOM:XAUUSD:5:B_CRT:1792656600000",
+          "positionId": "FOREXCOM:XAUUSD:5:B_CRT:1792656600000:1792656600000",
+          "entryTime": 1792656600000,
+          "exitTime": 1792657500000,
+          "initialQuantity": 2.1,
+          "closedQuantity": 2.1,
+          "exitRows": 1,
+          "grossAccount": -15.666000000000079,
+          "commission": 1.7165358,
+          "net": -17.382535800000078,
+          "initialPlannedCashRisk": 21.125999999999888,
+          "realizedRToPlannedRisk": -0.8228029821073639,
+          "cause": "TIME_EXIT",
+          "accountCurrency": "USD"
+        },
+        "strategySetup": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 74,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-04:1794234834205\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",74]",
+          "kind": "SETUP_DETECTED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792657800000",
+          "bar": 2333,
+          "barOpen": 1792657500000,
+          "observedAt": 1792657800000,
+          "setupTime": 1792657800000,
+          "setupBar": 2333,
+          "direction": -1,
+          "trigger": 4090.045,
+          "invalidation": 4094.165
+        },
+        "indicatorState": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "indicator-xauusd-m5-20261109-04:1794234689639",
+          "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+          "model": "INDICATOR_ESTIMATE",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 92,
+          "eventId": "[\"signal-diagnostics/v2\",\"indicator-xauusd-m5-20261109-04:1794234689639\",\"FOREXCOM:XAUUSD\",\"5\",\"d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e\",\"native-difference-2026-11-09\",92]",
+          "kind": "STATE",
+          "module": "B_CRT",
+          "candidateId": "",
+          "bar": 2334,
+          "barOpen": 1792657800000,
+          "observedAt": 1792658100000,
+          "stage": 0,
+          "setupTime": null,
+          "setupBar": null,
+          "direction": 0,
+          "trigger": null,
+          "invalidation": null,
+          "expiryBarInclusive": null,
+          "nextConfirmation": "Need setup",
+          "active": false,
+          "pending": false,
+          "slotAvailable": true,
+          "currentSlotBusy": false,
+          "detectionEvaluated": true,
+          "checksEvaluated": false,
+          "firstBlocker": null,
+          "selectionOutcome": "NOT_EVALUATED",
+          "selectionBlocker": null,
+          "lastPlanId": "FOREXCOM:XAUUSD:5:B_CRT:1792656600000"
+        },
+        "strategyChecks": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 92,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-04:1794234834205\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",92]",
+          "kind": "CHECKS",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792657800000",
+          "bar": 2334,
+          "barOpen": 1792657800000,
+          "observedAt": 1792658100000,
+          "checksEvaluated": true,
+          "decisionConsistent": true,
+          "firstBlocker": null,
+          "firstBlockerMessage": "",
+          "failedChecks": [],
+          "quality": 90,
+          "plannedEntry": 4087.67,
+          "sl": 4094.89,
+          "tp1": 4080.45,
+          "tp2": 4073.23,
+          "tp3": 4066.01
+        },
+        "strategySelection": {
+          "schema": "signal-diagnostics/v2",
+          "runTag": "native-difference-2026-11-09",
+          "captureId": "strategy-xauusd-m5-20261109-04:1794234834205",
+          "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+          "model": "STRATEGY_EMULATOR",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "windowStart": 1792656000000,
+          "windowEnd": 1792659600000,
+          "firstDataTime": 1791756000000,
+          "sequence": 93,
+          "eventId": "[\"signal-diagnostics/v2\",\"strategy-xauusd-m5-20261109-04:1794234834205\",\"FOREXCOM:XAUUSD\",\"5\",\"8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479\",\"native-difference-2026-11-09\",93]",
+          "kind": "SELECTED",
+          "module": "B_CRT",
+          "candidateId": "FOREXCOM:XAUUSD:5:B_CRT:-1:1792657800000",
+          "bar": 2334,
+          "barOpen": 1792657800000,
+          "observedAt": 1792658100000,
+          "planId": "FOREXCOM:XAUUSD:5:B_CRT:1792658100000"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "These three mismatch mechanisms are established in the captured historical context. Strict full-history planned-field parity continues to fail.",
+    "CAPTURE_START/CAPTURE_END and continuous sequence verification establish internal structural completeness. The analyzer explicitly reports STRUCTURALLY_COMPLETE_UNAUTHENTICATED because the log file has no independently authenticated export envelope.",
+    "Target windows are a subset of available history. Global trading research admission remains disabled. Counts describe observed window events and inherited engine state.",
+    "Strategy exits and costs are broker-emulator historical results. Indicator closure events are OHLC-model estimates.",
+    "Native runtime source and inputs are supported by preserved post-paste copy-backs and AX snapshots. This read-only analysis did not run new browser actions or Replay."
+  ]
+}

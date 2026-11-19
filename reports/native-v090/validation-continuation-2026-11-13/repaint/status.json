@@ -1,0 +1,275 @@
+{
+  "schema": "repainting-evidence-status/v1",
+  "date": "2026-11-13",
+  "overallStatus": "UNVERIFIED_GENERAL_NON_REPAINTING",
+  "scope": "Read-only source and preserved-artifact audit. Root owns current browser actions. No source files changed.",
+  "staticSafeguards": {
+    "status": "PASS_SCOPED_SOURCE_AUDIT",
+    "sources": {
+      "indicator": {
+        "source": "pine/experiments/indicator_signal_diagnostics.pine",
+        "sha256": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+        "requestSecurityCalls": [
+          {
+            "line": 156,
+            "source": "[hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 262,
+            "source": "mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 527,
+            "source": "[crtHigh, crtLow, crtTime] = request.security(syminfo.tickerid, crtTF, [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 543,
+            "source": "[pdh, pdl] = request.security(syminfo.tickerid, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 544,
+            "source": "[pwh, pwl] = request.security(syminfo.tickerid, 'W', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+          }
+        ],
+        "allRequestsUsePreviousCompletedValues": true,
+        "mainEngineConfirmedLine": 868,
+        "currentWrapperHasVolumeReference": false,
+        "currentWrapperHasVarip": false,
+        "hasViewportDependency": false,
+        "timenowReferences": [
+          366,
+          368
+        ],
+        "diagnosticsRecordsRealtimeOrHistoryFlags": false,
+        "currentHashMatchesArchivedAudit": true
+      },
+      "strategy": {
+        "source": "pine/experiments/strategy_signal_diagnostics.pine",
+        "sha256": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+        "requestSecurityCalls": [
+          {
+            "line": 120,
+            "source": "[hClose, hEMA] = request.security(syminfo.tickerid, '60', [close[1], ta.ema(close, 50)[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 226,
+            "source": "mTrend = request.security(syminfo.tickerid, '15', structureContext()[1], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 491,
+            "source": "[crtHigh, crtLow, crtTime] = request.security(syminfo.tickerid, crtTF, [high[1], low[1], time[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 507,
+            "source": "[pdh, pdl] = request.security(syminfo.tickerid, 'D', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+          },
+          {
+            "line": 508,
+            "source": "[pwh, pwl] = request.security(syminfo.tickerid, 'W', [high[1], low[1]], lookahead=barmerge.lookahead_on)"
+          }
+        ],
+        "allRequestsUsePreviousCompletedValues": true,
+        "mainEngineConfirmedLine": 891,
+        "currentWrapperHasVolumeReference": false,
+        "currentWrapperHasVarip": false,
+        "hasViewportDependency": false,
+        "timenowReferences": [
+          330,
+          332
+        ],
+        "diagnosticsRecordsRealtimeOrHistoryFlags": false,
+        "currentHashMatchesArchivedAudit": true
+      }
+    }
+  },
+  "runtimeEvidenceCoverage": {
+    "signalDiagnostics": {
+      "source": "pine/experiments/indicator_signal_diagnostics.pine",
+      "realtimeHistoryFlags": false,
+      "rawOhlc": false,
+      "bootAndUpdateCounters": false,
+      "locations": [
+        "344:diagInside confirmed-bar predicate",
+        "368:capture identity timenow suffix",
+        "377:envelope fields"
+      ],
+      "adequateForLiveFirstAppearance": false
+    },
+    "candidateTrace": {
+      "source": "pine/experiments/indicator_candidate_trace.pine",
+      "parentSha256": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+      "realtimeHistoryFlags": false,
+      "rawOhlc": false,
+      "bootAndUpdateCounters": false,
+      "locations": [
+        "663:confirmed-bar trace window",
+        "664:trace envelope",
+        "665:ENGINE_TRACE",
+        "667:CANDIDATE_TRACE"
+      ],
+      "adequateForLiveFirstAppearance": false
+    },
+    "archivedStableLiveSnapshot": {
+      "source": "pine/experiments/indicator_stable_live_snapshot.pine",
+      "sha256": "18d4b52e499e12090672c75baefe2ca0657b70b7ee801abcaf22f6ae8456a79b",
+      "parentSha256": "267920fe769cd46f70269457d6194ba4b40d70819d8188bedc86d45b8bb9b680",
+      "rawOhlcAndContextLine": 1616,
+      "runtimeFlagsBootUpdatesLine": 1618,
+      "intrabarRuntimeHeartbeatLine": 1622,
+      "adequateMeasurementFields": true,
+      "currentDiagnosticParentMatch": false
+    }
+  },
+  "currentTimeframeRoundTrip": {
+    "status": "PASS_EXPORTED_STREAM_EQUALITY_FRESH_EXECUTION_UNVERIFIED",
+    "before": {
+      "path": "reports/native-v090/validation-continuation-2026-11-13/native/indicator-nov4.csv",
+      "sha256": "6a0c833481fd3c1faa72369810428abff4734d9c8fec9f0ea38fc3bfdd6f2ead",
+      "csvRecords": 545,
+      "events": 211,
+      "effectiveCaptureIds": [
+        "indicator-xauusd-m5-20261113-03:1794567042288"
+      ],
+      "firstDataTimes": [
+        1792360800000
+      ],
+      "sequenceRange": [
+        1,
+        211
+      ],
+      "barCount": 15,
+      "kinds": {
+        "CAPTURE_START": 1,
+        "BAR": 15,
+        "ENGINE": 15,
+        "SETUP_DETECTED": 9,
+        "STAGE_REACHED": 9,
+        "STATE": 135,
+        "INVALIDATED": 3,
+        "CONFIRMATION_PASSED": 5,
+        "CHECKS": 5,
+        "SELECTED": 2,
+        "CANDIDATE_CLEARED": 4,
+        "ESTIMATE_FILLED": 2,
+        "QUALIFIED_PLAN": 2,
+        "ESTIMATE_TRADE_CLOSED": 2,
+        "QUALIFIED_NOT_SELECTED": 1,
+        "CAPTURE_END": 1
+      }
+    },
+    "after": {
+      "path": "reports/native-v090/validation-continuation-2026-11-13/native/indicator-nov4-recalculated.csv",
+      "sha256": "6a0c833481fd3c1faa72369810428abff4734d9c8fec9f0ea38fc3bfdd6f2ead",
+      "csvRecords": 545,
+      "events": 211,
+      "effectiveCaptureIds": [
+        "indicator-xauusd-m5-20261113-03:1794567042288"
+      ],
+      "firstDataTimes": [
+        1792360800000
+      ],
+      "sequenceRange": [
+        1,
+        211
+      ],
+      "barCount": 15,
+      "kinds": {
+        "CAPTURE_START": 1,
+        "BAR": 15,
+        "ENGINE": 15,
+        "SETUP_DETECTED": 9,
+        "STAGE_REACHED": 9,
+        "STATE": 135,
+        "INVALIDATED": 3,
+        "CONFIRMATION_PASSED": 5,
+        "CHECKS": 5,
+        "SELECTED": 2,
+        "CANDIDATE_CLEARED": 4,
+        "ESTIMATE_FILLED": 2,
+        "QUALIFIED_PLAN": 2,
+        "ESTIMATE_TRADE_CLOSED": 2,
+        "QUALIFIED_NOT_SELECTED": 1,
+        "CAPTURE_END": 1
+      }
+    },
+    "byteEqual": true,
+    "sameEffectiveCaptureId": true,
+    "interpretation": "The M5-to-M3-to-M5 exports are byte-identical and retain the same effective capture identity. Cached result reuse remains possible. Count these as one effective capture for independent-execution claims."
+  },
+  "freshCaptureIdHistoricalRerun": {
+    "status": "PASS_BOUNDED_HISTORICAL_REPEAT",
+    "evidence": "reports/native-v090/validation-continuation-2026-11-13/repaint/fresh-repeat-result.json",
+    "repeatExport": "reports/native-v090/validation-continuation-2026-11-13/native/indicator-nov11-repeat-fresh.csv",
+    "repeatSha256": "f242923cfde1c4f9661e44b1bddda33a2ac55139b94a7c1d4b085869d3c104b1",
+    "differentEffectiveCaptureId": true,
+    "completeWithinWindow": true,
+    "substantiveEventsCompared": 328,
+    "plansComparedThroughEndpoint": 74,
+    "zeroToleranceMatch": true,
+    "claimScope": "Bounded historical re-execution repeatability; live first appearance remains a separate evidence requirement."
+  },
+  "archivedHistoricalSnapshots": {
+    "status": "PASS_SCOPED_DATA_AND_STATE",
+    "evidence": "reports/native-v090/validation-continuation-2026-11-09/repaint/archived-historical-repeat.json",
+    "commonSnapshots": 11,
+    "dataAndStateMatching": 11,
+    "metadataDifferences": {
+      "lastBarIndex": 11
+    }
+  },
+  "archivedLiveReload": {
+    "status": "FAIL_STRICT_RAW_DATA_EQUALITY",
+    "evidence": "reports/native-v080/live-reload-2026-11-06/live-reload-analysis.json",
+    "rawBefore": "reports/native-v080/live-reload-2026-11-06/stable-live-final-raw.csv",
+    "rawAfter": "reports/native-v080/live-reload-2026-11-06/stable-after-reload-raw.csv",
+    "comparison": "reports/native-v090/validation-continuation-2026-11-09/repaint/archived-live-repeat.json",
+    "genuineRealtimeConfirmedBars": 1,
+    "barOpen": 1793941500000,
+    "barClose": 1793941800000,
+    "liveClassification": {
+      "realtime": true,
+      "history": false,
+      "confirmed": true
+    },
+    "reloadClassification": {
+      "realtime": false,
+      "history": true,
+      "confirmed": true
+    },
+    "difference": {
+      "field": "volume",
+      "before": 0,
+      "after": null
+    },
+    "ohlcDerivedCandidateExecutionAndPlanStateEqual": true,
+    "qualifiedPlansOnObservedLiveBar": 0,
+    "firstEntryAppearanceVerified": false
+  },
+  "nov4PriceDiscrepancy": {
+    "status": "UNRESOLVED",
+    "planTimestamp": 1793786100000,
+    "barOpen": 1793785800000,
+    "oldPlannedEntryAndFormattedSignalPrice": 4044.77,
+    "laterPlannedEntryAndFormattedSignalPrice": 4044.89,
+    "oldEmulatorFill": 4044.79,
+    "laterEmulatorFill": 4044.91,
+    "oldFullOhlcHtfDatasetSnapshotAvailable": false,
+    "confirmedRootCause": null,
+    "hypothesesRemain": [
+      "Historical feed-data revision",
+      "Dataset-start/history dependence",
+      "Source/log/capture provenance differences",
+      "Engine behavior"
+    ],
+    "evidence": [
+      "reports/native-v080/drift-investigation-2026-11-06/FINDINGS.md",
+      "reports/native-v080/drift-investigation-2026-11-06/drift-evidence.json",
+      "reports/native-v080/confirmation-review-2026-11-05/indicator-native-raw.csv",
+      "reports/native-v080/confirmation-review-2026-11-05/indicator-reload-raw.csv",
+      "reports/native-v080/confirmation-review-2026-11-05/strategy-native-raw.csv",
+      "reports/native-v080/recalculation-review-2026-11-05/strategy-nov5-raw.csv"
+    ],
+    "interpretation": "Close-mode Entry and formatted signalPrice both changed, and the emulator fill changed by the same 0.12. Current matching captures preserve the later value while the old comparison remains unresolved."
+  },
+  "highestValueNextEvidence": "A source-attributed qualified live plan observed at its actual confirmed close, with raw OHLC/HTF/candidate/engine state and realtime/history plus execution-identity evidence, followed by same-source reload/reapplication with identical inputs and history."
+}

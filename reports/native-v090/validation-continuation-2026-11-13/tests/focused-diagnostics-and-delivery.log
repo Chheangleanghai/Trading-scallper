@@ -1,0 +1,46 @@
+
+ RUN  v5.0.5 /Users/macbook/Documents/Trading2/xauusd-smart-scalper
+
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > correlates one candidate and plan with two fills and partial exits without double-counting costs 4ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > keeps the first blocker distinct from all failed checks and retains measured delay stages 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > deduplicates identical exported events but rejects identity collisions and invalid IDs 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > uses a capture-scoped composite event identity even when run tags and sequence numbers repeat 0ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > requires nonempty capture, run, symbol and timeframe context before accepting composite IDs 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > verifies generated parent hashes against the actual frozen parent files 2ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > compacts only the Strategy research presentation while preserving its trading decisions 8ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > keeps legacy v1 evidence readable while using explicit v2 export status for new runs 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > reports missing diagnostics as unavailable, not zero 0ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > marks missing boundaries, sequence gaps, dropped events and short history explicitly incomplete 3ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > does not call an early or differently terminated diagnostic window complete 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > checks window membership, observation chronology and event-to-BAR timestamps 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > rejects inconsistent first/all blockers, unknown checks and mixed source/model contexts 2ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > rejects excess fills, duplicated exits, quantity loss and inconsistent gross/net/R 3ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > keeps a position with missing partial rows outside complete-position results 0ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > counts a full-position TP3 as a target exit while partial quantities remain distinct 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > applies additional hypothetical spread separately and avoids unsupported currency conversions 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > rejects closed quantities that exceed the position quantity actually filled 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > validates orders and fills even when their qualified plan was outside the bounded capture 3ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > rejects exit-bar chronology and broker events masquerading as Indicator estimates 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > checks reported exit causes against the final actual exit row without inferring holding-time inputs 2ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > does not add money from different account currencies across completed positions 13ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > validates candidate, plan, order and position correlation identities against the emitted context 4ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > keeps candidate identity and signed direction consistent across orphan position rows 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > reports lifecycle stages absent from a bounded capture without silently joining them 1ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > rejects noninteger exit row, fill bar and position timestamp fields 5ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > keeps broker fill and realized-position fields unavailable for Indicator estimates 0ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > decodes native CSV quoting and multiline cells and rejects truncated input 2ms
+ ✓ tests/signal-diagnostics.test.mjs > Research-only signal diagnostic intake > reproduces genuine 77-position legacy accounting without inventing missing stage counts 21ms
+ ✓ tests/delivery-integration.test.ts > delivers every captured native Pine payload through the handler and real local HTTP 84ms
+ ✓ tests/delivery-integration.test.ts > returns failure after actual HTTP rate-limit response, without retry 1ms
+ ✓ tests/delivery-integration.test.ts > returns failure after actual HTTP invalid-json response, without retry 1ms
+ ✓ tests/delivery-integration.test.ts > returns failure after actual HTTP rejected response, without retry 1ms
+ ✓ tests/delivery-integration.test.ts > aborts a stalled HTTP response within the TradingView request budget 2210ms
+ ✓ tests/delivery-integration.test.ts > does not allow payload or query fields to redirect the configured Telegram destination 3ms
+ ✓ tests/delivery-integration.test.ts > rejects bad authentication and malformed native payloads before making any HTTP request 2ms
+ ✓ tests/delivery-integration.test.ts > keeps concurrent webhook event responses and Telegram messages associated correctly 18ms
+
+ Test Files  2 passed (2)
+      Tests  37 passed (37)
+   Start at  17:42:54
+   Duration  2.44s (tests 98%, import 1%, transform 1%)
+

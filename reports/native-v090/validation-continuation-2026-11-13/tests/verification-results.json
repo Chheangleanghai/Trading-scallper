@@ -1,0 +1,71 @@
+{
+  "schema": "verification-results/v1",
+  "command": "npm run verify",
+  "startedAtUtc": "2026-11-13T10:42:23.821429+00:00",
+  "endedAtUtc": "2026-11-13T10:42:29.425730+00:00",
+  "durationSeconds": 5.612,
+  "exitCode": 0,
+  "status": "PASS",
+  "tests": {
+    "testFilesPassed": 27,
+    "testFilesTotal": 27,
+    "testsPassed": 238,
+    "testsTotal": 238,
+    "failed": 0,
+    "skipped": 0
+  },
+  "checks": {
+    "typecheck": "PASS",
+    "vitest": "PASS",
+    "pineGeneration": "PASS",
+    "diagnosticGeneration": "PASS",
+    "independentPineParsing": "PASS",
+    "pineFilesParsed": 31
+  },
+  "localhostEpermObserved": false,
+  "sourceAndTestFilesChangedByVerification": [],
+  "sourceHashes": {
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0",
+    "pine/experiments/indicator_signal_diagnostics.pine": "f0d18fa043486005546b0b304b95a0b9db94fd08b598f4f146410d4079dfe852",
+    "pine/experiments/strategy_signal_diagnostics.pine": "8ded3b423e6f6370c7fa7a0f2c4e35d55039d03450968907ab2226828f311b9d",
+    "pine/experiments/strategy_quantity_units.pine": "bf6dd641c6af4970161822a1e55a2808148d6a5faa4213dff6d9e3d5549ad7ed",
+    "pine/experiments/indicator_signal_clarity.pine": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+    "pine/experiments/strategy_signal_clarity.pine": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479"
+  },
+  "scopeLimit": "Local verification and independent parsing do not establish TradingView native compilation, parity, broker fills, profitability, or live non-repainting.",
+  "focused": {
+    "command": "npx vitest run tests/signal-diagnostics.test.mjs tests/delivery-integration.test.ts --reporter=verbose",
+    "status": "PASS",
+    "exitCode": 0,
+    "testFilesPassed": 2,
+    "testsPassed": 37,
+    "failed": 0,
+    "skipped": 0,
+    "localhostEpermObserved": false,
+    "deliveryIntegrationScope": "Real HTTP on 127.0.0.1 with all Telegram destinations intercepted and redirected to loopback."
+  },
+  "expectedSourceHashesMatch": {
+    "pine/indicator.pine": true,
+    "pine/strategy.pine": true,
+    "pine/experiments/indicator_signal_diagnostics.pine": true,
+    "pine/experiments/strategy_signal_diagnostics.pine": true
+  },
+  "diagnosticParentBindings": {
+    "indicator": {
+      "declared": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+      "actual": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+      "matches": true
+    },
+    "strategy": {
+      "declared": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+      "actual": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+      "matches": true
+    }
+  },
+  "gitDiffCheck": {
+    "status": "PASS",
+    "exitCode": 0,
+    "output": ""
+  }
+}

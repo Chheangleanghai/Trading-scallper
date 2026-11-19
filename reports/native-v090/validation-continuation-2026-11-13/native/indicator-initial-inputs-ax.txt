@@ -1,0 +1,490 @@
+Browser tab: 1346738801, Title: "XAUUSD 3,893.74 ▲ +0.42% Unnamed", URL: "https://www.tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD".
+0 AXWebArea XAUUSD 3,893.74 ▲ +0.42% Unnamed, URL: tradingview.com/chart/Y9SyfFkw/?symbol=FOREXCOM%3AXAUUSD
+	1 container
+		2 pop up button Logged in as chheangleanghai4 Active layout: Unnamed
+		3 text 9
+		4 toolbar
+			5 container
+				6 button XAUUSD, ID: header-toolbar-symbol-search
+				7 button Description: Switch data type, ID: header-toolbar-switch-data-type
+				8 pop up button Description: Compare symbols, ID: header-toolbar-compare
+				9 pop up button 5 minutes
+					10 container
+						11 text 5 m
+				12 container header-toolbar-chart-styles
+					13 radio button Description: Line, Value: 0
+					14 radio button Description: Candles, Value: 1
+					15 pop up button Bar's style
+				16 container header-toolbar-indicators
+					17 button Indicators, metrics, and strategies
+						18 text Indicators
+					19 pop up button Favorite indicators and indicators templates
+				20 button Description: Create alert, ID: header-toolbar-alerts
+					21 text Alert
+				22 checkbox Description: Bar replay, Value: 0, ID: header-toolbar-replay
+					23 text Replay
+				24 container header-toolbar-undo-redo
+					25 button Undo hide Nokor Traders CRT + CHoCH By Lors Housann
+				26 pop up button Description: Layout setup, ID: header-toolbar-layouts
+				27 container header-toolbar-save-load
+					28 button (disabled) All changes saved
+						29 text Unnamed
+						30 text Save
+					31 pop up button Manage layouts
+				32 button Description: Quick search, ID: header-toolbar-quick-search
+				33 button Description: Settings, ID: header-toolbar-properties
+				34 button Description: Fullscreen mode, ID: header-toolbar-fullscreen
+				35 pop up button Take a snapshot
+			36 pop up button Share your idea with the trade community
+			37 container
+				38 button Trade
+					39 text Trade
+			40 container
+				41 button Upgrade
+					42 text Upgrade
+		43 toolbar drawing-toolbar
+			44 container
+				45 container
+					46 button Cross
+					47 checkbox Description: Cursors, Value: 1
+				48 container
+					49 button Trendline
+					50 checkbox Description: Trend tools, Value: 0
+				51 container
+					52 button Fib retracement
+					53 checkbox Description: Gann and Fibonacci tools, Value: 0
+				54 container
+					55 button XABCD pattern
+					56 checkbox Description: Patterns, Value: 0
+				57 container
+					58 button Long position
+					59 checkbox Description: Forecasting and measurement tools, Value: 0
+				60 container
+					61 button Brush
+					62 checkbox Description: Geometric shapes, Value: 0
+				63 container
+					64 button Text
+					65 checkbox Description: Annotation tools, Value: 0
+				66 container
+					67 button Icon
+					68 checkbox Description: Icons, Value: 0
+				69 button Measure
+				70 button Zoom in
+				71 container
+					72 checkbox Description: Magnet mode snaps drawings placed near price bars to the closest OHLC value, Value: 0
+					73 checkbox Description: Magnets, Value: 0
+				74 checkbox Description: Keep drawing, Value: 0
+				75 container
+					76 checkbox Description: Lock drawings and indicators, Value: 0
+					77 checkbox Description: Lock options, Value: 0
+				78 container
+					79 checkbox Description: Hide all drawings, Value: 0
+					80 checkbox Description: Hide options, Value: 0
+				81 container
+					82 button Remove objects
+					83 button Remove options
+				84 checkbox Description: Show Favorite Drawing Tools Toolbar, Value: 1, ID: drawing-toolbar-favorite-drawings
+		85 container Chart #1
+			86 container
+				87 container
+					88 button Hide indicators legend
+					89 toolbar
+						90 text XAUUSD SMART SCALPER PRO · A-H Confirmation review
+						91 container
+							92 button Show
+								93 image
+							94 button Settings
+								95 image
+							96 button Remove
+								97 image
+							98 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Confirmation review, Help: More
+								99 image
+					100 toolbar
+						101 text XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+						102 container
+							103 button Hide
+								104 image
+							105 button Settings
+								106 image
+							107 button Remove
+								108 image
+							109 button Description: More options for XAUUSD SMART SCALPER PRO · A-H Research diagnostics, Help: More
+								110 image
+					111 toolbar
+						112 text XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics
+						113 container
+							114 button Show
+								115 image
+							116 button Settings
+								117 image
+							118 button Remove
+								119 image
+							120 button Description: More options for XAUUSD SMART SCALPER PRO Backtest · A-H Research diagnostics, Help: More
+								121 image
+					122 toolbar
+						123 text Asian Session Range
+						124 container
+							125 button Show
+								126 image
+							127 button Settings
+								128 image
+							129 image
+							130 button Remove
+								131 image
+							132 button More options for Asian Session Range
+								133 image
+					134 toolbar
+						135 text Nokor Traders CRT + CHoCH By Lors Housann
+						136 container
+							137 button Show
+								138 image
+							139 button Settings
+								140 image
+							141 image
+							142 button Remove
+								143 image
+							144 button More options for Nokor Traders CRT + CHoCH By Lors Housann
+								145 image
+				146 image Chart for FOREXCOM:XAUUSD, 5 minutes
+			147 container
+				148 toolbar Navigation
+					149 button Zoom out
+					150 button Zoom in
+					151 button Scroll to the left
+					152 button Scroll to the right
+					153 button Reset chart view
+		154 toolbar
+			155 container
+				156 button 1 day in 1 minute intervals
+					157 text 1D
+				158 button 5 days in 5 minutes intervals
+					159 text 5D
+				160 button 1 month in 30 minutes intervals
+					161 text 1M
+				162 button 3 months in 1 hour intervals
+					163 text 3M
+				164 button 6 months in 2 hours intervals
+					165 text 6M
+				166 button Year to day in 1 day intervals
+					167 text YTD
+				168 button 1 year in 1 day intervals
+					169 text 1Y
+				170 button 5 years in 1 week intervals
+					171 text 5Y
+				172 button All data in 1 month intervals
+					173 text All
+				174 button Go to
+			175 button Timezone
+				176 text 17:39:44 UTC+7
+		177 container
+			178 toolbar
+				179 checkbox Description: Watchlist, details, and news, Value: 0
+				180 checkbox Description: Alerts, Value: 0
+				181 checkbox Description: Object tree and data window, Value: 0
+				182 checkbox Description: AI Copilot, Value: 0
+				183 checkbox Description: Screeners, Value: 0
+				184 checkbox Description: Pine Editor, Value: 0
+				185 checkbox Description: Calendars, Value: 0
+				186 checkbox Description: Community, Value: 0
+				187 checkbox Description: Notifications, Value: 0
+				188 checkbox Description: Chats, Value: 0
+				189 pop up button Products
+				190 checkbox Description: Help Center, Value: 0
+		191 container Trading panel
+	192 container common-tooltip-wrapper
+		193 text Manage layouts
+	194 container overlap-manager-root
+		195 container
+			196 container XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+				197 container XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+					198 text XAUUSD SMART SCALPER PRO · A-H Research diagnostics
+					199 button Dock to right
+					200 button Close menu
+					201 tab group indicator-properties-dialog-tabs
+						202 tab (selected, settable, boolean) Inputs, Value: 1, ID: inputs
+						203 tab (selectable, settable, boolean) Style, Value: 0, ID: style
+						204 tab (selectable, settable, boolean) Visibility, Value: 0, ID: visibilities
+					205 container
+						206 text CONCEPT REVIEW
+						207 checkbox (settable, integer) Description: Show A–H confirmation board, Value: 1
+						208 text Show A–H confirmation board
+						209 checkbox (settable, integer) Description: Show candidate zones / triggers (setup only), Value: 1
+						210 text Show candidate zones / triggers (setup only)
+						211 checkbox (settable, integer) Description: Name selected strategy on its confirmation candle, Value: 1
+						212 text Name selected strategy on its confirmation candle Recent selected-strategy labels to keep
+						213 text field (settable) 8
+						214 text SESSION ANNOTATIONS
+						215 checkbox (settable, integer) Description: Show session boundary lines and names, Value: 1
+						216 text Show session boundary lines and names
+						217 checkbox (settable, integer) Description: Asia / Tokyo (09:00–18:00 Tokyo), Value: 1
+						218 text Asia / Tokyo (09:00–18:00 Tokyo)
+						219 checkbox (settable, integer) Description: London (08:00–17:00 London), Value: 1
+						220 text London (08:00–17:00 London)
+						221 checkbox (settable, integer) Description: New York (08:00–17:00 New York), Value: 1
+						222 text New York (08:00–17:00 New York)
+						223 checkbox (settable, integer) Description: Show session closing boundaries, Value: 1
+						224 text Show session closing boundaries Recent session boundaries to keep
+						225 text field (settable) 18
+						226 text CLEAR SIGNAL DISPLAY Closed plan prices
+						227 combo box (collapsed) Value: Faded, ID: in_10, Secondary Actions: Expand
+							228 text Faded
+						229 checkbox (settable, integer) Description: Show next setup and required confirmation price, Value: 1
+						230 text Show next setup and required confirmation price Signal display
+						231 combo box (collapsed) Value: Context + levels, ID: in_12, Secondary Actions: Expand
+							232 text Context + levels
+						233 text Level / box extension bars
+						234 text field (settable) 8
+						235 text Recent signal plans to keep
+						236 text field (settable) 1
+						237 checkbox (settable, integer) Description: Separate overlapping price labels with connectors, Value: 0
+						238 text Separate overlapping price labels with connectors
+						239 checkbox (settable, integer) Description: Show compact status and price card, Value: 1
+						240 text Show compact status and price card STRATEGIES
+						241 checkbox (settable, integer) Description: A: Sweep + MSS + FVG, Value: 1
+						242 text A: Sweep + MSS + FVG
+						243 checkbox (settable, integer) Description: B: CRT, Value: 1
+						244 text B: CRT
+						245 checkbox (settable, integer) Description: C: Confirmed-pivot Turtle Soup, Value: 1
+						246 text C: Confirmed-pivot Turtle Soup
+						247 checkbox (settable, integer) Description: D: K-SNR (confirmed support/resistance), Value: 1
+						248 text D: K-SNR (confirmed support/resistance)
+						249 checkbox (settable, integer) Description: E: Supply/demand, Value: 1
+						250 text E: Supply/demand
+						251 checkbox (settable, integer) Description: F: Structural trend pullback, Value: 1
+						252 text F: Structural trend pullback
+						253 checkbox (settable, integer) Description: G: AMD range approximation, Value: 1
+						254 text G: AMD range approximation
+						255 checkbox (settable, integer) Description: H: Confirmed Quasimodo approximation, Value: 1
+						256 text H: Confirmed Quasimodo approximation MODULES CRT reference timeframe
+						257 combo box (collapsed) Value: 15 minutes, ID: in_25, Secondary Actions: Expand
+							258 text 15 minutes
+						259 text Turtle Soup minimum bars since pivot confirmation
+						260 text field (settable) 3
+						261 text Level/zone tolerance ATR
+						262 text field (settable) 0.15
+						263 text S/D maximum tested bars
+						264 text field (settable) 2
+						265 checkbox (settable, integer) Description: Trend pullback: require EMA50, Value: 1
+						266 text Trend pullback: require EMA50 Trend pullback: maximum EMA21 overshoot ATR
+						267 text field (settable) 0.3
+						268 text AMD prior accumulation bars
+						269 text field (settable) 12
+						270 text AMD maximum prior range ATR
+						271 text field (settable) 3
+						272 text QUALITY
+						273 checkbox (settable, integer) Description: Use strategy-specific quality thresholds, Value: 0
+						274 text Use strategy-specific quality thresholds A quality threshold
+						275 text field (settable) 75
+						276 text B quality threshold
+						277 text field (settable) 75
+						278 text C quality threshold
+						279 text field (settable) 75
+						280 text D quality threshold
+						281 text field (settable) 75
+						282 text E quality threshold
+						283 text field (settable) 75
+						284 text F quality threshold
+						285 text field (settable) 75
+						286 text G quality threshold
+						287 text field (settable) 75
+						288 text H quality threshold
+						289 text field (settable) 75
+						290 text RESEARCH
+						291 checkbox (settable, integer) Description: Restrict new plans to date window, Value: 0
+						292 text Restrict new plans to date window Window start (inclusive)
+						293 text field (settable) 2026-01-01
+						294 combo box (settable) 07:00
+						295 text Window end (exclusive)
+						296 text field (settable) 2027-01-01
+						297 combo box (settable) 07:00
+						298 text Allowed direction
+						299 combo box (collapsed) Value: Both, ID: in_45, Secondary Actions: Expand
+							300 text Both
+						301 checkbox (settable, integer) Description: Log qualified plans and lifecycle events (research only), Value: 1
+						302 text Log qualified plans and lifecycle events (research only) Confirmed pivot strength
+						303 text field (settable) 3
+						304 text Setup expiry bars
+						305 text field (settable) 20
+						306 text Minimum heuristic quality
+						307 text field (settable) 75
+						308 text Signal cooldown bars
+						309 text field (settable) 5
+						310 text Maximum entries per session
+						311 text field (settable) 5
+						312 text RISK Maximum simulated notional / equity % (align with margin properties)
+						313 text field (settable) 90
+						314 text Target mode
+						315 combo box (collapsed) Value: Fixed R, ID: in_74, Secondary Actions: Expand
+							316 text Fixed R
+						317 text Stop mode
+						318 combo box (collapsed) Value: Structure, ID: in_75, Secondary Actions: Expand
+							319 text Structure
+						320 text ATR stop multiplier
+						321 text field (settable) 1.5
+						322 text Simulation risk %
+						323 text field (settable) 0.5
+						324 text ATR stop buffer
+						325 text field (settable) 0.15
+						326 text Maximum stop ATR
+						327 text field (settable) 3
+						328 text Maximum entry distance from FVG ATR
+						329 text field (settable) 1.5
+						330 text Minimum TP2 reward/risk
+						331 text field (settable) 2
+						332 text TP1 fixed R projection
+						333 text field (settable) 1
+						334 text TP2 fixed R projection
+						335 text field (settable) 2
+						336 text TP3 fixed R projection
+						337 text field (settable) 3
+						338 text MSS body minimum ATR
+						339 text field (settable) 0.7
+						340 checkbox (settable, integer) Description: Require H1 alignment, Value: 1
+						341 text Require H1 alignment
+						342 checkbox (settable, integer) Description: Require EMA 9/21 alignment, Value: 0
+						343 text Require EMA 9/21 alignment
+						344 checkbox (settable, integer) Description: Session filter, Value: 1
+						345 text Session filter Session preset
+						346 combo box (collapsed) Value: London, ID: in_65, Secondary Actions: Expand
+							347 text London
+						348 text Trading session
+						349 combo box (settable) 08:00
+						350 text  — 
+						351 combo box (settable) 17:00
+						352 text IANA session timezone (handles DST)
+						353 text field (settable) Europe/London
+						354 checkbox (settable, integer) Description: Manual news pause, Value: 0
+						355 text Manual news pause Manual exclusion start
+						356 text field (settable) 1970-01-01
+						357 combo box (settable) 07:00
+						358 text Manual exclusion end
+						359 text field (settable) 1970-01-01
+						360 combo box (settable) 07:00
+						361 text Entry mode
+						362 combo box (collapsed) Value: Close, ID: in_71, Secondary Actions: Expand
+							363 text Close
+						364 text Pending entry expiry bars
+						365 text field (settable) 3
+						366 text Maximum holding minutes (0 disables)
+						367 text field (settable) 15
+						368 text MANAGEMENT
+						369 checkbox (settable, integer) Description: Move stop to filled entry after trigger R, Value: 0
+						370 text Move stop to filled entry after trigger R Break-even trigger R
+						371 text field (settable) 1
+						372 checkbox (settable, integer) Description: ATR trailing stop after trigger R, Value: 0
+						373 text ATR trailing stop after trigger R Trailing activation R
+						374 text field (settable) 2
+						375 text Trailing ATR distance
+						376 text field (settable) 1.5
+						377 text CONFLUENCE
+						378 checkbox (settable, integer) Description: Score optional liquidity (category cap 20), Value: 0
+						379 text Score optional liquidity (category cap 20)
+						380 checkbox (settable, integer) Description: Require optional 50–61.8% swing retracement, Value: 0
+						381 text Require optional 50–61.8% swing retracement
+						382 checkbox (settable, integer) Description: Require optional premium/discount location, Value: 0
+						383 text Require optional premium/discount location CONTEXT VISUALS
+						384 checkbox (settable, integer) Description: Show previous day/week levels, Value: 0
+						385 text Show previous day/week levels
+						386 checkbox (settable, integer) Description: Show session high/low, Value: 0
+						387 text Show session high/low
+						388 checkbox (settable, integer) Description: Show confirmed swing Fibonacci, Value: 0
+						389 text Show confirmed swing Fibonacci
+						390 checkbox (settable, integer) Description: Show confirmed swing midpoint, Value: 0
+						391 text Show confirmed swing midpoint
+						392 checkbox (settable, integer) Description: Show breaker-level heuristics, Value: 0
+						393 text Show breaker-level heuristics
+						394 checkbox (settable, integer) Description: Show spring/upthrust candidates, Value: 0
+						395 text Show spring/upthrust candidates
+						396 checkbox (settable, integer) Description: Partial TP: 33% / 33% / 34% (strategy), Value: 1
+						397 text Partial TP: 33% / 33% / 34% (strategy) CHART STYLE Chart layout
+						398 combo box (collapsed) Value: Reference, ID: in_92, Secondary Actions: Expand
+							399 text Reference
+						400 checkbox (settable, integer) Description: Show compact analysis context, Value: 0
+						401 text Show compact analysis context
+						402 checkbox (settable, integer) Description: Show confirmed swing levels and right labels, Value: 1
+						403 text Show confirmed swing levels and right labels
+						404 checkbox (settable, integer) Description: Show confirmed support/resistance zones, Value: 1
+						405 text Show confirmed support/resistance zones
+						406 checkbox (settable, integer) Description: Show completed-reference CRT sweeps (context only), Value: 0
+						407 text Show completed-reference CRT sweeps (context only)
+						408 checkbox (settable, integer) Description: Show confirmed-pivot liquidity sweeps (context only), Value: 1
+						409 text Show confirmed-pivot liquidity sweeps (context only)
+						410 checkbox (settable, integer) Description: Show visual EMA 55 (does not change strategy EMA 50), Value: 1
+						411 text Show visual EMA 55 (does not change strategy EMA 50) Context annotation history
+						412 combo box (collapsed) Value: Latest only, ID: in_102, Secondary Actions: Expand
+							413 text Latest only
+						414 text Maximum context zone age bars
+						415 text field (settable) 60
+						416 text Maximum context zone distance ATR
+						417 text field (settable) 8
+						418 text Minimum bars between same-side sweep labels
+						419 text field (settable) 8
+						420 text Zone / right-label extension bars
+						421 text field (settable) 12
+						422 text HISTORICAL VIEW Historical plan drawings
+						423 combo box (collapsed) Value: Off, ID: in_93, Secondary Actions: Expand
+							424 text Off
+						425 text Maximum historical plans
+						426 text field (settable) 8
+						427 text Full history lookback bars
+						428 text field (settable) 3000
+						429 text READABILITY Dashboard text size
+						430 combo box (collapsed) Value: Tiny, ID: in_107, Secondary Actions: Expand
+							431 text Tiny
+						432 text Chart label text size
+						433 combo box (collapsed) Value: Tiny, ID: in_108, Secondary Actions: Expand
+							434 text Tiny
+						435 checkbox (settable, integer) Description: Show signal dashboard, Value: 0
+						436 text Show signal dashboard
+						437 checkbox (settable, integer) Description: Show backtest results table, Value: 1
+						438 text Show backtest results table
+						439 checkbox (settable, integer) Description: Show strategies with no completed trades, Value: 0
+						440 text Show strategies with no completed trades
+						441 checkbox (settable, integer) Description: Show detailed swing labels, Value: 0
+						442 text Show detailed swing labels Maximum recent structure labels
+						443 text field (settable) 15
+						444 checkbox (settable, integer) Description: Show previous trade prices when no current plan, Value: 1
+						445 text Show previous trade prices when no current plan Context label background transparency
+						446 text field (settable) 82
+						447 checkbox (settable, integer) Description: Show EMAs, Value: 1
+						448 text Show EMAs
+						449 checkbox (settable, integer) Description: Show latest FVG, Value: 1
+						450 text Show latest FVG
+						451 checkbox (settable, integer) Description: Show latest trade levels and boxes, Value: 1
+						452 text Show latest trade levels and boxes TRADE VISUALS
+						453 checkbox (settable, integer) Description: Entry line/price, Value: 1
+						454 text Entry line/price
+						455 checkbox (settable, integer) Description: SL line/price, Value: 1
+						456 text SL line/price
+						457 checkbox (settable, integer) Description: TP1 line/price, Value: 1
+						458 text TP1 line/price
+						459 checkbox (settable, integer) Description: TP2 line/price, Value: 1
+						460 text TP2 line/price
+						461 checkbox (settable, integer) Description: TP3 line/price, Value: 1
+						462 text TP3 line/price
+						463 checkbox (settable, integer) Description: Risk/reward boxes, Value: 1
+						464 text Risk/reward boxes
+						465 checkbox (settable, integer) Description: Show latest displacement order block heuristic, Value: 1
+						466 text Show latest displacement order block heuristic
+						467 checkbox (settable, integer) Description: Show structure and sweeps, Value: 1
+						468 text Show structure and sweeps RESEARCH DIAGNOSTICS Research diagnostics
+						469 combo box (collapsed) Value: Events, ID: in_127, Secondary Actions: Expand
+							470 text Events
+						471 text Run tag
+						472 text field (settable) native-difference-2026-11-09
+						473 text Unique capture ID (change for every run)
+						474 text field (settable) indicator-xauusd-m5-20261109-04
+						475 text Diagnostic window start (bar open, inclusive)
+						476 text field (settable) 2026-10-22
+						477 combo box (settable) 15:00
+						478 text Diagnostic window end (bar open, exclusive)
+						479 text field (settable) 2026-10-22
+						480 combo box (settable) 16:00
+						481 text Maximum diagnostic events (plus end record)
+						482 text field (settable) 6000
+					483 pop up button (collapsed) Defaults, ID: property-actions, Secondary Actions: Expand
+					484 container
+						485 button Cancel
+						486 button Ok
+
+The focused UI element is 196 container XAUUSD SMART SCALPER PRO · A-H Research diagnostics
