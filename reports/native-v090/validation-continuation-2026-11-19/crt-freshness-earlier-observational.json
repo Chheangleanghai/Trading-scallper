@@ -1,0 +1,530 @@
+{
+  "schema": "crt-freshness-observational/v1",
+  "source": {
+    "name": "reports/native-v080/continuation-2026-11-05/corrected-strategy-native.txt",
+    "sha256": "1f82c5b9a35bc5972c6fe4bd8cf021bf129f48d220c1552afb04e7df4e2cf670"
+  },
+  "hypothesis": "Expire an unconfirmed M5 B candidate when its completed M15 reference candle changes.",
+  "referenceRolloverIsInferredFromStandardM5M15Clock": true,
+  "actualCrtTimeWasNotLogged": true,
+  "all": {
+    "positions": 55,
+    "wins": 20,
+    "grossPriceMove": -5.060999999999998,
+    "commission": 95.8283879,
+    "net": -100.88938789999999
+  },
+  "sameReference": {
+    "positions": 30,
+    "wins": 11,
+    "grossPriceMove": -1.8709999999999796,
+    "commission": 52.2968279,
+    "net": -54.16782789999999
+  },
+  "rolledReference": {
+    "positions": 25,
+    "wins": 9,
+    "grossPriceMove": -3.1899999999999906,
+    "commission": 43.53156,
+    "net": -46.72156
+  },
+  "positions": [
+    {
+      "planTimestamp": 1791189000000,
+      "setupTimestamp": 1791188400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": 8.001,
+      "commission": 1.7489031,
+      "net": 6.2520969
+    },
+    {
+      "planTimestamp": 1791279000000,
+      "setupTimestamp": 1791278400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -6.090000000000001,
+      "commission": 1.7452092,
+      "net": -7.8352092
+    },
+    {
+      "planTimestamp": 1791282300000,
+      "setupTimestamp": 1791282000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 9.156,
+      "commission": 1.745352,
+      "net": 7.410648
+    },
+    {
+      "planTimestamp": 1791292200000,
+      "setupTimestamp": 1791291600000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -13.188,
+      "commission": 1.7514252000000001,
+      "net": -14.9394252
+    },
+    {
+      "planTimestamp": 1791297900000,
+      "setupTimestamp": 1791297300000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": 7.224,
+      "commission": 1.7449068,
+      "net": 5.4790932
+    },
+    {
+      "planTimestamp": 1791375600000,
+      "setupTimestamp": 1791375300000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": 24.438000000000002,
+      "commission": 1.7272296,
+      "net": 22.7107704
+    },
+    {
+      "planTimestamp": 1791379800000,
+      "setupTimestamp": 1791379500000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 2.596,
+      "commission": 1.7994636,
+      "net": 0.7965364
+    },
+    {
+      "planTimestamp": 1791448500000,
+      "setupTimestamp": 1791448200000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": 0.6930000000000001,
+      "commission": 1.7331405,
+      "net": -1.0401405
+    },
+    {
+      "planTimestamp": 1791450900000,
+      "setupTimestamp": 1791450600000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 1.491,
+      "commission": 1.7324811,
+      "net": -0.2414811
+    },
+    {
+      "planTimestamp": 1791529500000,
+      "setupTimestamp": 1791528000000,
+      "setupToPlanBars": 5,
+      "referenceRolledOver": true,
+      "gross": -5.459999999999999,
+      "commission": 1.7623956,
+      "net": -7.2223956
+    },
+    {
+      "planTimestamp": 1791532200000,
+      "setupTimestamp": 1791531900000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": 6.912000000000001,
+      "commission": 1.7616798,
+      "net": 5.1503202
+    },
+    {
+      "planTimestamp": 1791539700000,
+      "setupTimestamp": 1791539100000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -5.334,
+      "commission": 1.758078,
+      "net": -7.092078
+    },
+    {
+      "planTimestamp": 1791543300000,
+      "setupTimestamp": 1791543000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -4.368,
+      "commission": 1.7557931999999998,
+      "net": -6.1237932
+    },
+    {
+      "planTimestamp": 1791818700000,
+      "setupTimestamp": 1791818400000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -3.612,
+      "commission": 1.750077,
+      "net": -5.362077
+    },
+    {
+      "planTimestamp": 1791820800000,
+      "setupTimestamp": 1791820500000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -0.2310000000000001,
+      "commission": 1.7493945,
+      "net": -1.9803945
+    },
+    {
+      "planTimestamp": 1791885000000,
+      "setupTimestamp": 1791884100000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": 1.407,
+      "commission": 1.7578407,
+      "net": -0.3508407
+    },
+    {
+      "planTimestamp": 1791894600000,
+      "setupTimestamp": 1791894000000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -5.859,
+      "commission": 1.7579541,
+      "net": -7.6169541
+    },
+    {
+      "planTimestamp": 1791977400000,
+      "setupTimestamp": 1791977100000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -0.6510000000000002,
+      "commission": 1.7385669,
+      "net": -2.3895669
+    },
+    {
+      "planTimestamp": 1791992100000,
+      "setupTimestamp": 1791991800000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": 15.048,
+      "commission": 1.716165,
+      "net": 13.331835
+    },
+    {
+      "planTimestamp": 1792055100000,
+      "setupTimestamp": 1792054200000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": 5.586,
+      "commission": 1.7456586,
+      "net": 3.8403414
+    },
+    {
+      "planTimestamp": 1792061700000,
+      "setupTimestamp": 1792061400000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 5.199,
+      "commission": 1.7457417,
+      "net": 3.4532583
+    },
+    {
+      "planTimestamp": 1792163400000,
+      "setupTimestamp": 1792163100000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -9.366,
+      "commission": 1.7571624,
+      "net": -11.1231624
+    },
+    {
+      "planTimestamp": 1792397700000,
+      "setupTimestamp": 1792397100000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -3.3810000000000002,
+      "commission": 1.7549301,
+      "net": -5.1359301
+    },
+    {
+      "planTimestamp": 1792401300000,
+      "setupTimestamp": 1792400700000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -6.93,
+      "commission": 1.7515974,
+      "net": -8.6815974
+    },
+    {
+      "planTimestamp": 1792407900000,
+      "setupTimestamp": 1792407000000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": 8.085,
+      "commission": 1.7526999,
+      "net": 6.3323001
+    },
+    {
+      "planTimestamp": 1792480200000,
+      "setupTimestamp": 1792479900000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -4.367999999999999,
+      "commission": 1.7356584,
+      "net": -6.1036584
+    },
+    {
+      "planTimestamp": 1792489200000,
+      "setupTimestamp": 1792488600000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 11.483999999999998,
+      "commission": 1.7288568,
+      "net": 9.7551432
+    },
+    {
+      "planTimestamp": 1792497900000,
+      "setupTimestamp": 1792497600000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": 4.944,
+      "commission": 1.7308002,
+      "net": 3.2131998
+    },
+    {
+      "planTimestamp": 1792500000000,
+      "setupTimestamp": 1792499400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -6.719999999999999,
+      "commission": 1.7287116,
+      "net": -8.4487116
+    },
+    {
+      "planTimestamp": 1792571100000,
+      "setupTimestamp": 1792568100000,
+      "setupToPlanBars": 10,
+      "referenceRolledOver": true,
+      "gross": -7.245,
+      "commission": 1.7308473,
+      "net": -8.9758473
+    },
+    {
+      "planTimestamp": 1792572900000,
+      "setupTimestamp": 1792572600000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -0.7350000000000001,
+      "commission": 1.7307675,
+      "net": -2.4657675
+    },
+    {
+      "planTimestamp": 1792574700000,
+      "setupTimestamp": 1792574400000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -9.954,
+      "commission": 1.7316137999999999,
+      "net": -11.6856138
+    },
+    {
+      "planTimestamp": 1792576500000,
+      "setupTimestamp": 1792575600000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": 7.287000000000001,
+      "commission": 1.7299107,
+      "net": 5.5570893
+    },
+    {
+      "planTimestamp": 1792656600000,
+      "setupTimestamp": 1792656300000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -15.666,
+      "commission": 1.7165358,
+      "net": -17.3825358
+    },
+    {
+      "planTimestamp": 1792658100000,
+      "setupTimestamp": 1792657800000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": -7.139999999999999,
+      "commission": 1.717527,
+      "net": -8.857527
+    },
+    {
+      "planTimestamp": 1792681800000,
+      "setupTimestamp": 1792681200000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 0.44000000000000017,
+      "commission": 1.785322,
+      "net": -1.345322
+    },
+    {
+      "planTimestamp": 1792751700000,
+      "setupTimestamp": 1792751100000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -7.1499999999999995,
+      "commission": 1.770461,
+      "net": -8.920461
+    },
+    {
+      "planTimestamp": 1792755300000,
+      "setupTimestamp": 1792755000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": -3.6519999999999997,
+      "commission": 1.7713432,
+      "net": -5.4233432
+    },
+    {
+      "planTimestamp": 1792760100000,
+      "setupTimestamp": 1792759800000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -5.016,
+      "commission": 1.7721792,
+      "net": -6.7881792
+    },
+    {
+      "planTimestamp": 1793098500000,
+      "setupTimestamp": 1793098200000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -17.754,
+      "commission": 1.7637906,
+      "net": -19.5177906
+    },
+    {
+      "planTimestamp": 1793101200000,
+      "setupTimestamp": 1793100900000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -2.7939999999999996,
+      "commission": 1.7648466,
+      "net": -4.5588466
+    },
+    {
+      "planTimestamp": 1793105700000,
+      "setupTimestamp": 1793105100000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -13.464,
+      "commission": 1.7704456,
+      "net": -15.2344456
+    },
+    {
+      "planTimestamp": 1793184300000,
+      "setupTimestamp": 1793184000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -6.5729999999999995,
+      "commission": 1.6993263,
+      "net": -8.2723263
+    },
+    {
+      "planTimestamp": 1793186100000,
+      "setupTimestamp": 1793185800000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 1.0710000000000002,
+      "commission": 1.6997253,
+      "net": -0.6287253
+    },
+    {
+      "planTimestamp": 1793189400000,
+      "setupTimestamp": 1793189100000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 17.427,
+      "commission": 1.7023017,
+      "net": 15.7246983
+    },
+    {
+      "planTimestamp": 1793261700000,
+      "setupTimestamp": 1793258100000,
+      "setupToPlanBars": 12,
+      "referenceRolledOver": true,
+      "gross": -3.5909999999999997,
+      "commission": 1.6926231,
+      "net": -5.2836231
+    },
+    {
+      "planTimestamp": 1793355000000,
+      "setupTimestamp": 1793354400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 11.216000000000001,
+      "commission": 1.75355,
+      "net": 9.46245
+    },
+    {
+      "planTimestamp": 1793360700000,
+      "setupTimestamp": 1793360400000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 10.252,
+      "commission": 1.7463072,
+      "net": 8.5056928
+    },
+    {
+      "planTimestamp": 1793373300000,
+      "setupTimestamp": 1793373000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 6.974,
+      "commission": 1.7199534,
+      "net": 5.2540466
+    },
+    {
+      "planTimestamp": 1793620800000,
+      "setupTimestamp": 1793619900000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": -7.986000000000001,
+      "commission": 1.717397,
+      "net": -9.703397
+    },
+    {
+      "planTimestamp": 1793622600000,
+      "setupTimestamp": 1793622300000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 4.54,
+      "commission": 1.717064,
+      "net": 2.822936
+    },
+    {
+      "planTimestamp": 1793693100000,
+      "setupTimestamp": 1793691300000,
+      "setupToPlanBars": 6,
+      "referenceRolledOver": true,
+      "gross": -7.941999999999999,
+      "commission": 1.7192406,
+      "net": -9.6612406
+    },
+    {
+      "planTimestamp": 1793707500000,
+      "setupTimestamp": 1793706900000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": -11.858,
+      "commission": 1.7182110000000002,
+      "net": -13.576211
+    },
+    {
+      "planTimestamp": 1793714400000,
+      "setupTimestamp": 1793713800000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": 25.37,
+      "commission": 1.740281,
+      "net": 23.629719
+    },
+    {
+      "planTimestamp": 1793789700000,
+      "setupTimestamp": 1793789400000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 2.1759999999999997,
+      "commission": 1.7789439999999999,
+      "net": 0.397056
+    }
+  ],
+  "status": "HYPOTHESIS_ONLY_NOT_NATIVE_BACKTESTED",
+  "caveat": "This is a post-hoc split of already selected positions. Expiring a candidate can change later selection, order state and equity; the sums are not a counterfactual strategy backtest or out-of-sample result."
+}

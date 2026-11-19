@@ -1,0 +1,224 @@
+{
+  "schema": "crt-freshness-observational/v1",
+  "source": {
+    "name": "reports/native-v090/validation-continuation-2026-11-19/strategy-quantity-units-pine-logs.txt",
+    "sha256": "3ad7bc9b3d11ddcc64d2e044650e3c16b7765db21016c0c4580bd8f1c0bbcfaf"
+  },
+  "hypothesis": "Expire an unconfirmed M5 B candidate when its completed M15 reference candle changes.",
+  "referenceRolloverIsInferredFromStandardM5M15Clock": true,
+  "actualCrtTimeWasNotLogged": true,
+  "all": {
+    "positions": 21,
+    "wins": 9,
+    "grossPriceMove": -31.653000000000002,
+    "commission": 37.1533395,
+    "net": -68.8063395
+  },
+  "sameReference": {
+    "positions": 11,
+    "wins": 5,
+    "grossPriceMove": -1.0849999999999955,
+    "commission": 19.4482367,
+    "net": -20.533236699999996
+  },
+  "rolledReference": {
+    "positions": 10,
+    "wins": 4,
+    "grossPriceMove": -30.567999999999994,
+    "commission": 17.7051028,
+    "net": -48.273102800000004
+  },
+  "positions": [
+    {
+      "planTimestamp": 1793967300000,
+      "setupTimestamp": 1793965200000,
+      "setupToPlanBars": 7,
+      "referenceRolledOver": true,
+      "gross": -13.926,
+      "commission": 1.789513,
+      "net": -15.715513
+    },
+    {
+      "planTimestamp": 1793979000000,
+      "setupTimestamp": 1793978400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -2.244,
+      "commission": 1.782022,
+      "net": -4.026022
+    },
+    {
+      "planTimestamp": 1793982900000,
+      "setupTimestamp": 1793982000000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": -8.447999999999999,
+      "commission": 1.7871304,
+      "net": -10.2351304
+    },
+    {
+      "planTimestamp": 1794216900000,
+      "setupTimestamp": 1794216600000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": -6.258,
+      "commission": 1.7205174,
+      "net": -7.9785174
+    },
+    {
+      "planTimestamp": 1794222000000,
+      "setupTimestamp": 1794221700000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 6.1530000000000005,
+      "commission": 1.7219937,
+      "net": 4.4310063
+    },
+    {
+      "planTimestamp": 1794226800000,
+      "setupTimestamp": 1794226200000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 4.746,
+      "commission": 1.7277708,
+      "net": 3.0182292
+    },
+    {
+      "planTimestamp": 1794310200000,
+      "setupTimestamp": 1794309900000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -1.9580000000000002,
+      "commission": 1.7923554,
+      "net": -3.7503554
+    },
+    {
+      "planTimestamp": 1794392400000,
+      "setupTimestamp": 1794392100000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": true,
+      "gross": -2.4639999999999995,
+      "commission": 1.7816612,
+      "net": -4.2456612
+    },
+    {
+      "planTimestamp": 1794403500000,
+      "setupTimestamp": 1794403200000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 11.176,
+      "commission": 1.7765484,
+      "net": 9.3994516
+    },
+    {
+      "planTimestamp": 1794481800000,
+      "setupTimestamp": 1794481500000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 8.82,
+      "commission": 1.7380992000000002,
+      "net": 7.0819008
+    },
+    {
+      "planTimestamp": 1794501300000,
+      "setupTimestamp": 1794500400000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": -20.815,
+      "commission": 1.7814351,
+      "net": -22.5964351
+    },
+    {
+      "planTimestamp": 1794569100000,
+      "setupTimestamp": 1794568800000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 3.303,
+      "commission": 1.7893917000000001,
+      "net": 1.5136083
+    },
+    {
+      "planTimestamp": 1794585600000,
+      "setupTimestamp": 1794585300000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -12.489,
+      "commission": 1.7831233,
+      "net": -14.2721233
+    },
+    {
+      "planTimestamp": 1794588600000,
+      "setupTimestamp": 1794588000000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 3.519,
+      "commission": 1.7846781,
+      "net": 1.7343219
+    },
+    {
+      "planTimestamp": 1794816900000,
+      "setupTimestamp": 1794816600000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -10.442,
+      "commission": 1.7743304,
+      "net": -12.2163304
+    },
+    {
+      "planTimestamp": 1794821100000,
+      "setupTimestamp": 1794820500000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": true,
+      "gross": 10.652999999999999,
+      "commission": 1.7751557,
+      "net": 8.8778443
+    },
+    {
+      "planTimestamp": 1794825000000,
+      "setupTimestamp": 1794824400000,
+      "setupToPlanBars": 2,
+      "referenceRolledOver": false,
+      "gross": -14.995999999999999,
+      "commission": 1.7771732,
+      "net": -16.7731732
+    },
+    {
+      "planTimestamp": 1794829500000,
+      "setupTimestamp": 1794828300000,
+      "setupToPlanBars": 4,
+      "referenceRolledOver": true,
+      "gross": -9.131,
+      "commission": 1.7823137,
+      "net": -10.9133137
+    },
+    {
+      "planTimestamp": 1794909900000,
+      "setupTimestamp": 1794909000000,
+      "setupToPlanBars": 3,
+      "referenceRolledOver": true,
+      "gross": 11.556000000000001,
+      "commission": 1.7749274000000002,
+      "net": 9.7810726
+    },
+    {
+      "planTimestamp": 1794921300000,
+      "setupTimestamp": 1794921000000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": -0.43700000000000006,
+      "commission": 1.7745029,
+      "net": -2.2115029
+    },
+    {
+      "planTimestamp": 1795010400000,
+      "setupTimestamp": 1795010100000,
+      "setupToPlanBars": 1,
+      "referenceRolledOver": false,
+      "gross": 12.029,
+      "commission": 1.7386965,
+      "net": 10.2903035
+    }
+  ],
+  "status": "HYPOTHESIS_ONLY_NOT_NATIVE_BACKTESTED",
+  "caveat": "This is a post-hoc split of already selected positions. Expiring a candidate can change later selection, order state and equity; the sums are not a counterfactual strategy backtest or out-of-sample result."
+}

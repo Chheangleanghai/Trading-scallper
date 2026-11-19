@@ -1,0 +1,111 @@
+{
+  "schema": "native-quantity-units-summary/v1",
+  "sourceLog": "strategy-quantity-units-pine-logs.csv",
+  "counts": {
+    "messages": 250,
+    "plans": 31,
+    "quantityAudits": 31,
+    "exitRows": 49,
+    "completedPositions": 31
+  },
+  "quantity": {
+    "invalidAllocations": 0,
+    "positionQuantityMismatches": 0,
+    "allFeedSpecsMinContract0_1Tick0_01PointValue1USD": true
+  },
+  "accountingUSD": {
+    "grossPriceMove": 15.62,
+    "commission": 54.883055,
+    "net": -39.263055,
+    "groupNet": -39.263055
+  },
+  "byModule": {
+    "C_TURTLE_SOUP": {
+      "positions": 6,
+      "wins": 5,
+      "losses": 1,
+      "grossPriceMove": 59.673,
+      "commission": 10.5945119,
+      "net": 49.0784881
+    },
+    "B_CRT": {
+      "positions": 21,
+      "wins": 9,
+      "losses": 12,
+      "grossPriceMove": -31.653,
+      "commission": 37.1533395,
+      "net": -68.8063395
+    },
+    "G_AMD": {
+      "positions": 2,
+      "wins": 0,
+      "losses": 2,
+      "grossPriceMove": -28.834,
+      "commission": 3.5730626,
+      "net": -32.4070626
+    },
+    "F_TREND_PULLBACK": {
+      "positions": 1,
+      "wins": 1,
+      "losses": 0,
+      "grossPriceMove": 7.282,
+      "commission": 1.7793974,
+      "net": 5.5026026
+    },
+    "E_SUPPLY": {
+      "positions": 1,
+      "wins": 1,
+      "losses": 0,
+      "grossPriceMove": 9.152,
+      "commission": 1.7827436,
+      "net": 7.3692564
+    }
+  },
+  "exitComments": {
+    "TP1_HIT": 8,
+    "TP2_HIT": 2,
+    "TRADE_CLOSED": 26,
+    "STOP_LOSS_HIT": 12,
+    "TP3_HIT": 1
+  },
+  "exitIds": {
+    "TP1": 12,
+    "TP2": 6,
+    "Close entry(s) order C_TURTLE_SOUP": 5,
+    "Close entry(s) order B_CRT": 18,
+    "TP3": 5,
+    "Close entry(s) order F_TREND_PULLBACK": 1,
+    "Close entry(s) order E_SUPPLY": 1,
+    "Close entry(s) order G_AMD": 1
+  },
+  "firstPlanTimestamp": 1793964000000,
+  "lastPlanTimestamp": 1795010400000,
+  "allPlansWithinWindow": true,
+  "byFinalExitComment": {
+    "TRADE_CLOSED": {
+      "positions": 26,
+      "grossPriceMove": 46.205,
+      "commission": 46.0270991,
+      "net": 0.1779009
+    },
+    "STOP_LOSS_HIT": {
+      "positions": 4,
+      "grossPriceMove": -57.515,
+      "commission": 7.1269559,
+      "net": -64.6419559
+    },
+    "TP3_HIT": {
+      "positions": 1,
+      "grossPriceMove": 26.93,
+      "commission": 1.729,
+      "net": 25.201
+    }
+  },
+  "verification": {
+    "positionRowNetMatchesGroupNet": true,
+    "firstEntryBarIndex": 2632,
+    "maximumPossibleInWindowM5BarsBeforeFirstEntry": 137,
+    "minimumPreWindowM5CalculationBars": 2496,
+    "allTimeExitTaggedPositionsHeld15Minutes": true
+  }
+}

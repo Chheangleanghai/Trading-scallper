@@ -1,0 +1,2478 @@
+{
+  "schema": "crt-freshness-run-comparison/v1",
+  "status": "SOURCE_SETTINGS_AND_WINDOW_REVIEW_REQUIRED",
+  "context": {
+    "scriptVersion": "0.8.0",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "accountCurrency": "USD",
+    "sourceAndSettingsAuthenticatedByThisTool": false
+  },
+  "original": {
+    "input": {
+      "name": "reports/native-v090/validation-continuation-2026-11-19/crt-freshness-native/original-messages.txt",
+      "sha256": "3ad7bc9b3d11ddcc64d2e044650e3c16b7765db21016c0c4580bd8f1c0bbcfaf"
+    },
+    "observedPlanRange": {
+      "first": 1793964000000,
+      "last": 1795010400000
+    },
+    "total": {
+      "completePositions": 31,
+      "actualExitRows": 49,
+      "wins": 16,
+      "losses": 15,
+      "breakevens": 0,
+      "winRate": 0.5161290322580645,
+      "winRateWilson95IID": {
+        "lower": 0.348403954480288,
+        "upper": 0.6802974843758269
+      },
+      "grossBeforeCommission": 15.620000000000008,
+      "commission": 54.883055000000006,
+      "net": -39.263054999999994,
+      "meanNetPerCompletePosition": -1.2665501612903225,
+      "meanNetRToPlannedInitialCashRisk": 0.0002079060743768914,
+      "meanWin": 7.573466881250001,
+      "meanLoss": -10.695901673333335,
+      "positionProfitFactor": 0.7552766396005718,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 4,
+        "TP1_HIT": 8,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 26
+      }
+    },
+    "byModule": {
+      "B_CRT": {
+        "completePositions": 21,
+        "actualExitRows": 32,
+        "wins": 9,
+        "losses": 12,
+        "breakevens": 0,
+        "winRate": 0.42857142857142855,
+        "winRateWilson95IID": {
+          "lower": 0.2446996892537596,
+          "upper": 0.6345344563069328
+        },
+        "grossBeforeCommission": -31.653000000000002,
+        "commission": 37.1533395,
+        "net": -68.8063395,
+        "meanNetPerCompletePosition": -3.2764923571428577,
+        "meanNetRToPlannedInitialCashRisk": -0.17120865464684032,
+        "meanWin": 6.236415388888889,
+        "meanLoss": -10.411173166666666,
+        "positionProfitFactor": 0.44925883632806735,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "STOP_LOSS_HIT": 3,
+          "TP1_HIT": 5,
+          "TRADE_CLOSED": 18
+        }
+      },
+      "C_TURTLE_SOUP": {
+        "completePositions": 6,
+        "actualExitRows": 11,
+        "wins": 5,
+        "losses": 1,
+        "breakevens": 0,
+        "winRate": 0.8333333333333334,
+        "winRateWilson95IID": {
+          "lower": 0.43649717781352987,
+          "upper": 0.9699466302516935
+        },
+        "grossBeforeCommission": 59.673,
+        "commission": 10.5945119,
+        "net": 49.0784881,
+        "meanNetPerCompletePosition": 8.179748016666666,
+        "meanNetRToPlannedInitialCashRisk": 0.718856670364127,
+        "meanWin": 10.43517452,
+        "meanLoss": -3.0973845,
+        "positionProfitFactor": 16.845139051996934,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TP1_HIT": 3,
+          "TP2_HIT": 2,
+          "TP3_HIT": 1,
+          "TRADE_CLOSED": 5
+        }
+      },
+      "E_SUPPLY": {
+        "completePositions": 1,
+        "actualExitRows": 1,
+        "wins": 1,
+        "losses": 0,
+        "breakevens": 0,
+        "winRate": 1,
+        "winRateWilson95IID": {
+          "lower": 0.20654931437723745,
+          "upper": 1
+        },
+        "grossBeforeCommission": 9.152000000000001,
+        "commission": 1.7827436,
+        "net": 7.3692564,
+        "meanNetPerCompletePosition": 7.3692564,
+        "meanNetRToPlannedInitialCashRisk": 0.5696704081632653,
+        "meanWin": 7.3692564,
+        "meanLoss": null,
+        "positionProfitFactor": null,
+        "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TRADE_CLOSED": 1
+        }
+      },
+      "F_TREND_PULLBACK": {
+        "completePositions": 1,
+        "actualExitRows": 1,
+        "wins": 1,
+        "losses": 0,
+        "breakevens": 0,
+        "winRate": 1,
+        "winRateWilson95IID": {
+          "lower": 0.20654931437723745,
+          "upper": 1
+        },
+        "grossBeforeCommission": 7.282,
+        "commission": 1.7793974,
+        "net": 5.5026026,
+        "meanNetPerCompletePosition": 5.5026026,
+        "meanNetRToPlannedInitialCashRisk": 0.16487692814765986,
+        "meanWin": 5.5026026,
+        "meanLoss": null,
+        "positionProfitFactor": null,
+        "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TRADE_CLOSED": 1
+        }
+      },
+      "G_AMD": {
+        "completePositions": 2,
+        "actualExitRows": 4,
+        "wins": 0,
+        "losses": 2,
+        "breakevens": 0,
+        "winRate": 0,
+        "winRateWilson95IID": {
+          "lower": 0,
+          "upper": 0.6576197724933469
+        },
+        "grossBeforeCommission": -28.834000000000003,
+        "commission": 3.5730626,
+        "net": -32.4070626,
+        "meanNetPerCompletePosition": -16.2035313,
+        "meanNetRToPlannedInitialCashRisk": -0.7229302613031782,
+        "meanWin": null,
+        "meanLoss": -16.2035313,
+        "positionProfitFactor": 0,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "STOP_LOSS_HIT": 1,
+          "TRADE_CLOSED": 1
+        }
+      }
+    }
+  },
+  "experiment": {
+    "input": {
+      "name": "reports/native-v090/validation-continuation-2026-11-19/crt-freshness-native/experiment-messages.txt",
+      "sha256": "95a35b561a298e786e0e9e7f88431ad56a35231c8ae42fc31660912159f4e6d3"
+    },
+    "observedPlanRange": {
+      "first": 1793964000000,
+      "last": 1795020900000
+    },
+    "total": {
+      "completePositions": 33,
+      "actualExitRows": 55,
+      "wins": 16,
+      "losses": 17,
+      "breakevens": 0,
+      "winRate": 0.48484848484848486,
+      "winRateWilson95IID": {
+        "lower": 0.32504042108133696,
+        "upper": 0.6478162455108585
+      },
+      "grossBeforeCommission": 21.75700000000001,
+      "commission": 58.27204090000001,
+      "net": -36.51504090000001,
+      "meanNetPerCompletePosition": -1.1065163909090912,
+      "meanNetRToPlannedInitialCashRisk": 0.0469022589742898,
+      "meanWin": 8.742591937499999,
+      "meanLoss": -10.376265405882354,
+      "positionProfitFactor": 0.792994541067226,
+      "profitFactorStatus": "FINITE",
+      "sparseDescriptiveSample": false,
+      "positionsWithExitComment": {
+        "STOP_LOSS_HIT": 5,
+        "TP1_HIT": 10,
+        "TP2_HIT": 2,
+        "TP3_HIT": 1,
+        "TRADE_CLOSED": 27
+      }
+    },
+    "byModule": {
+      "B_CRT": {
+        "completePositions": 20,
+        "actualExitRows": 31,
+        "wins": 9,
+        "losses": 11,
+        "breakevens": 0,
+        "winRate": 0.45,
+        "winRateWilson95IID": {
+          "lower": 0.2581978582556243,
+          "upper": 0.6579146575496577
+        },
+        "grossBeforeCommission": 3.144000000000002,
+        "commission": 35.3088296,
+        "net": -32.16482959999999,
+        "meanNetPerCompletePosition": -1.6082414799999996,
+        "meanNetRToPlannedInitialCashRisk": -0.04991528014835034,
+        "meanWin": 7.850923644444445,
+        "meanLoss": -9.347558399999999,
+        "positionProfitFactor": 0.687182974092805,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "STOP_LOSS_HIT": 3,
+          "TP1_HIT": 5,
+          "TRADE_CLOSED": 17
+        }
+      },
+      "C_TURTLE_SOUP": {
+        "completePositions": 8,
+        "actualExitRows": 16,
+        "wins": 5,
+        "losses": 3,
+        "breakevens": 0,
+        "winRate": 0.625,
+        "winRateWilson95IID": {
+          "lower": 0.30574239460262737,
+          "upper": 0.8631557141764026
+        },
+        "grossBeforeCommission": 34.788000000000004,
+        "commission": 14.1456558,
+        "net": 20.6423442,
+        "meanNetPerCompletePosition": 2.580293025,
+        "meanNetRToPlannedInitialCashRisk": 0.32244406422206706,
+        "meanWin": 10.59624484,
+        "meanLoss": -10.779626666666667,
+        "positionProfitFactor": 1.638313516114349,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "STOP_LOSS_HIT": 1,
+          "TP1_HIT": 4,
+          "TP2_HIT": 2,
+          "TP3_HIT": 1,
+          "TRADE_CLOSED": 6
+        }
+      },
+      "E_DEMAND": {
+        "completePositions": 1,
+        "actualExitRows": 2,
+        "wins": 1,
+        "losses": 0,
+        "breakevens": 0,
+        "winRate": 1,
+        "winRateWilson95IID": {
+          "lower": 0.20654931437723745,
+          "upper": 1
+        },
+        "grossBeforeCommission": 10.602,
+        "commission": 1.7293224,
+        "net": 8.8726776,
+        "meanNetPerCompletePosition": 8.8726776,
+        "meanNetRToPlannedInitialCashRisk": 1.0861399926551596,
+        "meanWin": 8.8726776,
+        "meanLoss": null,
+        "positionProfitFactor": null,
+        "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TP1_HIT": 1,
+          "TRADE_CLOSED": 1
+        }
+      },
+      "E_SUPPLY": {
+        "completePositions": 1,
+        "actualExitRows": 1,
+        "wins": 1,
+        "losses": 0,
+        "breakevens": 0,
+        "winRate": 1,
+        "winRateWilson95IID": {
+          "lower": 0.20654931437723745,
+          "upper": 1
+        },
+        "grossBeforeCommission": 9.152000000000001,
+        "commission": 1.7827436,
+        "net": 7.3692564,
+        "meanNetPerCompletePosition": 7.3692564,
+        "meanNetRToPlannedInitialCashRisk": 0.5696704081632653,
+        "meanWin": 7.3692564,
+        "meanLoss": null,
+        "positionProfitFactor": null,
+        "profitFactorStatus": "NO_LOSSES_IN_SAMPLE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TRADE_CLOSED": 1
+        }
+      },
+      "F_TREND_PULLBACK": {
+        "completePositions": 2,
+        "actualExitRows": 2,
+        "wins": 0,
+        "losses": 2,
+        "breakevens": 0,
+        "winRate": 0,
+        "winRateWilson95IID": {
+          "lower": 0,
+          "upper": 0.6576197724933469
+        },
+        "grossBeforeCommission": -12.983,
+        "commission": 3.5123509,
+        "net": -16.4953509,
+        "meanNetPerCompletePosition": -8.24767545,
+        "meanNetRToPlannedInitialCashRisk": -0.30349301892683866,
+        "meanWin": null,
+        "meanLoss": -8.24767545,
+        "positionProfitFactor": 0,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "TRADE_CLOSED": 2
+        }
+      },
+      "G_AMD": {
+        "completePositions": 1,
+        "actualExitRows": 3,
+        "wins": 0,
+        "losses": 1,
+        "breakevens": 0,
+        "winRate": 0,
+        "winRateWilson95IID": {
+          "lower": 0,
+          "upper": 0.7934506856227626
+        },
+        "grossBeforeCommission": -22.946,
+        "commission": 1.7931386,
+        "net": -24.7391386,
+        "meanNetPerCompletePosition": -24.7391386,
+        "meanNetRToPlannedInitialCashRisk": -1.082296727622714,
+        "meanWin": null,
+        "meanLoss": -24.7391386,
+        "positionProfitFactor": 0,
+        "profitFactorStatus": "FINITE",
+        "sparseDescriptiveSample": true,
+        "positionsWithExitComment": {
+          "STOP_LOSS_HIT": 1
+        }
+      }
+    }
+  },
+  "observedNetDifference": 2.7480140999999847,
+  "planDifferences": [
+    {
+      "key": "FOREXCOM:XAUUSD|5|1793967300000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1793982900000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794216900000",
+      "field": "strategy",
+      "original": "B_CRT",
+      "experiment": "C_TURTLE_SOUP"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794226800000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794227700000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794232500000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794234000000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794240300000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794304800000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794324300000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794325500000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794325800000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794392400000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794393600000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794414600000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794501300000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794561300000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794563400000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794575700000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794581700000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794582600000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794585600000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794588600000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794816900000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794817800000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794821100000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794829500000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794830400000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794831000000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794834900000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794836400000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1794909900000",
+      "field": "missing-plan",
+      "missingFrom": "experiment"
+    },
+    {
+      "key": "FOREXCOM:XAUUSD|5|1795020900000",
+      "field": "missing-plan",
+      "missingFrom": "original"
+    }
+  ],
+  "experimentalExpiryEvents": [
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793923500000,
+      "expiredAt": 1793924400000,
+      "direction": 1,
+      "setupReferenceOpen": 1793922300000,
+      "currentReferenceOpen": 1793923200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793925300000,
+      "expiredAt": 1793926200000,
+      "direction": -1,
+      "setupReferenceOpen": 1793924100000,
+      "currentReferenceOpen": 1793925000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793928900000,
+      "expiredAt": 1793929800000,
+      "direction": 1,
+      "setupReferenceOpen": 1793927700000,
+      "currentReferenceOpen": 1793928600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793931300000,
+      "expiredAt": 1793931600000,
+      "direction": -1,
+      "setupReferenceOpen": 1793929500000,
+      "currentReferenceOpen": 1793930400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793933400000,
+      "expiredAt": 1793934300000,
+      "direction": 1,
+      "setupReferenceOpen": 1793932200000,
+      "currentReferenceOpen": 1793933100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793940000000,
+      "expiredAt": 1793940600000,
+      "direction": -1,
+      "setupReferenceOpen": 1793938500000,
+      "currentReferenceOpen": 1793939400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793942100000,
+      "expiredAt": 1793942400000,
+      "direction": -1,
+      "setupReferenceOpen": 1793940300000,
+      "currentReferenceOpen": 1793941200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793943300000,
+      "expiredAt": 1793944200000,
+      "direction": 1,
+      "setupReferenceOpen": 1793942100000,
+      "currentReferenceOpen": 1793943000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793945100000,
+      "expiredAt": 1793946000000,
+      "direction": -1,
+      "setupReferenceOpen": 1793943900000,
+      "currentReferenceOpen": 1793944800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793946600000,
+      "expiredAt": 1793946900000,
+      "direction": -1,
+      "setupReferenceOpen": 1793944800000,
+      "currentReferenceOpen": 1793945700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793949000000,
+      "expiredAt": 1793949600000,
+      "direction": 1,
+      "setupReferenceOpen": 1793947500000,
+      "currentReferenceOpen": 1793948400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793950800000,
+      "expiredAt": 1793951400000,
+      "direction": 1,
+      "setupReferenceOpen": 1793949300000,
+      "currentReferenceOpen": 1793950200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793957100000,
+      "expiredAt": 1793957700000,
+      "direction": -1,
+      "setupReferenceOpen": 1793955600000,
+      "currentReferenceOpen": 1793956500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793963100000,
+      "expiredAt": 1793964000000,
+      "direction": 1,
+      "setupReferenceOpen": 1793961900000,
+      "currentReferenceOpen": 1793962800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793965200000,
+      "expiredAt": 1793965800000,
+      "direction": -1,
+      "setupReferenceOpen": 1793963700000,
+      "currentReferenceOpen": 1793964600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793966700000,
+      "expiredAt": 1793967600000,
+      "direction": 1,
+      "setupReferenceOpen": 1793965500000,
+      "currentReferenceOpen": 1793966400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793982000000,
+      "expiredAt": 1793982900000,
+      "direction": -1,
+      "setupReferenceOpen": 1793980800000,
+      "currentReferenceOpen": 1793981700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793985300000,
+      "expiredAt": 1793985600000,
+      "direction": 1,
+      "setupReferenceOpen": 1793983500000,
+      "currentReferenceOpen": 1793984400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793986200000,
+      "expiredAt": 1793986500000,
+      "direction": 1,
+      "setupReferenceOpen": 1793984400000,
+      "currentReferenceOpen": 1793985300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793988300000,
+      "expiredAt": 1793989200000,
+      "direction": -1,
+      "setupReferenceOpen": 1793987100000,
+      "currentReferenceOpen": 1793988000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793991900000,
+      "expiredAt": 1793992800000,
+      "direction": -1,
+      "setupReferenceOpen": 1793990700000,
+      "currentReferenceOpen": 1793991600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793994600000,
+      "expiredAt": 1793995500000,
+      "direction": -1,
+      "setupReferenceOpen": 1793993400000,
+      "currentReferenceOpen": 1793994300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1793997600000,
+      "expiredAt": 1793998200000,
+      "direction": -1,
+      "setupReferenceOpen": 1793996100000,
+      "currentReferenceOpen": 1793997000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794180300000,
+      "expiredAt": 1794180900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794178800000,
+      "currentReferenceOpen": 1794179700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794187800000,
+      "expiredAt": 1794188100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794186000000,
+      "currentReferenceOpen": 1794186900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794188100000,
+      "expiredAt": 1794189000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794186900000,
+      "currentReferenceOpen": 1794187800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794195300000,
+      "expiredAt": 1794196200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794194100000,
+      "currentReferenceOpen": 1794195000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794196200000,
+      "expiredAt": 1794197100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794195000000,
+      "currentReferenceOpen": 1794195900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794201300000,
+      "expiredAt": 1794201600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794199500000,
+      "currentReferenceOpen": 1794200400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794202500000,
+      "expiredAt": 1794203400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794201300000,
+      "currentReferenceOpen": 1794202200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794203400000,
+      "expiredAt": 1794204300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794202200000,
+      "currentReferenceOpen": 1794203100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794216600000,
+      "expiredAt": 1794216900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794214800000,
+      "currentReferenceOpen": 1794215700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794220500000,
+      "expiredAt": 1794221400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794219300000,
+      "currentReferenceOpen": 1794220200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794226200000,
+      "expiredAt": 1794226800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794224700000,
+      "currentReferenceOpen": 1794225600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794231000000,
+      "expiredAt": 1794231300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794229200000,
+      "currentReferenceOpen": 1794230100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794238800000,
+      "expiredAt": 1794239400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794237300000,
+      "currentReferenceOpen": 1794238200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794239400000,
+      "expiredAt": 1794240300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794238200000,
+      "currentReferenceOpen": 1794239100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794248700000,
+      "expiredAt": 1794249300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794247200000,
+      "currentReferenceOpen": 1794248100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794249600000,
+      "expiredAt": 1794250200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794248100000,
+      "currentReferenceOpen": 1794249000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794250200000,
+      "expiredAt": 1794251100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794249000000,
+      "currentReferenceOpen": 1794249900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794257100000,
+      "expiredAt": 1794257400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794255300000,
+      "currentReferenceOpen": 1794256200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794260100000,
+      "expiredAt": 1794261000000,
+      "direction": -1,
+      "setupReferenceOpen": 1794258900000,
+      "currentReferenceOpen": 1794259800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794265500000,
+      "expiredAt": 1794266400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794260700000,
+      "currentReferenceOpen": 1794265200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794271500000,
+      "expiredAt": 1794271800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794269700000,
+      "currentReferenceOpen": 1794270600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794276600000,
+      "expiredAt": 1794277200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794275100000,
+      "currentReferenceOpen": 1794276000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794281700000,
+      "expiredAt": 1794282600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794280500000,
+      "currentReferenceOpen": 1794281400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794282900000,
+      "expiredAt": 1794283500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794281400000,
+      "currentReferenceOpen": 1794282300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794292800000,
+      "expiredAt": 1794293400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794291300000,
+      "currentReferenceOpen": 1794292200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794294300000,
+      "expiredAt": 1794295200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794293100000,
+      "currentReferenceOpen": 1794294000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794296400000,
+      "expiredAt": 1794297000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794294900000,
+      "currentReferenceOpen": 1794295800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794297300000,
+      "expiredAt": 1794297900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794295800000,
+      "currentReferenceOpen": 1794296700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794298800000,
+      "expiredAt": 1794299700000,
+      "direction": -1,
+      "setupReferenceOpen": 1794297600000,
+      "currentReferenceOpen": 1794298500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794300300000,
+      "expiredAt": 1794300600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794298500000,
+      "currentReferenceOpen": 1794299400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794311700000,
+      "expiredAt": 1794312300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794310200000,
+      "currentReferenceOpen": 1794311100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794322500000,
+      "expiredAt": 1794323100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794321000000,
+      "currentReferenceOpen": 1794321900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794324900000,
+      "expiredAt": 1794325800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794323700000,
+      "currentReferenceOpen": 1794324600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794329700000,
+      "expiredAt": 1794330300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794328200000,
+      "currentReferenceOpen": 1794329100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794330900000,
+      "expiredAt": 1794331200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794329100000,
+      "currentReferenceOpen": 1794330000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794331800000,
+      "expiredAt": 1794332100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794330000000,
+      "currentReferenceOpen": 1794330900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794332700000,
+      "expiredAt": 1794333000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794330900000,
+      "currentReferenceOpen": 1794331800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794336600000,
+      "expiredAt": 1794337500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794335400000,
+      "currentReferenceOpen": 1794336300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794337500000,
+      "expiredAt": 1794338400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794336300000,
+      "currentReferenceOpen": 1794337200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794339000000,
+      "expiredAt": 1794339300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794337200000,
+      "currentReferenceOpen": 1794338100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794340800000,
+      "expiredAt": 1794341100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794339000000,
+      "currentReferenceOpen": 1794339900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794341700000,
+      "expiredAt": 1794342000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794339900000,
+      "currentReferenceOpen": 1794340800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794342900000,
+      "expiredAt": 1794343800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794341700000,
+      "currentReferenceOpen": 1794342600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794346800000,
+      "expiredAt": 1794347400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794345300000,
+      "currentReferenceOpen": 1794346200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794353400000,
+      "expiredAt": 1794353700000,
+      "direction": -1,
+      "setupReferenceOpen": 1794351600000,
+      "currentReferenceOpen": 1794352500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794354600000,
+      "expiredAt": 1794355500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794353400000,
+      "currentReferenceOpen": 1794354300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794360000000,
+      "expiredAt": 1794360900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794358800000,
+      "currentReferenceOpen": 1794359700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794364800000,
+      "expiredAt": 1794365400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794363300000,
+      "currentReferenceOpen": 1794364200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794366000000,
+      "expiredAt": 1794366300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794364200000,
+      "currentReferenceOpen": 1794365100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794367200000,
+      "expiredAt": 1794368100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794366000000,
+      "currentReferenceOpen": 1794366900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794368400000,
+      "expiredAt": 1794369000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794366900000,
+      "currentReferenceOpen": 1794367800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794371100000,
+      "expiredAt": 1794371700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794369600000,
+      "currentReferenceOpen": 1794370500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794371700000,
+      "expiredAt": 1794372600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794370500000,
+      "currentReferenceOpen": 1794371400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794377400000,
+      "expiredAt": 1794378000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794375900000,
+      "currentReferenceOpen": 1794376800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794378300000,
+      "expiredAt": 1794378900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794376800000,
+      "currentReferenceOpen": 1794377700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794379500000,
+      "expiredAt": 1794379800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794377700000,
+      "currentReferenceOpen": 1794378600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794382200000,
+      "expiredAt": 1794382500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794380400000,
+      "currentReferenceOpen": 1794381300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794392100000,
+      "expiredAt": 1794392400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794390300000,
+      "currentReferenceOpen": 1794391200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794393000000,
+      "expiredAt": 1794393300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794391200000,
+      "currentReferenceOpen": 1794392100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794396600000,
+      "expiredAt": 1794396900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794394800000,
+      "currentReferenceOpen": 1794395700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794399000000,
+      "expiredAt": 1794399600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794397500000,
+      "currentReferenceOpen": 1794398400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794411300000,
+      "expiredAt": 1794412200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794410100000,
+      "currentReferenceOpen": 1794411000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794412500000,
+      "expiredAt": 1794413100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794411000000,
+      "currentReferenceOpen": 1794411900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794416700000,
+      "expiredAt": 1794417600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794415500000,
+      "currentReferenceOpen": 1794416400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794427800000,
+      "expiredAt": 1794428400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794426300000,
+      "currentReferenceOpen": 1794427200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794430500000,
+      "expiredAt": 1794431100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794429000000,
+      "currentReferenceOpen": 1794429900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794431700000,
+      "expiredAt": 1794432000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794429900000,
+      "currentReferenceOpen": 1794430800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794432900000,
+      "expiredAt": 1794433800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794431700000,
+      "currentReferenceOpen": 1794432600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794446400000,
+      "expiredAt": 1794447300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794445200000,
+      "currentReferenceOpen": 1794446100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794450600000,
+      "expiredAt": 1794450900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794448800000,
+      "currentReferenceOpen": 1794449700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794453000000,
+      "expiredAt": 1794453600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794451500000,
+      "currentReferenceOpen": 1794452400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794453900000,
+      "expiredAt": 1794454500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794452400000,
+      "currentReferenceOpen": 1794453300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794454500000,
+      "expiredAt": 1794455400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794453300000,
+      "currentReferenceOpen": 1794454200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794455700000,
+      "expiredAt": 1794456300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794454200000,
+      "currentReferenceOpen": 1794455100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794456900000,
+      "expiredAt": 1794457200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794455100000,
+      "currentReferenceOpen": 1794456000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794460500000,
+      "expiredAt": 1794460800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794458700000,
+      "currentReferenceOpen": 1794459600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794462300000,
+      "expiredAt": 1794462600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794460500000,
+      "currentReferenceOpen": 1794461400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794474300000,
+      "expiredAt": 1794475200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794473100000,
+      "currentReferenceOpen": 1794474000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794479400000,
+      "expiredAt": 1794479700000,
+      "direction": -1,
+      "setupReferenceOpen": 1794477600000,
+      "currentReferenceOpen": 1794478500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794492900000,
+      "expiredAt": 1794493200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794491100000,
+      "currentReferenceOpen": 1794492000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794498600000,
+      "expiredAt": 1794499500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794497400000,
+      "currentReferenceOpen": 1794498300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794500400000,
+      "expiredAt": 1794501300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794499200000,
+      "currentReferenceOpen": 1794500100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794504600000,
+      "expiredAt": 1794504900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794502800000,
+      "currentReferenceOpen": 1794503700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794510600000,
+      "expiredAt": 1794511200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794509100000,
+      "currentReferenceOpen": 1794510000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794530400000,
+      "expiredAt": 1794531000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794528900000,
+      "currentReferenceOpen": 1794529800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794534600000,
+      "expiredAt": 1794535500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794533400000,
+      "currentReferenceOpen": 1794534300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794537900000,
+      "expiredAt": 1794538200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794536100000,
+      "currentReferenceOpen": 1794537000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794540600000,
+      "expiredAt": 1794540900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794538800000,
+      "currentReferenceOpen": 1794539700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794549600000,
+      "expiredAt": 1794549900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794547800000,
+      "currentReferenceOpen": 1794548700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794552600000,
+      "expiredAt": 1794553500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794551400000,
+      "currentReferenceOpen": 1794552300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794553500000,
+      "expiredAt": 1794554400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794552300000,
+      "currentReferenceOpen": 1794553200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794556800000,
+      "expiredAt": 1794557100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794555000000,
+      "currentReferenceOpen": 1794555900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794558900000,
+      "expiredAt": 1794559800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794557700000,
+      "currentReferenceOpen": 1794558600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794563100000,
+      "expiredAt": 1794563400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794561300000,
+      "currentReferenceOpen": 1794562200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794564600000,
+      "expiredAt": 1794565200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794563100000,
+      "currentReferenceOpen": 1794564000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794574200000,
+      "expiredAt": 1794575100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794573000000,
+      "currentReferenceOpen": 1794573900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794578100000,
+      "expiredAt": 1794578700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794576600000,
+      "currentReferenceOpen": 1794577500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794585300000,
+      "expiredAt": 1794585900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794583800000,
+      "currentReferenceOpen": 1794584700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794585900000,
+      "expiredAt": 1794586800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794584700000,
+      "currentReferenceOpen": 1794585600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794588000000,
+      "expiredAt": 1794588600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794586500000,
+      "currentReferenceOpen": 1794587400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794589500000,
+      "expiredAt": 1794590400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794588300000,
+      "currentReferenceOpen": 1794589200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794592800000,
+      "expiredAt": 1794593100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794591000000,
+      "currentReferenceOpen": 1794591900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794594300000,
+      "expiredAt": 1794594900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794592800000,
+      "currentReferenceOpen": 1794593700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794596700000,
+      "expiredAt": 1794597600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794595500000,
+      "currentReferenceOpen": 1794596400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794597900000,
+      "expiredAt": 1794598500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794596400000,
+      "currentReferenceOpen": 1794597300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794600300000,
+      "expiredAt": 1794601200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794599100000,
+      "currentReferenceOpen": 1794600000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794602100000,
+      "expiredAt": 1794603000000,
+      "direction": -1,
+      "setupReferenceOpen": 1794600900000,
+      "currentReferenceOpen": 1794601800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794603600000,
+      "expiredAt": 1794603900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794601800000,
+      "currentReferenceOpen": 1794602700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794605100000,
+      "expiredAt": 1794605700000,
+      "direction": -1,
+      "setupReferenceOpen": 1794603600000,
+      "currentReferenceOpen": 1794604500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794789300000,
+      "expiredAt": 1794790200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794788100000,
+      "currentReferenceOpen": 1794789000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794793800000,
+      "expiredAt": 1794794700000,
+      "direction": -1,
+      "setupReferenceOpen": 1794792600000,
+      "currentReferenceOpen": 1794793500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794794700000,
+      "expiredAt": 1794795600000,
+      "direction": 1,
+      "setupReferenceOpen": 1794793500000,
+      "currentReferenceOpen": 1794794400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794795600000,
+      "expiredAt": 1794796500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794794400000,
+      "currentReferenceOpen": 1794795300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794800700000,
+      "expiredAt": 1794801000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794798900000,
+      "currentReferenceOpen": 1794799800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794801900000,
+      "expiredAt": 1794802800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794800700000,
+      "currentReferenceOpen": 1794801600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794803100000,
+      "expiredAt": 1794803700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794801600000,
+      "currentReferenceOpen": 1794802500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794805500000,
+      "expiredAt": 1794806400000,
+      "direction": 1,
+      "setupReferenceOpen": 1794804300000,
+      "currentReferenceOpen": 1794805200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794810300000,
+      "expiredAt": 1794810900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794808800000,
+      "currentReferenceOpen": 1794809700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794812100000,
+      "expiredAt": 1794812700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794810600000,
+      "currentReferenceOpen": 1794811500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794814500000,
+      "expiredAt": 1794815400000,
+      "direction": -1,
+      "setupReferenceOpen": 1794813300000,
+      "currentReferenceOpen": 1794814200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794820500000,
+      "expiredAt": 1794820800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794818700000,
+      "currentReferenceOpen": 1794819600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794828300000,
+      "expiredAt": 1794828900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794826800000,
+      "currentReferenceOpen": 1794827700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794832200000,
+      "expiredAt": 1794832500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794830400000,
+      "currentReferenceOpen": 1794831300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794833400000,
+      "expiredAt": 1794834300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794832200000,
+      "currentReferenceOpen": 1794833100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794838200000,
+      "expiredAt": 1794838800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794836700000,
+      "currentReferenceOpen": 1794837600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794840900000,
+      "expiredAt": 1794841500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794839400000,
+      "currentReferenceOpen": 1794840300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794845400000,
+      "expiredAt": 1794846000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794843900000,
+      "currentReferenceOpen": 1794844800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794847200000,
+      "expiredAt": 1794847800000,
+      "direction": 1,
+      "setupReferenceOpen": 1794845700000,
+      "currentReferenceOpen": 1794846600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794849600000,
+      "expiredAt": 1794850500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794848400000,
+      "currentReferenceOpen": 1794849300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794863700000,
+      "expiredAt": 1794864000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794861900000,
+      "currentReferenceOpen": 1794862800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794876300000,
+      "expiredAt": 1794876600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794874500000,
+      "currentReferenceOpen": 1794875400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794882300000,
+      "expiredAt": 1794882900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794880800000,
+      "currentReferenceOpen": 1794881700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794886200000,
+      "expiredAt": 1794886500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794884400000,
+      "currentReferenceOpen": 1794885300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794890100000,
+      "expiredAt": 1794891000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794888900000,
+      "currentReferenceOpen": 1794889800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794894000000,
+      "expiredAt": 1794894600000,
+      "direction": -1,
+      "setupReferenceOpen": 1794892500000,
+      "currentReferenceOpen": 1794893400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794897000000,
+      "expiredAt": 1794897300000,
+      "direction": 1,
+      "setupReferenceOpen": 1794895200000,
+      "currentReferenceOpen": 1794896100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794897300000,
+      "expiredAt": 1794898200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794896100000,
+      "currentReferenceOpen": 1794897000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794903600000,
+      "expiredAt": 1794904500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794902400000,
+      "currentReferenceOpen": 1794903300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794906000000,
+      "expiredAt": 1794906300000,
+      "direction": -1,
+      "setupReferenceOpen": 1794904200000,
+      "currentReferenceOpen": 1794905100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794909000000,
+      "expiredAt": 1794909900000,
+      "direction": -1,
+      "setupReferenceOpen": 1794907800000,
+      "currentReferenceOpen": 1794908700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794910800000,
+      "expiredAt": 1794911700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794909600000,
+      "currentReferenceOpen": 1794910500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794917700000,
+      "expiredAt": 1794918000000,
+      "direction": 1,
+      "setupReferenceOpen": 1794915900000,
+      "currentReferenceOpen": 1794916800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794928800000,
+      "expiredAt": 1794929700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794927600000,
+      "currentReferenceOpen": 1794928500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794942600000,
+      "expiredAt": 1794943200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794941100000,
+      "currentReferenceOpen": 1794942000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794943200000,
+      "expiredAt": 1794944100000,
+      "direction": -1,
+      "setupReferenceOpen": 1794942000000,
+      "currentReferenceOpen": 1794942900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794951600000,
+      "expiredAt": 1794952200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794950100000,
+      "currentReferenceOpen": 1794951000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794958200000,
+      "expiredAt": 1794958500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794956400000,
+      "currentReferenceOpen": 1794957300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794964200000,
+      "expiredAt": 1794964800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794962700000,
+      "currentReferenceOpen": 1794963600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794969300000,
+      "expiredAt": 1794970200000,
+      "direction": -1,
+      "setupReferenceOpen": 1794968100000,
+      "currentReferenceOpen": 1794969000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794970200000,
+      "expiredAt": 1794971100000,
+      "direction": 1,
+      "setupReferenceOpen": 1794969000000,
+      "currentReferenceOpen": 1794969900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794971400000,
+      "expiredAt": 1794972000000,
+      "direction": -1,
+      "setupReferenceOpen": 1794969900000,
+      "currentReferenceOpen": 1794970800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794973200000,
+      "expiredAt": 1794973800000,
+      "direction": -1,
+      "setupReferenceOpen": 1794971700000,
+      "currentReferenceOpen": 1794972600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794976200000,
+      "expiredAt": 1794976500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794974400000,
+      "currentReferenceOpen": 1794975300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794978900000,
+      "expiredAt": 1794979200000,
+      "direction": 1,
+      "setupReferenceOpen": 1794977100000,
+      "currentReferenceOpen": 1794978000000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794980100000,
+      "expiredAt": 1794981000000,
+      "direction": -1,
+      "setupReferenceOpen": 1794978900000,
+      "currentReferenceOpen": 1794979800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794984600000,
+      "expiredAt": 1794985500000,
+      "direction": -1,
+      "setupReferenceOpen": 1794983400000,
+      "currentReferenceOpen": 1794984300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794990300000,
+      "expiredAt": 1794990900000,
+      "direction": 1,
+      "setupReferenceOpen": 1794988800000,
+      "currentReferenceOpen": 1794989700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1794993600000,
+      "expiredAt": 1794994500000,
+      "direction": 1,
+      "setupReferenceOpen": 1794992400000,
+      "currentReferenceOpen": 1794993300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795000800000,
+      "expiredAt": 1795001700000,
+      "direction": 1,
+      "setupReferenceOpen": 1794999600000,
+      "currentReferenceOpen": 1795000500000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795003200000,
+      "expiredAt": 1795003500000,
+      "direction": 1,
+      "setupReferenceOpen": 1795001400000,
+      "currentReferenceOpen": 1795002300000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795015800000,
+      "expiredAt": 1795016100000,
+      "direction": 1,
+      "setupReferenceOpen": 1795014000000,
+      "currentReferenceOpen": 1795014900000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795016400000,
+      "expiredAt": 1795017000000,
+      "direction": -1,
+      "setupReferenceOpen": 1795014900000,
+      "currentReferenceOpen": 1795015800000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795020300000,
+      "expiredAt": 1795020600000,
+      "direction": 1,
+      "setupReferenceOpen": 1795018500000,
+      "currentReferenceOpen": 1795019400000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795021500000,
+      "expiredAt": 1795022400000,
+      "direction": -1,
+      "setupReferenceOpen": 1795020300000,
+      "currentReferenceOpen": 1795021200000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795023000000,
+      "expiredAt": 1795023300000,
+      "direction": -1,
+      "setupReferenceOpen": 1795021200000,
+      "currentReferenceOpen": 1795022100000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795026000000,
+      "expiredAt": 1795026900000,
+      "direction": 1,
+      "setupReferenceOpen": 1795024800000,
+      "currentReferenceOpen": 1795025700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795027500000,
+      "expiredAt": 1795027800000,
+      "direction": -1,
+      "setupReferenceOpen": 1795025700000,
+      "currentReferenceOpen": 1795026600000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795035600000,
+      "expiredAt": 1795035900000,
+      "direction": 1,
+      "setupReferenceOpen": 1795033800000,
+      "currentReferenceOpen": 1795034700000
+    },
+    {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "module": "B_CRT",
+      "setupTimestamp": 1795045200000,
+      "expiredAt": 1795045800000,
+      "direction": -1,
+      "setupReferenceOpen": 1795043700000,
+      "currentReferenceOpen": 1795044600000
+    }
+  ],
+  "expiryEvidence": "EVENTS_PRESENT",
+  "limitations": [
+    "Check exact editor copy-backs, actual inputs, loaded candles, date range and Strategy Properties before attributing differences to the rule.",
+    "An expiry records a candidate removal. Whether the original rule would have traded it depends on later checks and competing candidates.",
+    "Closed position outcomes already include configured commission and fill slippage. Review TradingView Strategy Tester separately for intratrade drawdown."
+  ]
+}

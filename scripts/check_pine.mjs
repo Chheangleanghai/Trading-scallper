@@ -15,6 +15,8 @@ for (const name of [
   "experiments/indicator_clear_levels.pine",
   "experiments/indicator_professional.pine",
   "experiments/strategy_professional.pine",
+  "experiments/indicator_crt_freshness.pine",
+  "experiments/strategy_crt_freshness.pine",
   "experiments/indicator_confirmation_review.pine",
   "experiments/strategy_confirmation_review.pine",
   "experiments/indicator_data_snapshot.pine",
