@@ -1,0 +1,438 @@
+{
+  "schema": "tradingview-execution-cost-comparison/v1",
+  "date": "2026-11-21",
+  "timeZone": "Asia/Phnom_Penh",
+  "chart": {
+    "feed": "FOREXCOM:XAUUSD",
+    "standardCandles": true,
+    "minutes": 5,
+    "enabledModules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "admissionUtc": [
+      "2026-11-06T00:00:00.000Z",
+      "2026-11-20T00:00:00.000Z"
+    ],
+    "endExclusive": true,
+    "closeEntry": true,
+    "session": "London",
+    "h1Alignment": true,
+    "crtMinutes": 15,
+    "minimumQuality": 75,
+    "simulationRiskPercent": 0.5,
+    "maximumNotionalPercent": 90,
+    "maxSessionPlans": 5,
+    "cooldownBars": 5,
+    "stop": "Structure",
+    "stopBufferAtr": 0.15,
+    "maxStopAtr": 3,
+    "target": "Fixed R",
+    "targetMultiples": [
+      1,
+      2,
+      3
+    ],
+    "partialPercentages": [
+      33,
+      33,
+      34
+    ],
+    "breakEven": false,
+    "trailing": false,
+    "strategyProperties": {
+      "initialCapital": 10000,
+      "currency": "USD",
+      "commissionPercentPerSide": 0.01,
+      "slippageTicks": 2,
+      "longLeverage": 1,
+      "shortLeverage": 1,
+      "pyramiding": 0,
+      "scriptExecution": "On bar close",
+      "barDetalizationTicks": 4,
+      "orderExecutionDelay": "One tick",
+      "limitOrderExecution": "Requested price",
+      "separateSpreadModel": false
+    }
+  },
+  "maxHoldMinutes": 15,
+  "nextOpenTimeExitInIndicator": true,
+  "indicatorStrategyParity": {
+    "identicalPlanAuditsExcludingExecutionModel": 35,
+    "tolerance": 0,
+    "mismatches": []
+  },
+  "controlComparison": {
+    "exactSharedPlans": 23,
+    "newPlans": 12,
+    "removedPlans": 18,
+    "netChange": -15.901533099999984,
+    "mismatches": [
+      {
+        "key": "FOREXCOM:XAUUSD|5|1793964000000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794222000000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794226800000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794229500000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794310200000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794392400000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794397200000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794401700000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794481800000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794561300000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794563400000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794565200000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794569100000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794816900000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794821100000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794829500000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794831000000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1795086300000",
+        "field": "missing-plan",
+        "missingFrom": "strategy"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794311400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794398100000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794482100000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794562200000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794566100000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794569400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794582600000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794817800000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794821400000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794830700000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1794832500000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      },
+      {
+        "key": "FOREXCOM:XAUUSD|5|1795086600000",
+        "field": "missing-plan",
+        "missingFrom": "indicator"
+      }
+    ]
+  },
+  "control": {
+    "file": "../ah-holding-comparison-2026-11-21/msnr-strategy-15-native.csv.gz",
+    "rawSha256": "ae8431431c3acdef96c8cf8ca2b6c1bd59b47c7c784b188fbb890532e74f661b",
+    "plans": 41,
+    "maxDrawdown": 84,
+    "overall": {
+      "positions": 41,
+      "wins": 22,
+      "losses": 19,
+      "exitRows": 67,
+      "gross": 62.60200000000002,
+      "commission": 72.60901940000002,
+      "net": -10.007019399999994,
+      "netProfitFactor": 0.9503277120979758,
+      "netExpectancy": -0.24407364390243888
+    },
+    "byExitCause": {
+      "TIME_EXIT_SUPPORTED_BY_ASSERTED_SOURCE_CONTEXT": {
+        "positions": 33,
+        "wins": 21,
+        "losses": 12,
+        "exitRows": 43,
+        "gross": 128.453,
+        "commission": 58.389796700000005,
+        "net": 70.06320330000001,
+        "netProfitFactor": 1.7283865604489617,
+        "netExpectancy": 2.1231273727272733
+      },
+      "STOP": {
+        "positions": 7,
+        "wins": 0,
+        "losses": 7,
+        "exitRows": 21,
+        "gross": -92.781,
+        "commission": 12.4902227,
+        "net": -105.27122270000001,
+        "netProfitFactor": 0,
+        "netExpectancy": -15.038746100000001
+      },
+      "TARGET": {
+        "positions": 1,
+        "wins": 1,
+        "losses": 0,
+        "exitRows": 3,
+        "gross": 26.93,
+        "commission": 1.729,
+        "net": 25.201,
+        "netProfitFactor": null,
+        "netExpectancy": 25.201
+      }
+    }
+  },
+  "indicator": {
+    "source": "pine/experiments/indicator_execution_cost.pine",
+    "sourceSha256": "e416e2e5d12a14fc31cff480b6b114eb14192e76b5f07c2f8860061b2e6e8e62",
+    "patch": "indicator-native-defaults.patch",
+    "pastedPayloadSha256": "ed6fd73b340db5bb74671963dc0a6e0c91451397bc3bf86e0c5c1e747ec80c80",
+    "file": "indicator-msnr-15-native.csv.gz",
+    "rawSha256": "787fa125f33017988575b1e25e4360f18874b5f368c2c7bea0298c635871f2fa",
+    "capture": {
+      "schema": "signal-diagnostics/v2",
+      "runTag": "execution-cost-20261121",
+      "captureId": "execution-cost-msnr-indicator-15:1795271983190",
+      "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+      "model": "INDICATOR_ESTIMATE",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowStart": 1794391200000,
+      "windowEnd": 1794416400000,
+      "firstDataTime": 1792965600000
+    },
+    "settings": {
+      "enabledModules": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "snrConcept": "MSNR body flip",
+      "msnrMaximumLevelAge": 60,
+      "executionCostModel": {
+        "limitPct": 15,
+        "commissionPctPerSide": 0.01,
+        "slippageTicks": 2,
+        "additionalSpreadTicks": 0
+      }
+    },
+    "eventCount": 1113,
+    "coverage": {
+      "observedBars": 84,
+      "firstOpen": 1794391200000,
+      "lastOpen": 1794416100000,
+      "timestampsSha256": "7084a20ce66894a6537050e5a4facc4e43a95ffca86024697b52d61c38e5f724"
+    },
+    "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+    "budgetStatus": "COMPLETE",
+    "firstCostBlockersByModule": {
+      "B": 6,
+      "C": 1,
+      "D": 1
+    },
+    "plans": 35
+  },
+  "strategy": {
+    "source": "pine/experiments/strategy_execution_cost.pine",
+    "sourceSha256": "45461801b5927138f7318a8e90a0cf947e9fae81c0efe0d71beca3400aadfda0",
+    "patch": "strategy-native-defaults.patch",
+    "pastedPayloadSha256": "486879e7ce83bbe873a684ea0a7da28016ea5466e2ab5bf40a9e06861cbfefda",
+    "file": "strategy-msnr-15-native.csv.gz",
+    "rawSha256": "fdc4d840eaef13a632a381f17a9525579a3e9f9273a4d9988d1d3e841e188b09",
+    "capture": {
+      "schema": "signal-diagnostics/v2",
+      "runTag": "execution-cost-20261121",
+      "captureId": "execution-cost-msnr-strategy-15:1795272156519",
+      "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+      "model": "STRATEGY_EMULATOR",
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframe": "5",
+      "windowStart": 1794391200000,
+      "windowEnd": 1794416400000,
+      "firstDataTime": 1792965600000
+    },
+    "settings": {
+      "enabledModules": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "snrConcept": "MSNR body flip",
+      "msnrMaximumLevelAge": 60,
+      "executionCostModel": {
+        "limitPct": 15,
+        "commissionPctPerSide": 0.01,
+        "slippageTicks": 2,
+        "additionalSpreadTicks": 0
+      }
+    },
+    "eventCount": 1117,
+    "coverage": {
+      "observedBars": 84,
+      "firstOpen": 1794391200000,
+      "lastOpen": 1794416100000,
+      "timestampsSha256": "7084a20ce66894a6537050e5a4facc4e43a95ffca86024697b52d61c38e5f724"
+    },
+    "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+    "budgetStatus": "COMPLETE",
+    "firstCostBlockersByModule": {
+      "B": 6,
+      "C": 1,
+      "D": 1
+    },
+    "plans": 35,
+    "maxDrawdown": 83.4,
+    "overall": {
+      "positions": 35,
+      "wins": 17,
+      "losses": 18,
+      "exitRows": 47,
+      "gross": 35.915000000000006,
+      "commission": 61.8235525,
+      "net": -25.908552499999978,
+      "netProfitFactor": 0.8557197058625472,
+      "netExpectancy": -0.7402443571428565
+    },
+    "byExitCause": {
+      "TIME_EXIT_SUPPORTED_BY_ASSERTED_SOURCE_CONTEXT": {
+        "positions": 30,
+        "wins": 16,
+        "losses": 14,
+        "exitRows": 32,
+        "gross": 72.82000000000001,
+        "commission": 53.022343,
+        "net": 19.797657000000015,
+        "netProfitFactor": 1.1821918986139568,
+        "netExpectancy": 0.6599219000000005
+      },
+      "STOP": {
+        "positions": 4,
+        "wins": 0,
+        "losses": 4,
+        "exitRows": 12,
+        "gross": -63.835,
+        "commission": 7.0722095,
+        "net": -70.9072095,
+        "netProfitFactor": 0,
+        "netExpectancy": -17.726802375
+      },
+      "TARGET": {
+        "positions": 1,
+        "wins": 1,
+        "losses": 0,
+        "exitRows": 3,
+        "gross": 26.93,
+        "commission": 1.729,
+        "net": 25.201,
+        "netProfitFactor": null,
+        "netExpectancy": 25.201
+      }
+    }
+  }
+}

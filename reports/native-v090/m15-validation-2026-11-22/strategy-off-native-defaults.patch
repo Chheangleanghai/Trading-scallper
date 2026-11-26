@@ -1,0 +1,29 @@
+--- pine/experiments/strategy_m15_alignment.pine
++++ pine/experiments/strategy_m15_alignment.pine
+@@ -2 +2 @@
+-strategy("XAUUSD SMART SCALPER PRO Backtest · M15 alignment research", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=300, max_lines_count=250, max_boxes_count=60)
++strategy("XAUUSD SMART SCALPER PRO Backtest · M15 earlier week control", overlay=true, pyramiding=0, initial_capital=10000, currency=currency.USD, commission_type=strategy.commission.percent, commission_value=0.01, slippage=2, process_orders_on_close=false, calc_on_every_tick=false, calc_on_order_fills=false, max_labels_count=300, max_lines_count=250, max_boxes_count=60)
+@@ -22 +22 @@
+-snrMode = input.string('K-SNR', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')
++snrMode = input.string('MSNR body flip', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')
+@@ -38,3 +38,3 @@
+-useResearchWindow = input.bool(false, 'Restrict new plans to date window', group='Research')
+-researchStart = input.time(timestamp('01 Jan 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
+-researchEnd = input.time(timestamp('01 Jan 2027 00:00 +0000'), 'Window end (exclusive)', group='Research')
++useResearchWindow = input.bool(true, 'Restrict new plans to date window', group='Research')
++researchStart = input.time(timestamp('30 Oct 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
++researchEnd = input.time(timestamp('06 Nov 2026 00:00 +0000'), 'Window end (exclusive)', group='Research')
+@@ -42 +42 @@
+-auditLog = input.bool(false, 'Log qualified plans and lifecycle events (research only)', group='Research')
++auditLog = input.bool(true, 'Log qualified plans and lifecycle events (research only)', group='Research')
+@@ -325,5 +325,5 @@
+-diagMode = input.string('Off', 'Research diagnostics', options=['Off', 'Events'], group='Research diagnostics')
+-diagRunTag = input.string('research-1', 'Run tag', group='Research diagnostics')
+-diagCaptureInput = input.string('capture-2026-11-07-01', 'Unique capture ID (change for every run)', group='Research diagnostics')
+-diagStart = input.time(timestamp('06 Nov 2026 14:00 +0000'), 'Diagnostic window start (bar open, inclusive)', group='Research diagnostics')
+-diagEnd = input.time(timestamp('06 Nov 2026 17:00 +0000'), 'Diagnostic window end (bar open, exclusive)', group='Research diagnostics')
++diagMode = input.string('Events', 'Research diagnostics', options=['Off', 'Events'], group='Research diagnostics')
++diagRunTag = input.string('m15-earlier-week-20261122', 'Run tag', group='Research diagnostics')
++diagCaptureInput = input.string('m15-earlier-msnr-strategy-off', 'Unique capture ID (change for every run)', group='Research diagnostics')
++diagStart = input.time(timestamp('30 Oct 2026 00:00 +0000'), 'Diagnostic window start (bar open, inclusive)', group='Research diagnostics')
++diagEnd = input.time(timestamp('30 Oct 2026 16:00 +0000'), 'Diagnostic window end (bar open, exclusive)', group='Research diagnostics')

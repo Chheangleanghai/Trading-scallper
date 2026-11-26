@@ -22,6 +22,18 @@ const snapshot = (time = 1793785800000) => ({
 });
 const log = rows => rows.map(row => `[synthetic fixture]: DATA_SNAPSHOT_AUDIT ${JSON.stringify(row)}\n`).join('');
 const csv = rows => 'Date,Message\r\n' + rows.map(row => `synthetic fixture,"DATA_SNAPSHOT_AUDIT ${JSON.stringify(row).replaceAll('"', '""')}"\r\n`).join('');
+const execution = (row, realtime, overrides = {}) => {
+  const bootAt = 1793785800000 + (realtime ? 0 : 600000);
+  const updates = realtime ? 12 : 1;
+  return {
+    schema: 'snapshot-execution/v2', parentSourceSha256: row.parentSourceSha256,
+    captureId: (realtime ? 'live:' : 'after:') + bootAt, symbol: row.symbol, timeframe: row.timeframe,
+    time: row.time, timeClose: row.timeClose, windowStart: 1793785800000, windowEnd: 1793789400000,
+    bootAt, observedAt: Math.max(bootAt, row.timeClose), realtime, history: !realtime, confirmed: true,
+    openingUpdateObserved: realtime, updates, firstPlanUpdate: row.plan ? updates : null, ...overrides,
+  };
+};
+const withExecution = (row, metadata) => log([row]) + `SNAPSHOT_EXECUTION_AUDIT ${JSON.stringify(metadata)}\n`;
 const dirs = [];
 function run(beforeText, afterText, beforeExt = '.log', afterExt = '.log', args = []) {
   const dir = mkdtempSync(join(tmpdir(), 'snapshot-intake-'));
@@ -109,4 +121,90 @@ it('supports an output receipt while refusing to overwrite a raw input', () => {
   const blocked = spawnSync('python3', ['scripts/compare-data-snapshots.py', result.before, result.after, '--output', result.before], { encoding: 'utf8' });
   expect(blocked.status).toBe(2);
   expect(readFileSync(result.before, 'utf8')).toBe(log([snapshot()]));
+});
+
+it('verifies a qualified realtime closing update after a distinct historical recalculation', () => {
+  const row = snapshot(), later = snapshot(row.timeClose);
+  const before = withExecution(row, execution(row, true));
+  const after = withExecution({ ...row, lastBarIndex: 301 }, execution(row, false)) +
+    withExecution(later, execution(later, false));
+  const result = run(before + before, after, '.log', '.log', ['--execution', 'live']);
+  expect(result.status, result.stderr).toBe(0);
+  expect(result.parsed.status).toBe('LIVE_QUALIFIED_PLANS_MATCH');
+  expect(result.parsed.executionEvidence.qualifiedPlanCloses).toEqual([row.timeClose]);
+  expect(result.parsed.executionEvidence.identicalDuplicates.before).toEqual({ snapshots: 1, executions: 1 });
+  expect(result.parsed.inputs.after.snapshotCount).toBe(2);
+  expect(result.parsed.counts.commonSnapshots).toBe(1);
+});
+
+it('records historical recurrence separately and requires realtime evidence for the live check', () => {
+  const row = snapshot();
+  const a = withExecution(row, execution(row, false, { captureId: 'historical-first:1793786400000' }));
+  const b = withExecution(row, execution(row, false));
+  const repeated = run(a, b, '.log', '.log', ['--execution', 'historical']);
+  expect(repeated.status, repeated.stderr).toBe(0);
+  expect(repeated.parsed.status).toBe('HISTORICAL_QUALIFIED_PLANS_MATCH');
+  const expectedLive = run(a, b, '.log', '.log', ['--execution', 'live']);
+  expect(expectedLive.status).toBe(1);
+  expect(expectedLive.parsed.status).toBe('LIVE_EVIDENCE_UNVERIFIED');
+  expect(expectedLive.parsed.executionEvidence.qualifiedPlanCloses).toEqual([]);
+});
+
+it('leaves live evidence open for incomplete observation, a pre-close plan, or a changed stop', () => {
+  const row = snapshot();
+  const after = withExecution(row, execution(row, false));
+  const live = overrides => withExecution(row, execution(row, true, overrides));
+  const noOpening = run(live({ openingUpdateObserved: false }), after, '.log', '.log', ['--execution', 'live']);
+  expect(noOpening.status).toBe(1);
+  expect(noOpening.parsed.executionEvidence.qualifiedClosesMissingOpeningUpdate).toEqual([row.timeClose]);
+  const early = run(live({ firstPlanUpdate: 4 }), after, '.log', '.log', ['--execution', 'live']);
+  expect(early.status).toBe(1);
+  expect(early.parsed.executionEvidence.plansObservedBeforeClose).toEqual([row.timeClose]);
+  const changedAfter = withExecution({ ...row, plan: { ...row.plan, sl: 4031.99 } }, execution(row, false));
+  const changed = run(live({}), changedAfter, '.log', '.log', ['--execution', 'live']);
+  expect(changed.status).toBe(1);
+  expect(changed.parsed.differences.plan[0].differences[0].field).toBe('plan.sl');
+});
+
+it('rejects mixed execution identities, reused captures, and a candle missing its observed phase', () => {
+  const row = snapshot(), before = withExecution(row, execution(row, true));
+  const reuse = run(before, before, '.log', '.log', ['--execution', 'live']);
+  expect(reuse.status).toBe(2);
+  expect(reuse.stderr).toMatch(/distinct effective run IDs/);
+  const missing = run(before, log([row]), '.log', '.log', ['--execution', 'live']);
+  expect(missing.status).toBe(2);
+  expect(missing.stderr).toMatch(/missing snapshot or execution/);
+  const mismatch = withExecution(row, execution(row, false, { symbol: 'OTHER:XAUUSD' }));
+  const changed = run(before, mismatch, '.log', '.log', ['--execution', 'live']);
+  expect(changed.status).toBe(2);
+  expect(changed.stderr).toMatch(/snapshot\/execution identity mismatch/);
+});
+
+it('requires matching time-exit settings and compares queued exits in live and reload evidence', () => {
+  const row = {
+    ...snapshot(), schema: 'data-snapshot/v2', timeExitQueued: false,
+    timeExitConfig: {
+      mode: 'NEXT_BAR_OPEN', entryMode: 'Close', maximumHoldingMinutes: 15,
+      moduleDConcept: 'MSNR body flip', msnrMaximumLevelAge: 60,
+    },
+  };
+  const queued = { ...row, time: row.timeClose, timeClose: row.timeClose + 300000, barIndex: 101, plan: null, timeExitQueued: true };
+  const capture = (rows, realtime) => rows.map(r => withExecution(r, execution(r, realtime))).join('');
+  const compare = after => run(capture([row, queued], true), capture(after, false), '.log', '.log', ['--execution', 'live']);
+  const equal = compare([row, queued]);
+  expect(equal.status, equal.stderr).toBe(0);
+  expect(equal.parsed.context.timeExitConfig).toEqual(row.timeExitConfig);
+
+  const missingQueue = compare([row, { ...queued, timeExitQueued: false }]);
+  expect(missingQueue.status, missingQueue.stderr).toBe(1);
+  expect(missingQueue.parsed.differences.executionState[0].differences).toEqual([
+    { field: 'timeExitQueued', before: true, after: false },
+  ]);
+
+  const otherHold = compare([row, queued].map(r => ({ ...r, timeExitConfig: { ...r.timeExitConfig, maximumHoldingMinutes: 30 } })));
+  expect(otherHold.status).toBe(2);
+  expect(otherHold.stderr).toMatch(/Conflicting snapshot context between/);
+  const impossibleQueue = compare([row, { ...queued, active: false }]);
+  expect(impossibleQueue.status).toBe(2);
+  expect(impossibleQueue.stderr).toMatch(/queued time exit requires an active/);
 });

@@ -1,8 +1,9 @@
-"""Add observer-only diagnostics to frozen clarity parents, with exact reconstruction."""
+"""Generate diagnostics and opt-in research from frozen clarity parents."""
 from hashlib import sha256
 from pathlib import Path
 import re
 import sys
+from textwrap import indent
 
 ROOT = Path(__file__).resolve().parents[1]
 PINE = ROOT / 'pine/experiments'
@@ -39,8 +40,44 @@ def generate(kind):
         change('\n' + anchor, '\n' + (block + anchor if before else anchor + block), count)
 
     change('A-H Clear decisions"', 'A-H Research diagnostics"')
+    change("maxZoneTests = input.int(", "snrMode = input.string('K-SNR', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')\n"
+           "msnrMaxLevelBars = input.int(60, 'MSNR maximum unbroken level age (bars)', minval=2, maxval=500, group='Modules')\n"
+           "maxZoneTests = input.int(")
+    change('updateCandidates() =>\n', (PINE / 'msnr_body_flip.pine.inc').read_text() + '\nupdateCandidates() =>\n')
+    legacy_d = source[source.index('        // D: repeated confirmed horizontal pivots;'):source.index('        // E: opposite-candle zone')].rstrip('\n')
+    change(legacy_d, '''        // MSNR_BRANCH_BEGIN
+        if snrMode == 'MSNR body flip'
+            if enableD
+                candD.updateMsnr(msnrLevels, bar_index, time_close, close[1], open, high, low, close, atr * levelTolerance, bodyDisplacement)
+        else
+'''+ indent(legacy_d, '    ') + '\n        // MSNR_BRANCH_END')
+    change('    // Repeated horizontal levels use only pivots confirmed now;',
+           "    // Update body levels after evaluating this candle so they cannot trigger on their birth bar.\n"
+           "    if enableD and snrMode == 'MSNR body flip'\n"
+           "        msnrLevels.observeMsnr(bar_index, msnrMaxLevelBars, open[1], close[1], open, close, atr * levelTolerance)\n"
+           "    // Repeated horizontal levels use only pivots confirmed now;")
+    for old, new in [('D · K-SNR', 'D · MSNR body flip'), ('D K-SNR', 'D MSNR body flip'),
+                     ('Confirmed K-SNR level; retest/rejection trigger', 'MSNR body level flipped; first retest confirmed')]:
+        change(f"? '{old}' :", f"? (snrMode == 'MSNR body flip' ? '{new}' : '{old}') :")
+    change("'ATR', 'Order Block'], group='Risk')\n",
+           "'ATR', 'Order Block', 'Structure + ATR floor'], group='Risk')\n"
+           "stopFloorAtr = input.float(1.0, 'Minimum stop ATR (Structure + ATR floor)', minval=0.1, step=0.1, group='Risk')\n")
+    change('rrFeasible(int direction,', '''// Only the opt-in mode rounds the required risk outward to a whole tick.
+structureStopWithAtrFloor(int direction, float planned, float invalidation, float atrValue, float atrBuffer, float minimumAtr, float tick) =>
+    float structureDistance = direction * (planned - invalidation)
+    float stopPrice = na
+    if tick > 0 and atrValue > 0 and invalidation > 0 and structureDistance > 0
+        float requiredDistance = math.max(structureDistance + atrValue * atrBuffer, atrValue * minimumAtr)
+        int distanceTicks = math.ceil(requiredDistance / tick - 0.000000001)
+        stopPrice := (math.round(planned / tick) - direction * distanceTicks) * tick
+    stopPrice
+
+rrFeasible(int direction,''')
+    change('float proposedStop = roundPrice(baseStop - direction * atr * buffer)',
+           "float proposedStop = stopMode == 'Structure + ATR floor' ? structureStopWithAtrFloor(direction, planned, baseStop, atr, buffer, stopFloorAtr, syminfo.mintick) : roundPrice(baseStop - direction * atr * buffer)")
     core = f"const string DIAGNOSTIC_PARENT_SHA = '{PARENTS[kind]}'\n" + (PINE / 'signal_diagnostics_core.pine.inc').read_text()
     change('type Candidate\n', '// SIGNAL_DIAGNOSTIC_CORE_BEGIN\n' + core + '// SIGNAL_DIAGNOSTIC_CORE_END\ntype Candidate\n')
+    change("+ diagBool(enableH) + ']')", "+ diagBool(enableH) + ']' + (snrMode == 'MSNR body flip' ? ',\"snrConcept\":' + diagQ(snrMode) + ',\"msnrMaximumLevelAge\":' + str.tostring(msnrMaxLevelBars) : ''))")
     hook("    c.rejectionReason := 'Waiting for entry confirmation'\n", 'diagDetected(c.id, direction, currentTime, currentBar, trigger, invalidation)')
     hook("            c.status := invalid ? 'INVALIDATED' : 'EXPIRED'\n", "if c.id != 'A_SWEEP_MSS_FVG'\n    diagEmit(invalid ? 'INVALIDATED' : 'EXPIRED', c.id, diagCandidateId(c.id, c.direction, c.setupTime), ',\"reason\":' + diagQ(invalid ? 'Invalidation breached' : not c.enabled ? 'Disabled' : 'Setup age exceeded'))")
     hook("                    c.status := 'EXPIRED'\n", "diagEmit('EXPIRED', c.id, diagCandidateId(c.id, c.direction, c.setupTime), ',\"reason\":\"Zone test limit exceeded\"')")
@@ -83,7 +120,9 @@ def generate(kind):
     for diagnosticIndex = 0 to array.size(candidates) - 1
         if array.get(candidates, diagnosticIndex).id == c.id
             array.set(diagnosticLastBlock, diagnosticIndex, blocked == '' ? 'All applicable checks passed' : blocked)
-    diagEmit('CHECKS', c.id, diagnosticCid, ',"checksEvaluated":true,"decisionConsistent":' + diagBool(diagnosticDecisionConsistent) + ',"firstBlocker":' + diagnosticFirst + ',"firstBlockerMessage":' + diagQ(blocked) + ',"failedChecks":[' + array.join(diagnosticFailed, ',') + '],"quality":' + str.tostring(score) + ',"plannedEntry":' + diagNum(planned) + ',"sl":' + diagNum(proposedStop) + ',"tp1":' + diagNum(t1) + ',"tp2":' + diagNum(t2) + ',"tp3":' + diagNum(t3))
+    string diagnosticStop = stopMode == 'Structure + ATR floor' ? ',"stopMode":' + diagQ(stopMode) + ',"atr":' + diagNum(atr) + ',"stopFloorAtr":' + diagNum(stopFloorAtr) + ',"stopDistanceAtr":' + diagNum(atr > 0 ? risk / atr : na) + ',"structuralInvalidation":' + diagNum(baseStop) : ''
+    string diagnosticSnr = c.id == 'D_SNR' and snrMode == 'MSNR body flip' ? ',"snrConcept":"MSNR body flip","bodyLevel":' + diagNum(c.trigger) : ''
+    diagEmit('CHECKS', c.id, diagnosticCid, ',"checksEvaluated":true,"decisionConsistent":' + diagBool(diagnosticDecisionConsistent) + ',"firstBlocker":' + diagnosticFirst + ',"firstBlockerMessage":' + diagQ(blocked) + ',"failedChecks":[' + array.join(diagnosticFailed, ',') + '],"quality":' + str.tostring(score) + ',"plannedEntry":' + diagNum(planned) + ',"sl":' + diagNum(proposedStop) + ',"tp1":' + diagNum(t1) + ',"tp2":' + diagNum(t2) + ',"tp3":' + diagNum(t3) + diagnosticStop + diagnosticSnr)
     if safe
         array.push(diagnosticQualified, diagnosticCid)
         array.push(diagnosticQualifiedModules, c.id)'''
@@ -109,6 +148,24 @@ def generate(kind):
         hook("        strategy.entry(selectedStrategy, dir == 1 ? strategy.long : strategy.short, qty=qty, limit=entryMode == 'Limit' ? entry : na, stop=entryMode == 'Breakout' ? entry : na)\n", "diagnosticLedger.plannedCashRisk := accountRisk * qty\ndiagLifecycle('ORDER_SUBMITTED', selectedStrategy, signalTime, signalSetupTime, dir, entry, time_close, bar_index, qty)")
         hook("            string reason = strategy.closedtrades.exit_comment(trade)\n", 'diagReadExit(trade)')
         hook("        if strategy.position_size == 0\n", '    diagClosedPosition()')
+    else:
+        # Keep cancellation metadata separate from the engine's later setup status.
+        hook('bool cancelOrder = false\n', 'bool clearOrderExpired = false')
+        hook('            cancelOrder := true\n', 'clearOrderExpired := expired')
+        change("clarityPlanEnding(bool openPlan, string ending) => openPlan ? '' : '\\nCLOSED · ' + ending", "clarityPlanEnding(bool openPlan, bool cancelled, string ending) => openPlan ? '' : '\\n' + (cancelled ? '' : 'CLOSED · ') + ending")
+        change('    string terminal\n', '    string terminal\n    bool wasCancelled = false\n')
+        change('clarityPlanEnding(view.isOpen, view.terminal)', 'clarityPlanEnding(view.isOpen, view.wasCancelled, view.terminal)')
+        change("            bool cancelledPlan = not newSignal and (status == 'EXPIRED' or str.startswith(status, 'INVALIDATED'))\n", '            latestView.wasCancelled := cancelOrder\n')
+        change(" : cancelledPlan ? statusName(status) : 'Ended; reason unavailable'", " : latestView.wasCancelled ? (clearOrderExpired ? 'Pending order expired' : 'Pending order cancelled') + ' · no fill' : 'Ended; reason unavailable'")
+        change('        string planState = livePlan', '''        ClearSignalPlan lastPlanView = hasPlan ? array.last(clearPlans) : na
+        bool cancelledPlan = not livePlan and not na(lastPlanView) and lastPlanView.wasCancelled
+        string previousState = closedPlan ? ' closed' : cancelledPlan ? ' unfilled' : ' ended'
+        string planState = livePlan''')
+        change("clearPlanSide + ' closed' : '')", "clearPlanSide + previousState : '')")
+        change(" : hasPlan and not livePlan ? 'Ended; reason unavailable' : 'No closed current plan'", " : cancelledPlan ? lastPlanView.terminal : hasPlan and not livePlan ? 'Ended; reason unavailable' : 'No closed current plan'")
+        change(" : 'Indicator estimate · no broker fill'\n", " : cancelledPlan ? 'No estimated fill' : 'Indicator estimate · no broker fill'\n")
+        change("'Entry planned', 'Initial SL', 'TP1'", "'Entry planned', 'Initial SL / distance', 'TP1'")
+        change("hasPlan and showSLLine ? priceText(stop) : '—'", "hasPlan and showSLLine ? priceText(stop) + ' / ' + priceText(math.abs(entry - stop)) : '—'")
     change('// Flags consumed by both the visual indicator and strategy adapter.\n', '// SIGNAL_DIAGNOSTIC_FUNCTIONS_BEGIN\n' + funcs + '// SIGNAL_DIAGNOSTIC_FUNCTIONS_END\n// Flags consumed by both the visual indicator and strategy adapter.\n')
     tail = '''if barstate.isconfirmed
     if newSignal
@@ -123,7 +180,7 @@ def generate(kind):
     for old, new, count in reversed(edits):
         assert restored.count(new) == count, new[:120]
         restored = restored.replace(new, old, count)
-    assert restored.encode() == raw, 'Instrumentation escaped observer-only additions'
+    assert restored.encode() == raw, 'Generated changes did not restore the frozen parent'
     return compact_strategy_research_ui(source) if kind == 'strategy' else source
 
 
@@ -178,6 +235,17 @@ def compact_strategy_research_ui(source):
     finish = source.index(audit, start)
     source = source[:start] + source[finish:]
 
+    # The Indicator retains context-sweep annotations and the optional analysis panel.
+    # The research Strategy keeps its price plots, zones and machine-readable diagnostics.
+    source = re.sub(r'^var table conceptPanel = .*\n', '', source, count=1, flags=re.M)
+    start = source.index('    table.clear(conceptPanel,')
+    finish = source.index(audit, start)
+    source = source[:start] + '\n' + source[finish:]
+    start = source.index('    // Use the pivot levels known before this candle, independently of strategy enablement.')
+    finish = source.index('    // Repeated confirmed pivot clusters,', start)
+    source = source[:start] + source[finish:]
+    source = re.sub(r'^var (?:int|bool|string) (?:sweptHighPivot|sweptLowPivot|sweptCRTHigh|sweptCRTLow|recentContextPattern|recentContextTime|lastHighCaption|lastLowCaption) = .*\n', '', source, flags=re.M)
+
     # Strategy diagnostics remain log-only; the paired Indicator keeps the board.
     diag_table = 'var table diagnosticTable = table.new('
     diag_end = '// SIGNAL_DIAGNOSTIC_TAIL_END'
@@ -207,6 +275,10 @@ def compact_strategy_research_ui(source):
         "showTP2Line = input.bool(true, 'TP2 line/price', group='Trade visuals')\n",
         "showTP3Line = input.bool(true, 'TP3 line/price', group='Trade visuals')\n",
         "showRiskReward = input.bool(true, 'Risk/reward boxes', group='Trade visuals')\n",
+        "showConceptPanel = input.bool(false, 'Show compact analysis context', group='Chart style')\n",
+        "showCRTSweeps = input.bool(false, 'Show completed-reference CRT sweeps (context only)', group='Chart style')\n",
+        "showContextSweeps = input.bool(true, 'Show confirmed-pivot liquidity sweeps (context only)', group='Chart style')\n",
+        "contextLabelGap = input.int(8, 'Minimum bars between same-side sweep labels', minval=1, maxval=50, group='Chart style')\n",
     ]
     for statement in visual_inputs:
         assert source.count(statement) == 1, statement

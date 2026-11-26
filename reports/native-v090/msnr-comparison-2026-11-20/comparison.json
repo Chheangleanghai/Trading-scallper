@@ -1,0 +1,1373 @@
+{
+  "schema": "native-msnr-comparison/v1",
+  "date": "2026-11-20",
+  "scope": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframeMinutes": 5,
+    "module": "D_SNR",
+    "inputs": {
+      "admissionStart": 1793923200000,
+      "admissionEnd": 1795132800000,
+      "session": "London",
+      "requireH1Alignment": true,
+      "entryMode": "Close",
+      "stopBufferAtr": 0.15,
+      "maximumStopAtr": 3,
+      "minimumScore": 75,
+      "holdingLimitMinutes": 15,
+      "targetMode": "Fixed R",
+      "targetR": [
+        1,
+        2,
+        3
+      ],
+      "partialExitPercentages": [
+        33,
+        33,
+        34
+      ]
+    },
+    "nativeStrategyProperties": {
+      "accountCurrency": "USD",
+      "initialCapital": 10000,
+      "commissionPercentPerSide": 0.01,
+      "slippageTicks": 2,
+      "marginPercentLong": 100,
+      "marginPercentShort": 100,
+      "pyramiding": 0,
+      "recalculation": "BAR_CLOSE",
+      "orderDelayTicks": 1,
+      "limitExecution": "REQUESTED_LIMIT_PRICE",
+      "ticksPerBar": 4,
+      "separateSpreadModel": false
+    },
+    "purpose": "Matched historical comparison with one module enabled",
+    "marketOhlcChecksum": null
+  },
+  "sources": {
+    "pine/experiments/indicator_signal_diagnostics.pine": "932932c8a59c0017b2c0dfdef1194f893ec0aa59823149a0868d48d69a426da5",
+    "pine/experiments/strategy_signal_diagnostics.pine": "0268050018e688454874306c77fa353fddcf1c5f0455b671b805dcb5a5b7b6d1",
+    "pine/indicator.pine": "c7558b9f8e4ab590167dc60eef9028bc0baded806e1d796ff987b141c66314b4",
+    "pine/strategy.pine": "42b4e1683397741de60ac1573effb4e18bde737b166d6d143d1373191ea3f5c0"
+  },
+  "runs": {
+    "ksnr-strategy": {
+      "file": "ksnr-strategy-native.csv.gz",
+      "csvSha256": "d9fd5f1227bbe1fa88a6579da7df3e338bde8dca35ce37f94ce2cbb84782872e",
+      "snrConcept": "K-SNR",
+      "stopMode": "Structure",
+      "minimumStopAtr": null,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "ksnr-strategy-xau-m5-nov20:1795186361844",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": null,
+        "msnrMaximumLevelAge": null
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3501,
+      "moduleD": {
+        "detectedCandidates": 9,
+        "stageTransitions": {
+          "1": 9
+        },
+        "confirmationCandidates": 3,
+        "confirmationPassBars": 26,
+        "invalidated": 6,
+        "expired": 3,
+        "firstBlockers": {
+          "SESSION": 26
+        },
+        "allFailedChecks": {
+          "SESSION": 26,
+          "ENTRY_DISTANCE": 20,
+          "STOP_DISTANCE": 10,
+          "H1_ALIGNMENT": 6
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": 0,
+        "fills": 0,
+        "filledPositions": 0,
+        "exitRows": 0,
+        "targetExitRows": 0,
+        "partialTargetExitRows": 0,
+        "targetExitRowsWithUnknownInitialQuantity": 0,
+        "closedPositions": 0,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 0
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": 0,
+        "fills": 0,
+        "exitRows": 0,
+        "completedPositions": 0,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1795076700000,
+          "setupTimestamp": 1795076400000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3736.55,
+          "sl": 3743.34,
+          "tp1": 3729.76,
+          "tp2": 3722.97,
+          "tp3": 3716.18,
+          "quality": 100,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        }
+      ],
+      "strategyOutcome": {
+        "counts": {
+          "plans": 1,
+          "completedPositions": 1,
+          "incompletePositions": 0,
+          "plansWithoutExitRows": 0
+        },
+        "overall": {
+          "completePositions": 1,
+          "actualExitRows": 1,
+          "wins": 0,
+          "losses": 1,
+          "breakevens": 0,
+          "winRate": 0,
+          "winRateWilson95IID": {
+            "lower": 0,
+            "upper": 0.7934506856227626
+          },
+          "grossBeforeCommission": 0.8160000000000001,
+          "commission": 1.7934528,
+          "net": -0.9774528,
+          "meanNetPerCompletePosition": -0.9774528,
+          "meanNetRToPlannedInitialCashRisk": -0.05998114874815906,
+          "meanWin": null,
+          "meanLoss": -0.9774528,
+          "positionProfitFactor": 0,
+          "profitFactorStatus": "FINITE",
+          "sparseDescriptiveSample": true,
+          "positionsWithExitComment": {
+            "TRADE_CLOSED": 1
+          }
+        },
+        "testerMaxDrawdownUsd": 2.55,
+        "positions": [
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1795076700000,\"D_SNR\"]",
+            "planTimestamp": 1795076700000,
+            "entryTime": 1795076700000,
+            "exitTime": 1795077600000,
+            "module": "D_SNR",
+            "quality": 100,
+            "direction": -1,
+            "actualExitRows": 1,
+            "plannedInitialCashRisk": 16.296,
+            "net": -0.9774528,
+            "commission": 1.7934528,
+            "grossBeforeCommission": 0.8160000000000001,
+            "netRToPlannedInitialCashRisk": -0.05998114874815906,
+            "exitComments": [
+              "TRADE_CLOSED"
+            ],
+            "actualEntry": 3736.53,
+            "holdMinutes": 15,
+            "exitOrders": [
+              {
+                "id": "Close entry(s) order D_SNR",
+                "comment": "TRADE_CLOSED",
+                "timestamp": 1795077600000,
+                "quantity": 2.4,
+                "net": -0.9774528,
+                "commission": 1.7934528
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "msnr-strategy": {
+      "file": "msnr-strategy-native.csv.gz",
+      "csvSha256": "5502ba33069ffe10791d5add8210fc48dd601b79de581773826cf4a405901585",
+      "snrConcept": "MSNR body flip",
+      "stopMode": "Structure",
+      "minimumStopAtr": null,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "msnr-strategy-xau-m5-nov20:1795186457284",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3739,
+      "moduleD": {
+        "detectedCandidates": 89,
+        "stageTransitions": {
+          "1": 89
+        },
+        "confirmationCandidates": 18,
+        "confirmationPassBars": 18,
+        "invalidated": 58,
+        "expired": 30,
+        "firstBlockers": {
+          "H1_ALIGNMENT": 4,
+          "SESSION": 11,
+          "STOP_DISTANCE": 1
+        },
+        "allFailedChecks": {
+          "H1_ALIGNMENT": 9,
+          "QUALITY": 9,
+          "SESSION": 11,
+          "STOP_DISTANCE": 2,
+          "ENTRY_DISTANCE": 1
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 2,
+        "fills": 2,
+        "filledPositions": 2,
+        "exitRows": 5,
+        "targetExitRows": 1,
+        "partialTargetExitRows": 1,
+        "targetExitRowsWithUnknownInitialQuantity": 0,
+        "closedPositions": 2,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 2,
+        "fills": 2,
+        "exitRows": 5,
+        "completedPositions": 2,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794401700000,
+          "setupTimestamp": 1794400800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 4040.96,
+          "sl": 4044.88,
+          "tp1": 4037.04,
+          "tp2": 4033.12,
+          "tp3": 4029.2,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794473100000,
+          "setupTimestamp": 1794472800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3941.5,
+          "sl": 3953.38,
+          "tp1": 3929.62,
+          "tp2": 3917.74,
+          "tp3": 3905.86,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794558900000,
+          "setupTimestamp": 1794558000000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3892.22,
+          "sl": 3899.83,
+          "tp1": 3884.61,
+          "tp2": 3877,
+          "tp3": 3869.39,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        }
+      ],
+      "strategyOutcome": {
+        "counts": {
+          "plans": 3,
+          "completedPositions": 3,
+          "incompletePositions": 0,
+          "plansWithoutExitRows": 0
+        },
+        "overall": {
+          "completePositions": 3,
+          "actualExitRows": 6,
+          "wins": 1,
+          "losses": 2,
+          "breakevens": 0,
+          "winRate": 0.3333333333333333,
+          "winRateWilson95IID": {
+            "lower": 0.06149194472039621,
+            "upper": 0.7923403991979522
+          },
+          "grossBeforeCommission": 14.46,
+          "commission": 5.3012308,
+          "net": 9.158769199999998,
+          "meanNetPerCompletePosition": 3.0529230666666662,
+          "meanNetRToPlannedInitialCashRisk": -0.1929157323846055,
+          "meanWin": 25.6954915,
+          "meanLoss": -8.26836115,
+          "positionProfitFactor": 1.5538442887197783,
+          "profitFactorStatus": "FINITE",
+          "sparseDescriptiveSample": true,
+          "positionsWithExitComment": {
+            "STOP_LOSS_HIT": 1,
+            "TP1_HIT": 1,
+            "TRADE_CLOSED": 2
+          }
+        },
+        "testerMaxDrawdownUsd": 13.78,
+        "positions": [
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794401700000,\"D_SNR\"]",
+            "planTimestamp": 1794401700000,
+            "entryTime": 1794401700000,
+            "exitTime": 1794402000000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 3,
+            "plannedInitialCashRisk": 8.624,
+            "net": -10.4908848,
+            "commission": 1.7788848,
+            "grossBeforeCommission": -8.712,
+            "netRToPlannedInitialCashRisk": -1.2164755102040816,
+            "exitComments": [
+              "STOP_LOSS_HIT"
+            ],
+            "actualEntry": 4040.94,
+            "holdMinutes": 5,
+            "exitOrders": [
+              {
+                "id": "TP1",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.7,
+                "net": -3.3380088,
+                "commission": 0.5660088
+              },
+              {
+                "id": "TP2",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.7,
+                "net": -3.3380088,
+                "commission": 0.5660088
+              },
+              {
+                "id": "TP3",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.8,
+                "net": -3.8148672,
+                "commission": 0.6468672
+              }
+            ]
+          },
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794473100000,\"D_SNR\"]",
+            "planTimestamp": 1794473100000,
+            "entryTime": 1794473100000,
+            "exitTime": 1794474000000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 2,
+            "plannedInitialCashRisk": 26.136000000000003,
+            "net": 25.6954915,
+            "commission": 1.7315085000000001,
+            "grossBeforeCommission": 27.427,
+            "netRToPlannedInitialCashRisk": 0.983145527242118,
+            "exitComments": [
+              "TP1_HIT",
+              "TRADE_CLOSED"
+            ],
+            "actualEntry": 3941.48,
+            "holdMinutes": 15,
+            "exitOrders": [
+              {
+                "id": "TP1",
+                "comment": "TP1_HIT",
+                "timestamp": 1794473700000,
+                "quantity": 0.7,
+                "net": 7.751023,
+                "commission": 0.550977
+              },
+              {
+                "id": "Close entry(s) order D_SNR",
+                "comment": "TRADE_CLOSED",
+                "timestamp": 1794474000000,
+                "quantity": 1.5,
+                "net": 17.9444685,
+                "commission": 1.1805315
+              }
+            ]
+          },
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794558900000,\"D_SNR\"]",
+            "planTimestamp": 1794558900000,
+            "entryTime": 1794558900000,
+            "exitTime": 1794559800000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 1,
+            "plannedInitialCashRisk": 17.503,
+            "net": -6.0458375,
+            "commission": 1.7908375,
+            "grossBeforeCommission": -4.255,
+            "netRToPlannedInitialCashRisk": -0.34541721419185284,
+            "exitComments": [
+              "TRADE_CLOSED"
+            ],
+            "actualEntry": 3892.2,
+            "holdMinutes": 15,
+            "exitOrders": [
+              {
+                "id": "Close entry(s) order D_SNR",
+                "comment": "TRADE_CLOSED",
+                "timestamp": 1794559800000,
+                "quantity": 2.3,
+                "net": -6.0458375,
+                "commission": 1.7908375
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "msnr-atr-strategy": {
+      "file": "msnr-atr-strategy-native.csv.gz",
+      "csvSha256": "2fbbca4949e99019557934fd1ce43fdbb91ef820085a0c3004e08b632eb4c76a",
+      "snrConcept": "MSNR body flip",
+      "stopMode": "Structure + ATR floor",
+      "minimumStopAtr": 1,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "msnr-atr-strategy-xau-m5-nov20:1795186544783",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3739,
+      "moduleD": {
+        "detectedCandidates": 89,
+        "stageTransitions": {
+          "1": 89
+        },
+        "confirmationCandidates": 18,
+        "confirmationPassBars": 18,
+        "invalidated": 58,
+        "expired": 30,
+        "firstBlockers": {
+          "H1_ALIGNMENT": 4,
+          "SESSION": 11,
+          "STOP_DISTANCE": 1
+        },
+        "allFailedChecks": {
+          "H1_ALIGNMENT": 9,
+          "QUALITY": 9,
+          "SESSION": 11,
+          "STOP_DISTANCE": 2,
+          "ENTRY_DISTANCE": 1
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 2,
+        "fills": 2,
+        "filledPositions": 2,
+        "exitRows": 5,
+        "targetExitRows": 1,
+        "partialTargetExitRows": 1,
+        "targetExitRowsWithUnknownInitialQuantity": 0,
+        "closedPositions": 2,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 4
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 2,
+        "fills": 2,
+        "exitRows": 5,
+        "completedPositions": 2,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794401700000,
+          "setupTimestamp": 1794400800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 4040.96,
+          "sl": 4044.89,
+          "tp1": 4037.03,
+          "tp2": 4033.1,
+          "tp3": 4029.17,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794473100000,
+          "setupTimestamp": 1794472800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3941.5,
+          "sl": 3953.39,
+          "tp1": 3929.61,
+          "tp2": 3917.72,
+          "tp3": 3905.83,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794558900000,
+          "setupTimestamp": 1794558000000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3892.22,
+          "sl": 3899.84,
+          "tp1": 3884.6,
+          "tp2": 3876.98,
+          "tp3": 3869.36,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "STRATEGY_EMULATOR"
+        }
+      ],
+      "strategyOutcome": {
+        "counts": {
+          "plans": 3,
+          "completedPositions": 3,
+          "incompletePositions": 0,
+          "plansWithoutExitRows": 0
+        },
+        "overall": {
+          "completePositions": 3,
+          "actualExitRows": 6,
+          "wins": 1,
+          "losses": 2,
+          "breakevens": 0,
+          "winRate": 0.3333333333333333,
+          "winRateWilson95IID": {
+            "lower": 0.06149194472039621,
+            "upper": 0.7923403991979522
+          },
+          "grossBeforeCommission": 14.445,
+          "commission": 5.301232300000001,
+          "net": 9.143767699999998,
+          "meanNetPerCompletePosition": 3.047922566666666,
+          "meanNetRToPlannedInitialCashRisk": -0.19276751871569411,
+          "meanWin": 25.7024922,
+          "meanLoss": -8.27936225,
+          "positionProfitFactor": 1.5522024175231612,
+          "profitFactorStatus": "FINITE",
+          "sparseDescriptiveSample": true,
+          "positionsWithExitComment": {
+            "STOP_LOSS_HIT": 1,
+            "TP1_HIT": 1,
+            "TRADE_CLOSED": 2
+          }
+        },
+        "testerMaxDrawdownUsd": 13.8,
+        "positions": [
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794401700000,\"D_SNR\"]",
+            "planTimestamp": 1794401700000,
+            "entryTime": 1794401700000,
+            "exitTime": 1794402000000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 3,
+            "plannedInitialCashRisk": 8.646,
+            "net": -10.512887,
+            "commission": 1.778887,
+            "grossBeforeCommission": -8.733999999999998,
+            "netRToPlannedInitialCashRisk": -1.2159249363867684,
+            "exitComments": [
+              "STOP_LOSS_HIT"
+            ],
+            "actualEntry": 4040.94,
+            "holdMinutes": 5,
+            "exitOrders": [
+              {
+                "id": "TP1",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.7,
+                "net": -3.3450095,
+                "commission": 0.5660095
+              },
+              {
+                "id": "TP2",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.7,
+                "net": -3.3450095,
+                "commission": 0.5660095
+              },
+              {
+                "id": "TP3",
+                "comment": "STOP_LOSS_HIT",
+                "timestamp": 1794402000000,
+                "quantity": 0.8,
+                "net": -3.822868,
+                "commission": 0.646868
+              }
+            ]
+          },
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794473100000,\"D_SNR\"]",
+            "planTimestamp": 1794473100000,
+            "entryTime": 1794473100000,
+            "exitTime": 1794474000000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 2,
+            "plannedInitialCashRisk": 26.158000000000005,
+            "net": 25.7024922,
+            "commission": 1.7315078000000002,
+            "grossBeforeCommission": 27.433999999999997,
+            "netRToPlannedInitialCashRisk": 0.9825862910008408,
+            "exitComments": [
+              "TP1_HIT",
+              "TRADE_CLOSED"
+            ],
+            "actualEntry": 3941.48,
+            "holdMinutes": 15,
+            "exitOrders": [
+              {
+                "id": "TP1",
+                "comment": "TP1_HIT",
+                "timestamp": 1794473700000,
+                "quantity": 0.7,
+                "net": 7.7580237,
+                "commission": 0.5509763
+              },
+              {
+                "id": "Close entry(s) order D_SNR",
+                "comment": "TRADE_CLOSED",
+                "timestamp": 1794474000000,
+                "quantity": 1.5,
+                "net": 17.9444685,
+                "commission": 1.1805315
+              }
+            ]
+          },
+          {
+            "key": "[\"FOREXCOM:XAUUSD\",\"5\",1794558900000,\"D_SNR\"]",
+            "planTimestamp": 1794558900000,
+            "entryTime": 1794558900000,
+            "exitTime": 1794559800000,
+            "module": "D_SNR",
+            "quality": 80,
+            "direction": -1,
+            "actualExitRows": 1,
+            "plannedInitialCashRisk": 17.526,
+            "net": -6.0458375,
+            "commission": 1.7908375,
+            "grossBeforeCommission": -4.255,
+            "netRToPlannedInitialCashRisk": -0.34496391076115485,
+            "exitComments": [
+              "TRADE_CLOSED"
+            ],
+            "actualEntry": 3892.2,
+            "holdMinutes": 15,
+            "exitOrders": [
+              {
+                "id": "Close entry(s) order D_SNR",
+                "comment": "TRADE_CLOSED",
+                "timestamp": 1794559800000,
+                "quantity": 2.3,
+                "net": -6.0458375,
+                "commission": 1.7908375
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "ksnr-indicator": {
+      "file": "ksnr-indicator-native.csv.gz",
+      "csvSha256": "43bf18f188922af145d803e486cffa20713619a094c9a96c1efb7966f719fb19",
+      "snrConcept": "K-SNR",
+      "stopMode": "Structure",
+      "minimumStopAtr": null,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "ksnr-indicator-xau-m5-nov20:1795187109513",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": null,
+        "msnrMaximumLevelAge": null
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3501,
+      "moduleD": {
+        "detectedCandidates": 9,
+        "stageTransitions": {
+          "1": 9
+        },
+        "confirmationCandidates": 3,
+        "confirmationPassBars": 26,
+        "invalidated": 6,
+        "expired": 3,
+        "firstBlockers": {
+          "SESSION": 26
+        },
+        "allFailedChecks": {
+          "SESSION": 26,
+          "ENTRY_DISTANCE": 20,
+          "STOP_DISTANCE": 10,
+          "H1_ALIGNMENT": 6
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 0,
+        "estimatedClosures": 0,
+        "slotBlockedBarObservations": 0
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 0,
+        "qualifiedPlanRecords": 0,
+        "submittedOrders": 0,
+        "fills": 0,
+        "exitRows": 0,
+        "completedPositions": 0,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1795076700000,
+          "setupTimestamp": 1795076400000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3736.55,
+          "sl": 3743.34,
+          "tp1": 3729.76,
+          "tp2": 3722.97,
+          "tp3": 3716.18,
+          "quality": 100,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        }
+      ],
+      "strategyOutcome": null
+    },
+    "msnr-indicator": {
+      "file": "msnr-indicator-native.csv.gz",
+      "csvSha256": "80ef805ec8d52a7bb72e670b15adca11aa81c9a6f26ea8f475bf5848f2eb794d",
+      "snrConcept": "MSNR body flip",
+      "stopMode": "Structure",
+      "minimumStopAtr": null,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "msnr-indicator-xau-m5-nov20:1795187011820",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3734,
+      "moduleD": {
+        "detectedCandidates": 89,
+        "stageTransitions": {
+          "1": 89
+        },
+        "confirmationCandidates": 18,
+        "confirmationPassBars": 18,
+        "invalidated": 58,
+        "expired": 30,
+        "firstBlockers": {
+          "H1_ALIGNMENT": 4,
+          "SESSION": 11,
+          "STOP_DISTANCE": 1
+        },
+        "allFailedChecks": {
+          "H1_ALIGNMENT": 9,
+          "QUALITY": 9,
+          "SESSION": 11,
+          "STOP_DISTANCE": 2,
+          "ENTRY_DISTANCE": 1
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 2,
+        "estimatedClosures": 2,
+        "slotBlockedBarObservations": 3
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 0,
+        "fills": 0,
+        "exitRows": 0,
+        "completedPositions": 0,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794401700000,
+          "setupTimestamp": 1794400800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 4040.96,
+          "sl": 4044.88,
+          "tp1": 4037.04,
+          "tp2": 4033.12,
+          "tp3": 4029.2,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794473100000,
+          "setupTimestamp": 1794472800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3941.5,
+          "sl": 3953.38,
+          "tp1": 3929.62,
+          "tp2": 3917.74,
+          "tp3": 3905.86,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794558900000,
+          "setupTimestamp": 1794558000000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3892.22,
+          "sl": 3899.83,
+          "tp1": 3884.61,
+          "tp2": 3877,
+          "tp3": 3869.39,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        }
+      ],
+      "strategyOutcome": null
+    },
+    "msnr-indicator-repeat": {
+      "file": "msnr-indicator-repeat-native.csv.gz",
+      "csvSha256": "d8fefc74f8f59d06eee6b4c08623af48027d573dc1d88d20820813654454dd78",
+      "snrConcept": "MSNR body flip",
+      "stopMode": "Structure",
+      "minimumStopAtr": null,
+      "context": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "snr-native-nov06-20",
+        "captureId": "msnr-indicator-repeat-xau-m5-nov20:1795187189011",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793973600000,
+        "windowEnd": 1794502800000,
+        "firstDataTime": 1792965600000
+      },
+      "captureSetup": {
+        "enabledModules": [
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60
+      },
+      "captureStatus": "COMPLETE_WITHIN_CAPTURE_WINDOW",
+      "budgetStatus": "COMPLETE",
+      "barCoverage": {
+        "observedBars": 1140,
+        "firstOpen": 1793973600000,
+        "lastOpen": 1794502500000,
+        "timestampsSha256": "54cc7479f6660a3949a73064a2677d3f5e36da0a0af8d2802965a09625a1f1be"
+      },
+      "events": 3734,
+      "moduleD": {
+        "detectedCandidates": 89,
+        "stageTransitions": {
+          "1": 89
+        },
+        "confirmationCandidates": 18,
+        "confirmationPassBars": 18,
+        "invalidated": 58,
+        "expired": 30,
+        "firstBlockers": {
+          "H1_ALIGNMENT": 4,
+          "SESSION": 11,
+          "STOP_DISTANCE": 1
+        },
+        "allFailedChecks": {
+          "H1_ALIGNMENT": 9,
+          "QUALITY": 9,
+          "SESSION": 11,
+          "STOP_DISTANCE": 2,
+          "ENTRY_DISTANCE": 1
+        },
+        "conflictCandidates": 0,
+        "qualifiedNotSelected": 0,
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": null,
+        "fills": null,
+        "filledPositions": null,
+        "exitRows": null,
+        "targetExitRows": null,
+        "partialTargetExitRows": null,
+        "targetExitRowsWithUnknownInitialQuantity": null,
+        "closedPositions": null,
+        "estimatedFills": 2,
+        "estimatedClosures": 2,
+        "slotBlockedBarObservations": 3
+      },
+      "lifecycleCoverage": {
+        "selectedPlans": 2,
+        "qualifiedPlanRecords": 2,
+        "submittedOrders": 0,
+        "fills": 0,
+        "exitRows": 0,
+        "completedPositions": 0,
+        "observedGaps": []
+      },
+      "plans": [
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794401700000,
+          "setupTimestamp": 1794400800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 4040.96,
+          "sl": 4044.88,
+          "tp1": 4037.04,
+          "tp2": 4033.12,
+          "tp3": 4029.2,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794473100000,
+          "setupTimestamp": 1794472800000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3941.5,
+          "sl": 3953.38,
+          "tp1": 3929.62,
+          "tp2": 3917.74,
+          "tp3": 3905.86,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        },
+        {
+          "scriptVersion": "0.8.0",
+          "symbol": "FOREXCOM:XAUUSD",
+          "timeframe": "5",
+          "strategy": "D_SNR",
+          "timestamp": 1794558900000,
+          "setupTimestamp": 1794558000000,
+          "direction": -1,
+          "entryMode": "Close",
+          "entry": 3892.22,
+          "sl": 3899.83,
+          "tp1": 3884.61,
+          "tp2": 3877,
+          "tp3": 3869.39,
+          "quality": 80,
+          "executionAccepted": true,
+          "executionModel": "INDICATOR_ESTIMATE"
+        }
+      ],
+      "strategyOutcome": null
+    }
+  },
+  "comparisons": {
+    "indicatorStrategy": {
+      "ksnr": {
+        "plans": {
+          "parity": true,
+          "indicatorPlans": 1,
+          "strategyPlans": 1,
+          "tolerance": 0,
+          "mismatches": [],
+          "executionDifferences": [
+            {
+              "key": "FOREXCOM:XAUUSD|5|1795076700000",
+              "field": "executionModel",
+              "indicator": "INDICATOR_ESTIMATE",
+              "strategy": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "diagnosticIdentityMatches": {
+          "SETUP_DETECTED": 9,
+          "CONFIRMATION_PASSED": 26,
+          "CHECKS": 26,
+          "QUALIFIED_PLAN": 0
+        }
+      },
+      "msnr": {
+        "plans": {
+          "parity": true,
+          "indicatorPlans": 3,
+          "strategyPlans": 3,
+          "tolerance": 0,
+          "mismatches": [],
+          "executionDifferences": [
+            {
+              "key": "FOREXCOM:XAUUSD|5|1794401700000",
+              "field": "executionModel",
+              "indicator": "INDICATOR_ESTIMATE",
+              "strategy": "STRATEGY_EMULATOR"
+            },
+            {
+              "key": "FOREXCOM:XAUUSD|5|1794473100000",
+              "field": "executionModel",
+              "indicator": "INDICATOR_ESTIMATE",
+              "strategy": "STRATEGY_EMULATOR"
+            },
+            {
+              "key": "FOREXCOM:XAUUSD|5|1794558900000",
+              "field": "executionModel",
+              "indicator": "INDICATOR_ESTIMATE",
+              "strategy": "STRATEGY_EMULATOR"
+            }
+          ]
+        },
+        "diagnosticIdentityMatches": {
+          "SETUP_DETECTED": 89,
+          "CONFIRMATION_PASSED": 18,
+          "CHECKS": 18,
+          "QUALIFIED_PLAN": 2
+        }
+      }
+    },
+    "msnrHistoricalRepeat": {
+      "equalEvents": 3734,
+      "normalizedCaptureFields": [
+        "runTag",
+        "captureId",
+        "eventId"
+      ],
+      "plans": {
+        "parity": true,
+        "indicatorPlans": 3,
+        "strategyPlans": 3,
+        "tolerance": 0,
+        "mismatches": [],
+        "executionDifferences": []
+      }
+    },
+    "stopVariant": [
+      {
+        "timestamp": 1794401700000,
+        "plannedEntry": 4040.96,
+        "standardStop": 4044.88,
+        "atrFloorStop": 4044.89,
+        "atr": 2.703434082535929,
+        "originalDistanceAtr": 1.4500076126594352,
+        "withFloorDistanceAtr": 1.453706611671234,
+        "originalTargets": [
+          4037.04,
+          4033.12,
+          4029.2
+        ],
+        "atrFloorTargets": [
+          4037.03,
+          4033.1,
+          4029.17
+        ]
+      },
+      {
+        "timestamp": 1794473100000,
+        "plannedEntry": 3941.5,
+        "standardStop": 3953.38,
+        "atrFloorStop": 3953.39,
+        "atr": 5.271971151514711,
+        "originalDistanceAtr": 2.253426594830061,
+        "withFloorDistanceAtr": 2.2553234185630378,
+        "originalTargets": [
+          3929.62,
+          3917.74,
+          3905.86
+        ],
+        "atrFloorTargets": [
+          3929.61,
+          3917.72,
+          3905.83
+        ]
+      },
+      {
+        "timestamp": 1794558900000,
+        "plannedEntry": 3892.22,
+        "standardStop": 3899.83,
+        "atrFloorStop": 3899.84,
+        "atr": null,
+        "originalDistanceAtr": null,
+        "withFloorDistanceAtr": null,
+        "originalTargets": [
+          3884.61,
+          3877,
+          3869.39
+        ],
+        "atrFloorTargets": [
+          3884.6,
+          3876.98,
+          3869.36
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "compiledAndAddedInTradingView": [
+      "indicator_signal_diagnostics.pine",
+      "strategy_signal_diagnostics.pine"
+    ],
+    "sourceCopyBackMatchedBeforeCompile": true,
+    "localTestsPassed": 250,
+    "localTestFilesPassed": 29,
+    "pineFilesParsed": 33,
+    "restore": {
+      "savedChartStudyCount": 5,
+      "replayOff": true,
+      "autosaveOn": true,
+      "attachedOriginalIndicatorEditorAndLogsOpen": true
+    },
+    "historicalM5Replay": "BLOCKED_BY_TRADINGVIEW_BASIC_PLAN",
+    "liveNonRepainting": "UNVERIFIED",
+    "portfolioWideParity": "UNVERIFIED_IN_THIS_EXPERIMENT",
+    "untouchedOutOfSample": "UNVERIFIED"
+  }
+}

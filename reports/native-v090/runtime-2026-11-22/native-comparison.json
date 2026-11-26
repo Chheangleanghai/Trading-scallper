@@ -1,0 +1,242 @@
+{
+  "schema": "tradingview-runtime-experiment/v1",
+  "date": "2026-11-22",
+  "timeZone": "Asia/Phnom_Penh",
+  "settings": {
+    "feed": "FOREXCOM:XAUUSD",
+    "standardCandles": true,
+    "minutes": 5,
+    "enabledModules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "endExclusive": true,
+    "closeEntry": true,
+    "session": "London",
+    "h1Alignment": true,
+    "crtMinutes": 15,
+    "minimumQuality": 75,
+    "simulationRiskPercent": 0.5,
+    "maximumNotionalPercent": 90,
+    "maxSessionPlans": 5,
+    "cooldownBars": 5,
+    "stop": "Structure",
+    "stopBufferAtr": 0.15,
+    "maxStopAtr": 3,
+    "target": "Fixed R",
+    "targetMultiples": [
+      1,
+      2,
+      3
+    ],
+    "partialPercentages": [
+      33,
+      33,
+      34
+    ],
+    "breakEven": false,
+    "trailing": false,
+    "strategyProperties": {
+      "initialCapital": 10000,
+      "currency": "USD",
+      "commissionPercentPerSide": 0.01,
+      "slippageTicks": 2,
+      "longLeverage": 1,
+      "shortLeverage": 1,
+      "pyramiding": 0,
+      "scriptExecution": "On bar close",
+      "barDetalizationTicks": 4,
+      "orderExecutionDelay": "One tick",
+      "limitOrderExecution": "Requested price",
+      "separateSpreadModel": false
+    },
+    "concept": "MSNR body flip",
+    "msnrMaximumUnbrokenLevelAgeBars": 60,
+    "maximumHoldingMinutes": 15,
+    "executionCostLimitPct": 0
+  },
+  "admissionUtc": [
+    "2026-10-30T00:00:00Z",
+    "2026-11-06T00:00:00Z"
+  ],
+  "diagnosticUtc": [
+    "2026-10-30T00:00:00Z",
+    "2026-10-30T16:00:00Z"
+  ],
+  "runs": {
+    "strategy": {
+      "file": "strategy-native.csv.gz",
+      "rawSha256": "9063c5fa22778fdbf41909883f80bf1565235928454ca686235cd10fc0dfbfd2",
+      "source": "pine/experiments/strategy_runtime.pine",
+      "sourceSha256": "fe29e5c5c4ebb1734e41b08b0ce00a45b0fb0d5e9d72d09343acb09a1fadf111",
+      "patch": "strategy-native-defaults.patch",
+      "preparedPasteSha256": "d1f97c1d5ef86f1d3f38cf51fe8b391ddeb84322e5f1a645066fe3c0007f2b49",
+      "archivedControl": {
+        "file": "../m15-validation-2026-11-22/strategy-on-native.csv.gz",
+        "rawSha256": "ca7614d95193a8f0013cdf9324865ed3804fdfa44b352bc1217ccd15173426f4"
+      },
+      "capture": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "runtime-earlier-week-20261122",
+        "captureId": "runtime-earlier-msnr-strategy-on:1795325771818",
+        "parentSha256": "8461833b9f466380dd03d877e94215165544dfee038e407e6d130c840abac479",
+        "model": "STRATEGY_EMULATOR",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793318400000,
+        "windowEnd": 1793376000000,
+        "firstDataTime": 1792965600000
+      },
+      "setup": {
+        "enabledModules": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60,
+        "requireM15Structure": true
+      },
+      "coverage": {
+        "observedBars": 192,
+        "firstOpen": 1793318400000,
+        "lastOpen": 1793375700000,
+        "timestampsSha256": "baca1dc76096e578e389a3713b6b95c86c65de034a4ffbd36da2cfb5731694e7"
+      },
+      "matchingPlans": 20,
+      "exactDetailedEventsExcludingRunIdentifiers": 2544,
+      "exactFullAuditMessages": 151,
+      "candidateTargetCalculationsInDetailedCapture": 82,
+      "precedingCalculationBars": 1128,
+      "matchingExitRows": 26,
+      "matchingCompletedPositions": 20,
+      "maxDrawdown": 36.34,
+      "nativeUiHeavyScriptWarningObserved": false,
+      "metrics": {
+        "positions": 20,
+        "wins": 11,
+        "losses": 9,
+        "exitRows": 26,
+        "gross": 30.379,
+        "commission": 35.441462900000005,
+        "net": -5.062462899999998,
+        "netProfitFactor": 0.9391978865397993,
+        "netExpectancy": -0.2531231449999999
+      }
+    },
+    "indicator": {
+      "file": "indicator-native.csv.gz",
+      "rawSha256": "b12d09bfab76133116d186e24231307815d5c7f350455c27eb4def4afe923dbf",
+      "source": "pine/experiments/indicator_runtime.pine",
+      "sourceSha256": "a6829623702929baecb2b22ad71a87154baf7e4ac506ea3ae862623132a51d26",
+      "patch": "indicator-native-defaults.patch",
+      "preparedPasteSha256": "19c62159453187f028276262a49d59417bc9ddd5529f1326e509f761ab92c06e",
+      "archivedControl": {
+        "file": "../m15-validation-2026-11-22/indicator-on-native.csv.gz",
+        "rawSha256": "0a58ad80f24faee56316303e02648632dd3534ab7a26955564976267c609f965"
+      },
+      "capture": {
+        "schema": "signal-diagnostics/v2",
+        "runTag": "runtime-earlier-week-20261122",
+        "captureId": "runtime-earlier-msnr-indicator-on:1795325992830",
+        "parentSha256": "d4d4866086e13d95fb0e5162bee51050a6fe47a010f4be004bdc5d5c28aba69e",
+        "model": "INDICATOR_ESTIMATE",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5",
+        "windowStart": 1793318400000,
+        "windowEnd": 1793376000000,
+        "firstDataTime": 1792965600000
+      },
+      "setup": {
+        "enabledModules": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "snrConcept": "MSNR body flip",
+        "msnrMaximumLevelAge": 60,
+        "requireM15Structure": true
+      },
+      "coverage": {
+        "observedBars": 192,
+        "firstOpen": 1793318400000,
+        "lastOpen": 1793375700000,
+        "timestampsSha256": "baca1dc76096e578e389a3713b6b95c86c65de034a4ffbd36da2cfb5731694e7"
+      },
+      "matchingPlans": 20,
+      "exactDetailedEventsExcludingRunIdentifiers": 2536,
+      "exactFullAuditMessages": 85,
+      "candidateTargetCalculationsInDetailedCapture": 82,
+      "precedingCalculationBars": 1128
+    }
+  },
+  "timing": {
+    "comparableProfilerTimingsAvailable": true,
+    "baselineWarningObserved": true,
+    "optimizedStrategyWarningObserved": false,
+    "chart": {
+      "symbol": "FOREXCOM:XAUUSD",
+      "timeframeMinutes": 5,
+      "confirmedBarBlockExecutions": 5520,
+      "measurementScope": "Loaded chart calculation, including bars outside the plan-admission window",
+      "note": "Original Indicator block time is rounded in TradingView profiler tooltip; no precise percentage speedup is inferred."
+    },
+    "strategy": {
+      "original": {
+        "preparedSourceSha256": "264d1670c30110a754a2c1bc040c323c5dbdda44fa6122cc5e2853d856fcc622",
+        "confirmedBarBlockMilliseconds": 340.8,
+        "displayedTotalScriptTime": "0.6s"
+      },
+      "optimized": {
+        "preparedSourceSha256": "d1f97c1d5ef86f1d3f38cf51fe8b391ddeb84322e5f1a645066fe3c0007f2b49",
+        "confirmedBarBlockMilliseconds": 291.5,
+        "displayedTotalScriptTime": "0.5s"
+      }
+    },
+    "indicator": {
+      "original": {
+        "preparedSourceSha256": "83fd3a6277a54c6006555c10a42c33d66af5422fee30a06d3b74acd29579e723",
+        "confirmedBarBlockPercent": 51.7,
+        "confirmedBarBlockDisplayedTime": "0.5s",
+        "lineTimePercent": 1.2,
+        "lineTimeMilliseconds": 12.9,
+        "displayedTotalScriptTime": "1.1s",
+        "executions": 5520,
+        "codeBlockLineRange": [
+          972,
+          1397
+        ]
+      },
+      "optimized": {
+        "preparedSourceSha256": "19c62159453187f028276262a49d59417bc9ddd5529f1326e509f761ab92c06e",
+        "confirmedBarBlockPercent": 47.2,
+        "confirmedBarBlockMilliseconds": 435.2,
+        "lineTimePercent": 1.4,
+        "lineTimeMilliseconds": 12.5,
+        "displayedTotalScriptTime": "0.9s",
+        "executions": 5520,
+        "codeBlockLineRange": [
+          987,
+          1412
+        ]
+      }
+    }
+  },
+  "screenshot": "strategy-native-result.jpg"
+}

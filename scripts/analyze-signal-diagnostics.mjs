@@ -1,17 +1,20 @@
 // Research-only intake. No network, order placement, parameter selection or Pine mutation.
+import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gunzipSync } from 'node:zlib';
 import { analyzePlanOutcomes } from './analyze-plan-outcomes.mjs';
 import { parseStrategyExitLogs } from './analyze-strategy-exits.mjs';
 
 export const CHECKS = ['WINDOW', 'DIRECTION', 'INVALIDATION', 'TARGETS', 'FIBONACCI', 'PREMIUM_DISCOUNT', 'VOLATILITY',
-  'NEWS_PAUSE', 'SESSION', 'H1_ALIGNMENT', 'EMA_ALIGNMENT', 'STOP_DISTANCE', 'ENTRY_DISTANCE', 'RR', 'PRICE_ORDER', 'QUOTA', 'COOLDOWN', 'QUALITY'];
+  'NEWS_PAUSE', 'SESSION', 'H1_ALIGNMENT', 'EMA_ALIGNMENT', 'STOP_DISTANCE', 'ENTRY_DISTANCE', 'RR', 'PRICE_ORDER', 'QUOTA', 'COOLDOWN', 'QUALITY', 'EXECUTION_COST', 'M15_STRUCTURE'];
 const REJECTION_MESSAGES = ['Outside research date window', 'Direction disabled', 'Missing structural invalidation',
   'Insufficient structure targets', 'Fibonacci location filter', 'Premium/discount filter', 'ATR volatility filter',
   'Manual news pause', 'Outside selected session', 'Setup opposes H1 trend', 'EMA alignment filter',
   'Stop distance invalid', 'Entry too far from setup', 'Minimum reward/risk not met',
-  'Invalid Entry/SL/TP order', 'Session plan limit', 'Signal cooldown', 'Quality below threshold'];
+  'Invalid Entry/SL/TP order', 'Session plan limit', 'Signal cooldown', 'Quality below threshold', 'Modeled costs exceed stop-risk limit',
+  'Confirmed M15 structure does not align'];
 const kinds = new Set(['CAPTURE_START', 'CAPTURE_END', 'BAR', 'ENGINE', 'STATE', 'SETUP_DETECTED', 'STAGE_REACHED',
   'CONFIRMATION_PASSED', 'INVALIDATED', 'EXPIRED', 'CHECKS', 'SELECTED', 'OPPOSING_CONFLICT', 'QUALIFIED_NOT_SELECTED',
   'CANDIDATE_CLEARED', 'QUALIFIED_PLAN', 'ORDER_SUBMITTED', 'ORDER_CANCELLED', 'FILLED', 'EXIT_ROW', 'POSITION_CLOSED',
@@ -46,6 +49,12 @@ function validateCorrelation(e) {
   }
 }
 const countBy = (rows, fn) => rows.reduce((o, row) => { const k = fn(row); o[k] = (o[k] ?? 0) + 1; return o; }, {});
+
+export function readDiagnosticInput(path) {
+  const bytes = readFileSync(path);
+  const compressed = bytes.length >= 2 && bytes[0] === 0x1f && bytes[1] === 0x8b;
+  return (compressed ? gunzipSync(bytes) : bytes).toString('utf8');
+}
 
 // Native Date,Message CSV (RFC4180 quoting, escaped quotes and multiline fields), or copied log lines.
 export function decodePineCapture(text) {
@@ -157,6 +166,27 @@ export function analyzeSignalDiagnostics(input, options = {}) {
   events.sort((a, b) => a.sequence - b.sequence);
   const problems = [];
   const starts = events.filter(e => e.kind === 'CAPTURE_START'), ends = events.filter(e => e.kind === 'CAPTURE_END');
+  const start = starts[0];
+  const snrConcept = start?.snrConcept ?? null;
+  const msnrMaximumLevelAge = start?.msnrMaximumLevelAge ?? null;
+  const executionCostModel = start?.executionCostModel ?? null;
+  const requireM15Structure = start?.requireM15Structure;
+  if (requireM15Structure !== undefined) {
+    assert(schema === 'signal-diagnostics/v2' && typeof requireM15Structure === 'boolean', 'Invalid M15 structure setting');
+  }
+  if (snrConcept !== null || msnrMaximumLevelAge !== null) {
+    assert(snrConcept === 'MSNR body flip' && Number.isInteger(msnrMaximumLevelAge) &&
+      msnrMaximumLevelAge >= 2 && msnrMaximumLevelAge <= 500, 'Invalid MSNR capture settings');
+  }
+  if (executionCostModel !== null) {
+    assert(schema === 'signal-diagnostics/v2' && typeof executionCostModel === 'object' && !Array.isArray(executionCostModel),
+      'Invalid execution-cost capture settings');
+    for (const field of ['limitPct', 'commissionPctPerSide', 'slippageTicks', 'additionalSpreadTicks']) {
+      number(executionCostModel, field);
+      assert(executionCostModel[field] >= 0, 'Negative execution-cost capture setting');
+    }
+    assert(executionCostModel.limitPct > 0 && Number.isSafeInteger(executionCostModel.slippageTicks), 'Invalid enabled execution-cost model');
+  }
   if (starts.length !== 1 || starts[0] !== events[0]) problems.push('MISSING_OR_INVALID_CAPTURE_START');
   if (ends.length !== 1 || ends[0] !== events.at(-1)) problems.push('MISSING_OR_INVALID_CAPTURE_END');
   if (events.some((e, i) => e.sequence !== i + 1)) problems.push('SEQUENCE_GAP');
@@ -200,6 +230,34 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       const expectedMessage = e.failedChecks.length ? REJECTION_MESSAGES[CHECKS.indexOf(e.failedChecks[0])] : '';
       assert(e.firstBlockerMessage === expectedMessage, 'First blocker message does not match first failed check');
       if (schema === 'signal-diagnostics/v2') assert(e.decisionConsistent === true, 'Diagnostic checks disagree with engine decision');
+      const hasCost = Object.hasOwn(e, 'executionCostPctOfRisk');
+      if (hasCost || e.failedChecks.includes('EXECUTION_COST') || executionCostModel !== null) {
+        assert(hasCost && (executionCostModel !== null || !start), 'Execution-cost check does not match capture settings');
+        const cost = e.executionCostPctOfRisk;
+        assert(cost === null || (Number.isFinite(cost) && cost >= 0), 'Invalid execution cost as a percentage of risk');
+        if (executionCostModel !== null) {
+          const blockedByCost = cost === null || cost > executionCostModel.limitPct + 1e-9;
+          assert(e.failedChecks.includes('EXECUTION_COST') === blockedByCost, 'Execution-cost result disagrees with captured threshold');
+        }
+      }
+      if (e.snrConcept != null || e.bodyLevel != null) {
+        assert(e.module === 'D_SNR' && e.snrConcept === 'MSNR body flip' && (!start || snrConcept === e.snrConcept),
+          'MSNR check does not match module or capture settings');
+        number(e, 'bodyLevel');
+        assert(e.bodyLevel > 0, 'Invalid MSNR body level');
+      }
+      const hasM15 = Object.hasOwn(e, 'm15Structure');
+      const blockedByM15 = e.failedChecks.includes('M15_STRUCTURE');
+      if (hasM15 || blockedByM15 || requireM15Structure !== undefined) {
+        assert(hasM15 && (!start || requireM15Structure !== undefined) && [-1, 0, 1].includes(e.m15Structure),
+          'M15 structure check does not match capture settings or direction domain');
+        const direction = Number(e.candidateId.split(':').at(-2));
+        assert(direction === 1 || direction === -1, 'M15 structure check has no candidate direction');
+        if (requireM15Structure !== undefined) {
+          assert(blockedByM15 === (requireM15Structure && e.m15Structure !== direction),
+            'M15 structure result disagrees with captured direction');
+        }
+      }
     }
     if (e.kind === 'QUALIFIED_PLAN') { assert(!plans.has(e.planId), 'Duplicate qualified plan identity'); plans.set(e.planId, e); }
   }
@@ -304,7 +362,8 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       observedBlockHistory: events.filter(e => e.kind === 'CHECKS' && e.candidateId === cid && e.failedChecks.length).map(e => ({ bar: e.bar, failedChecks: e.failedChecks })),
       limits: setup ? [] : ['Setup creation outside capture or missing; latency unavailable'] });
   }
-  const positionIds = new Set(events.filter(e => ['EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind)).map(e => e.positionId));
+  // A position may fill near the capture boundary and have no observed exit rows.
+  const positionIds = new Set(events.filter(e => ['FILLED', 'EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind)).map(e => e.positionId));
   const accountCurrencies = new Set(events.filter(e => ['EXIT_ROW', 'POSITION_CLOSED'].includes(e.kind)).map(e => e.accountCurrency));
   assert([...accountCurrencies].every(c => typeof c === 'string' && c.length > 0) && accountCurrencies.size <= 1,
     'Missing or mixed account currencies cannot be aggregated');
@@ -372,6 +431,11 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       fillCorrelationUnavailable: null, byModule: null, byExitCause: null,
     };
   return { schema: 'signal-diagnostics-analysis/v2', context,
+    captureSetup: { enabledModules: start?.enabled ?? null, snrConcept, msnrMaximumLevelAge,
+      ...(executionCostModel === null ? {} : { executionCostModel }),
+      ...(requireM15Structure === undefined ? {} : { requireM15Structure }) },
+    barCoverage: { observedBars: bars.length, firstOpen: bars[0]?.barOpen ?? null, lastOpen: bars.at(-1)?.barOpen ?? null,
+      timestampsSha256: bars.length ? createHash('sha256').update(JSON.stringify(bars.map(b => [b.barOpen, b.observedAt]))).digest('hex') : null },
     captureStatus: complete ? 'COMPLETE_WITHIN_CAPTURE_WINDOW' : 'INCOMPLETE',
     budgetStatus: endBudget === true && end?.dropped === 0 ? 'COMPLETE' : endBudget === false ? 'INCOMPLETE' : 'UNKNOWN',
     // Structural continuity is testable from the file; provenance and whether
@@ -395,12 +459,28 @@ export function analyzeSignalDiagnostics(input, options = {}) {
       'Historical diagnostics, tests and complete exports do not establish OOS profitability or non-repainting.'] };
 }
 
+const usage = `Usage: node scripts/analyze-signal-diagnostics.mjs <native.csv|native.csv.gz|log> [options]
+
+Options:
+  --chart-currency CODE       Currency shown in legacy Strategy audit exports
+  --time-exit-minutes MIN     Holding limit used by a legacy TRADE_GROUP_AUDIT export
+  --sole-time-close           Classify a final market close at that limit as a time exit
+  --spread-per-side VALUE     Add a hypothetical per-side spread scenario
+  -h, --help                  Show this help
+
+New diagnostic captures report their recorded close causes directly. The time-exit
+options above only add caller-asserted context when analyzing legacy audit exports.`;
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  try {
-    const path = process.argv[2]; assert(path, 'Usage: node scripts/analyze-signal-diagnostics.mjs <native.csv|log> [--chart-currency USD] [--time-exit-minutes 15 --sole-time-close] [--spread-per-side 0]');
-    const arg = key => process.argv.includes(key) ? process.argv[process.argv.indexOf(key) + 1] : undefined;
-    console.log(JSON.stringify(analyzeSignalDiagnostics(readFileSync(path, 'utf8'), { chartCurrency: arg('--chart-currency'),
-      timeExitMinutes: Number(arg('--time-exit-minutes')), soleMarketCloseIsTimeExit: process.argv.includes('--sole-time-close'),
-      spreadPerSide: Number(arg('--spread-per-side') ?? 0) }), null, 2));
-  } catch (error) { console.error(error.message); process.exitCode = 2; }
+  if (process.argv.slice(2).some(arg => arg === '-h' || arg === '--help')) {
+    console.log(usage);
+  } else {
+    try {
+      const path = process.argv[2]; assert(path, usage);
+      const arg = key => process.argv.includes(key) ? process.argv[process.argv.indexOf(key) + 1] : undefined;
+      console.log(JSON.stringify(analyzeSignalDiagnostics(readDiagnosticInput(path), { chartCurrency: arg('--chart-currency'),
+        timeExitMinutes: Number(arg('--time-exit-minutes')), soleMarketCloseIsTimeExit: process.argv.includes('--sole-time-close'),
+        spreadPerSide: Number(arg('--spread-per-side') ?? 0) }), null, 2));
+    } catch (error) { console.error(error.message); process.exitCode = 2; }
+  }
 }

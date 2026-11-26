@@ -1,0 +1,32 @@
+--- pine/experiments/indicator_runtime.pine
++++ pine/experiments/indicator_runtime.pine
+@@ -44 +44 @@
+-snrMode = input.string('K-SNR', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')
++snrMode = input.string('MSNR body flip', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')
+@@ -60,3 +60,3 @@
+-useResearchWindow = input.bool(false, 'Restrict new plans to date window', group='Research')
+-researchStart = input.time(timestamp('01 Jan 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
+-researchEnd = input.time(timestamp('01 Jan 2027 00:00 +0000'), 'Window end (exclusive)', group='Research')
++useResearchWindow = input.bool(true, 'Restrict new plans to date window', group='Research')
++researchStart = input.time(timestamp('30 Oct 2026 00:00 +0000'), 'Window start (inclusive)', group='Research')
++researchEnd = input.time(timestamp('06 Nov 2026 00:00 +0000'), 'Window end (exclusive)', group='Research')
+@@ -64 +64 @@
+-auditLog = input.bool(false, 'Log qualified plans and lifecycle events (research only)', group='Research')
++auditLog = input.bool(true, 'Log qualified plans and lifecycle events (research only)', group='Research')
+@@ -85 +85 @@
+-m15Filter = input.bool(false, 'Require M15 confirmed structure alignment', group='Alignment research', tooltip='Uses the previous completed 15-minute candle. Neutral or opposite structure blocks a new plan.')
++m15Filter = input.bool(true, 'Require M15 confirmed structure alignment', group='Alignment research', tooltip='Uses the previous completed 15-minute candle. Neutral or opposite structure blocks a new plan.')
+@@ -97 +97 @@
+-estimateTimeExitNextOpen = input.bool(false, 'Estimate time exit at next bar open (Close entry)', group='Time exit research')
++estimateTimeExitNextOpen = input.bool(true, 'Estimate time exit at next bar open (Close entry)', group='Time exit research')
+@@ -369,5 +369,5 @@
+-diagMode = input.string('Off', 'Research diagnostics', options=['Off', 'Events', 'Events + dashboard'], group='Research diagnostics')
+-diagRunTag = input.string('research-1', 'Run tag', group='Research diagnostics')
+-diagCaptureInput = input.string('capture-2026-11-07-01', 'Unique capture ID (change for every run)', group='Research diagnostics')
+-diagStart = input.time(timestamp('06 Nov 2026 14:00 +0000'), 'Diagnostic window start (bar open, inclusive)', group='Research diagnostics')
+-diagEnd = input.time(timestamp('06 Nov 2026 17:00 +0000'), 'Diagnostic window end (bar open, exclusive)', group='Research diagnostics')
++diagMode = input.string('Events', 'Research diagnostics', options=['Off', 'Events', 'Events + dashboard'], group='Research diagnostics')
++diagRunTag = input.string('runtime-earlier-week-20261122', 'Run tag', group='Research diagnostics')
++diagCaptureInput = input.string('runtime-earlier-msnr-indicator-on', 'Unique capture ID (change for every run)', group='Research diagnostics')
++diagStart = input.time(timestamp('30 Oct 2026 00:00 +0000'), 'Diagnostic window start (bar open, inclusive)', group='Research diagnostics')
++diagEnd = input.time(timestamp('30 Oct 2026 16:00 +0000'), 'Diagnostic window end (bar open, exclusive)', group='Research diagnostics')

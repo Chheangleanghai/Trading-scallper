@@ -1,0 +1,125 @@
+{
+  "schema": "tradingview-m15-validation/v1",
+  "frozenLocallyOn": "2026-11-22",
+  "timeZone": "Asia/Phnom_Penh",
+  "earlierWeek": {
+    "attribution": "RETROSPECTIVE_CHECK_ON_NON_OVERLAPPING_DATES",
+    "admissionUtc": [
+      "2026-10-30T00:00:00Z",
+      "2026-11-06T00:00:00Z"
+    ],
+    "diagnosticUtc": [
+      "2026-10-30T00:00:00Z",
+      "2026-10-30T16:00:00Z"
+    ],
+    "cases": {
+      "strategy-off": {
+        "source": "pine/experiments/strategy_m15_alignment.pine",
+        "sourceSha256": "7cb9707f32b545447de8ddd4fe0a18b6baf53fe47ac084d6f2e5146d897be4d8",
+        "preparedPasteSha256": "cf4e786a34a55bc9ff82a4d7fbc7473e09423069eb8536db811d38c816be254c",
+        "bytes": 130675,
+        "m15Filter": false,
+        "indicatorNextOpenTimeExit": false
+      },
+      "strategy-on": {
+        "source": "pine/experiments/strategy_m15_alignment.pine",
+        "sourceSha256": "7cb9707f32b545447de8ddd4fe0a18b6baf53fe47ac084d6f2e5146d897be4d8",
+        "preparedPasteSha256": "264d1670c30110a754a2c1bc040c323c5dbdda44fa6122cc5e2853d856fcc622",
+        "bytes": 130674,
+        "m15Filter": true,
+        "indicatorNextOpenTimeExit": false
+      },
+      "indicator-on": {
+        "source": "pine/experiments/indicator_m15_alignment.pine",
+        "sourceSha256": "3e61a715171967e3594278ef5d9ed1c496766488143e524596b11b2398769dae",
+        "preparedPasteSha256": "83fd3a6277a54c6006555c10a42c33d66af5422fee30a06d3b74acd29579e723",
+        "bytes": 154247,
+        "m15Filter": true,
+        "indicatorNextOpenTimeExit": true
+      }
+    }
+  },
+  "forward": {
+    "statusAtFreeze": "FUTURE_WINDOW",
+    "admissionUtc": [
+      "2026-11-23T00:00:00Z",
+      "2026-12-07T00:00:00Z"
+    ],
+    "splitUtc": "2026-11-30T00:00:00Z",
+    "compare": [
+      "strategy-off",
+      "strategy-on"
+    ],
+    "optionalParityCheck": "indicator-on",
+    "frozenSourceChanges": "Set date window, capture dates and IDs, audit flags, MSNR and predeclared M15 switch only. Use current Strategy Properties."
+  },
+  "sharedSettings": {
+    "feed": "FOREXCOM:XAUUSD",
+    "standardCandles": true,
+    "minutes": 5,
+    "enabledModules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "endExclusive": true,
+    "closeEntry": true,
+    "session": "London",
+    "h1Alignment": true,
+    "crtMinutes": 15,
+    "minimumQuality": 75,
+    "simulationRiskPercent": 0.5,
+    "maximumNotionalPercent": 90,
+    "maxSessionPlans": 5,
+    "cooldownBars": 5,
+    "stop": "Structure",
+    "stopBufferAtr": 0.15,
+    "maxStopAtr": 3,
+    "target": "Fixed R",
+    "targetMultiples": [
+      1,
+      2,
+      3
+    ],
+    "partialPercentages": [
+      33,
+      33,
+      34
+    ],
+    "breakEven": false,
+    "trailing": false,
+    "strategyProperties": {
+      "initialCapital": 10000,
+      "currency": "USD",
+      "commissionPercentPerSide": 0.01,
+      "slippageTicks": 2,
+      "longLeverage": 1,
+      "shortLeverage": 1,
+      "pyramiding": 0,
+      "scriptExecution": "On bar close",
+      "barDetalizationTicks": 4,
+      "orderExecutionDelay": "One tick",
+      "limitOrderExecution": "Requested price",
+      "separateSpreadModel": false
+    },
+    "concept": "MSNR body flip",
+    "msnrMaximumUnbrokenLevelAgeBars": 60,
+    "maximumHoldingMinutes": 15,
+    "executionCostLimitPct": 0
+  },
+  "minimumWarmupBars": 1000,
+  "compare": [
+    "Position count",
+    "Win rate",
+    "Net P&L",
+    "Commission",
+    "Final stop count",
+    "Maximum drawdown",
+    "Exact plan parity"
+  ]
+}

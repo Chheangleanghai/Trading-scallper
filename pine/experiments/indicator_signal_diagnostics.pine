@@ -41,6 +41,8 @@ enableH = input.bool(true, 'H: Confirmed Quasimodo approximation', group='Strate
 crtTF = input.timeframe('15', 'CRT reference timeframe', group='Modules')
 turtleAge = input.int(3, 'Turtle Soup minimum bars since pivot confirmation', minval=1, group='Modules')
 levelTolerance = input.float(0.15, 'Level/zone tolerance ATR', minval=0.01, group='Modules')
+snrMode = input.string('K-SNR', 'D support/resistance concept', options=['K-SNR', 'MSNR body flip'], group='Modules')
+msnrMaxLevelBars = input.int(60, 'MSNR maximum unbroken level age (bars)', minval=2, maxval=500, group='Modules')
 maxZoneTests = input.int(2, 'S/D maximum tested bars', minval=1, maxval=10, group='Modules')
 useEMA50 = input.bool(true, 'Trend pullback: require EMA50', group='Modules')
 pullbackDepth = input.float(0.3, 'Trend pullback: maximum EMA21 overshoot ATR', minval=0, group='Modules')
@@ -88,7 +90,8 @@ entryMode = input.string('Close', 'Entry mode', options=['Close', 'Limit', 'Brea
 pendingBars = input.int(3, 'Pending entry expiry bars', minval=1)
 timeExit = input.int(15, 'Maximum holding minutes (0 disables)', minval=0)
 targetMode = input.string('Fixed R', 'Target mode', options=['Fixed R', 'Structure', 'Hybrid'], group='Risk')
-stopMode = input.string('Structure', 'Stop mode', options=['Structure', 'Sweep extreme', 'Swing', 'ATR', 'Order Block'], group='Risk')
+stopMode = input.string('Structure', 'Stop mode', options=['Structure', 'Sweep extreme', 'Swing', 'ATR', 'Order Block', 'Structure + ATR floor'], group='Risk')
+stopFloorAtr = input.float(1.0, 'Minimum stop ATR (Structure + ATR floor)', minval=0.1, step=0.1, group='Risk')
 atrStop = input.float(1.5, 'ATR stop multiplier', minval=0.1, group='Risk')
 breakEven = input.bool(false, 'Move stop to filled entry after trigger R', group='Management')
 breakEvenR = input.float(1, 'Break-even trigger R', minval=0.1, group='Management')
@@ -198,6 +201,16 @@ qualityScore(int structure, int liquidity, bool aligned, bool rr, bool volatilit
     structure + liquidity + 20 + (aligned ? 15 : 0) + (rr ? 10 : 0) + (volatility ? 10 : 0) + (session ? 5 : 0)
 tightenStop(int direction, float current, float proposed) =>
     direction == 1 ? math.max(current, proposed) : math.min(current, proposed)
+
+// Only the opt-in mode rounds the required risk outward to a whole tick.
+structureStopWithAtrFloor(int direction, float planned, float invalidation, float atrValue, float atrBuffer, float minimumAtr, float tick) =>
+    float structureDistance = direction * (planned - invalidation)
+    float stopPrice = na
+    if tick > 0 and atrValue > 0 and invalidation > 0 and structureDistance > 0
+        float requiredDistance = math.max(structureDistance + atrValue * atrBuffer, atrValue * minimumAtr)
+        int distanceTicks = math.ceil(requiredDistance / tick - 0.000000001)
+        stopPrice := (math.round(planned / tick) - direction * distanceTicks) * tick
+    stopPrice
 
 rrFeasible(int direction, float planned, float stopPrice, float targetPrice, float minimum, float tick) =>
     float riskTicks = tick > 0 ? math.round(direction * (planned - stopPrice) / tick) : na
@@ -394,7 +407,7 @@ diagStartBar() =>
         if not diagnosticLedger.started
             diagnosticLedger.started := true
             diagnosticLedger.firstBar := bar_index
-            diagEmit('CAPTURE_START', '', '', ',"budget":' + str.tostring(diagBudget) + ',"enabled":[' + diagBool(enableA) + ',' + diagBool(enableB) + ',' + diagBool(enableC) + ',' + diagBool(enableD) + ',' + diagBool(enableE) + ',' + diagBool(enableF) + ',' + diagBool(enableG) + ',' + diagBool(enableH) + ']')
+            diagEmit('CAPTURE_START', '', '', ',"budget":' + str.tostring(diagBudget) + ',"enabled":[' + diagBool(enableA) + ',' + diagBool(enableB) + ',' + diagBool(enableC) + ',' + diagBool(enableD) + ',' + diagBool(enableE) + ',' + diagBool(enableF) + ',' + diagBool(enableG) + ',' + diagBool(enableH) + ']' + (snrMode == 'MSNR body flip' ? ',"snrConcept":' + diagQ(snrMode) + ',"msnrMaximumLevelAge":' + str.tostring(msnrMaxLevelBars) : ''))
         diagnosticLedger.bars += 1
         diagnosticLedger.lastBar := bar_index
         diagEmit('BAR', '', '', '')
@@ -601,6 +614,59 @@ var ReviewPattern reviewQm = ReviewPattern.new()
 var array<int> reviewQmBars = array.new<int>()
 var array<float> reviewQmPrices = array.new<float>()
 // REVIEW_PATTERN_STATE_END
+// MSNR research: track the latest confirmed A resistance and V support, using the first candle's close.
+type MsnrBodyLevels
+    float resistance = na
+    float support = na
+    int resistanceBar = na
+    int supportBar = na
+
+msnrBodyLevel(int direction, float previousOpen, float previousClose, float currentOpen, float currentClose, float tolerance) =>
+    bool reversed = direction * (previousClose - previousOpen) > 0 and direction * (currentClose - currentOpen) < 0 and direction * (currentClose - previousClose) < 0
+    reversed and math.abs(currentOpen - previousClose) <= tolerance ? previousClose : na
+
+method observeMsnr(MsnrBodyLevels levels, int currentBar, int maximumAge, float previousOpen, float previousClose, float currentOpen, float currentClose, float tolerance) =>
+    if not na(levels.resistance) and (currentClose > levels.resistance or currentBar - levels.resistanceBar >= maximumAge)
+        levels.resistance := na
+    if not na(levels.support) and (currentClose < levels.support or currentBar - levels.supportBar >= maximumAge)
+        levels.support := na
+    float resistance = msnrBodyLevel(1, previousOpen, previousClose, currentOpen, currentClose, tolerance)
+    float support = msnrBodyLevel(-1, previousOpen, previousClose, currentOpen, currentClose, tolerance)
+    if not na(resistance)
+        levels.resistance := resistance
+        levels.resistanceBar := currentBar
+    if not na(support)
+        levels.support := support
+        levels.supportBar := currentBar
+    0
+
+msnrBreak(int direction, float level, float tolerance, float previousClose, float currentOpen, float currentClose, bool displaced) =>
+    not na(level) and displaced and direction * (previousClose - level) <= 0 and breakConfirmed(direction, level + direction * tolerance, currentOpen, currentClose)
+
+method updateMsnr(Candidate c, MsnrBodyLevels levels, int currentBar, int currentTime, float previousClose, float currentOpen, float currentHigh, float currentLow, float currentClose, float tolerance, bool displaced) =>
+    if c.stage > 0 and currentBar > c.setupBar
+        if c.tests > 0
+            c.stage := 0
+            c.status := 'EXPIRED'
+            diagEmit('EXPIRED', c.id, diagCandidateId(c.id, c.direction, c.setupTime), ',"reason":"MSNR first retest already evaluated"')
+        else if currentHigh >= c.lower and currentLow <= c.upper
+            c.tests := 1
+            c.confirmRetest(currentBar, currentTime, currentHigh, currentLow, currentOpen, currentClose)
+            if not c.ready
+                c.stage := 0
+                c.status := 'INVALIDATED'
+                diagEmit('INVALIDATED', c.id, diagCandidateId(c.id, c.direction, c.setupTime), ',"reason":"MSNR first retest did not confirm"')
+    if c.stage == 0
+        bool up = msnrBreak(1, levels.resistance, tolerance, previousClose, currentOpen, currentClose, displaced)
+        bool down = msnrBreak(-1, levels.support, tolerance, previousClose, currentOpen, currentClose, displaced)
+        if up != down
+            float level = up ? levels.resistance : levels.support
+            float invalidation = up ? math.min(currentLow, level - tolerance) : math.max(currentHigh, level + tolerance)
+            c.begin(currentBar, currentTime, up ? 1 : -1, level - tolerance, level + tolerance, invalidation, level, 20, 0, 'Breakout retest')
+    0
+
+var MsnrBodyLevels msnrLevels = MsnrBodyLevels.new()
+
 updateCandidates() =>
     // Called once at chart close. This file is inlined inside the confirmed-bar block.
     for c in candidates
@@ -642,24 +708,30 @@ updateCandidates() =>
                 else
                     memory.turtleUsedHigh := shBar
 
-        // D: repeated confirmed horizontal pivots; displaced breakout/retest or failed breakout/rejection.
-        if candD.mode == 'Breakout retest'
-            candD.confirmRetest(bar_index, time_close, high, low, open, close)
+        // MSNR_BRANCH_BEGIN
+        if snrMode == 'MSNR body flip'
+            if enableD
+                candD.updateMsnr(msnrLevels, bar_index, time_close, close[1], open, high, low, close, atr * levelTolerance, bodyDisplacement)
         else
-            candD.confirmBreak(bar_index, time_close, open, close)
-        if enableD and candD.stage == 0
-            float tolerance = atr * levelTolerance
-            bool up = snrBreakout(1, srHigh, tolerance, srHighTouches, close[1], open, close, bodyDisplacement)
-            bool down = snrBreakout(-1, srLow, tolerance, srLowTouches, close[1], open, close, bodyDisplacement)
-            bool rejectLow = snrRejection(1, srLow, tolerance, srLowTouches, high, low, open, close)
-            bool rejectHigh = snrRejection(-1, srHigh, tolerance, srHighTouches, high, low, open, close)
-            if up != down and (up or down)
-                float level = up ? srHigh : srLow
-                candD.begin(bar_index, time_close, up ? 1 : -1, level - tolerance, level + tolerance, up ? math.min(low, level - tolerance) : math.max(high, level + tolerance), level, 20, 0, 'Breakout retest')
-            else if rejectLow != rejectHigh
-                float level = rejectLow ? srLow : srHigh
-                bool swept = rejectLow ? low < srLow - tolerance : high > srHigh + tolerance
-                candD.begin(bar_index, time_close, rejectLow ? 1 : -1, level - tolerance, level + tolerance, rejectLow ? low : high, rejectLow ? high : low, 20, swept ? 20 : 0, swept ? 'Failed breakout' : 'Rejection')
+            // D: repeated confirmed horizontal pivots; displaced breakout/retest or failed breakout/rejection.
+            if candD.mode == 'Breakout retest'
+                candD.confirmRetest(bar_index, time_close, high, low, open, close)
+            else
+                candD.confirmBreak(bar_index, time_close, open, close)
+            if enableD and candD.stage == 0
+                float tolerance = atr * levelTolerance
+                bool up = snrBreakout(1, srHigh, tolerance, srHighTouches, close[1], open, close, bodyDisplacement)
+                bool down = snrBreakout(-1, srLow, tolerance, srLowTouches, close[1], open, close, bodyDisplacement)
+                bool rejectLow = snrRejection(1, srLow, tolerance, srLowTouches, high, low, open, close)
+                bool rejectHigh = snrRejection(-1, srHigh, tolerance, srHighTouches, high, low, open, close)
+                if up != down and (up or down)
+                    float level = up ? srHigh : srLow
+                    candD.begin(bar_index, time_close, up ? 1 : -1, level - tolerance, level + tolerance, up ? math.min(low, level - tolerance) : math.max(high, level + tolerance), level, 20, 0, 'Breakout retest')
+                else if rejectLow != rejectHigh
+                    float level = rejectLow ? srLow : srHigh
+                    bool swept = rejectLow ? low < srLow - tolerance : high > srHigh + tolerance
+                    candD.begin(bar_index, time_close, rejectLow ? 1 : -1, level - tolerance, level + tolerance, rejectLow ? low : high, rejectLow ? high : low, 20, swept ? 20 : 0, swept ? 'Failed breakout' : 'Rejection')
+        // MSNR_BRANCH_END
 
         // E: opposite-candle zone followed by impulsive break of a known confirmed swing.
         // Existing zones are processed before creating replacements; tested bars are counted explicitly.
@@ -745,9 +817,9 @@ updateCandidates() =>
                 memory.qmUsed := patternKey
     0
 strategyName(string id) =>
-    str.startswith(id, 'A_') ? 'A · Sweep + reversal + gap' : str.startswith(id, 'B_') ? 'B · Candle range reversal' : str.startswith(id, 'C_') ? 'C · False breakout reversal' : str.startswith(id, 'D_') ? 'D · K-SNR' : str.startswith(id, 'E_') ? 'E · Supply / demand' : str.startswith(id, 'F_') ? 'F · Trend pullback' : str.startswith(id, 'G_') ? 'G · Range sweep continuation' : str.startswith(id, 'H_') ? 'H · Quasimodo retest' : 'No strategy selected'
+    str.startswith(id, 'A_') ? 'A · Sweep + reversal + gap' : str.startswith(id, 'B_') ? 'B · Candle range reversal' : str.startswith(id, 'C_') ? 'C · False breakout reversal' : str.startswith(id, 'D_') ? (snrMode == 'MSNR body flip' ? 'D · MSNR body flip' : 'D · K-SNR') : str.startswith(id, 'E_') ? 'E · Supply / demand' : str.startswith(id, 'F_') ? 'F · Trend pullback' : str.startswith(id, 'G_') ? 'G · Range sweep continuation' : str.startswith(id, 'H_') ? 'H · Quasimodo retest' : 'No strategy selected'
 setupExplanation(string id) =>
-    str.startswith(id, 'A_') ? 'Sweep reclaimed; MSS + FVG; later retest confirmed' : str.startswith(id, 'B_') ? 'Completed range reclaimed; later reversal close' : str.startswith(id, 'C_') ? 'Confirmed-pivot false breakout; reversal close' : str.startswith(id, 'D_') ? 'Confirmed K-SNR level; retest/rejection trigger' : str.startswith(id, 'E_') ? 'Impulsive departure; zone retest confirmed' : str.startswith(id, 'F_') ? 'Structure + EMA pullback; later trigger close' : str.startswith(id, 'G_') ? 'Compressed range swept; later displacement' : 'Five confirmed pivots; closing neckline break; later retest'
+    str.startswith(id, 'A_') ? 'Sweep reclaimed; MSS + FVG; later retest confirmed' : str.startswith(id, 'B_') ? 'Completed range reclaimed; later reversal close' : str.startswith(id, 'C_') ? 'Confirmed-pivot false breakout; reversal close' : str.startswith(id, 'D_') ? (snrMode == 'MSNR body flip' ? 'MSNR body level flipped; first retest confirmed' : 'Confirmed K-SNR level; retest/rejection trigger') : str.startswith(id, 'E_') ? 'Impulsive departure; zone retest confirmed' : str.startswith(id, 'F_') ? 'Structure + EMA pullback; later trigger close' : str.startswith(id, 'G_') ? 'Compressed range swept; later displacement' : 'Five confirmed pivots; closing neckline break; later retest'
 statusName(string raw) =>
     raw == 'IDLE' ? 'Waiting for a setup' : raw == 'DETECTED' ? 'Setup found · not an entry' : raw == 'WAITING_CONFIRMATION' ? 'Waiting for confirmation' : raw == 'CONFIRMED' ? 'Setup confirmed' : raw == 'ENTRY_PENDING' ? 'Order pending · not filled' : raw == 'ENTRY_TRIGGERED' ? 'Entry triggered (simulated)' : raw == 'CLOSED' ? 'Previous trade closed' : raw == 'EXPIRED' ? 'Setup expired' : raw == 'INVALIDATED' ? 'Setup no longer valid' : raw == 'EXPIRED / INVALIDATED' ? 'Setup expired / invalid' : raw == 'INVALIDATED FVG' ? 'Price gap invalidated' : str.startswith(raw, 'REJECTED') ? 'Rejected: ' + str.lower(str.replace_all(raw, 'REJECTED: ', '')) : str.replace_all(raw, '_', ' ')
 priceText(float value) => na(value) ? '—' : str.tostring(value, format.mintick)
@@ -781,7 +853,7 @@ reviewCloseCaption(string code, bool broker) =>
     string caption = code == 'STOP' ? 'SL exit' : code == 'TIME_EXIT' ? 'Time exit' : code == 'TP1' ? 'TP1 exit' : code == 'TP2' ? 'TP2 exit' : code == 'TP3' ? 'TP3 exit' : 'Closed'
     caption + (broker ? ' (sim.)' : ' (est.)')
 reviewModuleName(string id) =>
-    str.startswith(id, 'A_') ? 'A Sweep/MSS/FVG' : str.startswith(id, 'B_') ? 'B CRT' : str.startswith(id, 'C_') ? 'C Pivot false break' : str.startswith(id, 'D_') ? 'D K-SNR' : str.startswith(id, 'E_') ? 'E Supply/demand' : str.startswith(id, 'F_') ? 'F Trend pullback' : str.startswith(id, 'G_') ? 'G AMD range' : str.startswith(id, 'H_') ? 'H Quasimodo' : 'No plan'
+    str.startswith(id, 'A_') ? 'A Sweep/MSS/FVG' : str.startswith(id, 'B_') ? 'B CRT' : str.startswith(id, 'C_') ? 'C Pivot false break' : str.startswith(id, 'D_') ? (snrMode == 'MSNR body flip' ? 'D MSNR body flip' : 'D K-SNR') : str.startswith(id, 'E_') ? 'E Supply/demand' : str.startswith(id, 'F_') ? 'F Trend pullback' : str.startswith(id, 'G_') ? 'G AMD range' : str.startswith(id, 'H_') ? 'H Quasimodo' : 'No plan'
 type ReviewOutcome
     int planTime = na
     int closeTime = na
@@ -863,6 +935,9 @@ diagArbitration(string winner, bool conflict) =>
 bool newSignal = false
 bool entryTriggered = false
 bool cancelOrder = false
+// SIGNAL_DIAGNOSTIC_HOOK_BEGIN
+bool clearOrderExpired = false
+// SIGNAL_DIAGNOSTIC_HOOK_END
 if barstate.isfirst and useResearchWindow and researchEnd <= researchStart
     runtime.error('Research window end must be later than start')
 if barstate.isconfirmed
@@ -910,6 +985,9 @@ if barstate.isconfirmed
         if invalid or expired or pause or (useSession and not inSession) or not researchBarAllowed(useResearchWindow, researchStart, researchEnd, time, time_close)
             pending := false
             cancelOrder := true
+            // SIGNAL_DIAGNOSTIC_HOOK_BEGIN
+            clearOrderExpired := expired
+            // SIGNAL_DIAGNOSTIC_HOOK_END
             status := expired ? 'EXPIRED' : 'INVALIDATED'
             notifyLifecycle('SIGNAL_INVALIDATED')
             // SIGNAL_DIAGNOSTIC_HOOK_BEGIN
@@ -1028,7 +1106,7 @@ if barstate.isconfirmed
                 float anchor = (c.upper + c.lower) / 2
                 float planned = roundPrice(entryMode == 'Close' ? close : entryMode == 'Limit' ? anchor : direction == 1 ? high + syminfo.mintick : low - syminfo.mintick)
                 float baseStop = stopMode == 'Swing' ? (direction == 1 ? slw : sh) : stopMode == 'ATR' ? planned - direction * atr * atrStop : stopMode == 'Order Block' ? (direction == 1 ? bullOBLow : bearOBHigh) : stopMode == 'Sweep extreme' ? (c.liquidityPoints > 0 ? c.invalidation : na) : c.invalidation
-                float proposedStop = roundPrice(baseStop - direction * atr * buffer)
+                float proposedStop = stopMode == 'Structure + ATR floor' ? structureStopWithAtrFloor(direction, planned, baseStop, atr, buffer, stopFloorAtr, syminfo.mintick) : roundPrice(baseStop - direction * atr * buffer)
                 float risk = direction * (planned - proposedStop)
                 [t1, t2, t3, source, targetsAvailable] = getTargets(direction, planned, risk)
                 bool validTargets = orderedPrices(direction, planned, proposedStop, t1, t2, t3)
@@ -1061,7 +1139,9 @@ if barstate.isconfirmed
                     for diagnosticIndex = 0 to array.size(candidates) - 1
                         if array.get(candidates, diagnosticIndex).id == c.id
                             array.set(diagnosticLastBlock, diagnosticIndex, blocked == '' ? 'All applicable checks passed' : blocked)
-                    diagEmit('CHECKS', c.id, diagnosticCid, ',"checksEvaluated":true,"decisionConsistent":' + diagBool(diagnosticDecisionConsistent) + ',"firstBlocker":' + diagnosticFirst + ',"firstBlockerMessage":' + diagQ(blocked) + ',"failedChecks":[' + array.join(diagnosticFailed, ',') + '],"quality":' + str.tostring(score) + ',"plannedEntry":' + diagNum(planned) + ',"sl":' + diagNum(proposedStop) + ',"tp1":' + diagNum(t1) + ',"tp2":' + diagNum(t2) + ',"tp3":' + diagNum(t3))
+                    string diagnosticStop = stopMode == 'Structure + ATR floor' ? ',"stopMode":' + diagQ(stopMode) + ',"atr":' + diagNum(atr) + ',"stopFloorAtr":' + diagNum(stopFloorAtr) + ',"stopDistanceAtr":' + diagNum(atr > 0 ? risk / atr : na) + ',"structuralInvalidation":' + diagNum(baseStop) : ''
+                    string diagnosticSnr = c.id == 'D_SNR' and snrMode == 'MSNR body flip' ? ',"snrConcept":"MSNR body flip","bodyLevel":' + diagNum(c.trigger) : ''
+                    diagEmit('CHECKS', c.id, diagnosticCid, ',"checksEvaluated":true,"decisionConsistent":' + diagBool(diagnosticDecisionConsistent) + ',"firstBlocker":' + diagnosticFirst + ',"firstBlockerMessage":' + diagQ(blocked) + ',"failedChecks":[' + array.join(diagnosticFailed, ',') + '],"quality":' + str.tostring(score) + ',"plannedEntry":' + diagNum(planned) + ',"sl":' + diagNum(proposedStop) + ',"tp1":' + diagNum(t1) + ',"tp2":' + diagNum(t2) + ',"tp3":' + diagNum(t3) + diagnosticStop + diagnosticSnr)
                     if safe
                         array.push(diagnosticQualified, diagnosticCid)
                         array.push(diagnosticQualifiedModules, c.id)
@@ -1212,6 +1292,9 @@ if barstate.isconfirmed
             string annotation = contextStructureCaption + (hTrend != 0 and hTrend != nextStructure ? ' · Counter H1' : '')
             structureTag(close, annotation, nextStructure == 1 ? color.rgb(44, 153, 124) : color.rgb(220, 73, 83))
         chartStructure := nextStructure
+    // Update body levels after evaluating this candle so they cannot trigger on their birth bar.
+    if enableD and snrMode == 'MSNR body flip'
+        msnrLevels.observeMsnr(bar_index, msnrMaxLevelBars, open[1], close[1], open, close, atr * levelTolerance)
     // Repeated horizontal levels use only pivots confirmed now; usable by modules from the next bar.
     if not na(ph)
         if not na(srHigh) and math.abs(ph - srHigh) <= atr * levelTolerance
@@ -1259,7 +1342,7 @@ if barstate.isconfirmed
         slBar := bar_index
 // STRATEGY_ORDER_ADAPTER
 // CLARITY_HELPERS_BEGIN — read-only presentation; no signal eligibility changes.
-clarityPlanEnding(bool openPlan, string ending) => openPlan ? '' : '\nCLOSED · ' + ending
+clarityPlanEnding(bool openPlan, bool cancelled, string ending) => openPlan ? '' : '\n' + (cancelled ? '' : 'CLOSED · ') + ending
 clarityPlanHue(bool openPlan, int index) =>
     not openPlan ? color.rgb(135, 143, 155) : index == 0 ? color.rgb(110, 116, 125) : index == 1 ? color.rgb(239, 68, 68) : color.rgb(76, 175, 80)
 clarityNext(Candidate c, int currentStage) =>
@@ -1290,6 +1373,7 @@ type ClearSignalPlan
     bool isOpen
     string module
     string terminal
+    bool wasCancelled = false
 
 var array<ClearSignalPlan> clearPlans = array.new<ClearSignalPlan>()
 
@@ -1338,7 +1422,7 @@ method clearRender(ClearSignalPlan view, float visibleHigh, float visibleLow) =>
         label.set_color(tag, visible ? levelColor : na)
         label.set_textcolor(tag, visible ? color.white : na)
         label.set_size(tag, chartText)
-        string suffix = index == 0 ? clarityPlanEnding(view.isOpen, view.terminal) : not view.isOpen ? ' · previous' : ''
+        string suffix = index == 0 ? clarityPlanEnding(view.isOpen, view.wasCancelled, view.terminal) : not view.isOpen ? ' · previous' : ''
         label.set_text(tag, array.get(names, index) + priceText(price) + suffix)
     if not na(view.riskArea)
         box.set_right(view.riskArea, view.endTime)
@@ -1357,11 +1441,11 @@ if barstate.isconfirmed and array.size(clearPlans) > 0
         latestView.endTime := math.max(minimumEnd, time_close)
         if newSignal or not (active or pending)
             latestView.isOpen := false
-            bool cancelledPlan = not newSignal and (status == 'EXPIRED' or str.startswith(status, 'INVALIDATED'))
+            latestView.wasCancelled := cancelOrder
             bool knownClose = reviewOutcome.planTime == latestView.planTimestamp and not na(reviewOutcome.closeTime)
             // Minimum display width is not holding duration; actual closure stays in the card.
             latestView.endTime := math.max(minimumEnd, knownClose ? reviewOutcome.closeTime : time_close)
-            latestView.terminal := knownClose ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : cancelledPlan ? statusName(status) : 'Ended; reason unavailable'
+            latestView.terminal := knownClose ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : latestView.wasCancelled ? (clearOrderExpired ? 'Pending order expired' : 'Pending order cancelled') + ' · no fill' : 'Ended; reason unavailable'
 
 if newSignal and showTrade and (active or pending or not useBroker)
     clearPlanTime := signalTime
@@ -1744,11 +1828,14 @@ if barstate.islast or barstate.islastconfirmedhistory
         bool hasPlan = showTrade and not na(clearPlanTime) and (active or pending or showLastPlan)
         bool livePlan = hasPlan and (active or pending)
         bool closedPlan = hasPlan and not livePlan and reviewOutcome.planTime == clearPlanTime
-        string planState = livePlan ? clearPlanSide + (pending ? ' · pending' : useBroker ? ' · simulated' : ' · estimate') : 'NO ACTIVE ENTRY' + (hasPlan ? ' · previous ' + clearPlanSide + ' closed' : '')
-        string closeCaption = closedPlan ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : hasPlan and not livePlan ? 'Ended; reason unavailable' : 'No closed current plan'
+        ClearSignalPlan lastPlanView = hasPlan ? array.last(clearPlans) : na
+        bool cancelledPlan = not livePlan and not na(lastPlanView) and lastPlanView.wasCancelled
+        string previousState = closedPlan ? ' closed' : cancelledPlan ? ' unfilled' : ' ended'
+        string planState = livePlan ? clearPlanSide + (pending ? ' · pending' : useBroker ? ' · simulated' : ' · estimate') : 'NO ACTIVE ENTRY' + (hasPlan ? ' · previous ' + clearPlanSide + previousState : '')
+        string closeCaption = closedPlan ? reviewCloseCaption(reviewOutcome.code, useBroker) + ' ' + str.format_time(reviewOutcome.closeTime, 'HH:mm', LADDER_DISPLAY_ZONE) + ' WIB' : cancelledPlan ? lastPlanView.terminal : hasPlan and not livePlan ? 'Ended; reason unavailable' : 'No closed current plan'
         if closedPlan and useBroker and not na(reviewOutcome.net)
             closeCaption += ' · ' + (reviewOutcome.net >= 0 ? '+' : '') + str.tostring(reviewOutcome.net, '#.##') + ' ' + reviewOutcome.accountCurrency
-        string execution = pending ? 'Awaiting fill · not executed' : useBroker ? 'Emulator' + (hasPlan ? ' fill ' + priceText(filledEntry) : '') : 'Indicator estimate · no broker fill'
+        string execution = pending ? 'Awaiting fill · not executed' : useBroker ? 'Emulator' + (hasPlan ? ' fill ' + priceText(filledEntry) : '') : cancelledPlan ? 'No estimated fill' : 'Indicator estimate · no broker fill'
         string watchCaption = 'No developing concept on last closed bar'
         string triggerCaption = 'Wait for a new setup; no entry yet'
         if livePlan
@@ -1767,8 +1854,8 @@ if barstate.islast or barstate.islastconfirmedhistory
         if not showSetupWatch
             watchCaption := 'Setup watch disabled'
             triggerCaption := 'See A–H confirmation board'
-        array<string> keys = array.from('SMART SCALPER · ' + timeframe.period + 'm', 'Why / last close', 'Concept / signal WIB', 'Entry planned', 'Initial SL', 'TP1', 'TP2', 'TP3', 'Target method', 'Last plan outcome', 'Execution model', 'Session / plans', 'Developing setup', 'Next confirmation')
-        array<string> values = array.from(planState, decisionReason, hasPlan ? reviewModuleName(clearPlanModule) + ' · ' + str.format_time(clearPlanTime, 'dd MMM HH:mm', LADDER_DISPLAY_ZONE) : 'Waiting for a confirmed concept', hasPlan and showEntryLine ? priceText(entry) : '—', hasPlan and showSLLine ? priceText(stop) : '—', hasPlan and showTP1Line ? priceText(tp1) : '—', hasPlan and showTP2Line ? priceText(tp2) : '—', hasPlan and showTP3Line ? priceText(tp3) : '—', hasPlan ? targetSource : '—', closeCaption, execution, sessionPreset + (inSession ? ' open' : ' closed') + ' · ' + str.tostring(sessionTrades) + '/' + str.tostring(maxTrades), watchCaption, triggerCaption)
+        array<string> keys = array.from('SMART SCALPER · ' + timeframe.period + 'm', 'Why / last close', 'Concept / signal WIB', 'Entry planned', 'Initial SL / distance', 'TP1', 'TP2', 'TP3', 'Target method', 'Last plan outcome', 'Execution model', 'Session / plans', 'Developing setup', 'Next confirmation')
+        array<string> values = array.from(planState, decisionReason, hasPlan ? reviewModuleName(clearPlanModule) + ' · ' + str.format_time(clearPlanTime, 'dd MMM HH:mm', LADDER_DISPLAY_ZONE) : 'Waiting for a confirmed concept', hasPlan and showEntryLine ? priceText(entry) : '—', hasPlan and showSLLine ? priceText(stop) + ' / ' + priceText(math.abs(entry - stop)) : '—', hasPlan and showTP1Line ? priceText(tp1) : '—', hasPlan and showTP2Line ? priceText(tp2) : '—', hasPlan and showTP3Line ? priceText(tp3) : '—', hasPlan ? targetSource : '—', closeCaption, execution, sessionPreset + (inSession ? ' open' : ' closed') + ' · ' + str.tostring(sessionTrades) + '/' + str.tostring(maxTrades), watchCaption, triggerCaption)
         for row = 0 to 13
             color valueColor = not livePlan and row >= 3 and row <= 8 ? color.rgb(153, 163, 178) : row == 4 ? color.rgb(255, 130, 130) : row >= 5 and row <= 7 ? color.rgb(115, 225, 145) : color.white
             table.cell(reviewBadge, 0, row, (not livePlan and hasPlan and row >= 3 and row <= 7 ? 'Previous ' : '') + array.get(keys, row), text_color=color.rgb(180, 190, 205), text_size=panelText, bgcolor=color.rgb(42, 48, 60), text_halign=text.align_left)

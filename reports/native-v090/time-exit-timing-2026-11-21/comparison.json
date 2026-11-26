@@ -1,0 +1,122 @@
+{
+  "schema": "xauusd-indicator-time-exit-comparison/v1",
+  "verifiedOn": "2026-11-21",
+  "source": {
+    "path": "pine/experiments/indicator_time_exit_timing.pine",
+    "sha256": "7356a5ff27de9db7fd56e638ff0917502e8cdae163e8997cba62c5a30d3f3b08",
+    "exactNormalizedPineEditorCopyBack": true,
+    "nativeCompileAndAttach": true
+  },
+  "sample": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "minutes": 5,
+    "entryMode": "Close",
+    "holdMinutes": 15,
+    "concept": "K-SNR",
+    "firstDataTime": 1792965600000,
+    "diagnosticStart": 1794391200000,
+    "diagnosticEnd": 1794416400000,
+    "diagnosticBars": 84
+  },
+  "captures": {
+    "control": {
+      "file": "ksnr-control-native.csv.gz",
+      "rawCsvSha256": "e0c997fd3e2619a266af78ca827d1afbcc2af04515f272e2cb80db21a9947ad0",
+      "captureId": "time-exit-control-ksnr-15:1795264227077",
+      "records": 1093,
+      "plans": 37
+    },
+    "nextOpen": {
+      "file": "ksnr-next-open-native.csv.gz",
+      "rawCsvSha256": "3c48d0fa0e5cdb5e623bc0017ded608199a6257053cf86a9e23537859d1bd605",
+      "captureId": "time-exit-control-ksnr-15:1795265514193",
+      "records": 1087,
+      "plans": 36
+    },
+    "historicalIndicator": {
+      "file": "ksnr-indicator-15-native.csv.gz",
+      "rawCsvSha256": "60d013416927dc1487aeac7502b670b16fc9e85309561305f544ddbee89b71c3",
+      "captureId": "ah-ksnr-15-ind:1795247843251",
+      "records": 1093,
+      "plans": 37
+    },
+    "historicalStrategy": {
+      "file": "ksnr-strategy-15-native.csv.gz",
+      "rawCsvSha256": "fdaa8b8521b625173e674afbb7501c53cc74e45bf81442946f0c2b1b266a18b9",
+      "captureId": "ah-ksnr-15-strat:1795247414399",
+      "records": 1093,
+      "plans": 36
+    }
+  },
+  "controlReproducedHistoricalIndicatorPlans": 37,
+  "exactPlanMatches": 36,
+  "mismatchCountBefore": 3,
+  "mismatchCountAfter": 0,
+  "executionModelDifferences": 36,
+  "differences": [
+    {
+      "decisionTime": 1794311700000,
+      "original": {
+        "module": "F_TREND_PULLBACK",
+        "direction": -1,
+        "setupAt": 1794311100000
+      },
+      "nextOpen": null
+    },
+    {
+      "decisionTime": 1794396900000,
+      "original": {
+        "module": "B_CRT",
+        "direction": -1,
+        "setupAt": 1794396600000
+      },
+      "nextOpen": null
+    },
+    {
+      "decisionTime": 1794397200000,
+      "original": null,
+      "nextOpen": {
+        "module": "C_TURTLE_SOUP",
+        "direction": -1,
+        "setupAt": 1794396900000
+      }
+    }
+  ],
+  "exitObservation": [
+    {
+      "plan": 1794310200000,
+      "control": {
+        "closedAt": 1794311100000,
+        "observedAt": 1794311100000
+      },
+      "candidate": {
+        "closedAt": 1794311100000,
+        "observedAt": 1794311400000
+      },
+      "strategy": {
+        "closedAt": 1794311100000,
+        "observedAt": 1794311400000
+      }
+    },
+    {
+      "plan": 1794392400000,
+      "control": {
+        "closedAt": 1794393300000,
+        "observedAt": 1794393300000
+      },
+      "candidate": {
+        "closedAt": 1794393300000,
+        "observedAt": 1794393600000
+      },
+      "strategy": {
+        "closedAt": 1794393300000,
+        "observedAt": 1794393600000
+      }
+    }
+  ],
+  "scope": {
+    "msnrNextOpen": "msnr-comparison.json",
+    "realtime": "UNVERIFIED",
+    "forwardPerformance": "PENDING"
+  }
+}

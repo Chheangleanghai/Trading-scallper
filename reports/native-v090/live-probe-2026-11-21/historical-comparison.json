@@ -1,0 +1,235 @@
+{
+  "schema": "data-snapshot-comparison/v1",
+  "status": "HISTORICAL_QUALIFIED_PLANS_MATCH",
+  "scope": "Only captured rows/fields; missing snapshots are not synthesized. Declared parent hash does not authenticate probe source, settings or TradingView provenance.",
+  "numericComparison": "Exact numeric values; JSON decimal fractions are parsed as Decimal and rendered as strings in detail fields to preserve precision.",
+  "inputs": {
+    "before": {
+      "path": "reports/native-v090/live-probe-2026-11-21/historical-a.csv",
+      "sha256": "f1ea989379f38c3d1de63ad96ec556929d31b71888ad76917f58654f1c79e52b",
+      "bytes": 178287,
+      "format": "CSV",
+      "snapshotCount": 9
+    },
+    "after": {
+      "path": "reports/native-v090/live-probe-2026-11-21/historical-b.csv",
+      "sha256": "e0955b3da3661db31f6835123b8611a123713a2020b8555b98cefc0b385b3ab9",
+      "bytes": 178287,
+      "format": "CSV",
+      "snapshotCount": 9
+    }
+  },
+  "context": {
+    "schema": "data-snapshot/v1",
+    "parentSourceSha256": "932932c8a59c0017b2c0dfdef1194f893ec0aa59823149a0868d48d69a426da5",
+    "scriptVersion": "0.8.0",
+    "symbol": "FOREXCOM:XAUUSD",
+    "timeframe": "5",
+    "windowBasis": "BAR_OPEN_TIME"
+  },
+  "counts": {
+    "commonSnapshots": 9,
+    "exactCommonSnapshots": 9,
+    "dataAndStateMatchingCommonSnapshots": 9,
+    "beforeOnlySnapshots": 0,
+    "afterOnlySnapshots": 0
+  },
+  "dataAndStateEqual": true,
+  "allComparedValuesEqual": true,
+  "missingSnapshots": {
+    "beforeOnly": [],
+    "afterOnly": []
+  },
+  "differenceCounts": {
+    "rawOhlc": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "rawMarketContext": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "derivedContext": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "executionState": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "candidates": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "plan": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "historyBoundary": {
+      "snapshots": 0,
+      "fields": 0
+    },
+    "metadata": {
+      "snapshots": 0,
+      "fields": 0
+    }
+  },
+  "differences": {
+    "rawOhlc": [],
+    "rawMarketContext": [],
+    "derivedContext": [],
+    "executionState": [],
+    "candidates": [],
+    "plan": [],
+    "historyBoundary": [],
+    "metadata": []
+  },
+  "lastBarIndexMetadata": {
+    "before": [
+      {
+        "time": 1794395700000,
+        "timeClose": 1794396000000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396000000,
+        "timeClose": 1794396300000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396300000,
+        "timeClose": 1794396600000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396600000,
+        "timeClose": 1794396900000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396900000,
+        "timeClose": 1794397200000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397200000,
+        "timeClose": 1794397500000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397500000,
+        "timeClose": 1794397800000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397800000,
+        "timeClose": 1794398100000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794398100000,
+        "timeClose": 1794398400000,
+        "lastBarIndex": 5519
+      }
+    ],
+    "after": [
+      {
+        "time": 1794395700000,
+        "timeClose": 1794396000000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396000000,
+        "timeClose": 1794396300000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396300000,
+        "timeClose": 1794396600000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396600000,
+        "timeClose": 1794396900000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794396900000,
+        "timeClose": 1794397200000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397200000,
+        "timeClose": 1794397500000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397500000,
+        "timeClose": 1794397800000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794397800000,
+        "timeClose": 1794398100000,
+        "lastBarIndex": 5519
+      },
+      {
+        "time": 1794398100000,
+        "timeClose": 1794398400000,
+        "lastBarIndex": 5519
+      }
+    ]
+  },
+  "targetBar": {
+    "requestedBarOpen": 1793785800000,
+    "expectedM5DecisionClose": 1793786100000,
+    "before": {
+      "present": false
+    },
+    "after": {
+      "present": false
+    }
+  },
+  "snapshotStatus": "EXACT_SNAPSHOT_MATCH",
+  "executionEvidence": {
+    "phase": "historical",
+    "verified": true,
+    "captures": {
+      "before": {
+        "captureId": "probe-history-nov21-a:1795259526532",
+        "bootAt": 1795259526532,
+        "windowStart": 1794395700000,
+        "windowEnd": 1794398400000,
+        "parentSourceSha256": "932932c8a59c0017b2c0dfdef1194f893ec0aa59823149a0868d48d69a426da5",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5"
+      },
+      "after": {
+        "captureId": "probe-history-nov21-b:1795259585123",
+        "bootAt": 1795259585123,
+        "windowStart": 1794395700000,
+        "windowEnd": 1794398400000,
+        "parentSourceSha256": "932932c8a59c0017b2c0dfdef1194f893ec0aa59823149a0868d48d69a426da5",
+        "symbol": "FOREXCOM:XAUUSD",
+        "timeframe": "5"
+      }
+    },
+    "identicalDuplicates": {
+      "before": {
+        "snapshots": 0,
+        "executions": 0
+      },
+      "after": {
+        "snapshots": 0,
+        "executions": 0
+      }
+    },
+    "comparedBeforeCandles": 9,
+    "qualifiedPlanCloses": [
+      1794396900000
+    ],
+    "plansObservedBeforeClose": [],
+    "qualifiedClosesMissingOpeningUpdate": [],
+    "reloadClosesStillRealtime": []
+  }
+}

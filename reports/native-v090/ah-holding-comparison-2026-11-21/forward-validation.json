@@ -1,0 +1,102 @@
+{
+  "schema": "tradingview-forward-evaluation/v1",
+  "frozenLocallyOn": "2026-11-21",
+  "status": "PREPARED_FOR_FUTURE_BARS",
+  "experimentSource": "pine/experiments/strategy_signal_diagnostics.pine",
+  "sourceSha256": "0268050018e688454874306c77fa353fddcf1c5f0455b671b805dcb5a5b7b6d1",
+  "indicatorSourceSha256": "932932c8a59c0017b2c0dfdef1194f893ec0aa59823149a0868d48d69a426da5",
+  "commonSettings": {
+    "feed": "FOREXCOM:XAUUSD",
+    "standardCandles": true,
+    "minutes": 5,
+    "enabledModules": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "admissionUtc": [
+      "2026-11-23T00:00:00Z",
+      "2026-12-07T00:00:00Z"
+    ],
+    "endExclusive": true,
+    "closeEntry": true,
+    "session": "London",
+    "h1Alignment": true,
+    "crtMinutes": 15,
+    "minimumQuality": 75,
+    "simulationRiskPercent": 0.5,
+    "maximumNotionalPercent": 90,
+    "maxSessionPlans": 5,
+    "cooldownBars": 5,
+    "stop": "Structure",
+    "stopBufferAtr": 0.15,
+    "maxStopAtr": 3,
+    "target": "Fixed R",
+    "targetMultiples": [
+      1,
+      2,
+      3
+    ],
+    "partialPercentages": [
+      33,
+      33,
+      34
+    ],
+    "breakEven": false,
+    "trailing": false,
+    "strategyProperties": {
+      "initialCapital": 10000,
+      "currency": "USD",
+      "commissionPercentPerSide": 0.01,
+      "slippageTicks": 2,
+      "longLeverage": 1,
+      "shortLeverage": 1,
+      "pyramiding": 0,
+      "scriptExecution": "On bar close",
+      "barDetalizationTicks": 4,
+      "orderExecutionDelay": "One tick",
+      "limitOrderExecution": "Requested price",
+      "separateSpreadModel": false
+    }
+  },
+  "minimumWarmupBars": 1000,
+  "weeklyBoundaryUtc": "2026-11-30T00:00:00Z",
+  "fixedVariants": [
+    {
+      "concept": "K-SNR",
+      "maximumHoldingMinutes": 15
+    },
+    {
+      "concept": "K-SNR",
+      "maximumHoldingMinutes": 30
+    },
+    {
+      "concept": "K-SNR",
+      "maximumHoldingMinutes": 45
+    },
+    {
+      "concept": "MSNR body flip",
+      "maximumHoldingMinutes": 15
+    }
+  ],
+  "compareAgainst": {
+    "concept": "K-SNR",
+    "maximumHoldingMinutes": 15
+  },
+  "msnrMaximumUnbrokenLevelAgeBars": 60,
+  "capture": [
+    "Exact Pine Editor source copy-back, Inputs and Properties",
+    "Matching warm-up and bar coverage",
+    "Qualified plans, fill records, all exit rows and position groups, including any admitted position closing after the end",
+    "Position win rate, net P&L, fees, average net in planned R and max drawdown",
+    "Count assumptions and distinct first-appearance observations for any separately captured live qualified plans"
+  ],
+  "marketTestStarted": false,
+  "observationScheduled": false,
+  "historicalReplayAccess": "PREVIOUSLY_BASIC_PLAN_BLOCKED"
+}

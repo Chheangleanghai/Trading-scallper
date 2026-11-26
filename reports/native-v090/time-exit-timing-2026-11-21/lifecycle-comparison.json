@@ -1,0 +1,864 @@
+{
+  "schema": "xauusd-historical-event-comparison/v1",
+  "verifiedOn": "2026-11-21",
+  "study": {
+    "symbol": "FOREXCOM:XAUUSD",
+    "minutes": 5,
+    "entryMode": "Close",
+    "startUtc": "2026-11-06T00:00:00Z",
+    "endExclusiveUtc": "2026-11-20T00:00:00Z"
+  },
+  "sharedFields": [
+    "eventId",
+    "eventType",
+    "symbol",
+    "timeframe",
+    "direction",
+    "strategy",
+    "timestamp",
+    "setupTimestamp",
+    "entry",
+    "sl",
+    "tp1",
+    "tp2",
+    "tp3",
+    "quality",
+    "entryMode",
+    "closeReason"
+  ],
+  "comparison": [
+    {
+      "concept": "K-SNR",
+      "holdMinutes": 15,
+      "inputs": {
+        "indicator": {
+          "file": "ksnr-next-open-native.csv.gz",
+          "rawCsvSha256": "3c48d0fa0e5cdb5e623bc0017ded608199a6257053cf86a9e23537859d1bd605"
+        },
+        "strategy": {
+          "file": "../ah-holding-comparison-2026-11-21/ksnr-strategy-15-native.csv.gz",
+          "rawCsvSha256": "fdaa8b8521b625173e674afbb7501c53cc74e45bf81442946f0c2b1b266a18b9"
+        }
+      },
+      "matchingPlans": 36,
+      "eventIdsMatched": 125,
+      "matchedEventsByType": {
+        "BUY_SIGNAL": 5,
+        "ENTRY_TRIGGERED": 36,
+        "TP1_HIT": 9,
+        "TP2_HIT": 2,
+        "TRADE_CLOSED": 36,
+        "SELL_SIGNAL": 31,
+        "STOP_LOSS_HIT": 5,
+        "TP3_HIT": 1
+      },
+      "eventObservationTimestampsMatched": 53,
+      "strategySignalAndEntryObservationDelayMilliseconds": 300000,
+      "closuresByReason": {
+        "TIME_EXIT": 30,
+        "STOP": 5,
+        "TP3": 1
+      },
+      "matchingRecordedTimeExitTimestamps": 30,
+      "matchingClosureObservationTimestamps": 36,
+      "matchingTargetEventObservationTimestamps": 12,
+      "recordedStopOrFinalTargetTimestampDifferences": [
+        {
+          "planTimestamp": 1794317100000,
+          "module": "G_AMD",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794317700000,
+          "strategyClosedAt": 1794317400000,
+          "sharedObservedAt": 1794317700000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794816900000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794817200000,
+          "strategyClosedAt": 1794816900000,
+          "sharedObservedAt": 1794817200000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794825000000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794825600000,
+          "strategyClosedAt": 1794825300000,
+          "sharedObservedAt": 1794825600000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794829500000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794830100000,
+          "strategyClosedAt": 1794829800000,
+          "sharedObservedAt": 1794830100000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1795005300000,
+          "module": "C_TURTLE_SOUP",
+          "reason": "TP3",
+          "indicatorClosedAt": 1795006200000,
+          "strategyClosedAt": 1795005900000,
+          "sharedObservedAt": 1795006200000,
+          "finalExitLegCount": 1
+        },
+        {
+          "planTimestamp": 1795084200000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1795084800000,
+          "strategyClosedAt": 1795084500000,
+          "sharedObservedAt": 1795084800000,
+          "finalExitLegCount": 3
+        }
+      ],
+      "fillPrices": {
+        "different": 36,
+        "adverseForEmulator": 36,
+        "largestAbsoluteDifference": 0.02,
+        "differences": [
+          {
+            "planTimestamp": 1793964000000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "BUY",
+            "estimate": 4066,
+            "emulator": 4066.02,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1793967300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4063.93,
+            "emulator": 4063.91,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1793979000000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4049.56,
+            "emulator": 4049.54,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1793982900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4059.76,
+            "emulator": 4059.74,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794216900000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4097.94,
+            "emulator": 4097.96,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794222000000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4098.5,
+            "emulator": 4098.52,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794226800000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4112.59,
+            "emulator": 4112.61,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794240300000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "BUY",
+            "estimate": 4125.03,
+            "emulator": 4125.05,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794310200000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4073.11,
+            "emulator": 4073.09,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794317100000,
+            "module": "G_AMD",
+            "direction": "SELL",
+            "estimate": 4070.12,
+            "emulator": 4070.1,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794325500000,
+            "module": "F_TREND_PULLBACK",
+            "direction": "SELL",
+            "estimate": 4045.76,
+            "emulator": 4045.74,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794388500000,
+            "module": "E_SUPPLY",
+            "direction": "SELL",
+            "estimate": 4053.79,
+            "emulator": 4053.77,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794392400000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4048.69,
+            "emulator": 4048.67,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794397200000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 4051.08,
+            "emulator": 4051.06,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794403500000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4040.17,
+            "emulator": 4040.15,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794481800000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3952.25,
+            "emulator": 3952.23,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794501300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3868.18,
+            "emulator": 3868.16,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794569100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3890.72,
+            "emulator": 3890.7,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794582600000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3885.21,
+            "emulator": 3885.19,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794585600000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3873.66,
+            "emulator": 3873.64,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794588600000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3880.52,
+            "emulator": 3880.5,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794816900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3854.99,
+            "emulator": 3854.97,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794821100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3861.37,
+            "emulator": 3861.35,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794825000000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3860.18,
+            "emulator": 3860.16,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794829500000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3872.63,
+            "emulator": 3872.61,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794831000000,
+            "module": "G_AMD",
+            "direction": "SELL",
+            "estimate": 3868.14,
+            "emulator": 3868.12,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794909900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3861.07,
+            "emulator": 3861.05,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794921300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3857.54,
+            "emulator": 3857.52,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794927600000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3859.54,
+            "emulator": 3859.52,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795005300000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3764.57,
+            "emulator": 3764.55,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795010400000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3782.41,
+            "emulator": 3782.39,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795076700000,
+            "module": "D_SNR",
+            "direction": "SELL",
+            "estimate": 3736.55,
+            "emulator": 3736.53,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795084200000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3727.68,
+            "emulator": 3727.66,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795086300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3733.96,
+            "emulator": 3733.94,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795095600000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3714.97,
+            "emulator": 3714.95,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795100100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3705.48,
+            "emulator": 3705.46,
+            "signedPriceDifference": -0.02
+          }
+        ]
+      }
+    },
+    {
+      "concept": "MSNR body flip",
+      "holdMinutes": 15,
+      "inputs": {
+        "indicator": {
+          "file": "msnr-next-open-native.csv.gz",
+          "rawCsvSha256": "6b47b54b2754d228edaa8a6a06f09cede050929cb935ade38f709a5e0c3d31e8"
+        },
+        "strategy": {
+          "file": "../ah-holding-comparison-2026-11-21/msnr-strategy-15-native.csv.gz",
+          "rawCsvSha256": "ae8431431c3acdef96c8cf8ca2b6c1bd59b47c7c784b188fbb890532e74f661b"
+        }
+      },
+      "matchingPlans": 41,
+      "eventIdsMatched": 143,
+      "matchedEventsByType": {
+        "BUY_SIGNAL": 6,
+        "ENTRY_TRIGGERED": 41,
+        "TP1_HIT": 10,
+        "TP2_HIT": 2,
+        "TRADE_CLOSED": 41,
+        "SELL_SIGNAL": 35,
+        "STOP_LOSS_HIT": 7,
+        "TP3_HIT": 1
+      },
+      "eventObservationTimestampsMatched": 61,
+      "strategySignalAndEntryObservationDelayMilliseconds": 300000,
+      "closuresByReason": {
+        "TIME_EXIT": 33,
+        "STOP": 7,
+        "TP3": 1
+      },
+      "matchingRecordedTimeExitTimestamps": 33,
+      "matchingClosureObservationTimestamps": 41,
+      "matchingTargetEventObservationTimestamps": 13,
+      "recordedStopOrFinalTargetTimestampDifferences": [
+        {
+          "planTimestamp": 1794317100000,
+          "module": "G_AMD",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794317700000,
+          "strategyClosedAt": 1794317400000,
+          "sharedObservedAt": 1794317700000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794401700000,
+          "module": "D_SNR",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794402300000,
+          "strategyClosedAt": 1794402000000,
+          "sharedObservedAt": 1794402300000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794563400000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794564300000,
+          "strategyClosedAt": 1794564000000,
+          "sharedObservedAt": 1794564300000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794816900000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794817200000,
+          "strategyClosedAt": 1794816900000,
+          "sharedObservedAt": 1794817200000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794825000000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794825600000,
+          "strategyClosedAt": 1794825300000,
+          "sharedObservedAt": 1794825600000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1794829500000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1794830100000,
+          "strategyClosedAt": 1794829800000,
+          "sharedObservedAt": 1794830100000,
+          "finalExitLegCount": 3
+        },
+        {
+          "planTimestamp": 1795005300000,
+          "module": "C_TURTLE_SOUP",
+          "reason": "TP3",
+          "indicatorClosedAt": 1795006200000,
+          "strategyClosedAt": 1795005900000,
+          "sharedObservedAt": 1795006200000,
+          "finalExitLegCount": 1
+        },
+        {
+          "planTimestamp": 1795084200000,
+          "module": "B_CRT",
+          "reason": "STOP",
+          "indicatorClosedAt": 1795084800000,
+          "strategyClosedAt": 1795084500000,
+          "sharedObservedAt": 1795084800000,
+          "finalExitLegCount": 3
+        }
+      ],
+      "fillPrices": {
+        "different": 41,
+        "adverseForEmulator": 41,
+        "largestAbsoluteDifference": 0.02,
+        "differences": [
+          {
+            "planTimestamp": 1793964000000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "BUY",
+            "estimate": 4066,
+            "emulator": 4066.02,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1793967300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4063.93,
+            "emulator": 4063.91,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1793979000000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4049.56,
+            "emulator": 4049.54,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1793982900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4059.76,
+            "emulator": 4059.74,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794216900000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4097.94,
+            "emulator": 4097.96,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794222000000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4098.5,
+            "emulator": 4098.52,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794226800000,
+            "module": "B_CRT",
+            "direction": "BUY",
+            "estimate": 4112.59,
+            "emulator": 4112.61,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794229500000,
+            "module": "D_SNR",
+            "direction": "BUY",
+            "estimate": 4123.59,
+            "emulator": 4123.61,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794240300000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "BUY",
+            "estimate": 4125.03,
+            "emulator": 4125.05,
+            "signedPriceDifference": 0.02
+          },
+          {
+            "planTimestamp": 1794310200000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4073.11,
+            "emulator": 4073.09,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794317100000,
+            "module": "G_AMD",
+            "direction": "SELL",
+            "estimate": 4070.12,
+            "emulator": 4070.1,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794325500000,
+            "module": "F_TREND_PULLBACK",
+            "direction": "SELL",
+            "estimate": 4045.76,
+            "emulator": 4045.74,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794388500000,
+            "module": "E_SUPPLY",
+            "direction": "SELL",
+            "estimate": 4053.79,
+            "emulator": 4053.77,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794392400000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4048.69,
+            "emulator": 4048.67,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794397200000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 4051.08,
+            "emulator": 4051.06,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794401700000,
+            "module": "D_SNR",
+            "direction": "SELL",
+            "estimate": 4040.96,
+            "emulator": 4040.94,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794403500000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 4040.17,
+            "emulator": 4040.15,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794473100000,
+            "module": "D_SNR",
+            "direction": "SELL",
+            "estimate": 3941.5,
+            "emulator": 3941.48,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794481800000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3952.25,
+            "emulator": 3952.23,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794501300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3868.18,
+            "emulator": 3868.16,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794558900000,
+            "module": "D_SNR",
+            "direction": "SELL",
+            "estimate": 3892.22,
+            "emulator": 3892.2,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794561300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3897.63,
+            "emulator": 3897.61,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794563400000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3896.65,
+            "emulator": 3896.63,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794565200000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3898.55,
+            "emulator": 3898.53,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794569100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3890.72,
+            "emulator": 3890.7,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794816900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3854.99,
+            "emulator": 3854.97,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794821100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3861.37,
+            "emulator": 3861.35,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794825000000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3860.18,
+            "emulator": 3860.16,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794829500000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3872.63,
+            "emulator": 3872.61,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794831000000,
+            "module": "G_AMD",
+            "direction": "SELL",
+            "estimate": 3868.14,
+            "emulator": 3868.12,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794909900000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3861.07,
+            "emulator": 3861.05,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794921300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3857.54,
+            "emulator": 3857.52,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1794927600000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3859.54,
+            "emulator": 3859.52,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795005300000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3764.57,
+            "emulator": 3764.55,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795010400000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3782.41,
+            "emulator": 3782.39,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795013400000,
+            "module": "D_SNR",
+            "direction": "SELL",
+            "estimate": 3767.75,
+            "emulator": 3767.73,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795077000000,
+            "module": "C_TURTLE_SOUP",
+            "direction": "SELL",
+            "estimate": 3735.36,
+            "emulator": 3735.34,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795084200000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3727.68,
+            "emulator": 3727.66,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795086300000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3733.96,
+            "emulator": 3733.94,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795095600000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3714.97,
+            "emulator": 3714.95,
+            "signedPriceDifference": -0.02
+          },
+          {
+            "planTimestamp": 1795100100000,
+            "module": "B_CRT",
+            "direction": "SELL",
+            "estimate": 3705.48,
+            "emulator": 3705.46,
+            "signedPriceDifference": -0.02
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Existing TradingView historical Pine Logs from the same overlapping market dates. Compares event IDs, planned prices, observations and closure causes. Entry and exit timestamps reflect each execution model. Orders, alert delivery, live update behavior and future performance were outside this check."
+}
